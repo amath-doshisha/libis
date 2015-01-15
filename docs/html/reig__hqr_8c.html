@@ -1,0 +1,738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/reig_hqr.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle">
+<div class="title">reig_hqr.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>多倍長精度実数型rmultiによるHessenberg型行列に前処理をした後にQR法で固有値を計算.  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="isys_8h_source.html">isys.h</a>&gt;</code><br />
+</div>
+<p><a href="reig__hqr_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ac67e3b6b58f837fb25526084bda6e8a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#ac67e3b6b58f837fb25526084bda6e8a0">RA</a>(X, P)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(P));</td></tr>
+<tr class="separator:ac67e3b6b58f837fb25526084bda6e8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae506ec36706d66ea9abbcca974ce8d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#aae506ec36706d66ea9abbcca974ce8d4">RF</a>(X)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X))</td></tr>
+<tr class="separator:aae506ec36706d66ea9abbcca974ce8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a92efda769b1758b36c2995f9bf6af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a81a92efda769b1758b36c2995f9bf6af">NAME_HQR</a>&#160;&#160;&#160;&quot;reig_hqr&quot;</td></tr>
+<tr class="separator:a81a92efda769b1758b36c2995f9bf6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">固有値計算に関する関数</div></td></tr>
+<tr class="memitem:adb44213da8112710b7b1b3734a49a655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#adb44213da8112710b7b1b3734a49a655">reig_hqr</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **lambda, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int debug)</td></tr>
+<tr class="memdesc:adb44213da8112710b7b1b3734a49a655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hessenberg型行列に前処理をした後にQR法で固有値を計算.  <a href="#adb44213da8112710b7b1b3734a49a655">[詳解]</a><br /></td></tr>
+<tr class="separator:adb44213da8112710b7b1b3734a49a655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">固有値計算に関する関数（ユーザが直接呼び出してはいけない関数）</div></td></tr>
+<tr class="memitem:ac783e771a2515a5f700e02d250e3d3e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#ac783e771a2515a5f700e02d250e3d3e8">reig_hqr_main</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **lambda, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int debug)</td></tr>
+<tr class="memdesc:ac783e771a2515a5f700e02d250e3d3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">多倍長QR法  <a href="#ac783e771a2515a5f700e02d250e3d3e8">[詳解]</a><br /></td></tr>
+<tr class="separator:ac783e771a2515a5f700e02d250e3d3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a498aa8e15bdd009d5358c085d907458f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a498aa8e15bdd009d5358c085d907458f">reig_hqr_calculate_norm</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *anorm, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a498aa8e15bdd009d5358c085d907458f"><td class="mdescLeft">&#160;</td><td class="mdescRight">下副対角要素を探すためのノルム計算(ユーザーは直接使用してはならない)  <a href="#a498aa8e15bdd009d5358c085d907458f">[詳解]</a><br /></td></tr>
+<tr class="separator:a498aa8e15bdd009d5358c085d907458f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f902bbf7a876497b97ea2f869d3eccd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a0f902bbf7a876497b97ea2f869d3eccd">reig_hqr_calculate_formula_11_6_23_p</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *p, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *s, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *w, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a2)</td></tr>
+<tr class="memdesc:a0f902bbf7a876497b97ea2f869d3eccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">p=(r*s-w)/A[m+1,m] + A[m,m+1] (ユーザーは直接使用してはならない)  <a href="#a0f902bbf7a876497b97ea2f869d3eccd">[詳解]</a><br /></td></tr>
+<tr class="separator:a0f902bbf7a876497b97ea2f869d3eccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b64fd202f5c4e8d7d69129cb012b49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a15b64fd202f5c4e8d7d69129cb012b49">reig_hqr_calculate_formula_11_6_23_q</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *q, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *s, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z)</td></tr>
+<tr class="memdesc:a15b64fd202f5c4e8d7d69129cb012b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">q=A[m+1,m+1]-z-r-s (ユーザーは直接使用してはならない)  <a href="#a15b64fd202f5c4e8d7d69129cb012b49">[詳解]</a><br /></td></tr>
+<tr class="separator:a15b64fd202f5c4e8d7d69129cb012b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec7062dd07f962d9002e1d9f8ed5154"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a7ec7062dd07f962d9002e1d9f8ed5154">reig_hqr_calculate_formula_11_6_25</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *s, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *p, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *q, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r)</td></tr>
+<tr class="memdesc:a7ec7062dd07f962d9002e1d9f8ed5154"><td class="mdescLeft">&#160;</td><td class="mdescRight">s=SIGN(sqrt(p*p+q*q+r*r),p) (ユーザーは直接使用してはならない)  <a href="#a7ec7062dd07f962d9002e1d9f8ed5154">[詳解]</a><br /></td></tr>
+<tr class="separator:a7ec7062dd07f962d9002e1d9f8ed5154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aaccaeb1b446851414d9bdb10cca431"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a6aaccaeb1b446851414d9bdb10cca431">reig_hqr_calculate_formula_11_6_26_u</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *u, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *q, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r)</td></tr>
+<tr class="memdesc:a6aaccaeb1b446851414d9bdb10cca431"><td class="mdescLeft">&#160;</td><td class="mdescRight">u=abs(A(m,m-1))*(abs(q)+abs(r)) (ユーザーは直接使用してはならない)  <a href="#a6aaccaeb1b446851414d9bdb10cca431">[詳解]</a><br /></td></tr>
+<tr class="separator:a6aaccaeb1b446851414d9bdb10cca431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f8927884db25bae0fe089ddcdde9f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#ae5f8927884db25bae0fe089ddcdde9f0">reig_hqr_calculate_formula_11_6_26_v</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *v, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *p, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z)</td></tr>
+<tr class="memdesc:ae5f8927884db25bae0fe089ddcdde9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">v=abs(p)*(abs(A(m-1,m-1))+abs(z)+abs(A(m+1,m+1))) (ユーザーは直接使用してはならない)  <a href="#ae5f8927884db25bae0fe089ddcdde9f0">[詳解]</a><br /></td></tr>
+<tr class="separator:ae5f8927884db25bae0fe089ddcdde9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519dd9722b9d12d6979aafccc2404297"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a519dd9722b9d12d6979aafccc2404297">reig_hqr_test_formula_11_6_26</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *u, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *v)</td></tr>
+<tr class="memdesc:a519dd9722b9d12d6979aafccc2404297"><td class="mdescLeft">&#160;</td><td class="mdescRight">u+v==vの判定(ユーザーは直接使用してはならない)  <a href="#a519dd9722b9d12d6979aafccc2404297">[詳解]</a><br /></td></tr>
+<tr class="separator:a519dd9722b9d12d6979aafccc2404297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae38d6fb13b9ecaf0d12ca5a4c60d4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a1ae38d6fb13b9ecaf0d12ca5a4c60d4c">reig_hqr_test_UDE</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *s, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a)</td></tr>
+<tr class="memdesc:a1ae38d6fb13b9ecaf0d12ca5a4c60d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(abs(a)+s==s)の判定(ユーザーは直接使用してはならない)  <a href="#a1ae38d6fb13b9ecaf0d12ca5a4c60d4c">[詳解]</a><br /></td></tr>
+<tr class="separator:a1ae38d6fb13b9ecaf0d12ca5a4c60d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b788ac5e56a1bf4c69f3a468cca017"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reig__hqr_8c.html#a10b788ac5e56a1bf4c69f3a468cca017">reig_hqr_scale</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *p, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *q, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *s)</td></tr>
+<tr class="memdesc:a10b788ac5e56a1bf4c69f3a468cca017"><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバーフローやアンダーフローを避けるためのスケール動作(ユーザーは直接使用してはならない)  <a href="#a10b788ac5e56a1bf4c69f3a468cca017">[詳解]</a><br /></td></tr>
+<tr class="separator:a10b788ac5e56a1bf4c69f3a468cca017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>多倍長精度実数型rmultiによるHessenberg型行列に前処理をした後にQR法で固有値を計算. </p>
+<p>rmulti型の関数に関する定義は<a class="el" href="rmulti_8c.html">rmulti.c</a>を参照のこと. rmulti型のベクトルの関数に関する定義は<a class="el" href="rvec_8c.html">rvec.c</a>を参照のこと. rmulti型の行列の関数に関する定義は<a class="el" href="rmat_8c.html">rmat.c</a>を参照のこと. rmulti型の固有値問題に関する定義は<a class="el" href="reig_8c.html">reig.c</a>を参照のこと. </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> に定義があります。</p>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a81a92efda769b1758b36c2995f9bf6af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAME_HQR&#160;&#160;&#160;&quot;reig_hqr&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac67e3b6b58f837fb25526084bda6e8a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">P&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(P));</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aae506ec36706d66ea9abbcca974ce8d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="adb44213da8112710b7b1b3734a49a655"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hessenberg型行列に前処理をした後にQR法で固有値を計算. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>固有値計算をする(n,n)型行列. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>行列サイズ. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>Aの第1次元. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">debug</td><td>デバッグ. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lambda</td><td>計算された固有値を返す. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f902bbf7a876497b97ea2f869d3eccd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_calculate_formula_11_6_23_p </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>p=(r*s-w)/A[m+1,m] + A[m,m+1] (ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00268">268</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a15b64fd202f5c4e8d7d69129cb012b49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_calculate_formula_11_6_23_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>q=A[m+1,m+1]-z-r-s (ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00279">279</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ec7062dd07f962d9002e1d9f8ed5154"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_calculate_formula_11_6_25 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>s=SIGN(sqrt(p*p+q*q+r*r),p) (ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00289">289</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6aaccaeb1b446851414d9bdb10cca431"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_calculate_formula_11_6_26_u </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>u=abs(A(m,m-1))*(abs(q)+abs(r)) (ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00311">311</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae5f8927884db25bae0fe089ddcdde9f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_calculate_formula_11_6_26_v </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>v=abs(p)*(abs(A(m-1,m-1))+abs(z)+abs(A(m+1,m+1))) (ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00329">329</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a498aa8e15bdd009d5358c085d907458f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_calculate_norm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>anorm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>下副対角要素を探すためのノルム計算(ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00254">254</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac783e771a2515a5f700e02d250e3d3e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>多倍長QR法 </p>
+<p>A はhessenberg前提 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>行列サイズ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>行列 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>QR法後の行列 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00068">68</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a10b788ac5e56a1bf4c69f3a468cca017"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reig_hqr_scale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>オーバーフローやアンダーフローを避けるためのスケール動作(ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00384">384</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a519dd9722b9d12d6979aafccc2404297"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int reig_hqr_test_formula_11_6_26 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>u+v==vの判定(ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00347">347</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ae38d6fb13b9ecaf0d12ca5a4c60d4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int reig_hqr_test_UDE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(abs(a)+s==s)の判定(ユーザーは直接使用してはならない) </p>
+
+<p> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00365">365</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="reig__hqr_8c.html">reig_hqr.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

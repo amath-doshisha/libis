@@ -1,0 +1,1138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/bigint.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('bigint_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">bigint.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="is__macros_8h_source.html">is_macros.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__rmulti_8h_source.html">is_rmulti.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__bigint_8h_source.html">is_bigint.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__strings_8h_source.html">is_strings.h</a>&quot;</code><br />
+</div>
+<p><a href="bigint_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a9a3fbd493d4a26c9047ee69ba2b368ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a9a3fbd493d4a26c9047ee69ba2b368ad">BIGINT_EXIT_ROUNDING</a>(S)&#160;&#160;&#160;{if(e){printf(&quot;ROUDING in %s\n&quot;,(S));exit(-1);};}</td></tr>
+<tr class="separator:a9a3fbd493d4a26c9047ee69ba2b368ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a0e523ebeb61c7fa6d9b70d13935c24de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a0e523ebeb61c7fa6d9b70d13935c24de">rset_bi</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *value)</td></tr>
+<tr class="separator:a0e523ebeb61c7fa6d9b70d13935c24de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fc090dc5a4cae38206634d49ceeb15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a01fc090dc5a4cae38206634d49ceeb15">bigint_allocate</a> (void)</td></tr>
+<tr class="separator:a01fc090dc5a4cae38206634d49ceeb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acce26652b65d93752870626ef85445ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#acce26652b65d93752870626ef85445ea">bigint_allocate_int</a> (int num, int den)</td></tr>
+<tr class="separator:acce26652b65d93752870626ef85445ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60231ae16ca6d0cc28f53a3d18386a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#ae60231ae16ca6d0cc28f53a3d18386a0">bigint_allocate_str</a> (const char *num, const char *den)</td></tr>
+<tr class="separator:ae60231ae16ca6d0cc28f53a3d18386a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6d4939003e2fc76744ff30d98e8681"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#afe6d4939003e2fc76744ff30d98e8681">bigint_allocate_script</a> (const char *str)</td></tr>
+<tr class="separator:afe6d4939003e2fc76744ff30d98e8681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c786a6715ac6a9bfff685fc8508ad65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a3c786a6715ac6a9bfff685fc8508ad65">bigint_allocate_clone</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a3c786a6715ac6a9bfff685fc8508ad65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a653d622c421ca3ca8bc5ab33f23a5b77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a653d622c421ca3ca8bc5ab33f23a5b77">bigint_check</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a653d622c421ca3ca8bc5ab33f23a5b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804707374b55eceac6a1fc4156eb2027"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a804707374b55eceac6a1fc4156eb2027">bigint_gcd</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *gcd, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *m0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *n0)</td></tr>
+<tr class="separator:a804707374b55eceac6a1fc4156eb2027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d7343d1c2f458c7b19e5e63b783689"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a21d7343d1c2f458c7b19e5e63b783689">bigint_free</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a21d7343d1c2f458c7b19e5e63b783689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacb3a9b415c1b5f82d7eb1589582562"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#afacb3a9b415c1b5f82d7eb1589582562">bigint_set_nan</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:afacb3a9b415c1b5f82d7eb1589582562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31392b76c83764bc092f6799dedf36d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a31392b76c83764bc092f6799dedf36d9">bigint_set_inf</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a31392b76c83764bc092f6799dedf36d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6739b5136c32acb97995c5fecd323144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a6739b5136c32acb97995c5fecd323144">bigint_set_zero</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a6739b5136c32acb97995c5fecd323144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56f4d6d80da854ecffef33ff2f942725"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a56f4d6d80da854ecffef33ff2f942725">bigint_set_one</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a56f4d6d80da854ecffef33ff2f942725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab437a44dd46f776ff4302ca0528ef46c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#ab437a44dd46f776ff4302ca0528ef46c">bigint_set_int</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, int num, int den)</td></tr>
+<tr class="separator:ab437a44dd46f776ff4302ca0528ef46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ea6820acfefc0ee33b23cacb15259b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a26ea6820acfefc0ee33b23cacb15259b">bigint_set_str</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, const char *num, const char *den)</td></tr>
+<tr class="separator:a26ea6820acfefc0ee33b23cacb15259b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f99effab22310c28727e22e0ff8fa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a30f99effab22310c28727e22e0ff8fa3">bigint_set_script</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, const char *str)</td></tr>
+<tr class="separator:a30f99effab22310c28727e22e0ff8fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d3d95f38aaac182b1b00c4912f6809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#ad6d3d95f38aaac182b1b00c4912f6809">bigint_copy</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *y, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:ad6d3d95f38aaac182b1b00c4912f6809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac02428a33f7b73c2526cdc21dc66c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a9ac02428a33f7b73c2526cdc21dc66c6">bigint_swap</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *y)</td></tr>
+<tr class="separator:a9ac02428a33f7b73c2526cdc21dc66c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac659ab0b843f224a957cb20296fa1276"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#ac659ab0b843f224a957cb20296fa1276">bigint_neg</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:ac659ab0b843f224a957cb20296fa1276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfdeae58f8e5f656ef882332e3e2e6e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#abfdeae58f8e5f656ef882332e3e2e6e6">bigint_mul</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *y)</td></tr>
+<tr class="separator:abfdeae58f8e5f656ef882332e3e2e6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e0501b736a8e8b5e94143a3b38e55e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#ac2e0501b736a8e8b5e94143a3b38e55e">bigint_div</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *y)</td></tr>
+<tr class="separator:ac2e0501b736a8e8b5e94143a3b38e55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5032ce44586b29fe3da1e3e2876a23b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a5032ce44586b29fe3da1e3e2876a23b7">bigint_inv</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a5032ce44586b29fe3da1e3e2876a23b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f717eb6da19d166edae4534368c959c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a0f717eb6da19d166edae4534368c959c">bigint_add</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *y)</td></tr>
+<tr class="separator:a0f717eb6da19d166edae4534368c959c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09028d57f425a8a6f72e41ace36eb359"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a09028d57f425a8a6f72e41ace36eb359">bigint_sub</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *y)</td></tr>
+<tr class="separator:a09028d57f425a8a6f72e41ace36eb359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab38f4f5d85361217c911f7e7d59766af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#ab38f4f5d85361217c911f7e7d59766af">bigint_pow_n</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, int p)</td></tr>
+<tr class="separator:ab38f4f5d85361217c911f7e7d59766af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a0e3928c9946ff3e5ffffaabca85e23"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a5a0e3928c9946ff3e5ffffaabca85e23">bigint_cmp</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *y)</td></tr>
+<tr class="separator:a5a0e3928c9946ff3e5ffffaabca85e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5749813fb313d6850f513e9b52051c88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a5749813fb313d6850f513e9b52051c88">bigint_is_integer</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a5749813fb313d6850f513e9b52051c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb5c9c184ddb047d4e5c4111eabe4aa9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#abb5c9c184ddb047d4e5c4111eabe4aa9">bigint_is_nan</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:abb5c9c184ddb047d4e5c4111eabe4aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb29d03db4cd0cd6c5e44fa22f81af4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a2eb29d03db4cd0cd6c5e44fa22f81af4">bigint_is_inf</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a2eb29d03db4cd0cd6c5e44fa22f81af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8148fe42b835796822711010b60a2a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#af8148fe42b835796822711010b60a2a7">bigint_is_zero</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:af8148fe42b835796822711010b60a2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c963a47decb0c83c408730b2b9b493"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a83c963a47decb0c83c408730b2b9b493">bigint_is_one</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a83c963a47decb0c83c408730b2b9b493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8545cda01367c323eab509e91847bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a9f8545cda01367c323eab509e91847bb">bigint_is_neg_one</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a9f8545cda01367c323eab509e91847bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ffca6237d6a5ffdb6d87e2929197c2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a01ffca6237d6a5ffdb6d87e2929197c2">bigint_sgn</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a01ffca6237d6a5ffdb6d87e2929197c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa81537e8c06ae0f598ed87467c2027e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#afa81537e8c06ae0f598ed87467c2027e">bigint_get_si</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:afa81537e8c06ae0f598ed87467c2027e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33669d996e06470e244dcef388acac29"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a33669d996e06470e244dcef388acac29">bigint_get_rmulti</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a33669d996e06470e244dcef388acac29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2fa60798d016b5ce2e944e50cfd120"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#a9b2fa60798d016b5ce2e944e50cfd120">bigint_get_cmulti</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:a9b2fa60798d016b5ce2e944e50cfd120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf28b1bf5571078ca14e9e59e66e9de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bigint_8c.html#acbf28b1bf5571078ca14e9e59e66e9de">bigint_print</a> (<a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="separator:acbf28b1bf5571078ca14e9e59e66e9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a9a3fbd493d4a26c9047ee69ba2b368ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIGINT_EXIT_ROUNDING</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">S</td><td>)</td>
+          <td>&#160;&#160;&#160;{if(e){printf(&quot;ROUDING in %s\n&quot;,(S));exit(-1);};}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00009">9</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a0f717eb6da19d166edae4534368c959c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00296">296</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a01fc090dc5a4cae38206634d49ceeb15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a>* bigint_allocate </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c786a6715ac6a9bfff685fc8508ad65"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a>* bigint_allocate_clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acce26652b65d93752870626ef85445ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a>* bigint_allocate_int </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>den</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afe6d4939003e2fc76744ff30d98e8681"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a>* bigint_allocate_script </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae60231ae16ca6d0cc28f53a3d18386a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a>* bigint_allocate_str </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>den</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a653d622c421ca3ca8bc5ab33f23a5b77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_check </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00064">64</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5a0e3928c9946ff3e5ffffaabca85e23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_cmp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00353">353</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6d3d95f38aaac182b1b00c4912f6809"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00208">208</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2e0501b736a8e8b5e94143a3b38e55e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_div </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00260">260</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a21d7343d1c2f458c7b19e5e63b783689"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a>* bigint_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00123">123</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a804707374b55eceac6a1fc4156eb2027"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_gcd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>gcd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>m0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>n0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00091">91</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b2fa60798d016b5ce2e944e50cfd120"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_get_cmulti </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00430">430</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a33669d996e06470e244dcef388acac29"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_get_rmulti </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00425">425</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afa81537e8c06ae0f598ed87467c2027e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_get_si </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00416">416</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5032ce44586b29fe3da1e3e2876a23b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_inv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00277">277</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb29d03db4cd0cd6c5e44fa22f81af4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_is_inf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00386">386</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5749813fb313d6850f513e9b52051c88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_is_integer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00373">373</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abb5c9c184ddb047d4e5c4111eabe4aa9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_is_nan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00378">378</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f8545cda01367c323eab509e91847bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_is_neg_one </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00402">402</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a83c963a47decb0c83c408730b2b9b493"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_is_one </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00397">397</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af8148fe42b835796822711010b60a2a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_is_zero </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00392">392</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abfdeae58f8e5f656ef882332e3e2e6e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00243">243</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac659ab0b843f224a957cb20296fa1276"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_neg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00229">229</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab38f4f5d85361217c911f7e7d59766af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_pow_n </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00332">332</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acbf28b1bf5571078ca14e9e59e66e9de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00440">440</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a31392b76c83764bc092f6799dedf36d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_set_inf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00143">143</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab437a44dd46f776ff4302ca0528ef46c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_set_int </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>den</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00167">167</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afacb3a9b415c1b5f82d7eb1589582562"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_set_nan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00135">135</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a56f4d6d80da854ecffef33ff2f942725"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_set_one </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00159">159</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a30f99effab22310c28727e22e0ff8fa3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_set_script </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00189">189</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a26ea6820acfefc0ee33b23cacb15259b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_set_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>den</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00176">176</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6739b5136c32acb97995c5fecd323144"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_set_zero </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00151">151</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a01ffca6237d6a5ffdb6d87e2929197c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bigint_sgn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00411">411</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a09028d57f425a8a6f72e41ace36eb359"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_sub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00314">314</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ac02428a33f7b73c2526cdc21dc66c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bigint_swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00220">220</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e523ebeb61c7fa6d9b70d13935c24de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rset_bi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="bigint_8c_source.html">bigint.c</a> の <a class="el" href="bigint_8c_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="bigint_8c.html">bigint.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

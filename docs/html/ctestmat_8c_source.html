@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/ctestmat.c ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ctestmat_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ctestmat.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ctestmat_8c.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;math.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__macros_8h.html">is_macros.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__cmulti_8h.html">is_cmulti.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__cvec_8h.html">is_cvec.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__cmat_8h.html">is_cmat.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__ctestmat_8h.html">is_ctestmat.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="is__ctestmat_8h.html#a4a89b2b208ab98e222a07b7532766e0e">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ctestmat_8c.html#a4a89b2b208ab98e222a07b7532766e0e">cmat_toeplitz</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> k, <span class="keywordtype">double</span> *a, <span class="keywordtype">int</span> offset)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="cmat_8c.html#a3cd3f6e232a191918059e3625eab6efe">cmat_set_zeros</a>(m,n,A,LDA);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">for</span>(i=0; i&lt;k; i++){</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="cmat_8c.html#ab1575236671ea49bd99b009d91bda6a2">cmat_set_diag_d</a>(m,n,A,LDA,a[i],i-offset);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="is__ctestmat_8h.html#aa519f967fd6ad59bd0b3f2108d57083c">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ctestmat_8c.html#aa519f967fd6ad59bd0b3f2108d57083c">cmat_cauchy</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;n; j++){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;m; i++){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <a class="code" href="cmulti_8c.html#a7f6fcfcfa9dca245e641e4b195bbeba5">cset_si</a>(<a class="code" href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a>(A,i,j,LDA),i+j+1);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <a class="code" href="cmulti_8c.html#a22bf39abe4a44b8d1000f04971ca4486">cinv</a>(<a class="code" href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a>(A,i,j,LDA),<a class="code" href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a>(A,i,j,LDA));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//EOF</span></div>
+<div class="ttc" id="is__cmat_8h_html"><div class="ttname"><a href="is__cmat_8h.html">is_cmat.h</a></div><div class="ttdoc">多倍長精度実数型cmultiの行列に関する関数の宣言 </div></div>
+<div class="ttc" id="ctestmat_8c_html_a4a89b2b208ab98e222a07b7532766e0e"><div class="ttname"><a href="ctestmat_8c.html#a4a89b2b208ab98e222a07b7532766e0e">cmat_toeplitz</a></div><div class="ttdeci">void cmat_toeplitz(int m, int n, cmulti **A, int LDA, int k, double *a, int offset)</div><div class="ttdef"><b>Definition:</b> <a href="ctestmat_8c_source.html#l00010">ctestmat.c:10</a></div></div>
+<div class="ttc" id="is__cmulti_8h_html"><div class="ttname"><a href="is__cmulti_8h.html">is_cmulti.h</a></div><div class="ttdoc">多倍長精度複素数型cmultiに関する宣言 </div></div>
+<div class="ttc" id="cmulti_8c_html_a7f6fcfcfa9dca245e641e4b195bbeba5"><div class="ttname"><a href="cmulti_8c.html#a7f6fcfcfa9dca245e641e4b195bbeba5">cset_si</a></div><div class="ttdeci">int cset_si(cmulti *x, long real)</div><div class="ttdoc">cmulti型の浮動小数点数を符号あり整数から設定. </div><div class="ttdef"><b>Definition:</b> <a href="cmulti_8c_source.html#l00348">cmulti.c:348</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a0189fd1659090724e9ffbdb0c85ac681"><div class="ttname"><a href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a></div><div class="ttdeci">#define MAT(A, I, J, LDA)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00011">is_macros.h:11</a></div></div>
+<div class="ttc" id="cmulti_8c_html_a22bf39abe4a44b8d1000f04971ca4486"><div class="ttname"><a href="cmulti_8c.html#a22bf39abe4a44b8d1000f04971ca4486">cinv</a></div><div class="ttdeci">int cinv(cmulti *z, cmulti *x)</div><div class="ttdoc">cmulti型の逆数 z=1/x </div><div class="ttdef"><b>Definition:</b> <a href="cmulti_8c_source.html#l01147">cmulti.c:1147</a></div></div>
+<div class="ttc" id="structcmulti__struct_html"><div class="ttname"><a href="structcmulti__struct.html">cmulti_struct</a></div><div class="ttdoc">多倍長精度複素数構造体 </div><div class="ttdef"><b>Definition:</b> <a href="is__cmulti_8h_source.html#l00016">is_cmulti.h:16</a></div></div>
+<div class="ttc" id="ctestmat_8c_html_aa519f967fd6ad59bd0b3f2108d57083c"><div class="ttname"><a href="ctestmat_8c.html#aa519f967fd6ad59bd0b3f2108d57083c">cmat_cauchy</a></div><div class="ttdeci">void cmat_cauchy(int m, int n, cmulti **A, int LDA)</div><div class="ttdef"><b>Definition:</b> <a href="ctestmat_8c_source.html#l00019">ctestmat.c:19</a></div></div>
+<div class="ttc" id="cmat_8c_html_ab1575236671ea49bd99b009d91bda6a2"><div class="ttname"><a href="cmat_8c.html#ab1575236671ea49bd99b009d91bda6a2">cmat_set_diag_d</a></div><div class="ttdeci">int cmat_set_diag_d(int m, int n, cmulti **A, int LDA, double a, int offset)</div><div class="ttdoc">cmulti型の行列の対角成分にスカラーをコピー. </div><div class="ttdef"><b>Definition:</b> <a href="cmat_8c_source.html#l00630">cmat.c:630</a></div></div>
+<div class="ttc" id="is__macros_8h_html"><div class="ttname"><a href="is__macros_8h.html">is_macros.h</a></div></div>
+<div class="ttc" id="is__ctestmat_8h_html"><div class="ttname"><a href="is__ctestmat_8h.html">is_ctestmat.h</a></div></div>
+<div class="ttc" id="is__cvec_8h_html"><div class="ttname"><a href="is__cvec_8h.html">is_cvec.h</a></div><div class="ttdoc">多倍長精度複素数型cmultiのベクトルに関する関数の宣言. </div></div>
+<div class="ttc" id="cmat_8c_html_a3cd3f6e232a191918059e3625eab6efe"><div class="ttname"><a href="cmat_8c.html#a3cd3f6e232a191918059e3625eab6efe">cmat_set_zeros</a></div><div class="ttdeci">int cmat_set_zeros(int m, int n, cmulti **A, int LDA)</div><div class="ttdoc">cmulti型の行列の値を零に設定. </div><div class="ttdef"><b>Definition:</b> <a href="cmat_8c_source.html#l00566">cmat.c:566</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ctestmat_8c.html">ctestmat.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分45秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

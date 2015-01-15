@@ -1,0 +1,2400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_icmulti.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__icmulti_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_icmulti.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>多倍長精度実数型cmultiの機械区間演算に関する関数の宣言.  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="is__cmulti_8h_source.html">is_cmulti.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__func_8h_source.html">is_func.h</a>&gt;</code><br />
+</div>
+<p><a href="is__icmulti_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a1f30b3de679df19a31f96b98d3d5f568"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a1f30b3de679df19a31f96b98d3d5f568">icset_z</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="structdcomplex.html">dcomplex</a> x)</td></tr>
+<tr class="memdesc:a1f30b3de679df19a31f96b98d3d5f568"><td class="mdescLeft">&#160;</td><td class="mdescRight">倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi].  <a href="#a1f30b3de679df19a31f96b98d3d5f568">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f30b3de679df19a31f96b98d3d5f568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab720fcdeab199e329183ee8ab0244dde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ab720fcdeab199e329183ee8ab0244dde">icset_dd</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, double xr, double xi)</td></tr>
+<tr class="memdesc:ab720fcdeab199e329183ee8ab0244dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi].  <a href="#ab720fcdeab199e329183ee8ab0244dde">[詳解]</a><br /></td></tr>
+<tr class="separator:ab720fcdeab199e329183ee8ab0244dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24aa9787077f5f87202ce0004086e3ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a24aa9787077f5f87202ce0004086e3ab">icset_d</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, double x)</td></tr>
+<tr class="memdesc:a24aa9787077f5f87202ce0004086e3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">倍精度実数の設定 [y0,y1]=[x,x].  <a href="#a24aa9787077f5f87202ce0004086e3ab">[詳解]</a><br /></td></tr>
+<tr class="separator:a24aa9787077f5f87202ce0004086e3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fc3c698f01f27835dd9a891e35ee67"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#aa2fc3c698f01f27835dd9a891e35ee67">icset_bigint</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="memdesc:aa2fc3c698f01f27835dd9a891e35ee67"><td class="mdescLeft">&#160;</td><td class="mdescRight">bigint型から[z0,z1]へ型変換.  <a href="#aa2fc3c698f01f27835dd9a891e35ee67">[詳解]</a><br /></td></tr>
+<tr class="separator:aa2fc3c698f01f27835dd9a891e35ee67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1acf1eee1b4d7a5549f972b8c53519e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a1acf1eee1b4d7a5549f972b8c53519e6">iccopy</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a1acf1eee1b4d7a5549f972b8c53519e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー [y0,y1]=[x0,x1].  <a href="#a1acf1eee1b4d7a5549f972b8c53519e6">[詳解]</a><br /></td></tr>
+<tr class="separator:a1acf1eee1b4d7a5549f972b8c53519e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6efffc2b85fac1771f715c9a91167390"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a6efffc2b85fac1771f715c9a91167390">icconj</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a6efffc2b85fac1771f715c9a91167390"><td class="mdescLeft">&#160;</td><td class="mdescRight">複素共役 [y0,y1]=conj([x0,x1])  <a href="#a6efffc2b85fac1771f715c9a91167390">[詳解]</a><br /></td></tr>
+<tr class="separator:a6efffc2b85fac1771f715c9a91167390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4086d8033df325ed5ec94240bf48c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a0b4086d8033df325ed5ec94240bf48c1">icneg</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a0b4086d8033df325ed5ec94240bf48c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">符号の反転 [y0,y1]=-[x0,x1].  <a href="#a0b4086d8033df325ed5ec94240bf48c1">[詳解]</a><br /></td></tr>
+<tr class="separator:a0b4086d8033df325ed5ec94240bf48c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d2ee1a7de84c74ed24c5c45453f5c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ab2d2ee1a7de84c74ed24c5c45453f5c6">icpm</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x)</td></tr>
+<tr class="memdesc:ab2d2ee1a7de84c74ed24c5c45453f5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">符号の正負 [y0,y1]=[-abs(real(x))-i*abs(imag(x))],abs(real(x))+i*abs(imag(x))].  <a href="#ab2d2ee1a7de84c74ed24c5c45453f5c6">[詳解]</a><br /></td></tr>
+<tr class="separator:ab2d2ee1a7de84c74ed24c5c45453f5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3de8e3663f3a0fc5dcdd71a44ed9ffd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#aa3de8e3663f3a0fc5dcdd71a44ed9ffd">icadd</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:aa3de8e3663f3a0fc5dcdd71a44ed9ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">足し算 [z0,z1]=[x0,x1]+[y0,y1]  <a href="#aa3de8e3663f3a0fc5dcdd71a44ed9ffd">[詳解]</a><br /></td></tr>
+<tr class="separator:aa3de8e3663f3a0fc5dcdd71a44ed9ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40de7f1e800de946a361f061dca45d2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a40de7f1e800de946a361f061dca45d2d">icadd_pm</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y)</td></tr>
+<tr class="memdesc:a40de7f1e800de946a361f061dca45d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">足し算 [z0,z1]=[x0,x1]+[-y,y]  <a href="#a40de7f1e800de946a361f061dca45d2d">[詳解]</a><br /></td></tr>
+<tr class="separator:a40de7f1e800de946a361f061dca45d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2170467225590404968c95d05e71f88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#af2170467225590404968c95d05e71f88">icmr</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *mid, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *rad, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:af2170467225590404968c95d05e71f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の中心と半径 [m-r,m+r]=[x0,x1]  <a href="#af2170467225590404968c95d05e71f88">[詳解]</a><br /></td></tr>
+<tr class="separator:af2170467225590404968c95d05e71f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f7a7ec6249fe4ef904fc3491137ef8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a47f7a7ec6249fe4ef904fc3491137ef8">icsub</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:a47f7a7ec6249fe4ef904fc3491137ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [z0,z1]=[x0,x1]-[y0,y1]  <a href="#a47f7a7ec6249fe4ef904fc3491137ef8">[詳解]</a><br /></td></tr>
+<tr class="separator:a47f7a7ec6249fe4ef904fc3491137ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4de7a94ccf196de5b7a0f945f17e7ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ad4de7a94ccf196de5b7a0f945f17e7ad">icsub_d2</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, double y)</td></tr>
+<tr class="memdesc:ad4de7a94ccf196de5b7a0f945f17e7ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [z0,z1]=[x0,x1]-[y,y]  <a href="#ad4de7a94ccf196de5b7a0f945f17e7ad">[詳解]</a><br /></td></tr>
+<tr class="separator:ad4de7a94ccf196de5b7a0f945f17e7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58b702ed9c53631b4bd6f96089ef175"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ac58b702ed9c53631b4bd6f96089ef175">icmul</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:ac58b702ed9c53631b4bd6f96089ef175"><td class="mdescLeft">&#160;</td><td class="mdescRight">掛け算 [z0,z1]=[x0,x1]*[y0,y1]  <a href="#ac58b702ed9c53631b4bd6f96089ef175">[詳解]</a><br /></td></tr>
+<tr class="separator:ac58b702ed9c53631b4bd6f96089ef175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa606d7338020ba351644b981d84b5abf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#aa606d7338020ba351644b981d84b5abf">icmul_d</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, double y)</td></tr>
+<tr class="memdesc:aa606d7338020ba351644b981d84b5abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">掛け算 [z0,z1]=[x0,x1]*[y,y]  <a href="#aa606d7338020ba351644b981d84b5abf">[詳解]</a><br /></td></tr>
+<tr class="separator:aa606d7338020ba351644b981d84b5abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b54e22b1423b4c898df3e401c07b47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ab5b54e22b1423b4c898df3e401c07b47">icdot</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:ab5b54e22b1423b4c898df3e401c07b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">共役な掛け算 [z0,z1]=conj([x0,x1])*[y0,y1]  <a href="#ab5b54e22b1423b4c898df3e401c07b47">[詳解]</a><br /></td></tr>
+<tr class="separator:ab5b54e22b1423b4c898df3e401c07b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ffd6334293f15c9c1a17e4f9435b726"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a8ffd6334293f15c9c1a17e4f9435b726">icdiv</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:a8ffd6334293f15c9c1a17e4f9435b726"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り算 [z0,z1]=[x0,x1]/[y0,y1]  <a href="#a8ffd6334293f15c9c1a17e4f9435b726">[詳解]</a><br /></td></tr>
+<tr class="separator:a8ffd6334293f15c9c1a17e4f9435b726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf54bdd7fc3574259be0649e51701636"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#abf54bdd7fc3574259be0649e51701636">icdiv_r2</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:abf54bdd7fc3574259be0649e51701636"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り算 [z0,z1]=[x0,x1]/[y0,y1]  <a href="#abf54bdd7fc3574259be0649e51701636">[詳解]</a><br /></td></tr>
+<tr class="separator:abf54bdd7fc3574259be0649e51701636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1622ede96986d8581a7e58523888464d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a1622ede96986d8581a7e58523888464d">icinv</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a1622ede96986d8581a7e58523888464d"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆数 [z0,z1]=[1,1]/[x0,x1]  <a href="#a1622ede96986d8581a7e58523888464d">[詳解]</a><br /></td></tr>
+<tr class="separator:a1622ede96986d8581a7e58523888464d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2263604cd5f84d159559de5d1c528ee0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a2263604cd5f84d159559de5d1c528ee0">icadd_mul</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:a2263604cd5f84d159559de5d1c528ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">積の加算 [z0,z1]+=[x0,x1]*[y0,y1]  <a href="#a2263604cd5f84d159559de5d1c528ee0">[詳解]</a><br /></td></tr>
+<tr class="separator:a2263604cd5f84d159559de5d1c528ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8a9b0f4be41db4ee899d51af2d97f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#aec8a9b0f4be41db4ee899d51af2d97f3">icsub_mul</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:aec8a9b0f4be41db4ee899d51af2d97f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">積の減算 [z0,z1]-=[x0,x1]*[y0,y1]  <a href="#aec8a9b0f4be41db4ee899d51af2d97f3">[詳解]</a><br /></td></tr>
+<tr class="separator:aec8a9b0f4be41db4ee899d51af2d97f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059771872f767de3303878cc14ad580b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a059771872f767de3303878cc14ad580b">icadd_dot</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:a059771872f767de3303878cc14ad580b"><td class="mdescLeft">&#160;</td><td class="mdescRight">共役な積の加算 [z0,z1]+=conj([x0,x1])*[y0,y1]  <a href="#a059771872f767de3303878cc14ad580b">[詳解]</a><br /></td></tr>
+<tr class="separator:a059771872f767de3303878cc14ad580b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0f7d9d53a6408ac5b9af5fab6abbe0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a9c0f7d9d53a6408ac5b9af5fab6abbe0">icsub_dot</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:a9c0f7d9d53a6408ac5b9af5fab6abbe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">共役な積の減算 [z0,z1]-=conj([x0,x1])*[y0,y1]  <a href="#a9c0f7d9d53a6408ac5b9af5fab6abbe0">[詳解]</a><br /></td></tr>
+<tr class="separator:a9c0f7d9d53a6408ac5b9af5fab6abbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88861d2a69b31e98ec25a8e94034a764"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a88861d2a69b31e98ec25a8e94034a764">icabs2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a88861d2a69b31e98ec25a8e94034a764"><td class="mdescLeft">&#160;</td><td class="mdescRight">絶対値の平方 [y0,y1]=abs([x0,x1])^2  <a href="#a88861d2a69b31e98ec25a8e94034a764">[詳解]</a><br /></td></tr>
+<tr class="separator:a88861d2a69b31e98ec25a8e94034a764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa2c233f66af032428b386d11f9ee3b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#aaaa2c233f66af032428b386d11f9ee3b">icadd_abs2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:aaaa2c233f66af032428b386d11f9ee3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">絶対値の平方の加算 [y0,y1]+=abs([x0,x1])^2  <a href="#aaaa2c233f66af032428b386d11f9ee3b">[詳解]</a><br /></td></tr>
+<tr class="separator:aaaa2c233f66af032428b386d11f9ee3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e50595b4c825038f58c5576e375116a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a6e50595b4c825038f58c5576e375116a">icabs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a6e50595b4c825038f58c5576e375116a"><td class="mdescLeft">&#160;</td><td class="mdescRight">絶対値 [y0,y1]=abs([x0,x1])  <a href="#a6e50595b4c825038f58c5576e375116a">[詳解]</a><br /></td></tr>
+<tr class="separator:a6e50595b4c825038f58c5576e375116a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b86780e570c9cacf026d3144d7a4b40"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a2b86780e570c9cacf026d3144d7a4b40">icabs_sub</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:a2b86780e570c9cacf026d3144d7a4b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])  <a href="#a2b86780e570c9cacf026d3144d7a4b40">[詳解]</a><br /></td></tr>
+<tr class="separator:a2b86780e570c9cacf026d3144d7a4b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa895d6232ff0d3ff79332f3dcfa72bf9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#aa895d6232ff0d3ff79332f3dcfa72bf9">icpow_si</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1, long n)</td></tr>
+<tr class="memdesc:aa895d6232ff0d3ff79332f3dcfa72bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">べき乗 [y0,y1]=[x0,x1]^n  <a href="#aa895d6232ff0d3ff79332f3dcfa72bf9">[詳解]</a><br /></td></tr>
+<tr class="separator:aa895d6232ff0d3ff79332f3dcfa72bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e88bba17abaa3dd5f721cae613964a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a56e88bba17abaa3dd5f721cae613964a">icget_polar</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1)</td></tr>
+<tr class="memdesc:a56e88bba17abaa3dd5f721cae613964a"><td class="mdescLeft">&#160;</td><td class="mdescRight">極形式の取得 [z0,z1]=[r0,r1]*exp(i*[theta0,theta1])  <a href="#a56e88bba17abaa3dd5f721cae613964a">[詳解]</a><br /></td></tr>
+<tr class="separator:a56e88bba17abaa3dd5f721cae613964a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a299e5d3182a6fc77fa4c496558cf4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ab9a299e5d3182a6fc77fa4c496558cf4">icset_polar</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *r1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta1)</td></tr>
+<tr class="memdesc:ab9a299e5d3182a6fc77fa4c496558cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">極形式で値を定め得る [z0,z1]=[r0,r1]*exp(i*[theta0,theta1])  <a href="#ab9a299e5d3182a6fc77fa4c496558cf4">[詳解]</a><br /></td></tr>
+<tr class="separator:ab9a299e5d3182a6fc77fa4c496558cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7416c6bb1e6083f8989efebe487babb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a7416c6bb1e6083f8989efebe487babb3">icsqrt</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a7416c6bb1e6083f8989efebe487babb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">平方根 [y0,y1]=sqrt([x0,x1])  <a href="#a7416c6bb1e6083f8989efebe487babb3">[詳解]</a><br /></td></tr>
+<tr class="separator:a7416c6bb1e6083f8989efebe487babb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf0129ea606a2d32ba6a353198c4d56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a8bf0129ea606a2d32ba6a353198c4d56">icexp</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a8bf0129ea606a2d32ba6a353198c4d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">指数関数 [y0,y1]=exp([x0,x1])  <a href="#a8bf0129ea606a2d32ba6a353198c4d56">[詳解]</a><br /></td></tr>
+<tr class="separator:a8bf0129ea606a2d32ba6a353198c4d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00fe2b40ddf3c8031403b18cf4ca4ec1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a00fe2b40ddf3c8031403b18cf4ca4ec1">iclog</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a00fe2b40ddf3c8031403b18cf4ca4ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">対数関数 [y0,y1]=log([x0,x1])  <a href="#a00fe2b40ddf3c8031403b18cf4ca4ec1">[詳解]</a><br /></td></tr>
+<tr class="separator:a00fe2b40ddf3c8031403b18cf4ca4ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84545b77e1e47a76c00a978aa23e17b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a84545b77e1e47a76c00a978aa23e17b4">icsin</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a84545b77e1e47a76c00a978aa23e17b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角関数 [y0,y1]=sin([x0,x1])  <a href="#a84545b77e1e47a76c00a978aa23e17b4">[詳解]</a><br /></td></tr>
+<tr class="separator:a84545b77e1e47a76c00a978aa23e17b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0eff90d7ce973f0fd417c8abcc6988f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ac0eff90d7ce973f0fd417c8abcc6988f">iccos</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:ac0eff90d7ce973f0fd417c8abcc6988f"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角関数 [y0,y1]=cos([x0,x1])  <a href="#ac0eff90d7ce973f0fd417c8abcc6988f">[詳解]</a><br /></td></tr>
+<tr class="separator:ac0eff90d7ce973f0fd417c8abcc6988f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b2d7ceda700d369245de6bfa2833cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a41b2d7ceda700d369245de6bfa2833cf">ictan</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a41b2d7ceda700d369245de6bfa2833cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角関数 [y0,y1]=tan([x0,x1])  <a href="#a41b2d7ceda700d369245de6bfa2833cf">[詳解]</a><br /></td></tr>
+<tr class="separator:a41b2d7ceda700d369245de6bfa2833cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6070b17bda381a39a99952dda8d10895"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a6070b17bda381a39a99952dda8d10895">icasin</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a6070b17bda381a39a99952dda8d10895"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆三角関数 [y0,y1]=asin([x0,x1])  <a href="#a6070b17bda381a39a99952dda8d10895">[詳解]</a><br /></td></tr>
+<tr class="separator:a6070b17bda381a39a99952dda8d10895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b4a04cc788284c12d19c546bbe874e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a59b4a04cc788284c12d19c546bbe874e">icacos</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a59b4a04cc788284c12d19c546bbe874e"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆三角関数 [y0,y1]=acos([x0,x1])  <a href="#a59b4a04cc788284c12d19c546bbe874e">[詳解]</a><br /></td></tr>
+<tr class="separator:a59b4a04cc788284c12d19c546bbe874e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54681071f0376707cf72f1758f6277f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ae54681071f0376707cf72f1758f6277f">icatan</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:ae54681071f0376707cf72f1758f6277f"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆三角関数 [y0,y1]=atan([x0,x1])  <a href="#ae54681071f0376707cf72f1758f6277f">[詳解]</a><br /></td></tr>
+<tr class="separator:ae54681071f0376707cf72f1758f6277f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd92a13f5ab0f161679bab74f9e6c553"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#abd92a13f5ab0f161679bab74f9e6c553">icsinh</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:abd92a13f5ab0f161679bab74f9e6c553"><td class="mdescLeft">&#160;</td><td class="mdescRight">双曲線関数 [y0,y1]=sinh([x0,x1])  <a href="#abd92a13f5ab0f161679bab74f9e6c553">[詳解]</a><br /></td></tr>
+<tr class="separator:abd92a13f5ab0f161679bab74f9e6c553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a163deae5e20c9e9389f9b637547bb947"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a163deae5e20c9e9389f9b637547bb947">iccosh</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a163deae5e20c9e9389f9b637547bb947"><td class="mdescLeft">&#160;</td><td class="mdescRight">双曲線関数 [y0,y1]=cosh([x0,x1])  <a href="#a163deae5e20c9e9389f9b637547bb947">[詳解]</a><br /></td></tr>
+<tr class="separator:a163deae5e20c9e9389f9b637547bb947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d9d5431774d33dd500604b0a1f3bdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a37d9d5431774d33dd500604b0a1f3bdc">ictanh</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a37d9d5431774d33dd500604b0a1f3bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">双曲線関数 [y0,y1]=tanh([x0,x1])  <a href="#a37d9d5431774d33dd500604b0a1f3bdc">[詳解]</a><br /></td></tr>
+<tr class="separator:a37d9d5431774d33dd500604b0a1f3bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5271c1962d38e68de284c8f94181bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a2a5271c1962d38e68de284c8f94181bd">icasinh</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="separator:a2a5271c1962d38e68de284c8f94181bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82cd640675d7af16a0c90611396c6eca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a82cd640675d7af16a0c90611396c6eca">icacosh</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a82cd640675d7af16a0c90611396c6eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆双曲線関数 [y0,y1]=acosh([x0,x1])  <a href="#a82cd640675d7af16a0c90611396c6eca">[詳解]</a><br /></td></tr>
+<tr class="separator:a82cd640675d7af16a0c90611396c6eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06aeed9cb42c6a1f27c1a92866bf1f6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a06aeed9cb42c6a1f27c1a92866bf1f6f">icatanh</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a06aeed9cb42c6a1f27c1a92866bf1f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆双曲線関数 [y0,y1]=atanh([x0,x1])  <a href="#a06aeed9cb42c6a1f27c1a92866bf1f6f">[詳解]</a><br /></td></tr>
+<tr class="separator:a06aeed9cb42c6a1f27c1a92866bf1f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc8b699d37c84b6fb9199c91532b9f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#abfc8b699d37c84b6fb9199c91532b9f6">icin</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:abfc8b699d37c84b6fb9199c91532b9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1).  <a href="#abfc8b699d37c84b6fb9199c91532b9f6">[詳解]</a><br /></td></tr>
+<tr class="separator:abfc8b699d37c84b6fb9199c91532b9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb70bc38bf3501165783fb21cfa9b187"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#acb70bc38bf3501165783fb21cfa9b187">icin_pm</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x)</td></tr>
+<tr class="memdesc:acb70bc38bf3501165783fb21cfa9b187"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)).  <a href="#acb70bc38bf3501165783fb21cfa9b187">[詳解]</a><br /></td></tr>
+<tr class="separator:acb70bc38bf3501165783fb21cfa9b187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>多倍長精度実数型cmultiの機械区間演算に関する関数の宣言. </p>
+
+<p> <a class="el" href="is__icmulti_8h_source.html">is_icmulti.h</a> に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a6e50595b4c825038f58c5576e375116a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icabs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>絶対値 [y0,y1]=abs([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00372">372</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a88861d2a69b31e98ec25a8e94034a764"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icabs2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>絶対値の平方 [y0,y1]=abs([x0,x1])^2 </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00339">339</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b86780e570c9cacf026d3144d7a4b40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icabs_sub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00478">478</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a59b4a04cc788284c12d19c546bbe874e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icacos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆三角関数 [y0,y1]=acos([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00659">659</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a82cd640675d7af16a0c90611396c6eca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icacosh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆双曲線関数 [y0,y1]=acosh([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00768">768</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3de8e3663f3a0fc5dcdd71a44ed9ffd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icadd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00130">130</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aaaa2c233f66af032428b386d11f9ee3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icadd_abs2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>絶対値の平方の加算 [y0,y1]+=abs([x0,x1])^2 </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00350">350</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a059771872f767de3303878cc14ad580b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icadd_dot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>共役な積の加算 [z0,z1]+=conj([x0,x1])*[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00309">309</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2263604cd5f84d159559de5d1c528ee0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icadd_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>積の加算 [z0,z1]+=[x0,x1]*[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00279">279</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a40de7f1e800de946a361f061dca45d2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icadd_pm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>足し算 [z0,z1]=[x0,x1]+[-y,y] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00141">141</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6070b17bda381a39a99952dda8d10895"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icasin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆三角関数 [y0,y1]=asin([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00635">635</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a5271c1962d38e68de284c8f94181bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icasinh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>逆双曲線関数 [y0,y1]=asinh([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00748">748</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae54681071f0376707cf72f1758f6277f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icatan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆三角関数 [y0,y1]=atan([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00681">681</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a06aeed9cb42c6a1f27c1a92866bf1f6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icatanh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆双曲線関数 [y0,y1]=atanh([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00788">788</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6efffc2b85fac1771f715c9a91167390"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icconj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>複素共役 [y0,y1]=conj([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1acf1eee1b4d7a5549f972b8c53519e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iccopy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コピー [y0,y1]=[x0,x1]. </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00078">78</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0eff90d7ce973f0fd417c8abcc6988f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iccos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>三角関数 [y0,y1]=cos([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00606">606</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a163deae5e20c9e9389f9b637547bb947"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iccosh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>双曲線関数 [y0,y1]=cosh([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00717">717</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ffd6334293f15c9c1a17e4f9435b726"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icdiv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り算 [z0,z1]=[x0,x1]/[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00232">232</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abf54bdd7fc3574259be0649e51701636"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icdiv_r2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り算 [z0,z1]=[x0,x1]/[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00250">250</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5b54e22b1423b4c898df3e401c07b47"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icdot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>共役な掛け算 [z0,z1]=conj([x0,x1])*[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00214">214</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8bf0129ea606a2d32ba6a353198c4d56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icexp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指数関数 [y0,y1]=exp([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00559">559</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a56e88bba17abaa3dd5f721cae613964a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icget_polar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>極形式の取得 [z0,z1]=[r0,r1]*exp(i*[theta0,theta1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00516">516</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abfc8b699d37c84b6fb9199c91532b9f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1). </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00816">816</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acb70bc38bf3501165783fb21cfa9b187"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icin_pm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)). </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00824">824</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1622ede96986d8581a7e58523888464d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icinv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆数 [z0,z1]=[1,1]/[x0,x1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00261">261</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a00fe2b40ddf3c8031403b18cf4ca4ec1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iclog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>対数関数 [y0,y1]=log([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00575">575</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af2170467225590404968c95d05e71f88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の中心と半径 [m-r,m+r]=[x0,x1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00152">152</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac58b702ed9c53631b4bd6f96089ef175"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>掛け算 [z0,z1]=[x0,x1]*[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00185">185</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa606d7338020ba351644b981d84b5abf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmul_d </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>掛け算 [z0,z1]=[x0,x1]*[y,y] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00203">203</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0b4086d8033df325ed5ec94240bf48c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icneg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>符号の反転 [y0,y1]=-[x0,x1]. </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00107">107</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2d2ee1a7de84c74ed24c5c45453f5c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icpm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>符号の正負 [y0,y1]=[-abs(real(x))-i*abs(imag(x))],abs(real(x))+i*abs(imag(x))]. </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00118">118</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa895d6232ff0d3ff79332f3dcfa72bf9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icpow_si </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>べき乗 [y0,y1]=[x0,x1]^n </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00492">492</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2fc3c698f01f27835dd9a891e35ee67"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icset_bigint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bigint型から[z0,z1]へ型変換. </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00066">66</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a24aa9787077f5f87202ce0004086e3ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icset_d </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>倍精度実数の設定 [y0,y1]=[x,x]. </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab720fcdeab199e329183ee8ab0244dde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icset_dd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi]. </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9a299e5d3182a6fc77fa4c496558cf4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icset_polar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>r1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>極形式で値を定め得る [z0,z1]=[r0,r1]*exp(i*[theta0,theta1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00527">527</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f30b3de679df19a31f96b98d3d5f568"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icset_z </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi]. </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a84545b77e1e47a76c00a978aa23e17b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icsin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>三角関数 [y0,y1]=sin([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00591">591</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abd92a13f5ab0f161679bab74f9e6c553"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icsinh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>双曲線関数 [y0,y1]=sinh([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00702">702</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7416c6bb1e6083f8989efebe487babb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icsqrt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>平方根 [y0,y1]=sqrt([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00542">542</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a47f7a7ec6249fe4ef904fc3491137ef8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icsub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00163">163</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4de7a94ccf196de5b7a0f945f17e7ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icsub_d2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [z0,z1]=[x0,x1]-[y,y] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00174">174</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c0f7d9d53a6408ac5b9af5fab6abbe0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icsub_dot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>共役な積の減算 [z0,z1]-=conj([x0,x1])*[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00324">324</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aec8a9b0f4be41db4ee899d51af2d97f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icsub_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>積の減算 [z0,z1]-=[x0,x1]*[y0,y1] </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00294">294</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a41b2d7ceda700d369245de6bfa2833cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ictan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>三角関数 [y0,y1]=tan([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00621">621</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a37d9d5431774d33dd500604b0a1f3bdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ictanh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>双曲線関数 [y0,y1]=tanh([x0,x1]) </p>
+
+<p> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00732">732</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__icmulti_8h.html">is_icmulti.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

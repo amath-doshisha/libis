@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/rhpeig.c ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('rhpeig_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">rhpeig.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rhpeig_8c.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;math.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__macros_8h.html">is_macros.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__print_8h.html">is_print.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rmulti_8h.html">is_rmulti.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__ivec_8h.html">is_ivec.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rvec_8h.html">is_rvec.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rmat_8h.html">is_rmat.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rsolve_8h.html">is_rsolve.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__reig_8h.html">is_reig.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rhshldr_8h.html">is_rhshldr.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rhpeig_8h.html">is_rhpeig.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="mt19937ar_8h.html">mt19937ar.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// enum { RHPEIG_NONE=0, RHPEIG_CONVERGENT, RHPEIG_DIVERGENT, RHPEIG_SINGULAR, RHPEIG_NUM };</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="rhpeig_8c.html#a41ccd39ed9f0eec595eefa3e06a187d2">   17</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="rhpeig_8c.html#a41ccd39ed9f0eec595eefa3e06a187d2">rhpeig_str</a>[]={ <span class="stringliteral">&quot;    &quot;</span>, <span class="stringliteral">&quot;conv&quot;</span>, <span class="stringliteral">&quot;divr&quot;</span>, <span class="stringliteral">&quot;sing&quot;</span>, NULL };</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335">rhpeig_jacobi_mat</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **JM, <span class="keywordtype">int</span> LDJM, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **w, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *C)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a=NULL;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  a=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(<a class="code" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa">rmat_get_prec_max</a>(n,n,JM,LDJM));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="is__rmat_8h.html#a1fd2119ecbd86f9dc83a026f0b768987">rmat_diag_sub_r</a>(n,n,JM,LDJM,A,LDA,lambda); <span class="comment">// JM=A-lambda*I</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="is__rmulti_8h.html#aef00b94691674e9a38196973210a7838">rinv</a>(a,C); <a class="code" href="is__rmulti_8h.html#a55e72cf4313bd2c74f6460fb4a69f6f3">rneg</a>(a,a);                      <span class="comment">// a=-1/C</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="is__rmat_8h.html#a1cac318cca7da7653fb1e0a8f7a2ab3b">rmat_rank1op</a>(n,n,JM,LDJM,JM,LDJM,a,x,w);   <span class="comment">// JM=A-lambda*I-(1/C)*x*w&#39;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  a=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(a);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2">   42</a></span>&#160;<span class="keyword">enum</span> { <a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2">RHPEIG_STATUS_PRE</a>=0, <a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8">RHPEIG_STATUS_CONV</a>, <a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73">RHPEIG_STATUS_END</a> };</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="rhpeig_8c.html#a1b5920cdb1251e6be3878f640df5a1f9">   43</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="rhpeig_8c.html#a1b5920cdb1251e6be3878f640df5a1f9">rhpeig_status</a>[]={<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;o&quot;</span>, <span class="stringliteral">&quot;.&quot;</span> };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// hyperplane constrained method for a pair</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="rhpeig_8c.html#a675141a9a9b7787d54b8f461faa52134">   46</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="rhpeig_8c.html#a675141a9a9b7787d54b8f461faa52134">rhpeig_1pair</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *E, <span class="keywordtype">int</span> *Step, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z, <span class="keywordtype">int</span> debug)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define PUT_1PAIR { mpfr_printf(&quot;[%s] status=%s done=%s step=%03d lambda=%+.16Re  E=%.0Re eta=%.0Re mu=%.0Re\n&quot;,fname,rhpeig_status[status],rhpeig_str[done],step,lambda,E,eta,mu); }</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">char</span> fname[]=<span class="stringliteral">&quot;rhpeig_1pair&quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">int</span> p0,p1,prec,status=<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2">RHPEIG_STATUS_PRE</a>,step=0,step_max=0,info=-1,done=0,LDJM;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **w=NULL,**F=NULL,**JM=NULL,*C=NULL;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eps=NULL,*eps_half=NULL,*eta=NULL,*eta0=NULL,*mu=NULL;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// precision</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  p0=<a class="code" href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(n,x);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  p1=<a class="code" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a>(lambda);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  prec=<a class="code" href="is__macros_8h.html#afc6c2cf0e71b5dc708f1e24e6540c8a1">MAX2</a>(p0,p1);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// allocation</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  w=<a class="code" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(n,prec);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  F=<a class="code" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(n,prec);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  LDJM=n; JM=<a class="code" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43">rmat_allocate_prec</a>(LDJM,n,prec);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  C=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(prec);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  eta=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(prec);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  eta0=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(prec);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  mu=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(prec);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  eps=<a class="code" href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848">rmepsilon</a>(prec);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  eps_half=<a class="code" href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848">rmepsilon</a>(prec/2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// constants</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c">rset_nan</a>(eta); <a class="code" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c">rset_nan</a>(eta0); <a class="code" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c">rset_nan</a>(mu);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  step_max=<a class="code" href="is__rhpeig_8h.html#a0bd433038e4414d99a062f73fcc6b994">RHPEIG_STEP_MAX</a>;  </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="is__rvec_8h.html#a1df43032733ac7f14019840bfab7d85f">rvec_lintr_t</a>(n,n,w,A,LDA,z); <span class="comment">// w=A&#39;*z</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span>(debug&gt;=1){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    mpfr_printf(<span class="stringliteral">&quot;[%s] prec=%d\n&quot;</span>,fname,prec);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    mpfr_printf(<span class="stringliteral">&quot;[%s] eps=%.1Re=2^%d\n&quot;</span>,fname,eps,(<span class="keywordtype">int</span>)(log(fabs(<a class="code" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4">rget_d</a>(eps)))/log(2)));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    mpfr_printf(<span class="stringliteral">&quot;[%s] eps_half=%.1Re=2^%d\n&quot;</span>,fname,eps_half,(<span class="keywordtype">int</span>)(log(fabs(<a class="code" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4">rget_d</a>(eps_half)))/log(2)));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    mpfr_printf(<span class="stringliteral">&quot;[%s] step_max=%d\n&quot;</span>,fname,step_max);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// initial vector</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  step=0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="is__rvec_8h.html#ad04d873119e12fdf6d17cfb67283319e">rvec_normalize_sgn</a>(n,x,x);          <span class="comment">// x=x/sqrt(x&#39;*x)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="is__rvec_8h.html#a087e13e0c58739e2d27f043dae71c6f0">rvec_sum_mul</a>(C,n,z,x);              <span class="comment">// C=z&#39;*x</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="is__rvec_8h.html#a087e13e0c58739e2d27f043dae71c6f0">rvec_sum_mul</a>(lambda,n,w,x);         <span class="comment">// lambda=w&#39;*x</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="is__rmulti_8h.html#ad51b75ff5d51dcf8fce6b5d657eb04a9">rdiv</a>(lambda,lambda,C);              <span class="comment">// lambda=(w&#39;*x)/C</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="is__reig_8h.html#ac371e6294165815131a15050a177371d">reig_residual</a>(n,F,A,LDA,x,lambda);  <span class="comment">// F=A*x-lambda*x</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="is__rvec_8h.html#a46f27e83153fb690369e25ba058e11f8">rvec_max_abs</a>(E,n,F);                <span class="comment">// E=max(abs(F))</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c">ris_zero</a>(E)) { done=<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035da501cefd9aa401463ea80f4f563ae57aa">RHPEIG_CONVERGENT</a>; } <span class="keywordflow">else</span> { done=<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035dafc1d73304fe8be285a92569729f1188b">RHPEIG_NONE</a>; } <span class="comment">// convergent or not?</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">if</span>(debug&gt;0) { <a class="code" href="rhpeig_8c.html#a8b32cccaf8a24c49253a3612c61561c5">PUT_1PAIR</a>; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// compute</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  step=1;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">while</span>(done==<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035dafc1d73304fe8be285a92569729f1188b">RHPEIG_NONE</a>){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335">rhpeig_jacobi_mat</a>(n,JM,LDJM,A,LDA,x,w,lambda,C); <span class="comment">// JM=A-lambda*I-x*w&#39;/C</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="is__rsolve_8h.html#a2e166c07524feb41b136822c093a1916">rsolve_lu</a>(n,1,F,n,JM,LDJM,&amp;info);                <span class="comment">// F=JM\F;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span>(info&lt;0)      { <a class="code" href="is__macros_8h.html#aee8ff16e15460bff94c093dbb90adcd5">ERROR_EXIT</a>(<span class="stringliteral">&quot;Error in rhpeig_1pair(), rsolve, info=%d.\n&quot;</span>,info); }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(info&gt;0) { done=<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035da9e6b03425feace30a092f2042659337a">RHPEIG_SINGULAR</a>; }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="is__rvec_8h.html#a46f27e83153fb690369e25ba058e11f8">rvec_max_abs</a>(eta,n,F);              <span class="comment">// eta=max(abs(F))</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <a class="code" href="is__rvec_8h.html#a81338536ae55b95ea5f37dd9b3506c66">rvec_sub</a>(n,x,x,F);                  <span class="comment">// x=x-F</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <a class="code" href="is__rvec_8h.html#ad04d873119e12fdf6d17cfb67283319e">rvec_normalize_sgn</a>(n,x,x);          <span class="comment">// x=x/sqrt(x&#39;*x)</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <a class="code" href="is__rvec_8h.html#a087e13e0c58739e2d27f043dae71c6f0">rvec_sum_mul</a>(C,n,z,x);              <span class="comment">// C=z&#39;*x</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <a class="code" href="is__rvec_8h.html#a087e13e0c58739e2d27f043dae71c6f0">rvec_sum_mul</a>(lambda,n,w,x);         <span class="comment">// lambda=w&#39;*x</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="is__rmulti_8h.html#ad51b75ff5d51dcf8fce6b5d657eb04a9">rdiv</a>(lambda,lambda,C);              <span class="comment">// lambda=(w&#39;*x)/C</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <a class="code" href="is__reig_8h.html#ac371e6294165815131a15050a177371d">reig_residual</a>(n,F,A,LDA,x,lambda);  <span class="comment">// F=A*x-lambda*x</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <a class="code" href="is__rvec_8h.html#a46f27e83153fb690369e25ba058e11f8">rvec_max_abs</a>(E,n,F);                <span class="comment">// E=max(abs(F))</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="is__rmulti_8h.html#ad51b75ff5d51dcf8fce6b5d657eb04a9">rdiv</a>(mu,eta,eta0); <a class="code" href="is__rmulti_8h.html#ab7b3dd120365465547a1d8df4a0815a2">rmul_d</a>(mu,mu,2);   <span class="comment">// mu=2*eta/eta0</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span>     (status==<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2">RHPEIG_STATUS_PRE</a> &amp;&amp; <a class="code" href="is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d">rlt</a>(eta,eps_half)){ status=<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8">RHPEIG_STATUS_CONV</a>; } <span class="comment">// start to convergent</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(status==<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8">RHPEIG_STATUS_CONV</a> &amp;&amp; <a class="code" href="is__rmulti_8h.html#afe3a3c416a4e8ada0e8cb689ba5834ec">rgt_d2</a>(mu,1.0))  { status=<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73">RHPEIG_STATUS_END</a>; }  <span class="comment">// end to convergent</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(status==<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8">RHPEIG_STATUS_CONV</a> &amp;&amp; <a class="code" href="is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555">rget_exp</a>(E)-<a class="code" href="is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555">rget_exp</a>(lambda)&lt;prec){ status=<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73">RHPEIG_STATUS_END</a>; }  <span class="comment">// end to convergent</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span>     (status==<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73">RHPEIG_STATUS_END</a>)                     { done=<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035da501cefd9aa401463ea80f4f563ae57aa">RHPEIG_CONVERGENT</a>; }    <span class="comment">// convergent or not?</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(status==<a class="code" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2">RHPEIG_STATUS_PRE</a> &amp;&amp; step&gt;=step_max)   { done=<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035dadbe82ff3a230f6b36861657ca42a4037">RHPEIG_DIVERGENT</a>; }     <span class="comment">// divergent or not?</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span>(debug&gt;0) { <a class="code" href="rhpeig_8c.html#a8b32cccaf8a24c49253a3612c61561c5">PUT_1PAIR</a>; }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span>(done==<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035dafc1d73304fe8be285a92569729f1188b">RHPEIG_NONE</a>) { step++; <a class="code" href="is__rmulti_8h.html#a571fd528c36a0d3196ac35eafbdd59b1">rcopy</a>(eta0,eta); }  <span class="comment">// next step</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// free</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  w=<a class="code" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(n,w);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  F=<a class="code" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(n,F);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  JM=<a class="code" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833">rmat_free</a>(LDJM,n,JM);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  C=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(C);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  eta=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(eta);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  eta0=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(eta0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  mu=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(mu);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  eps=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(eps);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  eps_half=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(eps_half);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// done</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  (*Step)=step;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">return</span> done;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="rhpeig_8c.html#a4d044b40d614c2fa8c5bde9e51edc07b">  139</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="rhpeig_8c.html#a4d044b40d614c2fa8c5bde9e51edc07b">rhpeig</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> debug)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#define Qk COL(Q,k,LDQ)</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#define Xk COL(X,k,LDX)</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#define Hk COL(H,k,LDH)</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordtype">char</span> msg,fname[]=<span class="stringliteral">&quot;rhpeig&quot;</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">int</span> p0=0,p1=0,prec=53,ret=0,conv,t,k,step,LDQ,LDH,fail,info=0,done,fail_max,itr=0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z=NULL,**Q=NULL,**H=NULL;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **alpha=NULL,*E=NULL;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="comment">// precision</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  p0=<a class="code" href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(n,Lambda);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  p1=<a class="code" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa">rmat_get_prec_max</a>(n,n,X,LDX);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  prec=<a class="code" href="is__macros_8h.html#afc6c2cf0e71b5dc708f1e24e6540c8a1">MAX2</a>(p0,p1);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="comment">// allocation</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  LDQ=n; Q=<a class="code" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43">rmat_allocate_prec</a>(LDQ,n,prec);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  LDH=n; H=<a class="code" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43">rmat_allocate_prec</a>(LDH,n,prec);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  alpha=<a class="code" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(n,prec);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  z=<a class="code" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(n,prec);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  E=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(prec);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="comment">// constants</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  fail_max=n;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">if</span>(debug&gt;1){</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    printf(<span class="stringliteral">&quot;[%s] matrix size is %d.\n&quot;</span>,fname,n);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    printf(<span class="stringliteral">&quot;[%s] max of fails is %d.\n&quot;</span>,fname,fail_max);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="comment">// init </span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="is__rmat_8h.html#af049b555b1a1f612cb88143759b1af9f">rmat_has_nan</a>(n,n,X,LDX)){ <a class="code" href="is__rmat_8h.html#a51f8560a72714434d6f9decc4d39f031">rmat_set_nan</a>(n,n,X,LDX); }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <a class="code" href="is__rmat_8h.html#a2805570b6c0018330112b85f9fdc1506">rmat_set_zeros</a>(n,n,H,LDH);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="is__rvec_8h.html#aae9b04ad1ca116584d4d7659cf877e68">rvec_set_zeros</a>(n,Lambda);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="is__rvec_8h.html#aae9b04ad1ca116584d4d7659cf877e68">rvec_set_zeros</a>(n,alpha);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="is__rmat_8h.html#a454903ad1f187b2d7fe90bcdd7a3ba3d">rmat_set_eye</a>(n,n,Q,LDQ);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="comment">// initialize MT</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="mt19937ar_8c.html#a57af1d02a3fb56a949fb4c258f0bc066">init_genrand</a>(0);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="comment">// loop</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  t=0; done=0;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">for</span>(k=0; !done &amp;&amp; k&lt;n; k++){</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="is__rvec_8h.html#a17900d62712e3f1b3d35b5aca4bbfcea">rvec_copy</a>(n,z,&amp;<a class="code" href="rhpeig_8c.html#a324b9707cbef4182c0e960d146378c76">Qk</a>);                                                    <span class="comment">// set normal vector z as Q(:,k).</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="is__rvec_8h.html#a7488da1331199e45ebb6a5d3ea89d155">rvec_has_nan</a>(n,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>)){</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">if</span>(k==0){ <a class="code" href="is__rvec_8h.html#a04cb680d9e5e283dd2b73626cd95fd48">rvec_set_rand</a>(n,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>,2,-1); <a class="code" href="is__rvec_8h.html#ad04d873119e12fdf6d17cfb67283319e">rvec_normalize_sgn</a>(n,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>); } <span class="comment">// set initial vector X(:,k) as unit random vecot if k=0.</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="keywordflow">else</span>    { <a class="code" href="is__rvec_8h.html#a17900d62712e3f1b3d35b5aca4bbfcea">rvec_copy</a>(n,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>,z); }                                       <span class="comment">// set initial vector X(:,k) as z if k!=0.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    fail=0; conv=0; <a class="code" href="is__rmulti_8h.html#acd42ba7d8a404be2d5526e7f32078fee">rset_one</a>(E);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">for</span>(fail=0; !conv &amp;&amp; fail&lt;fail_max; fail++){</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      info=<a class="code" href="rhpeig_8c.html#a675141a9a9b7787d54b8f461faa52134">rhpeig_1pair</a>(n,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>,Lambda[k],E,&amp;step,A,LDA,z,debug-1); <span class="comment">// compute one of eigenpairs</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      t++;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      itr+=step;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <span class="keywordflow">if</span>(info==<a class="code" href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035da501cefd9aa401463ea80f4f563ae57aa">RHPEIG_CONVERGENT</a>) { conv=1; msg=<span class="charliteral">&#39;o&#39;</span>; } <span class="comment">// convergent</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="keywordflow">else</span>                        { conv=0; msg=<span class="charliteral">&#39;x&#39;</span>; } <span class="comment">// divergent</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">if</span>(debug&gt;0){</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span>(msg==<span class="charliteral">&#39;x&#39;</span> &amp;&amp; fail==fail_max-1) <a class="code" href="is__print_8h.html#a6ad5c068b7ddf65b2401849ee5964a26">print_light_red</a>(); <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg==<span class="charliteral">&#39;x&#39;</span>) <a class="code" href="is__print_8h.html#a56e707b248168b71cd3ca77f0a24422e">print_red</a>(); <span class="keywordflow">else</span> <a class="code" href="is__print_8h.html#a983ca8a8ba6530d8de25633e0944ef35">print_green</a>();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    mpfr_printf(<span class="stringliteral">&quot;[%s] trial=%03d %03d/%03d [%c] &quot;</span>,fname,t,k+1,n,msg);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span>(msg==<span class="charliteral">&#39;x&#39;</span>) mpfr_printf(<span class="stringliteral">&quot;fail=%03d &quot;</span>,fail+1); <span class="keywordflow">else</span> printf(<span class="stringliteral">&quot;         &quot;</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    mpfr_printf(<span class="stringliteral">&quot;step=%03d log2(E)=%+6.1f lambda=%+.16Re\n&quot;</span>,step,log(fabs(<a class="code" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4">rget_d</a>(E)))/log(2),Lambda[k]);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca">print_reset</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">if</span>(!conv) { <a class="code" href="is__rvec_8h.html#a04cb680d9e5e283dd2b73626cd95fd48">rvec_set_rand</a>(n,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>,2,-1); <a class="code" href="is__rvec_8h.html#ad04d873119e12fdf6d17cfb67283319e">rvec_normalize_sgn</a>(n,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>); } <span class="comment">// reset initial vector X(:,k) as unit random vecot</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span>(!conv){ done=1; }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">if</span>(!done){</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <a class="code" href="is__rhshldr_8h.html#a68e52e34fe939b97d2194156944a9c1d">rhouseholder</a>(n,0,k,k,&amp;<a class="code" href="rhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f">Hk</a>,alpha[k],H,LDH,alpha,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>); <span class="comment">// create R and create Householder vector and normalize constant</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <a class="code" href="is__rhshldr_8h.html#a8a710d3233426ce86ca7afb241f0967c">rhouseholder_right</a>(n,n,Q,LDH,Q,LDH,k,&amp;<a class="code" href="rhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f">Hk</a>,alpha[k]); <span class="comment">// Q=Q*H; H=I-alpha*h*h&#39;</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keywordflow">if</span>(done){</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    k--;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="is__rmat_8h.html#a2805570b6c0018330112b85f9fdc1506">rmat_set_zeros</a>(n,n-k,&amp;<a class="code" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>,LDX);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="is__rvec_8h.html#aae9b04ad1ca116584d4d7659cf877e68">rvec_set_zeros</a>(n-k,&amp;Lambda[k]);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  ret=k;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordflow">if</span>(debug&gt;1){</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">if</span>(done) printf(<span class="stringliteral">&quot;[%s] failed.\n&quot;</span>,fname); <span class="keywordflow">else</span> printf(<span class="stringliteral">&quot;[%s] succeeded.\n&quot;</span>,fname);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    printf(<span class="stringliteral">&quot;[%s] computed vetros is %d.\n&quot;</span>,fname,k);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    printf(<span class="stringliteral">&quot;[%s] total trials is %d.\n&quot;</span>,fname,t);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    printf(<span class="stringliteral">&quot;[%s] sum of iterations is %d.\n&quot;</span>,fname,itr);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    printf(<span class="stringliteral">&quot;[%s] average of iterations is %.2f.\n&quot;</span>,fname,(<span class="keywordtype">double</span>)itr/n);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="comment">// free</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  Q=<a class="code" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833">rmat_free</a>(LDQ,n,Q);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  H=<a class="code" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833">rmat_free</a>(LDH,n,H);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  z=<a class="code" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(n,z);   </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  alpha=<a class="code" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(n,alpha);  </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  E=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(E);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="comment">// done </span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">//EOF</span></div>
+<div class="ttc" id="is__rmat_8h_html"><div class="ttname"><a href="is__rmat_8h.html">is_rmat.h</a></div><div class="ttdoc">多倍長精度実数型rmultiの行列に関する関数の宣言 </div></div>
+<div class="ttc" id="is__rmulti_8h_html"><div class="ttname"><a href="is__rmulti_8h.html">is_rmulti.h</a></div><div class="ttdoc">多倍長精度実数型rmultiの宣言と関数． </div></div>
+<div class="ttc" id="is__rmulti_8h_html_a571fd528c36a0d3196ac35eafbdd59b1"><div class="ttname"><a href="is__rmulti_8h.html#a571fd528c36a0d3196ac35eafbdd59b1">rcopy</a></div><div class="ttdeci">int rcopy(rmulti *y, rmulti *x)</div><div class="ttdoc">rmulti型の値のコピー y=x. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00743">rmulti.c:743</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_af049b555b1a1f612cb88143759b1af9f"><div class="ttname"><a href="is__rmat_8h.html#af049b555b1a1f612cb88143759b1af9f">rmat_has_nan</a></div><div class="ttdeci">int rmat_has_nan(int m, int n, rmulti **A, int LDA)</div><div class="ttdoc">rmulti型の行列がNaNを含むかの判定. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00250">rmat.c:250</a></div></div>
+<div class="ttc" id="mt19937ar_8c_html_a57af1d02a3fb56a949fb4c258f0bc066"><div class="ttname"><a href="mt19937ar_8c.html#a57af1d02a3fb56a949fb4c258f0bc066">init_genrand</a></div><div class="ttdeci">void init_genrand(unsigned long s)</div><div class="ttdef"><b>Definition:</b> <a href="mt19937ar_8c_source.html#l00060">mt19937ar.c:60</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aef00b94691674e9a38196973210a7838"><div class="ttname"><a href="is__rmulti_8h.html#aef00b94691674e9a38196973210a7838">rinv</a></div><div class="ttdeci">int rinv(rmulti *z, rmulti *x)</div><div class="ttdoc">rmulti型の逆数 z=1/x </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l01100">rmulti.c:1100</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_acd42ba7d8a404be2d5526e7f32078fee"><div class="ttname"><a href="is__rmulti_8h.html#acd42ba7d8a404be2d5526e7f32078fee">rset_one</a></div><div class="ttdeci">int rset_one(rmulti *x)</div><div class="ttdoc">rmulti型の値を1に設定. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00655">rmulti.c:655</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a675141a9a9b7787d54b8f461faa52134"><div class="ttname"><a href="rhpeig_8c.html#a675141a9a9b7787d54b8f461faa52134">rhpeig_1pair</a></div><div class="ttdeci">int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti **A, int LDA, rmulti **z, int debug)</div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00046">rhpeig.c:46</a></div></div>
+<div class="ttc" id="is__rhpeig_8h_html_abc5c98fcc1211af2b80116dd6e0a035dadbe82ff3a230f6b36861657ca42a4037"><div class="ttname"><a href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035dadbe82ff3a230f6b36861657ca42a4037">RHPEIG_DIVERGENT</a></div><div class="ttdef"><b>Definition:</b> <a href="is__rhpeig_8h_source.html#l00010">is_rhpeig.h:10</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aefb743b49249bd66d2b077490881666c"><div class="ttname"><a href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c">ris_zero</a></div><div class="ttdeci">int ris_zero(rmulti *x)</div><div class="ttdoc">rmulti型が零であるかの判定. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00426">rmulti.c:426</a></div></div>
+<div class="ttc" id="is__print_8h_html_aa4f6858ed3ecdad5501013ac4001c9ca"><div class="ttname"><a href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca">print_reset</a></div><div class="ttdeci">void print_reset(void)</div><div class="ttdef"><b>Definition:</b> <a href="print_8c_source.html#l00006">print.c:6</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a41ccd39ed9f0eec595eefa3e06a187d2"><div class="ttname"><a href="rhpeig_8c.html#a41ccd39ed9f0eec595eefa3e06a187d2">rhpeig_str</a></div><div class="ttdeci">const char * rhpeig_str[]</div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00017">rhpeig.c:17</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2"><div class="ttname"><a href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2">RHPEIG_STATUS_PRE</a></div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00042">rhpeig.c:42</a></div></div>
+<div class="ttc" id="is__print_8h_html_a983ca8a8ba6530d8de25633e0944ef35"><div class="ttname"><a href="is__print_8h.html#a983ca8a8ba6530d8de25633e0944ef35">print_green</a></div><div class="ttdeci">void print_green(void)</div><div class="ttdef"><b>Definition:</b> <a href="print_8c_source.html#l00009">print.c:9</a></div></div>
+<div class="ttc" id="is__rhpeig_8h_html_a0bd433038e4414d99a062f73fcc6b994"><div class="ttname"><a href="is__rhpeig_8h.html#a0bd433038e4414d99a062f73fcc6b994">RHPEIG_STEP_MAX</a></div><div class="ttdeci">#define RHPEIG_STEP_MAX</div><div class="ttdef"><b>Definition:</b> <a href="is__rhpeig_8h_source.html#l00007">is_rhpeig.h:7</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a454903ad1f187b2d7fe90bcdd7a3ba3d"><div class="ttname"><a href="is__rmat_8h.html#a454903ad1f187b2d7fe90bcdd7a3ba3d">rmat_set_eye</a></div><div class="ttdeci">int rmat_set_eye(int m, int n, rmulti **A, int LDA)</div><div class="ttdoc">rmulti型の行列の値を単位行列の設定. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00520">rmat.c:520</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_afe3a3c416a4e8ada0e8cb689ba5834ec"><div class="ttname"><a href="is__rmulti_8h.html#afe3a3c416a4e8ada0e8cb689ba5834ec">rgt_d2</a></div><div class="ttdeci">int rgt_d2(rmulti *x, double y)</div><div class="ttdoc">rmulti型の値の比較 x>y </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l01219">rmulti.c:1219</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8"><div class="ttname"><a href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8">RHPEIG_STATUS_CONV</a></div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00042">rhpeig.c:42</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_abd2ceb7eaa6481640a45357d44034950"><div class="ttname"><a href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a></div><div class="ttdeci">rmulti * rfree(rmulti *x)</div><div class="ttdoc">rmulti型の終了処理. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00212">rmulti.c:212</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_ad3153e9e45ce7820cbe83a0b6eb0f2ec"><div class="ttname"><a href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a></div><div class="ttdeci">int rvec_get_prec_max(int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00135">rvec.c:135</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a1b5920cdb1251e6be3878f640df5a1f9"><div class="ttname"><a href="rhpeig_8c.html#a1b5920cdb1251e6be3878f640df5a1f9">rhpeig_status</a></div><div class="ttdeci">const char * rhpeig_status[]</div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00043">rhpeig.c:43</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a4d044b40d614c2fa8c5bde9e51edc07b"><div class="ttname"><a href="rhpeig_8c.html#a4d044b40d614c2fa8c5bde9e51edc07b">rhpeig</a></div><div class="ttdeci">int rhpeig(int n, rmulti **X, int LDX, rmulti **Lambda, rmulti **A, int LDA, int debug)</div><div class="ttdoc">超平面制約法による固有値分解. </div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00139">rhpeig.c:139</a></div></div>
+<div class="ttc" id="mt19937ar_8h_html"><div class="ttname"><a href="mt19937ar_8h.html">mt19937ar.h</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a1fd2119ecbd86f9dc83a026f0b768987"><div class="ttname"><a href="is__rmat_8h.html#a1fd2119ecbd86f9dc83a026f0b768987">rmat_diag_sub_r</a></div><div class="ttdeci">int rmat_diag_sub_r(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmulti *a)</div><div class="ttdoc">rmulti型の行列の対角行列との引き算 B=A-diag(a). </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l01039">rmat.c:1039</a></div></div>
+<div class="ttc" id="is__rhpeig_8h_html_abc5c98fcc1211af2b80116dd6e0a035da501cefd9aa401463ea80f4f563ae57aa"><div class="ttname"><a href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035da501cefd9aa401463ea80f4f563ae57aa">RHPEIG_CONVERGENT</a></div><div class="ttdef"><b>Definition:</b> <a href="is__rhpeig_8h_source.html#l00010">is_rhpeig.h:10</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a8b32cccaf8a24c49253a3612c61561c5"><div class="ttname"><a href="rhpeig_8c.html#a8b32cccaf8a24c49253a3612c61561c5">PUT_1PAIR</a></div><div class="ttdeci">#define PUT_1PAIR</div></div>
+<div class="ttc" id="is__rhshldr_8h_html"><div class="ttname"><a href="is__rhshldr_8h.html">is_rhshldr.h</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a474cfe62c18d90d42b8f80504449ea43"><div class="ttname"><a href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43">rmat_allocate_prec</a></div><div class="ttdeci">rmulti ** rmat_allocate_prec(int LDA, int n, int prec)</div><div class="ttdoc">rmulti型の行列の精度を指定しての新規生成. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00047">rmat.c:47</a></div></div>
+<div class="ttc" id="is__rsolve_8h_html_a2e166c07524feb41b136822c093a1916"><div class="ttname"><a href="is__rsolve_8h.html#a2e166c07524feb41b136822c093a1916">rsolve_lu</a></div><div class="ttdeci">int rsolve_lu(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info)</div><div class="ttdoc">線形方程式A*X=BのLU分解による解法. </div><div class="ttdef"><b>Definition:</b> <a href="rsolve_8c_source.html#l00074">rsolve.c:74</a></div></div>
+<div class="ttc" id="is__reig_8h_html"><div class="ttname"><a href="is__reig_8h.html">is_reig.h</a></div><div class="ttdoc">多倍長精度実数型rmultiによる固有値計算に関する関数の宣言. </div></div>
+<div class="ttc" id="is__rvec_8h_html_a595468148dda7b3dc347d2f5040a3dd1"><div class="ttname"><a href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a></div><div class="ttdeci">rmulti ** rvec_free(int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの終了処理. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00077">rvec.c:77</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_a55e72cf4313bd2c74f6460fb4a69f6f3"><div class="ttname"><a href="is__rmulti_8h.html#a55e72cf4313bd2c74f6460fb4a69f6f3">rneg</a></div><div class="ttdeci">int rneg(rmulti *y, rmulti *x)</div><div class="ttdoc">rmulti型の符号反転 y=-x </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00783">rmulti.c:783</a></div></div>
+<div class="ttc" id="is__rhshldr_8h_html_a8a710d3233426ce86ca7afb241f0967c"><div class="ttname"><a href="is__rhshldr_8h.html#a8a710d3233426ce86ca7afb241f0967c">rhouseholder_right</a></div><div class="ttdeci">void rhouseholder_right(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, int k, rmulti **h, rmulti *alpha)</div><div class="ttdoc">ハウスホルダー変換を右から作用 B=A*H, H=I-alpha*h*h&#39; </div><div class="ttdef"><b>Definition:</b> <a href="rhshldr_8c_source.html#l00084">rhshldr.c:84</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a3c8378f86082105c9187889275301862"><div class="ttname"><a href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a></div><div class="ttdeci">rmulti ** rvec_allocate_prec(int n, int prec)</div><div class="ttdoc">rmulti型のベクトルの精度を指定しての新規生成. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00053">rvec.c:53</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_ab7b3dd120365465547a1d8df4a0815a2"><div class="ttname"><a href="is__rmulti_8h.html#ab7b3dd120365465547a1d8df4a0815a2">rmul_d</a></div><div class="ttdeci">int rmul_d(rmulti *z, rmulti *x, double y)</div><div class="ttdoc">rmulti型の掛け算 z=x*y </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00918">rmulti.c:918</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a324b9707cbef4182c0e960d146378c76"><div class="ttname"><a href="rhpeig_8c.html#a324b9707cbef4182c0e960d146378c76">Qk</a></div><div class="ttdeci">#define Qk</div></div>
+<div class="ttc" id="is__rmulti_8h_html_ace82f1f9aac5a1aa512661271910f848"><div class="ttname"><a href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848">rmepsilon</a></div><div class="ttdeci">rmulti * rmepsilon(int prec)</div><div class="ttdoc">rmulti型のマシンイプシロンの生成. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00279">rmulti.c:279</a></div></div>
+<div class="ttc" id="is__print_8h_html"><div class="ttname"><a href="is__print_8h.html">is_print.h</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a81338536ae55b95ea5f37dd9b3506c66"><div class="ttname"><a href="is__rvec_8h.html#a81338536ae55b95ea5f37dd9b3506c66">rvec_sub</a></div><div class="ttdeci">int rvec_sub(int n, rmulti **z, rmulti **x, rmulti **y)</div><div class="ttdoc">rmulti型のベクトルの引き算 z=x-y </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00776">rvec.c:776</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a087e13e0c58739e2d27f043dae71c6f0"><div class="ttname"><a href="is__rvec_8h.html#a087e13e0c58739e2d27f043dae71c6f0">rvec_sum_mul</a></div><div class="ttdeci">int rvec_sum_mul(rmulti *value, int n, rmulti **x, rmulti **y)</div><div class="ttdoc">rmulti型のベクトルの内積 value=sum(x.*y) </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l01126">rvec.c:1126</a></div></div>
+<div class="ttc" id="is__print_8h_html_a56e707b248168b71cd3ca77f0a24422e"><div class="ttname"><a href="is__print_8h.html#a56e707b248168b71cd3ca77f0a24422e">print_red</a></div><div class="ttdeci">void print_red(void)</div><div class="ttdef"><b>Definition:</b> <a href="print_8c_source.html#l00008">print.c:8</a></div></div>
+<div class="ttc" id="is__print_8h_html_a6ad5c068b7ddf65b2401849ee5964a26"><div class="ttname"><a href="is__print_8h.html#a6ad5c068b7ddf65b2401849ee5964a26">print_light_red</a></div><div class="ttdeci">void print_light_red(void)</div><div class="ttdef"><b>Definition:</b> <a href="print_8c_source.html#l00016">print.c:16</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a04cb680d9e5e283dd2b73626cd95fd48"><div class="ttname"><a href="is__rvec_8h.html#a04cb680d9e5e283dd2b73626cd95fd48">rvec_set_rand</a></div><div class="ttdeci">void rvec_set_rand(int n, rmulti **x, double a, double b)</div><div class="ttdoc">rmulti型のベクトルの値を区間(b,a+b)の疑似乱数値を設定. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00544">rvec.c:544</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a1df43032733ac7f14019840bfab7d85f"><div class="ttname"><a href="is__rvec_8h.html#a1df43032733ac7f14019840bfab7d85f">rvec_lintr_t</a></div><div class="ttdeci">int rvec_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルxに関する転置行列Aによる1次変換 y=A&#39;*x </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l01020">rvec.c:1020</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a53c98fd51179ef3da5393f0de6c5e833"><div class="ttname"><a href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833">rmat_free</a></div><div class="ttdeci">rmulti ** rmat_free(int LDA, int n, rmulti **A)</div><div class="ttdoc">rmulti型の行列の終了処理. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00080">rmat.c:80</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_ad51b75ff5d51dcf8fce6b5d657eb04a9"><div class="ttname"><a href="is__rmulti_8h.html#ad51b75ff5d51dcf8fce6b5d657eb04a9">rdiv</a></div><div class="ttdeci">int rdiv(rmulti *z, rmulti *x, rmulti *y)</div><div class="ttdoc">rmulti型の割り算 z=x/y </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l01111">rmulti.c:1111</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_a01bf67bf43a602b005a075f9a480b555"><div class="ttname"><a href="is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555">rget_exp</a></div><div class="ttdeci">int rget_exp(rmulti *x)</div><div class="ttdoc">rmulti型の浮動小数点数の指数部の取得. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00346">rmulti.c:346</a></div></div>
+<div class="ttc" id="is__reig_8h_html_ac371e6294165815131a15050a177371d"><div class="ttname"><a href="is__reig_8h.html#ac371e6294165815131a15050a177371d">reig_residual</a></div><div class="ttdeci">void reig_residual(int n, rmulti **F, rmulti **A, int LDA, rmulti **x, rmulti *lambda)</div><div class="ttdoc">固有値問題の残差 F=A*x-lambda*x. </div><div class="ttdef"><b>Definition:</b> <a href="reig_8c_source.html#l00023">reig.c:23</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_ab4b501a84176a2e2e8b335df42c05fe4"><div class="ttname"><a href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4">rget_d</a></div><div class="ttdeci">double rget_d(rmulti *x)</div><div class="ttdoc">rmulti型を倍精度型に変換. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00696">rmulti.c:696</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_ad04d873119e12fdf6d17cfb67283319e"><div class="ttname"><a href="is__rvec_8h.html#ad04d873119e12fdf6d17cfb67283319e">rvec_normalize_sgn</a></div><div class="ttdeci">int rvec_normalize_sgn(int n, rmulti **y, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l01404">rvec.c:1404</a></div></div>
+<div class="ttc" id="is__rhpeig_8h_html"><div class="ttname"><a href="is__rhpeig_8h.html">is_rhpeig.h</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73"><div class="ttname"><a href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73">RHPEIG_STATUS_END</a></div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00042">rhpeig.c:42</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_aa8d8bebcc4d6f4f9594215e41dff4bfa"><div class="ttname"><a href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa">rmat_get_prec_max</a></div><div class="ttdeci">int rmat_get_prec_max(int m, int n, rmulti **A, int LDA)</div><div class="ttdoc">rmulti型行列の精度(ビット数)の最大値の取得. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00191">rmat.c:191</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aeee0c826203695436900dc02890f433c"><div class="ttname"><a href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a></div><div class="ttdeci">rmulti * rallocate_prec(int prec)</div><div class="ttdoc">rmulti型の精度を指定しての新規生成. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00175">rmulti.c:175</a></div></div>
+<div class="ttc" id="is__rhshldr_8h_html_a68e52e34fe939b97d2194156944a9c1d"><div class="ttname"><a href="is__rhshldr_8h.html#a68e52e34fe939b97d2194156944a9c1d">rhouseholder</a></div><div class="ttdeci">void rhouseholder(int n, int k0, int nH, int k, rmulti **h, rmulti *alpha, rmulti **H, int LDH, rmulti **Alpha, rmulti **x)</div><div class="ttdoc">ハウスホルダー変換によるQR分解の変則版. </div><div class="ttdef"><b>Definition:</b> <a href="rhshldr_8c_source.html#l00142">rhshldr.c:142</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a17900d62712e3f1b3d35b5aca4bbfcea"><div class="ttname"><a href="is__rvec_8h.html#a17900d62712e3f1b3d35b5aca4bbfcea">rvec_copy</a></div><div class="ttdeci">int rvec_copy(int n, rmulti **y, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの値のコピー y=x. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00683">rvec.c:683</a></div></div>
+<div class="ttc" id="is__macros_8h_html_aee8ff16e15460bff94c093dbb90adcd5"><div class="ttname"><a href="is__macros_8h.html#aee8ff16e15460bff94c093dbb90adcd5">ERROR_EXIT</a></div><div class="ttdeci">#define ERROR_EXIT(S, I)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00019">is_macros.h:19</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_a622a4d8500fd5744cdbb60a6efe2cf4c"><div class="ttname"><a href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c">rset_nan</a></div><div class="ttdeci">void rset_nan(rmulti *x)</div><div class="ttdoc">rmulti型の値をNaNに設定. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00631">rmulti.c:631</a></div></div>
+<div class="ttc" id="is__rhpeig_8h_html_abc5c98fcc1211af2b80116dd6e0a035dafc1d73304fe8be285a92569729f1188b"><div class="ttname"><a href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035dafc1d73304fe8be285a92569729f1188b">RHPEIG_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="is__rhpeig_8h_source.html#l00010">is_rhpeig.h:10</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a2805570b6c0018330112b85f9fdc1506"><div class="ttname"><a href="is__rmat_8h.html#a2805570b6c0018330112b85f9fdc1506">rmat_set_zeros</a></div><div class="ttdeci">int rmat_set_zeros(int m, int n, rmulti **A, int LDA)</div><div class="ttdoc">rmulti型の行列の値を零に設定. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00504">rmat.c:504</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_aae9b04ad1ca116584d4d7659cf877e68"><div class="ttname"><a href="is__rvec_8h.html#aae9b04ad1ca116584d4d7659cf877e68">rvec_set_zeros</a></div><div class="ttdeci">int rvec_set_zeros(int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの値を零に設定. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00507">rvec.c:507</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_ad9bc8d534620527dc3c46ef4c9d04442"><div class="ttname"><a href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a></div><div class="ttdeci">int rget_prec(rmulti *x)</div><div class="ttdoc">rmulti型の浮動小数点数の精度(ビット数)を取得. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00336">rmulti.c:336</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a7488da1331199e45ebb6a5d3ea89d155"><div class="ttname"><a href="is__rvec_8h.html#a7488da1331199e45ebb6a5d3ea89d155">rvec_has_nan</a></div><div class="ttdeci">int rvec_has_nan(int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルがNaNを含むかの判定. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00182">rvec.c:182</a></div></div>
+<div class="ttc" id="is__macros_8h_html"><div class="ttname"><a href="is__macros_8h.html">is_macros.h</a></div></div>
+<div class="ttc" id="is__rvec_8h_html"><div class="ttname"><a href="is__rvec_8h.html">is_rvec.h</a></div><div class="ttdoc">多倍長精度実数型rmultiのベクトルに関する関数の宣言 </div></div>
+<div class="ttc" id="is__rsolve_8h_html"><div class="ttname"><a href="is__rsolve_8h.html">is_rsolve.h</a></div><div class="ttdoc">多倍長精度実数型rmultiによる線形方程式A*X=Bの解法に関する関数の宣言. </div></div>
+<div class="ttc" id="rhpeig_8c_html_adfcc340fc4d9bfc4948489c71660199e"><div class="ttname"><a href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a></div><div class="ttdeci">#define Xk</div></div>
+<div class="ttc" id="is__macros_8h_html_afc6c2cf0e71b5dc708f1e24e6540c8a1"><div class="ttname"><a href="is__macros_8h.html#afc6c2cf0e71b5dc708f1e24e6540c8a1">MAX2</a></div><div class="ttdeci">#define MAX2(X, Y)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00013">is_macros.h:13</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_a7b1e1d5469af9300abe5b7ab7ae90d6f"><div class="ttname"><a href="rhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f">Hk</a></div><div class="ttdeci">#define Hk</div></div>
+<div class="ttc" id="is__rmulti_8h_html_ab249a743791b69f5118eda03d3db0c4d"><div class="ttname"><a href="is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d">rlt</a></div><div class="ttdeci">int rlt(rmulti *x, rmulti *y)</div><div class="ttdoc">rmulti型の値の比較 x<y </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l01243">rmulti.c:1243</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aba54dd3cab4536c79ad313a91eb71b66"><div class="ttname"><a href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a></div><div class="ttdeci">__mpfr_struct rmulti</div><div class="ttdoc">多倍長精度実数構造体の宣言． </div><div class="ttdef"><b>Definition:</b> <a href="is__rmulti_8h_source.html#l00016">is_rmulti.h:16</a></div></div>
+<div class="ttc" id="is__ivec_8h_html"><div class="ttname"><a href="is__ivec_8h.html">is_ivec.h</a></div></div>
+<div class="ttc" id="rhpeig_8c_html_ab38be48c91eafdd28f866b398c77c335"><div class="ttname"><a href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335">rhpeig_jacobi_mat</a></div><div class="ttdeci">void rhpeig_jacobi_mat(int n, rmulti **JM, int LDJM, rmulti **A, int LDA, rmulti **x, rmulti **w, rmulti *lambda, rmulti *C)</div><div class="ttdoc">固有値問題 F=A*x-lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A-lambda*I-x*w&#39;/Cの計算. </div><div class="ttdef"><b>Definition:</b> <a href="rhpeig_8c_source.html#l00032">rhpeig.c:32</a></div></div>
+<div class="ttc" id="is__rhpeig_8h_html_abc5c98fcc1211af2b80116dd6e0a035da9e6b03425feace30a092f2042659337a"><div class="ttname"><a href="is__rhpeig_8h.html#abc5c98fcc1211af2b80116dd6e0a035da9e6b03425feace30a092f2042659337a">RHPEIG_SINGULAR</a></div><div class="ttdef"><b>Definition:</b> <a href="is__rhpeig_8h_source.html#l00010">is_rhpeig.h:10</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a46f27e83153fb690369e25ba058e11f8"><div class="ttname"><a href="is__rvec_8h.html#a46f27e83153fb690369e25ba058e11f8">rvec_max_abs</a></div><div class="ttdeci">int rvec_max_abs(rmulti *value, int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l01170">rvec.c:1170</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a1cac318cca7da7653fb1e0a8f7a2ab3b"><div class="ttname"><a href="is__rmat_8h.html#a1cac318cca7da7653fb1e0a8f7a2ab3b">rmat_rank1op</a></div><div class="ttdeci">int rmat_rank1op(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmulti *a, rmulti **x, rmulti **y)</div><div class="ttdoc">rmulti型の1ランク更新 B=A+a*x*y&#39; </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00930">rmat.c:930</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a51f8560a72714434d6f9decc4d39f031"><div class="ttname"><a href="is__rmat_8h.html#a51f8560a72714434d6f9decc4d39f031">rmat_set_nan</a></div><div class="ttdeci">void rmat_set_nan(int m, int n, rmulti **A, int LDA)</div><div class="ttdoc">rmulti型の行列の値をNaNに設定. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00436">rmat.c:436</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="rhpeig_8c.html">rhpeig.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_irmulti.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__irmulti_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_irmulti.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>多倍長精度実数型rmultiの機械区間演算に関する関数の宣言.  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="is__rmulti_8h_source.html">is_rmulti.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__rvec_8h_source.html">is_rvec.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__func_8h_source.html">is_func.h</a>&gt;</code><br />
+</div>
+<p><a href="is__irmulti_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a51b1082698c541223be50375d5dd0961"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a51b1082698c541223be50375d5dd0961">irset_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, double x)</td></tr>
+<tr class="memdesc:a51b1082698c541223be50375d5dd0961"><td class="mdescLeft">&#160;</td><td class="mdescRight">倍精度実数の設定 [y0,y1]=[x,x].  <a href="#a51b1082698c541223be50375d5dd0961">[詳解]</a><br /></td></tr>
+<tr class="separator:a51b1082698c541223be50375d5dd0961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55425a426fd95bccc3b96821a0efb0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ae55425a426fd95bccc3b96821a0efb0d">irset_bigint</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *x)</td></tr>
+<tr class="memdesc:ae55425a426fd95bccc3b96821a0efb0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">bigint型から[z0,z1]へ型変換.  <a href="#ae55425a426fd95bccc3b96821a0efb0d">[詳解]</a><br /></td></tr>
+<tr class="separator:ae55425a426fd95bccc3b96821a0efb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75127c83ea5216e67755d6d959b630c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a75127c83ea5216e67755d6d959b630c8">ircopy</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a75127c83ea5216e67755d6d959b630c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー [y0,y1]=[x0,x1].  <a href="#a75127c83ea5216e67755d6d959b630c8">[詳解]</a><br /></td></tr>
+<tr class="separator:a75127c83ea5216e67755d6d959b630c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa386bc5a2e6b1ed3102a23286241dd3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#afa386bc5a2e6b1ed3102a23286241dd3">irneg</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:afa386bc5a2e6b1ed3102a23286241dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">符号の反転 [y0,y1]=-[x0,x1].  <a href="#afa386bc5a2e6b1ed3102a23286241dd3">[詳解]</a><br /></td></tr>
+<tr class="separator:afa386bc5a2e6b1ed3102a23286241dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b409a9b2ce77b9d9bb8a2e9bd3f6e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a21b409a9b2ce77b9d9bb8a2e9bd3f6e0">irpm</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x)</td></tr>
+<tr class="memdesc:a21b409a9b2ce77b9d9bb8a2e9bd3f6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">符号の正負 [y0,y1]=[-abs(x),abs(x)].  <a href="#a21b409a9b2ce77b9d9bb8a2e9bd3f6e0">[詳解]</a><br /></td></tr>
+<tr class="separator:a21b409a9b2ce77b9d9bb8a2e9bd3f6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b773529acf9de84bf3758c8a0026ebc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a9b773529acf9de84bf3758c8a0026ebc">iradd</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a9b773529acf9de84bf3758c8a0026ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">足し算 [z0,z1]=[x0,x1]+[y0,y1]  <a href="#a9b773529acf9de84bf3758c8a0026ebc">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b773529acf9de84bf3758c8a0026ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35bac07c42921f1f6be86cccd87b8e11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a35bac07c42921f1f6be86cccd87b8e11">iradd_pm</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a35bac07c42921f1f6be86cccd87b8e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の拡張 [z0,z1]=[x0,x1]+[-y,y]  <a href="#a35bac07c42921f1f6be86cccd87b8e11">[詳解]</a><br /></td></tr>
+<tr class="separator:a35bac07c42921f1f6be86cccd87b8e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c959a5b992d1bbb609cc37c45634d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ac3c959a5b992d1bbb609cc37c45634d7">irmr</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *mid, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *rad, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:ac3c959a5b992d1bbb609cc37c45634d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の中心と半径 [m-r,m+r]=[x0,x1]  <a href="#ac3c959a5b992d1bbb609cc37c45634d7">[詳解]</a><br /></td></tr>
+<tr class="separator:ac3c959a5b992d1bbb609cc37c45634d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee308e9a81bc742a5f6a4d3792470e46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#aee308e9a81bc742a5f6a4d3792470e46">irsub</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:aee308e9a81bc742a5f6a4d3792470e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [z0,z1]=[x0,x1]-[y0,y1]  <a href="#aee308e9a81bc742a5f6a4d3792470e46">[詳解]</a><br /></td></tr>
+<tr class="separator:aee308e9a81bc742a5f6a4d3792470e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a222e9afe745f0063220ca029879c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ae0a222e9afe745f0063220ca029879c6">irsub_d2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, double y)</td></tr>
+<tr class="memdesc:ae0a222e9afe745f0063220ca029879c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [z0,z1]=[x0,x1]-[y,y]  <a href="#ae0a222e9afe745f0063220ca029879c6">[詳解]</a><br /></td></tr>
+<tr class="separator:ae0a222e9afe745f0063220ca029879c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5de2d24f1771a9c7cf8d66fb70250e48"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a5de2d24f1771a9c7cf8d66fb70250e48">irmul</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a5de2d24f1771a9c7cf8d66fb70250e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">掛け算 [z0,z1]=[x0,x1]*[y0,y1]  <a href="#a5de2d24f1771a9c7cf8d66fb70250e48">[詳解]</a><br /></td></tr>
+<tr class="separator:a5de2d24f1771a9c7cf8d66fb70250e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60118c7cb9b4fb9dce810e066a62d9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#af60118c7cb9b4fb9dce810e066a62d9f">irmul_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, double y)</td></tr>
+<tr class="memdesc:af60118c7cb9b4fb9dce810e066a62d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">掛け算 [z0,z1]=[x0,x1]*[y,y]  <a href="#af60118c7cb9b4fb9dce810e066a62d9f">[詳解]</a><br /></td></tr>
+<tr class="separator:af60118c7cb9b4fb9dce810e066a62d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022a0412b8e8ce54333b909d942c21a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a022a0412b8e8ce54333b909d942c21a1">irdiv</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a022a0412b8e8ce54333b909d942c21a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り算 [z0,z1]=[x0,x1]/[y0,y1]  <a href="#a022a0412b8e8ce54333b909d942c21a1">[詳解]</a><br /></td></tr>
+<tr class="separator:a022a0412b8e8ce54333b909d942c21a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae955feff51f7b83ca4cc89690f1160e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ae955feff51f7b83ca4cc89690f1160e9">iradd_mul</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:ae955feff51f7b83ca4cc89690f1160e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">積の加算 [z0,z1]+=[x0,x1]*[y0,y1]  <a href="#ae955feff51f7b83ca4cc89690f1160e9">[詳解]</a><br /></td></tr>
+<tr class="separator:ae955feff51f7b83ca4cc89690f1160e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21cf962b8106aecfbafd71dd96f51d52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a21cf962b8106aecfbafd71dd96f51d52">irsub_mul</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a21cf962b8106aecfbafd71dd96f51d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">積の減算 [z0,z1]-=[x0,x1]*[y0,y1]  <a href="#a21cf962b8106aecfbafd71dd96f51d52">[詳解]</a><br /></td></tr>
+<tr class="separator:a21cf962b8106aecfbafd71dd96f51d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1284fc06163ebd6ab11d13886fda2bef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a1284fc06163ebd6ab11d13886fda2bef">irabs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a1284fc06163ebd6ab11d13886fda2bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">絶対値 [y0,y1]=abs([x0,x1])  <a href="#a1284fc06163ebd6ab11d13886fda2bef">[詳解]</a><br /></td></tr>
+<tr class="separator:a1284fc06163ebd6ab11d13886fda2bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d17d242035f930320ca059e43277f0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a0d17d242035f930320ca059e43277f0a">irabs_sub</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a0d17d242035f930320ca059e43277f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])  <a href="#a0d17d242035f930320ca059e43277f0a">[詳解]</a><br /></td></tr>
+<tr class="separator:a0d17d242035f930320ca059e43277f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28bb143c48fd8fb507c52b013dcda400"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a28bb143c48fd8fb507c52b013dcda400">irdiv_abs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a28bb143c48fd8fb507c52b013dcda400"><td class="mdescLeft">&#160;</td><td class="mdescRight">商の分母が絶対値 [z0,z1]=[x0,x1]/abs([y0,y1])  <a href="#a28bb143c48fd8fb507c52b013dcda400">[詳解]</a><br /></td></tr>
+<tr class="separator:a28bb143c48fd8fb507c52b013dcda400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2398088bc84cddba550dd46802c4d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#aae2398088bc84cddba550dd46802c4d7">irdiv_abs_c</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1)</td></tr>
+<tr class="memdesc:aae2398088bc84cddba550dd46802c4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">商の分母が絶対値 [z0,z1]=[x0,x1]/abs([y0,y1])  <a href="#aae2398088bc84cddba550dd46802c4d7">[詳解]</a><br /></td></tr>
+<tr class="separator:aae2398088bc84cddba550dd46802c4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5616565adb2e17438f3b43169a4c14b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ac5616565adb2e17438f3b43169a4c14b">irpow_si</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, long n)</td></tr>
+<tr class="memdesc:ac5616565adb2e17438f3b43169a4c14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">べき乗 [y0,y1]=[x0,x1]^n  <a href="#ac5616565adb2e17438f3b43169a4c14b">[詳解]</a><br /></td></tr>
+<tr class="separator:ac5616565adb2e17438f3b43169a4c14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cee3018280d15551f1f5adeb5d5003"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a22cee3018280d15551f1f5adeb5d5003">irsqrt</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a22cee3018280d15551f1f5adeb5d5003"><td class="mdescLeft">&#160;</td><td class="mdescRight">平方根 [y0,y1]=sqrt([x0,x1])  <a href="#a22cee3018280d15551f1f5adeb5d5003">[詳解]</a><br /></td></tr>
+<tr class="separator:a22cee3018280d15551f1f5adeb5d5003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf360f7ca49523965a8ea4d583912102"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#adf360f7ca49523965a8ea4d583912102">irexp</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:adf360f7ca49523965a8ea4d583912102"><td class="mdescLeft">&#160;</td><td class="mdescRight">指数関数 [y0,y1]=exp([x0,x1])  <a href="#adf360f7ca49523965a8ea4d583912102">[詳解]</a><br /></td></tr>
+<tr class="separator:adf360f7ca49523965a8ea4d583912102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ef1d1b2089776149669b3bddadf538"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ad5ef1d1b2089776149669b3bddadf538">irlog</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:ad5ef1d1b2089776149669b3bddadf538"><td class="mdescLeft">&#160;</td><td class="mdescRight">対数関数 [y0,y1]=log([x0,x1])  <a href="#ad5ef1d1b2089776149669b3bddadf538">[詳解]</a><br /></td></tr>
+<tr class="separator:ad5ef1d1b2089776149669b3bddadf538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e7dbc1f5e93ad744dbdc23a0df2bef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#af4e7dbc1f5e93ad744dbdc23a0df2bef">irsin</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:af4e7dbc1f5e93ad744dbdc23a0df2bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角関数 [y0,y1]=sin([x0,x1])  <a href="#af4e7dbc1f5e93ad744dbdc23a0df2bef">[詳解]</a><br /></td></tr>
+<tr class="separator:af4e7dbc1f5e93ad744dbdc23a0df2bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522715b3554b902a0b8c0af7b0a19f20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a522715b3554b902a0b8c0af7b0a19f20">ircos</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a522715b3554b902a0b8c0af7b0a19f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角関数 [y0,y1]=cos([x0,x1])  <a href="#a522715b3554b902a0b8c0af7b0a19f20">[詳解]</a><br /></td></tr>
+<tr class="separator:a522715b3554b902a0b8c0af7b0a19f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8843aca612f5c5f79d63962750e72b70"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a8843aca612f5c5f79d63962750e72b70">irtan</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a8843aca612f5c5f79d63962750e72b70"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角関数 [y0,y1]=tan([x0,x1])  <a href="#a8843aca612f5c5f79d63962750e72b70">[詳解]</a><br /></td></tr>
+<tr class="separator:a8843aca612f5c5f79d63962750e72b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace5b1e75a1f62e514001fc4f45e2eac2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ace5b1e75a1f62e514001fc4f45e2eac2">irasin</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:ace5b1e75a1f62e514001fc4f45e2eac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆三角関数 [y0,y1]=asin([x0,x1])  <a href="#ace5b1e75a1f62e514001fc4f45e2eac2">[詳解]</a><br /></td></tr>
+<tr class="separator:ace5b1e75a1f62e514001fc4f45e2eac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91271f6135ea841ea2694af3ea24248"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ab91271f6135ea841ea2694af3ea24248">iracos</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:ab91271f6135ea841ea2694af3ea24248"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆三角関数 [y0,y1]=acos([x0,x1])  <a href="#ab91271f6135ea841ea2694af3ea24248">[詳解]</a><br /></td></tr>
+<tr class="separator:ab91271f6135ea841ea2694af3ea24248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bf85516e18a424ee60fad5d1b798e32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a1bf85516e18a424ee60fad5d1b798e32">iratan</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a1bf85516e18a424ee60fad5d1b798e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆三角関数 [y0,y1]=atan([x0,x1])  <a href="#a1bf85516e18a424ee60fad5d1b798e32">[詳解]</a><br /></td></tr>
+<tr class="separator:a1bf85516e18a424ee60fad5d1b798e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c922079ad46f5dd725eb6005b12b5f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a0c922079ad46f5dd725eb6005b12b5f5">iratan2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a0c922079ad46f5dd725eb6005b12b5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆三角関数 [z0,z1]=atan2([y0,y1]/[x0,x1])  <a href="#a0c922079ad46f5dd725eb6005b12b5f5">[詳解]</a><br /></td></tr>
+<tr class="separator:a0c922079ad46f5dd725eb6005b12b5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc4bced6b98b0b768fd447a97f679f0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#abc4bced6b98b0b768fd447a97f679f0e">irsinh</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:abc4bced6b98b0b768fd447a97f679f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">双曲線関数 [y0,y1]=sinh([x0,x1])  <a href="#abc4bced6b98b0b768fd447a97f679f0e">[詳解]</a><br /></td></tr>
+<tr class="separator:abc4bced6b98b0b768fd447a97f679f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dfc0d8a28311ad8082914a4d6523b32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a9dfc0d8a28311ad8082914a4d6523b32">ircosh</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a9dfc0d8a28311ad8082914a4d6523b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">双曲線関数 [y0,y1]=cosh([x0,x1])  <a href="#a9dfc0d8a28311ad8082914a4d6523b32">[詳解]</a><br /></td></tr>
+<tr class="separator:a9dfc0d8a28311ad8082914a4d6523b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b504d8df51b7542a5b7adbbe358bbe5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a7b504d8df51b7542a5b7adbbe358bbe5">irtanh</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a7b504d8df51b7542a5b7adbbe358bbe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">双曲線関数 [y0,y1]=tanh([x0,x1])  <a href="#a7b504d8df51b7542a5b7adbbe358bbe5">[詳解]</a><br /></td></tr>
+<tr class="separator:a7b504d8df51b7542a5b7adbbe358bbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61cb9e340692eed3b0d19db30df20f16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a61cb9e340692eed3b0d19db30df20f16">irasinh</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="separator:a61cb9e340692eed3b0d19db30df20f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff6f57c4d74aa05a9dcfd8aef15df8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#abff6f57c4d74aa05a9dcfd8aef15df8f">iracosh</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:abff6f57c4d74aa05a9dcfd8aef15df8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆双曲線関数 [y0,y1]=acosh([x0,x1])  <a href="#abff6f57c4d74aa05a9dcfd8aef15df8f">[詳解]</a><br /></td></tr>
+<tr class="separator:abff6f57c4d74aa05a9dcfd8aef15df8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7e1bc988c18172cbd5e2b727f5625f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#aba7e1bc988c18172cbd5e2b727f5625f">iratanh</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:aba7e1bc988c18172cbd5e2b727f5625f"><td class="mdescLeft">&#160;</td><td class="mdescRight">逆双曲線関数 [y0,y1]=atanh([x0,x1])  <a href="#aba7e1bc988c18172cbd5e2b727f5625f">[詳解]</a><br /></td></tr>
+<tr class="separator:aba7e1bc988c18172cbd5e2b727f5625f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b18f31edb0aa0ed50c5a9adae49a99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#a73b18f31edb0aa0ed50c5a9adae49a99">irin</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x1)</td></tr>
+<tr class="memdesc:a73b18f31edb0aa0ed50c5a9adae49a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1).  <a href="#a73b18f31edb0aa0ed50c5a9adae49a99">[詳解]</a><br /></td></tr>
+<tr class="separator:a73b18f31edb0aa0ed50c5a9adae49a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ec5e6b6892a8cee6777bd2ca9364e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmulti_8h.html#ae8ec5e6b6892a8cee6777bd2ca9364e8">irin_pm</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x)</td></tr>
+<tr class="memdesc:ae8ec5e6b6892a8cee6777bd2ca9364e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)).  <a href="#ae8ec5e6b6892a8cee6777bd2ca9364e8">[詳解]</a><br /></td></tr>
+<tr class="separator:ae8ec5e6b6892a8cee6777bd2ca9364e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>多倍長精度実数型rmultiの機械区間演算に関する関数の宣言. </p>
+
+<p> <a class="el" href="is__irmulti_8h_source.html">is_irmulti.h</a> に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a1284fc06163ebd6ab11d13886fda2bef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irabs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>絶対値 [y0,y1]=abs([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00276">276</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d17d242035f930320ca059e43277f0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irabs_sub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00298">298</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab91271f6135ea841ea2694af3ea24248"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iracos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆三角関数 [y0,y1]=acos([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00489">489</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abff6f57c4d74aa05a9dcfd8aef15df8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iracosh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆双曲線関数 [y0,y1]=acosh([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00596">596</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b773529acf9de84bf3758c8a0026ebc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iradd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00092">92</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae955feff51f7b83ca4cc89690f1160e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iradd_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>積の加算 [z0,z1]+=[x0,x1]*[y0,y1] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00239">239</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a35bac07c42921f1f6be86cccd87b8e11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iradd_pm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の拡張 [z0,z1]=[x0,x1]+[-y,y] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00103">103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ace5b1e75a1f62e514001fc4f45e2eac2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irasin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆三角関数 [y0,y1]=asin([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00478">478</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a61cb9e340692eed3b0d19db30df20f16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irasinh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>逆双曲線関数 [y0,y1]=asinh([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00585">585</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bf85516e18a424ee60fad5d1b798e32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iratan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆三角関数 [y0,y1]=atan([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00505">505</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c922079ad46f5dd725eb6005b12b5f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iratan2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆三角関数 [z0,z1]=atan2([y0,y1]/[x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00516">516</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aba7e1bc988c18172cbd5e2b727f5625f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iratanh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>逆双曲線関数 [y0,y1]=atanh([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00607">607</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a75127c83ea5216e67755d6d959b630c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ircopy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コピー [y0,y1]=[x0,x1]. </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a522715b3554b902a0b8c0af7b0a19f20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ircos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>三角関数 [y0,y1]=cos([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00435">435</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9dfc0d8a28311ad8082914a4d6523b32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ircosh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>双曲線関数 [y0,y1]=cosh([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00548">548</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a022a0412b8e8ce54333b909d942c21a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irdiv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り算 [z0,z1]=[x0,x1]/[y0,y1] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00212">212</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a28bb143c48fd8fb507c52b013dcda400"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irdiv_abs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>商の分母が絶対値 [z0,z1]=[x0,x1]/abs([y0,y1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00309">309</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aae2398088bc84cddba550dd46802c4d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irdiv_abs_c </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>商の分母が絶対値 [z0,z1]=[x0,x1]/abs([y0,y1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00320">320</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adf360f7ca49523965a8ea4d583912102"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irexp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指数関数 [y0,y1]=exp([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00380">380</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a73b18f31edb0aa0ed50c5a9adae49a99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1). </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00625">625</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8ec5e6b6892a8cee6777bd2ca9364e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irin_pm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)). </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00633">633</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5ef1d1b2089776149669b3bddadf538"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irlog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>対数関数 [y0,y1]=log([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00391">391</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3c959a5b992d1bbb609cc37c45634d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irmr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の中心と半径 [m-r,m+r]=[x0,x1] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00114">114</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5de2d24f1771a9c7cf8d66fb70250e48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irmul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>掛け算 [z0,z1]=[x0,x1]*[y0,y1] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00163">163</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af60118c7cb9b4fb9dce810e066a62d9f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irmul_d </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>掛け算 [z0,z1]=[x0,x1]*[y,y] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00197">197</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afa386bc5a2e6b1ed3102a23286241dd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irneg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>符号の反転 [y0,y1]=-[x0,x1]. </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00065">65</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a21b409a9b2ce77b9d9bb8a2e9bd3f6e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irpm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>符号の正負 [y0,y1]=[-abs(x),abs(x)]. </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00081">81</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5616565adb2e17438f3b43169a4c14b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irpow_si </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>べき乗 [y0,y1]=[x0,x1]^n </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00331">331</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae55425a426fd95bccc3b96821a0efb0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irset_bigint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__bigint_8h.html#a6036223a5cc3f35a71701a39b14c0591">bigint</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bigint型から[z0,z1]へ型変換. </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a51b1082698c541223be50375d5dd0961"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irset_d </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>倍精度実数の設定 [y0,y1]=[x,x]. </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af4e7dbc1f5e93ad744dbdc23a0df2bef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irsin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>三角関数 [y0,y1]=sin([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00403">403</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abc4bced6b98b0b768fd447a97f679f0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irsinh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>双曲線関数 [y0,y1]=sinh([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00537">537</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a22cee3018280d15551f1f5adeb5d5003"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irsqrt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>平方根 [y0,y1]=sqrt([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00368">368</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aee308e9a81bc742a5f6a4d3792470e46"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irsub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00132">132</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0a222e9afe745f0063220ca029879c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irsub_d2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [z0,z1]=[x0,x1]-[y,y] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00148">148</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a21cf962b8106aecfbafd71dd96f51d52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irsub_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>積の減算 [z0,z1]-=[x0,x1]*[y0,y1] </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00254">254</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8843aca612f5c5f79d63962750e72b70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irtan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>三角関数 [y0,y1]=tan([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00467">467</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b504d8df51b7542a5b7adbbe358bbe5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irtanh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>双曲線関数 [y0,y1]=tanh([x0,x1]) </p>
+
+<p> <a class="el" href="irmulti_8c_source.html">irmulti.c</a> の <a class="el" href="irmulti_8c_source.html#l00574">574</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__irmulti_8h.html">is_irmulti.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

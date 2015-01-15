@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/zhpeig.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('zhpeig_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle">
+<div class="title">zhpeig.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="mt19937ar_8h_source.html">mt19937ar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__macros_8h_source.html">is_macros.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__print_8h_source.html">is_print.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__ivec_8h_source.html">is_ivec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__dvec_8h_source.html">is_dvec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__zvec_8h_source.html">is_zvec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__zmat_8h_source.html">is_zmat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__zsolve_8h_source.html">is_zsolve.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__zeig_8h_source.html">is_zeig.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__zhshldr_8h_source.html">is_zhshldr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__zhpeig_8h_source.html">is_zhpeig.h</a>&quot;</code><br />
+</div>
+<p><a href="zhpeig_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a8b32cccaf8a24c49253a3612c61561c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#a8b32cccaf8a24c49253a3612c61561c5">PUT_1PAIR</a>&#160;&#160;&#160;{ printf(&quot;[%s] status=%s done=%s step=%03d lambda=%+.16e %+.16e  E=2^%+04d eta=2^%+04d=%.0e mu=%.0e\n&quot;,fname,zhpeig_status[status],zhpeig_str[done],step,Z_R(*lambda),Z_I(*lambda),(int)(log(fabs(*E))/log(2)),(int)(log(fabs(eta))/log(2)),eta,mu); }</td></tr>
+<tr class="separator:a8b32cccaf8a24c49253a3612c61561c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324b9707cbef4182c0e960d146378c76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#a324b9707cbef4182c0e960d146378c76">Qk</a>&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(Q,k,LDQ)</td></tr>
+<tr class="separator:a324b9707cbef4182c0e960d146378c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfcc340fc4d9bfc4948489c71660199e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,k,LDX)</td></tr>
+<tr class="separator:adfcc340fc4d9bfc4948489c71660199e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b1e1d5469af9300abe5b7ab7ae90d6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f">Hk</a>&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(H,k,LDH)</td></tr>
+<tr class="separator:a7b1e1d5469af9300abe5b7ab7ae90d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:aba01db17f4a2bfbc3db60dc172972a25"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="zhpeig_8c.html#aba01db17f4a2bfbc3db60dc172972a25a12ea6ff5fe2d904e726834d639addd76">ZHPEIG_STATUS_PRE</a> =0, 
+<a class="el" href="zhpeig_8c.html#aba01db17f4a2bfbc3db60dc172972a25aba0d45ea258bf87087e7d10903f22ee2">ZHPEIG_STATUS_CONV</a>, 
+<a class="el" href="zhpeig_8c.html#aba01db17f4a2bfbc3db60dc172972a25a30888ac5a681ab2bf57ba9fe6c196606">ZHPEIG_STATUS_END</a>
+ }</td></tr>
+<tr class="separator:aba01db17f4a2bfbc3db60dc172972a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a33a6c391cfb8b98e0944bd27d733a776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#a33a6c391cfb8b98e0944bd27d733a776">zhpeig_jacobi_mat</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *JM, int LDJM, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *X, const <a class="el" href="structdcomplex.html">dcomplex</a> *W, <a class="el" href="structdcomplex.html">dcomplex</a> lambda, <a class="el" href="structdcomplex.html">dcomplex</a> C)</td></tr>
+<tr class="separator:a33a6c391cfb8b98e0944bd27d733a776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6c60d6670c2932354bc9f585627652"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#a3a6c60d6670c2932354bc9f585627652">zhpeig_1pair</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *z, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> *lambda, double *E, int *Step, int debug)</td></tr>
+<tr class="separator:a3a6c60d6670c2932354bc9f585627652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07af435a88d1adfc9c47ff79dc3726d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#a07af435a88d1adfc9c47ff79dc3726d1">zhpeig</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, <a class="el" href="structdcomplex.html">dcomplex</a> *X, int LDX, <a class="el" href="structdcomplex.html">dcomplex</a> *Lambda, int debug)</td></tr>
+<tr class="separator:a07af435a88d1adfc9c47ff79dc3726d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:aa6abeaf7337451e96b07832308d1c676"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#aa6abeaf7337451e96b07832308d1c676">zhpeig_str</a> [] ={ &quot; &quot;, &quot;conv&quot;, &quot;divr&quot;, &quot;sing&quot;, NULL }</td></tr>
+<tr class="separator:aa6abeaf7337451e96b07832308d1c676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9c4028a9037c5b8495577ae7fab968"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zhpeig_8c.html#a7f9c4028a9037c5b8495577ae7fab968">zhpeig_status</a> [] ={&quot; &quot;, &quot;o&quot;, &quot;.&quot; }</td></tr>
+<tr class="separator:a7f9c4028a9037c5b8495577ae7fab968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a7b1e1d5469af9300abe5b7ab7ae90d6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Hk&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(H,k,LDH)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b32cccaf8a24c49253a3612c61561c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PUT_1PAIR&#160;&#160;&#160;{ printf(&quot;[%s] status=%s done=%s step=%03d lambda=%+.16e %+.16e  E=2^%+04d eta=2^%+04d=%.0e mu=%.0e\n&quot;,fname,zhpeig_status[status],zhpeig_str[done],step,Z_R(*lambda),Z_I(*lambda),(int)(log(fabs(*E))/log(2)),(int)(log(fabs(eta))/log(2)),eta,mu); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a324b9707cbef4182c0e960d146378c76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Qk&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(Q,k,LDQ)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adfcc340fc4d9bfc4948489c71660199e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Xk&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,k,LDX)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">列挙型詳解</h2>
+<a class="anchor" id="aba01db17f4a2bfbc3db60dc172972a25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="aba01db17f4a2bfbc3db60dc172972a25a12ea6ff5fe2d904e726834d639addd76"></a>ZHPEIG_STATUS_PRE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aba01db17f4a2bfbc3db60dc172972a25aba0d45ea258bf87087e7d10903f22ee2"></a>ZHPEIG_STATUS_CONV&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aba01db17f4a2bfbc3db60dc172972a25a30888ac5a681ab2bf57ba9fe6c196606"></a>ZHPEIG_STATUS_END&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p> <a class="el" href="zhpeig_8c_source.html">zhpeig.c</a> の <a class="el" href="zhpeig_8c_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a07af435a88d1adfc9c47ff79dc3726d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int zhpeig </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>Lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zhpeig_8c_source.html">zhpeig.c</a> の <a class="el" href="zhpeig_8c_source.html#l00100">100</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a6c60d6670c2932354bc9f585627652"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int zhpeig_1pair </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>Step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zhpeig_8c_source.html">zhpeig.c</a> の <a class="el" href="zhpeig_8c_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a33a6c391cfb8b98e0944bd27d733a776"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zhpeig_jacobi_mat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>JM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDJM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>W</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zhpeig_8c_source.html">zhpeig.c</a> の <a class="el" href="zhpeig_8c_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a class="anchor" id="a7f9c4028a9037c5b8495577ae7fab968"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* zhpeig_status[] ={&quot; &quot;, &quot;o&quot;, &quot;.&quot; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zhpeig_8c_source.html">zhpeig.c</a> の <a class="el" href="zhpeig_8c_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6abeaf7337451e96b07832308d1c676"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* zhpeig_str[] ={ &quot; &quot;, &quot;conv&quot;, &quot;divr&quot;, &quot;sing&quot;, NULL }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zhpeig_8c_source.html">zhpeig.c</a> の <a class="el" href="zhpeig_8c_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="zhpeig_8c.html">zhpeig.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

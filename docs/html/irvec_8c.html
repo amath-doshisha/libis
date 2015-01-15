@@ -1,0 +1,2092 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/irvec.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('irvec_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle">
+<div class="title">irvec.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>多倍長精度実数型rmultiの機械区間演算のベクトルに関する関数の定義.  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="is__rmulti_8h_source.html">is_rmulti.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__rmat_8h_source.html">is_rmat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__irmulti_8h_source.html">is_irmulti.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__func_8h_source.html">is_func.h</a>&quot;</code><br />
+</div>
+<p><a href="irvec_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a4a91c6704b38c1fabf9b2d1bf53ce1fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a4a91c6704b38c1fabf9b2d1bf53ce1fe">RA</a>(X, Y)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(<a class="el" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a>(Y)))</td></tr>
+<tr class="separator:a4a91c6704b38c1fabf9b2d1bf53ce1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd4344cfe1f6fafc5caf1d26d378cac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#aafd4344cfe1f6fafc5caf1d26d378cac">RA2</a>(X, Y0, Y1)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(<a class="el" href="is__macros_8h.html#afc6c2cf0e71b5dc708f1e24e6540c8a1">MAX2</a>(<a class="el" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a>(Y0),<a class="el" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a>(Y1))))</td></tr>
+<tr class="separator:aafd4344cfe1f6fafc5caf1d26d378cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadfaffb0b5666e30f19604bf3a81a5dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#aadfaffb0b5666e30f19604bf3a81a5dc">RAP</a>(X, Z, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(<a class="el" href="rvec_8c.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,Z)))</td></tr>
+<tr class="separator:aadfaffb0b5666e30f19604bf3a81a5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae506ec36706d66ea9abbcca974ce8d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#aae506ec36706d66ea9abbcca974ce8d4">RF</a>(X)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X))</td></tr>
+<tr class="separator:aae506ec36706d66ea9abbcca974ce8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7c724493e1a629ea715f466a16fffb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a3b7c724493e1a629ea715f466a16fffb">RVA</a>(X, Y, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,<a class="el" href="rvec_8c.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,Y)); }</td></tr>
+<tr class="separator:a3b7c724493e1a629ea715f466a16fffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321f01ab2978d42807630a6eeca32aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a321f01ab2978d42807630a6eeca32aaf">RVF</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td></tr>
+<tr class="separator:a321f01ab2978d42807630a6eeca32aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">基本操作</div></td></tr>
+<tr class="memitem:a9af0882da650b3dddb0ccb3d20133da0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a9af0882da650b3dddb0ccb3d20133da0">irvec_copy</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a9af0882da650b3dddb0ccb3d20133da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー [y0,y1]=[x0,x1]  <a href="#a9af0882da650b3dddb0ccb3d20133da0">[詳解]</a><br /></td></tr>
+<tr class="separator:a9af0882da650b3dddb0ccb3d20133da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6050aabb3ede26d9edb3aa3f4c577d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a6050aabb3ede26d9edb3aa3f4c577d8d">irvec_print</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, const char *name, const char *f, int digits)</td></tr>
+<tr class="memdesc:a6050aabb3ede26d9edb3aa3f4c577d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示  <a href="#a6050aabb3ede26d9edb3aa3f4c577d8d">[詳解]</a><br /></td></tr>
+<tr class="separator:a6050aabb3ede26d9edb3aa3f4c577d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2481fe18aa84cbe8913aaa7397b6a38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#ae2481fe18aa84cbe8913aaa7397b6a38">irvec_center_radius</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **xc, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **xr, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:ae2481fe18aa84cbe8913aaa7397b6a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0  <a href="#ae2481fe18aa84cbe8913aaa7397b6a38">[詳解]</a><br /></td></tr>
+<tr class="separator:ae2481fe18aa84cbe8913aaa7397b6a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">四則演算</div></td></tr>
+<tr class="memitem:ac2b68a4f8479e0466633a275844f4e23"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#ac2b68a4f8479e0466633a275844f4e23">irvec_neg</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:ac2b68a4f8479e0466633a275844f4e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">符号の反転 [y0,y1]=-[x0,x1]  <a href="#ac2b68a4f8479e0466633a275844f4e23">[詳解]</a><br /></td></tr>
+<tr class="separator:ac2b68a4f8479e0466633a275844f4e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa789359ced6c2790098a2a8a42b9e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a6aa789359ced6c2790098a2a8a42b9e5">irvec_pm</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
+<tr class="memdesc:a6aa789359ced6c2790098a2a8a42b9e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">符号の正負 [y0,y1]=[-abs(x),abs(x)]  <a href="#a6aa789359ced6c2790098a2a8a42b9e5">[詳解]</a><br /></td></tr>
+<tr class="separator:a6aa789359ced6c2790098a2a8a42b9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae824c7d49a3ad643231adf1e5ab26aca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#ae824c7d49a3ad643231adf1e5ab26aca">irvec_add_pm</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y)</td></tr>
+<tr class="memdesc:ae824c7d49a3ad643231adf1e5ab26aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の拡張 [z0,z1]=[x0,x1]+[-y,y]  <a href="#ae824c7d49a3ad643231adf1e5ab26aca">[詳解]</a><br /></td></tr>
+<tr class="separator:ae824c7d49a3ad643231adf1e5ab26aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97734751962b0117927fb9a4ba83facb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a97734751962b0117927fb9a4ba83facb">irvec_mr</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **mid, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **rad, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a97734751962b0117927fb9a4ba83facb"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の中心と半径 [m-r,m+r]=[x0,x1]  <a href="#a97734751962b0117927fb9a4ba83facb">[詳解]</a><br /></td></tr>
+<tr class="separator:a97734751962b0117927fb9a4ba83facb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3607e1989038fe202720b10915a78b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a5e3607e1989038fe202720b10915a78b">irvec_add</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1)</td></tr>
+<tr class="memdesc:a5e3607e1989038fe202720b10915a78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">足し算 [z0,z1]=[x0,z1]+[y0,y1]  <a href="#a5e3607e1989038fe202720b10915a78b">[詳解]</a><br /></td></tr>
+<tr class="separator:a5e3607e1989038fe202720b10915a78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe8366e820554e204ef582966d20114"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a4fe8366e820554e204ef582966d20114">irvec_add_r</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a4fe8366e820554e204ef582966d20114"><td class="mdescLeft">&#160;</td><td class="mdescRight">足し算 [z0,z1]=[x0,z1]+[y0,y1]  <a href="#a4fe8366e820554e204ef582966d20114">[詳解]</a><br /></td></tr>
+<tr class="separator:a4fe8366e820554e204ef582966d20114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1f592199ce626ab51a6dbea67263b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#aac1f592199ce626ab51a6dbea67263b4">irvec_sub</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1)</td></tr>
+<tr class="memdesc:aac1f592199ce626ab51a6dbea67263b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [z0,z1]=[x0,z1]-[y0,y1]  <a href="#aac1f592199ce626ab51a6dbea67263b4">[詳解]</a><br /></td></tr>
+<tr class="separator:aac1f592199ce626ab51a6dbea67263b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a730892aeb2ebf62f91668a85dc9306c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a730892aeb2ebf62f91668a85dc9306c6">irvec_mul_r</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
+<tr class="memdesc:a730892aeb2ebf62f91668a85dc9306c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">掛け算 [z0,z1]=[x0,x1]*[y0,y1]  <a href="#a730892aeb2ebf62f91668a85dc9306c6">[詳解]</a><br /></td></tr>
+<tr class="separator:a730892aeb2ebf62f91668a85dc9306c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0bbcfc5a2bcbc5ebcd4f5f250d6ab3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a9b0bbcfc5a2bcbc5ebcd4f5f250d6ab3">irvec_div</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1)</td></tr>
+<tr class="memdesc:a9b0bbcfc5a2bcbc5ebcd4f5f250d6ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り算 [z0,z1]=[x0,x1]/[y0,y1]  <a href="#a9b0bbcfc5a2bcbc5ebcd4f5f250d6ab3">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b0bbcfc5a2bcbc5ebcd4f5f250d6ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a01fd910d76237ae1cbe4c0baa9951d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a1a01fd910d76237ae1cbe4c0baa9951d">irvec_sum_pow2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a1a01fd910d76237ae1cbe4c0baa9951d"><td class="mdescLeft">&#160;</td><td class="mdescRight">平方の総和 [y0,y1]=sum([x0,x1].^2)  <a href="#a1a01fd910d76237ae1cbe4c0baa9951d">[詳解]</a><br /></td></tr>
+<tr class="separator:a1a01fd910d76237ae1cbe4c0baa9951d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">数学関数</div></td></tr>
+<tr class="memitem:a74d30f2d0e821cb9a31e3ae422794e14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a74d30f2d0e821cb9a31e3ae422794e14">irvec_abs</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a74d30f2d0e821cb9a31e3ae422794e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">絶対値 [y0,y1]=abs([x0,x1])  <a href="#a74d30f2d0e821cb9a31e3ae422794e14">[詳解]</a><br /></td></tr>
+<tr class="separator:a74d30f2d0e821cb9a31e3ae422794e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e81de1456d182a3a71a676640ae115"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a64e81de1456d182a3a71a676640ae115">irvec_abs_sub</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1)</td></tr>
+<tr class="memdesc:a64e81de1456d182a3a71a676640ae115"><td class="mdescLeft">&#160;</td><td class="mdescRight">差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])  <a href="#a64e81de1456d182a3a71a676640ae115">[詳解]</a><br /></td></tr>
+<tr class="separator:a64e81de1456d182a3a71a676640ae115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113dfccfe605a4d54cf12ec76cfc37ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a113dfccfe605a4d54cf12ec76cfc37ae">irvec_umax</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a113dfccfe605a4d54cf12ec76cfc37ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値 [y0,y1]=[x0,max(x1)]  <a href="#a113dfccfe605a4d54cf12ec76cfc37ae">[詳解]</a><br /></td></tr>
+<tr class="separator:a113dfccfe605a4d54cf12ec76cfc37ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0823e5814f8ef5907cd3861b040f53f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#ae0823e5814f8ef5907cd3861b040f53f">irvec_dmax</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:ae0823e5814f8ef5907cd3861b040f53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値 [y0,y1]=[max(x0),x1]  <a href="#ae0823e5814f8ef5907cd3861b040f53f">[詳解]</a><br /></td></tr>
+<tr class="separator:ae0823e5814f8ef5907cd3861b040f53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad957d4e2a8f634337e4a8927a78e545d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#ad957d4e2a8f634337e4a8927a78e545d">irvec_umin</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:ad957d4e2a8f634337e4a8927a78e545d"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値 [y0,y1]=[x0,min(x1)]  <a href="#ad957d4e2a8f634337e4a8927a78e545d">[詳解]</a><br /></td></tr>
+<tr class="separator:ad957d4e2a8f634337e4a8927a78e545d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee8d501ae689d3e620e5330fe08c613"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#adee8d501ae689d3e620e5330fe08c613">irvec_dmin</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:adee8d501ae689d3e620e5330fe08c613"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値 [y0,y1]=[min(x0),x1]  <a href="#adee8d501ae689d3e620e5330fe08c613">[詳解]</a><br /></td></tr>
+<tr class="separator:adee8d501ae689d3e620e5330fe08c613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0300b59ddd25f6e8cd275977908f878e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a0300b59ddd25f6e8cd275977908f878e">irvec_umax_abs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a0300b59ddd25f6e8cd275977908f878e"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))  <a href="#a0300b59ddd25f6e8cd275977908f878e">[詳解]</a><br /></td></tr>
+<tr class="separator:a0300b59ddd25f6e8cd275977908f878e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93447798fdc536912b779e99d8d37b74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a93447798fdc536912b779e99d8d37b74">irvec_dmin_abs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a93447798fdc536912b779e99d8d37b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))  <a href="#a93447798fdc536912b779e99d8d37b74">[詳解]</a><br /></td></tr>
+<tr class="separator:a93447798fdc536912b779e99d8d37b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">線形変換</div></td></tr>
+<tr class="memitem:a80af435400a755d95d23f7affd8f758e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a80af435400a755d95d23f7affd8f758e">irvec_lintr</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, int LDA0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a80af435400a755d95d23f7affd8f758e"><td class="mdescLeft">&#160;</td><td class="mdescRight">線形変換 [y0,y1]=[A0,A1]*[x0,x1]  <a href="#a80af435400a755d95d23f7affd8f758e">[詳解]</a><br /></td></tr>
+<tr class="separator:a80af435400a755d95d23f7affd8f758e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdef54fee6054963a0dac95669c3692c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#afdef54fee6054963a0dac95669c3692c">irvec_add_lintr</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, int LDA0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:afdef54fee6054963a0dac95669c3692c"><td class="mdescLeft">&#160;</td><td class="mdescRight">線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1]  <a href="#afdef54fee6054963a0dac95669c3692c">[詳解]</a><br /></td></tr>
+<tr class="separator:afdef54fee6054963a0dac95669c3692c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada365b3526253c1973c3f029f9ac5d12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#ada365b3526253c1973c3f029f9ac5d12">irvec_sub_lintr</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, int LDA0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:ada365b3526253c1973c3f029f9ac5d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">線形変換の減算 [y0,y1]-=[A0,A1]*[x0,x1]  <a href="#ada365b3526253c1973c3f029f9ac5d12">[詳解]</a><br /></td></tr>
+<tr class="separator:ada365b3526253c1973c3f029f9ac5d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac934162aec3e6e46614be5bb677083a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#ac934162aec3e6e46614be5bb677083a5">irvec_lintr_t</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, int LDA0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:ac934162aec3e6e46614be5bb677083a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">転置行列の線形変換 [y0,y1]=[A0,A1]'*[x0,x1]  <a href="#ac934162aec3e6e46614be5bb677083a5">[詳解]</a><br /></td></tr>
+<tr class="separator:ac934162aec3e6e46614be5bb677083a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406a6490150b2a66c14fda1269e39a69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a406a6490150b2a66c14fda1269e39a69">irvec_add_lintr_t</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, int LDA0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a406a6490150b2a66c14fda1269e39a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">転置行列の線形変換の加算 [y0,y1]+=[A0,A1]'*[x0,x1]  <a href="#a406a6490150b2a66c14fda1269e39a69">[詳解]</a><br /></td></tr>
+<tr class="separator:a406a6490150b2a66c14fda1269e39a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a736098165d56bd4fde94db2f5d72a193"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a736098165d56bd4fde94db2f5d72a193">irvec_sub_lintr_t</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, int LDA0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a736098165d56bd4fde94db2f5d72a193"><td class="mdescLeft">&#160;</td><td class="mdescRight">転置行列の線形変換の減算 [y0,y1]-=[A0,A1]'*[x0,x1]  <a href="#a736098165d56bd4fde94db2f5d72a193">[詳解]</a><br /></td></tr>
+<tr class="separator:a736098165d56bd4fde94db2f5d72a193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">写像</div></td></tr>
+<tr class="memitem:a1db63725691bc91b1d7844c353ba3a01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#a1db63725691bc91b1d7844c353ba3a01">irvec_func</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:a1db63725691bc91b1d7844c353ba3a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">写像 [y0,y1]=f([x0,x1])  <a href="#a1db63725691bc91b1d7844c353ba3a01">[詳解]</a><br /></td></tr>
+<tr class="separator:a1db63725691bc91b1d7844c353ba3a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0e3f2fe8e3f57f282691e52e1efeef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irvec_8c.html#aed0e3f2fe8e3f57f282691e52e1efeef">irvec_func_list</a> (int m, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y1, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x1)</td></tr>
+<tr class="memdesc:aed0e3f2fe8e3f57f282691e52e1efeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">ベクトル写像 [y0,y1]=f([x0,x1])  <a href="#aed0e3f2fe8e3f57f282691e52e1efeef">[詳解]</a><br /></td></tr>
+<tr class="separator:aed0e3f2fe8e3f57f282691e52e1efeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>多倍長精度実数型rmultiの機械区間演算のベクトルに関する関数の定義. </p>
+<p>スカラーに関しては<a class="el" href="irmulti_8c.html">irmulti.c</a>を参照のこと. ベクトルに関しては<a class="el" href="irvec_8c.html">irvec.c</a>を参照のこと. 行列に関しては<a class="el" href="irmat_8c.html">irmat.c</a>を参照のこと. </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> に定義があります。</p>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a4a91c6704b38c1fabf9b2d1bf53ce1fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(<a class="el" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a>(Y)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aafd4344cfe1f6fafc5caf1d26d378cac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RA2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Y0, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Y1&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(<a class="el" href="is__macros_8h.html#afc6c2cf0e71b5dc708f1e24e6540c8a1">MAX2</a>(<a class="el" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a>(Y0),<a class="el" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442">rget_prec</a>(Y1))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aadfaffb0b5666e30f19604bf3a81a5dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RAP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(<a class="el" href="rvec_8c.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,Z)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aae506ec36706d66ea9abbcca974ce8d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b7c724493e1a629ea715f466a16fffb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RVA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Y, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,<a class="el" href="rvec_8c.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,Y)); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a321f01ab2978d42807630a6eeca32aaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RVF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a74d30f2d0e821cb9a31e3ae422794e14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>絶対値 [y0,y1]=abs([x0,x1]) </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00189">189</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a64e81de1456d182a3a71a676640ae115"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_abs_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1]) </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00201">201</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e3607e1989038fe202720b10915a78b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>足し算 [z0,z1]=[x0,z1]+[y0,y1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00119">119</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afdef54fee6054963a0dac95669c3692c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_add_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00331">331</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a406a6490150b2a66c14fda1269e39a69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_add_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>転置行列の線形変換の加算 [y0,y1]+=[A0,A1]'*[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00388">388</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae824c7d49a3ad643231adf1e5ab26aca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_add_pm </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の拡張 [z0,z1]=[x0,x1]+[-y,y] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00099">99</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4fe8366e820554e204ef582966d20114"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_add_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>足し算 [z0,z1]=[x0,z1]+[y0,y1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00129">129</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2481fe18aa84cbe8913aaa7397b6a38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_center_radius </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>xc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>xr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0 </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9af0882da650b3dddb0ccb3d20133da0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_copy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コピー [y0,y1]=[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b0bbcfc5a2bcbc5ebcd4f5f250d6ab3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_div </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り算 [z0,z1]=[x0,x1]/[y0,y1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00159">159</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0823e5814f8ef5907cd3861b040f53f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_dmax </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>最大値 [y0,y1]=[max(x0),x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00228">228</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adee8d501ae689d3e620e5330fe08c613"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_dmin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>最小値 [y0,y1]=[min(x0),x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00258">258</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a93447798fdc536912b779e99d8d37b74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_dmin_abs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x)) </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00289">289</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1db63725691bc91b1d7844c353ba3a01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_func </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>写像 [y0,y1]=f([x0,x1]) </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00433">433</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aed0e3f2fe8e3f57f282691e52e1efeef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_func_list </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ベクトル写像 [y0,y1]=f([x0,x1]) </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00499">499</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a80af435400a755d95d23f7affd8f758e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>線形変換 [y0,y1]=[A0,A1]*[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00312">312</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac934162aec3e6e46614be5bb677083a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>転置行列の線形変換 [y0,y1]=[A0,A1]'*[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00369">369</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a97734751962b0117927fb9a4ba83facb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_mr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の中心と半径 [m-r,m+r]=[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00109">109</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a730892aeb2ebf62f91668a85dc9306c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_mul_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>掛け算 [z0,z1]=[x0,x1]*[y0,y1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00149">149</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2b68a4f8479e0466633a275844f4e23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_neg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>符号の反転 [y0,y1]=-[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00079">79</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6aa789359ced6c2790098a2a8a42b9e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_pm </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>符号の正負 [y0,y1]=[-abs(x),abs(x)] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00089">89</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6050aabb3ede26d9edb3aa3f4c577d8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irvec_print </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>表示 </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aac1f592199ce626ab51a6dbea67263b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [z0,z1]=[x0,z1]-[y0,y1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00139">139</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ada365b3526253c1973c3f029f9ac5d12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_sub_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>線形変換の減算 [y0,y1]-=[A0,A1]*[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00350">350</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a736098165d56bd4fde94db2f5d72a193"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_sub_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>転置行列の線形変換の減算 [y0,y1]-=[A0,A1]'*[x0,x1] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00407">407</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a01fd910d76237ae1cbe4c0baa9951d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_sum_pow2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>平方の総和 [y0,y1]=sum([x0,x1].^2) </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00169">169</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a113dfccfe605a4d54cf12ec76cfc37ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_umax </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>最大値 [y0,y1]=[x0,max(x1)] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00213">213</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0300b59ddd25f6e8cd275977908f878e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_umax_abs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00273">273</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad957d4e2a8f634337e4a8927a78e545d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int irvec_umin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>最小値 [y0,y1]=[x0,min(x1)] </p>
+
+<p> <a class="el" href="irvec_8c_source.html">irvec.c</a> の <a class="el" href="irvec_8c_source.html#l00243">243</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="irvec_8c.html">irvec.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

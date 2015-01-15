@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/deig.c ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('deig_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">deig.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="deig_8c.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;stdarg.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__macros_8h.html">is_macros.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__ivec_8h.html">is_ivec.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__dvec_8h.html">is_dvec.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__dmat_8h.html">is_dmat.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__deig_8h.html">is_deig.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="mt19937ar_8h.html">mt19937ar.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// F=A*X-lambda*X</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="is__deig_8h.html#ae2412c624859f686792f8f01ee41c33a">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="deig_8c.html#ae2412c624859f686792f8f01ee41c33a">deig_residual</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">double</span> *F, <span class="keyword">const</span> <span class="keywordtype">double</span> *A, <span class="keywordtype">int</span> LDA, <span class="keyword">const</span> <span class="keywordtype">double</span> *X, <span class="keywordtype">double</span> lambda)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="dvec_8c.html#ac95eb2c331e9c8f9f4522a587664c6f3">dvec_copy</a>(n,F,X);                    <span class="comment">// F=X</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="dvec_8c.html#a07940a0907492d6d6dc9aaa760a36d4d">dvec_scale</a>(n,F,(-lambda));           <span class="comment">// F=-lambda*X</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="dvec_8c.html#a93782d30ff6c211fa7eab97b9c010f34">dvec_add_lintr</a>(n,n,F,A,LDA,X);   <span class="comment">// F=A*X-lambda*X</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))), k=1,2,..,n</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="is__deig_8h.html#a8104b9b6323d9c76f36e42d04fe7f46c">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="deig_8c.html#a8104b9b6323d9c76f36e42d04fe7f46c">deig_residual_norm_max</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">double</span> *E, <span class="keyword">const</span> <span class="keywordtype">double</span> *A, <span class="keywordtype">int</span> LDA, <span class="keyword">const</span> <span class="keywordtype">double</span> *X, <span class="keywordtype">int</span> LDX, <span class="keyword">const</span> <span class="keywordtype">double</span> *lambda)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">int</span> j;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">double</span> *F=NULL;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  F=<a class="code" href="dvec_8c.html#acecf3679fbcc94c71770e2962013e129">dvec_allocate</a>(n);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;n; j++){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="deig_8c.html#ae2412c624859f686792f8f01ee41c33a">deig_residual</a>(n,F,A,LDA,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,j,LDX),lambda[j]);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    E[j]=<a class="code" href="dvec_8c.html#a633bbe3a36342399f79195e5f22695ab">dvec_norm_max</a>(n,F);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  F=<a class="code" href="dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877">dvec_free</a>(F);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="is__deig_8h.html#aaf6c3e995e0c3b95614977de64694b46">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="deig_8c.html#aaf6c3e995e0c3b95614977de64694b46">deig_sort</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <span class="keywordtype">double</span> *lambda, <span class="keywordtype">double</span> *X, <span class="keywordtype">int</span> LDX)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">int</span> LDY,*index=NULL;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">double</span> *Y=NULL;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// allocate</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  index=<a class="code" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a>(k);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  LDY=n; Y=<a class="code" href="dmat_8c.html#af11c6f806b1ea2917fc36cc7a07a0f73">dmat_allocate</a>(LDY,k);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// sort</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="dvec_8c.html#a508746b74605e40157cba5eb89c0e007">dvec_sort</a>(k,lambda,index);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="is__ivec_8h.html#aae91f42e4272274f236c891f67319f6d">ivec_reverse</a>(k,index);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="dvec_8c.html#a4b739ec1d7b709b8c23f66cbc087fad5">dvec_reverse</a>(k,lambda);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="dmat_8c.html#a9b1fcf0e1eca5ebaaaf6b4d5aac49262">dmat_copy_index</a>(n,k,Y,LDY,X,LDX,index);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="dmat_8c.html#a02335968e7ff6b7b81ba3efa432b38cd">dmat_copy</a>(n,k,X,LDX,Y,LDY);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// free</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  index=<a class="code" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a>(index);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  Y=<a class="code" href="dmat_8c.html#a119e62380bbfc4367662c0554e563a79">dmat_free</a>(Y);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="is__deig_8h.html#a4eea1c82f8a0453e0cc97ce08c3ba619">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="deig_8c.html#a4eea1c82f8a0453e0cc97ce08c3ba619">deig_sort_index</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <span class="keywordtype">double</span> *lambda, <span class="keywordtype">double</span> *X, <span class="keywordtype">int</span> LDX, <span class="keyword">const</span> <span class="keywordtype">int</span> *index)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="dvec_8c.html#a202e3eb7e14e2d7a362966eb42f82918">dvec_swap_index</a>(k,lambda,index);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="dmat_8c.html#a680b10f485b653de5db177a555c30296">dmat_swap_index</a>(n,k,X,LDX,index);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="is__deig_8h.html#ac870d8e1f951937c6df5ca10d844e440">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="deig_8c.html#ac870d8e1f951937c6df5ca10d844e440">deig_sort_vector_guide</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <span class="keywordtype">double</span> *lambda, <span class="keywordtype">double</span> *X, <span class="keywordtype">int</span> LDX, <span class="keywordtype">double</span> *X0, <span class="keywordtype">int</span> LDX0)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">double</span> value,*a;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  a=<a class="code" href="dvec_8c.html#acecf3679fbcc94c71770e2962013e129">dvec_allocate</a>(k);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;k; j++){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="dmat_8c.html#a5d877f706c5677f4a10efb19d78b2457">dmat_dist_norm_max</a>(a,n,k,X,LDX,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X0,j,LDX0));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    value=<a class="code" href="dvec_8c.html#af4ca8da33076614dde3b0c2a13fbb610">dvec_min_abs_index</a>(k,a,&amp;i);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span>(i!=j){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <a class="code" href="dvec_8c.html#a5065b149965402a99ab191dd45a2413c">dvec_swap</a>(n,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,i,LDX),&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,j,LDX));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <a class="code" href="dvec_8c.html#a5d9aba2a2ac21482eb20557fab694e8d">dvec_swap_at</a>(lambda,i,j);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  a=<a class="code" href="dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877">dvec_free</a>(a);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="is__deig_8h.html#aa82a7837d37ec45a2c234048e992e939">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="deig_8c.html#aa82a7837d37ec45a2c234048e992e939">deig_sort_value_guide</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <span class="keywordtype">double</span> *lambda, <span class="keywordtype">double</span> *X, <span class="keywordtype">int</span> LDX, <span class="keywordtype">double</span> *lambda0)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">double</span> value,*a;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  a=<a class="code" href="dvec_8c.html#acecf3679fbcc94c71770e2962013e129">dvec_allocate</a>(k);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;k; j++){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="dvec_8c.html#a7b64b97efabecfe2bd2f3b7091cc99e9">dvec_abs_sub_scalar</a>(k,a,lambda,lambda0[j]);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    value=<a class="code" href="dvec_8c.html#af4ca8da33076614dde3b0c2a13fbb610">dvec_min_abs_index</a>(k,a,&amp;i);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span>(i!=j){</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <a class="code" href="dvec_8c.html#a5065b149965402a99ab191dd45a2413c">dvec_swap</a>(n,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,i,LDX),&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,j,LDX));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="dvec_8c.html#a5d9aba2a2ac21482eb20557fab694e8d">dvec_swap_at</a>(lambda,i,j);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  a=<a class="code" href="dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877">dvec_free</a>(a);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// EOF</span></div>
+<div class="ttc" id="deig_8c_html_aaf6c3e995e0c3b95614977de64694b46"><div class="ttname"><a href="deig_8c.html#aaf6c3e995e0c3b95614977de64694b46">deig_sort</a></div><div class="ttdeci">void deig_sort(int n, int k, double *lambda, double *X, int LDX)</div><div class="ttdef"><b>Definition:</b> <a href="deig_8c_source.html#l00035">deig.c:35</a></div></div>
+<div class="ttc" id="dvec_8c_html_a4b739ec1d7b709b8c23f66cbc087fad5"><div class="ttname"><a href="dvec_8c.html#a4b739ec1d7b709b8c23f66cbc087fad5">dvec_reverse</a></div><div class="ttdeci">void dvec_reverse(int n, double *x)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00091">dvec.c:91</a></div></div>
+<div class="ttc" id="is__dvec_8h_html"><div class="ttname"><a href="is__dvec_8h.html">is_dvec.h</a></div></div>
+<div class="ttc" id="dmat_8c_html_a119e62380bbfc4367662c0554e563a79"><div class="ttname"><a href="dmat_8c.html#a119e62380bbfc4367662c0554e563a79">dmat_free</a></div><div class="ttdeci">double * dmat_free(double *A)</div><div class="ttdef"><b>Definition:</b> <a href="dmat_8c_source.html#l00021">dmat.c:21</a></div></div>
+<div class="ttc" id="deig_8c_html_ae2412c624859f686792f8f01ee41c33a"><div class="ttname"><a href="deig_8c.html#ae2412c624859f686792f8f01ee41c33a">deig_residual</a></div><div class="ttdeci">void deig_residual(int n, double *F, const double *A, int LDA, const double *X, double lambda)</div><div class="ttdef"><b>Definition:</b> <a href="deig_8c_source.html#l00013">deig.c:13</a></div></div>
+<div class="ttc" id="dmat_8c_html_a680b10f485b653de5db177a555c30296"><div class="ttname"><a href="dmat_8c.html#a680b10f485b653de5db177a555c30296">dmat_swap_index</a></div><div class="ttdeci">void dmat_swap_index(int m, int n, double *A, int LDA, const int *I)</div><div class="ttdef"><b>Definition:</b> <a href="dmat_8c_source.html#l00149">dmat.c:149</a></div></div>
+<div class="ttc" id="dvec_8c_html_a633bbe3a36342399f79195e5f22695ab"><div class="ttname"><a href="dvec_8c.html#a633bbe3a36342399f79195e5f22695ab">dvec_norm_max</a></div><div class="ttdeci">double dvec_norm_max(int n, const double *x)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00556">dvec.c:556</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_a32657ddb5a0bb69fbada6fb9b6260886"><div class="ttname"><a href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a></div><div class="ttdeci">int * ivec_free(int *x)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00304">ivec.c:304</a></div></div>
+<div class="ttc" id="dvec_8c_html_af4ca8da33076614dde3b0c2a13fbb610"><div class="ttname"><a href="dvec_8c.html#af4ca8da33076614dde3b0c2a13fbb610">dvec_min_abs_index</a></div><div class="ttdeci">double dvec_min_abs_index(int n, const double *x, int *I)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00642">dvec.c:642</a></div></div>
+<div class="ttc" id="is__dmat_8h_html"><div class="ttname"><a href="is__dmat_8h.html">is_dmat.h</a></div></div>
+<div class="ttc" id="dmat_8c_html_a5d877f706c5677f4a10efb19d78b2457"><div class="ttname"><a href="dmat_8c.html#a5d877f706c5677f4a10efb19d78b2457">dmat_dist_norm_max</a></div><div class="ttdeci">void dmat_dist_norm_max(double *y, int m, int n, const double *A, int LDA, const double *x)</div><div class="ttdef"><b>Definition:</b> <a href="dmat_8c_source.html#l00297">dmat.c:297</a></div></div>
+<div class="ttc" id="mt19937ar_8h_html"><div class="ttname"><a href="mt19937ar_8h.html">mt19937ar.h</a></div></div>
+<div class="ttc" id="deig_8c_html_a8104b9b6323d9c76f36e42d04fe7f46c"><div class="ttname"><a href="deig_8c.html#a8104b9b6323d9c76f36e42d04fe7f46c">deig_residual_norm_max</a></div><div class="ttdeci">void deig_residual_norm_max(int n, double *E, const double *A, int LDA, const double *X, int LDX, const double *lambda)</div><div class="ttdef"><b>Definition:</b> <a href="deig_8c_source.html#l00021">deig.c:21</a></div></div>
+<div class="ttc" id="dvec_8c_html_a07940a0907492d6d6dc9aaa760a36d4d"><div class="ttname"><a href="dvec_8c.html#a07940a0907492d6d6dc9aaa760a36d4d">dvec_scale</a></div><div class="ttdeci">void dvec_scale(int n, double *x, double a)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00334">dvec.c:334</a></div></div>
+<div class="ttc" id="dvec_8c_html_acecf3679fbcc94c71770e2962013e129"><div class="ttname"><a href="dvec_8c.html#acecf3679fbcc94c71770e2962013e129">dvec_allocate</a></div><div class="ttdeci">double * dvec_allocate(int n)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00016">dvec.c:16</a></div></div>
+<div class="ttc" id="dvec_8c_html_a5065b149965402a99ab191dd45a2413c"><div class="ttname"><a href="dvec_8c.html#a5065b149965402a99ab191dd45a2413c">dvec_swap</a></div><div class="ttdeci">void dvec_swap(int n, double *x, double *y)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00429">dvec.c:429</a></div></div>
+<div class="ttc" id="deig_8c_html_aa82a7837d37ec45a2c234048e992e939"><div class="ttname"><a href="deig_8c.html#aa82a7837d37ec45a2c234048e992e939">deig_sort_value_guide</a></div><div class="ttdeci">void deig_sort_value_guide(int n, int k, double *lambda, double *X, int LDX, double *lambda0)</div><div class="ttdef"><b>Definition:</b> <a href="deig_8c_source.html#l00079">deig.c:79</a></div></div>
+<div class="ttc" id="dvec_8c_html_a93782d30ff6c211fa7eab97b9c010f34"><div class="ttname"><a href="dvec_8c.html#a93782d30ff6c211fa7eab97b9c010f34">dvec_add_lintr</a></div><div class="ttdeci">void dvec_add_lintr(int m, int n, double *y, const double *A, int LDA, const double *x)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00274">dvec.c:274</a></div></div>
+<div class="ttc" id="dmat_8c_html_a02335968e7ff6b7b81ba3efa432b38cd"><div class="ttname"><a href="dmat_8c.html#a02335968e7ff6b7b81ba3efa432b38cd">dmat_copy</a></div><div class="ttdeci">void dmat_copy(int m, int n, double *B, int LDB, const double *A, int LDA)</div><div class="ttdef"><b>Definition:</b> <a href="dmat_8c_source.html#l00114">dmat.c:114</a></div></div>
+<div class="ttc" id="deig_8c_html_a4eea1c82f8a0453e0cc97ce08c3ba619"><div class="ttname"><a href="deig_8c.html#a4eea1c82f8a0453e0cc97ce08c3ba619">deig_sort_index</a></div><div class="ttdeci">void deig_sort_index(int n, int k, double *lambda, double *X, int LDX, const int *index)</div><div class="ttdef"><b>Definition:</b> <a href="deig_8c_source.html#l00055">deig.c:55</a></div></div>
+<div class="ttc" id="dvec_8c_html_a7b64b97efabecfe2bd2f3b7091cc99e9"><div class="ttname"><a href="dvec_8c.html#a7b64b97efabecfe2bd2f3b7091cc99e9">dvec_abs_sub_scalar</a></div><div class="ttdeci">void dvec_abs_sub_scalar(int n, double *z, const double *x, double y)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00524">dvec.c:524</a></div></div>
+<div class="ttc" id="is__deig_8h_html"><div class="ttname"><a href="is__deig_8h.html">is_deig.h</a></div></div>
+<div class="ttc" id="dmat_8c_html_af11c6f806b1ea2917fc36cc7a07a0f73"><div class="ttname"><a href="dmat_8c.html#af11c6f806b1ea2917fc36cc7a07a0f73">dmat_allocate</a></div><div class="ttdeci">double * dmat_allocate(int m, int n)</div><div class="ttdef"><b>Definition:</b> <a href="dmat_8c_source.html#l00016">dmat.c:16</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_aae91f42e4272274f236c891f67319f6d"><div class="ttname"><a href="is__ivec_8h.html#aae91f42e4272274f236c891f67319f6d">ivec_reverse</a></div><div class="ttdeci">void ivec_reverse(int n, int *X)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00223">ivec.c:223</a></div></div>
+<div class="ttc" id="dvec_8c_html_a5476af70b64eed60838e3adf3ce3a877"><div class="ttname"><a href="dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877">dvec_free</a></div><div class="ttdeci">double * dvec_free(double *x)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00021">dvec.c:21</a></div></div>
+<div class="ttc" id="dvec_8c_html_a508746b74605e40157cba5eb89c0e007"><div class="ttname"><a href="dvec_8c.html#a508746b74605e40157cba5eb89c0e007">dvec_sort</a></div><div class="ttdeci">void dvec_sort(int n, double *x, int *I)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00149">dvec.c:149</a></div></div>
+<div class="ttc" id="dvec_8c_html_ac95eb2c331e9c8f9f4522a587664c6f3"><div class="ttname"><a href="dvec_8c.html#ac95eb2c331e9c8f9f4522a587664c6f3">dvec_copy</a></div><div class="ttdeci">void dvec_copy(int n, double *y, const double *x)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00171">dvec.c:171</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a8137095c9ec22387b3dc5971e47ab31c"><div class="ttname"><a href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a></div><div class="ttdeci">#define COL(A, J, LDA)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00012">is_macros.h:12</a></div></div>
+<div class="ttc" id="is__macros_8h_html"><div class="ttname"><a href="is__macros_8h.html">is_macros.h</a></div></div>
+<div class="ttc" id="dvec_8c_html_a202e3eb7e14e2d7a362966eb42f82918"><div class="ttname"><a href="dvec_8c.html#a202e3eb7e14e2d7a362966eb42f82918">dvec_swap_index</a></div><div class="ttdeci">void dvec_swap_index(int n, double *x, const int *I)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00114">dvec.c:114</a></div></div>
+<div class="ttc" id="is__ivec_8h_html"><div class="ttname"><a href="is__ivec_8h.html">is_ivec.h</a></div></div>
+<div class="ttc" id="dvec_8c_html_a5d9aba2a2ac21482eb20557fab694e8d"><div class="ttname"><a href="dvec_8c.html#a5d9aba2a2ac21482eb20557fab694e8d">dvec_swap_at</a></div><div class="ttdeci">void dvec_swap_at(double *x, int i, int j)</div><div class="ttdef"><b>Definition:</b> <a href="dvec_8c_source.html#l00105">dvec.c:105</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_a420702f6c193dfe186102ae2f47e625f"><div class="ttname"><a href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a></div><div class="ttdeci">int * ivec_allocate(int n)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00299">ivec.c:299</a></div></div>
+<div class="ttc" id="dmat_8c_html_a9b1fcf0e1eca5ebaaaf6b4d5aac49262"><div class="ttname"><a href="dmat_8c.html#a9b1fcf0e1eca5ebaaaf6b4d5aac49262">dmat_copy_index</a></div><div class="ttdeci">void dmat_copy_index(int m, int n, double *B, int LDB, const double *A, int LDA, const int *I)</div><div class="ttdef"><b>Definition:</b> <a href="dmat_8c_source.html#l00138">dmat.c:138</a></div></div>
+<div class="ttc" id="deig_8c_html_ac870d8e1f951937c6df5ca10d844e440"><div class="ttname"><a href="deig_8c.html#ac870d8e1f951937c6df5ca10d844e440">deig_sort_vector_guide</a></div><div class="ttdeci">void deig_sort_vector_guide(int n, int k, double *lambda, double *X, int LDX, double *X0, int LDX0)</div><div class="ttdef"><b>Definition:</b> <a href="deig_8c_source.html#l00063">deig.c:63</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="deig_8c.html">deig.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分45秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

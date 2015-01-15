@@ -1,0 +1,1356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_ivec.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__ivec_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_ivec.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="is__ivec_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a420702f6c193dfe186102ae2f47e625f"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a> (int n)</td></tr>
+<tr class="separator:a420702f6c193dfe186102ae2f47e625f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32657ddb5a0bb69fbada6fb9b6260886"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a> (int *x)</td></tr>
+<tr class="separator:a32657ddb5a0bb69fbada6fb9b6260886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c620f9e59979d670baf9a14eacba55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a66c620f9e59979d670baf9a14eacba55">ivec_zeros</a> (int n, int *X)</td></tr>
+<tr class="separator:a66c620f9e59979d670baf9a14eacba55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd9b75847069ce29977f9963e995f1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#acfd9b75847069ce29977f9963e995f1e">ivec_ones</a> (int n, int *X)</td></tr>
+<tr class="separator:acfd9b75847069ce29977f9963e995f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8798000f03dfb8de579c67c5aea8cc01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a8798000f03dfb8de579c67c5aea8cc01">ivec_set</a> (int n, int *X, int a)</td></tr>
+<tr class="separator:a8798000f03dfb8de579c67c5aea8cc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaeaae9c4553c4807ad0a008c3719b6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#abaeaae9c4553c4807ad0a008c3719b6e">ivec_grid</a> (int n, int *X)</td></tr>
+<tr class="separator:abaeaae9c4553c4807ad0a008c3719b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9390a835d6e2fcd5feee886cdd72a87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#af9390a835d6e2fcd5feee886cdd72a87">ivec_copy</a> (int n, int *Y, const int *X)</td></tr>
+<tr class="separator:af9390a835d6e2fcd5feee886cdd72a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a039125f718e82de7f9440d04d586e4b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a039125f718e82de7f9440d04d586e4b2">ivec_copy_index</a> (int n, int *Y, const int *X, const int *I)</td></tr>
+<tr class="separator:a039125f718e82de7f9440d04d586e4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ad79f4b4a0fd788e68464873b33d5ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a8ad79f4b4a0fd788e68464873b33d5ed">ivec_swap</a> (int n, int *x, int *y)</td></tr>
+<tr class="separator:a8ad79f4b4a0fd788e68464873b33d5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3832e3e46be919fa2d5e46dd662d68cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a3832e3e46be919fa2d5e46dd662d68cf">ivec_add</a> (int n, int *y, int *x)</td></tr>
+<tr class="separator:a3832e3e46be919fa2d5e46dd662d68cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29135553c63562d96e692084c1159fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a29135553c63562d96e692084c1159fdd">ivec_add_scalar</a> (int n, int *y, int x)</td></tr>
+<tr class="separator:a29135553c63562d96e692084c1159fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953010e9c3060931675fc9bf796ac73d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a953010e9c3060931675fc9bf796ac73d">ivec_sub</a> (int n, int *y, int *x)</td></tr>
+<tr class="separator:a953010e9c3060931675fc9bf796ac73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e26299cbb5362db3419366f7fe4abc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a9e26299cbb5362db3419366f7fe4abc8">ivec_scale</a> (int n, int *x, int a)</td></tr>
+<tr class="separator:a9e26299cbb5362db3419366f7fe4abc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae91f42e4272274f236c891f67319f6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#aae91f42e4272274f236c891f67319f6d">ivec_reverse</a> (int n, int *X)</td></tr>
+<tr class="separator:aae91f42e4272274f236c891f67319f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f735f38b0e50a5008b41981ee35eb04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a3f735f38b0e50a5008b41981ee35eb04">ivec_relocate</a> (int n, int *X, int *I)</td></tr>
+<tr class="separator:a3f735f38b0e50a5008b41981ee35eb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06758a0b78210c47ea3c74d1eb54091c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a06758a0b78210c47ea3c74d1eb54091c">ivec_swap_at</a> (int *X, int i, int j)</td></tr>
+<tr class="separator:a06758a0b78210c47ea3c74d1eb54091c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca8f5ade5a9d5d617d5499e69d78a54f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#aca8f5ade5a9d5d617d5499e69d78a54f">ivec_swap_index</a> (int n, int *x, const int *I)</td></tr>
+<tr class="separator:aca8f5ade5a9d5d617d5499e69d78a54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba49aed864981f54a01143cbdab293d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a9ba49aed864981f54a01143cbdab293d">ivec_sort</a> (int n, int *X, int *I)</td></tr>
+<tr class="separator:a9ba49aed864981f54a01143cbdab293d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a086d1a6e4339db898596f248f5d13b16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a086d1a6e4339db898596f248f5d13b16">ivec_quick_sort</a> (int n, int *X, int *I, int left, int right)</td></tr>
+<tr class="separator:a086d1a6e4339db898596f248f5d13b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fe31c0e42f56513bb8a4a8b4d3007bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a9fe31c0e42f56513bb8a4a8b4d3007bf">ivec_sort_index</a> (int *I, int n, int *X)</td></tr>
+<tr class="separator:a9fe31c0e42f56513bb8a4a8b4d3007bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a5d31e93fb3b9992e6a47d8a379a6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a21a5d31e93fb3b9992e6a47d8a379a6f">ivec_max</a> (int n, const int *X)</td></tr>
+<tr class="separator:a21a5d31e93fb3b9992e6a47d8a379a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d48a774726ea4a66778f06c21847242"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a2d48a774726ea4a66778f06c21847242">ivec_min</a> (int n, const int *X)</td></tr>
+<tr class="separator:a2d48a774726ea4a66778f06c21847242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9668c40a8b02f093907099917187e0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#ac9668c40a8b02f093907099917187e0a">ivec_sum</a> (int n, const int *x)</td></tr>
+<tr class="separator:ac9668c40a8b02f093907099917187e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256e6470705ca680bf176d2e5ee4e6d9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a256e6470705ca680bf176d2e5ee4e6d9">ivec_average</a> (int n, const int *x)</td></tr>
+<tr class="separator:a256e6470705ca680bf176d2e5ee4e6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ddcac35c7e663c288c4fbd8f00c344"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a98ddcac35c7e663c288c4fbd8f00c344">ivec_eq</a> (int n, const int *X, const int *Y)</td></tr>
+<tr class="separator:a98ddcac35c7e663c288c4fbd8f00c344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf1e89c55ec8ece627eb55a5c9b6a769"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#adf1e89c55ec8ece627eb55a5c9b6a769">ivec_ne</a> (int n, const int *X, const int *Y)</td></tr>
+<tr class="separator:adf1e89c55ec8ece627eb55a5c9b6a769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86cfd1d5d2914c1ba5ea8aa1226de085"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a86cfd1d5d2914c1ba5ea8aa1226de085">ivec_cmp</a> (int n, const int *X, int m, const int *Y)</td></tr>
+<tr class="separator:a86cfd1d5d2914c1ba5ea8aa1226de085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907b8db9e4fc3a40cf1eb885e0bf1628"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a907b8db9e4fc3a40cf1eb885e0bf1628">ivec_count_if</a> (int n, const int *X, int value)</td></tr>
+<tr class="separator:a907b8db9e4fc3a40cf1eb885e0bf1628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991a035dd8f638eea1098e318119f813"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a991a035dd8f638eea1098e318119f813">ivec_count_if_not</a> (int n, const int *X, int value)</td></tr>
+<tr class="separator:a991a035dd8f638eea1098e318119f813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20e57f529a4c8a5a4f412c37c886e41"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#aa20e57f529a4c8a5a4f412c37c886e41">ivec_allocate_index_if</a> (int n, const int *X, int value, int *pm)</td></tr>
+<tr class="separator:aa20e57f529a4c8a5a4f412c37c886e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ab9342c622fb125bc0d893bbf97b1f"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#ac9ab9342c622fb125bc0d893bbf97b1f">ivec_allocate_index_if_not</a> (int n, const int *X, int value, int *pm)</td></tr>
+<tr class="separator:ac9ab9342c622fb125bc0d893bbf97b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fc137efd8627fea29ea3a96287077d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a72fc137efd8627fea29ea3a96287077d">ivec_first_index_if</a> (int n, const int *X, int value)</td></tr>
+<tr class="separator:a72fc137efd8627fea29ea3a96287077d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11618ab4fabb2095bb78ab6f62c9d967"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a11618ab4fabb2095bb78ab6f62c9d967">ivec_first_index_if_not</a> (int n, const int *X, int value)</td></tr>
+<tr class="separator:a11618ab4fabb2095bb78ab6f62c9d967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb97b0faa62760abf61065328ec51cd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#adb97b0faa62760abf61065328ec51cd3">ivec_print</a> (int n, const int *X, char *name)</td></tr>
+<tr class="separator:adb97b0faa62760abf61065328ec51cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088a24ef7676be0b10dfff86448e1251"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__ivec_8h.html#a088a24ef7676be0b10dfff86448e1251">ivec_save</a> (int n, int *x, int offset, char *fmt,...)</td></tr>
+<tr class="separator:a088a24ef7676be0b10dfff86448e1251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a3832e3e46be919fa2d5e46dd662d68cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00314">314</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a29135553c63562d96e692084c1159fdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_add_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00321">321</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a420702f6c193dfe186102ae2f47e625f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* ivec_allocate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00299">299</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa20e57f529a4c8a5a4f412c37c886e41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* ivec_allocate_index_if </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00066">66</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9ab9342c622fb125bc0d893bbf97b1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* ivec_allocate_index_if_not </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00080">80</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a256e6470705ca680bf176d2e5ee4e6d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ivec_average </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00147">147</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a86cfd1d5d2914c1ba5ea8aa1226de085"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_cmp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af9390a835d6e2fcd5feee886cdd72a87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_copy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00244">244</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a039125f718e82de7f9440d04d586e4b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_copy_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00251">251</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a907b8db9e4fc3a40cf1eb885e0bf1628"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_count_if </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00094">94</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a991a035dd8f638eea1098e318119f813"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_count_if_not </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00103">103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a98ddcac35c7e663c288c4fbd8f00c344"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_eq </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a72fc137efd8627fea29ea3a96287077d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_first_index_if </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a11618ab4fabb2095bb78ab6f62c9d967"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_first_index_if_not </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a32657ddb5a0bb69fbada6fb9b6260886"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* ivec_free </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00304">304</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abaeaae9c4553c4807ad0a008c3719b6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_grid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00272">272</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a21a5d31e93fb3b9992e6a47d8a379a6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00115">115</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d48a774726ea4a66778f06c21847242"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_min </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00126">126</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adf1e89c55ec8ece627eb55a5c9b6a769"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_ne </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acfd9b75847069ce29977f9963e995f1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_ones </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00286">286</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adb97b0faa62760abf61065328ec51cd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_print </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00339">339</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a086d1a6e4339db898596f248f5d13b16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_quick_sort </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00167">167</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f735f38b0e50a5008b41981ee35eb04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_relocate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00234">234</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aae91f42e4272274f236c891f67319f6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_reverse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00223">223</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a088a24ef7676be0b10dfff86448e1251"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00355">355</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e26299cbb5362db3419366f7fe4abc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_scale </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8798000f03dfb8de579c67c5aea8cc01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_set </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00279">279</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ba49aed864981f54a01143cbdab293d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_sort </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00161">161</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9fe31c0e42f56513bb8a4a8b4d3007bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_sort_index </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00190">190</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a953010e9c3060931675fc9bf796ac73d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00330">330</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9668c40a8b02f093907099917187e0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ivec_sum </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00139">139</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ad79f4b4a0fd788e68464873b33d5ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_swap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00258">258</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a06758a0b78210c47ea3c74d1eb54091c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_swap_at </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00202">202</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aca8f5ade5a9d5d617d5499e69d78a54f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_swap_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00211">211</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a66c620f9e59979d670baf9a14eacba55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ivec_zeros </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="ivec_8c_source.html">ivec.c</a> の <a class="el" href="ivec_8c_source.html#l00293">293</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__ivec_8h.html">is_ivec.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

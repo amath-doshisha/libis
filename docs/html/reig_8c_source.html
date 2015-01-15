@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/reig.c ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('reig_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">reig.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="reig_8c.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;math.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__macros_8h.html">is_macros.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rmulti_8h.html">is_rmulti.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__ivec_8h.html">is_ivec.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rvec_8h.html">is_rvec.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rmat_8h.html">is_rmat.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__reig_8h.html">is_reig.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="reig_8c.html#ac371e6294165815131a15050a177371d">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="reig_8c.html#ac371e6294165815131a15050a177371d">reig_residual</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **F, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *lambda)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="is__rvec_8h.html#a1ee11fa172a6b242cf94c277c7a2a5cb">rvec_mul_r</a>(n,F,x,lambda);      <span class="comment">// F=x*lambda</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="is__rvec_8h.html#a4b2464b0e0b8f94909fb4718f342c11b">rvec_neg</a>(n,F,F);               <span class="comment">// F=-x*lambda</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="is__rvec_8h.html#a91c99263d112996c24dfdeb6212d1aa3">rvec_add_lintr</a>(n,n,F,A,LDA,x); <span class="comment">// F=A*x-lambda*x</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="reig_8c.html#acc38fed065180aa26627ac9792016420">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="reig_8c.html#acc38fed065180aa26627ac9792016420">reig_max_abs_residuals</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **E, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **lambda)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">int</span> j;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **F=NULL;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  F=<a class="code" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(n,<a class="code" href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(n,E)); <span class="comment">// allocate</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;n; j++){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="reig_8c.html#ac371e6294165815131a15050a177371d">reig_residual</a>(n,F,A,LDA,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,j,LDX),lambda[j]);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="is__rvec_8h.html#a46f27e83153fb690369e25ba058e11f8">rvec_max_abs</a>(E[j],n,F);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  F=<a class="code" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(n,F); <span class="comment">// free </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="reig_8c.html#a922ec5886e427c2cd41c86c150727379">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="reig_8c.html#a922ec5886e427c2cd41c86c150727379">reig_sort</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X, <span class="keywordtype">int</span> LDX)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">int</span> *index=NULL;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// allocate</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  index=<a class="code" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a>(k);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// sort</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="is__rvec_8h.html#ad2897e1c30b845bfca52a65803aae013">rvec_sort</a>(k,lambda,index);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="is__ivec_8h.html#aae91f42e4272274f236c891f67319f6d">ivec_reverse</a>(k,index);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="is__rvec_8h.html#ad510ed9e256b23e3d067c894a89fee14">rvec_reverse</a>(k,lambda);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="is__rmat_8h.html#a4a4efe4c70109d0f5f858ece321acab8">rmat_cols_swap_index</a>(n,k,X,LDX,index);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// free</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  index=<a class="code" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a>(index);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="reig_8c.html#aa699e8c31f66cb1b41a8c7e2bac9898f">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="reig_8c.html#aa699e8c31f66cb1b41a8c7e2bac9898f">reig_sort_index</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X, <span class="keywordtype">int</span> LDX, <span class="keyword">const</span> <span class="keywordtype">int</span> *index)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="is__rvec_8h.html#a8855892e44078077ecf39fb448d10bc8">rvec_swap_index</a>(k,lambda,index);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="is__rmat_8h.html#a4a4efe4c70109d0f5f858ece321acab8">rmat_cols_swap_index</a>(n,k,X,LDX,index);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="reig_8c.html#ac7f83a9779751777ce0e1906315bc5c9">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="reig_8c.html#ac7f83a9779751777ce0e1906315bc5c9">reig_sort_vector_guide</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <span class="keywordtype">int</span> LDX0)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">int</span> i,j,prec;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *value,**a;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  prec=<a class="code" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa">rmat_get_prec_max</a>(n,k,X0,LDX0);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  value=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(prec);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  a=<a class="code" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(k,prec);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;k; j++){</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="is__rmat_8h.html#a9105b0b8ccb79ddd434dd7b20db2d61b">rmat_cols_max_abs_sub_rvec</a>(a,n,k,X,LDX,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X0,j,LDX0));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="is__rvec_8h.html#a2705fbfbcdfcd544e6ecabe6d8749a83">rvec_min_abs_index</a>(value,k,a,&amp;i);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span>(i!=j){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="is__rvec_8h.html#a3f930c8082b45dc7e58fbfc309036548">rvec_swap</a>(n,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,i,LDX),&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,j,LDX));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordflow">if</span>(lambda!=NULL){ <a class="code" href="is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da">rswap</a>(lambda[i],lambda[j]); }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  value=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(value);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  a=<a class="code" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(n,a);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="reig_8c.html#a10e3cfef7a098cd9037a7c0fdbcab66a">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="reig_8c.html#a10e3cfef7a098cd9037a7c0fdbcab66a">reig_sort_value_guide</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **lambda0)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">int</span> i,j,prec;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *value,**a;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  prec=<a class="code" href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a>(k,lambda0);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  value=<a class="code" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(prec);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  a=<a class="code" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a>(k,prec);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;k; j++){</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="is__rvec_8h.html#a5cc70fd440b8c225a2d60f06a5225967">rvec_abs_sub_r</a>(k,a,lambda,lambda0[j]);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="is__rvec_8h.html#a2705fbfbcdfcd544e6ecabe6d8749a83">rvec_min_abs_index</a>(value,k,a,&amp;i);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span>(i!=j){</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordflow">if</span>(X!=NULL){ <a class="code" href="is__rvec_8h.html#a3f930c8082b45dc7e58fbfc309036548">rvec_swap</a>(n,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,i,LDX),&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,j,LDX)); }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <a class="code" href="is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da">rswap</a>(lambda[i],lambda[j]);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  value=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(value);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  a=<a class="code" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(n,a);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">//EOF</span></div>
+<div class="ttc" id="reig_8c_html_acc38fed065180aa26627ac9792016420"><div class="ttname"><a href="reig_8c.html#acc38fed065180aa26627ac9792016420">reig_max_abs_residuals</a></div><div class="ttdeci">void reig_max_abs_residuals(int n, rmulti **E, rmulti **A, int LDA, rmulti **X, int LDX, rmulti **lambda)</div><div class="ttdoc">固有値問題の全ての残差の最大値ノルム E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))). </div><div class="ttdef"><b>Definition:</b> <a href="reig_8c_source.html#l00033">reig.c:33</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_ad2897e1c30b845bfca52a65803aae013"><div class="ttname"><a href="is__rvec_8h.html#ad2897e1c30b845bfca52a65803aae013">rvec_sort</a></div><div class="ttdeci">void rvec_sort(int n, rmulti **x, int *I)</div><div class="ttdoc">rmulti型のベクトルの要素を小さい順に入れ替える. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00632">rvec.c:632</a></div></div>
+<div class="ttc" id="is__rmat_8h_html"><div class="ttname"><a href="is__rmat_8h.html">is_rmat.h</a></div><div class="ttdoc">多倍長精度実数型rmultiの行列に関する関数の宣言 </div></div>
+<div class="ttc" id="is__rmulti_8h_html"><div class="ttname"><a href="is__rmulti_8h.html">is_rmulti.h</a></div><div class="ttdoc">多倍長精度実数型rmultiの宣言と関数． </div></div>
+<div class="ttc" id="is__rmulti_8h_html_ad7af4d3f57a6d6d4a934cb3ad18537da"><div class="ttname"><a href="is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da">rswap</a></div><div class="ttdeci">void rswap(rmulti *x, rmulti *y)</div><div class="ttdoc">rmulti型の値の交換. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00270">rmulti.c:270</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a8855892e44078077ecf39fb448d10bc8"><div class="ttname"><a href="is__rvec_8h.html#a8855892e44078077ecf39fb448d10bc8">rvec_swap_index</a></div><div class="ttdeci">void rvec_swap_index(int n, rmulti **x, const int *I)</div><div class="ttdoc">rmulti型のベクトルの要素を要素番号の配列Iの値に従って入れ替える. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00610">rvec.c:610</a></div></div>
+<div class="ttc" id="reig_8c_html_a10e3cfef7a098cd9037a7c0fdbcab66a"><div class="ttname"><a href="reig_8c.html#a10e3cfef7a098cd9037a7c0fdbcab66a">reig_sort_value_guide</a></div><div class="ttdeci">void reig_sort_value_guide(int n, int k, rmulti **lambda, rmulti **X, int LDX, rmulti **lambda0)</div><div class="ttdoc">固有対を配列lambda0に従って並び替える. </div><div class="ttdef"><b>Definition:</b> <a href="reig_8c_source.html#l00096">reig.c:96</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_a32657ddb5a0bb69fbada6fb9b6260886"><div class="ttname"><a href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a></div><div class="ttdeci">int * ivec_free(int *x)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00304">ivec.c:304</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a1ee11fa172a6b242cf94c277c7a2a5cb"><div class="ttname"><a href="is__rvec_8h.html#a1ee11fa172a6b242cf94c277c7a2a5cb">rvec_mul_r</a></div><div class="ttdeci">int rvec_mul_r(int n, rmulti **z, rmulti **x, rmulti *y)</div><div class="ttdoc">rmulti型のベクトルxとスカラーyの掛け算 z=x*y </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00817">rvec.c:817</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_abd2ceb7eaa6481640a45357d44034950"><div class="ttname"><a href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a></div><div class="ttdeci">rmulti * rfree(rmulti *x)</div><div class="ttdoc">rmulti型の終了処理. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00212">rmulti.c:212</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_ad3153e9e45ce7820cbe83a0b6eb0f2ec"><div class="ttname"><a href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec">rvec_get_prec_max</a></div><div class="ttdeci">int rvec_get_prec_max(int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00135">rvec.c:135</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a4a4efe4c70109d0f5f858ece321acab8"><div class="ttname"><a href="is__rmat_8h.html#a4a4efe4c70109d0f5f858ece321acab8">rmat_cols_swap_index</a></div><div class="ttdeci">void rmat_cols_swap_index(int m, int n, rmulti **A, int LDA, const int *I)</div><div class="ttdoc">rmulti型の行列の列を列番号の配列Iの値に従って入れ替える. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00636">rmat.c:636</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a3f930c8082b45dc7e58fbfc309036548"><div class="ttname"><a href="is__rvec_8h.html#a3f930c8082b45dc7e58fbfc309036548">rvec_swap</a></div><div class="ttdeci">void rvec_swap(int n, rmulti **x, rmulti **y)</div><div class="ttdoc">rmulti型のベクトルの値の交換. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00110">rvec.c:110</a></div></div>
+<div class="ttc" id="is__reig_8h_html"><div class="ttname"><a href="is__reig_8h.html">is_reig.h</a></div><div class="ttdoc">多倍長精度実数型rmultiによる固有値計算に関する関数の宣言. </div></div>
+<div class="ttc" id="is__rvec_8h_html_a595468148dda7b3dc347d2f5040a3dd1"><div class="ttname"><a href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a></div><div class="ttdeci">rmulti ** rvec_free(int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの終了処理. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00077">rvec.c:77</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a91c99263d112996c24dfdeb6212d1aa3"><div class="ttname"><a href="is__rvec_8h.html#a91c99263d112996c24dfdeb6212d1aa3">rvec_add_lintr</a></div><div class="ttdeci">int rvec_add_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00966">rvec.c:966</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a3c8378f86082105c9187889275301862"><div class="ttname"><a href="is__rvec_8h.html#a3c8378f86082105c9187889275301862">rvec_allocate_prec</a></div><div class="ttdeci">rmulti ** rvec_allocate_prec(int n, int prec)</div><div class="ttdoc">rmulti型のベクトルの精度を指定しての新規生成. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00053">rvec.c:53</a></div></div>
+<div class="ttc" id="reig_8c_html_ac371e6294165815131a15050a177371d"><div class="ttname"><a href="reig_8c.html#ac371e6294165815131a15050a177371d">reig_residual</a></div><div class="ttdeci">void reig_residual(int n, rmulti **F, rmulti **A, int LDA, rmulti **x, rmulti *lambda)</div><div class="ttdoc">固有値問題の残差 F=A*x-lambda*x. </div><div class="ttdef"><b>Definition:</b> <a href="reig_8c_source.html#l00023">reig.c:23</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_aae91f42e4272274f236c891f67319f6d"><div class="ttname"><a href="is__ivec_8h.html#aae91f42e4272274f236c891f67319f6d">ivec_reverse</a></div><div class="ttdeci">void ivec_reverse(int n, int *X)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00223">ivec.c:223</a></div></div>
+<div class="ttc" id="reig_8c_html_aa699e8c31f66cb1b41a8c7e2bac9898f"><div class="ttname"><a href="reig_8c.html#aa699e8c31f66cb1b41a8c7e2bac9898f">reig_sort_index</a></div><div class="ttdeci">void reig_sort_index(int n, int k, rmulti **lambda, rmulti **X, int LDX, const int *index)</div><div class="ttdoc">固有対を配列Iに従って並び替える. </div><div class="ttdef"><b>Definition:</b> <a href="reig_8c_source.html#l00065">reig.c:65</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a5cc70fd440b8c225a2d60f06a5225967"><div class="ttname"><a href="is__rvec_8h.html#a5cc70fd440b8c225a2d60f06a5225967">rvec_abs_sub_r</a></div><div class="ttdeci">int rvec_abs_sub_r(int n, rmulti **z, rmulti **x, rmulti *y)</div><div class="ttdoc">rmulti型のベクトルの要素とスカラーの差の絶対値 z=abs(x-y) </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00909">rvec.c:909</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_a9105b0b8ccb79ddd434dd7b20db2d61b"><div class="ttname"><a href="is__rmat_8h.html#a9105b0b8ccb79ddd434dd7b20db2d61b">rmat_cols_max_abs_sub_rvec</a></div><div class="ttdeci">int rmat_cols_max_abs_sub_rvec(rmulti **y, int m, int n, rmulti **A, int LDA, rmulti **x)</div><div class="ttdoc">rmulti型の行列の列とベクトルとの差の絶対値の最大値 y(j)=max(abs(A(:,j)-x)). </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l01109">rmat.c:1109</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a2705fbfbcdfcd544e6ecabe6d8749a83"><div class="ttname"><a href="is__rvec_8h.html#a2705fbfbcdfcd544e6ecabe6d8749a83">rvec_min_abs_index</a></div><div class="ttdeci">int rvec_min_abs_index(rmulti *value, int n, rmulti **x, int *I)</div><div class="ttdoc">rmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x)) とその添え字 I </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l01265">rvec.c:1265</a></div></div>
+<div class="ttc" id="is__rmat_8h_html_aa8d8bebcc4d6f4f9594215e41dff4bfa"><div class="ttname"><a href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa">rmat_get_prec_max</a></div><div class="ttdeci">int rmat_get_prec_max(int m, int n, rmulti **A, int LDA)</div><div class="ttdoc">rmulti型行列の精度(ビット数)の最大値の取得. </div><div class="ttdef"><b>Definition:</b> <a href="rmat_8c_source.html#l00191">rmat.c:191</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a8137095c9ec22387b3dc5971e47ab31c"><div class="ttname"><a href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a></div><div class="ttdeci">#define COL(A, J, LDA)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00012">is_macros.h:12</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aeee0c826203695436900dc02890f433c"><div class="ttname"><a href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a></div><div class="ttdeci">rmulti * rallocate_prec(int prec)</div><div class="ttdoc">rmulti型の精度を指定しての新規生成. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00175">rmulti.c:175</a></div></div>
+<div class="ttc" id="reig_8c_html_a922ec5886e427c2cd41c86c150727379"><div class="ttname"><a href="reig_8c.html#a922ec5886e427c2cd41c86c150727379">reig_sort</a></div><div class="ttdeci">void reig_sort(int n, int k, rmulti **lambda, rmulti **X, int LDX)</div><div class="ttdoc">固有対を固有値の大きい順に並び替える. </div><div class="ttdef"><b>Definition:</b> <a href="reig_8c_source.html#l00048">reig.c:48</a></div></div>
+<div class="ttc" id="reig_8c_html_ac7f83a9779751777ce0e1906315bc5c9"><div class="ttname"><a href="reig_8c.html#ac7f83a9779751777ce0e1906315bc5c9">reig_sort_vector_guide</a></div><div class="ttdeci">void reig_sort_vector_guide(int n, int k, rmulti **lambda, rmulti **X, int LDX, rmulti **X0, int LDX0)</div><div class="ttdoc">固有対をベクトルの組X0に従って並び替える. </div><div class="ttdef"><b>Definition:</b> <a href="reig_8c_source.html#l00074">reig.c:74</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_ad510ed9e256b23e3d067c894a89fee14"><div class="ttname"><a href="is__rvec_8h.html#ad510ed9e256b23e3d067c894a89fee14">rvec_reverse</a></div><div class="ttdeci">void rvec_reverse(int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの要素の順を逆に入れ替える. </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00591">rvec.c:591</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a4b2464b0e0b8f94909fb4718f342c11b"><div class="ttname"><a href="is__rvec_8h.html#a4b2464b0e0b8f94909fb4718f342c11b">rvec_neg</a></div><div class="ttdeci">int rvec_neg(int n, rmulti **y, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの符号反転 y=-x </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l00726">rvec.c:726</a></div></div>
+<div class="ttc" id="is__macros_8h_html"><div class="ttname"><a href="is__macros_8h.html">is_macros.h</a></div></div>
+<div class="ttc" id="is__rvec_8h_html"><div class="ttname"><a href="is__rvec_8h.html">is_rvec.h</a></div><div class="ttdoc">多倍長精度実数型rmultiのベクトルに関する関数の宣言 </div></div>
+<div class="ttc" id="is__rmulti_8h_html_aba54dd3cab4536c79ad313a91eb71b66"><div class="ttname"><a href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a></div><div class="ttdeci">__mpfr_struct rmulti</div><div class="ttdoc">多倍長精度実数構造体の宣言． </div><div class="ttdef"><b>Definition:</b> <a href="is__rmulti_8h_source.html#l00016">is_rmulti.h:16</a></div></div>
+<div class="ttc" id="is__ivec_8h_html"><div class="ttname"><a href="is__ivec_8h.html">is_ivec.h</a></div></div>
+<div class="ttc" id="is__rvec_8h_html_a46f27e83153fb690369e25ba058e11f8"><div class="ttname"><a href="is__rvec_8h.html#a46f27e83153fb690369e25ba058e11f8">rvec_max_abs</a></div><div class="ttdeci">int rvec_max_abs(rmulti *value, int n, rmulti **x)</div><div class="ttdoc">rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) </div><div class="ttdef"><b>Definition:</b> <a href="rvec_8c_source.html#l01170">rvec.c:1170</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_a420702f6c193dfe186102ae2f47e625f"><div class="ttname"><a href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a></div><div class="ttdeci">int * ivec_allocate(int n)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00299">ivec.c:299</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="reig_8c.html">reig.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

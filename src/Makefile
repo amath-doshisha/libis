@@ -27,7 +27,8 @@ SHARE_HDRS = mt19937ar.h GeneralHashFunctions.h \
 		is_rhsnbrg.h is_chsnbrg.h \
 		is_dhpeig.h is_zhpeig.h is_rhpeig.h is_chpeig.h \
 		is_dhpsvd.h \
-		is_func.h
+		is_func.h \
+		is_riep_dht.h
 
 SHARE_SRCS = mt19937ar.c GeneralHashFunctions.c \
 		strings.c \
@@ -56,7 +57,8 @@ SHARE_SRCS = mt19937ar.c GeneralHashFunctions.c \
 		func_solve.c func_expand.c \
 		func_ivec.c func_rvec.c func_cvec.c func_rmat.c func_cmat.c func_vec.c \
 		func_maps.c func_bigint.c func_real.c func_complex.c \
-		func_number.c func_diff.c
+		func_number.c func_diff.c \
+		riep_dht.c
 
 SHARE_OBJS = mt19937ar.o GeneralHashFunctions.o \
 		strings.o \
@@ -85,7 +87,8 @@ SHARE_OBJS = mt19937ar.o GeneralHashFunctions.o \
 		func_solve.o func_expand.o \
 		func_ivec.o func_rvec.o func_cvec.o func_rmat.o func_cmat.o func_vec.o \
 		func_maps.o func_bigint.o func_real.o func_complex.o \
-		func_number.o func_diff.o
+		func_number.o func_diff.o \
+		riep_dht.o
 
 ##################################################################
 

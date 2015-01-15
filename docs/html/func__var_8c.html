@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/func_var.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('func__var_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">func_var.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="is__macros_8h_source.html">is_macros.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__ivec_8h_source.html">is_ivec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__strings_8h_source.html">is_strings.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__print_8h_source.html">is_print.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__func_8h_source.html">is_func.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__rmulti_8h_source.html">is_rmulti.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__cmulti_8h_source.html">is_cmulti.h</a>&quot;</code><br />
+</div>
+<p><a href="func__var_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a89c73b3d766364b6d2ae74341605ff0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(F)&#160;&#160;&#160;<a class="el" href="is__func_8h.html#a3181a645c6a1a45a2c83b6a467dc9516">func_retain</a>(F)</td></tr>
+<tr class="separator:a89c73b3d766364b6d2ae74341605ff0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d725a80a1060b97c063eac27c4feb60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a>&#160;&#160;&#160;&quot; \t\n&quot;</td></tr>
+<tr class="separator:a3d725a80a1060b97c063eac27c4feb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a23c0780652b3eb37b52eba0e978d1d8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a23c0780652b3eb37b52eba0e978d1d8a">func_var_script</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a23c0780652b3eb37b52eba0e978d1d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05ce9b8cdad9b87a57397b6c14da4fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#ae05ce9b8cdad9b87a57397b6c14da4fd">func_var_print</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:ae05ce9b8cdad9b87a57397b6c14da4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a88b80c387dc7e991e65c3f01d634e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a8a88b80c387dc7e991e65c3f01d634e1">func_var_p_new</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a8a88b80c387dc7e991e65c3f01d634e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea0062f16523f8f241d155f34b8bc56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a1ea0062f16523f8f241d155f34b8bc56">func_var_p_del</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a1ea0062f16523f8f241d155f34b8bc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0d7448be4ad72dbe23ebe5d21184eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#acd0d7448be4ad72dbe23ebe5d21184eb">func_var_p_clone</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *g)</td></tr>
+<tr class="separator:acd0d7448be4ad72dbe23ebe5d21184eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4ebb3a7783e88edab5ea2696d1fd5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a7d4ebb3a7783e88edab5ea2696d1fd5f">func_var_p_resize</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int n)</td></tr>
+<tr class="separator:a7d4ebb3a7783e88edab5ea2696d1fd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9939aa9c621f143f162e30ae8273d19b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b">func_var_size</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a9939aa9c621f143f162e30ae8273d19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ee6044e00a8a5795597cce7a49f615"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#ac5ee6044e00a8a5795597cce7a49f615">func_var_num</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int i)</td></tr>
+<tr class="separator:ac5ee6044e00a8a5795597cce7a49f615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314272226e00f1d56eefa2d878e7f21d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a314272226e00f1d56eefa2d878e7f21d">func_var_pow</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int i)</td></tr>
+<tr class="separator:a314272226e00f1d56eefa2d878e7f21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36f3ccf2212fd3a7b493ac4b794b982"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#ac36f3ccf2212fd3a7b493ac4b794b982">func_var</a> (int n)</td></tr>
+<tr class="separator:ac36f3ccf2212fd3a7b493ac4b794b982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54777c2dfaa4a74a470d077089e3fa3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a54777c2dfaa4a74a470d077089e3fa3a">func_var1</a> (int var, int pow)</td></tr>
+<tr class="separator:a54777c2dfaa4a74a470d077089e3fa3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db4a460008c3feef55608229884fb78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a5db4a460008c3feef55608229884fb78">func_is_var</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a5db4a460008c3feef55608229884fb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69fd4aec3f572bd847669b3119fd6bdb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a69fd4aec3f572bd847669b3119fd6bdb">func_is_1var</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a69fd4aec3f572bd847669b3119fd6bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18aaf0999b13389fd3fedf0adc9adc7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a18aaf0999b13389fd3fedf0adc9adc7b">func_op_var_new</a> (void)</td></tr>
+<tr class="separator:a18aaf0999b13389fd3fedf0adc9adc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6886aecd38ce12ce2d7cbb068c20dfbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a6886aecd38ce12ce2d7cbb068c20dfbd">func_var_sort</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a6886aecd38ce12ce2d7cbb068c20dfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8a3445cc292f73459aaebc92963265"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a1b8a3445cc292f73459aaebc92963265">func_var_mv_pow_mul</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a1b8a3445cc292f73459aaebc92963265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaadf50c26f6d8de657e05fca6322b642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#aaadf50c26f6d8de657e05fca6322b642">func_var_mv_pow_lcm</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:aaadf50c26f6d8de657e05fca6322b642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d800894c1472eb9c959cacf9d7a670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#ad1d800894c1472eb9c959cacf9d7a670">func_var_replace</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int n, int *num, int *pow)</td></tr>
+<tr class="separator:ad1d800894c1472eb9c959cacf9d7a670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2478e0474fa7b8ee2252fa4da3922e92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a2478e0474fa7b8ee2252fa4da3922e92">func_var_rm_pow0</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a2478e0474fa7b8ee2252fa4da3922e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b1ca56c6a4dc00757946629be85e38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a90b1ca56c6a4dc00757946629be85e38">func_var_check_mul</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a90b1ca56c6a4dc00757946629be85e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3d90f3767940af53a28580498dc737"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a9b3d90f3767940af53a28580498dc737">func_var_check_lcm</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a9b3d90f3767940af53a28580498dc737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f5993719d5240453590048669617ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#af0f5993719d5240453590048669617ae">func_var_mul</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f1, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f2)</td></tr>
+<tr class="separator:af0f5993719d5240453590048669617ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51230665774e9ad234f80341826979a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#af51230665774e9ad234f80341826979a">func_var_lcm</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f1, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f2)</td></tr>
+<tr class="separator:af51230665774e9ad234f80341826979a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdbfe2f10cb603afa0f6b9dc44785912"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#afdbfe2f10cb603afa0f6b9dc44785912">func_var_div</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f1, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f2)</td></tr>
+<tr class="separator:afdbfe2f10cb603afa0f6b9dc44785912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8d1b5f4956f7c6024256494dcbc8e54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#af8d1b5f4956f7c6024256494dcbc8e54">func_var_pow_n</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int p)</td></tr>
+<tr class="separator:af8d1b5f4956f7c6024256494dcbc8e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ed78969fe80c9700458a68d478c0615"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a5ed78969fe80c9700458a68d478c0615">func_var_degree</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a5ed78969fe80c9700458a68d478c0615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a862ae465d4002325f9d1e56d89f6875e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a862ae465d4002325f9d1e56d89f6875e">func_var_cmp_grlex</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *g)</td></tr>
+<tr class="separator:a862ae465d4002325f9d1e56d89f6875e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41dc70888e03f91d9e3157cb12417630"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a41dc70888e03f91d9e3157cb12417630">func_var_cmp_lex</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *g)</td></tr>
+<tr class="separator:a41dc70888e03f91d9e3157cb12417630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36abf83738198d42addb3f69c90e4dc6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a36abf83738198d42addb3f69c90e4dc6">func_var_cmp_grevlex</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *g)</td></tr>
+<tr class="separator:a36abf83738198d42addb3f69c90e4dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a58c4027799d7dfbe812a0e4dd879af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a0a58c4027799d7dfbe812a0e4dd879af">func_var_cmp</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *g)</td></tr>
+<tr class="separator:a0a58c4027799d7dfbe812a0e4dd879af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a332185a3f83c41488ec2b147ff4e6590"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a332185a3f83c41488ec2b147ff4e6590">func_var_n_var</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:a332185a3f83c41488ec2b147ff4e6590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35357d3437cf810242658f44821638fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a35357d3437cf810242658f44821638fd">func_var_exist_varn</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int n)</td></tr>
+<tr class="separator:a35357d3437cf810242658f44821638fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119a8ea3153dcbea8028f26385c8496a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#a119a8ea3153dcbea8028f26385c8496a">func_var_get_index</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int n)</td></tr>
+<tr class="separator:a119a8ea3153dcbea8028f26385c8496a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fc51b96d03f82c19afee97bf6c115a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#aa6fc51b96d03f82c19afee97bf6c115a">func_var1n</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:aa6fc51b96d03f82c19afee97bf6c115a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e5bf05a88728041e9cf20c531f05fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#ac3e5bf05a88728041e9cf20c531f05fb">func_var_var1n</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f)</td></tr>
+<tr class="separator:ac3e5bf05a88728041e9cf20c531f05fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d12a29beced3b5780fef6d1f0da812"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="func__var_8c.html#af6d12a29beced3b5780fef6d1f0da812">func_var_can_div</a> (<a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *g)</td></tr>
+<tr class="separator:af6d12a29beced3b5780fef6d1f0da812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a89c73b3d766364b6d2ae74341605ff0f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">F</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="is__func_8h.html#a3181a645c6a1a45a2c83b6a467dc9516">func_retain</a>(F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d725a80a1060b97c063eac27c4feb60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPC&#160;&#160;&#160;&quot; \t\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a69fd4aec3f572bd847669b3119fd6bdb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_is_1var </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00167">167</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5db4a460008c3feef55608229884fb78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_is_var </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00162">162</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a18aaf0999b13389fd3fedf0adc9adc7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_op_var_new </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00174">174</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac36f3ccf2212fd3a7b493ac4b794b982"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00140">140</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a54777c2dfaa4a74a470d077089e3fa3a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00148">148</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6fc51b96d03f82c19afee97bf6c115a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var1n </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00507">507</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af6d12a29beced3b5780fef6d1f0da812"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_can_div </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00527">527</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b3d90f3767940af53a28580498dc737"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var_check_lcm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00286">286</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a90b1ca56c6a4dc00757946629be85e38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var_check_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00275">275</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a58c4027799d7dfbe812a0e4dd879af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_cmp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00454">454</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a36abf83738198d42addb3f69c90e4dc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_cmp_grevlex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00424">424</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a862ae465d4002325f9d1e56d89f6875e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_cmp_grlex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00387">387</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a41dc70888e03f91d9e3157cb12417630"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_cmp_lex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00398">398</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ed78969fe80c9700458a68d478c0615"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_degree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00380">380</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afdbfe2f10cb603afa0f6b9dc44785912"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var_div </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00338">338</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a35357d3437cf810242658f44821638fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_exist_varn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00482">482</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a119a8ea3153dcbea8028f26385c8496a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_get_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00493">493</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af51230665774e9ad234f80341826979a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var_lcm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00318">318</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af0f5993719d5240453590048669617ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00299">299</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aaadf50c26f6d8de657e05fca6322b642"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_mv_pow_lcm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00220">220</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b8a3445cc292f73459aaebc92963265"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_mv_pow_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00202">202</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a332185a3f83c41488ec2b147ff4e6590"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_n_var </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00466">466</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ee6044e00a8a5795597cce7a49f615"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_num </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00124">124</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acd0d7448be4ad72dbe23ebe5d21184eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_p_clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00086">86</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ea0062f16523f8f241d155f34b8bc56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_p_del </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a88b80c387dc7e991e65c3f01d634e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_p_new </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00064">64</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d4ebb3a7783e88edab5ea2696d1fd5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_p_resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00103">103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a314272226e00f1d56eefa2d878e7f21d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_pow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00130">130</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af8d1b5f4956f7c6024256494dcbc8e54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var_pow_n </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00361">361</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae05ce9b8cdad9b87a57397b6c14da4fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1d800894c1472eb9c959cacf9d7a670"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_replace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00240">240</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2478e0474fa7b8ee2252fa4da3922e92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_rm_pow0 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00255">255</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a23c0780652b3eb37b52eba0e978d1d8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a>* func_var_script </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9939aa9c621f143f162e30ae8273d19b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00118">118</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6886aecd38ce12ce2d7cbb068c20dfbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void func_var_sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00190">190</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3e5bf05a88728041e9cf20c531f05fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int func_var_var1n </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="func__var_8c_source.html">func_var.c</a> の <a class="el" href="func__var_8c_source.html#l00516">516</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="func__var_8c.html">func_var.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

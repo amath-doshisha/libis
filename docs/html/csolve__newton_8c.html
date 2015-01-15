@@ -1,0 +1,1532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/csolve_newton.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('csolve__newton_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">csolve_newton.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="isys_8h_source.html">isys.h</a>&gt;</code><br />
+</div>
+<p><a href="csolve__newton_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:aafe5d2c4dc0edd9840f20e885dcae6ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#aafe5d2c4dc0edd9840f20e885dcae6ad">FLT_EPSILON</a>&#160;&#160;&#160;1.19209290E-07F</td></tr>
+<tr class="separator:aafe5d2c4dc0edd9840f20e885dcae6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab701824136346377b44fc3adb8050b29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#ab701824136346377b44fc3adb8050b29">DBL_EPSILON</a>&#160;&#160;&#160;2.2204460492503131E-16</td></tr>
+<tr class="separator:ab701824136346377b44fc3adb8050b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb139798eaff6b11e334384af8dd3644"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#acb139798eaff6b11e334384af8dd3644">LDBL_EPSILON</a>&#160;&#160;&#160;1.084202172485504434e-019L</td></tr>
+<tr class="separator:acb139798eaff6b11e334384af8dd3644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0aa1c61aa0defceee43f3db33b34df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a8a0aa1c61aa0defceee43f3db33b34df">RMA</a>(A, <a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ A=<a class="el" href="rmat_8c.html#ad3925a4d6a71ac7d70e34680cfbde09d">rmat_allocate</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td></tr>
+<tr class="separator:a8a0aa1c61aa0defceee43f3db33b34df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4397c630c244c2a050c9fa270da84804"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a4397c630c244c2a050c9fa270da84804">RMF</a>(A, <a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ A=<a class="el" href="rmat_8c.html#a53c98fd51179ef3da5393f0de6c5e833">rmat_free</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,A); }</td></tr>
+<tr class="separator:a4397c630c244c2a050c9fa270da84804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b4e0bb25bbcaa3663949cce6a51619d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a1b4e0bb25bbcaa3663949cce6a51619d">RVA</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a0c4c754fa6332bf34ef67b2c38aa7505">rvec_allocate</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td></tr>
+<tr class="separator:a1b4e0bb25bbcaa3663949cce6a51619d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321f01ab2978d42807630a6eeca32aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a321f01ab2978d42807630a6eeca32aaf">RVF</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td></tr>
+<tr class="separator:a321f01ab2978d42807630a6eeca32aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8079c480029f14861b5a51cdba82dd6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#ae8079c480029f14861b5a51cdba82dd6">IVA</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="ivec_8c.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td></tr>
+<tr class="separator:ae8079c480029f14861b5a51cdba82dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dcb738ae214c90f0220871b6c683622"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a1dcb738ae214c90f0220871b6c683622">IVF</a>(X)&#160;&#160;&#160;{ X=<a class="el" href="ivec_8c.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a>(X); }</td></tr>
+<tr class="separator:a1dcb738ae214c90f0220871b6c683622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af050a40f40fc0186d5bc7060718072fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#af050a40f40fc0186d5bc7060718072fc">RA</a>(X)&#160;&#160;&#160;{ X=<a class="el" href="rmulti_8c.html#ae31c89576b14fb9861b408a6e3b6b299">rallocate</a>(); }</td></tr>
+<tr class="separator:af050a40f40fc0186d5bc7060718072fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae506ec36706d66ea9abbcca974ce8d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#aae506ec36706d66ea9abbcca974ce8d4">RF</a>(X)&#160;&#160;&#160;{ X=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X); }</td></tr>
+<tr class="separator:aae506ec36706d66ea9abbcca974ce8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705bc74633d86116d1b7ccea6d20f61a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a705bc74633d86116d1b7ccea6d20f61a">CMA</a>(A, <a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#abb46145af91ea61b7eb3bf345f9957f8">cmat_allocate</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td></tr>
+<tr class="separator:a705bc74633d86116d1b7ccea6d20f61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ce27130184776d2c9c273165174da9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a76ce27130184776d2c9c273165174da9">CMF</a>(A, <a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#ac70deb47241d9aa82afb30a5b461626d">cmat_free</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,A); }</td></tr>
+<tr class="separator:a76ce27130184776d2c9c273165174da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38c90e8a5bf84c52c8e857f60873697"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#af38c90e8a5bf84c52c8e857f60873697">CMR</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, A, LDA, B)&#160;&#160;&#160;{ <a class="el" href="is__cmat_8h.html#aefaf1fb06634c15f453fe9f1e7dfba1a">cmat_round</a>((<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>),(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(A),(LDA),(B)); }</td></tr>
+<tr class="separator:af38c90e8a5bf84c52c8e857f60873697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0c12c2ede041255a7914f3062de4a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a1f0c12c2ede041255a7914f3062de4a0">CVA</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#afdc4a88d6334c4518f88ea029020a587">cvec_allocate</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td></tr>
+<tr class="separator:a1f0c12c2ede041255a7914f3062de4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ccd322fd705c057a8bd623b4ab319e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a77ccd322fd705c057a8bd623b4ab319e">CVF</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#a6791c96c35ff01e0aa9f3e0cfb63893b">cvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td></tr>
+<tr class="separator:a77ccd322fd705c057a8bd623b4ab319e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac00937c9310f573c158238e5b6c9453"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#aac00937c9310f573c158238e5b6c9453">CVR</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, X, B)&#160;&#160;&#160;{ <a class="el" href="is__cvec_8h.html#a162fa39deb8a94d50c02eea510683a5f">cvec_round</a>((<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(X),(B)); }</td></tr>
+<tr class="separator:aac00937c9310f573c158238e5b6c9453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12006a21895a2e529067160017746935"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a12006a21895a2e529067160017746935">CA</a>(X)&#160;&#160;&#160;{ X=<a class="el" href="is__cmulti_8h.html#af8086c96855c72a34cb365df0749caf8">callocate</a>(); }</td></tr>
+<tr class="separator:a12006a21895a2e529067160017746935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e41d8e9196e22ce37a5d4f1ae64694b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a9e41d8e9196e22ce37a5d4f1ae64694b">CF</a>(X)&#160;&#160;&#160;{ X=<a class="el" href="is__cmulti_8h.html#a192d1bb4175699986d09eca851be78f9">cfree</a>(X); }</td></tr>
+<tr class="separator:a9e41d8e9196e22ce37a5d4f1ae64694b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd78cbf6f34af9272e5dfc02a5e4540d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#acd78cbf6f34af9272e5dfc02a5e4540d">RR</a>(X, B)&#160;&#160;&#160;{ <a class="el" href="rmulti_8c.html#a42f515e20a551e49548ecd20c55658ed">rround</a>((X),(B)); }</td></tr>
+<tr class="separator:acd78cbf6f34af9272e5dfc02a5e4540d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a4699ddeb30ce21cde53845132c2d64fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a4699ddeb30ce21cde53845132c2d64fa">csolve_newton_adjust</a> (int m, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fF, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **xt, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eps, int nmax, double mu_start, int l, int kappa, int debug)</td></tr>
+<tr class="separator:a4699ddeb30ce21cde53845132c2d64fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a689126805910f14134927d0f297f4599"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a689126805910f14134927d0f297f4599">csolve_newton_map</a> (int m, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **y, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fF, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fJ)</td></tr>
+<tr class="separator:a689126805910f14134927d0f297f4599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3c2621c0237991f63a0cc34be74d386"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#af3c2621c0237991f63a0cc34be74d386">csolve_newton_e_norm</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *e_norm, int m, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fF, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fJ, int prec)</td></tr>
+<tr class="separator:af3c2621c0237991f63a0cc34be74d386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd6452397c942a1ce5c43240086001b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a2fd6452397c942a1ce5c43240086001b">csolve_newton_e_border</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *border, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta, int gamma_exp)</td></tr>
+<tr class="separator:a2fd6452397c942a1ce5c43240086001b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7541fb4fd50264ee5434d571748b1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#ac7541fb4fd50264ee5434d571748b1ed">csolve_newton_emax</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *border, int b, int kappa, int tau)</td></tr>
+<tr class="separator:ac7541fb4fd50264ee5434d571748b1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e3a6f85b499c47c2f33bd64137b48b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a81e3a6f85b499c47c2f33bd64137b48b">csolve_newton_prec_from_beta</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta0, int gamma_exp, int kappa, int tau)</td></tr>
+<tr class="separator:a81e3a6f85b499c47c2f33bd64137b48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9bab11ae3f41d5a495c62e58e2356c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a2d9bab11ae3f41d5a495c62e58e2356c">csolve_newton_prec_from_eta</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta1, int gamma_exp, int kappa, int tau)</td></tr>
+<tr class="separator:a2d9bab11ae3f41d5a495c62e58e2356c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a194ffaf995182df6bed264dcbb8b9339"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a194ffaf995182df6bed264dcbb8b9339">csolve_newton_prec_from_mu</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *mu0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta0, int gamma_exp, int kappa, int tau)</td></tr>
+<tr class="separator:a194ffaf995182df6bed264dcbb8b9339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33bf98a09d5f9df13164ae66b97d77b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a33bf98a09d5f9df13164ae66b97d77b7">csolve_newton_theta</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **theta, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta_min, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **mu, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **beta)</td></tr>
+<tr class="separator:a33bf98a09d5f9df13164ae66b97d77b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb330d1a0d1d671d15e5b031a7f920c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#aeb330d1a0d1d671d15e5b031a7f920c1">csolve_newton_theta_estimate</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta_est, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta_min)</td></tr>
+<tr class="separator:aeb330d1a0d1d671d15e5b031a7f920c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a298b4bca532033f987214c4c55caa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#aa2a298b4bca532033f987214c4c55caa">csolve_newton_gamma</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *mu)</td></tr>
+<tr class="separator:aa2a298b4bca532033f987214c4c55caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e39a6e20dfcbd2d63300921f2b414d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a63e39a6e20dfcbd2d63300921f2b414d">csolve_newton_condition_done</a> (int m, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eps)</td></tr>
+<tr class="separator:a63e39a6e20dfcbd2d63300921f2b414d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51163eb8a6c8e5089454b4b381b1c874"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a51163eb8a6c8e5089454b4b381b1c874">csolve_newton_condition_conv</a> (int m, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta)</td></tr>
+<tr class="separator:a51163eb8a6c8e5089454b4b381b1c874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cd99340cb6f50b038646b5252ac3a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a9cd99340cb6f50b038646b5252ac3a2c">csolve_newton_beta_by_recur</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **beta)</td></tr>
+<tr class="separator:a9cd99340cb6f50b038646b5252ac3a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c6e8411268916149bd7500fc6092df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#ad2c6e8411268916149bd7500fc6092df">csolve_newton_beta_from_mu</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **beta, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **mu, int debug)</td></tr>
+<tr class="separator:ad2c6e8411268916149bd7500fc6092df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac71ccc785cc5a633af6937b8ca02d575"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#ac71ccc785cc5a633af6937b8ca02d575">csolve_func_residual</a> (int m, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *norm, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **F, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fF)</td></tr>
+<tr class="separator:ac71ccc785cc5a633af6937b8ca02d575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c5f2a2487321fd442a7d210dcbfb50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a94c5f2a2487321fd442a7d210dcbfb50">csolve_newton</a> (int m, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fF, int step_max, int debug)</td></tr>
+<tr class="separator:a94c5f2a2487321fd442a7d210dcbfb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b655a17336a2c466306ccc5dffc9e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="csolve__newton_8c.html#a05b655a17336a2c466306ccc5dffc9e9">csolve_krawczyk</a> (int m, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **e, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *fF, int debug)</td></tr>
+<tr class="separator:a05b655a17336a2c466306ccc5dffc9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a12006a21895a2e529067160017746935"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;{ X=<a class="el" href="is__cmulti_8h.html#af8086c96855c72a34cb365df0749caf8">callocate</a>(); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e41d8e9196e22ce37a5d4f1ae64694b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;{ X=<a class="el" href="is__cmulti_8h.html#a192d1bb4175699986d09eca851be78f9">cfree</a>(X); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a705bc74633d86116d1b7ccea6d20f61a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#abb46145af91ea61b7eb3bf345f9957f8">cmat_allocate</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a76ce27130184776d2c9c273165174da9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#ac70deb47241d9aa82afb30a5b461626d">cmat_free</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,A); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af38c90e8a5bf84c52c8e857f60873697"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">LDA, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ <a class="el" href="is__cmat_8h.html#aefaf1fb06634c15f453fe9f1e7dfba1a">cmat_round</a>((<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>),(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(A),(LDA),(B)); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f0c12c2ede041255a7914f3062de4a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#afdc4a88d6334c4518f88ea029020a587">cvec_allocate</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a77ccd322fd705c057a8bd623b4ab319e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#a6791c96c35ff01e0aa9f3e0cfb63893b">cvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aac00937c9310f573c158238e5b6c9453"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ <a class="el" href="is__cvec_8h.html#a162fa39deb8a94d50c02eea510683a5f">cvec_round</a>((<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(X),(B)); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab701824136346377b44fc3adb8050b29"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBL_EPSILON&#160;&#160;&#160;2.2204460492503131E-16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00006">6</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aafe5d2c4dc0edd9840f20e885dcae6ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLT_EPSILON&#160;&#160;&#160;1.19209290E-07F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00005">5</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8079c480029f14861b5a51cdba82dd6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IVA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="ivec_8c.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1dcb738ae214c90f0220871b6c683622"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IVF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;{ X=<a class="el" href="ivec_8c.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a>(X); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acb139798eaff6b11e334384af8dd3644"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LDBL_EPSILON&#160;&#160;&#160;1.084202172485504434e-019L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af050a40f40fc0186d5bc7060718072fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;{ X=<a class="el" href="rmulti_8c.html#ae31c89576b14fb9861b408a6e3b6b299">rallocate</a>(); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aae506ec36706d66ea9abbcca974ce8d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;{ X=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a0aa1c61aa0defceee43f3db33b34df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RMA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ A=<a class="el" href="rmat_8c.html#ad3925a4d6a71ac7d70e34680cfbde09d">rmat_allocate</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00009">9</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4397c630c244c2a050c9fa270da84804"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RMF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ A=<a class="el" href="rmat_8c.html#a53c98fd51179ef3da5393f0de6c5e833">rmat_free</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,A); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00010">10</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acd78cbf6f34af9272e5dfc02a5e4540d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ <a class="el" href="rmulti_8c.html#a42f515e20a551e49548ecd20c55658ed">rround</a>((X),(B)); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b4e0bb25bbcaa3663949cce6a51619d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RVA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a0c4c754fa6332bf34ef67b2c38aa7505">rvec_allocate</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a321f01ab2978d42807630a6eeca32aaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RVF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="rvec_8c.html#a595468148dda7b3dc347d2f5040a3dd1">rvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ac71ccc785cc5a633af6937b8ca02d575"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_func_residual </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>norm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00525">525</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a05b655a17336a2c466306ccc5dffc9e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_krawczyk </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00636">636</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a94c5f2a2487321fd442a7d210dcbfb50"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>step_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00551">551</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4699ddeb30ce21cde53845132c2d64fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_adjust </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>xt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mu_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>kappa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9cd99340cb6f50b038646b5252ac3a2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_newton_beta_by_recur </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>beta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00472">472</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2c6e8411268916149bd7500fc6092df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_beta_from_mu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>beta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00481">481</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a51163eb8a6c8e5089454b4b381b1c874"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_condition_conv </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>beta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00448">448</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a63e39a6e20dfcbd2d63300921f2b414d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_condition_done </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>eps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00428">428</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2fd6452397c942a1ce5c43240086001b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_newton_e_border </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>border</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>eta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>beta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gamma_exp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00336">336</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af3c2621c0237991f63a0cc34be74d386"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_newton_e_norm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>e_norm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00304">304</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7541fb4fd50264ee5434d571748b1ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_newton_emax </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>border</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>kappa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00348">348</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2a298b4bca532033f987214c4c55caa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_gamma </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>beta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>mu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00412">412</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a689126805910f14134927d0f297f4599"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_newton_map </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>fJ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00281">281</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a81e3a6f85b499c47c2f33bd64137b48b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_prec_from_beta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>eta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>beta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>beta1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gamma_exp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>kappa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00357">357</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d9bab11ae3f41d5a495c62e58e2356c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_prec_from_eta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>eta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>eta1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gamma_exp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>kappa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00369">369</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a194ffaf995182df6bed264dcbb8b9339"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int csolve_newton_prec_from_mu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>mu0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>eta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gamma_exp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>kappa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00378">378</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a33bf98a09d5f9df13164ae66b97d77b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_newton_theta </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>theta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>beta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00392">392</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb330d1a0d1d671d15e5b031a7f920c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csolve_newton_theta_estimate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta_est</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>theta_min</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="csolve__newton_8c_source.html">csolve_newton.c</a> の <a class="el" href="csolve__newton_8c_source.html#l00401">401</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="csolve__newton_8c.html">csolve_newton.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

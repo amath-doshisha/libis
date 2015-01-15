@@ -1,0 +1,2715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_dvec.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__dvec_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_dvec.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="is__dvec_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:acecf3679fbcc94c71770e2962013e129"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#acecf3679fbcc94c71770e2962013e129">dvec_allocate</a> (int n)</td></tr>
+<tr class="separator:acecf3679fbcc94c71770e2962013e129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5476af70b64eed60838e3adf3ce3a877"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a5476af70b64eed60838e3adf3ce3a877">dvec_free</a> (double *x)</td></tr>
+<tr class="separator:a5476af70b64eed60838e3adf3ce3a877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ffe40901cdf1028f7fc194f072f926"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a19ffe40901cdf1028f7fc194f072f926">dvec_allocate_s</a> (char *str, int *n)</td></tr>
+<tr class="separator:a19ffe40901cdf1028f7fc194f072f926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d823e26fef17599c7733f74ce08a3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#af7d823e26fef17599c7733f74ce08a3b">dvec_zeros</a> (int n, double *x)</td></tr>
+<tr class="separator:af7d823e26fef17599c7733f74ce08a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3714f8085fe1f13c69d00caf82115be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a3714f8085fe1f13c69d00caf82115be5">dvec_ones</a> (int n, double *x)</td></tr>
+<tr class="separator:a3714f8085fe1f13c69d00caf82115be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf56d424c47b6309b35e17b36e4879b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#abf56d424c47b6309b35e17b36e4879b5">dvec_set</a> (int n, double *x, double a)</td></tr>
+<tr class="separator:abf56d424c47b6309b35e17b36e4879b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a668758f9c27da7807b494f491c87b9b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a668758f9c27da7807b494f491c87b9b8">dvec_unit</a> (int n, double *x, int k)</td></tr>
+<tr class="separator:a668758f9c27da7807b494f491c87b9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227935c6f490fefa68f5b5635cd0f6d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a227935c6f490fefa68f5b5635cd0f6d5">dvec_set_grid</a> (int n, double *x)</td></tr>
+<tr class="separator:a227935c6f490fefa68f5b5635cd0f6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e59241685459fb075e00367b0f107f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a59e59241685459fb075e00367b0f107f">dvec_rand</a> (int n, double *x, double a, double b)</td></tr>
+<tr class="separator:a59e59241685459fb075e00367b0f107f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b739ec1d7b709b8c23f66cbc087fad5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a4b739ec1d7b709b8c23f66cbc087fad5">dvec_reverse</a> (int n, double *x)</td></tr>
+<tr class="separator:a4b739ec1d7b709b8c23f66cbc087fad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d9aba2a2ac21482eb20557fab694e8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a5d9aba2a2ac21482eb20557fab694e8d">dvec_swap_at</a> (double *x, int i, int j)</td></tr>
+<tr class="separator:a5d9aba2a2ac21482eb20557fab694e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202e3eb7e14e2d7a362966eb42f82918"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a202e3eb7e14e2d7a362966eb42f82918">dvec_swap_index</a> (int n, double *x, const int *I)</td></tr>
+<tr class="separator:a202e3eb7e14e2d7a362966eb42f82918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a508746b74605e40157cba5eb89c0e007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a508746b74605e40157cba5eb89c0e007">dvec_sort</a> (int n, double *x, int *I)</td></tr>
+<tr class="separator:a508746b74605e40157cba5eb89c0e007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cfbef82284ab401772d6ebf93d385e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a6cfbef82284ab401772d6ebf93d385e5">dvec_quick_sort</a> (int n, double *x, int *I, int left, int right)</td></tr>
+<tr class="separator:a6cfbef82284ab401772d6ebf93d385e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e07dd7a69b69c1c4b3219e627ed227"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ac5e07dd7a69b69c1c4b3219e627ed227">dvec_sort_index</a> (int *I, int n, double *X)</td></tr>
+<tr class="separator:ac5e07dd7a69b69c1c4b3219e627ed227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72099ba472c1d51e55da78b0480cec11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a72099ba472c1d51e55da78b0480cec11">dvec_add_d</a> (int n, double *z, const double *x, double y)</td></tr>
+<tr class="separator:a72099ba472c1d51e55da78b0480cec11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472f7f063c5e8bda4e5d1e834bad899e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a472f7f063c5e8bda4e5d1e834bad899e">dvec_div_d2</a> (int n, double *z, const double *x, double y)</td></tr>
+<tr class="separator:a472f7f063c5e8bda4e5d1e834bad899e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95eb2c331e9c8f9f4522a587664c6f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ac95eb2c331e9c8f9f4522a587664c6f3">dvec_copy</a> (int n, double *y, const double *x)</td></tr>
+<tr class="separator:ac95eb2c331e9c8f9f4522a587664c6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9598e7ae85870ef4c3b449468d0ea207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a9598e7ae85870ef4c3b449468d0ea207">dvec_copy_index</a> (int n, double *Y, const double *X, const int *I)</td></tr>
+<tr class="separator:a9598e7ae85870ef4c3b449468d0ea207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc5fc534eee39d71cf5b6b85d8aea95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#adfc5fc534eee39d71cf5b6b85d8aea95">dvec_add_scalar</a> (int n, double *x, double a)</td></tr>
+<tr class="separator:adfc5fc534eee39d71cf5b6b85d8aea95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2207fb54331d6061a98411d23cb00090"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a2207fb54331d6061a98411d23cb00090">dvec_sub_scalar</a> (int n, double *x, double a)</td></tr>
+<tr class="separator:a2207fb54331d6061a98411d23cb00090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a255ed1d81be30d84913f7f95a561dcb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a255ed1d81be30d84913f7f95a561dcb6">dvec_add</a> (int n, double *y, const double *x)</td></tr>
+<tr class="separator:a255ed1d81be30d84913f7f95a561dcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68a2974b7057a31d4c45d29df4093fb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a68a2974b7057a31d4c45d29df4093fb6">dvec_sub</a> (int n, double *y, const double *x)</td></tr>
+<tr class="separator:a68a2974b7057a31d4c45d29df4093fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9074cf7b5936b5f7fa558f814d81a67f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a9074cf7b5936b5f7fa558f814d81a67f">dvec_add_scaled</a> (int n, double *y, double a, const double *x)</td></tr>
+<tr class="separator:a9074cf7b5936b5f7fa558f814d81a67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c11a78b66e6a68b7f375db9199b34d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a13c11a78b66e6a68b7f375db9199b34d">dvec_sub_scaled</a> (int n, double *y, double a, const double *x)</td></tr>
+<tr class="separator:a13c11a78b66e6a68b7f375db9199b34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d18062269da8e3fba00e3658b79060a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a8d18062269da8e3fba00e3658b79060a">dvec_lintr</a> (int m, int n, double *y, const double *A, int LDA, const double *x)</td></tr>
+<tr class="separator:a8d18062269da8e3fba00e3658b79060a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93782d30ff6c211fa7eab97b9c010f34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a93782d30ff6c211fa7eab97b9c010f34">dvec_add_lintr</a> (int m, int n, double *y, const double *A, int LDA, const double *x)</td></tr>
+<tr class="separator:a93782d30ff6c211fa7eab97b9c010f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8dc3dc3d34157fd684e92cc1975196a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ae8dc3dc3d34157fd684e92cc1975196a">dvec_sub_lintr</a> (int m, int n, double *y, const double *A, int LDA, const double *x)</td></tr>
+<tr class="separator:ae8dc3dc3d34157fd684e92cc1975196a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951da4674ce9ea482d27c09bbf78642e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a951da4674ce9ea482d27c09bbf78642e">dvec_lintr_t</a> (int m, int n, double *y, const double *A, int LDA, const double *x)</td></tr>
+<tr class="separator:a951da4674ce9ea482d27c09bbf78642e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa0892504cc2c3e1e1054766b7843e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a1fa0892504cc2c3e1e1054766b7843e4">dvec_add_lintr_t</a> (int m, int n, double *y, const double *A, int LDA, const double *x)</td></tr>
+<tr class="separator:a1fa0892504cc2c3e1e1054766b7843e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7066491177c7484ac06a4f358e8f77bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a7066491177c7484ac06a4f358e8f77bf">dvec_sub_lintr_t</a> (int m, int n, double *y, const double *A, int LDA, const double *x)</td></tr>
+<tr class="separator:a7066491177c7484ac06a4f358e8f77bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404ffaa22bb2dfb5e44671f924e2e795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a404ffaa22bb2dfb5e44671f924e2e795">dvec_neg</a> (int n, double *x)</td></tr>
+<tr class="separator:a404ffaa22bb2dfb5e44671f924e2e795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07940a0907492d6d6dc9aaa760a36d4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a07940a0907492d6d6dc9aaa760a36d4d">dvec_scale</a> (int n, double *x, double a)</td></tr>
+<tr class="separator:a07940a0907492d6d6dc9aaa760a36d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f7aeff5f7c7f246bf96f2a937bcaba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a47f7aeff5f7c7f246bf96f2a937bcaba">dvec_normalize</a> (int n, double *x)</td></tr>
+<tr class="separator:a47f7aeff5f7c7f246bf96f2a937bcaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21cb01284e34371b44d92288fab4758b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a21cb01284e34371b44d92288fab4758b">dvec_normalize_sgn</a> (int n, double *x)</td></tr>
+<tr class="separator:a21cb01284e34371b44d92288fab4758b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e186a5a042853c9884ee15d34f6ab63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a9e186a5a042853c9884ee15d34f6ab63">dvec_orthogonalize</a> (int n, double *y, const double *x)</td></tr>
+<tr class="separator:a9e186a5a042853c9884ee15d34f6ab63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb35d0ed5e840f3f12447faf23017d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#addb35d0ed5e840f3f12447faf23017d4">dvec_pow</a> (int n, double *z, double *x, double *y)</td></tr>
+<tr class="memdesc:addb35d0ed5e840f3f12447faf23017d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">double型のべき乗 z=x.^y  <a href="#addb35d0ed5e840f3f12447faf23017d4">[詳解]</a><br /></td></tr>
+<tr class="separator:addb35d0ed5e840f3f12447faf23017d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b3bdc7e9222660ceda64e45cdd216c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a17b3bdc7e9222660ceda64e45cdd216c">pow_si</a> (double x, int n)</td></tr>
+<tr class="separator:a17b3bdc7e9222660ceda64e45cdd216c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835e8cd427fabf7d88e84457e432e47e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a835e8cd427fabf7d88e84457e432e47e">dvec_pow_si</a> (int n, double *z, double *x, long y)</td></tr>
+<tr class="memdesc:a835e8cd427fabf7d88e84457e432e47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">double型のべき乗 z=x^y  <a href="#a835e8cd427fabf7d88e84457e432e47e">[詳解]</a><br /></td></tr>
+<tr class="separator:a835e8cd427fabf7d88e84457e432e47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fd0bdc8a35e9914858a9a83a33a7997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a8fd0bdc8a35e9914858a9a83a33a7997">dvec_pow_d</a> (int n, double *z, double *x, double y)</td></tr>
+<tr class="memdesc:a8fd0bdc8a35e9914858a9a83a33a7997"><td class="mdescLeft">&#160;</td><td class="mdescRight">double型のべき乗 z=x^y  <a href="#a8fd0bdc8a35e9914858a9a83a33a7997">[詳解]</a><br /></td></tr>
+<tr class="separator:a8fd0bdc8a35e9914858a9a83a33a7997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a008b977eced974e939e89b17217d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a37a008b977eced974e939e89b17217d2">dvec_pow2</a> (int n, double *y, const double *x)</td></tr>
+<tr class="separator:a37a008b977eced974e939e89b17217d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4749e683bb0231f70fea12fde8bce56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#aa4749e683bb0231f70fea12fde8bce56">dvec_log2_abs</a> (int n, double *y, const double *x)</td></tr>
+<tr class="separator:aa4749e683bb0231f70fea12fde8bce56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5065b149965402a99ab191dd45a2413c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a5065b149965402a99ab191dd45a2413c">dvec_swap</a> (int n, double *x, double *y)</td></tr>
+<tr class="separator:a5065b149965402a99ab191dd45a2413c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d8f637aee783904d16d556329fa681"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#af1d8f637aee783904d16d556329fa681">dvec_dot</a> (int n, const double *x, const double *y)</td></tr>
+<tr class="separator:af1d8f637aee783904d16d556329fa681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617d3cbfc4de27f075995ff948690a03"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a617d3cbfc4de27f075995ff948690a03">dvec_dcos_abs</a> (int n, const double *x, const double *y)</td></tr>
+<tr class="separator:a617d3cbfc4de27f075995ff948690a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f47c01d9ec414817fe84ab120784af"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ab8f47c01d9ec414817fe84ab120784af">dvec_angle</a> (int n, const double *x, const double *y)</td></tr>
+<tr class="separator:ab8f47c01d9ec414817fe84ab120784af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2a3a8a39ab83c04dce1bb1d8d41c36"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#aae2a3a8a39ab83c04dce1bb1d8d41c36">dvec_angle_deg</a> (int n, const double *x, const double *y)</td></tr>
+<tr class="separator:aae2a3a8a39ab83c04dce1bb1d8d41c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364ea90cd353903832783671e7d0bf0e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a364ea90cd353903832783671e7d0bf0e">dvec_dist_norm1</a> (int n, const double *x, const double *y)</td></tr>
+<tr class="separator:a364ea90cd353903832783671e7d0bf0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221929007b04d920e64aa884e21ac7d9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a221929007b04d920e64aa884e21ac7d9">dvec_dist_norm_max</a> (int n, const double *x, const double *y)</td></tr>
+<tr class="separator:a221929007b04d920e64aa884e21ac7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613937d56290dda75ae31c4431dca155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a613937d56290dda75ae31c4431dca155">dvec_abs_sub</a> (int n, double *z, const double *x, const double *y)</td></tr>
+<tr class="separator:a613937d56290dda75ae31c4431dca155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b64b97efabecfe2bd2f3b7091cc99e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a7b64b97efabecfe2bd2f3b7091cc99e9">dvec_abs_sub_scalar</a> (int n, double *z, const double *x, double y)</td></tr>
+<tr class="separator:a7b64b97efabecfe2bd2f3b7091cc99e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd3a3b045ad302c9a4a575821ca62b44"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#abd3a3b045ad302c9a4a575821ca62b44">dvec_norm1</a> (int n, const double *x)</td></tr>
+<tr class="separator:abd3a3b045ad302c9a4a575821ca62b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec99ee7cec31789015e00b1db773876e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#aec99ee7cec31789015e00b1db773876e">dvec_norm2</a> (int n, const double *x)</td></tr>
+<tr class="separator:aec99ee7cec31789015e00b1db773876e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633bbe3a36342399f79195e5f22695ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a633bbe3a36342399f79195e5f22695ab">dvec_norm_max</a> (int n, const double *x)</td></tr>
+<tr class="separator:a633bbe3a36342399f79195e5f22695ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9fb8b1273d557b965b54b306c4138fb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ac9fb8b1273d557b965b54b306c4138fb">dvec_sum</a> (int n, const double *x)</td></tr>
+<tr class="separator:ac9fb8b1273d557b965b54b306c4138fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbb5435d17241925a7a1da0943271b5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#aafbb5435d17241925a7a1da0943271b5">dvec_average</a> (int n, const double *x)</td></tr>
+<tr class="separator:aafbb5435d17241925a7a1da0943271b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544d447841e0caa46c5a8ffbf07c6d8f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a544d447841e0caa46c5a8ffbf07c6d8f">dvec_sum_pow2</a> (int n, const double *x)</td></tr>
+<tr class="separator:a544d447841e0caa46c5a8ffbf07c6d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7d1846d7760f159019d2b273a9cec4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a0c7d1846d7760f159019d2b273a9cec4">dvec_max_abs</a> (int n, const double *x)</td></tr>
+<tr class="separator:a0c7d1846d7760f159019d2b273a9cec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052f8bf23b72f5185789777b671488dc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a052f8bf23b72f5185789777b671488dc">dvec_min_abs</a> (int n, const double *x)</td></tr>
+<tr class="separator:a052f8bf23b72f5185789777b671488dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6372e696db9f1e93a531a6092d6772a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ae6372e696db9f1e93a531a6092d6772a">dvec_max_abs_index</a> (int n, const double *x, int *I)</td></tr>
+<tr class="separator:ae6372e696db9f1e93a531a6092d6772a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4ca8da33076614dde3b0c2a13fbb610"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#af4ca8da33076614dde3b0c2a13fbb610">dvec_min_abs_index</a> (int n, const double *x, int *I)</td></tr>
+<tr class="separator:af4ca8da33076614dde3b0c2a13fbb610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77401c13ec7c70cd0d2738c2c0ad9be"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ad77401c13ec7c70cd0d2738c2c0ad9be">dvec_max</a> (int n, const double *x)</td></tr>
+<tr class="separator:ad77401c13ec7c70cd0d2738c2c0ad9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8b7dea20e71e92a38fd87382b69053"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a9b8b7dea20e71e92a38fd87382b69053">dvec_min</a> (int n, const double *x)</td></tr>
+<tr class="separator:a9b8b7dea20e71e92a38fd87382b69053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e18569457c9f41af00c258b288bb41e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a7e18569457c9f41af00c258b288bb41e">dvec_print</a> (int n, const double *x, const char *name, const char *format, int digits)</td></tr>
+<tr class="separator:a7e18569457c9f41af00c258b288bb41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2887538a72abda34bc144dba17f3dfc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a2887538a72abda34bc144dba17f3dfc2">dvec_save</a> (int n, double *x, int offset, char *fmt,...)</td></tr>
+<tr class="separator:a2887538a72abda34bc144dba17f3dfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61327cf0ba4007a516397553f1fa078e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a61327cf0ba4007a516397553f1fa078e">dvec_save2</a> (int n, double *x, double *y, char *fmt,...)</td></tr>
+<tr class="separator:a61327cf0ba4007a516397553f1fa078e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5180127695a3ffde4b2c186ad9687f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ac5180127695a3ffde4b2c186ad9687f9">dvec_save_log2_abs</a> (int n, double *x, int offset, char *fmt,...)</td></tr>
+<tr class="separator:ac5180127695a3ffde4b2c186ad9687f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2770e5f3d3fa7e15101b20db2aaa4265"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a2770e5f3d3fa7e15101b20db2aaa4265">dvec_bin_save</a> (int n, double *x, char *fmt,...)</td></tr>
+<tr class="separator:a2770e5f3d3fa7e15101b20db2aaa4265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9531cdd49c49eb4db5fa2e54f9eb4ca"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#ac9531cdd49c49eb4db5fa2e54f9eb4ca">dvec_bin_load</a> (int *n, char *fmt,...)</td></tr>
+<tr class="separator:ac9531cdd49c49eb4db5fa2e54f9eb4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a613937d56290dda75ae31c4431dca155"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_abs_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00517">517</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b64b97efabecfe2bd2f3b7091cc99e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_abs_sub_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00524">524</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a255ed1d81be30d84913f7f95a561dcb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00223">223</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a72099ba472c1d51e55da78b0480cec11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_add_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00187">187</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a93782d30ff6c211fa7eab97b9c010f34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_add_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00274">274</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1fa0892504cc2c3e1e1054766b7843e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_add_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00305">305</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adfc5fc534eee39d71cf5b6b85d8aea95"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_add_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00203">203</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9074cf7b5936b5f7fa558f814d81a67f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_add_scaled </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00243">243</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acecf3679fbcc94c71770e2962013e129"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* dvec_allocate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a19ffe40901cdf1028f7fc194f072f926"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* dvec_allocate_s </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8f47c01d9ec414817fe84ab120784af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_angle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00476">476</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aae2a3a8a39ab83c04dce1bb1d8d41c36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_angle_deg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00486">486</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aafbb5435d17241925a7a1da0943271b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_average </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00576">576</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9531cdd49c49eb4db5fa2e54f9eb4ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* dvec_bin_load </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00761">761</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2770e5f3d3fa7e15101b20db2aaa4265"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_bin_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00748">748</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac95eb2c331e9c8f9f4522a587664c6f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_copy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00171">171</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9598e7ae85870ef4c3b449468d0ea207"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_copy_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00178">178</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a617d3cbfc4de27f075995ff948690a03"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_dcos_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00466">466</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a364ea90cd353903832783671e7d0bf0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_dist_norm1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00492">492</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a221929007b04d920e64aa884e21ac7d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_dist_norm_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00502">502</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a472f7f063c5e8bda4e5d1e834bad899e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_div_d2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00194">194</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af1d8f637aee783904d16d556329fa681"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_dot </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00441">441</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5476af70b64eed60838e3adf3ce3a877"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* dvec_free </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8d18062269da8e3fba00e3658b79060a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00263">263</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a951da4674ce9ea482d27c09bbf78642e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00294">294</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4749e683bb0231f70fea12fde8bce56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_log2_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00422">422</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad77401c13ec7c70cd0d2738c2c0ad9be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00660">660</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c7d1846d7760f159019d2b273a9cec4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_max_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00595">595</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6372e696db9f1e93a531a6092d6772a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_max_abs_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00625">625</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b8b7dea20e71e92a38fd87382b69053"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_min </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00672">672</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a052f8bf23b72f5185789777b671488dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_min_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00609">609</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af4ca8da33076614dde3b0c2a13fbb610"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_min_abs_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00642">642</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a404ffaa22bb2dfb5e44671f924e2e795"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_neg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00325">325</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abd3a3b045ad302c9a4a575821ca62b44"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_norm1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00533">533</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aec99ee7cec31789015e00b1db773876e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_norm2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00544">544</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a633bbe3a36342399f79195e5f22695ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_norm_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00556">556</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a47f7aeff5f7c7f246bf96f2a937bcaba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_normalize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00343">343</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a21cb01284e34371b44d92288fab4758b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_normalize_sgn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00351">351</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3714f8085fe1f13c69d00caf82115be5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_ones </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e186a5a042853c9884ee15d34f6ab63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_orthogonalize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00363">363</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="addb35d0ed5e840f3f12447faf23017d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_pow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>double型のべき乗 z=x.^y </p>
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00373">373</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a37a008b977eced974e939e89b17217d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_pow2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00416">416</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fd0bdc8a35e9914858a9a83a33a7997"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_pow_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>double型のべき乗 z=x^y </p>
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00408">408</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a835e8cd427fabf7d88e84457e432e47e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_pow_si </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>double型のべき乗 z=x^y </p>
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00399">399</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e18569457c9f41af00c258b288bb41e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_print </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00682">682</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6cfbef82284ab401772d6ebf93d385e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_quick_sort </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00126">126</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a59e59241685459fb075e00367b0f107f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_rand </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00083">83</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b739ec1d7b709b8c23f66cbc087fad5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_reverse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00091">91</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2887538a72abda34bc144dba17f3dfc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00702">702</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a61327cf0ba4007a516397553f1fa078e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_save2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00714">714</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5180127695a3ffde4b2c186ad9687f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_save_log2_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00726">726</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a07940a0907492d6d6dc9aaa760a36d4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_scale </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00334">334</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abf56d424c47b6309b35e17b36e4879b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_set </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a227935c6f490fefa68f5b5635cd0f6d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_set_grid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a508746b74605e40157cba5eb89c0e007"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_sort </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00149">149</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5e07dd7a69b69c1c4b3219e627ed227"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_sort_index </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00159">159</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a68a2974b7057a31d4c45d29df4093fb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00232">232</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8dc3dc3d34157fd684e92cc1975196a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_sub_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00284">284</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7066491177c7484ac06a4f358e8f77bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_sub_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00315">315</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2207fb54331d6061a98411d23cb00090"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_sub_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00212">212</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a13c11a78b66e6a68b7f375db9199b34d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_sub_scaled </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00252">252</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9fb8b1273d557b965b54b306c4138fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_sum </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00567">567</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a544d447841e0caa46c5a8ffbf07c6d8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double dvec_sum_pow2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00582">582</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5065b149965402a99ab191dd45a2413c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_swap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00429">429</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d9aba2a2ac21482eb20557fab694e8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_swap_at </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00105">105</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a202e3eb7e14e2d7a362966eb42f82918"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_swap_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00114">114</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a668758f9c27da7807b494f491c87b9b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_unit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00069">69</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af7d823e26fef17599c7733f74ce08a3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_zeros </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a17b3bdc7e9222660ceda64e45cdd216c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double pow_si </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00379">379</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__dvec_8h.html">is_dvec.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

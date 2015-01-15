@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/ceig_ii.c ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ceig__ii_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ceig_ii.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ceig__ii_8c.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;<a class="code" href="isys_8h.html">isys.h</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="ceig__ii_8c.html#a73f8bd2f9cc12c7c7032e541e6ed3fe2">   17</a></span>&#160;<span class="preprocessor">#define NAME_CEIGII       &quot;ceig_ii&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="ceig__ii_8c.html#a209de03ce8bf27820885fd328dc4eb93">   18</a></span>&#160;<span class="preprocessor">#define NAME_CEIGII_1PAIR &quot;ceig_ii_1pair&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="is__ceig__ii_8h.html#a7dada5a8757202ec9dad6e3148347521">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ceig__ii_8c.html#a7dada5a8757202ec9dad6e3148347521">ceig_ii</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="structcmulti__struct.html">cmulti</a> **lambda, <span class="keywordtype">int</span> debug)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">for</span>(i=0; i&lt;n; i++){</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(debug&gt;=1){ printf(<span class="stringliteral">&quot;[%s] %04d/%04d\n&quot;</span>,<a class="code" href="ceig__ii_8c.html#a73f8bd2f9cc12c7c7032e541e6ed3fe2">NAME_CEIGII</a>,i,n); }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="ceig__ii_8c.html#a005cdd741ed8eb794d7a0578875d7abc">ceig_ii_1pair</a>(n,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,i,LDX),A,LDA,lambda[i],debug-1);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="is__ceig__ii_8h.html#a2d21092b5c0d8a807f775601edc9cb66">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ceig__ii_8c.html#a005cdd741ed8eb794d7a0578875d7abc">ceig_ii_1pair</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="structcmulti__struct.html">cmulti</a> *lambda, <span class="keywordtype">int</span> debug)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">int</span> prec=53,*p=NULL,info,i;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="structcmulti__struct.html">cmulti</a> **B=NULL;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eps=NULL;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// allocate</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  p=<a class="code" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a>(n);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  prec=<a class="code" href="cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3">cvec_get_prec_max</a>(n,x);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  B=<a class="code" href="cmat_8c.html#a9ee764a5b39ff5f4938c03e72ebefc30">cmat_allocate_prec</a>(n,n,prec);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// LU decomposition</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  info=1; i=0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">while</span>(info){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// B=A-diag(lambda)</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="cmat_8c.html#a558113e4e7fa243d2cd7a0a39d14f0eb">cmat_diag_sub_c</a>(n,n,B,n,A,LDA,lambda);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// B=B+diag(i*eps)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    eps=<a class="code" href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848">rmepsilon</a>(prec);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="is__rmulti_8h.html#a93040aec87fd25e2fcf2f3337138e54b">rmul_si</a>(eps,eps,i);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="cmat_8c.html#ad9182f647d81b2ff2aed5d0794a35869">cmat_diag_add_r</a>(n,n,B,n,B,n,eps);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    eps=<a class="code" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(eps);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// B=L*U</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="csolve_8c.html#a9ac9ca9eb2544f384981803f8c0230d3">csolve_lu_decomp</a>(n,B,n,p,&amp;info);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// next</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(debug&gt;=1){ printf(<span class="stringliteral">&quot;[%s] LU: step=%02d\n&quot;</span>,<a class="code" href="ceig__ii_8c.html#a209de03ce8bf27820885fd328dc4eb93">NAME_CEIGII_1PAIR</a>,i); }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    i++;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// compute</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="cvec_8c.html#ae33134d34ba91a889d4fd6247aeecb84">cvec_set_rand</a>(n,x,2,-1);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="cvec_8c.html#aa4c0bf1f708f734df228d29c671a1b74">cvec_normalize_sgn</a>(n,x,x);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">for</span>(i=0; i&lt;2; i++){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="csolve_8c.html#a069fa104c0fe80ab51047be634cbc700">csolve_lu_backsubs</a>(n,1,x,n,B,n,p);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="cvec_8c.html#aa4c0bf1f708f734df228d29c671a1b74">cvec_normalize_sgn</a>(n,x,x);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span>(debug&gt;=1){ printf(<span class="stringliteral">&quot;[%s] II: step=%02d\n&quot;</span>,<a class="code" href="ceig__ii_8c.html#a209de03ce8bf27820885fd328dc4eb93">NAME_CEIGII_1PAIR</a>,i); }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// done</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  p=<a class="code" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a>(p);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  B=<a class="code" href="cmat_8c.html#ac70deb47241d9aa82afb30a5b461626d">cmat_free</a>(n,n,B);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">//EOF</span></div>
+<div class="ttc" id="ceig__ii_8c_html_a209de03ce8bf27820885fd328dc4eb93"><div class="ttname"><a href="ceig__ii_8c.html#a209de03ce8bf27820885fd328dc4eb93">NAME_CEIGII_1PAIR</a></div><div class="ttdeci">#define NAME_CEIGII_1PAIR</div><div class="ttdef"><b>Definition:</b> <a href="ceig__ii_8c_source.html#l00018">ceig_ii.c:18</a></div></div>
+<div class="ttc" id="cmat_8c_html_ac70deb47241d9aa82afb30a5b461626d"><div class="ttname"><a href="cmat_8c.html#ac70deb47241d9aa82afb30a5b461626d">cmat_free</a></div><div class="ttdeci">cmulti ** cmat_free(int LDA, int n, cmulti **A)</div><div class="ttdoc">cmulti型の行列の終了処理. </div><div class="ttdef"><b>Definition:</b> <a href="cmat_8c_source.html#l00101">cmat.c:101</a></div></div>
+<div class="ttc" id="cvec_8c_html_a4220cbe500e7a1383fbd278e5d4035b3"><div class="ttname"><a href="cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3">cvec_get_prec_max</a></div><div class="ttdeci">int cvec_get_prec_max(int n, cmulti **x)</div><div class="ttdoc">cmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. </div><div class="ttdef"><b>Definition:</b> <a href="cvec_8c_source.html#l00165">cvec.c:165</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_a32657ddb5a0bb69fbada6fb9b6260886"><div class="ttname"><a href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886">ivec_free</a></div><div class="ttdeci">int * ivec_free(int *x)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00304">ivec.c:304</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_abd2ceb7eaa6481640a45357d44034950"><div class="ttname"><a href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a></div><div class="ttdeci">rmulti * rfree(rmulti *x)</div><div class="ttdoc">rmulti型の終了処理. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00212">rmulti.c:212</a></div></div>
+<div class="ttc" id="cmat_8c_html_a9ee764a5b39ff5f4938c03e72ebefc30"><div class="ttname"><a href="cmat_8c.html#a9ee764a5b39ff5f4938c03e72ebefc30">cmat_allocate_prec</a></div><div class="ttdeci">cmulti ** cmat_allocate_prec(int LDA, int n, int prec)</div><div class="ttdoc">cmulti型の行列の精度を指定しての新規生成. </div><div class="ttdef"><b>Definition:</b> <a href="cmat_8c_source.html#l00051">cmat.c:51</a></div></div>
+<div class="ttc" id="structcmulti__struct_html"><div class="ttname"><a href="structcmulti__struct.html">cmulti_struct</a></div><div class="ttdoc">多倍長精度複素数構造体 </div><div class="ttdef"><b>Definition:</b> <a href="is__cmulti_8h_source.html#l00016">is_cmulti.h:16</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_ace82f1f9aac5a1aa512661271910f848"><div class="ttname"><a href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848">rmepsilon</a></div><div class="ttdeci">rmulti * rmepsilon(int prec)</div><div class="ttdoc">rmulti型のマシンイプシロンの生成. </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00279">rmulti.c:279</a></div></div>
+<div class="ttc" id="ceig__ii_8c_html_a005cdd741ed8eb794d7a0578875d7abc"><div class="ttname"><a href="ceig__ii_8c.html#a005cdd741ed8eb794d7a0578875d7abc">ceig_ii_1pair</a></div><div class="ttdeci">void ceig_ii_1pair(int n, cmulti **x, cmulti **A, int LDA, cmulti *lambda, int debug)</div><div class="ttdoc">逆反復法で行列Aの固有ベクトルXを1個のみ計算. </div><div class="ttdef"><b>Definition:</b> <a href="ceig__ii_8c_source.html#l00051">ceig_ii.c:51</a></div></div>
+<div class="ttc" id="ceig__ii_8c_html_a73f8bd2f9cc12c7c7032e541e6ed3fe2"><div class="ttname"><a href="ceig__ii_8c.html#a73f8bd2f9cc12c7c7032e541e6ed3fe2">NAME_CEIGII</a></div><div class="ttdeci">#define NAME_CEIGII</div><div class="ttdef"><b>Definition:</b> <a href="ceig__ii_8c_source.html#l00017">ceig_ii.c:17</a></div></div>
+<div class="ttc" id="cvec_8c_html_ae33134d34ba91a889d4fd6247aeecb84"><div class="ttname"><a href="cvec_8c.html#ae33134d34ba91a889d4fd6247aeecb84">cvec_set_rand</a></div><div class="ttdeci">void cvec_set_rand(int n, cmulti **x, double a, double b)</div><div class="ttdoc">cmulti型のベクトルの値を区間(b,a+b)の疑似乱数値を設定. </div><div class="ttdef"><b>Definition:</b> <a href="cvec_8c_source.html#l00575">cvec.c:575</a></div></div>
+<div class="ttc" id="csolve_8c_html_a069fa104c0fe80ab51047be634cbc700"><div class="ttname"><a href="csolve_8c.html#a069fa104c0fe80ab51047be634cbc700">csolve_lu_backsubs</a></div><div class="ttdeci">int csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *p)</div><div class="ttdoc">線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. </div><div class="ttdef"><b>Definition:</b> <a href="csolve_8c_source.html#l00149">csolve.c:149</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_a93040aec87fd25e2fcf2f3337138e54b"><div class="ttname"><a href="is__rmulti_8h.html#a93040aec87fd25e2fcf2f3337138e54b">rmul_si</a></div><div class="ttdeci">int rmul_si(rmulti *z, rmulti *x, long y)</div><div class="ttdoc">rmulti型の掛け算 z=x*y </div><div class="ttdef"><b>Definition:</b> <a href="rmulti_8c_source.html#l00935">rmulti.c:935</a></div></div>
+<div class="ttc" id="cvec_8c_html_aa4c0bf1f708f734df228d29c671a1b74"><div class="ttname"><a href="cvec_8c.html#aa4c0bf1f708f734df228d29c671a1b74">cvec_normalize_sgn</a></div><div class="ttdeci">int cvec_normalize_sgn(int n, cmulti **y, cmulti **x)</div><div class="ttdoc">cmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) </div><div class="ttdef"><b>Definition:</b> <a href="cvec_8c_source.html#l01787">cvec.c:1787</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a8137095c9ec22387b3dc5971e47ab31c"><div class="ttname"><a href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a></div><div class="ttdeci">#define COL(A, J, LDA)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00012">is_macros.h:12</a></div></div>
+<div class="ttc" id="isys_8h_html"><div class="ttname"><a href="isys_8h.html">isys.h</a></div></div>
+<div class="ttc" id="ceig__ii_8c_html_a7dada5a8757202ec9dad6e3148347521"><div class="ttname"><a href="ceig__ii_8c.html#a7dada5a8757202ec9dad6e3148347521">ceig_ii</a></div><div class="ttdeci">void ceig_ii(int n, cmulti **X, int LDX, cmulti **A, int LDA, cmulti **lambda, int debug)</div><div class="ttdoc">逆反復法で行列Aの固有ベクトルXをすべて計算. </div><div class="ttdef"><b>Definition:</b> <a href="ceig__ii_8c_source.html#l00031">ceig_ii.c:31</a></div></div>
+<div class="ttc" id="csolve_8c_html_a9ac9ca9eb2544f384981803f8c0230d3"><div class="ttname"><a href="csolve_8c.html#a9ac9ca9eb2544f384981803f8c0230d3">csolve_lu_decomp</a></div><div class="ttdeci">int csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)</div><div class="ttdoc">行列AのLU分解. </div><div class="ttdef"><b>Definition:</b> <a href="csolve_8c_source.html#l00096">csolve.c:96</a></div></div>
+<div class="ttc" id="cmat_8c_html_ad9182f647d81b2ff2aed5d0794a35869"><div class="ttname"><a href="cmat_8c.html#ad9182f647d81b2ff2aed5d0794a35869">cmat_diag_add_r</a></div><div class="ttdeci">int cmat_diag_add_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti *a)</div><div class="ttdoc">cmulti型の行列の対角行列との足し算 B=A+diag(a). </div><div class="ttdef"><b>Definition:</b> <a href="cmat_8c_source.html#l01284">cmat.c:1284</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aba54dd3cab4536c79ad313a91eb71b66"><div class="ttname"><a href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a></div><div class="ttdeci">__mpfr_struct rmulti</div><div class="ttdoc">多倍長精度実数構造体の宣言． </div><div class="ttdef"><b>Definition:</b> <a href="is__rmulti_8h_source.html#l00016">is_rmulti.h:16</a></div></div>
+<div class="ttc" id="is__ivec_8h_html_a420702f6c193dfe186102ae2f47e625f"><div class="ttname"><a href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f">ivec_allocate</a></div><div class="ttdeci">int * ivec_allocate(int n)</div><div class="ttdef"><b>Definition:</b> <a href="ivec_8c_source.html#l00299">ivec.c:299</a></div></div>
+<div class="ttc" id="cmat_8c_html_a558113e4e7fa243d2cd7a0a39d14f0eb"><div class="ttname"><a href="cmat_8c.html#a558113e4e7fa243d2cd7a0a39d14f0eb">cmat_diag_sub_c</a></div><div class="ttdeci">int cmat_diag_sub_c(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a)</div><div class="ttdoc">cmulti型の行列の対角行列との引き算 B=A-diag(a). </div><div class="ttdef"><b>Definition:</b> <a href="cmat_8c_source.html#l01314">cmat.c:1314</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ceig__ii_8c.html">ceig_ii.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分45秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

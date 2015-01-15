@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/iceig.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('iceig_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle">
+<div class="title">iceig.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>多倍長精度実数型cmultiの機械区間演算の固有値計算に関する関数の定義.  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="is__cmulti_8h_source.html">is_cmulti.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__cmat_8h_source.html">is_cmat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__cvec_8h_source.html">is_cvec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__irmulti_8h_source.html">is_irmulti.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__icmulti_8h_source.html">is_icmulti.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__icvec_8h_source.html">is_icvec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__icmat_8h_source.html">is_icmat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__iceig_8h_source.html">is_iceig.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__csolve_8h_source.html">is_csolve.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__ceig_8h_source.html">is_ceig.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__print_8h_source.html">is_print.h</a>&quot;</code><br />
+</div>
+<p><a href="iceig_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a4723da0c40a10c7bc2208bb2e661156e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#a4723da0c40a10c7bc2208bb2e661156e">CMA</a>(A, <a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, P)&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#a9ee764a5b39ff5f4938c03e72ebefc30">cmat_allocate_prec</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,P); }</td></tr>
+<tr class="separator:a4723da0c40a10c7bc2208bb2e661156e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ce27130184776d2c9c273165174da9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#a76ce27130184776d2c9c273165174da9">CMF</a>(A, <a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#ac70deb47241d9aa82afb30a5b461626d">cmat_free</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,A); }</td></tr>
+<tr class="separator:a76ce27130184776d2c9c273165174da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38c90e8a5bf84c52c8e857f60873697"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#af38c90e8a5bf84c52c8e857f60873697">CMR</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, A, LDA, B)&#160;&#160;&#160;{ <a class="el" href="is__cmat_8h.html#aefaf1fb06634c15f453fe9f1e7dfba1a">cmat_round</a>((<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>),(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(A),(LDA),(B)); }</td></tr>
+<tr class="separator:af38c90e8a5bf84c52c8e857f60873697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6e35d9e20da2c37b3037c772ab8d13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#a3a6e35d9e20da2c37b3037c772ab8d13">CVA</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, P)&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#ad1af5c539ed1b7dcee816e2378508e84">cvec_allocate_prec</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,P); }</td></tr>
+<tr class="separator:a3a6e35d9e20da2c37b3037c772ab8d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ccd322fd705c057a8bd623b4ab319e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#a77ccd322fd705c057a8bd623b4ab319e">CVF</a>(X, <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#a6791c96c35ff01e0aa9f3e0cfb63893b">cvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td></tr>
+<tr class="separator:a77ccd322fd705c057a8bd623b4ab319e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac00937c9310f573c158238e5b6c9453"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#aac00937c9310f573c158238e5b6c9453">CVR</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, X, B)&#160;&#160;&#160;{ <a class="el" href="is__cvec_8h.html#a162fa39deb8a94d50c02eea510683a5f">cvec_round</a>((<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(X),(B)); }</td></tr>
+<tr class="separator:aac00937c9310f573c158238e5b6c9453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">固有値問題</div></td></tr>
+<tr class="memitem:a7a9296624ac02dfb159798f6ebbc1f91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#a7a9296624ac02dfb159798f6ebbc1f91">iceig_residual</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **F0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **F1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **A0, int LDA0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **A1, int LDA1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **X0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **X1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *lambda0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *lambda1)</td></tr>
+<tr class="memdesc:a7a9296624ac02dfb159798f6ebbc1f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">固有値問題の残差 F=A*X-lambda*X  <a href="#a7a9296624ac02dfb159798f6ebbc1f91">[詳解]</a><br /></td></tr>
+<tr class="separator:a7a9296624ac02dfb159798f6ebbc1f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+クラフチック法</h2></td></tr>
+<tr class="memitem:aa429c5ffdeb849e00c6d5483f56ad341"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#aa429c5ffdeb849e00c6d5483f56ad341">NAME_KRAWCZYK</a>&#160;&#160;&#160;&quot;iceig_krawczyk&quot;</td></tr>
+<tr class="separator:aa429c5ffdeb849e00c6d5483f56ad341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1590e6ef994cc13ca974a5fa549ea83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#af1590e6ef994cc13ca974a5fa549ea83">iceig_krawczyk</a> (int n, int k, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **E_vec, int LDE, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **E_val, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **A, int LDA, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **X, int LDX, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **lambda, int debug)</td></tr>
+<tr class="memdesc:af1590e6ef994cc13ca974a5fa549ea83"><td class="mdescLeft">&#160;</td><td class="mdescRight">クラフチック法による固有値分解の誤差評価  <a href="#af1590e6ef994cc13ca974a5fa549ea83">[詳解]</a><br /></td></tr>
+<tr class="separator:af1590e6ef994cc13ca974a5fa549ea83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a6ff7c4e94bc8f6c9e39e179962477"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iceig_8c.html#af1a6ff7c4e94bc8f6c9e39e179962477">iceig_1pair_krawczyk</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **e, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **A, int LDA, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *lambda, int debug)</td></tr>
+<tr class="memdesc:af1a6ff7c4e94bc8f6c9e39e179962477"><td class="mdescLeft">&#160;</td><td class="mdescRight">クラフチック法による固有値対の誤差評価  <a href="#af1a6ff7c4e94bc8f6c9e39e179962477">[詳解]</a><br /></td></tr>
+<tr class="separator:af1a6ff7c4e94bc8f6c9e39e179962477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>多倍長精度実数型cmultiの機械区間演算の固有値計算に関する関数の定義. </p>
+<p>スカラーに関しては<a class="el" href="icmulti_8c.html">icmulti.c</a>を参照のこと. ベクトルに関しては<a class="el" href="icvec_8c.html">icvec.c</a>を参照のこと. 行列に関しては<a class="el" href="icmat_8c.html">icmat.c</a>を参照のこと. </p>
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> に定義があります。</p>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a4723da0c40a10c7bc2208bb2e661156e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">P&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#a9ee764a5b39ff5f4938c03e72ebefc30">cmat_allocate_prec</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,P); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a76ce27130184776d2c9c273165174da9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ A=<a class="el" href="is__cmat_8h.html#ac70deb47241d9aa82afb30a5b461626d">cmat_free</a>(<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>,<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,A); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af38c90e8a5bf84c52c8e857f60873697"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">LDA, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ <a class="el" href="is__cmat_8h.html#aefaf1fb06634c15f453fe9f1e7dfba1a">cmat_round</a>((<a class="el" href="mt19937ar_8c.html#a52037c938e3c1b126c6277da5ca689d0">M</a>),(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(A),(LDA),(B)); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a6e35d9e20da2c37b3037c772ab8d13"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">P&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#ad1af5c539ed1b7dcee816e2378508e84">cvec_allocate_prec</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,P); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a77ccd322fd705c057a8bd623b4ab319e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#a6791c96c35ff01e0aa9f3e0cfb63893b">cvec_free</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,X); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aac00937c9310f573c158238e5b6c9453"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ <a class="el" href="is__cvec_8h.html#a162fa39deb8a94d50c02eea510683a5f">cvec_round</a>((<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>),(X),(B)); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa429c5ffdeb849e00c6d5483f56ad341"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAME_KRAWCZYK&#160;&#160;&#160;&quot;iceig_krawczyk&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="af1a6ff7c4e94bc8f6c9e39e179962477"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iceig_1pair_krawczyk </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>クラフチック法による固有値対の誤差評価 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>固有ベクトル </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lambda</td><td>固有値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>行列 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>サイズ </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">e</td><td>誤差 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>偽値は成功，真値は失敗. </dd></dl>
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00091">91</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af1590e6ef994cc13ca974a5fa549ea83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iceig_krawczyk </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>E_vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>E_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>クラフチック法による固有値分解の誤差評価 </p>
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a9296624ac02dfb159798f6ebbc1f91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void iceig_residual </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>F0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>F1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>lambda0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>lambda1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>固有値問題の残差 F=A*X-lambda*X </p>
+
+<p> <a class="el" href="iceig_8c_source.html">iceig.c</a> の <a class="el" href="iceig_8c_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="iceig_8c.html">iceig.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

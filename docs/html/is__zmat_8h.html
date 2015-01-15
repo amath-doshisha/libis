@@ -1,0 +1,1928 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_zmat.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__zmat_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_zmat.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="is__dcomplex_8h_source.html">is_dcomplex.h</a>&gt;</code><br />
+</div>
+<p><a href="is__zmat_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:af2650d3f2fff0c8f842ac547dc1d48da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#af2650d3f2fff0c8f842ac547dc1d48da">zmat_allocate</a> (int m, int n)</td></tr>
+<tr class="separator:af2650d3f2fff0c8f842ac547dc1d48da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818f3b03e8138566e0e1dc36bd294b62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a818f3b03e8138566e0e1dc36bd294b62">zmat_free</a> (<a class="el" href="structdcomplex.html">dcomplex</a> *A)</td></tr>
+<tr class="separator:a818f3b03e8138566e0e1dc36bd294b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2faf28489093bd202a7c7566a87c0f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a2faf28489093bd202a7c7566a87c0f62">zmat_zeros</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:a2faf28489093bd202a7c7566a87c0f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ded43f4542aa19760d8c9aed6ec075a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a9ded43f4542aa19760d8c9aed6ec075a">zmat_ones</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:a9ded43f4542aa19760d8c9aed6ec075a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1249da270484b1108c7d77a38c16de75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a1249da270484b1108c7d77a38c16de75">zmat_set</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:a1249da270484b1108c7d77a38c16de75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9992b0da4e0002f7f6a681104bf1dc9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a9992b0da4e0002f7f6a681104bf1dc9e">zmat_set_d</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, double a)</td></tr>
+<tr class="separator:a9992b0da4e0002f7f6a681104bf1dc9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10025c529047d6cbc6a51392c1c045f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a10025c529047d6cbc6a51392c1c045f1">zmat_eye</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:a10025c529047d6cbc6a51392c1c045f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95cfbb9a975419ada9624be3d9dfefc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#ab95cfbb9a975419ada9624be3d9dfefc">zmat_rand</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, double a, double b)</td></tr>
+<tr class="separator:ab95cfbb9a975419ada9624be3d9dfefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7c9d57161429da9dc9338486799485"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#abe7c9d57161429da9dc9338486799485">zmat_swap_columns</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, int k, int l)</td></tr>
+<tr class="separator:abe7c9d57161429da9dc9338486799485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2bcef84187dfc2d0ec158231bbee7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#ace2bcef84187dfc2d0ec158231bbee7e">zmat_swap_rows</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, int k, int l)</td></tr>
+<tr class="separator:ace2bcef84187dfc2d0ec158231bbee7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7306251cbf2ee45e5b6c1aee0972d3d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a7306251cbf2ee45e5b6c1aee0972d3d8">zmat_copy</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:a7306251cbf2ee45e5b6c1aee0972d3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefb9d3ead9e71147e87fe028aea77ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#afefb9d3ead9e71147e87fe028aea77ee">zmat_copy_d</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, const double *A, int LDA)</td></tr>
+<tr class="separator:afefb9d3ead9e71147e87fe028aea77ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a2d47584ca17c17dc4157066802186"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a38a2d47584ca17c17dc4157066802186">zmat_copy_t</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:a38a2d47584ca17c17dc4157066802186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f384ee1832dc13576bcf5dd1e7bccc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a8f384ee1832dc13576bcf5dd1e7bccc2">zmat_copy_ct</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:a8f384ee1832dc13576bcf5dd1e7bccc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777021bd21145b96433663bea1ea38f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a777021bd21145b96433663bea1ea38f1">zmat_copy_index</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const int *I)</td></tr>
+<tr class="separator:a777021bd21145b96433663bea1ea38f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430f09d80d0843e66498d91e0ccb0c37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a430f09d80d0843e66498d91e0ccb0c37">zmat_swap_index</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const int *I)</td></tr>
+<tr class="separator:a430f09d80d0843e66498d91e0ccb0c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9d461f30dc74e873e135d54fbecf8a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#ae9d461f30dc74e873e135d54fbecf8a8">zmat_diag_set_scalar</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, <a class="el" href="structdcomplex.html">dcomplex</a> a, int offset)</td></tr>
+<tr class="separator:ae9d461f30dc74e873e135d54fbecf8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289121d9e88bdbdcfb0b2499c4810aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a289121d9e88bdbdcfb0b2499c4810aef">zmat_diag_set_scalar_d</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, double a, int offset)</td></tr>
+<tr class="separator:a289121d9e88bdbdcfb0b2499c4810aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7aeb42dacc7b2a54824e1698d51821"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a3a7aeb42dacc7b2a54824e1698d51821">zmat_diag_add_scalar</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:a3a7aeb42dacc7b2a54824e1698d51821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791705b28158acbce76f906c6857d320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a791705b28158acbce76f906c6857d320">zmat_diag_sub_scalar</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:a791705b28158acbce76f906c6857d320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ff36c91809c8478b42dcc6e768c7787"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a1ff36c91809c8478b42dcc6e768c7787">zmat_add</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:a1ff36c91809c8478b42dcc6e768c7787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc77a1e384694fad86721e80977f1103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#afc77a1e384694fad86721e80977f1103">zmat_sub</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:afc77a1e384694fad86721e80977f1103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa79f35810cac3ca56264f1f9dfd16c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#aaa79f35810cac3ca56264f1f9dfd16c0">zmat_prod</a> (int l, int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *C, int LDC, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB)</td></tr>
+<tr class="separator:aaa79f35810cac3ca56264f1f9dfd16c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9ab70b96722dba806d49891b403840"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a1c9ab70b96722dba806d49891b403840">zmat_add_prod</a> (int l, int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *C, int LDC, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB)</td></tr>
+<tr class="separator:a1c9ab70b96722dba806d49891b403840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed996d499503d6ebc2a9cae3769623a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#aed996d499503d6ebc2a9cae3769623a2">zmat_sub_prod</a> (int l, int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *C, int LDC, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB)</td></tr>
+<tr class="separator:aed996d499503d6ebc2a9cae3769623a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8bbcde361a87de18bfa0811e96a0eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a2e8bbcde361a87de18bfa0811e96a0eb">zmat_rank1op</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, <a class="el" href="structdcomplex.html">dcomplex</a> a, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:a2e8bbcde361a87de18bfa0811e96a0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32ea64aee70f4f73ddfe84de0740b04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#ac32ea64aee70f4f73ddfe84de0740b04">zmat_normalize</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:ac32ea64aee70f4f73ddfe84de0740b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae6657ddff94930f9fdf262ec9666d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#aae6657ddff94930f9fdf262ec9666d86">zmat_normalize_sgn</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="separator:aae6657ddff94930f9fdf262ec9666d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed12e74065f9c4ae65c40bb7c081951"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a8ed12e74065f9c4ae65c40bb7c081951">zmat_sub_norm_max</a> (double *x, int m, int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB)</td></tr>
+<tr class="separator:a8ed12e74065f9c4ae65c40bb7c081951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918d7e60f376d65566f77bd58835c9d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a918d7e60f376d65566f77bd58835c9d6">zmat_real</a> (int m, int n, double *B, int LDB, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="memdesc:a918d7e60f376d65566f77bd58835c9d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">実部 B=real(A)  <a href="#a918d7e60f376d65566f77bd58835c9d6">[詳解]</a><br /></td></tr>
+<tr class="separator:a918d7e60f376d65566f77bd58835c9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e4ee21a263c513b88e625eeccb1157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a72e4ee21a263c513b88e625eeccb1157">zmat_dist_norm_max</a> (double *y, int m, int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a72e4ee21a263c513b88e625eeccb1157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0c357421157fe269c558a7c4c9349c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a8b0c357421157fe269c558a7c4c9349c">zmat_print</a> (int m, int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const char *name, const char *f, int digits)</td></tr>
+<tr class="separator:a8b0c357421157fe269c558a7c4c9349c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa361b72ed8ddb1e32a5fe2c972ff85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#adaa361b72ed8ddb1e32a5fe2c972ff85">zmat_save</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, char *fmt,...)</td></tr>
+<tr class="separator:adaa361b72ed8ddb1e32a5fe2c972ff85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5404910c8c72d59b9f477a5ee967d24e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a5404910c8c72d59b9f477a5ee967d24e">zmat_bin_save</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, char *fmt,...)</td></tr>
+<tr class="separator:a5404910c8c72d59b9f477a5ee967d24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1a890321838b9534eaf4bdbc0ff9e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zmat_8h.html#a7d1a890321838b9534eaf4bdbc0ff9e3">zmat_bin_load</a> (int *m, int *n, char *fmt,...)</td></tr>
+<tr class="separator:a7d1a890321838b9534eaf4bdbc0ff9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a1ff36c91809c8478b42dcc6e768c7787"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00259">259</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c9ab70b96722dba806d49891b403840"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_add_prod </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00295">295</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af2650d3f2fff0c8f842ac547dc1d48da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a>* zmat_allocate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d1a890321838b9534eaf4bdbc0ff9e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a>* zmat_bin_load </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00453">453</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5404910c8c72d59b9f477a5ee967d24e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_bin_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00438">438</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7306251cbf2ee45e5b6c1aee0972d3d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_copy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00146">146</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f384ee1832dc13576bcf5dd1e7bccc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_copy_ct </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00179">179</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afefb9d3ead9e71147e87fe028aea77ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_copy_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00157">157</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a777021bd21145b96433663bea1ea38f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_copy_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00192">192</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a38a2d47584ca17c17dc4157066802186"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_copy_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00168">168</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a7aeb42dacc7b2a54824e1698d51821"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_diag_add_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00241">241</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9d461f30dc74e873e135d54fbecf8a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_diag_set_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00218">218</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a289121d9e88bdbdcfb0b2499c4810aef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_diag_set_scalar_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00229">229</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a791705b28158acbce76f906c6857d320"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_diag_sub_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00250">250</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a72e4ee21a263c513b88e625eeccb1157"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_dist_norm_max </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00367">367</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a10025c529047d6cbc6a51392c1c045f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_eye </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00077">77</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a818f3b03e8138566e0e1dc36bd294b62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a>* zmat_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac32ea64aee70f4f73ddfe84de0740b04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_normalize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00335">335</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aae6657ddff94930f9fdf262ec9666d86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_normalize_sgn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00343">343</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ded43f4542aa19760d8c9aed6ec075a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_ones </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b0c357421157fe269c558a7c4c9349c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_print </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00377">377</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa79f35810cac3ca56264f1f9dfd16c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_prod </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00281">281</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab95cfbb9a975419ada9624be3d9dfefc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_rand </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00093">93</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e8bbcde361a87de18bfa0811e96a0eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_rank1op </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00321">321</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a918d7e60f376d65566f77bd58835c9d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_real </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>実部 B=real(A) </p>
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00108">108</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adaa361b72ed8ddb1e32a5fe2c972ff85"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00411">411</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1249da270484b1108c7d77a38c16de75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_set </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9992b0da4e0002f7f6a681104bf1dc9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_set_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00066">66</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afc77a1e384694fad86721e80977f1103"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00270">270</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ed12e74065f9c4ae65c40bb7c081951"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_sub_norm_max </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00355">355</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aed996d499503d6ebc2a9cae3769623a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_sub_prod </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00308">308</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abe7c9d57161429da9dc9338486799485"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_swap_columns </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00122">122</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a430f09d80d0843e66498d91e0ccb0c37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_swap_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00203">203</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ace2bcef84187dfc2d0ec158231bbee7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_swap_rows </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00130">130</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2faf28489093bd202a7c7566a87c0f62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmat_zeros </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zmat_8c_source.html">zmat.c</a> の <a class="el" href="zmat_8c_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__zmat_8h.html">is_zmat.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

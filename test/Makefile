@@ -13,7 +13,7 @@ SRCS = HashTest.c \
 	test_rmulti.c test_bigint.c \
 	test_strings.c \
 	test_func.c test_fvec.c test_gb.c \
-	test_cnewton.c test_rnewton.c
+	test_cnewton.c
 
 PROGS = HashTest \
 	test_dsolve test_zsolve test_rsolve test_csolve \
@@ -21,7 +21,7 @@ PROGS = HashTest \
 	test_rmulti test_bigint \
 	test_strings \
 	test_func test_fvec test_gb \
-	test_cnewton test_rnewton
+	test_cnewton
 
 all:	$(PROGS)
 
@@ -68,9 +68,6 @@ test_gb:	test_gb.o
 	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
 
 test_cnewton:	test_cnewton.o
-	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
-
-test_rnewton:	test_rnewton.o
 	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
 
 .c.o:	$(SRCS) $(HDRS)

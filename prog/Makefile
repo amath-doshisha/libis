@@ -13,8 +13,8 @@ SRCS = 	matshow.c \
 	mateig.c \
 	matgen_dhToda.c \
 	mateig_krawczyk.c \
-	mateig2.c \
-	imatshow2.c
+	imatshow2.c \
+	sovle_newton.c
 
 PROGS =	matshow \
 	matshow2 \
@@ -23,8 +23,8 @@ PROGS =	matshow \
 	matgen \
 	matgen_dhToda \
 	mateig_krawczyk \
-	mateig2 \
-	imatshow2
+	imatshow2 \
+	solve_newton
 
 all:	$(PROGS)
 
@@ -49,14 +49,14 @@ matgen_dhToda:	matgen_dhToda.o
 mateig_krawczyk:	mateig_krawczyk.o
 	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
 
-mateig2:		mateig2.o
+imatshow2:	imatshow2.o
 	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
 
-imatshow2:	imatshow2.o
+solve_newton:	solve_newton.o
 	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
 
 .c.o:	$(SRCS) $(HDRS)
 	$(CC) -c $< $(CFLAGS)
 
 clean:
-	rm -f $(PROGS) *.o *~ foo foo.* bar bar.* *.dat *.txt
+	rm -f $(PROGS) *.o *~ \#* foo foo.* bar bar.* *.dat *.txt

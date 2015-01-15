@@ -100,14 +100,14 @@ int main(int argc, char *argv[])
   char *in_fname1=NULL,*in_fname2=NULL;
   char *out_fname_log=NULL,*out_fname_mt=NULL,*out_dir=NULL;
   char format[]="f",method[METHOD_NAME_LENGTH+1],buf[MAX_LENGTH],mode='?';
-  int m1=0,m2=0,max_m=0,n1=0,n2=0,max_n=0,debug=1,i,prec=DEFAULT_PREC,flag=0,pflag=0;
+  int m1=0,m2=0,max_m=0,Emax_m=0,n1=0,n2=0,max_n=0,Emax_n=0,debug=1,i,prec=DEFAULT_PREC,flag=0,pflag=0;
   int loaded=0,autoname=0,type_in1=NOTYPE,type_in2=NOTYPE,digits=3,*index=NULL;
   double *dx1=NULL,*dx2=NULL,*dA1=NULL,*dA2=NULL;
   dcomplex *zx1=NULL,*zx2=NULL,*zA1=NULL,*zA2=NULL;
   dcomplex *x1_z=NULL;
   rmulti **rx1=NULL,**rx2=NULL,**rA1=NULL,**rA2=NULL,**rE=NULL;
   cmulti **cx1=NULL,**cx2=NULL,**cA1=NULL,**cA2=NULL,**cE=NULL;
-  rmulti *rmax=NULL;
+  rmulti *rEmax=NULL,*rmax=NULL;
 
   // init
   in_fname1=char_new("",NULL);
@@ -287,16 +287,29 @@ int main(int argc, char *argv[])
 
   //compute mode [sub_coeff]
   if(flag==1){
+    RA(rEmax,prec);
     RA(rmax,prec);
-    if(type_in1==RMAT && type_in2==RMAT){ 
-      rE=rmat_allocate_prec(m1,n1,prec); 
+    if(type_in1==RMAT && type_in2==RMAT){
+      rE=rmat_allocate_prec(m1,n1,prec);
       rmat_sub(m1,n1,rE,m1,rA1,m1,rA2,m2);
-      rmat_max_abs_coeff(&max_m,&max_n,rmax,m1,n1,rE,m1);
+      rmat_max_abs_coeff(&Emax_m,&Emax_n,rEmax,m1,n1,rE,m1);
+      if(rmat_get_prec_max(m1,n1,rA1,m1)>rmat_get_prec_max(m2,n2,rA2,m2)){ 
+	rmat_max_abs_coeff(&max_m,&max_n,rmax,m1,n1,rA1,m1);
+      }else{
+	rmat_max_abs_coeff(&max_m,&max_n,rmax,m2,n2,rA2,m2);
+      }
+      rdiv(rEmax,rEmax,rmax);
     }
-    if(type_in1==CMAT && type_in2==CMAT){ 
-      cE=cmat_allocate_prec(m1,n1,prec); 
+    if(type_in1==CMAT && type_in2==CMAT){
+      cE=cmat_allocate_prec(m1,n1,prec);
       cmat_sub(m1,n1,cE,m1,cA1,m1,cA2,m2);
-      cmat_max_abs_coeff(&max_m,&max_n,rmax,m1,n1,cE,m1);
+      cmat_max_abs_coeff(&Emax_m,&Emax_n,rEmax,m1,n1,cE,m1);
+      if(cmat_get_prec_max(m1,n1,cA1,m1)>cmat_get_prec_max(m2,n2,cA2,m2)){ 
+	cmat_max_abs_coeff(&max_m,&max_n,rmax,m1,n1,cA1,m1); 
+      }else{
+	cmat_max_abs_coeff(&max_m,&max_n,rmax,m2,n2,cA2,m2);
+      }
+      rdiv(rEmax,rEmax,rmax);
     }
   }
 
@@ -306,7 +319,7 @@ int main(int argc, char *argv[])
     if(cE!=NULL){ printf("Output_coeff_Error=\n"); cmat_print(m1,n1,cE,m2,NULL,format,digits); }
   }
   if(debug>=1){
-    if(rmax!=NULL){ mpfr_printf("Output_coeff_Error_max: [%d,%d] = %.7Re\n",max_m,max_n,rmax); }
+    if(rEmax!=NULL){ mpfr_printf("Output_coeff_Error_max: [%d,%d] = %.7Re\n",Emax_m,Emax_n,rEmax); }
   }
 
   //save
@@ -316,7 +329,7 @@ int main(int argc, char *argv[])
     if(debug>=1){ fprintf(stderr,"saved: %s%s\n",out_dir,out_fname_mt); }
   }
   if(strlen(out_fname_log)>0){
-    if(flag==1 && rmax!=NULL && fid!=NULL){ mpfr_fprintf(fid,"Output_coeff_Error_max: [%d,%d] = %.7Re\n",max_m,max_n,rmax); }
+    if(flag==1 && rEmax!=NULL && fid!=NULL){ mpfr_fprintf(fid,"Output_coeff_Error_max: [%d,%d] = %.7Re\n",Emax_m,Emax_n,rEmax); }
     if(debug>=1){ fprintf(stderr,"saved: %s%s\n",out_dir,out_fname_log); }
   }
 
@@ -347,6 +360,7 @@ int main(int argc, char *argv[])
   cA1=cmat_free(m1,n1,cA1);
   cA2=cmat_free(m2,n2,cA2);
   cE=cmat_free(m2,n2,cE);
+  RF(rEmax);
   RF(rmax);
   return 0;
 }

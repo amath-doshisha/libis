@@ -1,0 +1,4235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_rmat.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__rmat_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_rmat.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>多倍長精度実数型rmultiの行列に関する関数の宣言  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="is__rmulti_8h_source.html">is_rmulti.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__func_8h_source.html">is_func.h</a>&gt;</code><br />
+</div>
+<p><a href="is__rmat_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ad3925a4d6a71ac7d70e34680cfbde09d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#ad3925a4d6a71ac7d70e34680cfbde09d">rmat_allocate</a> (int LDA, int n)</td></tr>
+<tr class="memdesc:ad3925a4d6a71ac7d70e34680cfbde09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の新規生成.  <a href="#ad3925a4d6a71ac7d70e34680cfbde09d">[詳解]</a><br /></td></tr>
+<tr class="separator:ad3925a4d6a71ac7d70e34680cfbde09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474cfe62c18d90d42b8f80504449ea43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43">rmat_allocate_prec</a> (int LDA, int n, int prec)</td></tr>
+<tr class="memdesc:a474cfe62c18d90d42b8f80504449ea43"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の精度を指定しての新規生成.  <a href="#a474cfe62c18d90d42b8f80504449ea43">[詳解]</a><br /></td></tr>
+<tr class="separator:a474cfe62c18d90d42b8f80504449ea43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e904d8795f829555894efa676ba477a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a1e904d8795f829555894efa676ba477a">rmat_allocate_clone</a> (int LDB, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B)</td></tr>
+<tr class="memdesc:a1e904d8795f829555894efa676ba477a"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の複製の生成.  <a href="#a1e904d8795f829555894efa676ba477a">[詳解]</a><br /></td></tr>
+<tr class="separator:a1e904d8795f829555894efa676ba477a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c98fd51179ef3da5393f0de6c5e833"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833">rmat_free</a> (int LDA, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A)</td></tr>
+<tr class="memdesc:a53c98fd51179ef3da5393f0de6c5e833"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の終了処理.  <a href="#a53c98fd51179ef3da5393f0de6c5e833">[詳解]</a><br /></td></tr>
+<tr class="separator:a53c98fd51179ef3da5393f0de6c5e833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4457b70172fb660a5943db4a898c3a15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a4457b70172fb660a5943db4a898c3a15">rmat_round</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int prec)</td></tr>
+<tr class="memdesc:a4457b70172fb660a5943db4a898c3a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化済みのrmulti型の行列の浮動小数点数の精度(ビット数)を変更し再初期化.  <a href="#a4457b70172fb660a5943db4a898c3a15">[詳解]</a><br /></td></tr>
+<tr class="separator:a4457b70172fb660a5943db4a898c3a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1f0b74ad74b3c40039c341349401b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#aec1f0b74ad74b3c40039c341349401b6">rmat_clone</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:aec1f0b74ad74b3c40039c341349401b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を複成 B=A.  <a href="#aec1f0b74ad74b3c40039c341349401b6">[詳解]</a><br /></td></tr>
+<tr class="separator:aec1f0b74ad74b3c40039c341349401b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab237d84fe5c09d863a916e486ebae8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#aab237d84fe5c09d863a916e486ebae8d">rmat_clone_t</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:aab237d84fe5c09d863a916e486ebae8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の転置をとり値を複成 B=A'.  <a href="#aab237d84fe5c09d863a916e486ebae8d">[詳解]</a><br /></td></tr>
+<tr class="separator:aab237d84fe5c09d863a916e486ebae8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3623719d4990f4e198a58a387f2da21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#ab3623719d4990f4e198a58a387f2da21">rmat_clone_index</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, const int *I)</td></tr>
+<tr class="memdesc:ab3623719d4990f4e198a58a387f2da21"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の列を列番号Iに従って複成 B(:,j)=A(:,I(j)).  <a href="#ab3623719d4990f4e198a58a387f2da21">[詳解]</a><br /></td></tr>
+<tr class="separator:ab3623719d4990f4e198a58a387f2da21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f3d9884a38bd50bbd073253f68e89e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a28f3d9884a38bd50bbd073253f68e89e">rmat_swap</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:a28f3d9884a38bd50bbd073253f68e89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値の交換 A&lt;=&gt;B.  <a href="#a28f3d9884a38bd50bbd073253f68e89e">[詳解]</a><br /></td></tr>
+<tr class="separator:a28f3d9884a38bd50bbd073253f68e89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a341b041e78020e85c8b790f1694abc61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a341b041e78020e85c8b790f1694abc61">rmat_get_prec</a> (int m, int n, int *P, int LDP, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a341b041e78020e85c8b790f1694abc61"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の浮動小数点数の精度(ビット数)を取得.  <a href="#a341b041e78020e85c8b790f1694abc61">[詳解]</a><br /></td></tr>
+<tr class="separator:a341b041e78020e85c8b790f1694abc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8d8bebcc4d6f4f9594215e41dff4bfa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa">rmat_get_prec_max</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:aa8d8bebcc4d6f4f9594215e41dff4bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型行列の精度(ビット数)の最大値の取得.  <a href="#aa8d8bebcc4d6f4f9594215e41dff4bfa">[詳解]</a><br /></td></tr>
+<tr class="separator:aa8d8bebcc4d6f4f9594215e41dff4bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2b3b64f7d223061e7bcab80d5df09c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a2f2b3b64f7d223061e7bcab80d5df09c">rmat_get_exp</a> (int m, int n, int *P, int LDP, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a2f2b3b64f7d223061e7bcab80d5df09c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の浮動小数点数の指数部の取得.  <a href="#a2f2b3b64f7d223061e7bcab80d5df09c">[詳解]</a><br /></td></tr>
+<tr class="separator:a2f2b3b64f7d223061e7bcab80d5df09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff3a1037eb467ef8817899e1fe0f8999"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#aff3a1037eb467ef8817899e1fe0f8999">rmat_get_exp_max</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:aff3a1037eb467ef8817899e1fe0f8999"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の浮動小数点数の指数部の最大値の取得.  <a href="#aff3a1037eb467ef8817899e1fe0f8999">[詳解]</a><br /></td></tr>
+<tr class="separator:aff3a1037eb467ef8817899e1fe0f8999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3dcde83a250329d424829d705c9e04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a2f3dcde83a250329d424829d705c9e04">rmat_is_number</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a2f3dcde83a250329d424829d705c9e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列が数であるかの判定.  <a href="#a2f3dcde83a250329d424829d705c9e04">[詳解]</a><br /></td></tr>
+<tr class="separator:a2f3dcde83a250329d424829d705c9e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af049b555b1a1f612cb88143759b1af9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#af049b555b1a1f612cb88143759b1af9f">rmat_has_nan</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:af049b555b1a1f612cb88143759b1af9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列がNaNを含むかの判定.  <a href="#af049b555b1a1f612cb88143759b1af9f">[詳解]</a><br /></td></tr>
+<tr class="separator:af049b555b1a1f612cb88143759b1af9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac48ad790e081c51bc9e56d51c95024f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#ac48ad790e081c51bc9e56d51c95024f9">rmat_print</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, const char *name, const char *f, int digits)</td></tr>
+<tr class="memdesc:ac48ad790e081c51bc9e56d51c95024f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の表示.  <a href="#ac48ad790e081c51bc9e56d51c95024f9">[詳解]</a><br /></td></tr>
+<tr class="separator:ac48ad790e081c51bc9e56d51c95024f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8924a3d40b718290bce6a0f970152b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a8924a3d40b718290bce6a0f970152b15">rmat_save</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int digits, char *fmt,...)</td></tr>
+<tr class="memdesc:a8924a3d40b718290bce6a0f970152b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の保存.  <a href="#a8924a3d40b718290bce6a0f970152b15">[詳解]</a><br /></td></tr>
+<tr class="separator:a8924a3d40b718290bce6a0f970152b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01143185591cb8795a9e6f864ef8a512"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a01143185591cb8795a9e6f864ef8a512">rmat_load</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, char *fmt,...)</td></tr>
+<tr class="memdesc:a01143185591cb8795a9e6f864ef8a512"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の読み込み.  <a href="#a01143185591cb8795a9e6f864ef8a512">[詳解]</a><br /></td></tr>
+<tr class="separator:a01143185591cb8795a9e6f864ef8a512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7809068b473776b88c09a29fd107887f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a7809068b473776b88c09a29fd107887f">rmat_bin_save</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, char *fmt,...)</td></tr>
+<tr class="memdesc:a7809068b473776b88c09a29fd107887f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の保存.  <a href="#a7809068b473776b88c09a29fd107887f">[詳解]</a><br /></td></tr>
+<tr class="separator:a7809068b473776b88c09a29fd107887f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e07fa6467802f412261f0b50bd1bede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a2e07fa6467802f412261f0b50bd1bede">rmat_bin_load</a> (int *m, int *n, char *fmt,...)</td></tr>
+<tr class="memdesc:a2e07fa6467802f412261f0b50bd1bede"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の読み込み.  <a href="#a2e07fa6467802f412261f0b50bd1bede">[詳解]</a><br /></td></tr>
+<tr class="separator:a2e07fa6467802f412261f0b50bd1bede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f8560a72714434d6f9decc4d39f031"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a51f8560a72714434d6f9decc4d39f031">rmat_set_nan</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a51f8560a72714434d6f9decc4d39f031"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値をNaNに設定.  <a href="#a51f8560a72714434d6f9decc4d39f031">[詳解]</a><br /></td></tr>
+<tr class="separator:a51f8560a72714434d6f9decc4d39f031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f317202582ae7f1cd48cf4458b8c90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a53f317202582ae7f1cd48cf4458b8c90">rmat_set_s</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, char **A, int LDA)</td></tr>
+<tr class="memdesc:a53f317202582ae7f1cd48cf4458b8c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を文字列から設定.  <a href="#a53f317202582ae7f1cd48cf4458b8c90">[詳解]</a><br /></td></tr>
+<tr class="separator:a53f317202582ae7f1cd48cf4458b8c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f421ec81e09ec554de6ab71e8ce998b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a6f421ec81e09ec554de6ab71e8ce998b">rmat_set_d</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, const double *A, int LDA)</td></tr>
+<tr class="memdesc:a6f421ec81e09ec554de6ab71e8ce998b"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を倍精度実数から設定.  <a href="#a6f421ec81e09ec554de6ab71e8ce998b">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f421ec81e09ec554de6ab71e8ce998b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c129d7e7bb71720ef84c8d422cb4416"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a4c129d7e7bb71720ef84c8d422cb4416">rmat_set_z</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA)</td></tr>
+<tr class="memdesc:a4c129d7e7bb71720ef84c8d422cb4416"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を倍精度複素数から設定.  <a href="#a4c129d7e7bb71720ef84c8d422cb4416">[詳解]</a><br /></td></tr>
+<tr class="separator:a4c129d7e7bb71720ef84c8d422cb4416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61366ab863c96b378c5a50360b018ddd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a61366ab863c96b378c5a50360b018ddd">rmat_set_all_d</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, double a)</td></tr>
+<tr class="memdesc:a61366ab863c96b378c5a50360b018ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を倍精度浮動小数点数から設定.  <a href="#a61366ab863c96b378c5a50360b018ddd">[詳解]</a><br /></td></tr>
+<tr class="separator:a61366ab863c96b378c5a50360b018ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2805570b6c0018330112b85f9fdc1506"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a2805570b6c0018330112b85f9fdc1506">rmat_set_zeros</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a2805570b6c0018330112b85f9fdc1506"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を零に設定.  <a href="#a2805570b6c0018330112b85f9fdc1506">[詳解]</a><br /></td></tr>
+<tr class="separator:a2805570b6c0018330112b85f9fdc1506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c166c85a8f6c1c480c4e9e4c6ce20e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a83c166c85a8f6c1c480c4e9e4c6ce20e">rmat_set_ones</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a83c166c85a8f6c1c480c4e9e4c6ce20e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を1に設定.  <a href="#a83c166c85a8f6c1c480c4e9e4c6ce20e">[詳解]</a><br /></td></tr>
+<tr class="separator:a83c166c85a8f6c1c480c4e9e4c6ce20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454903ad1f187b2d7fe90bcdd7a3ba3d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a454903ad1f187b2d7fe90bcdd7a3ba3d">rmat_set_eye</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a454903ad1f187b2d7fe90bcdd7a3ba3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を単位行列の設定.  <a href="#a454903ad1f187b2d7fe90bcdd7a3ba3d">[詳解]</a><br /></td></tr>
+<tr class="separator:a454903ad1f187b2d7fe90bcdd7a3ba3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58d8ef4fd268ee395c08af5a113a3eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#ab58d8ef4fd268ee395c08af5a113a3eb">rmat_set_rand</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, double a, double b)</td></tr>
+<tr class="memdesc:ab58d8ef4fd268ee395c08af5a113a3eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値を区間(b,a+b)の疑似乱数値を設定.  <a href="#ab58d8ef4fd268ee395c08af5a113a3eb">[詳解]</a><br /></td></tr>
+<tr class="separator:ab58d8ef4fd268ee395c08af5a113a3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee590fdb5ee4aa95d003f6e2e47a648"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#afee590fdb5ee4aa95d003f6e2e47a648">rmat_set_diag_r</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a, int offset)</td></tr>
+<tr class="memdesc:afee590fdb5ee4aa95d003f6e2e47a648"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角成分にスカラーをコピー.  <a href="#afee590fdb5ee4aa95d003f6e2e47a648">[詳解]</a><br /></td></tr>
+<tr class="separator:afee590fdb5ee4aa95d003f6e2e47a648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f795df177b36a0018ad0ae25ab10bfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a3f795df177b36a0018ad0ae25ab10bfd">rmat_set_diag_d</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, double a, int offset)</td></tr>
+<tr class="memdesc:a3f795df177b36a0018ad0ae25ab10bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角成分にスカラーをコピー.  <a href="#a3f795df177b36a0018ad0ae25ab10bfd">[詳解]</a><br /></td></tr>
+<tr class="separator:a3f795df177b36a0018ad0ae25ab10bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbce288c134d2957361e6bda207822de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#adbce288c134d2957361e6bda207822de">rmat_get_d</a> (int m, int n, double *B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:adbce288c134d2957361e6bda207822de"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列を倍精度型に変換.  <a href="#adbce288c134d2957361e6bda207822de">[詳解]</a><br /></td></tr>
+<tr class="separator:adbce288c134d2957361e6bda207822de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257fc1bc51fdeacf57829f659350ecc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a257fc1bc51fdeacf57829f659350ecc4">rmat_get_z</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a257fc1bc51fdeacf57829f659350ecc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型をdcomplex型へキャストする B=double(A).  <a href="#a257fc1bc51fdeacf57829f659350ecc4">[詳解]</a><br /></td></tr>
+<tr class="separator:a257fc1bc51fdeacf57829f659350ecc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a142aa2b8550b50b802d991732cd3a593"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a142aa2b8550b50b802d991732cd3a593">rmat_cols_swap</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int k, int l)</td></tr>
+<tr class="memdesc:a142aa2b8550b50b802d991732cd3a593"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の第k列と第l列を入れ替える.  <a href="#a142aa2b8550b50b802d991732cd3a593">[詳解]</a><br /></td></tr>
+<tr class="separator:a142aa2b8550b50b802d991732cd3a593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a4efe4c70109d0f5f858ece321acab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a4a4efe4c70109d0f5f858ece321acab8">rmat_cols_swap_index</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, const int *I)</td></tr>
+<tr class="memdesc:a4a4efe4c70109d0f5f858ece321acab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の列を列番号の配列Iの値に従って入れ替える.  <a href="#a4a4efe4c70109d0f5f858ece321acab8">[詳解]</a><br /></td></tr>
+<tr class="separator:a4a4efe4c70109d0f5f858ece321acab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a70b5f94234467401d80406a406aaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a80a70b5f94234467401d80406a406aaf">rmat_rows_swap</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int k, int l)</td></tr>
+<tr class="memdesc:a80a70b5f94234467401d80406a406aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の第addと第l行を入れ替える.  <a href="#a80a70b5f94234467401d80406a406aaf">[詳解]</a><br /></td></tr>
+<tr class="separator:a80a70b5f94234467401d80406a406aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b961aee395bb6029612e7f9885cf018"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a1b961aee395bb6029612e7f9885cf018">rmat_copy</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a1b961aee395bb6029612e7f9885cf018"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値のコピー B=A  <a href="#a1b961aee395bb6029612e7f9885cf018">[詳解]</a><br /></td></tr>
+<tr class="separator:a1b961aee395bb6029612e7f9885cf018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b90316da78f00a5c31c6fa0f7b3482"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a35b90316da78f00a5c31c6fa0f7b3482">rmat_copy_t</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a35b90316da78f00a5c31c6fa0f7b3482"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列を転置をとり値のコピー B=A'.  <a href="#a35b90316da78f00a5c31c6fa0f7b3482">[詳解]</a><br /></td></tr>
+<tr class="separator:a35b90316da78f00a5c31c6fa0f7b3482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8174fdf2fcc80470898bcc6f28d8e6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#af8174fdf2fcc80470898bcc6f28d8e6a">rmat_copy_index</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, const int *I)</td></tr>
+<tr class="memdesc:af8174fdf2fcc80470898bcc6f28d8e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の列を列番号Iに従ったコピー B=A.  <a href="#af8174fdf2fcc80470898bcc6f28d8e6a">[詳解]</a><br /></td></tr>
+<tr class="separator:af8174fdf2fcc80470898bcc6f28d8e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f29987070b5d4c472532717fd317f8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a3f29987070b5d4c472532717fd317f8e">rmat_neg</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a3f29987070b5d4c472532717fd317f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の符号反転 B=-A.  <a href="#a3f29987070b5d4c472532717fd317f8e">[詳解]</a><br /></td></tr>
+<tr class="separator:a3f29987070b5d4c472532717fd317f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75955361e9f65fae9d9c99ae3d88806"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#aa75955361e9f65fae9d9c99ae3d88806">rmat_abs</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:aa75955361e9f65fae9d9c99ae3d88806"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素の絶対値 B=abs(A).  <a href="#aa75955361e9f65fae9d9c99ae3d88806">[詳解]</a><br /></td></tr>
+<tr class="separator:aa75955361e9f65fae9d9c99ae3d88806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb0b4a792f7dd22871c9840daf4e67c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#abb0b4a792f7dd22871c9840daf4e67c9">rmat_add</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:abb0b4a792f7dd22871c9840daf4e67c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の足し算 C=A+B.  <a href="#abb0b4a792f7dd22871c9840daf4e67c9">[詳解]</a><br /></td></tr>
+<tr class="separator:abb0b4a792f7dd22871c9840daf4e67c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38aa5b978bde49023015f47e623e972e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a38aa5b978bde49023015f47e623e972e">rmat_add_r</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *b)</td></tr>
+<tr class="memdesc:a38aa5b978bde49023015f47e623e972e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の足し算 C=A+b.  <a href="#a38aa5b978bde49023015f47e623e972e">[詳解]</a><br /></td></tr>
+<tr class="separator:a38aa5b978bde49023015f47e623e972e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af378af875363d7585f74c141413cbf75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#af378af875363d7585f74c141413cbf75">rmat_sub</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:af378af875363d7585f74c141413cbf75"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の引き算 C=A-B.  <a href="#af378af875363d7585f74c141413cbf75">[詳解]</a><br /></td></tr>
+<tr class="separator:af378af875363d7585f74c141413cbf75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a597ba883dfd6c204b50c3698721596"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a2a597ba883dfd6c204b50c3698721596">rmat_sub_r1</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:a2a597ba883dfd6c204b50c3698721596"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の引き算 C=a-B.  <a href="#a2a597ba883dfd6c204b50c3698721596">[詳解]</a><br /></td></tr>
+<tr class="separator:a2a597ba883dfd6c204b50c3698721596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c2030e7dc3883a3b865befd25527aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a03c2030e7dc3883a3b865befd25527aa">rmat_sub_r2</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *b)</td></tr>
+<tr class="memdesc:a03c2030e7dc3883a3b865befd25527aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の引き算 C=A-b.  <a href="#a03c2030e7dc3883a3b865befd25527aa">[詳解]</a><br /></td></tr>
+<tr class="separator:a03c2030e7dc3883a3b865befd25527aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47fc43b48d57788c7f7fe728cfedface"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a47fc43b48d57788c7f7fe728cfedface">rmat_mul</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:a47fc43b48d57788c7f7fe728cfedface"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素ごとの掛け算 C=A.*B.  <a href="#a47fc43b48d57788c7f7fe728cfedface">[詳解]</a><br /></td></tr>
+<tr class="separator:a47fc43b48d57788c7f7fe728cfedface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb5ce3c80695f9fb1169d7440ecf437"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#afeb5ce3c80695f9fb1169d7440ecf437">rmat_mul_r</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *b)</td></tr>
+<tr class="memdesc:afeb5ce3c80695f9fb1169d7440ecf437"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素ごととスカラーの掛け算 C=A*b.  <a href="#afeb5ce3c80695f9fb1169d7440ecf437">[詳解]</a><br /></td></tr>
+<tr class="separator:afeb5ce3c80695f9fb1169d7440ecf437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d79358340a968c1205e43b95850611"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a37d79358340a968c1205e43b95850611">rmat_mul_d</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, double b)</td></tr>
+<tr class="memdesc:a37d79358340a968c1205e43b95850611"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素ごととスカラーの掛け算 C=A*b.  <a href="#a37d79358340a968c1205e43b95850611">[詳解]</a><br /></td></tr>
+<tr class="separator:a37d79358340a968c1205e43b95850611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5591d3152f43c7d5f6475c51104d0537"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a5591d3152f43c7d5f6475c51104d0537">rmat_prod</a> (int l, int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:a5591d3152f43c7d5f6475c51104d0537"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の積 C=A*B.  <a href="#a5591d3152f43c7d5f6475c51104d0537">[詳解]</a><br /></td></tr>
+<tr class="separator:a5591d3152f43c7d5f6475c51104d0537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e3f658d6d349717028e68b19a3296c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a6e3f658d6d349717028e68b19a3296c4">rmat_add_prod</a> (int l, int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:a6e3f658d6d349717028e68b19a3296c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の積の加算 C+=A*B.  <a href="#a6e3f658d6d349717028e68b19a3296c4">[詳解]</a><br /></td></tr>
+<tr class="separator:a6e3f658d6d349717028e68b19a3296c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0db29116bb352df77954c4d469b655e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#ad0db29116bb352df77954c4d469b655e">rmat_sub_prod</a> (int l, int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:ad0db29116bb352df77954c4d469b655e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の積の減算 C-=A*B.  <a href="#ad0db29116bb352df77954c4d469b655e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad0db29116bb352df77954c4d469b655e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cac318cca7da7653fb1e0a8f7a2ab3b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a1cac318cca7da7653fb1e0a8f7a2ab3b">rmat_rank1op</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y)</td></tr>
+<tr class="memdesc:a1cac318cca7da7653fb1e0a8f7a2ab3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の1ランク更新 B=A+a*x*y'  <a href="#a1cac318cca7da7653fb1e0a8f7a2ab3b">[詳解]</a><br /></td></tr>
+<tr class="separator:a1cac318cca7da7653fb1e0a8f7a2ab3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70124c22a3870ecb1db490a858069588"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a70124c22a3870ecb1db490a858069588">rmat_diag_copy_rvec</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **a)</td></tr>
+<tr class="memdesc:a70124c22a3870ecb1db490a858069588"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角行列 A=diag(a).  <a href="#a70124c22a3870ecb1db490a858069588">[詳解]</a><br /></td></tr>
+<tr class="separator:a70124c22a3870ecb1db490a858069588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f6bd96ed1e1c24bbca1138fe48018e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a33f6bd96ed1e1c24bbca1138fe48018e">rmat_diag_copy_r</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a)</td></tr>
+<tr class="memdesc:a33f6bd96ed1e1c24bbca1138fe48018e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角行列 A=diag(a).  <a href="#a33f6bd96ed1e1c24bbca1138fe48018e">[詳解]</a><br /></td></tr>
+<tr class="separator:a33f6bd96ed1e1c24bbca1138fe48018e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ee53a541e0071bb39baa8158914a185"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a1ee53a541e0071bb39baa8158914a185">rmat_diag_copy_d</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, double a)</td></tr>
+<tr class="memdesc:a1ee53a541e0071bb39baa8158914a185"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角行列 A=diag(a).  <a href="#a1ee53a541e0071bb39baa8158914a185">[詳解]</a><br /></td></tr>
+<tr class="separator:a1ee53a541e0071bb39baa8158914a185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a931623aeb167d0623b061e77a0079"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a72a931623aeb167d0623b061e77a0079">rmat_diag_add_rvec</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **a)</td></tr>
+<tr class="memdesc:a72a931623aeb167d0623b061e77a0079"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角行列との足し算 B=A+diag(a).  <a href="#a72a931623aeb167d0623b061e77a0079">[詳解]</a><br /></td></tr>
+<tr class="separator:a72a931623aeb167d0623b061e77a0079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7cc3b927d74db0abb3fb36b8cc3e94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a5b7cc3b927d74db0abb3fb36b8cc3e94">rmat_diag_add_r</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a)</td></tr>
+<tr class="memdesc:a5b7cc3b927d74db0abb3fb36b8cc3e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角行列との足し算 B=A+diag(a).  <a href="#a5b7cc3b927d74db0abb3fb36b8cc3e94">[詳解]</a><br /></td></tr>
+<tr class="separator:a5b7cc3b927d74db0abb3fb36b8cc3e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea562e20050f25d0719e8d47c436d65c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#aea562e20050f25d0719e8d47c436d65c">rmat_diag_sub_rvec</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **a)</td></tr>
+<tr class="memdesc:aea562e20050f25d0719e8d47c436d65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角行列との引き算 B=A-diag(a).  <a href="#aea562e20050f25d0719e8d47c436d65c">[詳解]</a><br /></td></tr>
+<tr class="separator:aea562e20050f25d0719e8d47c436d65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd2119ecbd86f9dc83a026f0b768987"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a1fd2119ecbd86f9dc83a026f0b768987">rmat_diag_sub_r</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *a)</td></tr>
+<tr class="memdesc:a1fd2119ecbd86f9dc83a026f0b768987"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の対角行列との引き算 B=A-diag(a).  <a href="#a1fd2119ecbd86f9dc83a026f0b768987">[詳解]</a><br /></td></tr>
+<tr class="separator:a1fd2119ecbd86f9dc83a026f0b768987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ba0949f8f9219f30a51da1e92974c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#ac5ba0949f8f9219f30a51da1e92974c9">rmat_max_abs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *value, int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:ac5ba0949f8f9219f30a51da1e92974c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素の絶対値の最大値 value=max(abs(x))  <a href="#ac5ba0949f8f9219f30a51da1e92974c9">[詳解]</a><br /></td></tr>
+<tr class="separator:ac5ba0949f8f9219f30a51da1e92974c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af82def5ddf20dc2208850c6d35fdb01c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#af82def5ddf20dc2208850c6d35fdb01c">rmat_min_abs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *value, int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:af82def5ddf20dc2208850c6d35fdb01c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素の絶対値の最小値 value=min(abs(x))  <a href="#af82def5ddf20dc2208850c6d35fdb01c">[詳解]</a><br /></td></tr>
+<tr class="separator:af82def5ddf20dc2208850c6d35fdb01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e8a5959e7ed2b58939421788806c45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#af0e8a5959e7ed2b58939421788806c45">rmat_cols_max_abs_sub</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:af0e8a5959e7ed2b58939421788806c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の列どうしの差の絶対値の最大値 x(j)=max(abs(A(:,j)-B(:,j))).  <a href="#af0e8a5959e7ed2b58939421788806c45">[詳解]</a><br /></td></tr>
+<tr class="separator:af0e8a5959e7ed2b58939421788806c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9105b0b8ccb79ddd434dd7b20db2d61b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a9105b0b8ccb79ddd434dd7b20db2d61b">rmat_cols_max_abs_sub_rvec</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y, int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
+<tr class="memdesc:a9105b0b8ccb79ddd434dd7b20db2d61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の列とベクトルとの差の絶対値の最大値 y(j)=max(abs(A(:,j)-x)).  <a href="#a9105b0b8ccb79ddd434dd7b20db2d61b">[詳解]</a><br /></td></tr>
+<tr class="separator:a9105b0b8ccb79ddd434dd7b20db2d61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dbab2742f0548449922997106f13670"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a4dbab2742f0548449922997106f13670">rmat_div</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:a4dbab2742f0548449922997106f13670"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素ごとの割り算 C=A./B.  <a href="#a4dbab2742f0548449922997106f13670">[詳解]</a><br /></td></tr>
+<tr class="separator:a4dbab2742f0548449922997106f13670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189bae2c52c23805a81d9b8ea04a5ec0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a189bae2c52c23805a81d9b8ea04a5ec0">rmat_div_r</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *b)</td></tr>
+<tr class="memdesc:a189bae2c52c23805a81d9b8ea04a5ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素ごととスカラーの割り算 C=A/b.  <a href="#a189bae2c52c23805a81d9b8ea04a5ec0">[詳解]</a><br /></td></tr>
+<tr class="separator:a189bae2c52c23805a81d9b8ea04a5ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cab14f0198be759475f5f7ed66c96e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a8cab14f0198be759475f5f7ed66c96e4">rmat_div_d</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C, int LDC, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, double b)</td></tr>
+<tr class="memdesc:a8cab14f0198be759475f5f7ed66c96e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の要素ごととスカラーの割り算 C=A/b.  <a href="#a8cab14f0198be759475f5f7ed66c96e4">[詳解]</a><br /></td></tr>
+<tr class="separator:a8cab14f0198be759475f5f7ed66c96e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51b134ec27994a7af52f3cea7a333b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#af51b134ec27994a7af52f3cea7a333b5">rmat_cols_normalize</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:af51b134ec27994a7af52f3cea7a333b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の列ごとの正規化.  <a href="#af51b134ec27994a7af52f3cea7a333b5">[詳解]</a><br /></td></tr>
+<tr class="separator:af51b134ec27994a7af52f3cea7a333b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f562b2f7dcd5d64f47ea216c0c8681c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a7f562b2f7dcd5d64f47ea216c0c8681c">rmat_cols_normalize_sgn</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:a7f562b2f7dcd5d64f47ea216c0c8681c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の列ごとの正規化.  <a href="#a7f562b2f7dcd5d64f47ea216c0c8681c">[詳解]</a><br /></td></tr>
+<tr class="separator:a7f562b2f7dcd5d64f47ea216c0c8681c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0c72d11e69758ddac0926b01086ce5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#acb0c72d11e69758ddac0926b01086ce5">rmat_cmp</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int k, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
+<tr class="memdesc:acb0c72d11e69758ddac0926b01086ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値の比較 A&lt;==&gt;B.  <a href="#acb0c72d11e69758ddac0926b01086ce5">[詳解]</a><br /></td></tr>
+<tr class="separator:acb0c72d11e69758ddac0926b01086ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26031876c77b7d2df779f202a37ea898"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a26031876c77b7d2df779f202a37ea898">rmat_func_list2</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *f, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
+<tr class="memdesc:a26031876c77b7d2df779f202a37ea898"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列に関する行列写像 A=f(x).  <a href="#a26031876c77b7d2df779f202a37ea898">[詳解]</a><br /></td></tr>
+<tr class="separator:a26031876c77b7d2df779f202a37ea898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>多倍長精度実数型rmultiの行列に関する関数の宣言 </p>
+
+<p> <a class="el" href="is__rmat_8h_source.html">is_rmat.h</a> に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="aa75955361e9f65fae9d9c99ae3d88806"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素の絶対値 B=abs(A). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00731">731</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abb0b4a792f7dd22871c9840daf4e67c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の足し算 C=A+B. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00746">746</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e3f658d6d349717028e68b19a3296c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_add_prod </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の積の加算 C+=A*B. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>初期化済みのサイズが(l,m)の行列. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>初期化済みのサイズが(m,n)の行列. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">C</td><td>初期化済みのサイズが(l,n)の行列. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00885">885</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a38aa5b978bde49023015f47e623e972e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_add_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の足し算 C=A+b. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00760">760</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3925a4d6a71ac7d70e34680cfbde09d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a>** rmat_allocate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の新規生成. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e904d8795f829555894efa676ba477a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a>** rmat_allocate_clone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の複製の生成. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00063">63</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a474cfe62c18d90d42b8f80504449ea43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a>** rmat_allocate_prec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の精度を指定しての新規生成. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e07fa6467802f412261f0b50bd1bede"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a>** rmat_bin_load </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の読み込み. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00384">384</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7809068b473776b88c09a29fd107887f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_bin_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の保存. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00354">354</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aec1f0b74ad74b3c40039c341349401b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_clone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を複成 B=A. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00111">111</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3623719d4990f4e198a58a387f2da21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_clone_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の列を列番号Iに従って複成 B(:,j)=A(:,I(j)). </p>
+<p>B(:,j)=A(:,I(j)), j=0,1,2,..,n-1. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00146">146</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aab237d84fe5c09d863a916e486ebae8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_clone_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の転置をとり値を複成 B=A'. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>行列Aの行の個数.行列Bの列の個数. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>行列Aの列の個数.行列Bの行の個数. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>初期化済みのrmulti型の行列.サイズは(m,n). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>Aの第1次元. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">B</td><td>初期化済みのrmulti型の行列.サイズは(n,m). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDB</td><td>Bの第1次元. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00131">131</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acb0c72d11e69758ddac0926b01086ce5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_cmp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値の比較 A&lt;==&gt;B. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01204">1204</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af0e8a5959e7ed2b58939421788806c45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_cols_max_abs_sub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の列どうしの差の絶対値の最大値 x(j)=max(abs(A(:,j)-B(:,j))). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01097">1097</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9105b0b8ccb79ddd434dd7b20db2d61b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_cols_max_abs_sub_rvec </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の列とベクトルとの差の絶対値の最大値 y(j)=max(abs(A(:,j)-x)). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01109">1109</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af51b134ec27994a7af52f3cea7a333b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_cols_normalize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の列ごとの正規化. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01172">1172</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f562b2f7dcd5d64f47ea216c0c8681c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_cols_normalize_sgn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の列ごとの正規化. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01184">1184</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a142aa2b8550b50b802d991732cd3a593"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_cols_swap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の第k列と第l列を入れ替える. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00626">626</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a4efe4c70109d0f5f858ece321acab8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_cols_swap_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の列を列番号の配列Iの値に従って入れ替える. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00636">636</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b961aee395bb6029612e7f9885cf018"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_copy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値のコピー B=A </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00670">670</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af8174fdf2fcc80470898bcc6f28d8e6a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_copy_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の列を列番号Iに従ったコピー B=A. </p>
+<p>B(:,j)=A(:,I(j)) j=0,1,2,..,n-1. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00706">706</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a35b90316da78f00a5c31c6fa0f7b3482"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_copy_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列を転置をとり値のコピー B=A'. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>行列Aの行の個数.行列Bの列の個数. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>行列Aの列の個数.行列Bの行の個数. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>初期化済みのrmulti型の行列.サイズは(m,n). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>Aの第1次元. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>初期化済みの行列.サイズは(n,m). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">B</td><td>コピーされた結果. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDB</td><td>Bの第1次元. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00691">691</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b7cc3b927d74db0abb3fb36b8cc3e94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_diag_add_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角行列との足し算 B=A+diag(a). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01009">1009</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a72a931623aeb167d0623b061e77a0079"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_diag_add_rvec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角行列との足し算 B=A+diag(a). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00994">994</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ee53a541e0071bb39baa8158914a185"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_diag_copy_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角行列 A=diag(a). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00979">979</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a33f6bd96ed1e1c24bbca1138fe48018e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_diag_copy_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角行列 A=diag(a). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00964">964</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a70124c22a3870ecb1db490a858069588"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_diag_copy_rvec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角行列 A=diag(a). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00949">949</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1fd2119ecbd86f9dc83a026f0b768987"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_diag_sub_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角行列との引き算 B=A-diag(a). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01039">1039</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aea562e20050f25d0719e8d47c436d65c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_diag_sub_rvec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角行列との引き算 B=A-diag(a). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01024">1024</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4dbab2742f0548449922997106f13670"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_div </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素ごとの割り算 C=A./B. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01129">1129</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8cab14f0198be759475f5f7ed66c96e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_div_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素ごととスカラーの割り算 C=A/b. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01157">1157</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a189bae2c52c23805a81d9b8ea04a5ec0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_div_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素ごととスカラーの割り算 C=A/b. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01143">1143</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a53c98fd51179ef3da5393f0de6c5e833"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a>** rmat_free </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の終了処理. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00080">80</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a26031876c77b7d2df779f202a37ea898"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_func_list2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__func_8h.html#ad59db93b2eead9a3217adb63f2f2b83a">func_t</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列に関する行列写像 A=f(x). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01230">1230</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adbce288c134d2957361e6bda207822de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_get_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列を倍精度型に変換. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00591">591</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f2b3b64f7d223061e7bcab80d5df09c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_get_exp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDP</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の浮動小数点数の指数部の取得. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00207">207</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aff3a1037eb467ef8817899e1fe0f8999"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_get_exp_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の浮動小数点数の指数部の最大値の取得. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00220">220</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a341b041e78020e85c8b790f1694abc61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_get_prec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDP</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の浮動小数点数の精度(ビット数)を取得. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00178">178</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa8d8bebcc4d6f4f9594215e41dff4bfa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_get_prec_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型行列の精度(ビット数)の最大値の取得. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00191">191</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a257fc1bc51fdeacf57829f659350ecc4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_get_z </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型をdcomplex型へキャストする B=double(A). </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00604">604</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af049b555b1a1f612cb88143759b1af9f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_has_nan </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列がNaNを含むかの判定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00250">250</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f3dcde83a250329d424829d705c9e04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_is_number </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列が数であるかの判定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00236">236</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a01143185591cb8795a9e6f864ef8a512"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_load </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の読み込み. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00328">328</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ba0949f8f9219f30a51da1e92974c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_max_abs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素の絶対値の最大値 value=max(abs(x)) </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01054">1054</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af82def5ddf20dc2208850c6d35fdb01c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_min_abs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素の絶対値の最小値 value=min(abs(x)) </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01075">1075</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a47fc43b48d57788c7f7fe728cfedface"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_mul </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素ごとの掛け算 C=A.*B. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00816">816</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a37d79358340a968c1205e43b95850611"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_mul_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素ごととスカラーの掛け算 C=A*b. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00844">844</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afeb5ce3c80695f9fb1169d7440ecf437"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_mul_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の要素ごととスカラーの掛け算 C=A*b. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00830">830</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f29987070b5d4c472532717fd317f8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_neg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の符号反転 B=-A. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00717">717</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac48ad790e081c51bc9e56d51c95024f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_print </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の表示. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00273">273</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5591d3152f43c7d5f6475c51104d0537"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_prod </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の積 C=A*B. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>初期化済みのサイズが(l,m)の行列. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>初期化済みのサイズが(m,n)の行列. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">C</td><td>初期化済みのサイズが(l,n)の行列. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00861">861</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1cac318cca7da7653fb1e0a8f7a2ab3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_rank1op </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の1ランク更新 B=A+a*x*y' </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00930">930</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4457b70172fb660a5943db4a898c3a15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_round </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初期化済みのrmulti型の行列の浮動小数点数の精度(ビット数)を変更し再初期化. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a80a70b5f94234467401d80406a406aaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_rows_swap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の第addと第l行を入れ替える. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00649">649</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8924a3d40b718290bce6a0f970152b15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の保存. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00300">300</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a61366ab863c96b378c5a50360b018ddd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_all_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を倍精度浮動小数点数から設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00490">490</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f421ec81e09ec554de6ab71e8ce998b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を倍精度実数から設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00462">462</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f795df177b36a0018ad0ae25ab10bfd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_diag_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角成分にスカラーをコピー. </p>
+<p>A(k,k+offset)=a for k=0,1,.. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00567">567</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afee590fdb5ee4aa95d003f6e2e47a648"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_diag_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の対角成分にスカラーをコピー. </p>
+<p>A(k,k+offset)=a for k=0,1,.. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00551">551</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a454903ad1f187b2d7fe90bcdd7a3ba3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_eye </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を単位行列の設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00520">520</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a51f8560a72714434d6f9decc4d39f031"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_set_nan </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値をNaNに設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00436">436</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a83c166c85a8f6c1c480c4e9e4c6ce20e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_ones </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を1に設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00512">512</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab58d8ef4fd268ee395c08af5a113a3eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_set_rand </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を区間(b,a+b)の疑似乱数値を設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00535">535</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a53f317202582ae7f1cd48cf4458b8c90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_set_s </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を文字列から設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00449">449</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c129d7e7bb71720ef84c8d422cb4416"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_z </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を倍精度複素数から設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00476">476</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2805570b6c0018330112b85f9fdc1506"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_set_zeros </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値を零に設定. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00504">504</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af378af875363d7585f74c141413cbf75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の引き算 C=A-B. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00774">774</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0db29116bb352df77954c4d469b655e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_sub_prod </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の積の減算 C-=A*B. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>初期化済みのサイズが(l,m)の行列. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>初期化済みのサイズが(m,n)の行列. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">C</td><td>初期化済みのサイズが(l,n)の行列. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00909">909</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a597ba883dfd6c204b50c3698721596"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_sub_r1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の引き算 C=a-B. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00788">788</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a03c2030e7dc3883a3b865befd25527aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmat_sub_r2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の引き算 C=A-b. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00802">802</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a28f3d9884a38bd50bbd073253f68e89e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_swap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列の値の交換 A&lt;=&gt;B. </p>
+
+<p> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00157">157</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__rmat_8h.html">is_rmat.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

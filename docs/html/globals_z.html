@@ -1,0 +1,863 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: 大域各種</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li class="current"><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li class="current"><a href="globals.html"><span>全て</span></a></li>
+      <li><a href="globals_func.html"><span>関数</span></a></li>
+      <li><a href="globals_vars.html"><span>変数</span></a></li>
+      <li><a href="globals_type.html"><span>型定義</span></a></li>
+      <li><a href="globals_eval.html"><span>列挙値</span></a></li>
+      <li><a href="globals_defs.html"><span>マクロ定義</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="globals.html#index__"><span>_</span></a></li>
+      <li><a href="globals_a.html#index_a"><span>a</span></a></li>
+      <li><a href="globals_b.html#index_b"><span>b</span></a></li>
+      <li><a href="globals_c.html#index_c"><span>c</span></a></li>
+      <li><a href="globals_d.html#index_d"><span>d</span></a></li>
+      <li><a href="globals_e.html#index_e"><span>e</span></a></li>
+      <li><a href="globals_f.html#index_f"><span>f</span></a></li>
+      <li><a href="globals_g.html#index_g"><span>g</span></a></li>
+      <li><a href="globals_h.html#index_h"><span>h</span></a></li>
+      <li><a href="globals_i.html#index_i"><span>i</span></a></li>
+      <li><a href="globals_j.html#index_j"><span>j</span></a></li>
+      <li><a href="globals_l.html#index_l"><span>l</span></a></li>
+      <li><a href="globals_m.html#index_m"><span>m</span></a></li>
+      <li><a href="globals_n.html#index_n"><span>n</span></a></li>
+      <li><a href="globals_p.html#index_p"><span>p</span></a></li>
+      <li><a href="globals_q.html#index_q"><span>q</span></a></li>
+      <li><a href="globals_r.html#index_r"><span>r</span></a></li>
+      <li><a href="globals_s.html#index_s"><span>s</span></a></li>
+      <li><a href="globals_t.html#index_t"><span>t</span></a></li>
+      <li><a href="globals_u.html#index_u"><span>u</span></a></li>
+      <li><a href="globals_v.html#index_v"><span>v</span></a></li>
+      <li><a href="globals_x.html#index_x"><span>x</span></a></li>
+      <li class="current"><a href="globals_z.html#index_z"><span>z</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('globals_z.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+<div class="textblock">関数・変数・マクロ・列挙・型定義一覧です。各々詳解があればそこへリンクしています。</div>
+
+<h3><a class="anchor" id="index_z"></a>- z -</h3><ul>
+<li>Z_ABS
+: <a class="el" href="is__macros_8h.html#a15107df371aa404339a05d0bfc087ed2">is_macros.h</a>
+</li>
+<li>Z_ABS2
+: <a class="el" href="is__macros_8h.html#aec41da78a668ba2f348d6f9ac2deb606">is_macros.h</a>
+</li>
+<li>Z_ADD
+: <a class="el" href="is__macros_8h.html#a5c7eef8a7b7891bac56131368a89dc9e">is_macros.h</a>
+</li>
+<li>Z_ADD_DOT
+: <a class="el" href="is__macros_8h.html#a4e1a75907ba0c4b7a343484fab95b20d">is_macros.h</a>
+</li>
+<li>Z_ADD_TIMES
+: <a class="el" href="is__macros_8h.html#a39549a2af9ab9e9fcd851e2f1d36cb3d">is_macros.h</a>
+</li>
+<li>Z_ARG
+: <a class="el" href="is__macros_8h.html#abf1de01005c7ed9ae99032ce2d464de1">is_macros.h</a>
+</li>
+<li>Z_CONJ
+: <a class="el" href="is__macros_8h.html#af1566ce7409d9304cab7b3ebb7070c55">is_macros.h</a>
+</li>
+<li>Z_CONJ_I
+: <a class="el" href="is__macros_8h.html#ae1cf7c9175fb848a87353967916ee6b7">is_macros.h</a>
+</li>
+<li>Z_CONJ_R
+: <a class="el" href="is__macros_8h.html#a050041a54e3b13644c83432ee360cc8a">is_macros.h</a>
+</li>
+<li>Z_DIST
+: <a class="el" href="is__macros_8h.html#ab5f27d715c2fc84a2507ac5afa3af617">is_macros.h</a>
+</li>
+<li>Z_DIST2
+: <a class="el" href="is__macros_8h.html#a767c7594b25b82d19c17107d97112518">is_macros.h</a>
+</li>
+<li>Z_DIV_DEN
+: <a class="el" href="is__macros_8h.html#ad820d68cab25878ef27430b95e7af188">is_macros.h</a>
+</li>
+<li>Z_DIV_I
+: <a class="el" href="is__macros_8h.html#a34fc64e4e064326c25daec11211e32b3">is_macros.h</a>
+</li>
+<li>Z_DIV_NUM_I
+: <a class="el" href="is__macros_8h.html#a795fa9aba5a550cbc38ebdb962ad6fbf">is_macros.h</a>
+</li>
+<li>Z_DIV_NUM_R
+: <a class="el" href="is__macros_8h.html#aa4dbd9102e8f1db0cc5c8402e1c65205">is_macros.h</a>
+</li>
+<li>Z_DIV_R
+: <a class="el" href="is__macros_8h.html#ae02495d9161c9ab8db65cbda4c49280a">is_macros.h</a>
+</li>
+<li>Z_DOT_I
+: <a class="el" href="is__macros_8h.html#aec578fdb762be9a54467f75b75d620c8">is_macros.h</a>
+</li>
+<li>Z_DOT_R
+: <a class="el" href="is__macros_8h.html#a7ea680a5a2d4baee280782f5a2bbc636">is_macros.h</a>
+</li>
+<li>Z_I
+: <a class="el" href="is__macros_8h.html#a3c9d45417cf396771529c257755144f6">is_macros.h</a>
+</li>
+<li>Z_IMAG
+: <a class="el" href="is__macros_8h.html#a9112bfd12b5b190ecb39edda14ebaeda">is_macros.h</a>
+</li>
+<li>Z_INV_DEN
+: <a class="el" href="is__macros_8h.html#a71e49b4a84229aacb19d592ee4002055">is_macros.h</a>
+</li>
+<li>Z_INV_I
+: <a class="el" href="is__macros_8h.html#a832b8e71ce44d9d9f4d15fc36d64c455">is_macros.h</a>
+</li>
+<li>Z_INV_NUM_I
+: <a class="el" href="is__macros_8h.html#a39b749a7827f4d3f743c938c92b43f06">is_macros.h</a>
+</li>
+<li>Z_INV_NUM_R
+: <a class="el" href="is__macros_8h.html#ac5d2da2f4291c10df4d218e290c775af">is_macros.h</a>
+</li>
+<li>Z_INV_R
+: <a class="el" href="is__macros_8h.html#a4db7b6f858188894062b3966fccd273a">is_macros.h</a>
+</li>
+<li>Z_LET
+: <a class="el" href="is__macros_8h.html#a2f7fa6df646586d34785b166d69b316f">is_macros.h</a>
+</li>
+<li>Z_MINUS_I
+: <a class="el" href="is__macros_8h.html#a30f707ed13fba4fd59ccace586e1e833">is_macros.h</a>
+</li>
+<li>Z_MINUS_R
+: <a class="el" href="is__macros_8h.html#a38ed42926fc6aa6e81f8a7cd92f5dab1">is_macros.h</a>
+</li>
+<li>Z_NEG
+: <a class="el" href="is__macros_8h.html#aa012774e6b61400e196f9798b17b98ed">is_macros.h</a>
+</li>
+<li>Z_NEG_I
+: <a class="el" href="is__macros_8h.html#af79f931fe779d1a9a4ceba391c1c4285">is_macros.h</a>
+</li>
+<li>Z_NEG_R
+: <a class="el" href="is__macros_8h.html#a8d9f149fa2b8df05b1512aa3b51c71f7">is_macros.h</a>
+</li>
+<li>Z_PLUS_I
+: <a class="el" href="is__macros_8h.html#ac06cce91a0baa1af821064864486310f">is_macros.h</a>
+</li>
+<li>Z_PLUS_R
+: <a class="el" href="is__macros_8h.html#a95f7ef2849011909ba365056d40b52aa">is_macros.h</a>
+</li>
+<li>Z_R
+: <a class="el" href="is__macros_8h.html#a285c526f21b98c4939688f4454379f23">is_macros.h</a>
+</li>
+<li>Z_REAL
+: <a class="el" href="is__macros_8h.html#a9ae02528391bd08c6ac773277828a6b3">is_macros.h</a>
+</li>
+<li>Z_SCALE
+: <a class="el" href="is__macros_8h.html#a6569f13a0677ec4f5bf849408fd08602">is_macros.h</a>
+</li>
+<li>Z_SET
+: <a class="el" href="is__macros_8h.html#abbdc0e2fa7e9eb9bd6426d553395d16e">is_macros.h</a>
+</li>
+<li>Z_SET_CONJ
+: <a class="el" href="is__macros_8h.html#afbaf7e45162ac3292f441869337fea62">is_macros.h</a>
+</li>
+<li>Z_SET_DIV
+: <a class="el" href="is__macros_8h.html#a3f26b99585bb06dcc9ce8799911c1c1a">is_macros.h</a>
+</li>
+<li>Z_SET_DOT
+: <a class="el" href="is__macros_8h.html#addea40bd25fd62769a3b68e7a202f9b0">is_macros.h</a>
+</li>
+<li>Z_SET_INV
+: <a class="el" href="is__macros_8h.html#a54b90c680a2b6a0046e934f95048ff4e">is_macros.h</a>
+</li>
+<li>Z_SET_MINUS
+: <a class="el" href="is__macros_8h.html#a1d7a12eb94815ba58c63bf62180e5d08">is_macros.h</a>
+</li>
+<li>Z_SET_NEG
+: <a class="el" href="is__macros_8h.html#a0a55a9ba9ad960ec7fbde48678ca9024">is_macros.h</a>
+</li>
+<li>Z_SET_PLUS
+: <a class="el" href="is__macros_8h.html#a4dde441509354558e1bcf907e197eb75">is_macros.h</a>
+</li>
+<li>Z_SET_TIMES
+: <a class="el" href="is__macros_8h.html#acf9667555fece6b8a30ee892c786621b">is_macros.h</a>
+</li>
+<li>Z_SUB
+: <a class="el" href="is__macros_8h.html#a67ca712a8a371a218ddf286e9174df64">is_macros.h</a>
+</li>
+<li>Z_SUB_DOT
+: <a class="el" href="is__macros_8h.html#abca36d080fceb841db5375945fba4f09">is_macros.h</a>
+</li>
+<li>Z_SUB_TIMES
+: <a class="el" href="is__macros_8h.html#a3e5ac93277b7af615d73cc88c0cd730a">is_macros.h</a>
+</li>
+<li>Z_TIMES_I
+: <a class="el" href="is__macros_8h.html#a7298a4359243aae733ac27d21de75ded">is_macros.h</a>
+</li>
+<li>Z_TIMES_R
+: <a class="el" href="is__macros_8h.html#aad97136de564e3c7da49d4e39953aafd">is_macros.h</a>
+</li>
+<li>zdiv()
+: <a class="el" href="dcomplex_8c.html#a3ff9bc0bde3cf9ef48250ff954428103">dcomplex.c</a>
+, <a class="el" href="is__dcomplex_8h.html#a3ff9bc0bde3cf9ef48250ff954428103">is_dcomplex.h</a>
+</li>
+<li>zeig_residual()
+: <a class="el" href="is__zeig_8h.html#a5a528195d677cccf9033f74f998a6262">is_zeig.h</a>
+, <a class="el" href="zeig_8c.html#a5a528195d677cccf9033f74f998a6262">zeig.c</a>
+</li>
+<li>zeig_residual_norm_max()
+: <a class="el" href="is__zeig_8h.html#af621ff61907d00099202d4457cf93925">is_zeig.h</a>
+, <a class="el" href="zeig_8c.html#af621ff61907d00099202d4457cf93925">zeig.c</a>
+</li>
+<li>zeig_sort()
+: <a class="el" href="is__zeig_8h.html#a5ee1149837e76376a434df35520cecc4">is_zeig.h</a>
+, <a class="el" href="zeig_8c.html#a5ee1149837e76376a434df35520cecc4">zeig.c</a>
+</li>
+<li>zeig_sort_index()
+: <a class="el" href="is__zeig_8h.html#a18eefdd62a6c377d51e17d3ef7691a14">is_zeig.h</a>
+, <a class="el" href="zeig_8c.html#a18eefdd62a6c377d51e17d3ef7691a14">zeig.c</a>
+</li>
+<li>zeig_sort_value_guide()
+: <a class="el" href="is__zeig_8h.html#a7538dfe1c2269ded4e51639510a0bec1">is_zeig.h</a>
+, <a class="el" href="zeig_8c.html#a7538dfe1c2269ded4e51639510a0bec1">zeig.c</a>
+</li>
+<li>zeig_sort_vector_guide()
+: <a class="el" href="zeig_8c.html#ac18ee8a47ee7cfc8df29d8ffbbf6d078">zeig.c</a>
+, <a class="el" href="is__zeig_8h.html#ac18ee8a47ee7cfc8df29d8ffbbf6d078">is_zeig.h</a>
+</li>
+<li>zgt()
+: <a class="el" href="dcomplex_8c.html#afec65b60429003e403b52b5959178132">dcomplex.c</a>
+, <a class="el" href="is__dcomplex_8h.html#afec65b60429003e403b52b5959178132">is_dcomplex.h</a>
+</li>
+<li>zhouseholder()
+: <a class="el" href="is__zhshldr_8h.html#a5311747f5dbb12ffee7afb0947116475">is_zhshldr.h</a>
+, <a class="el" href="zhshldr_8c.html#a5311747f5dbb12ffee7afb0947116475">zhshldr.c</a>
+</li>
+<li>zhouseholder_left()
+: <a class="el" href="is__zhshldr_8h.html#a34be8b2e716f478d73f763cf8883567b">is_zhshldr.h</a>
+, <a class="el" href="zhshldr_8c.html#a34be8b2e716f478d73f763cf8883567b">zhshldr.c</a>
+</li>
+<li>zhouseholder_right()
+: <a class="el" href="is__zhshldr_8h.html#a86105ccf1c83f95cdd2fd5ea6241424f">is_zhshldr.h</a>
+, <a class="el" href="zhshldr_8c.html#a86105ccf1c83f95cdd2fd5ea6241424f">zhshldr.c</a>
+</li>
+<li>zhouseholder_vec()
+: <a class="el" href="is__zhshldr_8h.html#aca09c1a9b08374dab04621bd7f552b72">is_zhshldr.h</a>
+, <a class="el" href="zhshldr_8c.html#aca09c1a9b08374dab04621bd7f552b72">zhshldr.c</a>
+</li>
+<li>zhpeig()
+: <a class="el" href="is__zhpeig_8h.html#a07af435a88d1adfc9c47ff79dc3726d1">is_zhpeig.h</a>
+, <a class="el" href="zhpeig_8c.html#a07af435a88d1adfc9c47ff79dc3726d1">zhpeig.c</a>
+</li>
+<li>zhpeig_1pair()
+: <a class="el" href="is__zhpeig_8h.html#a4b4bad9bf568f339e74dfac5ee235ef2">is_zhpeig.h</a>
+, <a class="el" href="zhpeig_8c.html#a3a6c60d6670c2932354bc9f585627652">zhpeig.c</a>
+</li>
+<li>ZHPEIG_CONVERGENT
+: <a class="el" href="is__zhpeig_8h.html#a05589fbab0657f08285ebdfe93f5ec9eae652bb01fada1c22e34e061bbd3b2e92">is_zhpeig.h</a>
+</li>
+<li>ZHPEIG_DIVERGENT
+: <a class="el" href="is__zhpeig_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea207bf4315e8f42e33bb7da314b77d34f">is_zhpeig.h</a>
+</li>
+<li>zhpeig_jacobi_mat()
+: <a class="el" href="is__zhpeig_8h.html#a33a6c391cfb8b98e0944bd27d733a776">is_zhpeig.h</a>
+, <a class="el" href="zhpeig_8c.html#a33a6c391cfb8b98e0944bd27d733a776">zhpeig.c</a>
+</li>
+<li>ZHPEIG_NONE
+: <a class="el" href="is__zhpeig_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea93d624f5cf57bcb8970c7305964885d2">is_zhpeig.h</a>
+</li>
+<li>ZHPEIG_NUM
+: <a class="el" href="is__zhpeig_8h.html#a05589fbab0657f08285ebdfe93f5ec9eabe2ca4029f3828438e6fece3814117a7">is_zhpeig.h</a>
+</li>
+<li>ZHPEIG_SINGULAR
+: <a class="el" href="is__zhpeig_8h.html#a05589fbab0657f08285ebdfe93f5ec9eae78903c62f73258bef0fe8581993e067">is_zhpeig.h</a>
+</li>
+<li>zhpeig_status
+: <a class="el" href="zhpeig_8c.html#a7f9c4028a9037c5b8495577ae7fab968">zhpeig.c</a>
+</li>
+<li>ZHPEIG_STATUS_CONV
+: <a class="el" href="zhpeig_8c.html#aba01db17f4a2bfbc3db60dc172972a25aba0d45ea258bf87087e7d10903f22ee2">zhpeig.c</a>
+</li>
+<li>ZHPEIG_STATUS_END
+: <a class="el" href="zhpeig_8c.html#aba01db17f4a2bfbc3db60dc172972a25a30888ac5a681ab2bf57ba9fe6c196606">zhpeig.c</a>
+</li>
+<li>ZHPEIG_STATUS_PRE
+: <a class="el" href="zhpeig_8c.html#aba01db17f4a2bfbc3db60dc172972a25a12ea6ff5fe2d904e726834d639addd76">zhpeig.c</a>
+</li>
+<li>ZHPEIG_STEP_MAX
+: <a class="el" href="is__zhpeig_8h.html#ab09c39b9f9998db6c97640af499df783">is_zhpeig.h</a>
+</li>
+<li>zhpeig_str
+: <a class="el" href="zhpeig_8c.html#aa6abeaf7337451e96b07832308d1c676">zhpeig.c</a>
+</li>
+<li>zinv()
+: <a class="el" href="dcomplex_8c.html#a01963d81d1b91306dee49f067f4c4ad1">dcomplex.c</a>
+, <a class="el" href="is__dcomplex_8h.html#a01963d81d1b91306dee49f067f4c4ad1">is_dcomplex.h</a>
+</li>
+<li>zlt()
+: <a class="el" href="dcomplex_8c.html#a2c341fd439922a41958fe6dd0e84fdc5">dcomplex.c</a>
+, <a class="el" href="is__dcomplex_8h.html#a2c341fd439922a41958fe6dd0e84fdc5">is_dcomplex.h</a>
+</li>
+<li>zmat_add()
+: <a class="el" href="is__zmat_8h.html#a1ff36c91809c8478b42dcc6e768c7787">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a1ff36c91809c8478b42dcc6e768c7787">zmat.c</a>
+</li>
+<li>zmat_add_prod()
+: <a class="el" href="is__zmat_8h.html#a1c9ab70b96722dba806d49891b403840">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a1c9ab70b96722dba806d49891b403840">zmat.c</a>
+</li>
+<li>zmat_allocate()
+: <a class="el" href="is__zmat_8h.html#af2650d3f2fff0c8f842ac547dc1d48da">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#af2650d3f2fff0c8f842ac547dc1d48da">zmat.c</a>
+</li>
+<li>zmat_bin_load()
+: <a class="el" href="is__zmat_8h.html#a7d1a890321838b9534eaf4bdbc0ff9e3">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a7d1a890321838b9534eaf4bdbc0ff9e3">zmat.c</a>
+</li>
+<li>zmat_bin_save()
+: <a class="el" href="is__zmat_8h.html#a5404910c8c72d59b9f477a5ee967d24e">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a5404910c8c72d59b9f477a5ee967d24e">zmat.c</a>
+</li>
+<li>zmat_copy()
+: <a class="el" href="is__zmat_8h.html#a7306251cbf2ee45e5b6c1aee0972d3d8">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a7306251cbf2ee45e5b6c1aee0972d3d8">zmat.c</a>
+</li>
+<li>zmat_copy_ct()
+: <a class="el" href="is__zmat_8h.html#a8f384ee1832dc13576bcf5dd1e7bccc2">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a8f384ee1832dc13576bcf5dd1e7bccc2">zmat.c</a>
+</li>
+<li>zmat_copy_d()
+: <a class="el" href="is__zmat_8h.html#afefb9d3ead9e71147e87fe028aea77ee">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#afefb9d3ead9e71147e87fe028aea77ee">zmat.c</a>
+</li>
+<li>zmat_copy_index()
+: <a class="el" href="is__zmat_8h.html#a777021bd21145b96433663bea1ea38f1">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a777021bd21145b96433663bea1ea38f1">zmat.c</a>
+</li>
+<li>zmat_copy_t()
+: <a class="el" href="is__zmat_8h.html#a38a2d47584ca17c17dc4157066802186">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a38a2d47584ca17c17dc4157066802186">zmat.c</a>
+</li>
+<li>zmat_diag_add_scalar()
+: <a class="el" href="is__zmat_8h.html#a3a7aeb42dacc7b2a54824e1698d51821">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a3a7aeb42dacc7b2a54824e1698d51821">zmat.c</a>
+</li>
+<li>zmat_diag_set_scalar()
+: <a class="el" href="is__zmat_8h.html#ae9d461f30dc74e873e135d54fbecf8a8">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#ae9d461f30dc74e873e135d54fbecf8a8">zmat.c</a>
+</li>
+<li>zmat_diag_set_scalar_d()
+: <a class="el" href="is__zmat_8h.html#a289121d9e88bdbdcfb0b2499c4810aef">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a289121d9e88bdbdcfb0b2499c4810aef">zmat.c</a>
+</li>
+<li>zmat_diag_sub_scalar()
+: <a class="el" href="is__zmat_8h.html#a791705b28158acbce76f906c6857d320">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a791705b28158acbce76f906c6857d320">zmat.c</a>
+</li>
+<li>zmat_dist_norm_max()
+: <a class="el" href="is__zmat_8h.html#a72e4ee21a263c513b88e625eeccb1157">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a72e4ee21a263c513b88e625eeccb1157">zmat.c</a>
+</li>
+<li>zmat_eye()
+: <a class="el" href="is__zmat_8h.html#a10025c529047d6cbc6a51392c1c045f1">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a10025c529047d6cbc6a51392c1c045f1">zmat.c</a>
+</li>
+<li>zmat_free()
+: <a class="el" href="is__zmat_8h.html#a818f3b03e8138566e0e1dc36bd294b62">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a818f3b03e8138566e0e1dc36bd294b62">zmat.c</a>
+</li>
+<li>zmat_normalize()
+: <a class="el" href="is__zmat_8h.html#ac32ea64aee70f4f73ddfe84de0740b04">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#ac32ea64aee70f4f73ddfe84de0740b04">zmat.c</a>
+</li>
+<li>zmat_normalize_sgn()
+: <a class="el" href="is__zmat_8h.html#aae6657ddff94930f9fdf262ec9666d86">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#aae6657ddff94930f9fdf262ec9666d86">zmat.c</a>
+</li>
+<li>zmat_ones()
+: <a class="el" href="is__zmat_8h.html#a9ded43f4542aa19760d8c9aed6ec075a">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a9ded43f4542aa19760d8c9aed6ec075a">zmat.c</a>
+</li>
+<li>zmat_print()
+: <a class="el" href="is__zmat_8h.html#a8b0c357421157fe269c558a7c4c9349c">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a8b0c357421157fe269c558a7c4c9349c">zmat.c</a>
+</li>
+<li>zmat_prod()
+: <a class="el" href="is__zmat_8h.html#aaa79f35810cac3ca56264f1f9dfd16c0">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#aaa79f35810cac3ca56264f1f9dfd16c0">zmat.c</a>
+</li>
+<li>zmat_rand()
+: <a class="el" href="is__zmat_8h.html#ab95cfbb9a975419ada9624be3d9dfefc">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#ab95cfbb9a975419ada9624be3d9dfefc">zmat.c</a>
+</li>
+<li>zmat_rank1op()
+: <a class="el" href="is__zmat_8h.html#a2e8bbcde361a87de18bfa0811e96a0eb">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a2e8bbcde361a87de18bfa0811e96a0eb">zmat.c</a>
+</li>
+<li>zmat_real()
+: <a class="el" href="is__zmat_8h.html#a918d7e60f376d65566f77bd58835c9d6">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a918d7e60f376d65566f77bd58835c9d6">zmat.c</a>
+</li>
+<li>zmat_save()
+: <a class="el" href="is__zmat_8h.html#adaa361b72ed8ddb1e32a5fe2c972ff85">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#adaa361b72ed8ddb1e32a5fe2c972ff85">zmat.c</a>
+</li>
+<li>zmat_set()
+: <a class="el" href="is__zmat_8h.html#a1249da270484b1108c7d77a38c16de75">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a1249da270484b1108c7d77a38c16de75">zmat.c</a>
+</li>
+<li>zmat_set_d()
+: <a class="el" href="is__zmat_8h.html#a9992b0da4e0002f7f6a681104bf1dc9e">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a9992b0da4e0002f7f6a681104bf1dc9e">zmat.c</a>
+</li>
+<li>zmat_sub()
+: <a class="el" href="is__zmat_8h.html#afc77a1e384694fad86721e80977f1103">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#afc77a1e384694fad86721e80977f1103">zmat.c</a>
+</li>
+<li>zmat_sub_norm_max()
+: <a class="el" href="is__zmat_8h.html#a8ed12e74065f9c4ae65c40bb7c081951">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a8ed12e74065f9c4ae65c40bb7c081951">zmat.c</a>
+</li>
+<li>zmat_sub_prod()
+: <a class="el" href="is__zmat_8h.html#aed996d499503d6ebc2a9cae3769623a2">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#aed996d499503d6ebc2a9cae3769623a2">zmat.c</a>
+</li>
+<li>zmat_swap_columns()
+: <a class="el" href="is__zmat_8h.html#abe7c9d57161429da9dc9338486799485">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#abe7c9d57161429da9dc9338486799485">zmat.c</a>
+</li>
+<li>zmat_swap_index()
+: <a class="el" href="is__zmat_8h.html#a430f09d80d0843e66498d91e0ccb0c37">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#a430f09d80d0843e66498d91e0ccb0c37">zmat.c</a>
+</li>
+<li>zmat_swap_rows()
+: <a class="el" href="is__zmat_8h.html#ace2bcef84187dfc2d0ec158231bbee7e">is_zmat.h</a>
+, <a class="el" href="zmat_8c.html#ace2bcef84187dfc2d0ec158231bbee7e">zmat.c</a>
+</li>
+<li>zmat_toeplitz()
+: <a class="el" href="is__ztestmat_8h.html#a9a59ca3d13e451ea04168cd81287819a">is_ztestmat.h</a>
+, <a class="el" href="ztestmat_8c.html#a9a59ca3d13e451ea04168cd81287819a">ztestmat.c</a>
+</li>
+<li>zmat_zeros()
+: <a class="el" href="zmat_8c.html#a2faf28489093bd202a7c7566a87c0f62">zmat.c</a>
+, <a class="el" href="is__zmat_8h.html#a2faf28489093bd202a7c7566a87c0f62">is_zmat.h</a>
+</li>
+<li>zneg()
+: <a class="el" href="dcomplex_8c.html#a38e81a4e4d6d7b2abb3a156949d4dcba">dcomplex.c</a>
+, <a class="el" href="is__dcomplex_8h.html#a38e81a4e4d6d7b2abb3a156949d4dcba">is_dcomplex.h</a>
+</li>
+<li>znormalize()
+: <a class="el" href="is__dcomplex_8h.html#ab3d18ba16c58d3352b79d65acf3bb740">is_dcomplex.h</a>
+, <a class="el" href="dcomplex_8c.html#ab3d18ba16c58d3352b79d65acf3bb740">dcomplex.c</a>
+</li>
+<li>zpow_si()
+: <a class="el" href="zvec_8c.html#a157603a02d8d62bcd3f48d7d76cf4e94">zvec.c</a>
+</li>
+<li>zsolve()
+: <a class="el" href="is__zsolve_8h.html#ade839010819280a63acdc48f2fe846e7">is_zsolve.h</a>
+, <a class="el" href="zsolve_8c.html#ade839010819280a63acdc48f2fe846e7">zsolve.c</a>
+</li>
+<li>zsolve_gauss_LU()
+: <a class="el" href="is__zsolve_8h.html#ab2158227759d9421d9d8a2649da03fe4">is_zsolve.h</a>
+, <a class="el" href="zsolve_8c.html#ab2158227759d9421d9d8a2649da03fe4">zsolve.c</a>
+</li>
+<li>zsolve_gauss_sweeper()
+: <a class="el" href="is__zsolve_8h.html#a8d065db0e0e28e9265a959521ec711e6">is_zsolve.h</a>
+, <a class="el" href="zsolve_8c.html#a8d065db0e0e28e9265a959521ec711e6">zsolve.c</a>
+</li>
+<li>zsolve_residual()
+: <a class="el" href="is__zsolve_8h.html#a2bbb61ee5c8c1af8e45e832924057fc3">is_zsolve.h</a>
+, <a class="el" href="zsolve_8c.html#a2bbb61ee5c8c1af8e45e832924057fc3">zsolve.c</a>
+</li>
+<li>zvec_abs_sub()
+: <a class="el" href="is__zvec_8h.html#a67eaeba5ad5f9c197fed756cf52a8e1a">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a67eaeba5ad5f9c197fed756cf52a8e1a">zvec.c</a>
+</li>
+<li>zvec_abs_sub_scalar()
+: <a class="el" href="is__zvec_8h.html#a309127114c31a5ae511868c4bf5cc7c9">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a309127114c31a5ae511868c4bf5cc7c9">zvec.c</a>
+</li>
+<li>zvec_add()
+: <a class="el" href="is__zvec_8h.html#a991d8643f84463a1d48d3be0d42c3107">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a991d8643f84463a1d48d3be0d42c3107">zvec.c</a>
+</li>
+<li>zvec_add_lintr()
+: <a class="el" href="is__zvec_8h.html#a518cdfe7cea9ca04f8f7257c6a97b348">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a518cdfe7cea9ca04f8f7257c6a97b348">zvec.c</a>
+</li>
+<li>zvec_add_lintr_ct()
+: <a class="el" href="is__zvec_8h.html#a08bcbcf9dc2f5757a90dc8efa40f16ce">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a08bcbcf9dc2f5757a90dc8efa40f16ce">zvec.c</a>
+</li>
+<li>zvec_add_lintr_t()
+: <a class="el" href="is__zvec_8h.html#a76270730b6abe0f204b4d00067405876">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a76270730b6abe0f204b4d00067405876">zvec.c</a>
+</li>
+<li>zvec_add_scalar()
+: <a class="el" href="is__zvec_8h.html#aef5c747d6fac9b2b5d3442d8d6fbc552">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#aef5c747d6fac9b2b5d3442d8d6fbc552">zvec.c</a>
+</li>
+<li>zvec_add_scaled()
+: <a class="el" href="is__zvec_8h.html#a5db8f25b784db18b89dd1aded7ec78b5">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a5db8f25b784db18b89dd1aded7ec78b5">zvec.c</a>
+</li>
+<li>zvec_allocate()
+: <a class="el" href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#aebadbab9ea8d2a7b1691dae56d00caf3">zvec.c</a>
+</li>
+<li>zvec_angle()
+: <a class="el" href="zvec_8c.html#a7dfd451756d4e5d59bd144466493bd12">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a7dfd451756d4e5d59bd144466493bd12">is_zvec.h</a>
+</li>
+<li>zvec_angle_deg()
+: <a class="el" href="is__zvec_8h.html#ad1d16adca2f4bef0eaf969a7b74a532f">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#ad1d16adca2f4bef0eaf969a7b74a532f">zvec.c</a>
+</li>
+<li>zvec_avarage()
+: <a class="el" href="zvec_8c.html#a13291b85664214c1228dfda284413cee">zvec.c</a>
+</li>
+<li>zvec_average()
+: <a class="el" href="is__zvec_8h.html#aac50dcf5fc6d823d6fd4aa629c197321">is_zvec.h</a>
+</li>
+<li>zvec_bin_load()
+: <a class="el" href="is__zvec_8h.html#a9d5dcd3e04d1524ea2473188efd0ab0c">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a9d5dcd3e04d1524ea2473188efd0ab0c">zvec.c</a>
+</li>
+<li>zvec_bin_save()
+: <a class="el" href="zvec_8c.html#a3d0528be9c1333b97a9ac60432e4a8d7">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a3d0528be9c1333b97a9ac60432e4a8d7">is_zvec.h</a>
+</li>
+<li>zvec_copy()
+: <a class="el" href="is__zvec_8h.html#ab7608dbd4095de068d5b7224332d5356">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#ab7608dbd4095de068d5b7224332d5356">zvec.c</a>
+</li>
+<li>zvec_copy_d()
+: <a class="el" href="is__zvec_8h.html#ab2e35250b43deae6b8072b0b6a117288">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#ab2e35250b43deae6b8072b0b6a117288">zvec.c</a>
+</li>
+<li>zvec_copy_dd()
+: <a class="el" href="is__zvec_8h.html#a6f3a63d3f4fdbe6d2e8d5f88b3cd7278">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a6f3a63d3f4fdbe6d2e8d5f88b3cd7278">zvec.c</a>
+</li>
+<li>zvec_copy_index()
+: <a class="el" href="zvec_8c.html#aba977d6f3416ca675ec0bc60ed7bdb6f">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#aba977d6f3416ca675ec0bc60ed7bdb6f">is_zvec.h</a>
+</li>
+<li>zvec_dcos_abs()
+: <a class="el" href="is__zvec_8h.html#a93694d65f4bd43ba1b7254ba90eb0d07">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a93694d65f4bd43ba1b7254ba90eb0d07">zvec.c</a>
+</li>
+<li>zvec_dist_norm1()
+: <a class="el" href="zvec_8c.html#a0400e16473a80be6d48b73d20831f6e1">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a0400e16473a80be6d48b73d20831f6e1">is_zvec.h</a>
+</li>
+<li>zvec_dist_norm_max()
+: <a class="el" href="zvec_8c.html#aa7c48404ffba95efb2f046fb060c4ae5">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#aa7c48404ffba95efb2f046fb060c4ae5">is_zvec.h</a>
+</li>
+<li>zvec_dot()
+: <a class="el" href="is__zvec_8h.html#a26d38a8eb12fdc4072b43ccfe753908f">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a26d38a8eb12fdc4072b43ccfe753908f">zvec.c</a>
+</li>
+<li>zvec_free()
+: <a class="el" href="zvec_8c.html#a0690af5781bb79f0e45ac889e36e1868">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868">is_zvec.h</a>
+</li>
+<li>zvec_grid()
+: <a class="el" href="is__zvec_8h.html#a925d91fb616134e37dd45ca1fee36ae9">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a925d91fb616134e37dd45ca1fee36ae9">zvec.c</a>
+</li>
+<li>zvec_lintr()
+: <a class="el" href="is__zvec_8h.html#aeee17ec0333baeb59ac3429415cb8588">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#aeee17ec0333baeb59ac3429415cb8588">zvec.c</a>
+</li>
+<li>zvec_lintr_ct()
+: <a class="el" href="is__zvec_8h.html#a9c6a4735c34fdf12777db136e0d611d2">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a9c6a4735c34fdf12777db136e0d611d2">zvec.c</a>
+</li>
+<li>zvec_lintr_t()
+: <a class="el" href="is__zvec_8h.html#a5371f4f010227e9a0d68a9a5a7dd909e">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a5371f4f010227e9a0d68a9a5a7dd909e">zvec.c</a>
+</li>
+<li>zvec_max()
+: <a class="el" href="is__zvec_8h.html#a70b3758665842879a2cc506f11d4b4fb">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a70b3758665842879a2cc506f11d4b4fb">zvec.c</a>
+</li>
+<li>zvec_max_abs()
+: <a class="el" href="is__zvec_8h.html#a3181bd2158aca1266a9cc22be1b878fc">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a3181bd2158aca1266a9cc22be1b878fc">zvec.c</a>
+</li>
+<li>zvec_max_abs_index()
+: <a class="el" href="is__zvec_8h.html#a85cfecaf6a9f188814d4eefe0123d2f1">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a85cfecaf6a9f188814d4eefe0123d2f1">zvec.c</a>
+</li>
+<li>zvec_min()
+: <a class="el" href="is__zvec_8h.html#aab0b286dfd0f91cf518a3efb50056359">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#aab0b286dfd0f91cf518a3efb50056359">zvec.c</a>
+</li>
+<li>zvec_min_abs()
+: <a class="el" href="is__zvec_8h.html#aead494d1984b76976cbd98bf161f2e35">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#aead494d1984b76976cbd98bf161f2e35">zvec.c</a>
+</li>
+<li>zvec_min_abs_index()
+: <a class="el" href="zvec_8c.html#a71fbb7bbbfa11899e25d7e1e333f649a">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a71fbb7bbbfa11899e25d7e1e333f649a">is_zvec.h</a>
+</li>
+<li>zvec_neg()
+: <a class="el" href="is__zvec_8h.html#af6e86074c5176525a2c650166fc62eb8">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#af6e86074c5176525a2c650166fc62eb8">zvec.c</a>
+</li>
+<li>zvec_norm1()
+: <a class="el" href="is__zvec_8h.html#a24032f8aba7131a98e4d152655367ed1">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a24032f8aba7131a98e4d152655367ed1">zvec.c</a>
+</li>
+<li>zvec_norm2()
+: <a class="el" href="is__zvec_8h.html#a7323f7ed243ab7a029b632a4bdb1a0c3">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a7323f7ed243ab7a029b632a4bdb1a0c3">zvec.c</a>
+</li>
+<li>zvec_norm_max()
+: <a class="el" href="is__zvec_8h.html#aa2522911beec81d3d4b1dadea8c5dbc5">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#aa2522911beec81d3d4b1dadea8c5dbc5">zvec.c</a>
+</li>
+<li>zvec_normalize()
+: <a class="el" href="zvec_8c.html#a4cbdaf84e91ca4b44611082944a54b63">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a4cbdaf84e91ca4b44611082944a54b63">is_zvec.h</a>
+</li>
+<li>zvec_normalize_sgn()
+: <a class="el" href="is__zvec_8h.html#aabef7582a09bd696c8db49be73de9cdd">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#aabef7582a09bd696c8db49be73de9cdd">zvec.c</a>
+</li>
+<li>zvec_ones()
+: <a class="el" href="is__zvec_8h.html#a49714268228bb6b5cdd8d3a90495ed4d">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a49714268228bb6b5cdd8d3a90495ed4d">zvec.c</a>
+</li>
+<li>zvec_orthogonalize()
+: <a class="el" href="is__zvec_8h.html#a848a9c745581eec8cc927698c35ffa64">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a848a9c745581eec8cc927698c35ffa64">zvec.c</a>
+</li>
+<li>zvec_print()
+: <a class="el" href="zvec_8c.html#a4149f57a88763bf8b2d2555f9c00c80b">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a20c8f781c4bc1b2f97d56e5056f05cd8">is_zvec.h</a>
+</li>
+<li>zvec_quick_sort()
+: <a class="el" href="zvec_8c.html#a0ebdd4eb3d04700001d78588ad877cba">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a0ebdd4eb3d04700001d78588ad877cba">is_zvec.h</a>
+</li>
+<li>zvec_rand()
+: <a class="el" href="zvec_8c.html#a306fab902c5791ef0d5755b4ea7eafd3">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a306fab902c5791ef0d5755b4ea7eafd3">is_zvec.h</a>
+</li>
+<li>zvec_real()
+: <a class="el" href="is__zvec_8h.html#a300587248726072789b1d57abef79482">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a300587248726072789b1d57abef79482">zvec.c</a>
+</li>
+<li>zvec_reverse()
+: <a class="el" href="zvec_8c.html#a24054693afe669def5ee7b983e7a2f05">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a24054693afe669def5ee7b983e7a2f05">is_zvec.h</a>
+</li>
+<li>zvec_save()
+: <a class="el" href="zvec_8c.html#a616e829671a01e8c45801b0ced0ae13a">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a616e829671a01e8c45801b0ced0ae13a">is_zvec.h</a>
+</li>
+<li>zvec_save_cplane()
+: <a class="el" href="zvec_8c.html#abdaddd7cdaa7ba5eb99330e9479eb307">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#abdaddd7cdaa7ba5eb99330e9479eb307">is_zvec.h</a>
+</li>
+<li>zvec_save_cplane_label()
+: <a class="el" href="zvec_8c.html#a5daef32cc4e85eacad0350e143933936">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a5daef32cc4e85eacad0350e143933936">is_zvec.h</a>
+</li>
+<li>zvec_scale()
+: <a class="el" href="zvec_8c.html#a1cdf603c18ff047e9a6222ed379f3d18">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a1cdf603c18ff047e9a6222ed379f3d18">is_zvec.h</a>
+</li>
+<li>zvec_scale_d()
+: <a class="el" href="zvec_8c.html#a0cb81b9d3d22ddf02e0ee58eb3635747">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a0cb81b9d3d22ddf02e0ee58eb3635747">is_zvec.h</a>
+</li>
+<li>zvec_scale_div()
+: <a class="el" href="zvec_8c.html#ad78910afae6951f901c921f7c02ec731">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#ad78910afae6951f901c921f7c02ec731">is_zvec.h</a>
+</li>
+<li>zvec_scale_neg()
+: <a class="el" href="zvec_8c.html#ae466c9d63fb476d54433c7478c7fe896">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#ae466c9d63fb476d54433c7478c7fe896">is_zvec.h</a>
+</li>
+<li>zvec_set()
+: <a class="el" href="is__zvec_8h.html#a05866bcf83db082ce59e848464e8fb90">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a05866bcf83db082ce59e848464e8fb90">zvec.c</a>
+</li>
+<li>zvec_set_d()
+: <a class="el" href="is__zvec_8h.html#acdbffc66ab75b4033264f3621e4767d5">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#acdbffc66ab75b4033264f3621e4767d5">zvec.c</a>
+</li>
+<li>zvec_set_dd()
+: <a class="el" href="is__zvec_8h.html#a33eb1c8eff34ee250967a4d4c203e10c">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#addca41a14353fabcc79ee9cd34d59632">zvec.c</a>
+</li>
+<li>zvec_sort()
+: <a class="el" href="zvec_8c.html#adbee97c5207064b68f9e0a78309a6211">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#adbee97c5207064b68f9e0a78309a6211">is_zvec.h</a>
+</li>
+<li>zvec_sort_index()
+: <a class="el" href="is__zvec_8h.html#a4392963d77ef8dacd5255247589677c4">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a4392963d77ef8dacd5255247589677c4">zvec.c</a>
+</li>
+<li>zvec_sub()
+: <a class="el" href="zvec_8c.html#a7c810d7eba6557380137971a33daaf12">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a7c810d7eba6557380137971a33daaf12">is_zvec.h</a>
+</li>
+<li>zvec_sub_lintr()
+: <a class="el" href="zvec_8c.html#a40334b74047738ab14ec00850370027e">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a40334b74047738ab14ec00850370027e">is_zvec.h</a>
+</li>
+<li>zvec_sub_lintr_ct()
+: <a class="el" href="zvec_8c.html#a4f7b60c849c039a15597843a58343f30">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a4f7b60c849c039a15597843a58343f30">is_zvec.h</a>
+</li>
+<li>zvec_sub_lintr_t()
+: <a class="el" href="zvec_8c.html#a496aa94aa5e19712f24c27986c852791">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a496aa94aa5e19712f24c27986c852791">is_zvec.h</a>
+</li>
+<li>zvec_sub_scalar()
+: <a class="el" href="is__zvec_8h.html#ae6bb5b97709798ffe015edd61202d4a6">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#ae6bb5b97709798ffe015edd61202d4a6">zvec.c</a>
+</li>
+<li>zvec_sub_scaled()
+: <a class="el" href="zvec_8c.html#a6a2f71192d1b2b2dfb5acc37da4c9393">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a6a2f71192d1b2b2dfb5acc37da4c9393">is_zvec.h</a>
+</li>
+<li>zvec_sum()
+: <a class="el" href="zvec_8c.html#a40a21460ece272dbd686462670e9b678">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a40a21460ece272dbd686462670e9b678">is_zvec.h</a>
+</li>
+<li>zvec_sum_pow2_abs()
+: <a class="el" href="is__zvec_8h.html#abc3e3c1bcac5a3413b4648bc5d75deb5">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#abc3e3c1bcac5a3413b4648bc5d75deb5">zvec.c</a>
+</li>
+<li>zvec_swap()
+: <a class="el" href="zvec_8c.html#a734bc3a541fd6607de11a55f42e29a2e">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a734bc3a541fd6607de11a55f42e29a2e">is_zvec.h</a>
+</li>
+<li>zvec_swap_at()
+: <a class="el" href="zvec_8c.html#aca338d2ca122ea2deb1874540645393f">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#aca338d2ca122ea2deb1874540645393f">is_zvec.h</a>
+</li>
+<li>zvec_swap_index()
+: <a class="el" href="zvec_8c.html#a525c0eb5fe529b4951d0209ccb9b8beb">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#a525c0eb5fe529b4951d0209ccb9b8beb">is_zvec.h</a>
+</li>
+<li>zvec_unit()
+: <a class="el" href="zvec_8c.html#abdc97d8ddb27ea32cf3a523ec8920852">zvec.c</a>
+, <a class="el" href="is__zvec_8h.html#abdc97d8ddb27ea32cf3a523ec8920852">is_zvec.h</a>
+</li>
+<li>zvec_zeros()
+: <a class="el" href="is__zvec_8h.html#a8bd903f7f0e8257ac3c6f994a19c32d8">is_zvec.h</a>
+, <a class="el" href="zvec_8c.html#a8bd903f7f0e8257ac3c6f994a19c32d8">zvec.c</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

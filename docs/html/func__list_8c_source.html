@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/func_list.c ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('func__list_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">func_list.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="func__list_8c.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__macros_8h.html">is_macros.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__ivec_8h.html">is_ivec.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__strings_8h.html">is_strings.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__print_8h.html">is_print.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__func_8h.html">is_func.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__rmulti_8h.html">is_rmulti.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__cmulti_8h.html">is_cmulti.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">   11</a></span>&#160;<span class="preprocessor">#define FR(F)      func_retain(F)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="func__list_8c.html#a4602362a5cdecad801a9230adf94e599">   12</a></span>&#160;<span class="preprocessor">#define FGET_SP(f) (func_get_split_part(f))</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="func__list_8c.html#ab33b8110b1dd4ab193ff9fde3d9e4c7f">   13</a></span>&#160;<span class="preprocessor">#define FGET_NB(f) (func_evalf_part(f))</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">   18</a></span>&#160;<span class="preprocessor">#define SPC &quot; \t\n&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="func__list_8c.html#ae23fc4874815eaf14d9be4e7e934c983">   19</a></span>&#160;<span class="preprocessor">#define BLK0 &quot;({[&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="func__list_8c.html#a51d9044854f6e09d5362b8b9f53c2845">   20</a></span>&#160;<span class="preprocessor">#define BLK1 &quot;)}]&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="func__list_8c.html#a248f08b5e77b891677f51fc447ab06cc">   21</a></span>&#160;<span class="preprocessor">#define N0 &quot;[&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="func__list_8c.html#abd7b39be02bc15d79b73e5cf2b531299">   22</a></span>&#160;<span class="preprocessor">#define N1 &quot;]&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="is__func_8h.html#a2e3ec95fb854dda72454118295f922ca">   24</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#a2e3ec95fb854dda72454118295f922ca">func_list_script</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="structstrings.html">strings</a> *a=NULL,*b=NULL;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *g=NULL;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979">func_is_strings</a>(f) &amp;&amp; <a class="code" href="func__strings_8c.html#abf63ac15af08c53c1ee189aa379ea3dd">func_strings_size</a>(f)==1){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="is__strings_8h.html#a44835de3435f02ee1884c917dbb94371">str_match</a>(<a class="code" href="func__strings_8c.html#a7a37ef1ff55b3fb207094650261e887b">func_strings_at</a>(f,0),<span class="stringliteral">&quot;^{%m+}$&quot;</span>,<a class="code" href="func__list_8c.html#ae23fc4874815eaf14d9be4e7e934c983">BLK0</a>,<a class="code" href="func__list_8c.html#a51d9044854f6e09d5362b8b9f53c2845">BLK1</a>)){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      a=<a class="code" href="is__strings_8h.html#a68d82805386047fbbcc917aa10a020d7">strings_split_mask</a>(<a class="code" href="func__strings_8c.html#a7a37ef1ff55b3fb207094650261e887b">func_strings_at</a>(f,0),<a class="code" href="func__list_8c.html#ae23fc4874815eaf14d9be4e7e934c983">BLK0</a>,<a class="code" href="func__list_8c.html#a51d9044854f6e09d5362b8b9f53c2845">BLK1</a>,<a class="code" href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(a)==1){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    b=<a class="code" href="is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f">strings_split</a>(<a class="code" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a>(a,0),<span class="stringliteral">&quot;,&quot;</span>,<a class="code" href="func__list_8c.html#ae23fc4874815eaf14d9be4e7e934c983">BLK0</a>,<a class="code" href="func__list_8c.html#a51d9044854f6e09d5362b8b9f53c2845">BLK1</a>,<a class="code" href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    g=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(b));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); i++){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(g,i,<a class="code" href="func__script_8c.html#a17bc9c661a4488a4c74730605f01bead">func_script</a>(<a class="code" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a>(b,i)));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="is__strings_8h.html#a44835de3435f02ee1884c917dbb94371">str_match</a>(<a class="code" href="func__strings_8c.html#a7a37ef1ff55b3fb207094650261e887b">func_strings_at</a>(f,0),<span class="stringliteral">&quot;^[%m+]$&quot;</span>,<a class="code" href="func__list_8c.html#ae23fc4874815eaf14d9be4e7e934c983">BLK0</a>,<a class="code" href="func__list_8c.html#a51d9044854f6e09d5362b8b9f53c2845">BLK1</a>)){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      a=<a class="code" href="is__strings_8h.html#a68d82805386047fbbcc917aa10a020d7">strings_split_mask</a>(<a class="code" href="func__strings_8c.html#a7a37ef1ff55b3fb207094650261e887b">func_strings_at</a>(f,0),<a class="code" href="func__list_8c.html#a248f08b5e77b891677f51fc447ab06cc">N0</a>,<a class="code" href="func__list_8c.html#abd7b39be02bc15d79b73e5cf2b531299">N1</a>,<a class="code" href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(a)==1){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="is__strings_8h.html#ac8a5ef5631668ec8fc59b339b6859ec9">strings_item_replace</a>(a,0,<a class="code" href="is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f">strings_split</a>(<a class="code" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a>(a,0),<span class="stringliteral">&quot;;&quot;</span>,<a class="code" href="func__list_8c.html#a248f08b5e77b891677f51fc447ab06cc">N0</a>,<a class="code" href="func__list_8c.html#abd7b39be02bc15d79b73e5cf2b531299">N1</a>,<a class="code" href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a>));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(a)==1){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      b=<a class="code" href="is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f">strings_split</a>(<a class="code" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a>(a,0),<span class="stringliteral">&quot;, &quot;</span>,NULL,NULL,<a class="code" href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      g=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(b));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); i++){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(g,i,<a class="code" href="func__script_8c.html#a17bc9c661a4488a4c74730605f01bead">func_script</a>(<a class="code" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a>(b,i)));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(a)&gt;1){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      g=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(a));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(a); i++){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        b=<a class="code" href="is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f">strings_split</a>(<a class="code" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a>(a,i),<span class="stringliteral">&quot;, &quot;</span>,NULL,NULL,<a class="code" href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(g,i,<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(b)));      </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span>(j=0; j&lt;<a class="code" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a>(b); j++){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;          <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(g,i),j,<a class="code" href="func__script_8c.html#a17bc9c661a4488a4c74730605f01bead">func_script</a>(<a class="code" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a>(b,j)));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span>(g==NULL){ g=f; }<span class="keywordflow">else</span>{ f=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(f); }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  a=<a class="code" href="is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a">strings_del</a>(a);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  b=<a class="code" href="is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a">strings_del</a>(b);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> g;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="is__func_8h.html#a40af2f9433a3a68ef73dbd8221bf6b67">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="func__list_8c.html#a40af2f9433a3a68ef73dbd8221bf6b67">func_list_print</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  printf(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f); i++){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="func__print_8c.html#a19d5e15cea86c22273dee75aa200077f">func_print</a>(<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(f,i));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span>(i&lt;(<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f))-1) printf(<span class="stringliteral">&quot;, &quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  printf(<span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="is__func_8h.html#aec246610de0d1c619a5f9430d9b3203e">   84</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#aec246610de0d1c619a5f9430d9b3203e">func_var1_list</a>(<span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">int</span> i=0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *f=NULL;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  f=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(n);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">for</span>(i=0; i&lt;n; i++){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(f,i,<a class="code" href="func__var_8c.html#a54777c2dfaa4a74a470d077089e3fa3a">func_var1</a>(i,1));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="is__func_8h.html#acab6a918285fcc8a139ed514ec13db00">   97</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="func__list_8c.html#acab6a918285fcc8a139ed514ec13db00">func_list_real_array_size</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">int</span> i,c;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *g=NULL;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">if</span>(f==NULL || !<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(f)){ <a class="code" href="is__func_8h.html#aab543878b65f3cc3e2809f0f49ddd56e">FUNC_ERROR_ARG1</a>(<span class="stringliteral">&quot;func_list_real_array_size&quot;</span>,f); }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f)&lt;=0){ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  g=<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(f,0);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span>     (<a class="code" href="func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4">func_in_real</a>(g)){ c=1; }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__vec_8c.html#ab76621759344cc2e442e6e0a34ffdf66">func_is_rvec</a>(g)){ c=<a class="code" href="func__rvec_8c.html#a0bde33121f8f8100bec4997b8f506aea">func_rvec_size</a>(g); }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(g) &amp;&amp; <a class="code" href="func__list_8c.html#acab6a918285fcc8a139ed514ec13db00">func_list_real_array_size</a>(g)==1){ c=<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">else</span>                    { c=0; }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">for</span>(i=1; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f); i++){</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    g=<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(f,i);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span>     (<a class="code" href="func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4">func_in_real</a>(g) &amp;&amp; c==1){}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__vec_8c.html#ab76621759344cc2e442e6e0a34ffdf66">func_is_rvec</a>(g) &amp;&amp; <a class="code" href="func__rvec_8c.html#a0bde33121f8f8100bec4997b8f506aea">func_rvec_size</a>(g)==c){}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(g) &amp;&amp; <a class="code" href="func__list_8c.html#acab6a918285fcc8a139ed514ec13db00">func_list_real_array_size</a>(g)==1 &amp;&amp; <a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g)==c){}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">else</span>{ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="is__func_8h.html#ac7b05a93556c21ce506b5b21ae9ef350">  118</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="func__list_8c.html#ac7b05a93556c21ce506b5b21ae9ef350">func_list_complex_array_size</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">int</span> i,c;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *g=NULL;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">if</span>(f==NULL || !<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(f)){ <a class="code" href="is__func_8h.html#aab543878b65f3cc3e2809f0f49ddd56e">FUNC_ERROR_ARG1</a>(<span class="stringliteral">&quot;func_list_complex_array_size&quot;</span>,f); }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f)&lt;=0){ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  g=<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(f,0);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span>     (<a class="code" href="func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f">func_in_complex</a>(g)){ c=1; }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__vec_8c.html#ab76621759344cc2e442e6e0a34ffdf66">func_is_rvec</a>(g))   { c=<a class="code" href="func__rvec_8c.html#a0bde33121f8f8100bec4997b8f506aea">func_rvec_size</a>(g); }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__vec_8c.html#a2de7f547b8e89d48d7c22e128020f1c5">func_is_cvec</a>(g))   { c=<a class="code" href="func__cvec_8c.html#a6bc254669518226cb47306623d7abba6">func_cvec_size</a>(g); }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(g) &amp;&amp; <a class="code" href="func__list_8c.html#ac7b05a93556c21ce506b5b21ae9ef350">func_list_complex_array_size</a>(g)==1){ c=<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">else</span>                       { c=0; }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordflow">for</span>(i=1; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f); i++){</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    g=<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(f,i);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span>     (<a class="code" href="func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f">func_in_complex</a>(g) &amp;&amp; c==1){}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__vec_8c.html#ab76621759344cc2e442e6e0a34ffdf66">func_is_rvec</a>(g) &amp;&amp; <a class="code" href="func__rvec_8c.html#a0bde33121f8f8100bec4997b8f506aea">func_rvec_size</a>(g)==c){}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__vec_8c.html#a2de7f547b8e89d48d7c22e128020f1c5">func_is_cvec</a>(g) &amp;&amp; <a class="code" href="func__cvec_8c.html#a6bc254669518226cb47306623d7abba6">func_cvec_size</a>(g)==c){}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(g) &amp;&amp; <a class="code" href="func__list_8c.html#ac7b05a93556c21ce506b5b21ae9ef350">func_list_complex_array_size</a>(g)==1 &amp;&amp; <a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g)==c){}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">else</span>{ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="is__func_8h.html#a31e23f332dffebf3b6a2d50c1ca5a9a7">  144</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#a31e23f332dffebf3b6a2d50c1ca5a9a7">func_list_eval</a>(<a class="code" href="structfunc__struct.html">func_t</a> *g)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordtype">int</span> i,k;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *f=NULL;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__args_8c.html#a2fd2263e65ca81ee07353a71eba87ca1">func_a_has_op</a>(g,<a class="code" href="func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b">func_is_real</a>) || <a class="code" href="func__args_8c.html#a2fd2263e65ca81ee07353a71eba87ca1">func_a_has_op</a>(g,<a class="code" href="func__vec_8c.html#ab76621759344cc2e442e6e0a34ffdf66">func_is_rvec</a>)){</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    k=<a class="code" href="func__list_8c.html#acab6a918285fcc8a139ed514ec13db00">func_list_real_array_size</a>(g);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span>(k==1){</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      f=<a class="code" href="func__rvec_8c.html#a4b7301ce38e9502a2f305a5fc656df75">func_rvec</a>(<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); i++){ <a class="code" href="func__rvec_8c.html#a4abdc648b10fc1a3783fc5b7893223c3">func_rvec_set</a>(f,i,<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(g,i)); }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(k&gt;1){</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      f=<a class="code" href="func__rmat_8c.html#a4e47e3df4631a2a2062617c50dbbac93">func_rmat</a>(<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g),k);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); i++){ <a class="code" href="func__rmat_8c.html#a562cc829f2f8d1503e90a04c296c960d">func_rmat_set_row</a>(f,i,<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(g,i)); }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">if</span>(f==NULL &amp;&amp; (<a class="code" href="func__args_8c.html#a2fd2263e65ca81ee07353a71eba87ca1">func_a_has_op</a>(g,<a class="code" href="func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562">func_is_complex</a>) || <a class="code" href="func__args_8c.html#a2fd2263e65ca81ee07353a71eba87ca1">func_a_has_op</a>(g,<a class="code" href="func__vec_8c.html#a2de7f547b8e89d48d7c22e128020f1c5">func_is_cvec</a>))){</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    k=<a class="code" href="func__list_8c.html#ac7b05a93556c21ce506b5b21ae9ef350">func_list_complex_array_size</a>(g);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span>(k==1){</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      f=<a class="code" href="func__cvec_8c.html#ab24a2d5a81508d46300a2fd7b01eddf2">func_cvec</a>(<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g));</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); i++){ <a class="code" href="func__cvec_8c.html#a0ea71b0ac4cdf35a319f79a081f1a87c">func_cvec_set</a>(f,i,<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(g,i)); }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(k&gt;1){</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      f=<a class="code" href="func__cmat_8c.html#abd8387f05a4919904a773cd03c33dad3">func_cmat</a>(<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g),k);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); i++){ <a class="code" href="func__cmat_8c.html#adbd939c69d6f3dcf53c6d236cba3bc60">func_cmat_set_row</a>(f,i,<a class="code" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a>(g,i)); }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">if</span>(f==NULL){ f=<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(g); }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  g=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(g);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="is__func_8h.html#a5d8524d4e87514ae20c66dbf9ba4a89d">  175</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#a5d8524d4e87514ae20c66dbf9ba4a89d">func_list_zeros</a>(<span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *f=NULL;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  f=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(n);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordflow">for</span>(i=0; i&lt;n; i++){ <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(f,i,<a class="code" href="func__number_8c.html#a5b7171537ce3464da4f750991e4322f0">func_zero</a>()); }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="is__func_8h.html#abb010629397a4e3f97a46cfd8189ac53">  184</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#abb010629397a4e3f97a46cfd8189ac53">func_list_zeros2</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *f=NULL;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  f=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(m);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">for</span>(i=0; i&lt;m; i++){ <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(f,i,<a class="code" href="func__list_8c.html#a5d8524d4e87514ae20c66dbf9ba4a89d">func_list_zeros</a>(n)); }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *__func_list=<span class="stringliteral">&quot;@L&quot;</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="is__func_8h.html#a127602c12d4cd9791189769910e49b8f">  199</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462">func_is</a>(f,__func_list);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="is__func_8h.html#a6ee703adde8c88f7a8a006266719bd3c">  204</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(<span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *f=NULL;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  f=<a class="code" href="func_8c.html#abeef860bb7cb5a4d540a9079ac1dc66a">func_new</a>(__func_list);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <a class="code" href="func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57">func_a_resize</a>(f,n);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="is__func_8h.html#a3d85960c4ec5e33ad57d0ab5ae053394">  212</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#a3d85960c4ec5e33ad57d0ab5ae053394">func_op_list_new</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *f=<a class="code" href="func__builtin_8c.html#a90ae3562774b4f4a57c331247e282dcb">func_builtin_new</a>(__func_list);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <a class="code" href="func__builtin_8c.html#ad5d264780731c751a99d352bcba0ad99">func_builtin_p</a>(f)-&gt;<a class="code" href="structfunc__builtin__struct.html#ac85d5511fdb8d162a7278bfb440ae420">order</a>=<a class="code" href="is__func_8h.html#abed82baf7f470b522273a3e37c24c600aa2dbc6d6f0dd3ac97b70994a4bc22fd3">FUNC_ORDER_LIST</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <a class="code" href="func__builtin_8c.html#ad5d264780731c751a99d352bcba0ad99">func_builtin_p</a>(f)-&gt;<a class="code" href="structfunc__builtin__struct.html#aba62b05961a5fd6075300ec4805d520c">amax</a>=<a class="code" href="is__func_8h.html#a726ca809ffd3d67ab4b8476646f26635a389e64a163ea3413c8085faada01f315">FUNC_NOLIMIT</a>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <a class="code" href="func__builtin_8c.html#ad5d264780731c751a99d352bcba0ad99">func_builtin_p</a>(f)-&gt;<a class="code" href="structfunc__builtin__struct.html#ad55f126b545801d09b01ddf3bed78b32">eval</a>=<a class="code" href="func__list_8c.html#a31e23f332dffebf3b6a2d50c1ca5a9a7">func_list_eval</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <a class="code" href="func__builtin_8c.html#ad5d264780731c751a99d352bcba0ad99">func_builtin_p</a>(f)-&gt;<a class="code" href="structfunc__builtin__struct.html#a096913da490c26142793d72aa1cef6b4">print</a>=<a class="code" href="func__list_8c.html#a40af2f9433a3a68ef73dbd8221bf6b67">func_list_print</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">//１変数多項式を見つける 式出力</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="is__func_8h.html#a8c402bd313382fabd518e857845a6a30">  225</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#a8c402bd313382fabd518e857845a6a30">func_list_find_var1n</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;{</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *a=NULL;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__poly_8c.html#a1bf168e77b2b22de70137f55b4d70f36">func_is_poly_list</a>(f)){</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f);i++){</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="func__poly_8c.html#af43431e6deba4e37b3e4b3036c35fb53">func_poly_var1n</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]) != -1){</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    a=<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  f=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(f);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">return</span> a;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="is__func_8h.html#a68debb78577aa8bfb9aa140e0c8960be">  240</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="func__list_8c.html#a68debb78577aa8bfb9aa140e0c8960be">func_list_degree_max</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordtype">int</span> a,b,i;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__poly_8c.html#a1bf168e77b2b22de70137f55b4d70f36">func_is_poly_list</a>(f)){</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    a=<a class="code" href="func__poly_8c.html#afbd86b16edc7166583deaa9042646256">func_poly_degree_max</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[0]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">for</span>(i=1; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f); i++){</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      b=<a class="code" href="func__poly_8c.html#afbd86b16edc7166583deaa9042646256">func_poly_degree_max</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <span class="keywordflow">if</span>(a&lt;b) a=b;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">return</span> a;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="is__func_8h.html#a1a7c60200a1378aa344da8f907263a09">  256</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#a9bed4b900f1b83464835072a0a33a81e">func_list_concat</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f, <a class="code" href="structfunc__struct.html">func_t</a> *g)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordtype">int</span> i,k;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *a=NULL;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  k=0;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(f)){ k+=<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f); }<span class="keywordflow">else</span>{ k+=1; }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(g)){ k+=<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); }<span class="keywordflow">else</span>{ k+=1; }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  a=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(k);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  k=0;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(f)){</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f); i++){ <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(a,k++,<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i])); }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(a,k++,<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f));</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a>(g)){</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); i++){ <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(a,k++,<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(g-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i])); }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a>(a,k++,<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(g));</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  f=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(f);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  g=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(g);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordflow">return</span> a;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="is__func_8h.html#af913cb521539c7aee6e7420cf7defcc7">  282</a></span>&#160;<a class="code" href="structfunc__struct.html">func_t</a> *<a class="code" href="func__list_8c.html#af913cb521539c7aee6e7420cf7defcc7">func_list_sol_convert_tree</a>(<a class="code" href="structfunc__struct.html">func_t</a> *f)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keywordtype">int</span> i,j,k;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <a class="code" href="structfunc__struct.html">func_t</a> *a=NULL,*b=NULL,*c=NULL,*g=NULL,*h=NULL;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">if</span>(f!=NULL){</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    a=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(0);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(f); i++){</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      g=<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[2]);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      <span class="keywordflow">if</span>(g!=NULL){</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">for</span>(j=0; j&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(g); j++){</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      h=<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(g-&gt;a[j]-&gt;a[2]);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      <span class="keywordflow">if</span>(h!=NULL){</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        b=<a class="code" href="func__list_8c.html#af913cb521539c7aee6e7420cf7defcc7">func_list_sol_convert_tree</a>(<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(g));</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">for</span>(k=0; k&lt;<a class="code" href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a>(b); k++){</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;          c=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(2);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          c-&gt;a[0]=<a class="code" href="func__list_8c.html#a9bed4b900f1b83464835072a0a33a81e">func_list_concat</a>(<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(b-&gt;a[k]-&gt;a[0]),<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[0]) );</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          c-&gt;a[1]=<a class="code" href="func__list_8c.html#a9bed4b900f1b83464835072a0a33a81e">func_list_concat</a>(<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(b-&gt;a[k]-&gt;a[1]),<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[1]) );</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;          <a class="code" href="func__args_8c.html#a75193d04442561caf556378e6fb00405">func_a_append</a>(a,<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(c));</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;          c=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(c);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        b=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(b);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        h=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(h);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        b=<a class="code" href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a>(2);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        b-&gt;a[0]=<a class="code" href="func__list_8c.html#a9bed4b900f1b83464835072a0a33a81e">func_list_concat</a>(<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(g-&gt;a[j]-&gt;a[0]),<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[0]));</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        b-&gt;a[1]=<a class="code" href="func__list_8c.html#a9bed4b900f1b83464835072a0a33a81e">func_list_concat</a>(<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(g-&gt;a[j]-&gt;a[1]),<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(f-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[i]-&gt;<a class="code" href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">a</a>[1]));</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <a class="code" href="func__args_8c.html#a75193d04442561caf556378e6fb00405">func_a_append</a>(a,<a class="code" href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a>(b));</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        b=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(b); </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      h=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(h);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      g=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(g);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  f=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(f);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  b=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(b);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  c=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(c);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  g=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(g);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  h=<a class="code" href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a>(h);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keywordflow">return</span> a;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;}</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">//EOF</span></div>
+<div class="ttc" id="func__real_8c_html_a75a7bab447dfe2dfabef16de5733752b"><div class="ttname"><a href="func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b">func_is_real</a></div><div class="ttdeci">int func_is_real(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__real_8c_source.html#l00265">func_real.c:265</a></div></div>
+<div class="ttc" id="func__list_8c_html_ae23fc4874815eaf14d9be4e7e934c983"><div class="ttname"><a href="func__list_8c.html#ae23fc4874815eaf14d9be4e7e934c983">BLK0</a></div><div class="ttdeci">#define BLK0</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00019">func_list.c:19</a></div></div>
+<div class="ttc" id="func__real_8c_html_a9c54e81e28638b158c7c2be5315054d4"><div class="ttname"><a href="func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4">func_in_real</a></div><div class="ttdeci">int func_in_real(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__real_8c_source.html#l00270">func_real.c:270</a></div></div>
+<div class="ttc" id="func__complex_8c_html_a50d35bfdef7953d6e3d65c882b42f91f"><div class="ttname"><a href="func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f">func_in_complex</a></div><div class="ttdeci">int func_in_complex(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__complex_8c_source.html#l00243">func_complex.c:243</a></div></div>
+<div class="ttc" id="structfunc__builtin__struct_html_ac85d5511fdb8d162a7278bfb440ae420"><div class="ttname"><a href="structfunc__builtin__struct.html#ac85d5511fdb8d162a7278bfb440ae420">func_builtin_struct::order</a></div><div class="ttdeci">int order</div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00074">is_func.h:74</a></div></div>
+<div class="ttc" id="is__strings_8h_html_a88f2401a11610bcfe6b2cd48e1c77d2f"><div class="ttname"><a href="is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f">strings_split</a></div><div class="ttdeci">strings * strings_split(const char *str, const char *sep, const char *mask_start, const char *mask_end, const char *skip)</div><div class="ttdef"><b>Definition:</b> <a href="strings_8c_source.html#l00485">strings.c:485</a></div></div>
+<div class="ttc" id="func__rvec_8c_html_a4abdc648b10fc1a3783fc5b7893223c3"><div class="ttname"><a href="func__rvec_8c.html#a4abdc648b10fc1a3783fc5b7893223c3">func_rvec_set</a></div><div class="ttdeci">void func_rvec_set(func_t *f, int i, func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__rvec_8c_source.html#l00097">func_rvec.c:97</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html"><div class="ttname"><a href="is__rmulti_8h.html">is_rmulti.h</a></div><div class="ttdoc">多倍長精度実数型rmultiの宣言と関数． </div></div>
+<div class="ttc" id="func__args_8c_html_a724ae0eb61eedd02dbc8f8dbf2df8d9c"><div class="ttname"><a href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c">func_aget</a></div><div class="ttdeci">func_t * func_aget(func_t *f, int i)</div><div class="ttdef"><b>Definition:</b> <a href="func__args_8c_source.html#l00131">func_args.c:131</a></div></div>
+<div class="ttc" id="structstrings_html"><div class="ttname"><a href="structstrings.html">strings</a></div><div class="ttdef"><b>Definition:</b> <a href="is__strings_8h_source.html#l00006">is_strings.h:6</a></div></div>
+<div class="ttc" id="func__args_8c_html_a81a1a84576165bbc7f9e46b98f1e4e0c"><div class="ttname"><a href="func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c">func_asize</a></div><div class="ttdeci">int func_asize(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__args_8c_source.html#l00191">func_args.c:191</a></div></div>
+<div class="ttc" id="func__list_8c_html_a8c402bd313382fabd518e857845a6a30"><div class="ttname"><a href="func__list_8c.html#a8c402bd313382fabd518e857845a6a30">func_list_find_var1n</a></div><div class="ttdeci">func_t * func_list_find_var1n(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00225">func_list.c:225</a></div></div>
+<div class="ttc" id="is__strings_8h_html_aa137b865116b8931f3ca7322f8b23569"><div class="ttname"><a href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a></div><div class="ttdeci">char * strings_at(strings *str, int i)</div><div class="ttdef"><b>Definition:</b> <a href="strings_8c_source.html#l00267">strings.c:267</a></div></div>
+<div class="ttc" id="func__list_8c_html_acab6a918285fcc8a139ed514ec13db00"><div class="ttname"><a href="func__list_8c.html#acab6a918285fcc8a139ed514ec13db00">func_list_real_array_size</a></div><div class="ttdeci">int func_list_real_array_size(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00097">func_list.c:97</a></div></div>
+<div class="ttc" id="func__rmat_8c_html_a4e47e3df4631a2a2062617c50dbbac93"><div class="ttname"><a href="func__rmat_8c.html#a4e47e3df4631a2a2062617c50dbbac93">func_rmat</a></div><div class="ttdeci">func_t * func_rmat(int m, int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__rmat_8c_source.html#l00081">func_rmat.c:81</a></div></div>
+<div class="ttc" id="is__cmulti_8h_html"><div class="ttname"><a href="is__cmulti_8h.html">is_cmulti.h</a></div><div class="ttdoc">多倍長精度複素数型cmultiに関する宣言 </div></div>
+<div class="ttc" id="structfunc__struct_html_a1f4719ff5a0530b80dae556e5e3b6296"><div class="ttname"><a href="structfunc__struct.html#a1f4719ff5a0530b80dae556e5e3b6296">func_struct::a</a></div><div class="ttdeci">struct func_struct ** a</div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00060">is_func.h:60</a></div></div>
+<div class="ttc" id="func__args_8c_html_ad9bf8046839a60e7bc6aaf0be64f4d57"><div class="ttname"><a href="func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57">func_a_resize</a></div><div class="ttdeci">void func_a_resize(func_t *f, int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__args_8c_source.html#l00157">func_args.c:157</a></div></div>
+<div class="ttc" id="func__script_8c_html_a17bc9c661a4488a4c74730605f01bead"><div class="ttname"><a href="func__script_8c.html#a17bc9c661a4488a4c74730605f01bead">func_script</a></div><div class="ttdeci">func_t * func_script(const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="func__script_8c_source.html#l00046">func_script.c:46</a></div></div>
+<div class="ttc" id="is__strings_8h_html_a44835de3435f02ee1884c917dbb94371"><div class="ttname"><a href="is__strings_8h.html#a44835de3435f02ee1884c917dbb94371">str_match</a></div><div class="ttdeci">int str_match(const char *str, const char *pattern, const char *mask_start, const char *mask_end)</div><div class="ttdef"><b>Definition:</b> <a href="strings_8c_source.html#l00144">strings.c:144</a></div></div>
+<div class="ttc" id="func__list_8c_html_aec246610de0d1c619a5f9430d9b3203e"><div class="ttname"><a href="func__list_8c.html#aec246610de0d1c619a5f9430d9b3203e">func_var1_list</a></div><div class="ttdeci">func_t * func_var1_list(int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00084">func_list.c:84</a></div></div>
+<div class="ttc" id="func__list_8c_html_a248f08b5e77b891677f51fc447ab06cc"><div class="ttname"><a href="func__list_8c.html#a248f08b5e77b891677f51fc447ab06cc">N0</a></div><div class="ttdeci">#define N0</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00021">func_list.c:21</a></div></div>
+<div class="ttc" id="func__list_8c_html_a89c73b3d766364b6d2ae74341605ff0f"><div class="ttname"><a href="func__list_8c.html#a89c73b3d766364b6d2ae74341605ff0f">FR</a></div><div class="ttdeci">#define FR(F)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00011">func_list.c:11</a></div></div>
+<div class="ttc" id="func_8c_html_a30ae95dc5594ad32c8c1f0fc8cd0f221"><div class="ttname"><a href="func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221">func_del</a></div><div class="ttdeci">func_t * func_del(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func_8c_source.html#l00058">func.c:58</a></div></div>
+<div class="ttc" id="func__strings_8c_html_a7a37ef1ff55b3fb207094650261e887b"><div class="ttname"><a href="func__strings_8c.html#a7a37ef1ff55b3fb207094650261e887b">func_strings_at</a></div><div class="ttdeci">char * func_strings_at(func_t *f, int i)</div><div class="ttdef"><b>Definition:</b> <a href="func__strings_8c_source.html#l00083">func_strings.c:83</a></div></div>
+<div class="ttc" id="func__var_8c_html_a54777c2dfaa4a74a470d077089e3fa3a"><div class="ttname"><a href="func__var_8c.html#a54777c2dfaa4a74a470d077089e3fa3a">func_var1</a></div><div class="ttdeci">func_t * func_var1(int var, int pow)</div><div class="ttdef"><b>Definition:</b> <a href="func__var_8c_source.html#l00148">func_var.c:148</a></div></div>
+<div class="ttc" id="func__print_8c_html_a19d5e15cea86c22273dee75aa200077f"><div class="ttname"><a href="func__print_8c.html#a19d5e15cea86c22273dee75aa200077f">func_print</a></div><div class="ttdeci">void func_print(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__print_8c_source.html#l00065">func_print.c:65</a></div></div>
+<div class="ttc" id="func__vec_8c_html_a2de7f547b8e89d48d7c22e128020f1c5"><div class="ttname"><a href="func__vec_8c.html#a2de7f547b8e89d48d7c22e128020f1c5">func_is_cvec</a></div><div class="ttdeci">int func_is_cvec(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__vec_8c_source.html#l00039">func_vec.c:39</a></div></div>
+<div class="ttc" id="is__strings_8h_html"><div class="ttname"><a href="is__strings_8h.html">is_strings.h</a></div></div>
+<div class="ttc" id="func__number_8c_html_a5b7171537ce3464da4f750991e4322f0"><div class="ttname"><a href="func__number_8c.html#a5b7171537ce3464da4f750991e4322f0">func_zero</a></div><div class="ttdeci">func_t * func_zero(void)</div><div class="ttdef"><b>Definition:</b> <a href="func__number_8c_source.html#l00094">func_number.c:94</a></div></div>
+<div class="ttc" id="func__strings_8c_html_abf63ac15af08c53c1ee189aa379ea3dd"><div class="ttname"><a href="func__strings_8c.html#abf63ac15af08c53c1ee189aa379ea3dd">func_strings_size</a></div><div class="ttdeci">int func_strings_size(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__strings_8c_source.html#l00077">func_strings.c:77</a></div></div>
+<div class="ttc" id="func__list_8c_html_a2e3ec95fb854dda72454118295f922ca"><div class="ttname"><a href="func__list_8c.html#a2e3ec95fb854dda72454118295f922ca">func_list_script</a></div><div class="ttdeci">func_t * func_list_script(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00024">func_list.c:24</a></div></div>
+<div class="ttc" id="func__rvec_8c_html_a4b7301ce38e9502a2f305a5fc656df75"><div class="ttname"><a href="func__rvec_8c.html#a4b7301ce38e9502a2f305a5fc656df75">func_rvec</a></div><div class="ttdeci">func_t * func_rvec(int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__rvec_8c_source.html#l00110">func_rvec.c:110</a></div></div>
+<div class="ttc" id="func__rvec_8c_html_a0bde33121f8f8100bec4997b8f506aea"><div class="ttname"><a href="func__rvec_8c.html#a0bde33121f8f8100bec4997b8f506aea">func_rvec_size</a></div><div class="ttdeci">int func_rvec_size(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__rvec_8c_source.html#l00072">func_rvec.c:72</a></div></div>
+<div class="ttc" id="func__strings_8c_html_a14ad73fa6257d4387093e6953eca4979"><div class="ttname"><a href="func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979">func_is_strings</a></div><div class="ttdeci">int func_is_strings(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__strings_8c_source.html#l00124">func_strings.c:124</a></div></div>
+<div class="ttc" id="func__list_8c_html_a3d725a80a1060b97c063eac27c4feb60"><div class="ttname"><a href="func__list_8c.html#a3d725a80a1060b97c063eac27c4feb60">SPC</a></div><div class="ttdeci">#define SPC</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00018">func_list.c:18</a></div></div>
+<div class="ttc" id="func__complex_8c_html_a11ffb832c2622da959ddaca64dc6c562"><div class="ttname"><a href="func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562">func_is_complex</a></div><div class="ttdeci">int func_is_complex(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__complex_8c_source.html#l00238">func_complex.c:238</a></div></div>
+<div class="ttc" id="func__list_8c_html_a40af2f9433a3a68ef73dbd8221bf6b67"><div class="ttname"><a href="func__list_8c.html#a40af2f9433a3a68ef73dbd8221bf6b67">func_list_print</a></div><div class="ttdeci">void func_list_print(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00071">func_list.c:71</a></div></div>
+<div class="ttc" id="structfunc__builtin__struct_html_aba62b05961a5fd6075300ec4805d520c"><div class="ttname"><a href="structfunc__builtin__struct.html#aba62b05961a5fd6075300ec4805d520c">func_builtin_struct::amax</a></div><div class="ttdeci">int amax</div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00076">is_func.h:76</a></div></div>
+<div class="ttc" id="func__args_8c_html_a2fd2263e65ca81ee07353a71eba87ca1"><div class="ttname"><a href="func__args_8c.html#a2fd2263e65ca81ee07353a71eba87ca1">func_a_has_op</a></div><div class="ttdeci">int func_a_has_op(func_t *f, func_is_t *fis)</div><div class="ttdef"><b>Definition:</b> <a href="func__args_8c_source.html#l00071">func_args.c:71</a></div></div>
+<div class="ttc" id="structfunc__builtin__struct_html_a096913da490c26142793d72aa1cef6b4"><div class="ttname"><a href="structfunc__builtin__struct.html#a096913da490c26142793d72aa1cef6b4">func_builtin_struct::print</a></div><div class="ttdeci">func_set_t * print</div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00083">is_func.h:83</a></div></div>
+<div class="ttc" id="func__vec_8c_html_ab76621759344cc2e442e6e0a34ffdf66"><div class="ttname"><a href="func__vec_8c.html#ab76621759344cc2e442e6e0a34ffdf66">func_is_rvec</a></div><div class="ttdeci">int func_is_rvec(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__vec_8c_source.html#l00038">func_vec.c:38</a></div></div>
+<div class="ttc" id="is__strings_8h_html_a68d82805386047fbbcc917aa10a020d7"><div class="ttname"><a href="is__strings_8h.html#a68d82805386047fbbcc917aa10a020d7">strings_split_mask</a></div><div class="ttdeci">strings * strings_split_mask(const char *str, const char *mask_begin, const char *mask_end, const char *skip)</div><div class="ttdef"><b>Definition:</b> <a href="strings_8c_source.html#l00516">strings.c:516</a></div></div>
+<div class="ttc" id="is__print_8h_html"><div class="ttname"><a href="is__print_8h.html">is_print.h</a></div></div>
+<div class="ttc" id="is__strings_8h_html_a754be11345fe72b1e5cc69bab7ccf55e"><div class="ttname"><a href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a></div><div class="ttdeci">int strings_size(strings *str)</div><div class="ttdef"><b>Definition:</b> <a href="strings_8c_source.html#l00261">strings.c:261</a></div></div>
+<div class="ttc" id="func__list_8c_html_a68debb78577aa8bfb9aa140e0c8960be"><div class="ttname"><a href="func__list_8c.html#a68debb78577aa8bfb9aa140e0c8960be">func_list_degree_max</a></div><div class="ttdeci">int func_list_degree_max(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00240">func_list.c:240</a></div></div>
+<div class="ttc" id="func__list_8c_html_a127602c12d4cd9791189769910e49b8f"><div class="ttname"><a href="func__list_8c.html#a127602c12d4cd9791189769910e49b8f">func_is_list</a></div><div class="ttdeci">int func_is_list(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00199">func_list.c:199</a></div></div>
+<div class="ttc" id="func__cvec_8c_html_a0ea71b0ac4cdf35a319f79a081f1a87c"><div class="ttname"><a href="func__cvec_8c.html#a0ea71b0ac4cdf35a319f79a081f1a87c">func_cvec_set</a></div><div class="ttdeci">void func_cvec_set(func_t *f, int i, func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__cvec_8c_source.html#l00118">func_cvec.c:118</a></div></div>
+<div class="ttc" id="func__list_8c_html_abd7b39be02bc15d79b73e5cf2b531299"><div class="ttname"><a href="func__list_8c.html#abd7b39be02bc15d79b73e5cf2b531299">N1</a></div><div class="ttdeci">#define N1</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00022">func_list.c:22</a></div></div>
+<div class="ttc" id="func__poly_8c_html_afbd86b16edc7166583deaa9042646256"><div class="ttname"><a href="func__poly_8c.html#afbd86b16edc7166583deaa9042646256">func_poly_degree_max</a></div><div class="ttdeci">int func_poly_degree_max(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__poly_8c_source.html#l00195">func_poly.c:195</a></div></div>
+<div class="ttc" id="func__list_8c_html_a3d85960c4ec5e33ad57d0ab5ae053394"><div class="ttname"><a href="func__list_8c.html#a3d85960c4ec5e33ad57d0ab5ae053394">func_op_list_new</a></div><div class="ttdeci">func_t * func_op_list_new(void)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00212">func_list.c:212</a></div></div>
+<div class="ttc" id="func__list_8c_html_a9bed4b900f1b83464835072a0a33a81e"><div class="ttname"><a href="func__list_8c.html#a9bed4b900f1b83464835072a0a33a81e">func_list_concat</a></div><div class="ttdeci">func_t * func_list_concat(func_t *f, func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00256">func_list.c:256</a></div></div>
+<div class="ttc" id="func__cvec_8c_html_a6bc254669518226cb47306623d7abba6"><div class="ttname"><a href="func__cvec_8c.html#a6bc254669518226cb47306623d7abba6">func_cvec_size</a></div><div class="ttdeci">int func_cvec_size(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__cvec_8c_source.html#l00093">func_cvec.c:93</a></div></div>
+<div class="ttc" id="func__args_8c_html_a75193d04442561caf556378e6fb00405"><div class="ttname"><a href="func__args_8c.html#a75193d04442561caf556378e6fb00405">func_a_append</a></div><div class="ttdeci">void func_a_append(func_t *f, func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__args_8c_source.html#l00082">func_args.c:82</a></div></div>
+<div class="ttc" id="func__builtin_8c_html_a90ae3562774b4f4a57c331247e282dcb"><div class="ttname"><a href="func__builtin_8c.html#a90ae3562774b4f4a57c331247e282dcb">func_builtin_new</a></div><div class="ttdeci">func_t * func_builtin_new(const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="func__builtin_8c_source.html#l00079">func_builtin.c:79</a></div></div>
+<div class="ttc" id="is__strings_8h_html_a81b9c1e8ab533413d2d85446aefe0f8a"><div class="ttname"><a href="is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a">strings_del</a></div><div class="ttdeci">strings * strings_del(strings *list)</div><div class="ttdef"><b>Definition:</b> <a href="strings_8c_source.html#l00288">strings.c:288</a></div></div>
+<div class="ttc" id="is__func_8h_html_abed82baf7f470b522273a3e37c24c600aa2dbc6d6f0dd3ac97b70994a4bc22fd3"><div class="ttname"><a href="is__func_8h.html#abed82baf7f470b522273a3e37c24c600aa2dbc6d6f0dd3ac97b70994a4bc22fd3">FUNC_ORDER_LIST</a></div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00035">is_func.h:35</a></div></div>
+<div class="ttc" id="func__poly_8c_html_af43431e6deba4e37b3e4b3036c35fb53"><div class="ttname"><a href="func__poly_8c.html#af43431e6deba4e37b3e4b3036c35fb53">func_poly_var1n</a></div><div class="ttdeci">int func_poly_var1n(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__poly_8c_source.html#l00151">func_poly.c:151</a></div></div>
+<div class="ttc" id="func__builtin_8c_html_ad5d264780731c751a99d352bcba0ad99"><div class="ttname"><a href="func__builtin_8c.html#ad5d264780731c751a99d352bcba0ad99">func_builtin_p</a></div><div class="ttdeci">func_builtin_t * func_builtin_p(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__builtin_8c_source.html#l00122">func_builtin.c:122</a></div></div>
+<div class="ttc" id="func__cvec_8c_html_ab24a2d5a81508d46300a2fd7b01eddf2"><div class="ttname"><a href="func__cvec_8c.html#ab24a2d5a81508d46300a2fd7b01eddf2">func_cvec</a></div><div class="ttdeci">func_t * func_cvec(int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__cvec_8c_source.html#l00077">func_cvec.c:77</a></div></div>
+<div class="ttc" id="func__list_8c_html_a51d9044854f6e09d5362b8b9f53c2845"><div class="ttname"><a href="func__list_8c.html#a51d9044854f6e09d5362b8b9f53c2845">BLK1</a></div><div class="ttdeci">#define BLK1</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00020">func_list.c:20</a></div></div>
+<div class="ttc" id="func__list_8c_html_abb010629397a4e3f97a46cfd8189ac53"><div class="ttname"><a href="func__list_8c.html#abb010629397a4e3f97a46cfd8189ac53">func_list_zeros2</a></div><div class="ttdeci">func_t * func_list_zeros2(int m, int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00184">func_list.c:184</a></div></div>
+<div class="ttc" id="is__strings_8h_html_ac8a5ef5631668ec8fc59b339b6859ec9"><div class="ttname"><a href="is__strings_8h.html#ac8a5ef5631668ec8fc59b339b6859ec9">strings_item_replace</a></div><div class="ttdeci">void strings_item_replace(strings *list, int k, strings *list2)</div><div class="ttdef"><b>Definition:</b> <a href="strings_8c_source.html#l00407">strings.c:407</a></div></div>
+<div class="ttc" id="func__list_8c_html_a31e23f332dffebf3b6a2d50c1ca5a9a7"><div class="ttname"><a href="func__list_8c.html#a31e23f332dffebf3b6a2d50c1ca5a9a7">func_list_eval</a></div><div class="ttdeci">func_t * func_list_eval(func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00144">func_list.c:144</a></div></div>
+<div class="ttc" id="func__args_8c_html_a59c61338c39841891ae08724e2602762"><div class="ttname"><a href="func__args_8c.html#a59c61338c39841891ae08724e2602762">func_aset</a></div><div class="ttdeci">void func_aset(func_t *f, int i, func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__args_8c_source.html#l00138">func_args.c:138</a></div></div>
+<div class="ttc" id="func__list_8c_html_af913cb521539c7aee6e7420cf7defcc7"><div class="ttname"><a href="func__list_8c.html#af913cb521539c7aee6e7420cf7defcc7">func_list_sol_convert_tree</a></div><div class="ttdeci">func_t * func_list_sol_convert_tree(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00282">func_list.c:282</a></div></div>
+<div class="ttc" id="func__cmat_8c_html_adbd939c69d6f3dcf53c6d236cba3bc60"><div class="ttname"><a href="func__cmat_8c.html#adbd939c69d6f3dcf53c6d236cba3bc60">func_cmat_set_row</a></div><div class="ttdeci">void func_cmat_set_row(func_t *f, int i, func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__cmat_8c_source.html#l00136">func_cmat.c:136</a></div></div>
+<div class="ttc" id="func__list_8c_html_ac7b05a93556c21ce506b5b21ae9ef350"><div class="ttname"><a href="func__list_8c.html#ac7b05a93556c21ce506b5b21ae9ef350">func_list_complex_array_size</a></div><div class="ttdeci">int func_list_complex_array_size(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00118">func_list.c:118</a></div></div>
+<div class="ttc" id="is__macros_8h_html"><div class="ttname"><a href="is__macros_8h.html">is_macros.h</a></div></div>
+<div class="ttc" id="func_8c_html_abeef860bb7cb5a4d540a9079ac1dc66a"><div class="ttname"><a href="func_8c.html#abeef860bb7cb5a4d540a9079ac1dc66a">func_new</a></div><div class="ttdeci">func_t * func_new(const char *op)</div><div class="ttdef"><b>Definition:</b> <a href="func_8c_source.html#l00047">func.c:47</a></div></div>
+<div class="ttc" id="func__poly_8c_html_a1bf168e77b2b22de70137f55b4d70f36"><div class="ttname"><a href="func__poly_8c.html#a1bf168e77b2b22de70137f55b4d70f36">func_is_poly_list</a></div><div class="ttdeci">int func_is_poly_list(func_t *f)</div><div class="ttdef"><b>Definition:</b> <a href="func__poly_8c_source.html#l00042">func_poly.c:42</a></div></div>
+<div class="ttc" id="is__func_8h_html_a726ca809ffd3d67ab4b8476646f26635a389e64a163ea3413c8085faada01f315"><div class="ttname"><a href="is__func_8h.html#a726ca809ffd3d67ab4b8476646f26635a389e64a163ea3413c8085faada01f315">FUNC_NOLIMIT</a></div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00024">is_func.h:24</a></div></div>
+<div class="ttc" id="is__ivec_8h_html"><div class="ttname"><a href="is__ivec_8h.html">is_ivec.h</a></div></div>
+<div class="ttc" id="func__rmat_8c_html_a562cc829f2f8d1503e90a04c296c960d"><div class="ttname"><a href="func__rmat_8c.html#a562cc829f2f8d1503e90a04c296c960d">func_rmat_set_row</a></div><div class="ttdeci">void func_rmat_set_row(func_t *f, int i, func_t *g)</div><div class="ttdef"><b>Definition:</b> <a href="func__rmat_8c_source.html#l00130">func_rmat.c:130</a></div></div>
+<div class="ttc" id="structfunc__struct_html"><div class="ttname"><a href="structfunc__struct.html">func_struct</a></div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00056">is_func.h:56</a></div></div>
+<div class="ttc" id="func__list_8c_html_a5d8524d4e87514ae20c66dbf9ba4a89d"><div class="ttname"><a href="func__list_8c.html#a5d8524d4e87514ae20c66dbf9ba4a89d">func_list_zeros</a></div><div class="ttdeci">func_t * func_list_zeros(int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00175">func_list.c:175</a></div></div>
+<div class="ttc" id="is__func_8h_html"><div class="ttname"><a href="is__func_8h.html">is_func.h</a></div></div>
+<div class="ttc" id="is__func_8h_html_aab543878b65f3cc3e2809f0f49ddd56e"><div class="ttname"><a href="is__func_8h.html#aab543878b65f3cc3e2809f0f49ddd56e">FUNC_ERROR_ARG1</a></div><div class="ttdeci">#define FUNC_ERROR_ARG1(F, F1)</div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00842">is_func.h:842</a></div></div>
+<div class="ttc" id="func__list_8c_html_a6ee703adde8c88f7a8a006266719bd3c"><div class="ttname"><a href="func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c">func_list</a></div><div class="ttdeci">func_t * func_list(int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__list_8c_source.html#l00204">func_list.c:204</a></div></div>
+<div class="ttc" id="func_8c_html_ac1aaf14b9f152f9b6f0ced59b3069462"><div class="ttname"><a href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462">func_is</a></div><div class="ttdeci">int func_is(func_t *f, const char *op)</div><div class="ttdef"><b>Definition:</b> <a href="func_8c_source.html#l00141">func.c:141</a></div></div>
+<div class="ttc" id="structfunc__builtin__struct_html_ad55f126b545801d09b01ddf3bed78b32"><div class="ttname"><a href="structfunc__builtin__struct.html#ad55f126b545801d09b01ddf3bed78b32">func_builtin_struct::eval</a></div><div class="ttdeci">func_arg1_t * eval</div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00082">is_func.h:82</a></div></div>
+<div class="ttc" id="func__cmat_8c_html_abd8387f05a4919904a773cd03c33dad3"><div class="ttname"><a href="func__cmat_8c.html#abd8387f05a4919904a773cd03c33dad3">func_cmat</a></div><div class="ttdeci">func_t * func_cmat(int m, int n)</div><div class="ttdef"><b>Definition:</b> <a href="func__cmat_8c_source.html#l00087">func_cmat.c:87</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="func__list_8c.html">func_list.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分45秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

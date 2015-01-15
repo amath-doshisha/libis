@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/zhshldr.c ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('zhshldr_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">zhshldr.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="zhshldr_8c.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;math.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__macros_8h.html">is_macros.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__ivec_8h.html">is_ivec.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__zvec_8h.html">is_zvec.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__zmat_8h.html">is_zmat.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="is__zhshldr_8h.html">is_zhshldr.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// size(x)=n</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// h[0]=0; ...; h[k-1]=0; h[k]=-s*xi; h[k+1]=x[k+1]; ...; h[n-1]=x[n-1];</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="zhshldr_8c.html#aca09c1a9b08374dab04621bd7f552b72">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zhshldr_8c.html#aca09c1a9b08374dab04621bd7f552b72">zhouseholder_vec</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> *alpha, <span class="keyword">const</span> <a class="code" href="structdcomplex.html">dcomplex</a> *x)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="comment">// function [h,alpha]=householder_vec(x,k)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">// y=H*x, H=I-2*h*h&#39;/(h&#39;*h), h=x-y</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">// i&lt;k   y(i)=x(i)   h(i)=0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="comment">// i=k   y(k)=s*eta  h(k)=x(k)-y(k)=x(k)-s*eta=-s*xi</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">// i&gt;k   y(i)=0      h(i)=x(i)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="comment">// eta=norm2(x(k:end))</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">// s=sgn(x(k))</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">// xi=-h(k)/s=-(x(k)-s*eta)/s=eta-x(k)/s=eta-|x(k)|</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">//   =(eta^2-|x(k)|^2)/(eta+|x(k|)=(|x(k+1)|^2+..+|x(n)|^2)/(eta+|x(k)|)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="comment">// h&#39;*h=2*xi*eta</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">// alpha=2/(h&#39;*h)=1/(xi*eta)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">double</span> eta,s,xi,axk;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//----------- norm</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  xi=<a class="code" href="is__zvec_8h.html#abc3e3c1bcac5a3413b4648bc5d75deb5">zvec_sum_pow2_abs</a>(n-k-1,&amp;x[k+1]); <span class="comment">// xi=sum(abs(x((k+1):end)).^2);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  axk=<a class="code" href="is__macros_8h.html#aec41da78a668ba2f348d6f9ac2deb606">Z_ABS2</a>(x[k]);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  eta=sqrt(axk+xi);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  axk=sqrt(axk);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">if</span>(eta==0) xi=eta-axk;        <span class="comment">// eta=eta-|x(k)|</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">else</span>       xi=xi/(eta+axk);   <span class="comment">// eta=xi/(eta+|x(k)|)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//----------- h</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="is__zvec_8h.html#a8bd903f7f0e8257ac3c6f994a19c32d8">zvec_zeros</a>(k,h);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="is__zvec_8h.html#ab7608dbd4095de068d5b7224332d5356">zvec_copy</a>(n-k-1,&amp;h[k+1],&amp;x[k+1]);    <span class="comment">// h((k+1):end)=x((k+1):end);</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">if</span>((<a class="code" href="is__macros_8h.html#a285c526f21b98c4939688f4454379f23">Z_R</a>(x[k])*<a class="code" href="is__macros_8h.html#a3c9d45417cf396771529c257755144f6">Z_I</a>(x[k]))==0.0){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="is__macros_8h.html#abbdc0e2fa7e9eb9bd6426d553395d16e">Z_SET</a>(h[k],-xi,0);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    s=-xi/axk;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="is__macros_8h.html#a285c526f21b98c4939688f4454379f23">Z_R</a>(h[k])=s*<a class="code" href="is__macros_8h.html#a285c526f21b98c4939688f4454379f23">Z_R</a>(x[k]);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="is__macros_8h.html#a3c9d45417cf396771529c257755144f6">Z_I</a>(h[k])=s*<a class="code" href="is__macros_8h.html#a3c9d45417cf396771529c257755144f6">Z_I</a>(x[k]);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">//----------- alpha</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">if</span>(xi==0 || eta==0) (*alpha)=0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">else</span>                (*alpha)=1.0/(xi*eta);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="zhshldr_8c.html#a5311747f5dbb12ffee7afb0947116475">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zhshldr_8c.html#a5311747f5dbb12ffee7afb0947116475">zhouseholder</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k0, <span class="keywordtype">int</span> nH, <span class="keywordtype">int</span> k, <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> *alpha, <span class="keyword">const</span> <a class="code" href="structdcomplex.html">dcomplex</a> *H, <span class="keywordtype">int</span> LDH, <span class="keyword">const</span> <span class="keywordtype">double</span> *Alpha, <span class="keyword">const</span> <a class="code" href="structdcomplex.html">dcomplex</a> *x)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> j,l;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="structdcomplex.html">dcomplex</a> value,*R=NULL; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  R=<a class="code" href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3">zvec_allocate</a>(n);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="is__zvec_8h.html#ab7608dbd4095de068d5b7224332d5356">zvec_copy</a>(n,R,x);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// R=(I-alpha*h*h&#39;)*R=R-alpha*h*(h&#39;*R)    </span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">for</span>(j=0; j&lt;nH; j++){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// R=R-alpha[j]*(H(:,j)&#39;*R)*H(:,j)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    l=k0+j;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    value=<a class="code" href="is__zvec_8h.html#a26d38a8eb12fdc4072b43ccfe753908f">zvec_dot</a>(n-l,&amp;<a class="code" href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a>(H,l,j,LDH),&amp;R[l]);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="is__macros_8h.html#a285c526f21b98c4939688f4454379f23">Z_R</a>(value)*=-Alpha[j];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="is__macros_8h.html#a3c9d45417cf396771529c257755144f6">Z_I</a>(value)*=-Alpha[j];      </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="is__zvec_8h.html#a5db8f25b784db18b89dd1aded7ec78b5">zvec_add_scaled</a>(n-l,&amp;R[l],value,&amp;<a class="code" href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a>(H,l,j,LDH));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="zhshldr_8c.html#aca09c1a9b08374dab04621bd7f552b72">zhouseholder_vec</a>(n,k,h,alpha,R);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  R=<a class="code" href="is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868">zvec_free</a>(R);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// B=A*H, H=I-alpha*h*h&#39;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="zhshldr_8c.html#a86105ccf1c83f95cdd2fd5ea6241424f">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zhshldr_8c.html#a86105ccf1c83f95cdd2fd5ea6241424f">zhouseholder_right</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n, <a class="code" href="structdcomplex.html">dcomplex</a> *A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> k, <span class="keyword">const</span> <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> alpha)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="structdcomplex.html">dcomplex</a> zalpha,*p=NULL;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  p=<a class="code" href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3">zvec_allocate</a>(m);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// p=A*h</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="is__zvec_8h.html#aeee17ec0333baeb59ac3429415cb8588">zvec_lintr</a>(m,n-k,p,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(A,k,LDA),LDA,&amp;h[k]);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// B=A*H=A-alpha*(A*h)*h&#39;=A-alpha*p*h&#39;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="is__macros_8h.html#abbdc0e2fa7e9eb9bd6426d553395d16e">Z_SET</a>(zalpha,-alpha,0);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="is__zmat_8h.html#a2e8bbcde361a87de18bfa0811e96a0eb">zmat_rank1op</a>(m,n-k,&amp;<a class="code" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(A,k,LDA),LDA,zalpha,p,&amp;h[k]);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// done</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  p=<a class="code" href="is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868">zvec_free</a>(p);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// B=H*A, H=I-alpha*h*h&#39;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="zhshldr_8c.html#a34be8b2e716f478d73f763cf8883567b">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zhshldr_8c.html#a34be8b2e716f478d73f763cf8883567b">zhouseholder_left</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n, <a class="code" href="structdcomplex.html">dcomplex</a> *A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> k, <span class="keyword">const</span> <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> alpha)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="structdcomplex.html">dcomplex</a> zalpha,*p=NULL;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  p=<a class="code" href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3">zvec_allocate</a>(m);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// p=A&#39;*h</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="is__zvec_8h.html#a9c6a4735c34fdf12777db136e0d611d2">zvec_lintr_ct</a>(n,m-k,p,&amp;<a class="code" href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a>(A,k,0,LDA),LDA,&amp;h[k]);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// B=H*A=A-alpha*h*(A&#39;*h)&#39;=A-alpha*h*p&#39;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="is__macros_8h.html#abbdc0e2fa7e9eb9bd6426d553395d16e">Z_SET</a>(zalpha,-alpha,0);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="is__zmat_8h.html#a2e8bbcde361a87de18bfa0811e96a0eb">zmat_rank1op</a>(m-k,n,&amp;<a class="code" href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a>(A,k,0,LDA),LDA,zalpha,&amp;h[k],p);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// done</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  p=<a class="code" href="is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868">zvec_free</a>(p);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">//EOF</span></div>
+<div class="ttc" id="is__zvec_8h_html_abc3e3c1bcac5a3413b4648bc5d75deb5"><div class="ttname"><a href="is__zvec_8h.html#abc3e3c1bcac5a3413b4648bc5d75deb5">zvec_sum_pow2_abs</a></div><div class="ttdeci">double zvec_sum_pow2_abs(int n, const dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00590">zvec.c:590</a></div></div>
+<div class="ttc" id="zhshldr_8c_html_a5311747f5dbb12ffee7afb0947116475"><div class="ttname"><a href="zhshldr_8c.html#a5311747f5dbb12ffee7afb0947116475">zhouseholder</a></div><div class="ttdeci">void zhouseholder(int n, int k0, int nH, int k, dcomplex *h, double *alpha, const dcomplex *H, int LDH, const double *Alpha, const dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00049">zhshldr.c:49</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a0189fd1659090724e9ffbdb0c85ac681"><div class="ttname"><a href="is__macros_8h.html#a0189fd1659090724e9ffbdb0c85ac681">MAT</a></div><div class="ttdeci">#define MAT(A, I, J, LDA)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00011">is_macros.h:11</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_aeee17ec0333baeb59ac3429415cb8588"><div class="ttname"><a href="is__zvec_8h.html#aeee17ec0333baeb59ac3429415cb8588">zvec_lintr</a></div><div class="ttdeci">void zvec_lintr(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00271">zvec.c:271</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a3c9d45417cf396771529c257755144f6"><div class="ttname"><a href="is__macros_8h.html#a3c9d45417cf396771529c257755144f6">Z_I</a></div><div class="ttdeci">#define Z_I(X)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00031">is_macros.h:31</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_ab7608dbd4095de068d5b7224332d5356"><div class="ttname"><a href="is__zvec_8h.html#ab7608dbd4095de068d5b7224332d5356">zvec_copy</a></div><div class="ttdeci">void zvec_copy(int n, dcomplex *y, const dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00181">zvec.c:181</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_aebadbab9ea8d2a7b1691dae56d00caf3"><div class="ttname"><a href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3">zvec_allocate</a></div><div class="ttdeci">dcomplex * zvec_allocate(int n)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00020">zvec.c:20</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a285c526f21b98c4939688f4454379f23"><div class="ttname"><a href="is__macros_8h.html#a285c526f21b98c4939688f4454379f23">Z_R</a></div><div class="ttdeci">#define Z_R(X)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00029">is_macros.h:29</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_a0690af5781bb79f0e45ac889e36e1868"><div class="ttname"><a href="is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868">zvec_free</a></div><div class="ttdeci">dcomplex * zvec_free(dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00025">zvec.c:25</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_a5db8f25b784db18b89dd1aded7ec78b5"><div class="ttname"><a href="is__zvec_8h.html#a5db8f25b784db18b89dd1aded7ec78b5">zvec_add_scaled</a></div><div class="ttdeci">void zvec_add_scaled(int n, dcomplex *y, dcomplex a, const dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00253">zvec.c:253</a></div></div>
+<div class="ttc" id="is__macros_8h_html_aec41da78a668ba2f348d6f9ac2deb606"><div class="ttname"><a href="is__macros_8h.html#aec41da78a668ba2f348d6f9ac2deb606">Z_ABS2</a></div><div class="ttdeci">#define Z_ABS2(X)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00073">is_macros.h:73</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_a8bd903f7f0e8257ac3c6f994a19c32d8"><div class="ttname"><a href="is__zvec_8h.html#a8bd903f7f0e8257ac3c6f994a19c32d8">zvec_zeros</a></div><div class="ttdeci">void zvec_zeros(int n, dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00034">zvec.c:34</a></div></div>
+<div class="ttc" id="zhshldr_8c_html_a86105ccf1c83f95cdd2fd5ea6241424f"><div class="ttname"><a href="zhshldr_8c.html#a86105ccf1c83f95cdd2fd5ea6241424f">zhouseholder_right</a></div><div class="ttdeci">void zhouseholder_right(int m, int n, dcomplex *A, int LDA, int k, const dcomplex *h, double alpha)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00069">zhshldr.c:69</a></div></div>
+<div class="ttc" id="is__zvec_8h_html"><div class="ttname"><a href="is__zvec_8h.html">is_zvec.h</a></div></div>
+<div class="ttc" id="zhshldr_8c_html_a34be8b2e716f478d73f763cf8883567b"><div class="ttname"><a href="zhshldr_8c.html#a34be8b2e716f478d73f763cf8883567b">zhouseholder_left</a></div><div class="ttdeci">void zhouseholder_left(int m, int n, dcomplex *A, int LDA, int k, const dcomplex *h, double alpha)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00083">zhshldr.c:83</a></div></div>
+<div class="ttc" id="is__macros_8h_html_a8137095c9ec22387b3dc5971e47ab31c"><div class="ttname"><a href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a></div><div class="ttdeci">#define COL(A, J, LDA)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00012">is_macros.h:12</a></div></div>
+<div class="ttc" id="is__zmat_8h_html_a2e8bbcde361a87de18bfa0811e96a0eb"><div class="ttname"><a href="is__zmat_8h.html#a2e8bbcde361a87de18bfa0811e96a0eb">zmat_rank1op</a></div><div class="ttdeci">void zmat_rank1op(int m, int n, dcomplex *A, int LDA, dcomplex a, const dcomplex *x, const dcomplex *y)</div><div class="ttdef"><b>Definition:</b> <a href="zmat_8c_source.html#l00321">zmat.c:321</a></div></div>
+<div class="ttc" id="zhshldr_8c_html_aca09c1a9b08374dab04621bd7f552b72"><div class="ttname"><a href="zhshldr_8c.html#aca09c1a9b08374dab04621bd7f552b72">zhouseholder_vec</a></div><div class="ttdeci">void zhouseholder_vec(int n, int k, dcomplex *h, double *alpha, const dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00013">zhshldr.c:13</a></div></div>
+<div class="ttc" id="is__zmat_8h_html"><div class="ttname"><a href="is__zmat_8h.html">is_zmat.h</a></div></div>
+<div class="ttc" id="is__macros_8h_html"><div class="ttname"><a href="is__macros_8h.html">is_macros.h</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_a26d38a8eb12fdc4072b43ccfe753908f"><div class="ttname"><a href="is__zvec_8h.html#a26d38a8eb12fdc4072b43ccfe753908f">zvec_dot</a></div><div class="ttdeci">dcomplex zvec_dot(int n, const dcomplex *x, const dcomplex *y)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00467">zvec.c:467</a></div></div>
+<div class="ttc" id="is__zvec_8h_html_a9c6a4735c34fdf12777db136e0d611d2"><div class="ttname"><a href="is__zvec_8h.html#a9c6a4735c34fdf12777db136e0d611d2">zvec_lintr_ct</a></div><div class="ttdeci">void zvec_lintr_ct(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zvec_8c_source.html#l00339">zvec.c:339</a></div></div>
+<div class="ttc" id="is__macros_8h_html_abbdc0e2fa7e9eb9bd6426d553395d16e"><div class="ttname"><a href="is__macros_8h.html#abbdc0e2fa7e9eb9bd6426d553395d16e">Z_SET</a></div><div class="ttdeci">#define Z_SET(X, R, I)</div><div class="ttdef"><b>Definition:</b> <a href="is__macros_8h_source.html#l00032">is_macros.h:32</a></div></div>
+<div class="ttc" id="is__ivec_8h_html"><div class="ttname"><a href="is__ivec_8h.html">is_ivec.h</a></div></div>
+<div class="ttc" id="structdcomplex_html"><div class="ttname"><a href="structdcomplex.html">dcomplex</a></div><div class="ttdoc">倍精度複素数構造体 </div><div class="ttdef"><b>Definition:</b> <a href="is__dcomplex_8h_source.html#l00012">is_dcomplex.h:12</a></div></div>
+<div class="ttc" id="is__zhshldr_8h_html"><div class="ttname"><a href="is__zhshldr_8h.html">is_zhshldr.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="zhshldr_8c.html">zhshldr.c</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分46秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

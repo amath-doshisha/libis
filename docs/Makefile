@@ -4,6 +4,9 @@ DOXYGEN_CONFIG=./doxygen.config
 
 all:
 	$(DOXYGEN) $(DOXYGEN_CONFIG)
-clean:
+
+clean-html:
 	rm -rfv ./html
+
+clean:
 	rm -fv *~

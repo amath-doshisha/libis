@@ -1,0 +1,2825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_zvec.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__zvec_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_zvec.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="is__dcomplex_8h_source.html">is_dcomplex.h</a>&gt;</code><br />
+</div>
+<p><a href="is__zvec_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:aebadbab9ea8d2a7b1691dae56d00caf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3">zvec_allocate</a> (int n)</td></tr>
+<tr class="separator:aebadbab9ea8d2a7b1691dae56d00caf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0690af5781bb79f0e45ac889e36e1868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868">zvec_free</a> (<a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a0690af5781bb79f0e45ac889e36e1868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd903f7f0e8257ac3c6f994a19c32d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a8bd903f7f0e8257ac3c6f994a19c32d8">zvec_zeros</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a8bd903f7f0e8257ac3c6f994a19c32d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49714268228bb6b5cdd8d3a90495ed4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a49714268228bb6b5cdd8d3a90495ed4d">zvec_ones</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a49714268228bb6b5cdd8d3a90495ed4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05866bcf83db082ce59e848464e8fb90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a05866bcf83db082ce59e848464e8fb90">zvec_set</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:a05866bcf83db082ce59e848464e8fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdbffc66ab75b4033264f3621e4767d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#acdbffc66ab75b4033264f3621e4767d5">zvec_set_d</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, double a)</td></tr>
+<tr class="separator:acdbffc66ab75b4033264f3621e4767d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33eb1c8eff34ee250967a4d4c203e10c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a33eb1c8eff34ee250967a4d4c203e10c">zvec_set_dd</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, double a_r, double a_i)</td></tr>
+<tr class="separator:a33eb1c8eff34ee250967a4d4c203e10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc97d8ddb27ea32cf3a523ec8920852"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#abdc97d8ddb27ea32cf3a523ec8920852">zvec_unit</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, int k)</td></tr>
+<tr class="separator:abdc97d8ddb27ea32cf3a523ec8920852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925d91fb616134e37dd45ca1fee36ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a925d91fb616134e37dd45ca1fee36ae9">zvec_grid</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a925d91fb616134e37dd45ca1fee36ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306fab902c5791ef0d5755b4ea7eafd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a306fab902c5791ef0d5755b4ea7eafd3">zvec_rand</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, double a, double b)</td></tr>
+<tr class="separator:a306fab902c5791ef0d5755b4ea7eafd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24054693afe669def5ee7b983e7a2f05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a24054693afe669def5ee7b983e7a2f05">zvec_reverse</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a24054693afe669def5ee7b983e7a2f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca338d2ca122ea2deb1874540645393f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aca338d2ca122ea2deb1874540645393f">zvec_swap_at</a> (<a class="el" href="structdcomplex.html">dcomplex</a> *x, int i, int j)</td></tr>
+<tr class="separator:aca338d2ca122ea2deb1874540645393f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525c0eb5fe529b4951d0209ccb9b8beb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a525c0eb5fe529b4951d0209ccb9b8beb">zvec_swap_index</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, const int *I)</td></tr>
+<tr class="separator:a525c0eb5fe529b4951d0209ccb9b8beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbee97c5207064b68f9e0a78309a6211"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#adbee97c5207064b68f9e0a78309a6211">zvec_sort</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, int *I)</td></tr>
+<tr class="separator:adbee97c5207064b68f9e0a78309a6211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebdd4eb3d04700001d78588ad877cba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a0ebdd4eb3d04700001d78588ad877cba">zvec_quick_sort</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, int *I, int left, int right)</td></tr>
+<tr class="separator:a0ebdd4eb3d04700001d78588ad877cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4392963d77ef8dacd5255247589677c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a4392963d77ef8dacd5255247589677c4">zvec_sort_index</a> (int *I, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *X)</td></tr>
+<tr class="separator:a4392963d77ef8dacd5255247589677c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7608dbd4095de068d5b7224332d5356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#ab7608dbd4095de068d5b7224332d5356">zvec_copy</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:ab7608dbd4095de068d5b7224332d5356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e35250b43deae6b8072b0b6a117288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#ab2e35250b43deae6b8072b0b6a117288">zvec_copy_d</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const double *x)</td></tr>
+<tr class="separator:ab2e35250b43deae6b8072b0b6a117288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3a63d3f4fdbe6d2e8d5f88b3cd7278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a6f3a63d3f4fdbe6d2e8d5f88b3cd7278">zvec_copy_dd</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const double *x_r, const double *x_i)</td></tr>
+<tr class="separator:a6f3a63d3f4fdbe6d2e8d5f88b3cd7278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba977d6f3416ca675ec0bc60ed7bdb6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aba977d6f3416ca675ec0bc60ed7bdb6f">zvec_copy_index</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *Y, const <a class="el" href="structdcomplex.html">dcomplex</a> *X, const int *I)</td></tr>
+<tr class="separator:aba977d6f3416ca675ec0bc60ed7bdb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef5c747d6fac9b2b5d3442d8d6fbc552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aef5c747d6fac9b2b5d3442d8d6fbc552">zvec_add_scalar</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:aef5c747d6fac9b2b5d3442d8d6fbc552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bb5b97709798ffe015edd61202d4a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#ae6bb5b97709798ffe015edd61202d4a6">zvec_sub_scalar</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:ae6bb5b97709798ffe015edd61202d4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991d8643f84463a1d48d3be0d42c3107"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a991d8643f84463a1d48d3be0d42c3107">zvec_add</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a991d8643f84463a1d48d3be0d42c3107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c810d7eba6557380137971a33daaf12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a7c810d7eba6557380137971a33daaf12">zvec_sub</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a7c810d7eba6557380137971a33daaf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db8f25b784db18b89dd1aded7ec78b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a5db8f25b784db18b89dd1aded7ec78b5">zvec_add_scaled</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, <a class="el" href="structdcomplex.html">dcomplex</a> a, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a5db8f25b784db18b89dd1aded7ec78b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2f71192d1b2b2dfb5acc37da4c9393"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a6a2f71192d1b2b2dfb5acc37da4c9393">zvec_sub_scaled</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, <a class="el" href="structdcomplex.html">dcomplex</a> a, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a6a2f71192d1b2b2dfb5acc37da4c9393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee17ec0333baeb59ac3429415cb8588"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aeee17ec0333baeb59ac3429415cb8588">zvec_lintr</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:aeee17ec0333baeb59ac3429415cb8588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518cdfe7cea9ca04f8f7257c6a97b348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a518cdfe7cea9ca04f8f7257c6a97b348">zvec_add_lintr</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a518cdfe7cea9ca04f8f7257c6a97b348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40334b74047738ab14ec00850370027e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a40334b74047738ab14ec00850370027e">zvec_sub_lintr</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a40334b74047738ab14ec00850370027e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5371f4f010227e9a0d68a9a5a7dd909e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a5371f4f010227e9a0d68a9a5a7dd909e">zvec_lintr_t</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a5371f4f010227e9a0d68a9a5a7dd909e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76270730b6abe0f204b4d00067405876"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a76270730b6abe0f204b4d00067405876">zvec_add_lintr_t</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a76270730b6abe0f204b4d00067405876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496aa94aa5e19712f24c27986c852791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a496aa94aa5e19712f24c27986c852791">zvec_sub_lintr_t</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a496aa94aa5e19712f24c27986c852791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6a4735c34fdf12777db136e0d611d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a9c6a4735c34fdf12777db136e0d611d2">zvec_lintr_ct</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a9c6a4735c34fdf12777db136e0d611d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08bcbcf9dc2f5757a90dc8efa40f16ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a08bcbcf9dc2f5757a90dc8efa40f16ce">zvec_add_lintr_ct</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a08bcbcf9dc2f5757a90dc8efa40f16ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7b60c849c039a15597843a58343f30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a4f7b60c849c039a15597843a58343f30">zvec_sub_lintr_ct</a> (int m, int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *A, int LDA, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a4f7b60c849c039a15597843a58343f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e86074c5176525a2c650166fc62eb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#af6e86074c5176525a2c650166fc62eb8">zvec_neg</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:af6e86074c5176525a2c650166fc62eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cdf603c18ff047e9a6222ed379f3d18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a1cdf603c18ff047e9a6222ed379f3d18">zvec_scale</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:a1cdf603c18ff047e9a6222ed379f3d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb81b9d3d22ddf02e0ee58eb3635747"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a0cb81b9d3d22ddf02e0ee58eb3635747">zvec_scale_d</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, double a)</td></tr>
+<tr class="separator:a0cb81b9d3d22ddf02e0ee58eb3635747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae466c9d63fb476d54433c7478c7fe896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#ae466c9d63fb476d54433c7478c7fe896">zvec_scale_neg</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:ae466c9d63fb476d54433c7478c7fe896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad78910afae6951f901c921f7c02ec731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#ad78910afae6951f901c921f7c02ec731">zvec_scale_div</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> a)</td></tr>
+<tr class="separator:ad78910afae6951f901c921f7c02ec731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cbdaf84e91ca4b44611082944a54b63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a4cbdaf84e91ca4b44611082944a54b63">zvec_normalize</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a4cbdaf84e91ca4b44611082944a54b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabef7582a09bd696c8db49be73de9cdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aabef7582a09bd696c8db49be73de9cdd">zvec_normalize_sgn</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:aabef7582a09bd696c8db49be73de9cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a848a9c745581eec8cc927698c35ffa64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a848a9c745581eec8cc927698c35ffa64">zvec_orthogonalize</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a848a9c745581eec8cc927698c35ffa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a734bc3a541fd6607de11a55f42e29a2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a734bc3a541fd6607de11a55f42e29a2e">zvec_swap</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:a734bc3a541fd6607de11a55f42e29a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d38a8eb12fdc4072b43ccfe753908f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a26d38a8eb12fdc4072b43ccfe753908f">zvec_dot</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:a26d38a8eb12fdc4072b43ccfe753908f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93694d65f4bd43ba1b7254ba90eb0d07"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a93694d65f4bd43ba1b7254ba90eb0d07">zvec_dcos_abs</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:a93694d65f4bd43ba1b7254ba90eb0d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dfd451756d4e5d59bd144466493bd12"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a7dfd451756d4e5d59bd144466493bd12">zvec_angle</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:a7dfd451756d4e5d59bd144466493bd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d16adca2f4bef0eaf969a7b74a532f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#ad1d16adca2f4bef0eaf969a7b74a532f">zvec_angle_deg</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:ad1d16adca2f4bef0eaf969a7b74a532f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0400e16473a80be6d48b73d20831f6e1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a0400e16473a80be6d48b73d20831f6e1">zvec_dist_norm1</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:a0400e16473a80be6d48b73d20831f6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c48404ffba95efb2f046fb060c4ae5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aa7c48404ffba95efb2f046fb060c4ae5">zvec_dist_norm_max</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:aa7c48404ffba95efb2f046fb060c4ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300587248726072789b1d57abef79482"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a300587248726072789b1d57abef79482">zvec_real</a> (int n, double *y, <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a300587248726072789b1d57abef79482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67eaeba5ad5f9c197fed756cf52a8e1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a67eaeba5ad5f9c197fed756cf52a8e1a">zvec_abs_sub</a> (int n, double *z, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const <a class="el" href="structdcomplex.html">dcomplex</a> *y)</td></tr>
+<tr class="separator:a67eaeba5ad5f9c197fed756cf52a8e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309127114c31a5ae511868c4bf5cc7c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a309127114c31a5ae511868c4bf5cc7c9">zvec_abs_sub_scalar</a> (int n, double *z, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, <a class="el" href="structdcomplex.html">dcomplex</a> y)</td></tr>
+<tr class="separator:a309127114c31a5ae511868c4bf5cc7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24032f8aba7131a98e4d152655367ed1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a24032f8aba7131a98e4d152655367ed1">zvec_norm1</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a24032f8aba7131a98e4d152655367ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7323f7ed243ab7a029b632a4bdb1a0c3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a7323f7ed243ab7a029b632a4bdb1a0c3">zvec_norm2</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a7323f7ed243ab7a029b632a4bdb1a0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2522911beec81d3d4b1dadea8c5dbc5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aa2522911beec81d3d4b1dadea8c5dbc5">zvec_norm_max</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:aa2522911beec81d3d4b1dadea8c5dbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3e3c1bcac5a3413b4648bc5d75deb5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#abc3e3c1bcac5a3413b4648bc5d75deb5">zvec_sum_pow2_abs</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:abc3e3c1bcac5a3413b4648bc5d75deb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3181bd2158aca1266a9cc22be1b878fc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a3181bd2158aca1266a9cc22be1b878fc">zvec_max_abs</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a3181bd2158aca1266a9cc22be1b878fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead494d1984b76976cbd98bf161f2e35"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aead494d1984b76976cbd98bf161f2e35">zvec_min_abs</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:aead494d1984b76976cbd98bf161f2e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85cfecaf6a9f188814d4eefe0123d2f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a85cfecaf6a9f188814d4eefe0123d2f1">zvec_max_abs_index</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, int *I)</td></tr>
+<tr class="separator:a85cfecaf6a9f188814d4eefe0123d2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71fbb7bbbfa11899e25d7e1e333f649a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a71fbb7bbbfa11899e25d7e1e333f649a">zvec_min_abs_index</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, int *I)</td></tr>
+<tr class="separator:a71fbb7bbbfa11899e25d7e1e333f649a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b3758665842879a2cc506f11d4b4fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a70b3758665842879a2cc506f11d4b4fb">zvec_max</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a70b3758665842879a2cc506f11d4b4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0b286dfd0f91cf518a3efb50056359"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aab0b286dfd0f91cf518a3efb50056359">zvec_min</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:aab0b286dfd0f91cf518a3efb50056359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40a21460ece272dbd686462670e9b678"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a40a21460ece272dbd686462670e9b678">zvec_sum</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:a40a21460ece272dbd686462670e9b678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac50dcf5fc6d823d6fd4aa629c197321"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#aac50dcf5fc6d823d6fd4aa629c197321">zvec_average</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x)</td></tr>
+<tr class="separator:aac50dcf5fc6d823d6fd4aa629c197321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20c8f781c4bc1b2f97d56e5056f05cd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a20c8f781c4bc1b2f97d56e5056f05cd8">zvec_print</a> (int n, const <a class="el" href="structdcomplex.html">dcomplex</a> *x, const char *name, const char *format, int digits)</td></tr>
+<tr class="separator:a20c8f781c4bc1b2f97d56e5056f05cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616e829671a01e8c45801b0ced0ae13a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a616e829671a01e8c45801b0ced0ae13a">zvec_save</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, int offset, char *fmt,...)</td></tr>
+<tr class="separator:a616e829671a01e8c45801b0ced0ae13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdaddd7cdaa7ba5eb99330e9479eb307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#abdaddd7cdaa7ba5eb99330e9479eb307">zvec_save_cplane</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, char *fmt,...)</td></tr>
+<tr class="separator:abdaddd7cdaa7ba5eb99330e9479eb307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5daef32cc4e85eacad0350e143933936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a5daef32cc4e85eacad0350e143933936">zvec_save_cplane_label</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, int offset, int *label, char *fmt,...)</td></tr>
+<tr class="separator:a5daef32cc4e85eacad0350e143933936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0528be9c1333b97a9ac60432e4a8d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a3d0528be9c1333b97a9ac60432e4a8d7">zvec_bin_save</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *x, char *fmt,...)</td></tr>
+<tr class="separator:a3d0528be9c1333b97a9ac60432e4a8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5dcd3e04d1524ea2473188efd0ab0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__zvec_8h.html#a9d5dcd3e04d1524ea2473188efd0ab0c">zvec_bin_load</a> (int *n, char *fmt,...)</td></tr>
+<tr class="separator:a9d5dcd3e04d1524ea2473188efd0ab0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a67eaeba5ad5f9c197fed756cf52a8e1a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_abs_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00535">535</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a309127114c31a5ae511868c4bf5cc7c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_abs_sub_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00542">542</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a991d8643f84463a1d48d3be0d42c3107"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00235">235</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a518cdfe7cea9ca04f8f7257c6a97b348"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_add_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00283">283</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a08bcbcf9dc2f5757a90dc8efa40f16ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_add_lintr_ct </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00352">352</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a76270730b6abe0f204b4d00067405876"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_add_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00317">317</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aef5c747d6fac9b2b5d3442d8d6fbc552"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_add_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00217">217</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5db8f25b784db18b89dd1aded7ec78b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_add_scaled </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00253">253</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aebadbab9ea8d2a7b1691dae56d00caf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a>* zvec_allocate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7dfd451756d4e5d59bd144466493bd12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_angle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00493">493</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1d16adca2f4bef0eaf969a7b74a532f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_angle_deg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00503">503</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aac50dcf5fc6d823d6fd4aa629c197321"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a> zvec_average </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d5dcd3e04d1524ea2473188efd0ab0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a>* zvec_bin_load </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00799">799</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d0528be9c1333b97a9ac60432e4a8d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_bin_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00786">786</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7608dbd4095de068d5b7224332d5356"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_copy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00181">181</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2e35250b43deae6b8072b0b6a117288"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_copy_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00188">188</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f3a63d3f4fdbe6d2e8d5f88b3cd7278"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_copy_dd </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x_i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00197">197</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aba977d6f3416ca675ec0bc60ed7bdb6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_copy_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00206">206</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a93694d65f4bd43ba1b7254ba90eb0d07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_dcos_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00480">480</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0400e16473a80be6d48b73d20831f6e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_dist_norm1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00509">509</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7c48404ffba95efb2f046fb060c4ae5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_dist_norm_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00519">519</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a26d38a8eb12fdc4072b43ccfe753908f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a> zvec_dot </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00467">467</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0690af5781bb79f0e45ac889e36e1868"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a>* zvec_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a925d91fb616134e37dd45ca1fee36ae9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_grid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aeee17ec0333baeb59ac3429415cb8588"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00271">271</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c6a4735c34fdf12777db136e0d611d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_lintr_ct </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00339">339</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5371f4f010227e9a0d68a9a5a7dd909e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00305">305</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a70b3758665842879a2cc506f11d4b4fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a> zvec_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00678">678</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3181bd2158aca1266a9cc22be1b878fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_max_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00604">604</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a85cfecaf6a9f188814d4eefe0123d2f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_max_abs_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00638">638</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aab0b286dfd0f91cf518a3efb50056359"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a> zvec_min </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00690">690</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aead494d1984b76976cbd98bf161f2e35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_min_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00619">619</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a71fbb7bbbfa11899e25d7e1e333f649a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_min_abs_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00657">657</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af6e86074c5176525a2c650166fc62eb8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_neg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00374">374</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a24032f8aba7131a98e4d152655367ed1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_norm1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00552">552</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7323f7ed243ab7a029b632a4bdb1a0c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_norm2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00563">563</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2522911beec81d3d4b1dadea8c5dbc5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_norm_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00575">575</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4cbdaf84e91ca4b44611082944a54b63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_normalize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00421">421</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aabef7582a09bd696c8db49be73de9cdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_normalize_sgn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00429">429</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a49714268228bb6b5cdd8d3a90495ed4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_ones </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a848a9c745581eec8cc927698c35ffa64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_orthogonalize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00445">445</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a20c8f781c4bc1b2f97d56e5056f05cd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_print </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00726">726</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ebdd4eb3d04700001d78588ad877cba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_quick_sort </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00144">144</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a306fab902c5791ef0d5755b4ea7eafd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_rand </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00083">83</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a300587248726072789b1d57abef79482"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_real </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00105">105</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a24054693afe669def5ee7b983e7a2f05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_reverse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00091">91</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a616e829671a01e8c45801b0ced0ae13a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_save </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00746">746</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abdaddd7cdaa7ba5eb99330e9479eb307"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_save_cplane </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00760">760</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5daef32cc4e85eacad0350e143933936"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_save_cplane_label </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00772">772</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1cdf603c18ff047e9a6222ed379f3d18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_scale </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00384">384</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cb81b9d3d22ddf02e0ee58eb3635747"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_scale_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00395">395</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad78910afae6951f901c921f7c02ec731"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_scale_div </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00413">413</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae466c9d63fb476d54433c7478c7fe896"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_scale_neg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00404">404</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a05866bcf83db082ce59e848464e8fb90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_set </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acdbffc66ab75b4033264f3621e4767d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_set_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a33eb1c8eff34ee250967a4d4c203e10c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_set_dd </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a_i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adbee97c5207064b68f9e0a78309a6211"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sort </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00137">137</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4392963d77ef8dacd5255247589677c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sort_index </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>X</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00167">167</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c810d7eba6557380137971a33daaf12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00244">244</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a40334b74047738ab14ec00850370027e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sub_lintr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00294">294</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f7b60c849c039a15597843a58343f30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sub_lintr_ct </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00363">363</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a496aa94aa5e19712f24c27986c852791"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sub_lintr_t </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00328">328</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6bb5b97709798ffe015edd61202d4a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sub_scalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00226">226</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a2f71192d1b2b2dfb5acc37da4c9393"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_sub_scaled </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00262">262</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a40a21460ece272dbd686462670e9b678"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdcomplex.html">dcomplex</a> zvec_sum </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00703">703</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abc3e3c1bcac5a3413b4648bc5d75deb5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double zvec_sum_pow2_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00590">590</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a734bc3a541fd6607de11a55f42e29a2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_swap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00455">455</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aca338d2ca122ea2deb1874540645393f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_swap_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00114">114</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a525c0eb5fe529b4951d0209ccb9b8beb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_swap_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00123">123</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="abdc97d8ddb27ea32cf3a523ec8920852"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_unit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00069">69</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8bd903f7f0e8257ac3c6f994a19c32d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_zeros </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="zvec_8c_source.html">zvec.c</a> の <a class="el" href="zvec_8c_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__zvec_8h.html">is_zvec.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分47秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

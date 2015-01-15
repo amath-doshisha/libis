@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_csolve_newton.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>大域各種</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('is__csolve__newton_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">is_csolve_newton.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="is__csolve__newton_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ISYS_CSOLVE_NEWTON_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ISYS_CSOLVE_NEWTON_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&lt;<a class="code" href="is__cmulti_8h.html">is_cmulti.h</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// F=F(x)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#ac71ccc785cc5a633af6937b8ca02d575">csolve_func_residual</a>(<span class="keywordtype">int</span> m, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *norm, <a class="code" href="structcmulti__struct.html">cmulti</a> **F, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structfunc__struct.html">func_t</a> *fF);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// satandard</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a94c5f2a2487321fd442a7d210dcbfb50">csolve_newton</a>(<span class="keywordtype">int</span> m, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structfunc__struct.html">func_t</a> *fF, <span class="keywordtype">int</span> step_max, <span class="keywordtype">int</span> debug);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// adaptive</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//int csolve_newton_adap(int m, cmulti **x, func_t *fF, rmulti *eps, int nmax, int debug);</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a43f6a11d9d10099e6d2b98a7c3e5b3d6">csolve_newton_adjust</a>(<span class="keywordtype">int</span> m, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structfunc__struct.html">func_t</a> *fF, <a class="code" href="structcmulti__struct.html">cmulti</a> **xt, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eps, <span class="keywordtype">int</span> nmax, <span class="keywordtype">double</span> mu, <span class="keywordtype">int</span> l, <span class="keywordtype">int</span> kappa, <span class="keywordtype">int</span> debug);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#a9cd99340cb6f50b038646b5252ac3a2c">csolve_newton_beta_by_recur</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **beta);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#ad2c6e8411268916149bd7500fc6092df">csolve_newton_beta_from_mu</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **beta, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **mu, <span class="keywordtype">int</span> debug);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a51163eb8a6c8e5089454b4b381b1c874">csolve_newton_condition_conv</a>(<span class="keywordtype">int</span> m, <a class="code" href="structcmulti__struct.html">cmulti</a> **x0, <a class="code" href="structcmulti__struct.html">cmulti</a> **x1, <a class="code" href="structcmulti__struct.html">cmulti</a> **x2, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta); <span class="comment">// ||x2-x1||/||x1-x0||&lt;=1/(2*beta)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a63e39a6e20dfcbd2d63300921f2b414d">csolve_newton_condition_done</a>(<span class="keywordtype">int</span> m, <a class="code" href="structcmulti__struct.html">cmulti</a> **x0, <a class="code" href="structcmulti__struct.html">cmulti</a> **x1, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eps); <span class="comment">// 2*||x1-x0||&lt;=eps</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#aa2a298b4bca532033f987214c4c55caa">csolve_newton_gamma</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *mu);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#a33bf98a09d5f9df13164ae66b97d77b7">csolve_newton_theta</a>(<span class="keywordtype">int</span> n, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **theta, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta_min, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **mu, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **beta);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#aeb330d1a0d1d671d15e5b031a7f920c1">csolve_newton_theta_estimate</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta_est, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta_min);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a2d9bab11ae3f41d5a495c62e58e2356c">csolve_newton_prec_from_eta</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta0, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta1, <span class="keywordtype">int</span> gamma_exp, <span class="keywordtype">int</span> kappa, <span class="keywordtype">int</span> tau);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a194ffaf995182df6bed264dcbb8b9339">csolve_newton_prec_from_mu</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *mu0, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta0, <span class="keywordtype">int</span> gamma_exp, <span class="keywordtype">int</span> kappa, <span class="keywordtype">int</span> tau);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a81e3a6f85b499c47c2f33bd64137b48b">csolve_newton_prec_from_beta</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta0, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta0, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta1, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *theta0, <span class="keywordtype">int</span> gamma_exp, <span class="keywordtype">int</span> kappa, <span class="keywordtype">int</span> tau);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#a2fd6452397c942a1ce5c43240086001b">csolve_newton_e_border</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *border, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *eta, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *beta, <span class="keywordtype">int</span> gamma_exp); <span class="comment">// gamma*eta_{n}/(8*beta_{n})</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#ac7541fb4fd50264ee5434d571748b1ed">csolve_newton_emax</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *border, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> kappa, <span class="keywordtype">int</span> tau); <span class="comment">// 2^(-b+tau+kappa)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#af3c2621c0237991f63a0cc34be74d386">csolve_newton_e_norm</a>(<a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *e_norm, <span class="keywordtype">int</span> m, <a class="code" href="structcmulti__struct.html">cmulti</a> **y0, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structfunc__struct.html">func_t</a> *fF, <a class="code" href="structfunc__struct.html">func_t</a> *fJ, <span class="keywordtype">int</span> prec);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__csolve__newton_8h.html#a689126805910f14134927d0f297f4599">csolve_newton_map</a>(<span class="keywordtype">int</span> m, <a class="code" href="structcmulti__struct.html">cmulti</a> **y, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structfunc__struct.html">func_t</a> *fF, <a class="code" href="structfunc__struct.html">func_t</a> *fJ);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// krawczyk</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__csolve__newton_8h.html#a05b655a17336a2c466306ccc5dffc9e9">csolve_krawczyk</a>(<span class="keywordtype">int</span> m, <a class="code" href="structcmulti__struct.html">cmulti</a> **e, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structfunc__struct.html">func_t</a> *fF, <span class="keywordtype">int</span> debug);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="is__csolve__newton_8h_html_aeb330d1a0d1d671d15e5b031a7f920c1"><div class="ttname"><a href="is__csolve__newton_8h.html#aeb330d1a0d1d671d15e5b031a7f920c1">csolve_newton_theta_estimate</a></div><div class="ttdeci">void csolve_newton_theta_estimate(rmulti *theta_est, rmulti *theta_min)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00401">csolve_newton.c:401</a></div></div>
+<div class="ttc" id="is__cmulti_8h_html"><div class="ttname"><a href="is__cmulti_8h.html">is_cmulti.h</a></div><div class="ttdoc">多倍長精度複素数型cmultiに関する宣言 </div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a689126805910f14134927d0f297f4599"><div class="ttname"><a href="is__csolve__newton_8h.html#a689126805910f14134927d0f297f4599">csolve_newton_map</a></div><div class="ttdeci">void csolve_newton_map(int m, cmulti **y, cmulti **x, func_t *fF, func_t *fJ)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00281">csolve_newton.c:281</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_aa2a298b4bca532033f987214c4c55caa"><div class="ttname"><a href="is__csolve__newton_8h.html#aa2a298b4bca532033f987214c4c55caa">csolve_newton_gamma</a></div><div class="ttdeci">int csolve_newton_gamma(rmulti *beta, rmulti *mu)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00412">csolve_newton.c:412</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a94c5f2a2487321fd442a7d210dcbfb50"><div class="ttname"><a href="is__csolve__newton_8h.html#a94c5f2a2487321fd442a7d210dcbfb50">csolve_newton</a></div><div class="ttdeci">int csolve_newton(int m, cmulti **x, func_t *fF, int step_max, int debug)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00551">csolve_newton.c:551</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a43f6a11d9d10099e6d2b98a7c3e5b3d6"><div class="ttname"><a href="is__csolve__newton_8h.html#a43f6a11d9d10099e6d2b98a7c3e5b3d6">csolve_newton_adjust</a></div><div class="ttdeci">int csolve_newton_adjust(int m, cmulti **x, func_t *fF, cmulti **xt, rmulti *eps, int nmax, double mu, int l, int kappa, int debug)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00032">csolve_newton.c:32</a></div></div>
+<div class="ttc" id="structcmulti__struct_html"><div class="ttname"><a href="structcmulti__struct.html">cmulti_struct</a></div><div class="ttdoc">多倍長精度複素数構造体 </div><div class="ttdef"><b>Definition:</b> <a href="is__cmulti_8h_source.html#l00016">is_cmulti.h:16</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_af3c2621c0237991f63a0cc34be74d386"><div class="ttname"><a href="is__csolve__newton_8h.html#af3c2621c0237991f63a0cc34be74d386">csolve_newton_e_norm</a></div><div class="ttdeci">void csolve_newton_e_norm(rmulti *e_norm, int m, cmulti **y0, cmulti **x, func_t *fF, func_t *fJ, int prec)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00304">csolve_newton.c:304</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_ac71ccc785cc5a633af6937b8ca02d575"><div class="ttname"><a href="is__csolve__newton_8h.html#ac71ccc785cc5a633af6937b8ca02d575">csolve_func_residual</a></div><div class="ttdeci">void csolve_func_residual(int m, rmulti *norm, cmulti **F, cmulti **x, func_t *fF)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00525">csolve_newton.c:525</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a9cd99340cb6f50b038646b5252ac3a2c"><div class="ttname"><a href="is__csolve__newton_8h.html#a9cd99340cb6f50b038646b5252ac3a2c">csolve_newton_beta_by_recur</a></div><div class="ttdeci">void csolve_newton_beta_by_recur(int n, rmulti **beta)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00472">csolve_newton.c:472</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_ac7541fb4fd50264ee5434d571748b1ed"><div class="ttname"><a href="is__csolve__newton_8h.html#ac7541fb4fd50264ee5434d571748b1ed">csolve_newton_emax</a></div><div class="ttdeci">void csolve_newton_emax(rmulti *border, int b, int kappa, int tau)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00348">csolve_newton.c:348</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a81e3a6f85b499c47c2f33bd64137b48b"><div class="ttname"><a href="is__csolve__newton_8h.html#a81e3a6f85b499c47c2f33bd64137b48b">csolve_newton_prec_from_beta</a></div><div class="ttdeci">int csolve_newton_prec_from_beta(rmulti *eta0, rmulti *beta0, rmulti *beta1, rmulti *theta0, int gamma_exp, int kappa, int tau)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00357">csolve_newton.c:357</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a05b655a17336a2c466306ccc5dffc9e9"><div class="ttname"><a href="is__csolve__newton_8h.html#a05b655a17336a2c466306ccc5dffc9e9">csolve_krawczyk</a></div><div class="ttdeci">int csolve_krawczyk(int m, cmulti **e, cmulti **x, func_t *fF, int debug)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00636">csolve_newton.c:636</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a51163eb8a6c8e5089454b4b381b1c874"><div class="ttname"><a href="is__csolve__newton_8h.html#a51163eb8a6c8e5089454b4b381b1c874">csolve_newton_condition_conv</a></div><div class="ttdeci">int csolve_newton_condition_conv(int m, cmulti **x0, cmulti **x1, cmulti **x2, rmulti *beta)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00448">csolve_newton.c:448</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_ad2c6e8411268916149bd7500fc6092df"><div class="ttname"><a href="is__csolve__newton_8h.html#ad2c6e8411268916149bd7500fc6092df">csolve_newton_beta_from_mu</a></div><div class="ttdeci">int csolve_newton_beta_from_mu(int n, rmulti **beta, rmulti **mu, int debug)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00481">csolve_newton.c:481</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a33bf98a09d5f9df13164ae66b97d77b7"><div class="ttname"><a href="is__csolve__newton_8h.html#a33bf98a09d5f9df13164ae66b97d77b7">csolve_newton_theta</a></div><div class="ttdeci">void csolve_newton_theta(int n, rmulti **theta, rmulti *theta_min, rmulti **mu, rmulti **beta)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00392">csolve_newton.c:392</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a2d9bab11ae3f41d5a495c62e58e2356c"><div class="ttname"><a href="is__csolve__newton_8h.html#a2d9bab11ae3f41d5a495c62e58e2356c">csolve_newton_prec_from_eta</a></div><div class="ttdeci">int csolve_newton_prec_from_eta(rmulti *eta0, rmulti *eta1, int gamma_exp, int kappa, int tau)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00369">csolve_newton.c:369</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a2fd6452397c942a1ce5c43240086001b"><div class="ttname"><a href="is__csolve__newton_8h.html#a2fd6452397c942a1ce5c43240086001b">csolve_newton_e_border</a></div><div class="ttdeci">void csolve_newton_e_border(rmulti *border, rmulti *eta, rmulti *beta, int gamma_exp)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00336">csolve_newton.c:336</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aba54dd3cab4536c79ad313a91eb71b66"><div class="ttname"><a href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a></div><div class="ttdeci">__mpfr_struct rmulti</div><div class="ttdoc">多倍長精度実数構造体の宣言． </div><div class="ttdef"><b>Definition:</b> <a href="is__rmulti_8h_source.html#l00016">is_rmulti.h:16</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a63e39a6e20dfcbd2d63300921f2b414d"><div class="ttname"><a href="is__csolve__newton_8h.html#a63e39a6e20dfcbd2d63300921f2b414d">csolve_newton_condition_done</a></div><div class="ttdeci">int csolve_newton_condition_done(int m, cmulti **x0, cmulti **x1, rmulti *eps)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00428">csolve_newton.c:428</a></div></div>
+<div class="ttc" id="structfunc__struct_html"><div class="ttname"><a href="structfunc__struct.html">func_struct</a></div><div class="ttdef"><b>Definition:</b> <a href="is__func_8h_source.html#l00056">is_func.h:56</a></div></div>
+<div class="ttc" id="is__csolve__newton_8h_html_a194ffaf995182df6bed264dcbb8b9339"><div class="ttname"><a href="is__csolve__newton_8h.html#a194ffaf995182df6bed264dcbb8b9339">csolve_newton_prec_from_mu</a></div><div class="ttdeci">int csolve_newton_prec_from_mu(rmulti *mu0, rmulti *eta0, int gamma_exp, int kappa, int tau)</div><div class="ttdef"><b>Definition:</b> <a href="csolve__newton_8c_source.html#l00378">csolve_newton.c:378</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__csolve__newton_8h.html">is_csolve_newton.h</a></li>
+    <li class="footer">2015年01月16日(金) 00時37分45秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>
