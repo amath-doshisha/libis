@@ -1,6 +1,8 @@
 # libis
 iSys Library.
-This contains the functions using MPFR library, multi precision floating point arithmetic. For examples, linear equation solver, eigenvalues solve, machine interval operations, etc...
+This contains the functions using MPFR library, multi precision floating
+point arithmetic. For examples, linear equation solver, eigenvalues
+solver, machine interval operations, etc...
 
 1. Install the latest version of GMP Library from https://gmplib.org.
 2. Install the latest version of The GNU MPFR Library from http://www.mpfr.org.
