@@ -49,6 +49,7 @@ cmulti **cmat_bin_load(int *m, int *n, char* fmt, ...);
 void cmat_set_nan(int m, int n, cmulti **A, int LDA);
 int cmat_set_z(int m, int n, cmulti **B, int LDB, const dcomplex *A, int LDA);
 int cmat_set_d(int m, int n, cmulti **B, int LDB, const double *A, int LDA);
+int cmat_set_dd(int m, int n, cmulti **B, int LDB, const double *Ar, int LDAr, const double *Ai, int LDAi);
 int cmat_set_all_z(int m, int n, cmulti **A, int LDA, dcomplex a);
 int cmat_set_all_dd(int m, int n, cmulti **A, int LDA, double a_r, double a_i);
 int cmat_set_all_d(int m, int n, cmulti **A, int LDA, double a);

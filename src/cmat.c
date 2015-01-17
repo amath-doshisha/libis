@@ -519,6 +519,20 @@ int cmat_set_d(int m, int n, cmulti **B, int LDB, const double *A, int LDA)
 }
 
 /**
+ @brief cmulti型の行列の値を倍精度実数から設定.
+*/
+int cmat_set_dd(int m, int n, cmulti **B, int LDB, const double *Ar, int LDAr, const double *Ai, int LDAi)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cset_dd(MAT(B,i,j,LDB),MAT(Ar,i,j,LDAr),MAT(Ai,i,j,LDAi));
+    }
+  }
+  return e;
+}
+
+/**
  @brief cmulti型の行列の値を倍精度複素数から設定.
 */
 int cmat_set_all_z(int m, int n, cmulti **A, int LDA, dcomplex a)
