@@ -699,6 +699,28 @@ void dvec_print(int n, const double *x, const char *name, const char *f, int dig
 
 ///////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ @brief double型のベクトルの読み込み.
+*/
+void dvec_load(int n, double *x, char* fmt, ...)
+{
+  int i;
+  char fname[FILE_NAME_LENGTH_MAX];
+  va_list argp;
+  FILE *fid;
+  // file name
+  va_start(argp,fmt);
+  vsprintf(fname,fmt,argp);
+  // open file
+  if((fid=fopen(fname,"r"))==0){ ERROR_AT; printf("Cant't open file: %s\n",fname); exit(0); }
+  // real
+  for(i=0;i<n;i++){ if(fscanf(fid,"%lf",&x[i])==EOF){ ERROR_EXIT("Error in dvec_load(), fscanf(), fname=%s\n",fname); } }
+  // close
+  fclose(fid);
+}
+
 void dvec_save(int n, double *x, int offset, char* fmt, ...)
 {
   int i;

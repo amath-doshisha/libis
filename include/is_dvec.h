@@ -163,6 +163,7 @@ double dvec_min(int n, const double *x);
  * input and output
  */
 void dvec_print(int n, const double *x, const char *name, const char *format, int digits);
+void dvec_load(int n, double *x, char* fmt, ...);
 void dvec_save(int n, double *x, int offset, char* fmt, ...);
 void dvec_save2(int n, double *x, double *y, char* fmt, ...);
 void dvec_save_log2_abs(int n, double *x, int offset, char* fmt, ...);
