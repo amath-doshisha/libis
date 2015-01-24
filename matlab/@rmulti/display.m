@@ -1,3 +1,6 @@
 function display(obj)
-disp(rmulti_double(obj.data));
+disp(' ');
+disp([inputname(1),' = '])
+disp(' ');
+disp(rmulti_data(53,'one','double',obj.data));
 end

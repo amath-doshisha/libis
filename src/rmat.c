@@ -1138,9 +1138,9 @@ int rmat_div(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti **B,
 }
 
 /**
- @brief rmulti型の行列の要素ごととスカラーの割り算 C=A/b.
+ @brief rmulti型の行列の要素ごととスカラーの割り算 C=A./b.
 */
-int rmat_div_r(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti *b)
+int rmat_div_r2(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti *b)
 {
   int i,j,e=0;
   for(j=0; j<n; j++){
@@ -1152,9 +1152,23 @@ int rmat_div_r(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti *b
 }
 
 /**
- @brief rmulti型の行列の要素ごととスカラーの割り算 C=A/b.
+ @brief rmulti型の行列の要素ごととスカラーの割り算 C=a./B.
 */
-int rmat_div_d(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, double b)
+int rmat_div_r1(int m, int n, rmulti **C, int LDC, rmulti *a, rmulti **B, int LDB)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=rdiv(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の行列の要素ごととスカラーの割り算 C=A./b.
+*/
+int rmat_div_d2(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, double b)
 {
   int i,j,e=0;
   for(j=0; j<n; j++){

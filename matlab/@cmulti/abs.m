@@ -1,3 +1,2 @@
 function y=abs(x)
-y=cmulti;
-y.data=cmulti_one('abs',x.data);
+y=rmulti(-1,cmulti_data(get_prec,'one','abs',x.data));

@@ -6,6 +6,7 @@
 
 // QR method for computing eigenvalues of the Hessenberg-type matrix
 void reig_hqr(int n, cmulti **lambda, rmulti **A, int LDA, int debug);
+void reig_hqr_mt(int m, int n, rmulti **B, int LDB, cmulti **lambda, rmulti **A, int LDA, int debug);
 
 // private functions of reig_hqr
 void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug);

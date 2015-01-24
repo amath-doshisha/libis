@@ -90,10 +90,10 @@ func_t *func_vec_sub(func_t *f1, func_t *f2)
 func_t *func_mat_add(func_t *f1, func_t *f2)
 {
   func_t *f=NULL;
-  if     (func_is(f1,"rmat") && func_is(f2,"rmat") && FRR(f1)==FRR(f2) && FRC(f1)==FRC(f2)){ f=func_rmat(FRR(f1),FRC(f1)); rmat_add  (FRR(f),FRC(f),FRM(f),FRD(f),FRM(f1),FRD(f1),FRM(f2),FRD(f2)); }
-  else if(func_is(f1,"rmat") && func_is(f2,"cmat") && FRR(f1)==FCR(f2) && FRC(f1)==FCC(f2)){ f=func_cmat(FRR(f1),FRC(f1)); cmat_add_r(FCR(f),FCC(f),FCM(f),FCD(f),FCM(f2),FCD(f2),FRM(f1),FRD(f1)); }
-  else if(func_is(f1,"cmat") && func_is(f2,"rmat") && FCR(f1)==FRR(f2) && FCC(f1)==FRC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_add_r(FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FRM(f2),FRD(f2)); }
-  else if(func_is(f1,"cmat") && func_is(f2,"cmat") && FCR(f1)==FCR(f2) && FCC(f1)==FCC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_add  (FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FCM(f2),FCD(f2)); }
+  if     (func_is(f1,"rmat") && func_is(f2,"rmat") && FRR(f1)==FRR(f2) && FRC(f1)==FRC(f2)){ f=func_rmat(FRR(f1),FRC(f1)); rmat_add     (FRR(f),FRC(f),FRM(f),FRD(f),FRM(f1),FRD(f1),FRM(f2),FRD(f2)); }
+  else if(func_is(f1,"rmat") && func_is(f2,"cmat") && FRR(f1)==FCR(f2) && FRC(f1)==FCC(f2)){ f=func_cmat(FRR(f1),FRC(f1)); cmat_add_rmat(FCR(f),FCC(f),FCM(f),FCD(f),FCM(f2),FCD(f2),FRM(f1),FRD(f1)); }
+  else if(func_is(f1,"cmat") && func_is(f2,"rmat") && FCR(f1)==FRR(f2) && FCC(f1)==FRC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_add_rmat(FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FRM(f2),FRD(f2)); }
+  else if(func_is(f1,"cmat") && func_is(f2,"cmat") && FCR(f1)==FCR(f2) && FCC(f1)==FCC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_add     (FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FCM(f2),FCD(f2)); }
   else { FUNC_ERROR_ARG2("func_mat_add",f1,f2); }
   f1=func_del(f1);
   f2=func_del(f2);
@@ -103,10 +103,10 @@ func_t *func_mat_add(func_t *f1, func_t *f2)
 func_t *func_mat_sub(func_t *f1, func_t *f2)
 {
   func_t *f=NULL;
-  if     (func_is(f1,"rmat") && func_is(f2,"rmat") && FRR(f1)==FRR(f2) && FRC(f1)==FRC(f2)){ f=func_rmat(FRR(f1),FRC(f1)); rmat_sub   (FRR(f),FRC(f),FRM(f),FRD(f),FRM(f1),FRD(f1),FRM(f2),FRD(f2)); }
-  else if(func_is(f1,"rmat") && func_is(f2,"cmat") && FRR(f1)==FCR(f2) && FRC(f1)==FCC(f2)){ f=func_cmat(FRR(f1),FRC(f1)); cmat_sub_r1(FCR(f),FCC(f),FCM(f),FCD(f),FRM(f1),FRD(f1),FCM(f2),FCD(f2)); }
-  else if(func_is(f1,"cmat") && func_is(f2,"rmat") && FCR(f1)==FRR(f2) && FCC(f1)==FRC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_sub_r2(FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FRM(f2),FRD(f2)); }
-  else if(func_is(f1,"cmat") && func_is(f2,"cmat") && FCR(f1)==FCR(f2) && FCC(f1)==FCC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_sub   (FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FCM(f2),FCD(f2)); }
+  if     (func_is(f1,"rmat") && func_is(f2,"rmat") && FRR(f1)==FRR(f2) && FRC(f1)==FRC(f2)){ f=func_rmat(FRR(f1),FRC(f1)); rmat_sub      (FRR(f),FRC(f),FRM(f),FRD(f),FRM(f1),FRD(f1),FRM(f2),FRD(f2)); }
+  else if(func_is(f1,"rmat") && func_is(f2,"cmat") && FRR(f1)==FCR(f2) && FRC(f1)==FCC(f2)){ f=func_cmat(FRR(f1),FRC(f1)); cmat_sub_rmat1(FCR(f),FCC(f),FCM(f),FCD(f),FRM(f1),FRD(f1),FCM(f2),FCD(f2)); }
+  else if(func_is(f1,"cmat") && func_is(f2,"rmat") && FCR(f1)==FRR(f2) && FCC(f1)==FRC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_sub_rmat2(FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FRM(f2),FRD(f2)); }
+  else if(func_is(f1,"cmat") && func_is(f2,"cmat") && FCR(f1)==FCR(f2) && FCC(f1)==FCC(f2)){ f=func_cmat(FCR(f1),FCC(f1)); cmat_sub      (FCR(f),FCC(f),FCM(f),FCD(f),FCM(f1),FCD(f1),FCM(f2),FCD(f2)); }
   else { FUNC_ERROR_ARG2("func_mat_sub",f1,f2); }
   f1=func_del(f1);
   f2=func_del(f2);

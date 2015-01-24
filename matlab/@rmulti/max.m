@@ -1,3 +1,2 @@
-function y=max(x)
-y=rmulti;
-y.data=rmulti_one('max',x.data);
+function B=max(A)
+B=rmulti(1,'max',A);

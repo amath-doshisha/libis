@@ -6,5 +6,5 @@
 
 // QR method for computing eigenvalues of the Hessenberg-type matrix
 void ceig_hqr(int n, cmulti **lambda, cmulti **A, int LDA, int debug);
-
+void ceig_hqr_mt(int m, int n, cmulti **B, int LDB, cmulti **lambda, cmulti **A, int LDA, int debug);
 #endif

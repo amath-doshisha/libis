@@ -52,6 +52,40 @@ void reig_hqr(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 
 /** @} */
 
+/** @name 固有値計算に関する関数 */
+/** @{ */
+
+/**
+ @brief   Hessenberg型行列に前処理をした後にQR法で固有値を計算.
+ @param[in]  A      固有値計算をする(n,n)型行列.
+ @param[in]  n      行列サイズ.
+ @param[in]  LDA    Aの第1次元.
+ @param[in]  debug  デバッグ.
+ @param[out] B      QR法の相似変換後の行列.
+ @param[out] lambda 計算された固有値を返す.
+ */
+void reig_hqr_mt(int m, int n, rmulti **B, int LDB, cmulti **lambda, rmulti **A, int LDA, int debug)
+{
+  int prec=53;
+  // allocate
+  prec=cvec_get_prec_max(n,lambda);
+  if(debug>=3){ printf("[%s] input matrix:\n",NAME_HQR); rmat_print(m,n,A,LDA,"A=","f",2); }
+  // convert to Hessenberg-type matrix
+  if(debug>=1){ printf("[%s] converting to Hessenberg-type:\n",NAME_HQR); }
+  if(debug>=3){ rmat_print(m,n,B,LDB,"A=","f",2); }
+  rhsnbrg_simtr(n,B,LDB,A,LDA);
+  // compute eigenvalues
+  if(debug>=1){ printf("[%s] computing eigenvalues:\n",NAME_HQR); }
+  reig_hqr_main(n,lambda,B,LDB,debug);
+  // sort
+  cvec_sort(n,lambda,NULL);
+  cvec_reverse(n,lambda);
+  // done
+  if(debug>=3){ printf("[%s] done:\n",NAME_HQR); rmat_print(m,n,B,LDB,"A=","f",2); }
+}
+
+/** @} */
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /** @name 固有値計算に関する関数（ユーザが直接呼び出してはいけない関数） */

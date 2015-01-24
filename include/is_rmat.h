@@ -106,8 +106,9 @@ int rmat_cols_max_abs_sub_rvec(rmulti **y, int m, int n, rmulti **A, int LDA, rm
 /*
  * oparations
  */
-int rmat_div(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti **B, int LDB);
-int rmat_div_r(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti *b);
+int rmat_div(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti **B, int LDB); // C=A./B
+int rmat_div_r1(int m, int n, rmulti **C, int LDC, rmulti *a, rmulti **B, int LDB);        // C=a./B
+int rmat_div_r2(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti *b);        // C=A./b
 int rmat_div_d(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, double b);
 int rmat_cols_normalize(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);
 int rmat_cols_normalize_sgn(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);

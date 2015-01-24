@@ -1,3 +1,2 @@
-function y=abs(x)
-y=rmulti;
-y.data=rmulti_one('abs',x.data);
+function B=abs(A)
+B=rmulti(1,'abs',A);

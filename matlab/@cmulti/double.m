@@ -1,3 +1,3 @@
 function value=double(obj)
-value=cmulti_double(obj.data);
+value=cmulti_data(53,'one','double',obj.data);
 end

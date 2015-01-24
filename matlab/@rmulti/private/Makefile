@@ -9,10 +9,11 @@ CFLAGS=-I../../../include -I/usr/local/include
 
 LIBS=-L../../../MACOSX -I/usr/local/lib -lis -lmpfr -lgmp
 
-SRCS=rmulti_allocate.c rmulti_double.c rmulti_two.c rmulti_one.c
+SRCS=rmulti_data.c
 
 all:
 	for x in $(SRCS) ; do \
+		echo $(MEX) $(CFLAGS) $(LIBS) $$x ; \
 		$(MEX) $(CFLAGS) $(LIBS) $$x ; \
 	done
 

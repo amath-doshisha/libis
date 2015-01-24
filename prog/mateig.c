@@ -11,6 +11,8 @@
 #define METHOD_CHPEIG_VERIFY "chpeig-verify"
 #define METHOD_RHQR          "rhqr"
 #define METHOD_CHQR          "chqr"
+#define METHOD_RHQR_MT       "rhqr-mt"
+#define METHOD_CHQR_MT       "chqr-mt"
 //#define DEFAULT_PREC       1024
 #define DEFAULT_PREC         53
 #define KRAWCZYK_PREC_RATIO  2
@@ -58,11 +60,13 @@ int main(int argc, char *argv[])
   FILE *fid=NULL;
   strings *path=NULL;
   char *in_fname=NULL,*init_fname=NULL,mode_init='Q',mode='?';
-  char *out_fname_log=NULL,*out_fname_val=NULL,*out_fname_vec=NULL,*out_fname_val_e=NULL,*out_fname_vec_e=NULL,*out_dir=NULL;
+  char *out_fname_log=NULL,*out_fname_val=NULL,*out_fname_vec=NULL,*out_fname_mat=NULL,*out_fname_val_e=NULL,*out_fname_vec_e=NULL,*out_dir=NULL;
   char format[]="e",method[METHOD_NAME_LENGTH+1];
   int n=0,k=0,debug=2,i,mX=0,nX=0,mA=0,nA=0,prec=DEFAULT_PREC,autoname=0,digits=6,kmode=1,kprec=-1,kret=1,prec_verify=-1;
   cmulti **cA=NULL,**cX=NULL,**cL=NULL,**cXe=NULL,**cLe=NULL;
   rmulti **rA=NULL,**rX=NULL,**rL=NULL,**rXe=NULL,**rLe=NULL,*rXe_max=NULL,*rXe_max_log2=NULL,*rLe_max=NULL,*rLe_max_log2=NULL,*Lmax=NULL;
+  cmulti **cB=NULL;
+  rmulti **rB=NULL;
   clock_t clock_start,clock_end;
   double time_hpeig=0,time_qr=0,time_ii=0,time_total=0,time_k=0;
 
@@ -74,6 +78,7 @@ int main(int argc, char *argv[])
   out_fname_val_e=char_new("",NULL);
   out_fname_vec=char_new("",NULL);
   out_fname_vec_e=char_new("",NULL);
+  out_fname_mat=char_new("",NULL);
   out_dir=char_new("",NULL);
   strcpy(method,METHOD_CHPEIG);
 
@@ -90,6 +95,8 @@ int main(int argc, char *argv[])
     else if(STR_EQ(argv[i],"-chpeig-verify") && i+1<argc){ strcpy(method,METHOD_CHPEIG_VERIFY); prec_verify=atoi(argv[++i]); }
     else if(STR_EQ(argv[i],"-rhqr"))                { strcpy(method,METHOD_RHQR); }
     else if(STR_EQ(argv[i],"-chqr"))                { strcpy(method,METHOD_CHQR); }
+    else if(STR_EQ(argv[i],"-rhqr-mt"))             { strcpy(method,METHOD_RHQR_MT); }
+    else if(STR_EQ(argv[i],"-chqr-mt"))             { strcpy(method,METHOD_CHQR_MT); }
     else if(STR_EQ(argv[i],"-prec") && i+1<argc)    { prec=atoi(argv[++i]); }
     else if(STR_EQ(argv[i],"-k-yes"))               { kmode=1; }
     else if(STR_EQ(argv[i],"-k-no"))                { kmode=0; }
@@ -122,7 +129,8 @@ int main(int argc, char *argv[])
   else if(char_eq(method,METHOD_RHPEIG))       { mode='r'; }
   else if(char_eq(method,METHOD_RHQR))         { mode='r'; }
   else if(char_eq(method,METHOD_CHQR))         { mode='c'; }
-  else if(char_eq(method,METHOD_CHQR))         { mode='c'; }
+  else if(char_eq(method,METHOD_RHQR_MT))      { mode='r'; }
+  else if(char_eq(method,METHOD_CHQR_MT))      { mode='c'; }
   else{ ERROR_AT; exit(0); }
 
  // output
@@ -173,7 +181,7 @@ int main(int argc, char *argv[])
   }
 
   // initail vectors
-  if(char_eq(method,METHOD_RHQR) || char_eq(method,METHOD_CHQR)){ mode_init='Q'; }
+  if(char_eq(method,METHOD_RHQR) || char_eq(method,METHOD_CHQR) || char_eq(method,METHOD_RHQR_MT) || char_eq(method,METHOD_RHQR_MT)){ mode_init='Q'; }
   if(mode_init=='R'){
     if(debug>=1){
       printf("Initial_Vectors: random\n");
@@ -213,7 +221,8 @@ int main(int argc, char *argv[])
       // computing eigenvalues by QR-method
       cL=cvec_allocate_prec(n,prec);
       clock_start=clock();
-      reig_hqr(n,cL,rA,mA,debug-1);
+      if(char_eq(method,METHOD_RHQR))        { reig_hqr(n,cL,rA,mA,debug-1); }
+      else if(char_eq(method,METHOD_RHQR_MT)){ rB=rmat_allocate_prec(mA,nA,prec); reig_hqr_mt(mA,nA,rB,mA,cL,rA,mA,debug-1); }
       clock_end=clock();
       time_qr=(double)(clock_end-clock_start)/CLOCKS_PER_SEC;
       time_total+=time_qr;
@@ -234,7 +243,8 @@ int main(int argc, char *argv[])
       // computing eigenvalues by QR-method
       cL=cvec_allocate_prec(n,prec);
       clock_start=clock();
-      ceig_hqr(n,cL,cA,mA,debug-1);
+      if(char_eq(method,METHOD_CHQR))        { ceig_hqr(n,cL,cA,mA,debug-1); }
+      else if(char_eq(method,METHOD_CHQR_MT)){ cB=cmat_allocate_prec(mA,nA,prec); ceig_hqr_mt(mA,nA,cB,mA,cL,cA,mA,debug-1); }
       clock_end=clock();
       time_qr=(double)(clock_end-clock_start)/CLOCKS_PER_SEC;
       time_total+=time_qr;
@@ -278,6 +288,8 @@ int main(int argc, char *argv[])
   }
   else if(char_eq(method,METHOD_RHQR) && rA!=NULL && rX!=NULL && rL!=NULL){ k=n; }
   else if(char_eq(method,METHOD_CHQR) && cA!=NULL && cX!=NULL && cL!=NULL){ k=n; }
+  else if(char_eq(method,METHOD_RHQR_MT) && rA!=NULL && rX!=NULL && rL!=NULL){ k=n; }
+  else if(char_eq(method,METHOD_CHQR_MT) && cA!=NULL && cX!=NULL && cL!=NULL){ k=n; }
   else{ ERROR_AT; exit(0); }
   clock_end=clock();
   time_hpeig=(double)(clock_end-clock_start)/CLOCKS_PER_SEC;
@@ -291,6 +303,7 @@ int main(int argc, char *argv[])
     // set filename
     out_fname_val=char_renew_sprintf(out_fname_val,NULL,"%s_%cvec{%dbits|%s|eigval}.%s",path->str[1],mode,prec,method,BIN_SUFFIX);
     out_fname_vec=char_renew_sprintf(out_fname_vec,NULL,"%s_%cmat{%dbits|%s|eigvec}.%s",path->str[1],mode,prec,method,BIN_SUFFIX);
+    if(char_eq(method,METHOD_RHQR_MT) || char_eq(method,METHOD_CHQR_MT)){ out_fname_mat=char_renew_sprintf(out_fname_mat,NULL,"%s_%cmat{%dbits|%s|QRmat}.%s",path->str[1],mode,prec,method,BIN_SUFFIX); }
     path=strings_del(path);
   }
 
@@ -299,6 +312,10 @@ int main(int argc, char *argv[])
     if(fid!=NULL){ fprintf(fid,"Output_File_Eigenvalues:  %s%s\n",out_dir,(strlen(out_fname_val)>0?out_fname_val:"NULL")); }
     printf("Output_File_Eigenvectors: %s%s\n",out_dir,(strlen(out_fname_vec)>0?out_fname_vec:"NULL"));
     if(fid!=NULL){ fprintf(fid,"Output_File_Eigenvectors: %s%s\n",out_dir,(strlen(out_fname_vec)>0?out_fname_vec:"NULL")); }
+    if(char_eq(method,METHOD_RHQR_MT) || char_eq(method,METHOD_CHQR_MT)){
+      printf("Output_File_Matrix: %s%s\n",out_dir,(strlen(out_fname_mat)>0?out_fname_mat:"NULL"));
+      if(fid!=NULL){ fprintf(fid,"Output_File_Matrix: %s%s\n",out_dir,(strlen(out_fname_mat)>0?out_fname_mat:"NULL")); }    
+    }
   }
 
   // output results
@@ -331,6 +348,16 @@ int main(int argc, char *argv[])
     else if(cL!=NULL){ cvec_print(k,cL,NULL,format,digits); }
     else { ERROR_AT; exit(0); }
   }
+  if(debug>=3 && char_eq(method,METHOD_RHQR_MT)){
+    printf("Matrix after QR:\n");
+    if     (rB!=NULL){ rmat_print(n,k,rB,n,NULL,format,digits); }
+    else { ERROR_AT; exit(0); }
+  }
+  if(debug>=3 && char_eq(method,METHOD_CHQR_MT)){
+    printf("Matrix after QR:\n");
+    if(cB!=NULL){ cmat_print(n,k,cB,n,NULL,format,digits); }
+    else { ERROR_AT; exit(0); }
+  }
   if(strlen(out_fname_val)>0){
     if     (rL!=NULL){ rvec_bin_save(n,rL,"%s%s",out_dir,out_fname_val); }
     else if(cL!=NULL){ cvec_bin_save(n,cL,"%s%s",out_dir,out_fname_val); }
@@ -342,6 +369,12 @@ int main(int argc, char *argv[])
     else if(cX!=NULL){ cmat_bin_save(n,n,cX,n,"%s%s",out_dir,out_fname_vec); }
     else { ERROR_AT; exit(0); }
     if(debug>=1 && fid!=NULL){ fprintf(stderr,"saved: %s%s\n",out_dir,out_fname_vec); }
+  }
+  if(strlen(out_fname_mat)>0){
+    if     (rB!=NULL){ rmat_bin_save(n,n,rB,n,"%s%s",out_dir,out_fname_mat); }
+    else if(cB!=NULL){ cmat_bin_save(n,n,cB,n,"%s%s",out_dir,out_fname_mat); }
+    else { ERROR_AT; exit(0); }
+    if(debug>=1 && fid!=NULL){ fprintf(stderr,"saved: %s%s\n",out_dir,out_fname_mat); }
   }
 
   // error bounds
@@ -448,7 +481,9 @@ int main(int argc, char *argv[])
   // done
   if(fid!=NULL){ fclose(fid); fid=NULL; }
   cA=cmat_free(mA,nA,cA);
+  cB=cmat_free(mA,nA,cB);
   rA=rmat_free(mA,nA,rA);
+  rB=rmat_free(mA,nA,rB);
   cX=cmat_free(nX,nX,cX);
   rX=rmat_free(nX,nX,rX);
   cXe=cmat_free(nX,nX,cXe);

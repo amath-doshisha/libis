@@ -969,12 +969,26 @@ int cmat_add(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B,
 /**
  @brief cmulti型の行列の足し算 C=A+B.
 */
-int cmat_add_r(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
+int cmat_add_rmat(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
 {
   int i,j,e=0;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
       e+=cadd_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の足し算 C=A+b.
+*/
+int cmat_add_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cadd(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
   return e;
@@ -997,7 +1011,7 @@ int cmat_sub(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B,
 /**
  @brief cmulti型の行列の引き算 C=A-B.
 */
-int cmat_sub_r1(int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
+int cmat_sub_rmat1(int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
 {
   int i,j,e=0;
   for(j=0; j<n; j++){
@@ -1011,7 +1025,7 @@ int cmat_sub_r1(int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti *
 /**
  @brief cmulti型の行列の引き算 C=A-B.
 */
-int cmat_sub_r2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
+int cmat_sub_rmat2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
 {
   int i,j,e=0;
   for(j=0; j<n; j++){
@@ -1021,6 +1035,36 @@ int cmat_sub_r2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti *
   }
   return e;
 }
+
+
+/**
+ @brief cmulti型の行列の引き算 C=a-B.
+*/
+int cmat_sub_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=csub(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の引き算 C=A-b.
+*/
+int cmat_sub_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=csub(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+    }
+  }
+  return e;
+}
+
 
 /**
  @brief cmulti型の行列の要素ごとの掛け算 C=A.*B
@@ -1091,6 +1135,50 @@ int cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b)
   }
   return e;
 }
+
+
+/**
+ @brief cmulti型の行列の要素ごとの割り算 C=A./B
+*/
+int cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の要素ごとの割り算 C=a./B
+*/
+int cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cdiv(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の要素ごとの割り算 C=A./b
+*/
+int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+    }
+  }
+  return e;
+}
+
 
 /**
  @brief cmulti型の行列の積 C=A*B.

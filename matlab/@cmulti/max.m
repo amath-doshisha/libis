@@ -1,3 +1,2 @@
-function y=max(x)
-y=cmulti;
-y.data=cmulti_one('max',x.data);
+function B=max(A)
+B=cmulti(1,'max',A);
