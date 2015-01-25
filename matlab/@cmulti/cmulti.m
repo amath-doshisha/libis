@@ -35,7 +35,7 @@ classdef cmulti
                     x=arg3;
                 end
                 if isa(arg4,'double')
-                    y=rmulti(arg4);
+                    y=cmulti(arg4);
                 elseif isa(arg4,'rmulti')
                     y=cmulti(arg4);
                 else

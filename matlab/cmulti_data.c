@@ -1,9 +1,9 @@
 #include "mex.h"
 #include <string.h>
 #include <isys.h>
-#include"../../@rmulti/private/mxGetDataLong.c"
-#include"../../@rmulti/private/mx2rmat.c"
-#include"../../@rmulti/private/rmat2mx.c"
+#include"./mxGetDataLong.c"
+#include"./mx2rmat.c"
+#include"./rmat2mx.c"
 #include"./cmat2mx.c"
 #include"./mx2cmat.c"
 
@@ -286,6 +286,31 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     // free
     cX=cmat_free(LDX,nX,cX);
     cY=cmat_free(LDY,nY,cY);
+  }else if(char_eq(mode,"one") && char_eq(cmd,"hpeig")){
+    /*
+     * [P,D]=hpeig(A)
+     */ 
+    if(nrhs>4){ ERROR("MATLAB:cmulti_data:maxrhs","Too many input arguments."); }
+    if(nlhs>2){ ERROR("MATLAB:cmulti_data:maxlhs","Too many output arguments."); }
+    if(nlhs<2){ ERROR("MATLAB:cmulti_data:minlhs","Too few output arguments."); }
+    if(!mxIsStruct(prhs[3])){ ERROR("MATLAB:cmulti_data","The arg4 should be Struct."); }
+    // allocate
+    m=mxGetM(prhs[3]); n=mxGetN(prhs[3]);
+    if(m!=n){ ERROR("MATLAB:cmulti_data","[P,D]=hpeig(A). The A should be square."); }
+    LDA=n; cA=cmat_allocate_prec(LDA,n,prec); mx2cmat(m,n,cA,LDA,prhs[3]);
+    LDX=n; cX=cmat_allocate_prec(LDX,n,prec);
+    LDY=n; cY=cmat_allocate_prec(LDY,1,prec);
+    LDZ=n; cZ=cmat_allocate_prec(LDZ,n,prec);
+    chpeig(n,cX,LDX,cY,cA,LDA,0);
+    cmat_diag_copy_cvec(n,n,cZ,LDZ,cY);
+    // done
+    plhs[0]=cmat2mx(n,n,cX,LDX);
+    plhs[1]=cmat2mx(n,n,cZ,LDZ);
+    // free
+    cA=cmat_free(LDA,n,cA);
+    cX=cmat_free(LDX,n,cX);
+    cY=cmat_free(LDY,1,cY);
+    cZ=cmat_free(LDZ,n,cZ);
   }else if(char_eq(mode,"two") && char_eq(cmd,"plus")){
     /*
      * z=x+y
