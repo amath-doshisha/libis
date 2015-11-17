@@ -149,12 +149,6 @@ int cmat_func_list2(int m, int n, cmulti **A, int LDA, func_t *f, int l, cmulti 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-cmulti **cmat3_allocate(int m, int n, int l);
-cmulti **cmat3_free(int m, int n, int l, cmulti **A);
-
-
 int cmat_angle_deg_list(rmulti **angle, int m, int n, cmulti **A, int LDA);
 
 #endif

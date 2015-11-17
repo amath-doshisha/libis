@@ -11,6 +11,7 @@ SRCS = HashTest.c \
 	test_dsolve.c test_zsolve.c test_rsolve.c test_csolve.c \
 	test_deig.c test_zeig.c test_reig.c \
 	test_rmulti.c test_bigint.c \
+	test_mat3.c \
 	test_strings.c \
 	test_func.c test_fvec.c test_gb.c \
 	test_cnewton.c
@@ -19,6 +20,7 @@ PROGS = HashTest \
 	test_dsolve test_zsolve test_rsolve test_csolve \
 	test_deig test_zeig test_reig \
 	test_rmulti test_bigint \
+	test_mat3 \
 	test_strings \
 	test_func test_fvec test_gb \
 	test_cnewton
@@ -50,6 +52,9 @@ test_reig:	test_reig.o
 	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
 
 test_rmulti:	test_rmulti.o
+	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
+
+test_mat3:	test_mat3.o
 	$(CC) -o $@ $< $(CFLAGS) $(LIBS)
 
 test_bigint:	test_bigint.o

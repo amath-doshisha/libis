@@ -165,7 +165,6 @@ void rmat_swap(int m, int n, rmulti **A, int LDA, rmulti **B, int LDB)
 /** @} */
 
 
-
 /////////////////////////////////////////////////////
 
 /** @name rmulti型の行列のメンバ変数に関する関数 */
@@ -582,7 +581,7 @@ int rmat_set_diag_d(int m, int n, rmulti **A, int LDA, double a, int offset)
 ////////////////////////////////////////////////////////////////////////
 
 
-/** @name rmulti型のベクトルの型変換に関する関数 */
+/** @name rmulti型の行列の型変換に関する関数 */
 /** @{ */
 
 /**
@@ -616,7 +615,7 @@ void rmat_get_z(int m, int n, dcomplex *B, int LDB, rmulti **A, int LDA)
 
 ////////////////////////////////////////////////////////////////////////
 
-/** @name rmulti型のベクトルの要素の配置に関する関数 */
+/** @name rmulti型の行列の要素の配置に関する関数 */
 /** @{ */
 
 
@@ -660,7 +659,7 @@ void rmat_rows_swap(int m, int n, rmulti **A, int LDA, int k, int l)
 
 ////////////////////////////////////////////////////////////////////////
 
-/** @name rmulti型のベクトルの自動精度調整モードが機能する関数 */
+/** @name rmulti型の行列の自動精度調整モードが機能する関数 */
 /** @{ */
 
 
@@ -1209,7 +1208,7 @@ int rmat_cols_normalize_sgn(int m, int n, rmulti **B, int LDB, rmulti **A, int L
 
 ////////////////////////////////////////////////////////////////////////
 
-/** @name rmulti型の値の比較に関する関数 */
+/** @name rmulti型の行列の要素の比較に関する関数 */
 /** @{ */
 
 /**

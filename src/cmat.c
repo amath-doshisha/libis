@@ -15,7 +15,7 @@
 
 /**
  @file  cmat.c
- @brief 多倍長精度実数型rmultiの行列に関する関数の定義
+ @brief 多倍長精度複素数型cmultiの行列に関する関数の定義
  @details cmulti型の関数に関する定義は@link cmulti.c@endlinkを参照のこと.
           cmulti型のベクトルの関数に関する定義は@link cvec.c@endlinkを参照のこと.
  */
@@ -657,7 +657,7 @@ int cmat_set_diag_d(int m, int n, cmulti **A, int LDA, double a, int offset)
 
 ////////////////////////////////////////////////////////////////////////
 
-/** @name cmulti型のベクトルの型変換に関する関数 */
+/** @name cmulti型の行列の型変換に関する関数 */
 /** @{ */
 
 /**
@@ -691,7 +691,7 @@ void cmat_get_d(int m, int n, double *B, int LDB, cmulti **A, int LDA)
 
 ////////////////////////////////////////////////////////////////////////
 
-/** @name cmulti型のベクトルの要素の配置に関する関数 */
+/** @name cmulti型の行列の要素の配置に関する関数 */
 /** @{ */
 
 /**
@@ -754,7 +754,7 @@ void cmat_cols_rotate_left(int m, int n, cmulti **A, int LDA)
 
 ////////////////////////////////////////////////////////////////////////
 
-/** @name rmulti型のベクトルの自動精度調整モードが機能する関数 */
+/** @name cmulti型の行列の自動精度調整モードが機能する関数 */
 /** @{ */
 
 /**
@@ -1597,7 +1597,7 @@ int cmat_cols_max_abs_sub_cvec(rmulti **y, int m, int n, cmulti **A, int LDA, cm
 
 ////////////////////////////////////////////////////////////////////////
 
-/** @name cmulti型の値の比較に関する関数 */
+/** @name cmulti型の行列の要素の比較に関する関数 */
 /** @{ */
 
 /**
@@ -1642,43 +1642,12 @@ int cmat_func_list2(int m, int n, cmulti **A, int LDA, func_t *f, int l, cmulti 
   return e;
 }
 
-
 /** @} */
 
-///////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 /** @name 未処理 */
 /** @{ */
-
-cmulti **cmat3_allocate(int m, int n, int l)
-{
-  int i,j,k;
-  cmulti **A=NULL;
-  A=(cmulti**)malloc(sizeof(cmulti*)*m*n*l);
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	MAT3(A,i,j,k,m,n)=callocate();
-      }
-    }
-  }
-  return A;
-}
-
-cmulti **cmat3_free(int m, int n, int l, cmulti **A)
-{
-  int i,j,k;
-  if(A==NULL) return NULL;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	MAT3(A,i,j,k,m,n)=cfree(MAT3(A,i,j,k,m,n));
-      }
-    }
-  }
-  free(A);
-  return A=NULL;
-}
 
 int cmat_angle_deg_list(rmulti **angle, int m, int n, cmulti **A, int LDA)
 {
@@ -1690,5 +1659,7 @@ int cmat_angle_deg_list(rmulti **angle, int m, int n, cmulti **A, int LDA)
   }
   return e;
 }
+
+/** @} */
 
 //EOF

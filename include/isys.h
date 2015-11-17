@@ -37,6 +37,8 @@
 #include<is_cvec.h>
 #include<is_rmat.h>
 #include<is_cmat.h>
+#include<is_rmat3.h>
+#include<is_cmat3.h>
 #include<is_rsolve.h>
 #include<is_csolve.h>
 #include<is_rsolve_newton.h>

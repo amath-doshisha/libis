@@ -9,13 +9,13 @@
 typedef unsigned long int ulong;
 
 #define MAT(A,I,J,LDA) ((A)[(I)+(J)*(LDA)])
+#define MAT3(A,I,J,K,LDA1,LDA2) ((A)[(I)+(J)*(LDA1)+(K)*(LDA1)*(LDA2)])
 #define COL(A,J,LDA)   ((A)[(J)*(LDA)])
 #define MAX2(X,Y) (((X)>(Y))?(X):(Y))
 #define MIN2(X,Y) (((X)<(Y))?(X):(Y))
 #define STR_EQ(X,Y) (strcmp((X),(Y))==0)
 #define STR_EQ_N(X,Y,N) (strncmp((X),(Y),(N))==0)
 #define SWAP2(X,Y,T) { T a; a=(X); (X)=(Y); (Y)=a; }
-#define MAT3(A,I,J,K,LDA1,LDA2) ((A)[(I)+(J)*(LDA1)+(K)*(LDA1)*(LDA2)])
 #define ERROR_EXIT(S,I) { printf((S),(I)); exit(-1); }
 #define ERROR_AT { printf("Error in the function %s() at the %dth line in the file '%s'.\n", __func__, __LINE__, __FILE__); }
 #define NULL_EXC1(X){ if((X)==NULL) { printf("Null Exception occurs in the function %s() at the %dth line in the file '%s'.\n", __func__, __LINE__, __FILE__); exit(-1); } }

@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
   char *in_fname=NULL,*init_fname=NULL,mode_init='Q',mode='?';
   char *out_fname_log=NULL,*out_fname_val=NULL,*out_fname_vec=NULL,*out_fname_mat=NULL,*out_fname_val_e=NULL,*out_fname_vec_e=NULL,*out_dir=NULL;
   char format[]="e",method[METHOD_NAME_LENGTH+1];
-  int n=0,k=0,debug=2,i,mX=0,nX=0,mA=0,nA=0,prec=DEFAULT_PREC,autoname=0,digits=6,kmode=1,kprec=-1,kret=1,prec_verify=-1;
+  int n=0,k=0,debug=2,i,mX=0,nX=0,mA=0,nA=0,prec=DEFAULT_PREC,autoname=0,digits=6,kmode=1,kprec=-1,kret=1,prec_verify=128;
   cmulti **cA=NULL,**cX=NULL,**cL=NULL,**cXe=NULL,**cLe=NULL;
   rmulti **rA=NULL,**rX=NULL,**rL=NULL,**rXe=NULL,**rLe=NULL,*rXe_max=NULL,*rXe_max_log2=NULL,*rLe_max=NULL,*rLe_max_log2=NULL,*Lmax=NULL;
   cmulti **cB=NULL;
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
   out_fname_vec_e=char_new("",NULL);
   out_fname_mat=char_new("",NULL);
   out_dir=char_new("",NULL);
-  strcpy(method,METHOD_CHPEIG);
+  strcpy(method,METHOD_CHPEIG_VERIFY);
 
   // options
   i=1;
