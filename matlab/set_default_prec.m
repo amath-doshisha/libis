@@ -1,4 +1,4 @@
-function set_prec(prec)
+function set_default_prec(prec)
 global default_prec;
 if exist('default_prec','var')==0 || length(default_prec)~=1
     default_prec=64;

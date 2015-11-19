@@ -127,6 +127,88 @@ void cmat3_print(int m, int n, int l, cmulti **A, int LDA1, int LDA2, const char
 
 /** @name cmulti型の3次元配列の値の設定に関する関数 */
 
+/**
+ @brief cmulti型の3次元配列の値を倍精度浮動小数点数から設定.
+*/
+int cmat3_set_all_z(int m, int n, int l, cmulti **A, int LDA1, int LDA2, dcomplex a)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cset_z(MAT3(A,i,j,k,LDA1,LDA2),a);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値を倍精度浮動小数点数から設定.
+*/
+int cmat3_set_all_dd(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a_r, double a_i)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cset_dd(MAT3(A,i,j,k,LDA1,LDA2),a_r,a_i);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値を倍精度浮動小数点数から設定.
+*/
+int cmat3_set_all_d(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cset_d(MAT3(A,i,j,k,LDA1,LDA2),a);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値を零に設定.
+*/
+int cmat3_set_zeros(int m, int n, int l, cmulti **A, int LDA1, int LDA2)
+{
+  return cmat3_set_all_d(m,n,l,A,LDA1,LDA2,0);
+}
+
+/**
+ @brief cmulti型の3次元配列の値を1に設定.
+*/
+int cmat3_set_ones(int m, int n, int l, cmulti **A, int LDA1, int LDA2)
+{
+  return cmat3_set_all_d(m,n,l,A,LDA1,LDA2,1);
+}
+
+/**
+ @brief cmulti型の3次元配列の値を区間(b,a+b)の疑似乱数値を設定.
+*/
+void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a, double b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	cset_rand(MAT3(A,i,j,k,LDA1,LDA2));
+	cmul_d(MAT3(A,i,j,k,LDA1,LDA2),MAT3(A,i,j,k,LDA1,LDA2),a);
+	cadd_d(MAT3(A,i,j,k,LDA1,LDA2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+}
+
+
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////
@@ -147,6 +229,71 @@ void cmat3_print(int m, int n, int l, cmulti **A, int LDA1, int LDA2, const char
 
 /** @name cmulti型の3次元配列の自動精度調整モードが機能する関数 */
 /** @{ */
+
+/**
+ @brief cmulti型の3次元配列の値のコピー B=A
+*/
+int cmat3_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の符号反転 B=-A.
+*/
+int cmat3_neg(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cneg(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の足し算 C=A+B.
+*/
+int cmat3_add(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cadd(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の足し算 C=A+b.
+*/
+int cmat3_add_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cadd(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+
 
 /** @} */
 
