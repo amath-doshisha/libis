@@ -1,3 +1,4 @@
-function value=double(obj)
-value=multi('double',obj.data).data;
+%% y=double(x)
+function y=double(x)
+y=multi('double',x.data).data;
 end

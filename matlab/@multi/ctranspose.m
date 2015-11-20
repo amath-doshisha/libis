@@ -1,6 +1,6 @@
-%% y=-x
-function y=uminus(x)
-cmd='uminus';
+%% y=x'
+function y=ctranspose(x)
+cmd='ctranspose';
 if isa(x,'multi')
     y=multi(cmd,x.data);
 else
