@@ -13,6 +13,8 @@ mxArray *mxCreateStructMulti(multi *A)
   else if(_T(A)=='c'){ ret=mxCreateStructArray(3,dims,8,c_field_names); }
   else if(_T(A)=='R'){ ret=mxCreateStructArray(3,dims,8,R_field_names); }       
   else if(_T(A)=='C'){ ret=mxCreateStructArray(3,dims,16,C_field_names); }
+  else if(_T(A)=='d'){ ret=mxCreateNumericArray(3,dims,mxDOUBLE_CLASS,mxREAL); }
+  else if(_T(A)=='z'){ ret=mxCreateNumericArray(3,dims,mxDOUBLE_CLASS,mxCOMPLEX); }
   else if(_T(A)=='i'){ ret=mxCreateNumericArray(3,dims,mxINT32_CLASS,mxREAL); }
   else{	MATLAB_ERROR("mxCreateStructMulti: Unknown type."); }
   for(k=0; k<_L(A); k++){
@@ -32,6 +34,11 @@ mxArray *mxCreateStructMulti(multi *A)
 	  mxCreateStructMultiValue(ret,t,C_I(MAT3(_C0(A),i,j,k,_LD1(A),_LD2(A))),C0i_field_names);
 	  mxCreateStructMultiValue(ret,t,C_R(MAT3(_C1(A),i,j,k,_LD1(A),_LD2(A))),C1r_field_names);
 	  mxCreateStructMultiValue(ret,t,C_I(MAT3(_C1(A),i,j,k,_LD1(A),_LD2(A))),C1i_field_names);
+	}else if(_T(A)=='d'){
+	  mxGetPr(ret)[t]=MAT3(_D(A),i,j,k,_LD1(A),_LD2(A));
+	}else if(_T(A)=='z'){
+	  mxGetPr(ret)[t]=Z_R(MAT3(_Z(A),i,j,k,_LD1(A),_LD2(A)));
+	  mxGetPi(ret)[t]=Z_I(MAT3(_Z(A),i,j,k,_LD1(A),_LD2(A)));
 	}else if(_T(A)=='i'){
 	  ((int*)mxGetData(ret))[t]=MAT3(_I(A),i,j,k,_LD1(A),_LD2(A));
 	}else{

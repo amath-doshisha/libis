@@ -21,6 +21,8 @@
 #define _C(A)   ((cmulti**)(A->p0))
 #define _C0(A)  ((cmulti**)(A->p0))
 #define _C1(A)  ((cmulti**)(A->p1))
+#define _D(A)   ((double*)(A->p0))
+#define _Z(A)   ((dcomplex*)(A->p0))
 #define _I(A)   ((int*)(A->p0))
 
 typedef struct {
