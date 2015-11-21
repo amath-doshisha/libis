@@ -10,7 +10,5 @@ solver, machine interval operations, etc...
 4. cd src ; make ; make install
 5. Edit prog/Makefile.
 6. cd prog ; make 
-7. Edit matlab/@rmulti/private/Makefile
-8. cd matlab/@rmulti/private ; make
-9. Edit matlab/@cmulti/private/Makefile
-10. cd matlab/@cmulti/private ; make
+7. Edit matlab/@multi/Makefile
+8. cd matlab/@multi ; make
