@@ -6,6 +6,11 @@ int main()
   rmulti **A=NULL,**B=NULL,**C=NULL;
   cmulti **X=NULL;
 
+  printf("sizeof(char)=%d\n",(int)sizeof(char));
+  printf("sizeof(int)=%d\n",(int)sizeof(int));
+  printf("sizeof(long int)=%d\n",(int)sizeof(long int));
+  printf("sizeof(long long int)=%d\n",(int)sizeof(long long int));
+
   // init
   A=rmat3_allocate(LDA1,LDA2,L);
   B=rmat3_allocate(LDB1,LDB2,L);

@@ -68,6 +68,10 @@ int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /*
  * compare
  */
+// C=(A==B)
+void rmat3_eq(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=(A==b)
+void rmat3_eq_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
 
 /*
  * mapping

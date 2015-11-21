@@ -21,9 +21,10 @@
 #define _C(A)   ((cmulti**)(A->p0))
 #define _C0(A)  ((cmulti**)(A->p0))
 #define _C1(A)  ((cmulti**)(A->p1))
+#define _I(A)   ((int*)(A->p0))
 
 typedef struct {
-  char type;     // type='r' or 'c' or 'R' or 'C'
+  char type;     // type='r','c','R','C','i'
   int LD1,LD2;   // memory=(LD1,LD2,l)
   int M,N,L;     // size=(m,n,l), 
   void *p0,*p1;  // p0 or [p0,p1]
@@ -67,6 +68,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_copy.c"
 #include"./c/multi_uminus.c"
 #include"./c/multi_plus.c"
+#include"./c/multi_eq.c"
 
 /**
  * @breif メイン
@@ -87,6 +89,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"copy"))     { multi_copy     (nlhs,plhs,nrhs,prhs); } // y=x
   else if(STR_EQ(cmd,"uminus"))   { multi_uminus   (nlhs,plhs,nrhs,prhs); } // y=-x
   else if(STR_EQ(cmd,"plus"))     { multi_plus     (nlhs,plhs,nrhs,prhs); } // z=x+y
+  else if(STR_EQ(cmd,"eq"))       { multi_eq       (nlhs,plhs,nrhs,prhs); } // z=(x==y)
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");

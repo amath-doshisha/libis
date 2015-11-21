@@ -1,18 +1,37 @@
 clear all
 close all
 
-%% plus(r,r)
+%% eq
 A=multi([2 3; 4 5; -2 -3])
-B=multi([-1 2; 3 1; 1 2])
-A+B
+B=multi([2 -3; 4 -5; -2 3])
+C=multi([2+i 3; 4 5-i; -2*i -3])
+A==B
+A==4
+5==A
+C==A
+C==2+i
+C==4
+C==-2*i
+3==C
+5-i==C
+-3==C
 
-%% plus(c,c)
-A=multi([2+i 3-i; 4*i 5-i; -2*i -3+i])
-B=multi([-1+i 2-i; 3*i 1; 1+i 2-i])
-A+B
 
-
-
+% %% plus
+% A=multi([2 3; 4 5; -2 -3])
+% B=multi([2+i 3-i; 4*i 5-i; -2*i -3+i])
+% A+B
+% B+A
+% A+A
+% B+B
+% 1+A
+% i+A
+% 1+B
+% i+B
+% A+1
+% A+i
+% B+1
+% B+i
 
 %% neg, type='r'
 % A=multi([2 3; 4 5; -2 -3])

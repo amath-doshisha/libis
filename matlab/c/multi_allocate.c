@@ -13,6 +13,7 @@ multi *multi_allocate(char type, int m, int n, int l)
   else if(type=='c'){ A->p0=(void*)cmat3_allocate(_LD1(A),_LD2(A),_L(A)); A->p1=NULL;  }
   else if(type=='R'){ A->p0=(void*)rmat3_allocate(_LD1(A),_LD2(A),_L(A)); A->p1=(void*)rmat3_allocate(_LD1(A),_LD2(A),_L(A));  }
   else if(type=='C'){ A->p0=(void*)cmat3_allocate(_LD1(A),_LD2(A),_L(A)); A->p1=(void*)cmat3_allocate(_LD1(A),_LD2(A),_L(A));  }
+  else if(type=='i'){ A->p0=(void*) ivec_allocate(_LD1(A)*_LD2(A)*_L(A)); A->p1=NULL;  }
   else              { MATLAB_ERROR("multi_allocate: Unknow type."); }
   return A;
 }
