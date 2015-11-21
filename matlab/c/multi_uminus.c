@@ -5,9 +5,9 @@ void multi_uminus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   multi *x=NULL,*y=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
-  if(!(IS_STRT(nrhs,prhs,2))){ MATLAB_ERROR("multi_uminus: The arg2 should be Struct."); }
+  if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_uminus: The 1st-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[2]);
+  x=multi_allocate_mxArray(prhs[N0]);
   // allocate by default precision
   y=multi_allocate(_T(x),_M(x),_N(x),_L(x));
   // uminus

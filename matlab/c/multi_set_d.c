@@ -5,9 +5,9 @@ void multi_set_d(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   multi *x=NULL,*y=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
-  if(!(IS_DUBL(nrhs,prhs,2))){ MATLAB_ERROR("multi_set_d: The arg2 should be Double."); }
+  if(!(IS_DUBL(nrhs,prhs,N0))){ MATLAB_ERROR("multi_set_d: The 1st-arg should be Double."); }
   // allocate
-  x=multi_allocate_mxArray(prhs[2]);
+  x=multi_allocate_mxArray(prhs[N0]);
        if(_T(x)=='d'){ y=multi_allocate('r',_M(x),_N(x),_L(x)); }
   else if(_T(x)=='z'){ y=multi_allocate('c',_M(x),_N(x),_L(x)); }
   else               { MATLAB_ERROR("multi_set_d: Unkown type"); }

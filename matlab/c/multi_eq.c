@@ -5,11 +5,11 @@ void multi_eq(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   multi *x=NULL,*y=NULL,*z=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
-  if(!(IS_STRT(nrhs,prhs,2))){ MATLAB_ERROR("multi_eq: The arg2 should be Struct."); }
-  if(!(IS_STRT(nrhs,prhs,3))){ MATLAB_ERROR("multi_eq: The arg3 should be Struct."); }
+  if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_eq: The 1st-arg should be Struct."); }
+  if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_eq: The 2nd-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[2]);
-  y=multi_allocate_mxArray(prhs[3]);
+  x=multi_allocate_mxArray(prhs[N0]);
+  y=multi_allocate_mxArray(prhs[N0+1]);
   // operation
   if(_M(x)==_M(y) && _N(x)==_N(y) && _L(x)==_L(y)){  // In the case of same sizes
          if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('i',_M(x),_N(x),_L(x)); rmat3_eq      (_M(z),_N(z),_L(z),_I(z),_LD1(z),_LD2(z),_R(x),_LD1(x),_LD2(x),_R(y),_LD1(y),_LD2(y)); }

@@ -9,6 +9,7 @@
 #define IS_STRT(N,P,I)  ((N>I && mxIsStruct(P[I])))
 #define GET_DOUBLE(P)   ((double*)mxGetData(P))
 #define MATLAB_ERROR(S) (mexErrMsgIdAndTxt("MATLAB:multi_mex",S));
+#define N0 3
 
 #define _T(A)   (A->type)
 #define _M(A)   (A->M)
@@ -78,13 +79,17 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
  */
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  int prec=64;
+  int prec=64,ap_mode=0;
   char *cmd=NULL;
   if(!(IS_CHAR(nrhs,prhs,0))){ MATLAB_ERROR("mexFunction: The arg0 should be Char."); }
   if(!(IS_NUMR(nrhs,prhs,1))){ MATLAB_ERROR("mexFunction: The arg1 should be Double."); }
+  if(!(IS_NUMR(nrhs,prhs,2))){ MATLAB_ERROR("mexFunction: The arg2 should be Double."); }
   if(IS_CHAR(nrhs,prhs,0)){ cmd=mxArrayToString(prhs[0]); }
   if(IS_NUMR(nrhs,prhs,1)){ prec=GET_DOUBLE(prhs[1])[0]; }
-  set_default_prec(prec);  
+  if(IS_NUMR(nrhs,prhs,2)){ ap_mode=GET_DOUBLE(prhs[2])[0]; }
+  set_default_prec(prec);
+  set_auto_prec_mode(ap_mode);
+  //  mexPrintf("cmd=%s prec=%d ap_mode=%d\n",cmd,prec,ap_mode);  
        if(STR_EQ(cmd,"set_zeros")){ multi_set_zeros(nlhs,plhs,nrhs,prhs); } // x=zeros(M,N,L)
   else if(STR_EQ(cmd,"set_ones")) { multi_set_ones (nlhs,plhs,nrhs,prhs); } // x=ones(M,N,L)
   else if(STR_EQ(cmd,"set_d"))    { multi_set_d    (nlhs,plhs,nrhs,prhs); } // y=multi(x), where x is double
