@@ -51,7 +51,9 @@ close all
 
 %% zeros
 A=zeros(3,2,'multi')
+size(A)
 B=zeros([3,2,2],'multi')
+size(B)
 
 %% ones
 % A=ones(3,2,'multi')
