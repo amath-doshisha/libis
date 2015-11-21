@@ -50,7 +50,12 @@ multi(B)
 A=zeros(3,2,'multi')
 size(A)
 B=zeros([3,2,2],'multi')
-size(B)
+s=size(B)
+m=size(B,1)
+n=size(B,2)
+l=size(B,3)
+[m,n,l]=size(B)
+
 
 %% ones
 A=ones(3,2,'multi')
@@ -81,8 +86,62 @@ C_sign=get_sign(C)
 A_exp=get_exp(A)
 B_exp=get_exp(B)
 C_exp=get_exp(C)
-
-
-
 auto_prec_disabled;
+set_default_prec(64);
 
+%% subsref
+disp('=================== subsref ==================')
+dA=[2 3; 4 5; -2 -3]
+mA=multi(dA)
+
+dA(:,2)
+mA(:,2)
+dA(1:end,2)
+mA(1:end,2)
+dA(1:end-1,2)
+mA(1:end-1,2)
+dA(2,:)
+mA(2,:)
+dA(2,1:end)
+mA(2,1:end)
+dA(2,1:end-1)
+mA(2,1:end-1)
+dA(:)
+mA(:)
+dA(1:end)
+mA(1:end)
+dA(1:5)
+mA(1:5)
+dA(3:5)
+mA(3:5)
+
+dA=[2; 3; 4; 5; -2; -3]
+mA=multi(dA)
+dA(3:5)
+mA(3:5)
+
+dA=[2 3 4 5 -2 -3]
+mA=multi(dA)
+dA(3:5)
+mA(3:5)
+
+
+%B=multi([2+i 3*i; 4 5; -2 -3])
+% A(1,1)
+% A(1,2)
+% A(2,1)
+% A(2,2)
+% A(3,1)
+% A(3,2)
+% A(1,:)
+% A(1,1:end)
+% A(1,1:end-1)
+% %A(1,1:3)
+% A(:,1)
+% A(1:end,2)
+% A(1:end-1,2)
+% A(1,1,1)
+% A(3)
+% A(3:5)
+% A(:)
+% 

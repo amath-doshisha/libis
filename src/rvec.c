@@ -95,7 +95,7 @@ int rvec_round(int n, rmulti **x, int prec)
 }
 
 /**
- @brief   rmulti型のベクトルの値を複成.
+ @brief   rmulti型のベクトルの値を複成 y=x.
 */
 int rvec_clone(int n, rmulti **y, rmulti **x)
 {
@@ -105,7 +105,17 @@ int rvec_clone(int n, rmulti **y, rmulti **x)
 }
 
 /**
- @brief rmulti型のベクトルの値の交換.
+ @brief   rmulti型のベクトルの値を添字を指定して複成 y=x(I).
+*/
+int rvec_clone_index(int n, rmulti **y, rmulti **x, int *I)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=rclone(y[i],x[I[i]]); }
+  return e;
+}
+
+/**
+ @brief rmulti型のベクトルの値の交換 x<==>y.
 */
 void rvec_swap(int n, rmulti **x, rmulti **y)
 {

@@ -13,7 +13,10 @@
  * constructions and destruction
  */
 cmulti **cmat3_allocate(int LDA1, int LDA2, int l);
+cmulti **cmat3_allocate_clone_index(int LDA1, int LDA2, int l, cmulti **B, int LDB1, int LDB2, int *I, int *J, int *K);
 cmulti **cmat3_free(int LDA1, int LDA2, int l, cmulti **A);
+int cmat3_clone(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+int cmat3_clone_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K);
 
 /*
  * member variables

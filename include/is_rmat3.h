@@ -16,10 +16,11 @@
 rmulti **rmat3_allocate(int LDA1, int LDA2, int l);
 rmulti **rmat3_allocate_prec(int LDA1, int LDA2, int l, int prec);
 rmulti **rmat3_allocate_clone(int LDB1, int LDB2, int l, rmulti **B);
-rmulti **rmat3_allocate_clone_index(int LDB1, int LDB2, int l, rmulti **B, int *I, int *J, int *K);
+rmulti **rmat3_allocate_clone_index(int LDA1, int LDA2, int l, rmulti **B, int LDB1, int LDB2, int *I, int *J, int *K);
 rmulti **rmat3_free(int LDA1, int LDA2, int l, rmulti **A);
 int rmat3_round(int m, int n, int l, rmulti **A, int LDA1, int LDA2, int prec);
 int rmat3_clone(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
+int rmat3_clone_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K);
 void rmat3_swap(int m, int n, int l, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 
 /*

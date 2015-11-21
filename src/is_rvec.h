@@ -18,7 +18,8 @@ rmulti **rvec_allocate_prec(int n, int prec);
 rmulti **rvec_allocate_clone(int n, rmulti **y);
 rmulti **rvec_free(int n, rmulti **x);
 int rvec_round(int n, rmulti **x, int prec);
-int rvec_clone(int n, rmulti **y, rmulti **x);
+int rvec_clone(int n, rmulti **y, rmulti **x); // y=x
+int rvec_clone_index(int n, rmulti **y, rmulti **x, int *I); // y=x(I)
 void rvec_swap(int n, rmulti **x, rmulti **y); // x <=> y
 
 /*

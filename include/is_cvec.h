@@ -21,6 +21,7 @@ int cvec_round(int n, cmulti **x, int prec);
 int cvec_clone(int n, cmulti **y, cmulti **x);
 int cvec_clone_r(int n, cmulti **y, rmulti **x);
 int cvec_clone_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i);
+int cvec_clone_index(int n, cmulti **y, cmulti **x, int *I);
 void cvec_swap(int n, cmulti **x, cmulti **y);
 
 /*

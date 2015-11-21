@@ -53,6 +53,24 @@ cmulti **cmat3_allocate(int LDA1, int LDA2, int l)
 }
 
 /**
+ @brief cmulti型の3次元配列の複製を添字を指定して生成 A=B(I,J,K)．
+*/
+cmulti **cmat3_allocate_clone_index(int LDA1, int LDA2, int l, cmulti **B, int LDB1, int LDB2, int *I, int *J, int *K)
+{
+  int i,j,k;
+  cmulti **A=NULL;
+  A=(cmulti**)malloc(sizeof(cmulti*)*LDA1*LDA2*l);
+  for(k=0; k<l; k++){
+    for(j=0; j<LDA2; j++){
+      for(i=0; i<LDA1; i++){
+	MAT3(A,i,j,k,LDA1,LDA2)=callocate_clone(MAT3(B,I[i],J[j],K[k],LDB1,LDB2));
+      }
+    }
+  }
+  return A;
+}
+
+/**
  @brief cmulti型の3次元配列A(LDA1,LDA2,l)の終了処理.
 */
 cmulti **cmat3_free(int LDA1, int LDA2, int l, cmulti **A)
@@ -68,6 +86,38 @@ cmulti **cmat3_free(int LDA1, int LDA2, int l, cmulti **A)
   }
   free(A);
   return A=NULL;
+}
+
+/**
+ @brief cmulti型の3次元配列の値の複製 B=A
+*/
+int cmat3_clone(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値を添字を指定して複製 B=A(I,J,K)
+*/
+int cmat3_clone_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
+      }
+    }
+  }
+  return e;
 }
 
 /** @} */

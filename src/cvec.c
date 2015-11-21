@@ -115,6 +115,16 @@ int cvec_clone(int n, cmulti **y, cmulti **x)
 }
 
 /**
+ @brief cmulti型のベクトルの値を添字を指定して複成 y=x(I).
+*/
+int cvec_clone_index(int n, cmulti **y, cmulti **x, int *I)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=cclone(y[i],x[I[i]]); }
+  return e;
+}
+
+/**
  @brief cmulti型のベクトルの値をrmulti型のベクトルから複成 y=x.
 */
 int cvec_clone_r(int n, cmulti **y, rmulti **x)

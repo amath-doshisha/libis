@@ -87,12 +87,10 @@ rmulti **rmat3_allocate_clone(int LDB1, int LDB2, int l, rmulti **B)
 /**
  @brief rmulti型の3次元配列の複製を添字を指定して生成 A=B(I,J,K)．
 */
-rmulti **rmat3_allocate_clone_index(int LDB1, int LDB2, int l, rmulti **B, int *I, int *J, int *K)
+rmulti **rmat3_allocate_clone_index(int LDA1, int LDA2, int l, rmulti **B, int LDB1, int LDB2, int *I, int *J, int *K)
 {
-  int i,j,k,LDA1,LDA2;
+  int i,j,k;
   rmulti **A=NULL;
-  LDA1=LDB1;
-  LDA2=LDB2;
   A=(rmulti**)malloc(sizeof(rmulti*)*LDA1*LDA2*l);
   for(k=0; k<l; k++){
     for(j=0; j<LDA2; j++){
@@ -103,7 +101,6 @@ rmulti **rmat3_allocate_clone_index(int LDB1, int LDB2, int l, rmulti **B, int *
   }
   return A;
 }
-
 
 /**
  @brief rmulti型の3次元配列A(LDA1,LDA2,l)の終了処理.
@@ -151,6 +148,22 @@ int rmat3_clone(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A,
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
 	e+=rclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列を添字を指定して複成 B=A(I,J,K).
+*/
+int rmat3_clone_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
       }
     }
   }
