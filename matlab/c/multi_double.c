@@ -10,7 +10,7 @@ void multi_double(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,2))){ MATLAB_ERROR("multi_double: The arg2 should be Struct."); }
   A=multi_allocate_mxArray(prhs[2]);
-  dims[0]=_M(A);  dims[1]=_N(A);  dims[2]=_L(A);
+  dims[0]=_M(A);  dims[1]=_N(A);  dims[2]=_L(A);  
   if(_T(A)=='R' || _T(A)=='C'){ dims[1]*=2; }
   if(dims[2]==1){ ndim=2; }
        if(_T(A)=='r' || _T(A)=='R'){ plhs[0]=mxCreateNumericArray(ndim,dims,mxDOUBLE_CLASS,mxREAL); }

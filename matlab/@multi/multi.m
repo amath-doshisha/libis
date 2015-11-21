@@ -14,12 +14,22 @@ classdef multi
         end
     end
     
+    % initialize functions
     methods(Static=true)
         function A=zeros(varargin)
-            A=multi('set_zeros',varargin{1:end});
+            A=multi('set_zeros','r',varargin{1:end});
         end
+        
         function A=ones(varargin)
-            A=multi('set_ones',varargin{1:end});
+            A=multi('set_ones','r',varargin{1:end});
+        end
+        
+        function A=rand(varargin)
+            A=multi('set_rand','r',varargin{1:end});
+        end
+        
+        function A=eye(varargin)
+            A=multi('set_eye','r',varargin{1:end});
         end
     end
 end

@@ -18,8 +18,8 @@ multi *multi_allocate_mxArray(const mxArray *x)
     else              { type='d'; }
   }else{ MATLAB_ERROR("multi_allocate_mxArray: Unsupported type.");}
   // get size
-  m=mxGetM(x);
-  n=mxGetN(x);
+  if(mxGetNumberOfDimensions(x)>=1){ m=mxGetDimensions(x)[0]; }
+  if(mxGetNumberOfDimensions(x)>=2){ n=mxGetDimensions(x)[1]; }
   if(mxGetNumberOfDimensions(x)>=3){ l=mxGetDimensions(x)[2]; }
   if(mxGetNumberOfDimensions(x)>=4){ MATLAB_ERROR("multi_allocate_mxArray: Number of dimensions is too big."); }
   // allocate

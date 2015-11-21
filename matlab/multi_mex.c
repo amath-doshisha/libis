@@ -4,6 +4,7 @@
 
 #define IS_DUBL(N,P,I)  ((N>I && mxIsDouble(P[I])))
 #define IS_NUMR(N,P,I)  ((N>I && mxIsDouble(P[I]) && mxGetM(P[I])==1 && mxGetN(P[I])==1))
+#define IS_ROW(N,P,I)   ((N>I && mxIsDouble(P[I]) && mxGetM(P[I])==1 && mxGetN(P[I])>1 && (mxGetNumberOfDimensions(P[I])<=2 || (mxGetNumberOfDimensions(P[I])==3 && mxGetDimensions(P[I])[2]==1))))
 #define IS_CHAR(N,P,I)  ((N>I && mxIsChar(P[I])))
 #define IS_STRT(N,P,I)  ((N>I && mxIsStruct(P[I])))
 #define GET_DOUBLE(P)   ((double*)mxGetData(P))

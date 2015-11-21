@@ -1,20 +1,20 @@
 clear all
 close all
 
-%% eq
-A=multi([2 3; 4 5; -2 -3])
-B=multi([2 -3; 4 -5; -2 3])
-C=multi([2+i 3; 4 5-i; -2*i -3])
-A==B
-A==4
-5==A
-C==A
-C==2+i
-C==4
-C==-2*i
-3==C
-5-i==C
--3==C
+% %% eq
+% A=multi([2 3; 4 5; -2 -3])
+% B=multi([2 -3; 4 -5; -2 3])
+% C=multi([2+i 3; 4 5-i; -2*i -3])
+% A==B
+% A==4
+% 5==A
+% C==A
+% C==2+i
+% C==4
+% C==-2*i
+% 3==C
+% 5-i==C
+% -3==C
 
 
 % %% plus
@@ -50,25 +50,19 @@ C==-2*i
 % B=multi(A)
 
 %% zeros
-% Ar=multi.zeros('r',3,2)
-% Ac=multi.zeros('c',3,2)
-% AR=multi.zeros('R',3,2)
-% AC=multi.zeros('C',3,2)
+A=zeros(3,2,'multi')
+B=zeros([3,2,2],'multi')
 
 %% ones
-% Ar=multi.ones('r',3,2)
-% Ac=multi.ones('c',3,2)
-% AR=multi.ones('R',3,2)
-% AC=multi.ones('C',3,2)
+% A=ones(3,2,'multi')
+% B=ones([3,2,2],'multi')
+
+%% rand
+% A=rand(3,2,'multi')
+% B=rand([3,2,2],'multi')
 
 %% disp
-% disp(Ar);
-% disp(Ac);
-% disp(AR);
-% disp(AC);
+%disp(A);
 
 %% double
-% double(Ar)
-% double(Ac)
-% double(AR)
-% double(AC)
+%double(A)
