@@ -37,6 +37,8 @@ void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double 
 /*
  * casting
  */
+// B=dcomplexeA)
+void cmat3_get_z(int m, int n, int l, dcomplex *B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 
 /*
  * rearange elements

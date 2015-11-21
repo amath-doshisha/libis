@@ -216,6 +216,23 @@ void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double 
 /** @name cmulti型の3次元配列の型変換に関する関数 */
 /** @{ */
 
+/**
+ @brief rmulti型の3次元配列を倍精度型に変換 B=dcomplex(A).
+ */
+void cmat3_get_z(int m, int n, int l, dcomplex *B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(B,i,j,k,LDB1,LDB2)=cget_z(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return;
+}
+
+
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////

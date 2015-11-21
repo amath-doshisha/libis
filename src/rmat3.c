@@ -283,6 +283,24 @@ void rmat3_set_rand(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double 
 /** @name rmulti型の3次元配列の型変換に関する関数 */
 /** @{ */
 
+/**
+ @brief rmulti型の3次元配列を倍精度型に変換 B=double(A).
+ */
+void rmat3_get_d(int m, int n, int l, double *B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(B,i,j,k,LDB1,LDB2)=rget_d(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return;
+}
+
+
+
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////

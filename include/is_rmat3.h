@@ -42,6 +42,8 @@ void rmat3_set_rand(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double 
 /*
  * casting
  */
+// B=double(A)
+void rmat3_get_d(int m, int n, int l, double *B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 
 /*
  * rearange elements
