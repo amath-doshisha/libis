@@ -223,6 +223,22 @@ void rmat3_print(int m, int n, int l, rmulti **A, int LDA1, int LDA2, const char
 
 /** @name rmulti型の3次元配列の値の設定に関する関数 */
 
+/**
+ @brief rmulti型の3次元配列の値を倍精度実数から設定 B=rmulti(A).
+*/
+int rmat3_set_d(int m, int n, int l, rmulti **B, int LDB1, int LDB2, double *A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rset_d(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
 
 /**
  @brief rmulti型の3次元配列の値を倍精度浮動小数点数から設定.

@@ -128,6 +128,38 @@ void cmat3_print(int m, int n, int l, cmulti **A, int LDA1, int LDA2, const char
 /** @name cmulti型の3次元配列の値の設定に関する関数 */
 
 /**
+ @brief cmulti型の3次元配列の値を倍精度実数から設定 B=cmulti(A).
+*/
+int cmat3_set_z(int m, int n, int l, cmulti **B, int LDB1, int LDB2, dcomplex *A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cset_z(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値を倍精度実数から設定 B=cmulti(A).
+*/
+int cmat3_set_d(int m, int n, int l, cmulti **B, int LDB1, int LDB2, double *A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cset_d(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief cmulti型の3次元配列の値を倍精度浮動小数点数から設定.
 */
 int cmat3_set_all_z(int m, int n, int l, cmulti **A, int LDA1, int LDA2, dcomplex a)

@@ -6,13 +6,17 @@ multi *multi_allocate_mxArray(const mxArray *x)
   char type='r';
   int m=1,n=1,l=1,i,j,k,t;
   multi *A=NULL;
-  if(!mxIsStruct(x)){ MATLAB_ERROR("multi_allocate_mxArray: The argument should be Struct."); }
   // get type
-       if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),r_field_names[0])){ type='r'; }
-  else if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),c_field_names[0])){ type='c'; }
-  else if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),R_field_names[0])){ type='R'; }
-  else if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),C_field_names[0])){ type='C'; }
-  else { MATLAB_ERROR("multi_allocate_mxArray: The argument should be Struct of multi."); }
+  if(mxIsStruct(x)){
+         if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),r_field_names[0])){ type='r'; }
+    else if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),c_field_names[0])){ type='c'; }
+    else if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),R_field_names[0])){ type='R'; }
+    else if(mxGetFieldNameByNumber(x,0)!=NULL && STR_EQ(mxGetFieldNameByNumber(x,0),C_field_names[0])){ type='C'; }
+    else { MATLAB_ERROR("multi_allocate_mxArray: The argument should be Struct of multi."); }
+  }else if(mxIsDouble(x)){
+    if(mxIsComplex(x)){ type='z'; }
+    else              { type='d'; }
+  }else{ MATLAB_ERROR("multi_allocate_mxArray: Unsupported type.");}
   // get size
   m=mxGetM(x);
   n=mxGetN(x);
@@ -33,7 +37,10 @@ multi *multi_allocate_mxArray(const mxArray *x)
 	else if(_T(A)=='C'){ mxArrayToMulti(C_R(MAT3(_C0(A),i,j,k,_LD1(A),_LD2(A))),x,t,C0r_field_names);
 	                     mxArrayToMulti(C_I(MAT3(_C0(A),i,j,k,_LD1(A),_LD2(A))),x,t,C0i_field_names);
                              mxArrayToMulti(C_R(MAT3(_C1(A),i,j,k,_LD1(A),_LD2(A))),x,t,C1r_field_names);
-                             mxArrayToMulti(C_I(MAT3(_C1(A),i,j,k,_LD1(A),_LD2(A))),x,t,C1i_field_names);}
+                             mxArrayToMulti(C_I(MAT3(_C1(A),i,j,k,_LD1(A),_LD2(A))),x,t,C1i_field_names); }
+	else if(_T(A)=='d'){ MAT3(_D(A),i,j,k,_LD1(A),_LD2(A))=mxGetPr(x)[t]; }
+	else if(_T(A)=='z'){ Z_SET(MAT3(_Z(A),i,j,k,_LD1(A),_LD2(A)),mxGetPr(x)[t],mxGetPi(x)[t]); }
+	else{ MATLAB_ERROR("multi_allocate_mxArray: Unsupported type.");}
       }
     }
   }

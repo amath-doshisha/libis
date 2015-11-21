@@ -26,13 +26,22 @@ void cmat3_print(int m, int n, int l, cmulti **A, int LDA1, int LDA2, const char
 /*
  * setting
  */
+// B=cmulti(A)
+int cmat3_set_z(int m, int n, int l, cmulti **B, int LDB1, int LDB2, dcomplex *A, int LDA1, int LDA2);
+// B=cmulti(A)
+int cmat3_set_d(int m, int n, int l, cmulti **B, int LDB1, int LDB2, double *A, int LDA1, int LDA2);
+// A=a*ones(m,n,l)
 int cmat3_set_all_z(int m, int n, int l, cmulti **A, int LDA1, int LDA2, dcomplex a);
+// A=a*ones(m,n,l)
 int cmat3_set_all_dd(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a_r, double a_i);
+// A=a*ones(m,n,l)
 int cmat3_set_all_d(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a);
+// A=zeros(m,n,l)
 int cmat3_set_zeros(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
+// A=ones(m,n,l)
 int cmat3_set_ones(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
+// A=a*rand(m,n,l)+b
 void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a, double b);
-
 
 /*
  * casting
