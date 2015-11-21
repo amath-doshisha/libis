@@ -25,6 +25,9 @@ void rmat3_swap(int m, int n, int l, rmulti **A, int LDA1, int LDA2, rmulti **B,
 /*
  * member variables
  */
+void rmat3_get_prec(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
+void rmat3_get_exp(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
+void rmat3_get_sgn(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
 
 /*
  * I/O

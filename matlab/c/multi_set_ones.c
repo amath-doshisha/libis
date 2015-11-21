@@ -1,5 +1,5 @@
 /**
- * @breif 1行列の生成
+ * @breif 1行列の生成 y=ones(m,n,l)
  */
 void multi_set_ones(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

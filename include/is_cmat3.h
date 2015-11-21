@@ -43,7 +43,6 @@ int cmat3_set_ones(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
 // A=a*rand(m,n,l)+b
 void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a, double b);
 
-
 /*
  * casting
  */

@@ -1,10 +1,6 @@
 clear all
 close all
-
 set_default_prec(128);
-%auto_prec_enabled;
-%auto_prec_disabled;
-
 
 % %% eq
 A=multi([2 3; 4 5; -2 -3])
@@ -69,3 +65,24 @@ disp(A);
 
 %% double
 double(A)
+
+%% auto prec mode
+set_default_prec(64);
+auto_prec_enabled;
+A=multi([sqrt(2) sqrt(3); sqrt(5) sqrt(7)])
+B=multi([sqrt(8)/2^32 sqrt(10)/2^32; sqrt(11)/2^32 sqrt(12)/2^32])
+C=A+B
+A_prec=get_prec(A)
+B_prec=get_prec(B)
+C_prec=get_prec(C)
+A_sign=get_sign(A)
+B_sign=get_sign(B)
+C_sign=get_sign(C)
+A_exp=get_exp(A)
+B_exp=get_exp(B)
+C_exp=get_exp(C)
+
+
+
+auto_prec_disabled;
+

@@ -1,5 +1,5 @@
 /**
- * @breif plus
+ * @breif z=plus(x,y)
  */
 void multi_plus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

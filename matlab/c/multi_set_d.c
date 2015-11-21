@@ -1,5 +1,5 @@
 /**
- * @breif double型行列から行列の生成
+ * @breif double型行列から行列の生成 y=multi(x)
  */
 void multi_set_d(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

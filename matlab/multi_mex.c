@@ -65,6 +65,9 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_free.c"
 #include"./c/multi_allocate.c"
 #include"./c/multi_allocate_mxArray.c"
+#include"./c/multi_get_prec.c"
+#include"./c/multi_get_sign.c"
+#include"./c/multi_get_exp.c"
 #include"./c/multi_double.c"
 #include"./c/multi_set_zeros.c"
 #include"./c/multi_set_ones.c"
@@ -90,7 +93,10 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   set_default_prec(prec);
   set_auto_prec_mode(ap_mode);
   //  mexPrintf("cmd=%s prec=%d ap_mode=%d\n",cmd,prec,ap_mode);  
-       if(STR_EQ(cmd,"set_zeros")){ multi_set_zeros(nlhs,plhs,nrhs,prhs); } // x=zeros(M,N,L)
+       if(STR_EQ(cmd,"get_prec")) { multi_get_prec (nlhs,plhs,nrhs,prhs); } // y=get_prec(x)
+  else if(STR_EQ(cmd,"get_sign")) { multi_get_sign (nlhs,plhs,nrhs,prhs); } // y=get_sign(x)
+  else if(STR_EQ(cmd,"get_exp"))  { multi_get_exp  (nlhs,plhs,nrhs,prhs); } // y=get_exp(x)
+  else if(STR_EQ(cmd,"set_zeros")){ multi_set_zeros(nlhs,plhs,nrhs,prhs); } // x=zeros(M,N,L)
   else if(STR_EQ(cmd,"set_ones")) { multi_set_ones (nlhs,plhs,nrhs,prhs); } // x=ones(M,N,L)
   else if(STR_EQ(cmd,"set_d"))    { multi_set_d    (nlhs,plhs,nrhs,prhs); } // y=multi(x), where x is double
   else if(STR_EQ(cmd,"double"))   { multi_double   (nlhs,plhs,nrhs,prhs); } // y=double(x), where x is multi

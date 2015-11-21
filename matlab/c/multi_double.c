@@ -1,5 +1,5 @@
 /**
- * @breif double型へのキャスト
+ * @breif double型へのキャスト y=double(x)
  */
 void multi_double(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

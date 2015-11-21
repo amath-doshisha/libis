@@ -180,6 +180,53 @@ void rmat3_swap(int m, int n, int l, rmulti **A, int LDA1, int LDA2, rmulti **B,
 /** @name rmulti型の3次元配列のメンバ変数に関する関数 */
 /** @{ */
 
+
+/**
+ @brief rmulti型の3次元配列の浮動小数点数の精度(ビット数)を取得.
+*/
+void rmat3_get_prec(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(P,i,j,k,LDP1,LDP2)=rget_prec(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の浮動小数点数の指数部を取得.
+*/
+void rmat3_get_exp(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(P,i,j,k,LDP1,LDP2)=rget_exp(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の浮動小数点数の符号部を取得.
+*/
+void rmat3_get_sgn(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(P,i,j,k,LDP1,LDP2)=rget_sgn(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
+
+
 /** @} */
 
 

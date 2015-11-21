@@ -1,5 +1,5 @@
 /**
- * @breif copy
+ * @breif y=multi(x)
  */
 void multi_copy(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
