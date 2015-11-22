@@ -2,10 +2,9 @@
 function ind=end(A,k,n)
 if n==1
     ind=numel(A);
-elseif k<n
+elseif n<=3
     s=size(A.data);
     ind=s(k);
 else
-    s=size(A.data);
-    ind=prod(s(k:n));
+    error('multi.end(A,k=%d,n=%d)\n',k,n);
 end

@@ -47,6 +47,7 @@ multi(A)
 multi(B)
 
 %% zeros
+disp('=================== zeros ==================')
 A=zeros(3,2,'multi')
 size(A)
 B=zeros([3,2,2],'multi')
