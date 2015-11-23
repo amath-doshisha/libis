@@ -1204,13 +1204,21 @@ int rcmp_si(rmulti *x, long y)  { NULL_EXC1(x); return mpfr_cmp_si(x,y);}
 /** @brief rmulti型の値の比較 x<=>y */
 int rcmp_d(rmulti *x, double y) { NULL_EXC1(x); return mpfr_cmp_d(x,y);}
 /** @brief rmulti型の値の比較 x==y */
-int req(rmulti *x, rmulti *y)   { NULL_EXC2(x,y); return ris_number(x) && ris_number(y) && rcmp(x,y)==0;   }
+int req(rmulti *x, rmulti *y)   { NULL_EXC2(x,y); return ris_number(x) && ris_number(y) && rcmp(x,y)==0; }
 /** @brief rmulti型の値の比較 x==y */
 int req_d(rmulti *x, double y)  { NULL_EXC1(x); return ris_number(x) && rcmp_d(x,y)==0; }
 /** @brief rmulti型の値の比較 x==y */
 int req_ui(rmulti *x, ulong y)  { NULL_EXC1(x); return ris_number(x) && rcmp_ui(x,y)==0; }
 /** @brief rmulti型の値の比較 x==y */
 int req_si(rmulti *x, long y)   { NULL_EXC1(x); return ris_number(x) && rcmp_si(x,y)==0; }
+/** @brief rmulti型の値の比較 x!=y */
+int rne(rmulti *x, rmulti *y)   { NULL_EXC2(x,y); return !(ris_number(x) && ris_number(y) && rcmp(x,y)==0); }
+/** @brief rmulti型の値の比較 x!=y */
+int rne_d(rmulti *x, double y)  { NULL_EXC1(x); return !(ris_number(x) && rcmp_d(x,y)==0); }
+/** @brief rmulti型の値の比較 x!=y */
+int rne_ui(rmulti *x, ulong y)  { NULL_EXC1(x); return !(ris_number(x) && rcmp_ui(x,y)==0); }
+/** @brief rmulti型の値の比較 x!=y */
+int rne_si(rmulti *x, long y)   { NULL_EXC1(x); return !(ris_number(x) && rcmp_si(x,y)==0); }
 /** @brief rmulti型の値の比較 x>y */
 int rgt(rmulti *x, rmulti *y)   { NULL_EXC2(x,y); return ris_number(x) && ris_number(y) && rcmp(x,y)>0; }
 /** @brief rmulti型の値の比較 x>y */

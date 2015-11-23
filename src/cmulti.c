@@ -1407,8 +1407,8 @@ int cset_polar(cmulti *z, rmulti *r, rmulti *theta)
   int e=0;
   rmulti *s=NULL,*c=NULL;
   RAc(s,z); RAc(c,z);
-  e+=rcos(s,theta); e+=rmul(C_R(z),r,s); // z.r=r*cos(theta)
-  e+=rsin(c,theta); e+=rmul(C_I(z),r,c); // z.i=r*sin(theta)
+  e+=rcos(c,theta); e+=rmul(C_R(z),r,c); // z.r=r*cos(theta)
+  e+=rsin(s,theta); e+=rmul(C_I(z),r,s); // z.i=r*sin(theta)
   RF(s); RF(c);
   return e;  
 }
@@ -2008,6 +2008,18 @@ int ceq_d(cmulti *x, double y)   { return cis_number(x) && ccmp_d (x,y)==0; }
 int ceq_ui(cmulti *x, ulong y)   { return cis_number(x) && ccmp_ui(x,y)==0; }
 /** @brief cmulti型の値の比較 x==y */
 int ceq_si(cmulti *x, long y)    { return cis_number(x) && ccmp_si(x,y)==0; }
+/** @brief cmulti型の値の比較 x!=y */
+int cne(cmulti *x, cmulti *y)    { return !(cis_number(x) && cis_number(y) && ccmp   (x,y)==0); }
+/** @brief cmulti型の値の比較 x!=y */
+int cne_z(cmulti *x, dcomplex y) { return !(cis_number(x) && ccmp_z (x,y)==0); }
+/** @brief cmulti型の値の比較 x!=y */
+int cne_r(cmulti *x, rmulti *y)  { return !(cis_number(x) && ccmp_r2(x,y)==0); }
+/** @brief cmulti型の値の比較 x!=y */
+int cne_d(cmulti *x, double y)   { return !(cis_number(x) && ccmp_d (x,y)==0); }
+/** @brief cmulti型の値の比較 x!=y */
+int cne_ui(cmulti *x, ulong y)   { return !(cis_number(x) && ccmp_ui(x,y)==0); }
+/** @brief cmulti型の値の比較 x!=y */
+int cne_si(cmulti *x, long y)    { return !(cis_number(x) && ccmp_si(x,y)==0); }
 /** @brief cmulti型の値の比較 x>y */
 int cgt(cmulti *x, cmulti *y)     { return cis_number(x) && cis_number(y) && ccmp   (x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */

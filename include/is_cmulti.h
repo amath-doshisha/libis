@@ -218,6 +218,12 @@ int ceq_r(cmulti *x, rmulti *y);      // x==y
 int ceq_d(cmulti *x, double y);       // x==y
 int ceq_ui(cmulti *x, ulong y);       // x==y
 int ceq_si(cmulti *x, long y);        // x==y
+int cne(cmulti *x, cmulti *y);        // x!=y
+int cne_z(cmulti *x, dcomplex y);     // x!=y
+int cne_r(cmulti *x, rmulti *y);      // x!=y
+int cne_d(cmulti *x, double y);       // x!=y
+int cne_ui(cmulti *x, ulong y);       // x!=y
+int cne_si(cmulti *x, long y);        // x!=y
 int cgt(cmulti *x, cmulti *y);        // x>y
 int cgt_r1(rmulti *x, cmulti *y);     // x>y
 int cgt_r2(cmulti *x, rmulti *y);     // x>y

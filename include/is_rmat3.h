@@ -69,10 +69,26 @@ int rmat3_neg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, i
 int rmat3_add(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=A+b
 int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=A.*B
+int rmat3_mul(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=A.*b
+int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
 
 /*
  * oparations
  */
+// C=A./B
+int rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=a./B
+int rmat3_div_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2);
+// C=A./b
+int rmat3_div_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=A.^B
+int rmat3_pow(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=a.^B
+int rmat3_pow_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2);
+// C=A.^b
+int rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
 
 /*
  * compare
@@ -81,6 +97,10 @@ int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 void rmat3_eq(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=(A==b)
 void rmat3_eq_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=(A!=B)
+void rmat3_ne(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=(A!=b)
+void rmat3_ne_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
 // C=(A>=B)
 void rmat3_ge(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=(A>=b)
@@ -97,7 +117,6 @@ void rmat3_le_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
 void rmat3_lt(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=(A<b)
 void rmat3_lt_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
-
 
 /*
  * mapping

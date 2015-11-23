@@ -177,6 +177,10 @@ int req(rmulti *x, rmulti *y);   // x==y
 int req_d(rmulti *x, double y);  // x==y
 int req_ui(rmulti *x, ulong y);  // x==y
 int req_si(rmulti *x, long y);   // x==y
+int rne(rmulti *x, rmulti *y);   // x!=y
+int rne_d(rmulti *x, double y);  // x!=y
+int rne_ui(rmulti *x, ulong y);  // x!=y
+int rne_si(rmulti *x, long y);   // x!=y
 int rgt(rmulti *x, rmulti *y);   // x>y
 int rgt_d1(double x, rmulti *y); // x>y
 int rgt_d2(rmulti *x, double y); // x>y
