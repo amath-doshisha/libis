@@ -74,8 +74,14 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_set_d.c"
 #include"./c/multi_copy.c"
 #include"./c/multi_uminus.c"
+#include"./c/multi_ctranspose.c"
+#include"./c/multi_transpose.c"
 #include"./c/multi_plus.c"
 #include"./c/multi_eq.c"
+#include"./c/multi_ge.c"
+#include"./c/multi_gt.c"
+#include"./c/multi_le.c"
+#include"./c/multi_lt.c"
 #include"./c/multi_subsref.c"
 
 /**
@@ -94,18 +100,25 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   set_default_prec(prec);
   set_auto_prec_mode(ap_mode);
   //  mexPrintf("cmd=%s prec=%d ap_mode=%d\n",cmd,prec,ap_mode);  
-       if(STR_EQ(cmd,"get_prec")) { multi_get_prec (nlhs,plhs,nrhs,prhs); } // y=get_prec(x)
-  else if(STR_EQ(cmd,"get_sign")) { multi_get_sign (nlhs,plhs,nrhs,prhs); } // y=get_sign(x)
-  else if(STR_EQ(cmd,"get_exp"))  { multi_get_exp  (nlhs,plhs,nrhs,prhs); } // y=get_exp(x)
-  else if(STR_EQ(cmd,"set_zeros")){ multi_set_zeros(nlhs,plhs,nrhs,prhs); } // x=zeros(M,N,L)
-  else if(STR_EQ(cmd,"set_ones")) { multi_set_ones (nlhs,plhs,nrhs,prhs); } // x=ones(M,N,L)
-  else if(STR_EQ(cmd,"set_d"))    { multi_set_d    (nlhs,plhs,nrhs,prhs); } // y=multi(x), where x is double
-  else if(STR_EQ(cmd,"double"))   { multi_double   (nlhs,plhs,nrhs,prhs); } // y=double(x), where x is multi
-  else if(STR_EQ(cmd,"copy"))     { multi_copy     (nlhs,plhs,nrhs,prhs); } // y=x
-  else if(STR_EQ(cmd,"uminus"))   { multi_uminus   (nlhs,plhs,nrhs,prhs); } // y=-x
-  else if(STR_EQ(cmd,"plus"))     { multi_plus     (nlhs,plhs,nrhs,prhs); } // z=x+y
-  else if(STR_EQ(cmd,"eq"))       { multi_eq       (nlhs,plhs,nrhs,prhs); } // z=(x==y)
-  else if(STR_EQ(cmd,"subsref"))  { multi_subsref  (nlhs,plhs,nrhs,prhs); } // y=x(s)
+       if(STR_EQ(cmd,"get_prec"))  { multi_get_prec (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
+  else if(STR_EQ(cmd,"get_sign"))  { multi_get_sign (nlhs,plhs,nrhs,prhs); }  // y=get_sign(x)
+  else if(STR_EQ(cmd,"get_exp"))   { multi_get_exp  (nlhs,plhs,nrhs,prhs); }  // y=get_exp(x)
+  else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros(nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
+  else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
+  else if(STR_EQ(cmd,"set_d"))     { multi_set_d    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
+  else if(STR_EQ(cmd,"double"))    { multi_double   (nlhs,plhs,nrhs,prhs); }  // y=double(x), where x is multi
+  else if(STR_EQ(cmd,"copy"))      { multi_copy     (nlhs,plhs,nrhs,prhs); }  // y=x
+  else if(STR_EQ(cmd,"uminus"))    { multi_uminus   (nlhs,plhs,nrhs,prhs); }  // y=-x
+  else if(STR_EQ(cmd,"ctranspose")){ multi_ctranspose(nlhs,plhs,nrhs,prhs); } // y=x'
+  else if(STR_EQ(cmd,"transpose")) { multi_transpose(nlhs,plhs,nrhs,prhs); }  // y=x.'
+  else if(STR_EQ(cmd,"uminus"))    { multi_uminus   (nlhs,plhs,nrhs,prhs); }  // y=-x
+  else if(STR_EQ(cmd,"plus"))      { multi_plus     (nlhs,plhs,nrhs,prhs); }  // z=x+y
+  else if(STR_EQ(cmd,"eq"))        { multi_eq       (nlhs,plhs,nrhs,prhs); }  // z=(x==y)
+  else if(STR_EQ(cmd,"ge"))        { multi_ge       (nlhs,plhs,nrhs,prhs); }  // z=(x>=y)
+  else if(STR_EQ(cmd,"gt"))        { multi_gt       (nlhs,plhs,nrhs,prhs); }  // z=(x>y)
+  else if(STR_EQ(cmd,"le"))        { multi_le       (nlhs,plhs,nrhs,prhs); }  // z=(x<=y)
+  else if(STR_EQ(cmd,"lt"))        { multi_lt       (nlhs,plhs,nrhs,prhs); }  // z=(x<y)
+  else if(STR_EQ(cmd,"subsref"))   { multi_subsref  (nlhs,plhs,nrhs,prhs); }  // y=x(s)
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");

@@ -9,7 +9,6 @@
  @brief 多倍長精度実数型rmultiの行列に関する関数の宣言
  */
 
-
 /*
  * constructions and destruction
  */
@@ -71,8 +70,6 @@ int rmat3_add(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, i
 // C=A+b
 int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
 
-
-
 /*
  * oparations
  */
@@ -84,6 +81,23 @@ int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 void rmat3_eq(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=(A==b)
 void rmat3_eq_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=(A>=B)
+void rmat3_ge(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=(A>=b)
+void rmat3_ge_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=(A>B)
+void rmat3_gt(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=(A>b)
+void rmat3_gt_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=(A<=B)
+void rmat3_le(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=(A<=b)
+void rmat3_le_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=(A<B)
+void rmat3_lt(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=(A<b)
+void rmat3_lt_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+
 
 /*
  * mapping

@@ -456,7 +456,6 @@ int rmat3_add_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
 /** @name cmulti型の3次元配列の要素の比較に関する関数 */
 /** @{ */
 
-
 /**
  @brief cmulti型の3次元配列の比較　C=(A==B).
 */
@@ -537,6 +536,325 @@ void rmat3_eq_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
   return;
 }
 
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>=B).
+*/
+void cmat3_ge(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cge(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>=B).
+*/
+void cmat3_ge_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cge_r2(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>=b).
+*/
+void cmat3_ge_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cge(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>=b).
+*/
+void cmat3_ge_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cge_r2(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>=b).
+*/
+void rmat3_ge_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cge_r1(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>B).
+*/
+void cmat3_gt(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cgt(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>B).
+*/
+void cmat3_gt_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cgt_r2(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>b).
+*/
+void cmat3_gt_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cgt(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>b).
+*/
+void cmat3_gt_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cgt_r2(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A>b).
+*/
+void rmat3_gt_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cgt_r1(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<=B).
+*/
+void cmat3_le(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cle(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<=B).
+*/
+void cmat3_le_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cle_r2(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<=b).
+*/
+void cmat3_le_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cle(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<=b).
+*/
+void cmat3_le_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cle_r2(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<=b).
+*/
+void rmat3_le_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=cle_r1(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<B).
+*/
+void cmat3_lt(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=clt(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<B).
+*/
+void cmat3_lt_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=clt_r2(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<b).
+*/
+void cmat3_lt_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=clt(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<b).
+*/
+void cmat3_lt_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=clt_r2(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief cmulti型の3次元配列の比較　C=(A<b).
+*/
+void rmat3_lt_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, cmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(C,i,j,k,LDC1,LDC2)=clt_r1(MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return;
+}
 
 /** @} */
 
