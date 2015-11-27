@@ -69,6 +69,12 @@ int rmat3_neg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, i
 int rmat3_add(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=A+b
 int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+// C=A-B
+int rmat3_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=a-B
+int rmat3_sub_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2);
+// C-A-b
+int rmat3_sub_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
 // C=A.*B
 int rmat3_mul(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=A.*b

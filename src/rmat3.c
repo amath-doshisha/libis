@@ -455,6 +455,56 @@ int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
   return e;
 }
 
+
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=A-B.
+*/
+int rmat3_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rsub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=a-B.
+*/
+int rmat3_sub_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rsub(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=A-b.
+*/
+int rmat3_sub_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rsub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+
 /**
  @brief rmulti型の3次元配列の掛け算 C=A.*B.
 */

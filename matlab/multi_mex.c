@@ -77,6 +77,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_ctranspose.c"
 #include"./c/multi_transpose.c"
 #include"./c/multi_plus.c"
+#include"./c/multi_minus.c"
 #include"./c/multi_times.c"
 #include"./c/multi_rdivide.c"
 #include"./c/multi_power.c"
@@ -117,6 +118,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"transpose")) { multi_transpose(nlhs,plhs,nrhs,prhs); }  // y=x.'
   else if(STR_EQ(cmd,"uminus"))    { multi_uminus   (nlhs,plhs,nrhs,prhs); }  // y=-x
   else if(STR_EQ(cmd,"plus"))      { multi_plus     (nlhs,plhs,nrhs,prhs); }  // z=x+y
+  else if(STR_EQ(cmd,"minus"))     { multi_minus    (nlhs,plhs,nrhs,prhs); }  // z=x-y
   else if(STR_EQ(cmd,"times"))     { multi_times    (nlhs,plhs,nrhs,prhs); }  // z=x.*y
   else if(STR_EQ(cmd,"rdivide"))   { multi_rdivide  (nlhs,plhs,nrhs,prhs); }  // z=x./y
   else if(STR_EQ(cmd,"power"))     { multi_power    (nlhs,plhs,nrhs,prhs); }  // z=x.^y
