@@ -35,8 +35,9 @@ int csolve(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
   int e=0;
   cmulti **C=NULL;
   C=cmat_allocate_prec(n,n,cmat_get_prec_max(n,NRHS,B,LDB));
-  e+=csolve_lu(n,NRHS,B,LDB,A,LDA,info);
-  //  e+=rsolve_gauss_sweeper(n,NRHS,B,LDB,C,n,info);
+  e+=cmat_copy(n,n,C,n,A,LDA);
+  //  e+=csolve_lu(n,NRHS,B,LDB,C,n,info);
+  e+=csolve_gauss_sweeper(n,NRHS,B,LDB,C,n,info);
   C=cmat_free(n,n,C);
   return e;
 }

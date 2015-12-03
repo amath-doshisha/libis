@@ -53,7 +53,7 @@ void ceig_hqr_mt(int m, int n, cmulti **B, int LDB, cmulti **lambda, cmulti **A,
   C=rmat_allocate_prec(m,n,cmat_get_prec_max(m,n,B,LDB));
   cmat_real_clone(m,n,C,LDB,A,LDA);
   reig_hqr_mt(m,n,C,LDB,lambda,C,LDB,debug);
-  cmat_copy_r(m,n,B,LDB,C,LDB);
+  cmat_copy_rmat(m,n,B,LDB,C,LDB);
   C=rmat_free(m,n,C);
 }
 

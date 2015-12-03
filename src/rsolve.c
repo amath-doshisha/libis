@@ -36,8 +36,8 @@ int rsolve(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info)
   rmulti **C=NULL;
   C=rmat_allocate_prec(n,n,rmat_get_prec_max(n,NRHS,B,LDB));
   e+=rmat_copy(n,n,C,n,A,LDA);
-  e+=rsolve_lu(n,NRHS,B,LDB,C,n,info);
-  //  e+=rsolve_gauss_sweeper(n,NRHS,B,LDB,C,n,info);
+  //  e+=rsolve_lu(n,NRHS,B,LDB,C,n,info);
+  e+=rsolve_gauss_sweeper(n,NRHS,B,LDB,C,n,info);
   C=rmat_free(n,n,C);
   return e;
 }

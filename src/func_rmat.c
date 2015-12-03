@@ -151,7 +151,7 @@ func_t *func_rmat_get_cmat(func_t *g)
   func_t *f=NULL;
   if(g==NULL || !func_is(g,"rmat")){ FUNC_ERROR_ARG1("func_rmat_get_cmat",g); }
   f=func_cmat(func_rmat_rows(g),func_rmat_cols(g));
-  cmat_copy_r(func_cmat_rows(f),func_cmat_cols(f),func_cmat_p(f),func_cmat_ld(f),func_rmat_p(g),func_rmat_ld(g));
+  cmat_copy_rmat(func_cmat_rows(f),func_cmat_cols(f),func_cmat_p(f),func_cmat_ld(f),func_rmat_p(g),func_rmat_ld(g));
   return f;
 }
 

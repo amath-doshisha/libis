@@ -80,8 +80,9 @@ void cmat_cols_rotate_left(int m, int n, cmulti **A, int LDA);  // rotate column
  * operations with auto precision mode
  */
 int cmat_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                           // B=A
-int cmat_copy_r(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA);                         // B=A
+int cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA);                      // B=A
 int cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                         // B=A^T
+int cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA);                    // B=A'
 int cmat_copy_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                        // B=A'
 void cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, const int *I);      // B=A(I)
 int cmat_real(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                           // B=real(A)
@@ -108,9 +109,11 @@ int cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b)
 int cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);       // C=A./*B
 int cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB);              // C=a./*B
 int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b);              // C=A./*b
-int cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);           // C=A*B
-int cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);       // C+=A*B
-int cmat_sub_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);       // C-=A*B
+int cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);     // C=A*B
+int cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB);  // C=A*B
+int cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB);  // C=A*B
+int cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB); // C+=A*B
+int cmat_sub_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB); // C-=A*B
 int cmat_rank1op(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a, cmulti **x, cmulti **y); // B=A+a*x*y'
 int cmat_diag_copy_cvec(int m, int n, cmulti **A, int LDA, cmulti **a);                       // A=diag(a)
 int cmat_diag_copy_rvec(int m, int n, cmulti **A, int LDA, rmulti **a);                       // A=diag(a)

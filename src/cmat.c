@@ -774,7 +774,7 @@ int cmat_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 /**
  @brief cmulti型の行列の値のコピー B=A
 */
-int cmat_copy_r(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
+int cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
 {
   int i,j,e=0;
   for(j=0; j<n; j++){
@@ -801,6 +801,27 @@ int cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
       e+=ccopy(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の行列を転置をとり値のコピー B=A^T.
+ @param[in]  m   行列Aの行の個数.行列Bの列の個数.
+ @param[in]  n   行列Aの列の個数.行列Bの行の個数.
+ @param[in]  A   初期化済みのrmulti型の行列.サイズは(m,n).
+ @param[in]  LDA Aの第1次元.
+ @param[in]  B   初期化済みの行列.サイズは(n,m).
+ @param[out] B   コピーされた結果.
+ @param[in]  LDB Bの第1次元.
+*/
+int cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
+{
+  int i,j,e=0;
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      e+=ccopy_r(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
   return e;
@@ -1197,6 +1218,57 @@ int cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmu
       e+=cset_zero(MAT(Z,i,j,l)); // Z=0
       for(k=0; k<m; k++){
 	e+=cadd_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
+      }
+    }
+  }
+  e+=cmat_copy(l,n,C,LDC,Z,l); // C=Z
+  Z=cmat_free(l,n,Z);
+  return e;
+}
+
+
+/**
+ @brief cmulti型の行列の積 C=A*B.
+ @param[in]  A 初期化済みのサイズが(l,m)の行列.
+ @param[in]  B 初期化済みのサイズが(m,n)の行列.
+ @param[in]  C 初期化済みのサイズが(l,n)の行列.
+ @param[out] C 計算結果.
+*/
+int cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
+{
+  int i,j,k,e=0;
+  cmulti **Z=NULL;
+  Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
+  for(i=0; i<l; i++){
+    for(j=0; j<n; j++){
+      e+=cset_zero(MAT(Z,i,j,l)); // Z=0
+      for(k=0; k<m; k++){
+	e+=cadd_mul_r(MAT(Z,i,j,l),MAT(B,k,j,LDB),MAT(A,i,k,LDA)); // Z=A*B
+      }
+    }
+  }
+  e+=cmat_copy(l,n,C,LDC,Z,l); // C=Z
+  Z=cmat_free(l,n,Z);
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の積 C=A*B.
+ @param[in]  A 初期化済みのサイズが(l,m)の行列.
+ @param[in]  B 初期化済みのサイズが(m,n)の行列.
+ @param[in]  C 初期化済みのサイズが(l,n)の行列.
+ @param[out] C 計算結果.
+*/
+int cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
+{
+  int i,j,k,e=0;
+  cmulti **Z=NULL;
+  Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
+  for(i=0; i<l; i++){
+    for(j=0; j<n; j++){
+      e+=cset_zero(MAT(Z,i,j,l)); // Z=0
+      for(k=0; k<m; k++){
+	e+=cadd_mul_r(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
       }
     }
   }

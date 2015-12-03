@@ -79,7 +79,9 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_plus.c"
 #include"./c/multi_minus.c"
 #include"./c/multi_times.c"
+#include"./c/multi_mtimes.c"
 #include"./c/multi_rdivide.c"
+#include"./c/multi_mrdivide.c"
 #include"./c/multi_power.c"
 #include"./c/multi_eq.c"
 #include"./c/multi_ne.c"
@@ -120,7 +122,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"plus"))      { multi_plus     (nlhs,plhs,nrhs,prhs); }  // z=x+y
   else if(STR_EQ(cmd,"minus"))     { multi_minus    (nlhs,plhs,nrhs,prhs); }  // z=x-y
   else if(STR_EQ(cmd,"times"))     { multi_times    (nlhs,plhs,nrhs,prhs); }  // z=x.*y
+  else if(STR_EQ(cmd,"mtimes"))    { multi_mtimes   (nlhs,plhs,nrhs,prhs); }  // z=x*y
   else if(STR_EQ(cmd,"rdivide"))   { multi_rdivide  (nlhs,plhs,nrhs,prhs); }  // z=x./y
+  else if(STR_EQ(cmd,"mrdivide"))  { multi_mrdivide (nlhs,plhs,nrhs,prhs); }  // z=x/y
   else if(STR_EQ(cmd,"power"))     { multi_power    (nlhs,plhs,nrhs,prhs); }  // z=x.^y
   else if(STR_EQ(cmd,"eq"))        { multi_eq       (nlhs,plhs,nrhs,prhs); }  // z=(x==y)
   else if(STR_EQ(cmd,"ne"))        { multi_ne       (nlhs,plhs,nrhs,prhs); }  // z=(x~=y)
