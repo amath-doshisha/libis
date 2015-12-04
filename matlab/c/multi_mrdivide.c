@@ -39,6 +39,7 @@ void multi_mrdivide(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   y=multi_free(y);
   z=multi_free(z);
   u=multi_free(u);
+  v=multi_free(v);
   return;
 }
 
