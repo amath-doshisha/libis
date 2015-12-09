@@ -6,5 +6,10 @@ end
 if nargin<=0
     default_prec=64;
 else
-    default_prec=prec;
+    if prec<=1
+        warning('default_prec was set 2, due to the default_prec shoud be greater than or equal to 2.');
+        default_prec=2;
+    else
+        default_prec=prec;
+    end
 end
