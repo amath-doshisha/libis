@@ -210,6 +210,23 @@ void rmat3_get_prec(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A,
 }
 
 /**
+ @brief rmulti型行列の精度(ビット数)の最大値の取得.
+*/
+int rmat3_get_prec_max(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,p,value=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	p=rget_prec(MAT3(A,i,j,k,LDA1,LDA2));
+	if(p>value){ value=p; }
+      }
+    }
+  }
+  return value;
+}
+
+/**
  @brief rmulti型の3次元配列の浮動小数点数の指数部を取得.
 */
 void rmat3_get_exp(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2)
@@ -545,7 +562,22 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /** @{ */
 
 /**
- @brief rmulti型の3次元配列の掛け算 C=A./B.
+ @brief rmulti型の3次元配列の絶対値 C=abs(A).
+*/
+int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2){
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rabs(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列の割り算 C=A./B.
 */
 int rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
 {
@@ -561,7 +593,7 @@ int rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, i
 }
 
 /**
- @brief rmulti型の3次元配列の掛け算 C=A./b.
+ @brief rmulti型の3次元配列の割り算 C=a./B.
 */
 int rmat3_div_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
 {
@@ -577,7 +609,7 @@ int rmat3_div_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a,
 }
 
 /**
- @brief rmulti型の3次元配列の掛け算 C=A./b.
+ @brief rmulti型の3次元配列の割り算 C=A./b.
 */
 int rmat3_div_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
 {
@@ -609,7 +641,7 @@ int rmat3_pow(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, i
 }
 
 /**
- @brief rmulti型の3次元配列のべき乗 C=A.^b.
+ @brief rmulti型の3次元配列のべき乗 C=a.^B.
 */
 int rmat3_pow_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
 {

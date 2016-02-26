@@ -21,6 +21,7 @@ int cmat3_clone_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmult
 /*
  * member variables
  */
+int cmat3_get_prec_max(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
 
 /*
  * I/O
@@ -105,6 +106,8 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
 /*
  * oparations
  */
+// C=abs(A)
+int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2);
 // C=A./B
 int cmat3_div(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2);
 // C=A./B

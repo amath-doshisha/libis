@@ -127,6 +127,21 @@ int cmat3_clone_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmult
 /** @name cmulti型の3次元配列のメンバ変数に関する関数 */
 /** @{ */
 
+int cmat3_get_prec_max(int m, int n, int l, cmulti **A, int LDA1, int LDA2)
+{
+  int value,p,i=0,j=0,k=0;
+  value=cget_prec(MAT3(A,i,j,k,LDA1,LDA2));
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	p=cget_prec(MAT3(A,i,j,k,LDA1,LDA2));
+	if(p>value){ value=p; }
+      }
+    }
+  }
+  return value;
+}
+
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////
@@ -671,6 +686,21 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
 
 /** @name cmulti型の3次元配列の数学関数に関する関数 */
 /** @{ */
+
+/**
+ @brief cmulti型の3次元配列の絶対値 C=abs(A).
+*/
+int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2){
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cabsv(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
 
 /**
  @brief cmulti型の3次元配列の割り算 C=A./B.

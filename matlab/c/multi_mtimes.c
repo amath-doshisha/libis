@@ -11,7 +11,7 @@ void multi_mtimes(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   x=multi_allocate_mxArray(prhs[N0]);
   y=multi_allocate_mxArray(prhs[N0+1]);
   // operation
-  if(_M(x)==_N(y) && _N(x)==_M(y) && _L(x)==1 && _L(y)==1){  // In the case of same sizes
+  if(_N(x)==_M(y) && _L(x)==1 && _L(y)==1){  // In the case of same sizes
          if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('r',_M(x),_N(y),1); rmat_prod   (_M(x),_N(x),_N(y),_R(z),_LD1(z),_R(x),_LD1(x),_R(y),_LD1(y)); }
     else if(_T(x)=='r' && _T(y)=='c'){ z=multi_allocate('c',_M(x),_N(y),1); cmat_prod_r1(_M(x),_N(x),_N(y),_C(z),_LD1(z),_R(x),_LD1(x),_C(y),_LD1(y)); }
     else if(_T(x)=='c' && _T(y)=='r'){ z=multi_allocate('c',_M(x),_N(y),1); cmat_prod_r2(_M(x),_N(x),_N(y),_C(z),_LD1(z),_C(x),_LD1(x),_R(y),_LD1(y)); }

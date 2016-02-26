@@ -26,6 +26,7 @@ void rmat3_swap(int m, int n, int l, rmulti **A, int LDA1, int LDA2, rmulti **B,
  * member variables
  */
 void rmat3_get_prec(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
+int rmat3_get_prec_max(int m, int n, int l, rmulti **A, int LDA1, int LDA2);
 void rmat3_get_exp(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
 void rmat3_get_sgn(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
 
@@ -83,6 +84,8 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /*
  * oparations
  */
+// C=abs(A)
+int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
 // C=A./B
 int rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=a./B
