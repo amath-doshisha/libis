@@ -2,8 +2,12 @@ clear all
 close all
 set_default_prec(128);
 
-M=3;N=3;L=2;
-A=zeros(M,N,L);
-A=multi(A)
-A(:)=1:(M*N*L)
-A(1:2:M,1:2:N,2)
+L=2;
+A=ones(3,3,L)
+B=ones(2,3,L)*2
+C=ones(1,3,L)*3
+A=multi(A);
+B=multi(B);
+C=multi(C);
+
+D=[A; B; C]

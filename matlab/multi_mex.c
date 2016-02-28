@@ -42,7 +42,7 @@ typedef struct {
 } subs_index_t;
 
 /**
- * @breif MATLABの構�?体�?フィールド名
+ * @breif The field names of struct for MATLAB
  */
 const char *r_field_names[]={"r_prec","r_sign","r_exp","r_digits"};  
 const char *c_field_names[]={"cr_prec","cr_sign","cr_exp","cr_digits",
@@ -98,9 +98,11 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_lt.c"
 #include"./c/multi_subsref.c"
 #include"./c/multi_subsasgn.c"
+#include"./c/multi_horzcat.c"
+#include"./c/multi_vertcat.c"
 
 /**
- * @breif メイン
+ * @breif mexFunction() for multi_mex
  */
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
@@ -142,6 +144,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"lt"))        { multi_lt       (nlhs,plhs,nrhs,prhs); }  // z=(x<y)
   else if(STR_EQ(cmd,"subsref"))   { multi_subsref  (nlhs,plhs,nrhs,prhs); }  // y=x(s)
   else if(STR_EQ(cmd,"subsasgn"))  { multi_subsasgn (nlhs,plhs,nrhs,prhs); }  // y(s)=x
+  else if(STR_EQ(cmd,"horzcat"))   { multi_horzcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1 x2 ...]
+  else if(STR_EQ(cmd,"vertcat"))   { multi_vertcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1; x2; ...]
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");
