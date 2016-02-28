@@ -529,6 +529,22 @@ int rmat3_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, 
 }
 
 /**
+ @brief rmulti型の3次元配列を添字を指定してコピー B=A(I,J,K).
+*/
+int rmat3_copy_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rcopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief rmulti型の3次元配列の符号反転 B=-A.
 */
 int rmat3_neg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)

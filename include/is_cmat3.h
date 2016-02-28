@@ -71,6 +71,8 @@ int cmat3_copy_cmat_index(cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, i
 int cmat3_clone_cmat_index(cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J);
 // B=A
 int cmat3_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+// B=A(I,J,K)
+int cmat3_copy_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K);
 // B=-A
 int cmat3_neg(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // C=A+B

@@ -20,6 +20,7 @@ rmulti **rvec_free(int n, rmulti **x);
 int rvec_round(int n, rmulti **x, int prec);
 int rvec_clone(int n, rmulti **y, rmulti **x); // y=x
 int rvec_clone_index(int n, rmulti **y, rmulti **x, int *I); // y=x(I)
+int rvec_index_clone(int n, rmulti **y, rmulti **x, int *I); // y(I)=x
 void rvec_swap(int n, rmulti **x, rmulti **y); // x <=> y
 
 /*
@@ -82,6 +83,7 @@ void rvec_sort_index(int *I, int n, rmulti **X);
  */
 int rvec_copy(int n, rmulti **y, rmulti **x);                       // y=x
 int rvec_copy_index(int n, rmulti **y, rmulti **x, const int *I);   // y=x(I)
+int rvec_index_copy(int n, rmulti **y, rmulti **x, int *I);         // y(I)=x
 int rvec_mul_2exp(int n, rmulti **y, rmulti **x, int p);            // y=x*2^p
 int rvec_div_2exp(int n, rmulti **y, rmulti **x, int p);            // y=x/2^p
 int rvec_neg(int n, rmulti **y, rmulti **x);                        // y=-x

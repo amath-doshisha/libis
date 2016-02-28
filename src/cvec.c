@@ -125,6 +125,16 @@ int cvec_clone_index(int n, cmulti **y, cmulti **x, int *I)
 }
 
 /**
+ @brief cmulti型のベクトルの値を添字を指定して複成 y(I)=x.
+*/
+int cvec_index_clone(int n, cmulti **y, cmulti **x, int *I)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=cclone(y[I[i]],x[i]); }
+  return e;
+}
+
+/**
  @brief cmulti型のベクトルの値をrmulti型のベクトルから複成 y=x.
 */
 int cvec_clone_r(int n, cmulti **y, rmulti **x)
@@ -756,6 +766,16 @@ int cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I)
   int i,e=0;
   if(y==x){ cvec_swap_index(n,x,I); return 0; }
   for(i=0; i<n; i++){ e+=ccopy(y[i],x[I[i]]); }
+  return e;
+}
+
+/**
+ @brief cmulti型のベクトルの値を添字を指定してコピー y(I)=x.
+*/
+int cvec_index_copy(int n, cmulti **y, cmulti **x, int *I)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=ccopy(y[I[i]],x[i]); }
   return e;
 }
 

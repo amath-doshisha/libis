@@ -73,6 +73,8 @@ int rmat3_copy_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, i
 int rmat3_clone_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J);
 // B=A
 int rmat3_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
+// B=A(I,J,K)
+int rmat3_copy_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K);
 // B=-A
 int rmat3_neg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 // C=A+B

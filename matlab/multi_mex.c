@@ -97,6 +97,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_le.c"
 #include"./c/multi_lt.c"
 #include"./c/multi_subsref.c"
+#include"./c/multi_subsasgn.c"
 
 /**
  * @breif メイン
@@ -140,6 +141,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"le"))        { multi_le       (nlhs,plhs,nrhs,prhs); }  // z=(x<=y)
   else if(STR_EQ(cmd,"lt"))        { multi_lt       (nlhs,plhs,nrhs,prhs); }  // z=(x<y)
   else if(STR_EQ(cmd,"subsref"))   { multi_subsref  (nlhs,plhs,nrhs,prhs); }  // y=x(s)
+  else if(STR_EQ(cmd,"subsasgn"))  { multi_subsasgn (nlhs,plhs,nrhs,prhs); }  // y(s)=x
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");

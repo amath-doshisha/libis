@@ -95,7 +95,7 @@ int rvec_round(int n, rmulti **x, int prec)
 }
 
 /**
- @brief   rmulti型のベクトルの値を複成 y=x.
+ @brief rmulti型のベクトルの値を複成 y=x.
 */
 int rvec_clone(int n, rmulti **y, rmulti **x)
 {
@@ -105,12 +105,22 @@ int rvec_clone(int n, rmulti **y, rmulti **x)
 }
 
 /**
- @brief   rmulti型のベクトルの値を添字を指定して複成 y=x(I).
+ @brief rmulti型のベクトルの値を添字を指定して複成 y=x(I).
 */
 int rvec_clone_index(int n, rmulti **y, rmulti **x, int *I)
 {
   int i,e=0;
   for(i=0; i<n; i++){ e+=rclone(y[i],x[I[i]]); }
+  return e;
+}
+
+/**
+ @brief rmulti型のベクトルの値を添字を指定して複成 y(I)=x.
+*/
+int rvec_index_clone(int n, rmulti **y, rmulti **x, int *I)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=rclone(y[I[i]],x[i]); }
   return e;
 }
 
@@ -709,6 +719,17 @@ int rvec_copy_index(int n, rmulti **y, rmulti **x, const int *I)
   for(i=0; i<n; i++){ e+=rcopy(y[i],x[I[i]]); }
   return e;
 }
+
+/**
+ @brief rmulti型のベクトルの値を添字を指定してコピー y(I)=x.
+*/
+int rvec_index_copy(int n, rmulti **y, rmulti **x, int *I)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=rcopy(y[I[i]],x[i]); }
+  return e;
+}
+
 
 /**
  @brief rmulti型のベクトルの指数部の足し算 y=x*2^p

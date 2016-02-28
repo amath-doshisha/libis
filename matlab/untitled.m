@@ -2,10 +2,10 @@ clear all
 close all
 set_default_prec(128);
 
-M=3;N=4;L=2;
+M=3;N=4;L=1;
 B=zeros(M,N,L);
-B(:)=1:(M*N*L);
 A=multi(B)
 
-B(1:3:20)
-A(1:3:20)
+B(1:2:12)=ones(2,1,3)
+A(1:2:12)=ones(2,1,3)
+

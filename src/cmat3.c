@@ -465,6 +465,22 @@ int cmat3_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, 
 }
 
 /**
+ @brief cmulti型の3次元配列の値を添字を指定してコピー B=A(I,J,K)
+*/
+int cmat3_copy_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief cmulti型の3次元配列の符号反転 B=-A.
 */
 int cmat3_neg(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)

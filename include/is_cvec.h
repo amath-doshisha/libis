@@ -21,7 +21,8 @@ int cvec_round(int n, cmulti **x, int prec);
 int cvec_clone(int n, cmulti **y, cmulti **x);
 int cvec_clone_r(int n, cmulti **y, rmulti **x);
 int cvec_clone_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i);
-int cvec_clone_index(int n, cmulti **y, cmulti **x, int *I);
+int cvec_clone_index(int n, cmulti **y, cmulti **x, int *I); // y=x(I)
+int cvec_index_clone(int n, cmulti **y, cmulti **x, int *I); // y(I)=x
 void cvec_swap(int n, cmulti **x, cmulti **y);
 
 /*
@@ -87,7 +88,8 @@ void cvec_sort_index(int *I, int n, cmulti **X);
 int cvec_copy(int n, cmulti **y, cmulti **x);                     // y=x
 int cvec_copy_r(int n, cmulti **y, rmulti **x);                   // y=x
 int cvec_copy_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i);  // y=x
-int cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I); // Y[i]=X[I[i]], 0<=i<n
+int cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I); // y=x(I)
+int cvec_index_copy(int n, cmulti **y, cmulti **x, int *I);       // y(I)=x
 int cvec_real(int n, rmulti **y, cmulti **x);                     // y=real(x)
 int cvec_real_clone(int n, rmulti **y, cmulti **x);               // y=real(x)
 int cvec_imag(int n, rmulti **y, cmulti **x);                     // y=imag(x)
