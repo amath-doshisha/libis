@@ -862,6 +862,34 @@ void cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, con
 }
 
 /**
+ @brief cmulti型の行列の値を要素を添字を指定してコピー B(I,J)=A
+*/
+int cmat_index_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      if(I!=NULL && J!=NULL){ e+=ccopy(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の値を要素を添字を指定してコピー B(I,J)=A
+*/
+int cmat_index_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA, int *I, int *J)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      if(I!=NULL && J!=NULL){ e+=ccopy_r(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
+    }
+  }
+  return e;
+}
+
+/**
  @brief cmulti型の行列の実部のコピー B=real(A)
  */
 int cmat_real(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)

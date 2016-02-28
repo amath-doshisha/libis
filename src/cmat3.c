@@ -347,7 +347,7 @@ void cmat3_get_z(int m, int n, int l, dcomplex *B, int LDB1, int LDB2, cmulti **
 /**
  @brief cmulti型の3次元配列を1次元配列に変換 B=A(:).
  */
-int cmat3_copy_rvec(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2)
+int cvec_copy_cmat3(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2)
 {
   int i,j,k,e=0;
   for(k=0; k<l; k++){
@@ -363,7 +363,7 @@ int cmat3_copy_rvec(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int L
 /**
  @brief cmulti型の3次元配列を1次元配列に変換 B=A(:).
  */
-int cmat3_clone_rvec(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2)
+int cvec_clone_cmat3(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2)
 {
   int i,j,k,e=0;
   for(k=0; k<l; k++){
@@ -379,10 +379,10 @@ int cmat3_clone_rvec(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int 
 /**
  @brief cmulti型の3次元配列を1次元配列に要素を指定して変換 B=A(I).
  */
-int cmat3_copy_rvec_index(cmulti **B, cmulti **A, int LDA1, int LDA2, int N, int *I)
+int cvec_copy_cmat3_index(int n, cmulti **B, cmulti **A, int LDA1, int LDA2, int *I)
 {
   int t,i,j,k,e=0;
-  for(t=0; t<N; t++){
+  for(t=0; t<n; t++){
     if(I!=NULL){
       k=I[t]/(LDA1*LDA2);
       j=(I[t]%(LDA1*LDA2))/LDA1;
@@ -396,10 +396,10 @@ int cmat3_copy_rvec_index(cmulti **B, cmulti **A, int LDA1, int LDA2, int N, int
 /**
  @brief cmulti型の3次元配列を1次元配列に要素を指定して変換 B=A(I).
  */
-int cmat3_clone_rvec_index(cmulti **B, cmulti **A, int LDA1, int LDA2, int N, int *I)
+int cvec_clone_cmat3_index(int n, cmulti **B, cmulti **A, int LDA1, int LDA2, int *I)
 {
   int t,i,j,k,e=0;
-  for(t=0; t<N; t++){
+  for(t=0; t<n; t++){
     if(I!=NULL){
       k=I[t]/(LDA1*LDA2);
       j=(I[t]%(LDA1*LDA2))/LDA1;
@@ -413,11 +413,11 @@ int cmat3_clone_rvec_index(cmulti **B, cmulti **A, int LDA1, int LDA2, int N, in
 /**
  @brief cmulti型の3次元配列を2次元配列に要素を指定して変換 B=A(I,J).
  */
-int cmat3_copy_cmat_index(cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J)
+int cmat_copy_cmat3_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int *I, int *J)
 {
   int s,t,i,j,k,e=0;
-  for(s=0; s<M; s++){
-    for(t=0; t<N; t++){
+  for(s=0; s<m; s++){
+    for(t=0; t<n; t++){
       if(I!=NULL && J!=NULL){
 	k=J[t]/LDA2;
 	j=J[t]%LDA2;
@@ -432,11 +432,11 @@ int cmat3_copy_cmat_index(cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, i
 /**
  @brief cmulti型の3次元配列を2次元配列に要素を指定して変換 B=A(I,J).
  */
-int cmat3_clone_cmat_index(cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J)
+int cmat_clone_cmat3_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int *I, int *J)
 {
   int s,t,i,j,k,e=0;
-  for(s=0; s<M; s++){
-    for(t=0; t<N; t++){
+  for(s=0; s<m; s++){
+    for(t=0; t<n; t++){
       if(I!=NULL && J!=NULL){
 	k=J[t]/LDA2;
 	j=J[t]%LDA2;
@@ -465,6 +465,22 @@ int cmat3_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, 
 }
 
 /**
+ @brief cmulti型の3次元配列の値のコピー B=A
+*/
+int cmat3_copy_rmat3(int m, int n, int l, cmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy_r(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief cmulti型の3次元配列の値を添字を指定してコピー B=A(I,J,K)
 */
 int cmat3_copy_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
@@ -474,6 +490,38 @@ int cmat3_copy_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
 	e+=ccopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値を添字を指定してコピー B(I,J,K)=A
+*/
+int cmat3_index_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy(MAT3(B,I[i],J[j],K[k],LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値を添字を指定してコピー B(I,J,K)=A
+*/
+int cmat3_index_copy_rmat3(int m, int n, int l, cmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy_r(MAT3(B,I[i],J[j],K[k],LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }

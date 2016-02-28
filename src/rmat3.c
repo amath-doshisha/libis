@@ -411,7 +411,7 @@ void rmat3_get_d(int m, int n, int l, double *B, int LDB1, int LDB2, rmulti **A,
 /**
  @brief rmulti型の3次元配列を1次元配列に変換 B=A(:).
  */
-int rmat3_copy_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2)
+int rvec_copy_rmat3(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2)
 {
   int i,j,k,e=0;
   for(k=0; k<l; k++){
@@ -427,7 +427,7 @@ int rmat3_copy_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int L
 /**
  @brief rmulti型の3次元配列を1次元配列に変換 B=A(:).
  */
-int rmat3_clone_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2)
+int rvec_clone_rmat3(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2)
 {
   int i,j,k,e=0;
   for(k=0; k<l; k++){
@@ -443,10 +443,10 @@ int rmat3_clone_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int 
 /**
  @brief rmulti型の3次元配列を1次元配列に要素を指定して変換 B=A(I).
  */
-int rmat3_copy_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, int *I)
+int rvec_copy_rmat3_index(int n, rmulti **B, rmulti **A, int LDA1, int LDA2, int *I)
 {
   int t,i,j,k,e=0;
-  for(t=0; t<N; t++){
+  for(t=0; t<n; t++){
     if(I!=NULL){
       k=I[t]/(LDA1*LDA2);
       j=(I[t]%(LDA1*LDA2))/LDA1;
@@ -460,10 +460,10 @@ int rmat3_copy_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, int
 /**
  @brief rmulti型の3次元配列を1次元配列に要素を指定して変換 B=A(I).
  */
-int rmat3_clone_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, int *I)
+int rvec_clone_rmat3_index(int n, rmulti **B, rmulti **A, int LDA1, int LDA2, int *I)
 {
   int t,i,j,k,e=0;
-  for(t=0; t<N; t++){
+  for(t=0; t<n; t++){
     if(I!=NULL){
       k=I[t]/(LDA1*LDA2);
       j=(I[t]%(LDA1*LDA2))/LDA1;
@@ -477,11 +477,11 @@ int rmat3_clone_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, in
 /**
  @brief rmulti型の3次元配列を2次元配列に要素を指定して変換 B=A(I,J).
  */
-int rmat3_copy_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J)
+int rmat_copy_rmat3_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int *I, int *J)
 {
   int s,t,i,j,k,e=0;
-  for(s=0; s<M; s++){
-    for(t=0; t<N; t++){
+  for(s=0; s<m; s++){
+    for(t=0; t<n; t++){
       if(I!=NULL && J!=NULL){
 	k=J[t]/LDA2;
 	j=J[t]%LDA2;
@@ -496,11 +496,11 @@ int rmat3_copy_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, i
 /**
  @brief rmulti型の3次元配列を2次元配列に要素を指定して変換 B=A(I,J).
  */
-int rmat3_clone_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J)
+int rmat_clone_rmat3_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int *I, int *J)
 {
   int s,t,i,j,k,e=0;
-  for(s=0; s<M; s++){
-    for(t=0; t<N; t++){
+  for(s=0; s<m; s++){
+    for(t=0; t<n; t++){
       if(I!=NULL && J!=NULL){
 	k=J[t]/LDA2;
 	j=J[t]%LDA2;
@@ -538,6 +538,22 @@ int rmat3_copy_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
 	e+=rcopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列を添字を指定してコピー B(I,J,K)=A.
+*/
+int rmat3_index_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rcopy(MAT3(B,I[i],J[j],K[k],LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }

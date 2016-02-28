@@ -77,6 +77,7 @@ void rmat_rows_swap(int m, int n, rmulti **A, int LDA, int k, int l);
 int rmat_copy(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);                                 // B=A
 int rmat_copy_t(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);                               // B=A'
 void rmat_copy_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, const int *I);            // B(:,j)=A(:,I(j))
+int rmat_index_copy(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, int *I, int *J);           // B(I,J)=A
 int rmat_neg(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);                                  // B=-A
 int rmat_abs(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);                                  // B=abs(A)
 int rmat_add(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti **B, int LDB);             // C=A+B

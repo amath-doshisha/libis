@@ -632,9 +632,7 @@ void rvec_swap_index(int n, rmulti **x, const int *I)
   int i;
   rmulti **y=NULL;
   y=rvec_allocate_prec(n,53);
-  for(i=0; i<n; i++){
-    rswap(y[i],x[I[i]]);
-  }
+  for(i=0; i<n; i++){ rswap(y[i],x[I[i]]); }
   rvec_swap(n,x,y);
   y=rvec_free(n,y);
 }
@@ -729,7 +727,6 @@ int rvec_index_copy(int n, rmulti **y, rmulti **x, int *I)
   for(i=0; i<n; i++){ e+=rcopy(y[I[i]],x[i]); }
   return e;
 }
-
 
 /**
  @brief rmulti型のベクトルの指数部の足し算 y=x*2^p

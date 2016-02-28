@@ -16,8 +16,8 @@ void multi_subsref(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   if(s->ndim==1 && s->dims[0]==0 && s->index[0]==NULL){ // A(:)
     // convert to column vector
     y=multi_allocate(_T(x),_LD1(x)*_LD2(x)*_L(x),1,1);
-         if(_T(x)=='r'){ rmat3_copy_rvec(_LD1(x),_LD2(x),_L(x),_R(y),_R(x),_LD1(x),_LD2(x)); }
-    else if(_T(x)=='c'){ cmat3_copy_rvec(_LD1(x),_LD2(x),_L(x),_C(y),_C(x),_LD1(x),_LD2(x)); }
+         if(_T(x)=='r'){ rvec_copy_rmat3(_LD1(x),_LD2(x),_L(x),_R(y),_R(x),_LD1(x),_LD2(x)); }
+    else if(_T(x)=='c'){ cvec_copy_cmat3(_LD1(x),_LD2(x),_L(x),_C(y),_C(x),_LD1(x),_LD2(x)); }
     else{ MATLAB_ERROR("multi_subsref: Unkown type"); }
   }else if(s->ndim==1){ // A(*)
     if(s->dims[0]==0 && s->index[0]==NULL){ s->dims[0]=_M(x)*_N(x)*_L(x); s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
@@ -25,8 +25,8 @@ void multi_subsref(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     if(ivec_max(s->dims[0],s->index[0])>=_M(x)*_N(x)*_L(x)){ MATLAB_ERROR("multi_subsref: The index is out of the dimensions of the matrix."); }
     if(_N(x)==1 && _L(x)==1){ y=multi_allocate(_T(x),s->dims[0],1,1); }
     else                    { y=multi_allocate(_T(x),1,s->dims[0],1); }
-         if(_T(x)=='r'){ rmat3_copy_rvec_index(_R(y),_R(x),_LD1(x),_LD2(x),s->dims[0],s->index[0]); }
-    else if(_T(x)=='c'){ cmat3_copy_rvec_index(_C(y),_C(x),_LD1(x),_LD2(x),s->dims[0],s->index[0]); }
+         if(_T(x)=='r'){ rvec_copy_rmat3_index(s->dims[0],_R(y),_R(x),_LD1(x),_LD2(x),s->index[0]); }
+    else if(_T(x)=='c'){ cvec_copy_cmat3_index(s->dims[0],_C(y),_C(x),_LD1(x),_LD2(x),s->index[0]); }
     else{ MATLAB_ERROR("multi_subsref: Unkown type"); }	       
   }else if(s->ndim==2){ // A(*,*)
     if(s->dims[0]==0 && s->index[0]==NULL){ s->dims[0]=_M(x);       s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
@@ -36,8 +36,8 @@ void multi_subsref(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     if(ivec_max(s->dims[0],s->index[0])>=_M(x))      { MATLAB_ERROR("multi_subsref: The index is out of the dimensions of the matrix."); }
     if(ivec_max(s->dims[1],s->index[1])>=_N(x)*_L(x)){ MATLAB_ERROR("multi_subsref: The index is out of the dimensions of the matrix."); }
     y=multi_allocate(_T(x),s->dims[0],s->dims[1],1);
-         if(_T(x)=='r'){ rmat3_copy_rmat_index(_R(y),_LD1(y),_R(x),_LD1(x),_LD2(x),s->dims[0],s->index[0],s->dims[1],s->index[1]); }
-    else if(_T(x)=='c'){ cmat3_copy_cmat_index(_C(y),_LD1(y),_C(x),_LD1(x),_LD2(x),s->dims[0],s->index[0],s->dims[1],s->index[1]); }
+         if(_T(x)=='r'){ rmat_copy_rmat3_index(s->dims[0],s->dims[1],_R(y),_LD1(y),_R(x),_LD1(x),_LD2(x),s->index[0],s->index[1]); }
+    else if(_T(x)=='c'){ cmat_copy_cmat3_index(s->dims[0],s->dims[1],_C(y),_LD1(y),_C(x),_LD1(x),_LD2(x),s->index[0],s->index[1]); }
     else{ MATLAB_ERROR("multi_subsref: Unkown type"); }	           
   }else if(s->ndim==3){ // A(*,*,*)
     if(s->dims[0]==0 && s->index[0]==NULL){ s->dims[0]=_M(x); s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }

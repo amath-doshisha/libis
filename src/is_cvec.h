@@ -85,11 +85,12 @@ void cvec_sort_index(int *I, int n, cmulti **X);
 /*
  * operations with auto precision mode
  */
-int cvec_copy(int n, cmulti **y, cmulti **x);                     // y=x
-int cvec_copy_r(int n, cmulti **y, rmulti **x);                   // y=x
-int cvec_copy_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i);  // y=x
-int cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I); // y=x(I)
-int cvec_index_copy(int n, cmulti **y, cmulti **x, int *I);       // y(I)=x
+int cvec_copy(int n, cmulti **y, cmulti **x);                           // y=x
+int cvec_copy_rvec(int n, cmulti **y, rmulti **x);                      // y=x
+int cvec_copy_rvec_rvec(int n, cmulti **y, rmulti **x_r, rmulti **x_i); // y=x
+int cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I);       // y=x(I)
+int cvec_index_copy(int n, cmulti **y, cmulti **x, int *I);             // y(I)=x
+int cvec_index_copy_rvec(int n, cmulti **y, rmulti **x, int *I);        // y(I)=x
 int cvec_real(int n, rmulti **y, cmulti **x);                     // y=real(x)
 int cvec_real_clone(int n, rmulti **y, cmulti **x);               // y=real(x)
 int cvec_imag(int n, rmulti **y, cmulti **x);                     // y=imag(x)

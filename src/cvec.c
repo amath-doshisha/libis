@@ -661,9 +661,7 @@ void cvec_swap_index(int n, cmulti **x, const int *I)
   int i;
   cmulti **y=NULL;
   y=cvec_allocate_prec(n,53);
-  for(i=0; i<n; i++){
-    cswap(y[i],x[I[i]]);
-  }
+  for(i=0; i<n; i++){ cswap(y[i],x[I[i]]); }
   cvec_swap(n,x,y);
   y=cvec_free(n,y);
 }
@@ -740,7 +738,7 @@ int cvec_copy(int n, cmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの値のrmulti型からのコピー y=x.
 */
-int cvec_copy_r(int n, cmulti **y, rmulti **x)
+int cvec_copy_rvec(int n, cmulti **y, rmulti **x)
 {
   int i,e=0;
   for(i=0; i<n; i++){ e+=ccopy_r(y[i],x[i]); }
@@ -750,7 +748,7 @@ int cvec_copy_r(int n, cmulti **y, rmulti **x)
 /**
  @brief cmulti型のベクトルの値のrmulti型からのコピー y=x.
 */
-int cvec_copy_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
+int cvec_copy_rvec_rvec(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
 {
   int i,e=0;
   for(i=0; i<n; i++){ e+=ccopy_rr(y[i],x_r[i],x_i[i]); }
@@ -758,8 +756,7 @@ int cvec_copy_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
 }
 
 /**
- @brief cmulti型のベクトルの値の要素番号Iに従ったコピー y=x.
- @details y[i]=x[I[i]], i=0,1,2,..,n-1.
+ @brief cmulti型のベクトルの値の要素番号Iに従ったコピー y=x(I).
 */
 int cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I)
 {
@@ -776,6 +773,16 @@ int cvec_index_copy(int n, cmulti **y, cmulti **x, int *I)
 {
   int i,e=0;
   for(i=0; i<n; i++){ e+=ccopy(y[I[i]],x[i]); }
+  return e;
+}
+
+/**
+ @brief cmulti型のベクトルの値を添字を指定してコピー y(I)=x.
+*/
+int cvec_index_copy_rvec(int n, cmulti **y, rmulti **x, int *I)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=ccopy_r(y[I[i]],x[i]); }
   return e;
 }
 

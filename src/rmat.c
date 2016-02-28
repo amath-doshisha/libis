@@ -711,6 +711,20 @@ void rmat_copy_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, con
 }
 
 /**
+ @brief rmulti型の行列の値を要素を添字を指定してコピー B(I,J)=A
+*/
+int rmat_index_copy(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, int *I, int *J)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      if(I!=NULL && J!=NULL){ e+=rcopy(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
+    }
+  }
+  return e;
+}
+
+/**
  @brief rmulti型の行列の符号反転 B=-A.
 */
 int rmat_neg(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA)
