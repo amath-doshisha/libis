@@ -43,7 +43,7 @@ void deig_sort(int n, int k, double *lambda, double *X, int LDX)
   dvec_sort(k,lambda,index);
   ivec_reverse(k,index);
   dvec_reverse(k,lambda);
-  dmat_copy_index(n,k,Y,LDY,X,LDX,index);
+  dmat_copy_col_index(n,k,Y,LDY,X,LDX,index);
   dmat_copy(n,k,X,LDX,Y,LDY);
   // free
   index=ivec_free(index);

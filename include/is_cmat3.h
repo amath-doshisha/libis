@@ -60,15 +60,6 @@ void cmat3_get_z(int m, int n, int l, dcomplex *B, int LDB1, int LDB2, cmulti **
 /*
  * operations with auto precision mode
  */
-// B=A(:)
-int cvec_copy_cmat3(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2);
-int cvec_clone_cmat3(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2);
-// B=A(I)
-int cvec_copy_cmat3_index(int n, cmulti **B, cmulti **A, int LDA1, int LDA2, int *I);
-int cvec_clone_cmat3_index(int n, cmulti **B, cmulti **A, int LDA1, int LDA2, int *I);
-// B=A(I,J)
-int cmat_copy_cmat3_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int *I, int *J);
-int cmat_clone_cmat3_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int *I, int *J);
 // B=A
 int cmat3_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 int cmat3_copy_rmat3(int m, int n, int l, cmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);

@@ -49,7 +49,7 @@ void imat_swap_rows(int m, int n, int *A, int LDA, int k, int l);
 // B=A
 void imat_copy(int m, int n, int *B, int LDB, const int *A, int LDA);
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void imat_copy_index(int m, int n, int *B, int LDB, const int *A, int LDA, const int *I);
+void imat_copy_col_index(int m, int n, int *B, int LDB, const int *A, int LDA, const int *I);
 // A(:,j) <-> A(:,I[j]) for 0<=j<n
 void imat_swap_index(int m, int n, int *A, int LDA, const int *I);
 

@@ -853,12 +853,26 @@ int cmat_copy_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
  @brief cmulti型の行列の列を列番号Iに従ったコピー B=A.
  @details B(:,j)=A(:,I(j)) j=0,1,2,..,n-1.
 */
-void cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, const int *I)
+void cmat_copy_col_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, const int *I)
 {
   int j;
   for(j=0; j<n; j++){
     cvec_copy(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
   }
+}
+
+/**
+ @brief cmulti型の行列の値を要素を添字を指定してコピー B=A(I,J)
+*/
+int cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      if(I!=NULL && J!=NULL){ e+=ccopy(MAT(B,i,j,LDB),MAT(A,I[i],J[j],LDA)); }
+    }
+  }
+  return e;
 }
 
 /**

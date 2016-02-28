@@ -62,15 +62,6 @@ void rmat3_get_d(int m, int n, int l, double *B, int LDB1, int LDB2, rmulti **A,
 /*
  * operations with auto precision mode
  */
-// B=A(:)
-int rvec_copy_rmat3(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2);
-int rvec_clone_rmat3(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2);
-// B=A(I)
-int rvec_copy_rmat3_index(int n, rmulti **B, rmulti **A, int LDA1, int LDA2, int *I);
-int rvec_clone_rmat3_index(int n, rmulti **B, rmulti **A, int LDA1, int LDA2, int *I);
-// B=A(I,J)
-int rmat_copy_rmat3_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int *I, int *J);
-int rmat_clone_rmat3_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int *I, int *J);
 // B=A
 int rmat3_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 // B=A(I,J,K)

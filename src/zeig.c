@@ -44,7 +44,7 @@ void zeig_sort(int n, int k, dcomplex *lambda, dcomplex *X, int LDX)
   zvec_sort(k,lambda,index);
   ivec_reverse(k,index);
   zvec_reverse(k,lambda);
-  zmat_copy_index(n,k,Y,LDY,X,LDX,index);
+  zmat_copy_col_index(n,k,Y,LDY,X,LDX,index);
   zmat_copy(n,k,X,LDX,Y,LDY);
   // free
   index=ivec_free(index);

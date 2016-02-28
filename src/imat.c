@@ -137,7 +137,7 @@ void imat_copy(int m, int n, int *B, int LDB, const int *A, int LDA)
 ///////////////////////////////////////////////////////////////////////
 
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void imat_copy_index(int m, int n, int *B, int LDB, const int *A, int LDA, const int *I)
+void imat_copy_col_index(int m, int n, int *B, int LDB, const int *A, int LDA, const int *I)
 {
   int j;
   for(j=0; j<n; j++){
@@ -153,7 +153,7 @@ void imat_swap_index(int m, int n, int *A, int LDA, const int *I)
   int LDB;
   int *B=NULL;
   LDB=m; B=imat_allocate(LDB,n);
-  imat_copy_index(m,n,B,LDB,A,LDA,I);
+  imat_copy_col_index(m,n,B,LDB,A,LDA,I);
   imat_copy(m,n,A,LDA,B,LDB);
   B=imat_free(B);
 }

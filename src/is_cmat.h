@@ -80,7 +80,8 @@ void cmat_cols_rotate_left(int m, int n, cmulti **A, int LDA);  // rotate column
  */
 int cmat_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                            // B=A
 int cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA);                       // B=A
-void cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, const int *I);       // B=A(I)
+void cmat_copy_col_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, const int *I);   // B=A(I)
+int cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J);      // B=A(I,J)
 int cmat_index_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J);      // B(I,J)=A
 int cmat_index_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA, int *I, int *J); // B(I,J)=A
 int cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                         // B=A^T

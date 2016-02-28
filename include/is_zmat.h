@@ -45,7 +45,7 @@ void zmat_copy_t(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
 // B=A'
 void zmat_copy_ct(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA);
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void zmat_copy_index(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA, const int *I);
+void zmat_copy_col_index(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA, const int *I);
 // A(:,j) <-> A(:,I[j]) for 0<=j<n
 void zmat_swap_index(int m, int n, dcomplex *A, int LDA, const int *I);
 // A(k,k+offset)=a for k=0,1,..

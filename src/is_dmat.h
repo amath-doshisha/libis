@@ -38,7 +38,7 @@ void dmat_copy(int m, int n, double *B, int LDB, const double *A, int LDA);
 // B=A'
 void dmat_copy_t(int m, int n, double *B, int LDB, const double *A, int LDA);
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void dmat_copy_index(int m, int n, double *B, int LDB, const double *A, int LDA, const int *I);
+void dmat_copy_col_index(int m, int n, double *B, int LDB, const double *A, int LDA, const int *I);
 // A(:,j) <-> A(:,I[j]) for 0<=j<n
 void dmat_swap_index(int m, int n, double *A, int LDA, const int *I);
 // A(k,k+offset)=a for k=0,1,..

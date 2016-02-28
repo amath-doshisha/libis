@@ -3,7 +3,7 @@ close all
 set_default_prec(128);
 
 M=3;N=3;L=2;
-B=zeros(M,N,L);
-A=multi(B)
-
-A(2:4,2:4,1:3)=ones(3,3,3)
+A=zeros(M,N,L);
+A=multi(A)
+A(:)=1:(M*N*L)
+A(1:2:M,1:2:N,2)

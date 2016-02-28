@@ -189,7 +189,7 @@ void zmat_copy_ct(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA
 ////////////////////////////////////////////////////////////////
 
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void zmat_copy_index(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA, const int *I)
+void zmat_copy_col_index(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA, const int *I)
 {
   int j;
   for(j=0; j<n; j++){
@@ -205,7 +205,7 @@ void zmat_swap_index(int m, int n, dcomplex *A, int LDA, const int *I)
   int LDB;
   dcomplex *B=NULL;
   LDB=m; B=zmat_allocate(LDB,n);
-  zmat_copy_index(m,n,B,LDB,A,LDA,I);
+  zmat_copy_col_index(m,n,B,LDB,A,LDA,I);
   zmat_copy(m,n,A,LDA,B,LDB);
   B=zmat_free(B);
 }

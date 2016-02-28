@@ -135,7 +135,7 @@ void dmat_copy_t(int m, int n, double *B, int LDB, const double *A, int LDA)
 //////////////////////////////////////////////////////////////////////////
 
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void dmat_copy_index(int m, int n, double *B, int LDB, const double *A, int LDA, const int *I)
+void dmat_copy_col_index(int m, int n, double *B, int LDB, const double *A, int LDA, const int *I)
 {
   int j;
   for(j=0; j<n; j++){
@@ -151,7 +151,7 @@ void dmat_swap_index(int m, int n, double *A, int LDA, const int *I)
   int LDB;
   double *B=NULL;
   LDB=m; B=dmat_allocate(LDB,n);
-  dmat_copy_index(m,n,B,LDB,A,LDA,I);
+  dmat_copy_col_index(m,n,B,LDB,A,LDA,I);
   dmat_copy(m,n,A,LDA,B,LDB);
   B=dmat_free(B);
 }
