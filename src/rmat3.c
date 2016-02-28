@@ -409,6 +409,110 @@ void rmat3_get_d(int m, int n, int l, double *B, int LDB1, int LDB2, rmulti **A,
 /** @{ */
 
 /**
+ @brief rmulti型の3次元配列を1次元配列に変換 B=A(:).
+ */
+int rmat3_copy_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rcopy(MAT3(B,i,j,k,m,n),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列を1次元配列に変換 B=A(:).
+ */
+int rmat3_clone_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rclone(MAT3(B,i,j,k,m,n),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列を1次元配列に要素を指定して変換 B=A(I).
+ */
+int rmat3_copy_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, int *I)
+{
+  int t,i,j,k,e=0;
+  for(t=0; t<N; t++){
+    if(I!=NULL){
+      k=I[t]/(LDA1*LDA2);
+      j=(I[t]%(LDA1*LDA2))/LDA1;
+      i=(I[t]%(LDA1*LDA2))%LDA1;
+      e+=rcopy(B[t],MAT3(A,i,j,k,LDA1,LDA2));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列を1次元配列に要素を指定して変換 B=A(I).
+ */
+int rmat3_clone_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, int *I)
+{
+  int t,i,j,k,e=0;
+  for(t=0; t<N; t++){
+    if(I!=NULL){
+      k=I[t]/(LDA1*LDA2);
+      j=(I[t]%(LDA1*LDA2))/LDA1;
+      i=(I[t]%(LDA1*LDA2))%LDA1;
+      e+=rclone(B[t],MAT3(A,i,j,k,LDA1,LDA2));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列を2次元配列に要素を指定して変換 B=A(I,J).
+ */
+int rmat3_copy_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J)
+{
+  int s,t,i,j,k,e=0;
+  for(s=0; s<M; s++){
+    for(t=0; t<N; t++){
+      if(I!=NULL && J!=NULL){
+	k=J[t]/LDA2;
+	j=J[t]%LDA2;
+	i=I[s];
+	e+=rcopy(MAT(B,s,t,LDB),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列を2次元配列に要素を指定して変換 B=A(I,J).
+ */
+int rmat3_clone_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J)
+{
+  int s,t,i,j,k,e=0;
+  for(s=0; s<M; s++){
+    for(t=0; t<N; t++){
+      if(I!=NULL && J!=NULL){
+	k=J[t]/LDA2;
+	j=J[t]%LDA2;
+	i=I[s];
+	e+=rclone(MAT(B,s,t,LDB),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief rmulti型の3次元配列の値のコピー B=A
 */
 int rmat3_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)

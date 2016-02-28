@@ -26,6 +26,7 @@ void rmat3_swap(int m, int n, int l, rmulti **A, int LDA1, int LDA2, rmulti **B,
  * member variables
  */
 void rmat3_get_prec(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
+int rmat3_get_prec_max(int m, int n, int l, rmulti **A, int LDA1, int LDA2);
 void rmat3_get_exp(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
 void rmat3_get_sgn(int m, int n, int l, int *P, int LDP1, int LDP2, rmulti **A, int LDA1, int LDA2);
 
@@ -61,6 +62,15 @@ void rmat3_get_d(int m, int n, int l, double *B, int LDB1, int LDB2, rmulti **A,
 /*
  * operations with auto precision mode
  */
+// B=A(:)
+int rmat3_copy_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2);
+int rmat3_clone_rvec(int m, int n, int l, rmulti **B, rmulti **A, int LDA1, int LDA2);
+// B=A(I)
+int rmat3_copy_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, int *I);
+int rmat3_clone_rvec_index(rmulti **B, rmulti **A, int LDA1, int LDA2, int N, int *I);
+// B=A(I,J)
+int rmat3_copy_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J);
+int rmat3_clone_rmat_index(rmulti **B, int LDB, rmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J);
 // B=A
 int rmat3_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 // B=-A
@@ -83,6 +93,8 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /*
  * oparations
  */
+// C=abs(A)
+int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
 // C=A./B
 int rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=a./B

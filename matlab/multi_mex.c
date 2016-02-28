@@ -35,8 +35,14 @@ typedef struct {
 } multi_struct;
 typedef multi_struct multi;
 
+typedef struct {
+  int ndim;
+  int *dims;
+  int **index;
+} subs_index_t;
+
 /**
- * @breif MATLABの構造体のフィールド名
+ * @breif MATLABの構�?体�?フィールド名
  */
 const char *r_field_names[]={"r_prec","r_sign","r_exp","r_digits"};  
 const char *c_field_names[]={"cr_prec","cr_sign","cr_exp","cr_digits",
@@ -62,6 +68,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/mxCreateStructMultiValue.c"
 #include"./c/mxCreateStructMulti.c"
 #include"./c/mxArrayToMulti.c"
+#include"./c/subs_allocate.c"
 #include"./c/multi_free.c"
 #include"./c/multi_allocate.c"
 #include"./c/multi_allocate_mxArray.c"

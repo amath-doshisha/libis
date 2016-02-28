@@ -21,6 +21,7 @@ int cmat3_clone_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmult
 /*
  * member variables
  */
+int cmat3_get_prec_max(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
 
 /*
  * I/O
@@ -59,6 +60,15 @@ void cmat3_get_z(int m, int n, int l, dcomplex *B, int LDB1, int LDB2, cmulti **
 /*
  * operations with auto precision mode
  */
+// B=A(:)
+int cmat3_copy_rvec(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2);
+int cmat3_clone_rvec(int m, int n, int l, cmulti **B, cmulti **A, int LDA1, int LDA2);
+// B=A(I)
+int cmat3_copy_rvec_index(cmulti **B, cmulti **A, int LDA1, int LDA2, int N, int *I);
+int cmat3_clone_rvec_index(cmulti **B, cmulti **A, int LDA1, int LDA2, int N, int *I);
+// B=A(I,J)
+int cmat3_copy_cmat_index(cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J);
+int cmat3_clone_cmat_index(cmulti **B, int LDB, cmulti **A, int LDA1, int LDA2, int M, int *I, int N, int *J);
 // B=A
 int cmat3_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // B=-A
@@ -105,6 +115,8 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
 /*
  * oparations
  */
+// C=abs(A)
+int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2);
 // C=A./B
 int cmat3_div(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2);
 // C=A./B
