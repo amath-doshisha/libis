@@ -11,8 +11,8 @@ void multi_copy(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   // allocate by default precision
   y=multi_allocate(_T(x),_M(x),_N(x),_L(x));
   // copy
-       if(_T(y)=='r'){ rmat3_copy(_M(y),_N(y),_L(y),_R(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x)); }
-  else if(_T(y)=='c'){ cmat3_copy(_M(y),_N(y),_L(y),_C(y),_LD1(y),_LD2(y),_C(x),_LD1(x),_LD2(x)); }
+       if(_T(y)=='r'){ rmat3_clone(_M(y),_N(y),_L(y),_R(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x)); }
+  else if(_T(y)=='c'){ cmat3_clone(_M(y),_N(y),_L(y),_C(y),_LD1(y),_LD2(y),_C(x),_LD1(x),_LD2(x)); }       
   else{ MATLAB_ERROR("multi_copy: Unkown type"); }
   // done
   plhs[0]=mxCreateStructMulti(y);

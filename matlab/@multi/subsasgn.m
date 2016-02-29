@@ -1,7 +1,6 @@
 %% x=subsasgn(x,s,y), i.e. x(s)=y
 function x=subsasgn(x,s,y)
 cmd='subsasgn';
-s
 switch s(1).type
     case '()'
         if isa(x,'multi')

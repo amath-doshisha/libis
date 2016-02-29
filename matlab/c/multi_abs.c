@@ -1,38 +1,3 @@
-
-/**
- @brief rmulti型の3次元配列の絶対値 C=abs(A).
-*/
-int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2){
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rabs(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-  return e;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-/**
- @brief cmulti型の3次元配列の絶対値 C=abs(A).
-*/
-int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2){
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=cabsv(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-  return e;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
 /**
  * @breif z=abs(x,y)
  */
@@ -55,5 +20,3 @@ void multi_abs(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 }
 
 //EOF
-
-

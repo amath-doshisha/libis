@@ -6,8 +6,8 @@ void multi_mldivide(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   multi *x=NULL,*y=NULL,*z=NULL,*u=NULL,*v=NULL;
   int i,info=-1;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
-  if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_mrdivide: The 1st-arg should be Struct."); }
-  if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_mrdivide: The 2nd-arg should be Struct."); }
+  if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_mldivide: The 1st-arg should be Struct."); }
+  if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_mldivide: The 2nd-arg should be Struct."); }
   // allocate by clone
   x=multi_allocate_mxArray(prhs[N0]);
   y=multi_allocate_mxArray(prhs[N0+1]);
