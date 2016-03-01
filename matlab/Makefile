@@ -1,7 +1,7 @@
 
 SUFFIX=mexmaci64
 
-MATLAB_BIN=/Applications/MATLAB_R2014b.app/bin
+MATLAB_BIN=/Applications/MATLAB_R2015b.app/bin
 
 MEX=$(MATLAB_BIN)/mex
 
