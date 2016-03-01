@@ -112,6 +112,8 @@ int rmat_div(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti **B,
 int rmat_div_r1(int m, int n, rmulti **C, int LDC, rmulti *a, rmulti **B, int LDB);        // C=a./B
 int rmat_div_r2(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, rmulti *b);        // C=A./b
 int rmat_div_d(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, double b);
+int rmat_inv(int n, rmulti **B, int LDB, rmulti **A, int LDA);                             // B=inv(A)
+int rmat_power(int n, rmulti **B, int LDB, rmulti **A, int LDA, int p);                    // B=A^p
 int rmat_cols_normalize(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);
 int rmat_cols_normalize_sgn(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA);
 

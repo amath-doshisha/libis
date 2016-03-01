@@ -11,6 +11,7 @@
 #include"is_zmat.h"
 #include"is_dmat.h"
 #include"is_cvec.h"
+#include"is_csolve.h"
 #include"is_func.h"
 
 /**
@@ -1199,50 +1200,6 @@ int cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b)
   return e;
 }
 
-
-/**
- @brief cmulti型の行列の要素ごとの割り算 C=A./B
-*/
-int cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
-{
-  int i,j,e=0;
-  for(j=0; j<n; j++){
-    for(i=0; i<m; i++){
-      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
-    }
-  }
-  return e;
-}
-
-/**
- @brief cmulti型の行列の要素ごとの割り算 C=a./B
-*/
-int cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
-{
-  int i,j,e=0;
-  for(j=0; j<n; j++){
-    for(i=0; i<m; i++){
-      e+=cdiv(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
-    }
-  }
-  return e;
-}
-
-/**
- @brief cmulti型の行列の要素ごとの割り算 C=A./b
-*/
-int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
-{
-  int i,j,e=0;
-  for(j=0; j<n; j++){
-    for(i=0; i<m; i++){
-      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
-    }
-  }
-  return e;
-}
-
-
 /**
  @brief cmulti型の行列の積 C=A*B.
  @param[in]  A 初期化済みのサイズが(l,m)の行列.
@@ -1576,6 +1533,90 @@ int cmat_diag_sub_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmul
 
 /** @name cmulti型の行列の数学関数に関する関数 */
 /** @{ */
+
+/**
+ @brief cmulti型の行列の要素ごとの割り算 C=A./B
+*/
+int cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の要素ごとの割り算 C=a./B
+*/
+int cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cdiv(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の要素ごとの割り算 C=A./b
+*/
+int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の逆行列 B=inv(A)
+ @param[in]  A 初期化済みのサイズが(n,n)の行列.
+ @param[out] B 初期化済みのサイズが(n,n)の行列.
+*/
+int cmat_inv(int n, cmulti **B, int LDB, cmulti **A, int LDA)
+{
+  int info,e=0;
+  e+=cmat_set_eye(n,n,B,LDB);
+  e+=csolve(n,n,B,LDB,A,LDA,&info);
+  return e;
+}
+
+/**
+ @brief cmulti型の行列の累乗 B=A^p.
+ @param[in]  A 初期化済みのサイズが(l,l)の行列.
+ @param[in]  x スカラー
+ @param[out] B 初期化済みのサイズが(l,l)の行列.
+*/
+int cmat_power(int n, cmulti **B, int LDB, cmulti **A, int LDA, int p)
+{
+  int LDZ,i,e=0;
+  cmulti **Z=NULL;
+  LDZ=n; Z=cmat_allocate_prec(LDZ,n,cmat_get_prec_max(n,n,B,LDB));
+  if(p<0){
+    e+=cmat_inv(n,Z,LDZ,A,LDA);
+    e+=cmat_power(n,B,LDB,Z,LDZ,-p);
+  }else if(p==0){
+    e+=cmat_set_eye(n,n,B,LDB);
+  }else if(p==1){
+    e+=cmat_copy(n,n,B,LDB,A,LDA);
+  }else{
+    e+=cmat_copy(n,n,B,LDB,A,LDA);
+    for(i=1; i<p; i++){
+      e+=cmat_prod(n,n,n,Z,LDZ,B,LDB,A,LDA);
+      e+=cmat_copy(n,n,B,LDB,Z,LDZ);
+    }
+  }
+  Z=cmat_free(LDZ,n,Z);
+  return e;
+}
 
 /**
  @brief cmulti型の行列の要素の絶対値 B=abs(A).

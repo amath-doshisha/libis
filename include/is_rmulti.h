@@ -58,6 +58,7 @@ int ris_number(rmulti *x);
 int ris_zero(rmulti *x);
 int ris_positive(rmulti *x);
 int ris_negative(rmulti *x);
+int ris_integer(rmulti *x);
 
 /*
  * I/O

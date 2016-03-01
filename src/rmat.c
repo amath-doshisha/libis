@@ -7,6 +7,7 @@
 #include"is_rmat.h"
 #include"is_dmat.h"
 #include"is_rvec.h"
+#include"is_rsolve.h"
 #include"is_func.h"
 
 /**
@@ -1149,7 +1150,6 @@ int rmat_cols_max_abs_sub_rvec(rmulti **y, int m, int n, rmulti **A, int LDA, rm
 /** @name rmulti型の行列の数学関数に関する関数 */
 /** @{ */
 
-
 /**
  @brief rmulti型の行列の要素ごとの割り算 C=A./B.
 */
@@ -1206,6 +1206,47 @@ int rmat_div_d2(int m, int n, rmulti **C, int LDC, rmulti **A, int LDA, double b
   return e;
 }
 
+/**
+ @brief rmulti型の逆行列 B=inv(A)
+ @param[in]  A 初期化済みのサイズが(n,n)の行列.
+ @param[out] B 初期化済みのサイズが(n,n)の行列.
+*/
+int rmat_inv(int n, rmulti **B, int LDB, rmulti **A, int LDA)
+{
+  int info,e=0;
+  e+=rmat_set_eye(n,n,B,LDB);
+  e+=rsolve(n,n,B,LDB,A,LDA,&info);
+  return e;
+}
+
+/**
+ @brief rmulti型の行列の累乗 B=A^p.
+ @param[in]  A 初期化済みのサイズが(n,n)の行列.
+ @param[in]  x スカラー
+ @param[out] B 初期化済みのサイズが(n,n)の行列.
+*/
+int rmat_power(int n, rmulti **B, int LDB, rmulti **A, int LDA, int p)
+{
+  int LDZ,i,e=0;
+  rmulti **Z=NULL;
+  LDZ=n; Z=rmat_allocate_prec(LDZ,n,rmat_get_prec_max(n,n,B,LDB));
+  if(p<0){
+    e+=rmat_inv(n,Z,LDZ,A,LDA);
+    e+=rmat_power(n,B,LDB,Z,LDZ,-p);
+  }else if(p==0){
+    e+=rmat_set_eye(n,n,B,LDB);
+  }else if(p==1){
+    e+=rmat_copy(n,n,B,LDB,A,LDA);
+  }else{
+    e+=rmat_copy(n,n,B,LDB,A,LDA);
+    for(i=1; i<p; i++){
+      e+=rmat_prod(n,n,n,Z,LDZ,B,LDB,A,LDA);
+      e+=rmat_copy(n,n,B,LDB,Z,LDZ);
+    }
+  }
+  Z=rmat_free(LDZ,n,Z);
+  return e;
+}
 
 /**
  @brief rmulti型の行列の列ごとの正規化.

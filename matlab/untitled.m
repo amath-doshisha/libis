@@ -1,6 +1,10 @@
 clear all
 close all
 set_default_prec(128);
-x=[]
-x=multi(x)
-x(5,5,2)=-1
+
+A=[1 2; 3 4]
+A=multi(A)
+B=A^-4
+A^4*B-eye(2)
+inv(A)
+inv(A)*A-eye(2)

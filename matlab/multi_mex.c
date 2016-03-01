@@ -91,6 +91,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_mrdivide.c"
 #include"./c/multi_mldivide.c"
 #include"./c/multi_power.c"
+#include"./c/multi_mpower.c"
 #include"./c/multi_eq.c"
 #include"./c/multi_ne.c"
 #include"./c/multi_ge.c"
@@ -101,6 +102,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_subsasgn.c"
 #include"./c/multi_horzcat.c"
 #include"./c/multi_vertcat.c"
+#include"./c/multi_inv.c"
 #include"./c/multi_abs.c"
 #include"./c/multi_max.c"
 
@@ -140,6 +142,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"mrdivide"))  { multi_mrdivide (nlhs,plhs,nrhs,prhs); }  // z=x/y
   else if(STR_EQ(cmd,"mldivide"))  { multi_mldivide (nlhs,plhs,nrhs,prhs); }  // z=x\y
   else if(STR_EQ(cmd,"power"))     { multi_power    (nlhs,plhs,nrhs,prhs); }  // z=x.^y
+  else if(STR_EQ(cmd,"mpower"))    { multi_mpower   (nlhs,plhs,nrhs,prhs); }  // z=x^y
   else if(STR_EQ(cmd,"eq"))        { multi_eq       (nlhs,plhs,nrhs,prhs); }  // z=(x==y)
   else if(STR_EQ(cmd,"ne"))        { multi_ne       (nlhs,plhs,nrhs,prhs); }  // z=(x~=y)
   else if(STR_EQ(cmd,"ge"))        { multi_ge       (nlhs,plhs,nrhs,prhs); }  // z=(x>=y)
@@ -150,6 +153,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"subsasgn"))  { multi_subsasgn (nlhs,plhs,nrhs,prhs); }  // y(s)=x
   else if(STR_EQ(cmd,"horzcat"))   { multi_horzcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1 x2 ...]
   else if(STR_EQ(cmd,"vertcat"))   { multi_vertcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1; x2; ...]
+  else if(STR_EQ(cmd,"inv"))       { multi_inv      (nlhs,plhs,nrhs,prhs); }  // y=inv(x)
   else if(STR_EQ(cmd,"abs"))       { multi_abs      (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
   else if(STR_EQ(cmd,"max"))       { multi_max      (nlhs,plhs,nrhs,prhs); }  // y=max(x)
   else{

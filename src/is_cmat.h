@@ -108,9 +108,6 @@ int cmat_mul_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b
 int cmat_mul_r(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti *b);               // C=A*b
 int cmat_mul_z(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, dcomplex b);              // C=A*b
 int cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b);                // C=A*b
-int cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);       // C=A./*B
-int cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB);              // C=a./*B
-int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b);              // C=A./*b
 int cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);     // C=A*B
 int cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB);  // C=A*B
 int cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB);  // C=A*B
@@ -133,10 +130,15 @@ int cmat_diag_sub_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmul
 /*
  * oparations
  */
-int cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                 // B=abs(A)
-int cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA);               int cmat_max_absc(rmulti *value, int m, int n, cmulti **A, int LDA);
-    // value=max(abs(x))
-int cmat_min_abs(rmulti *value, int m, int n, cmulti **A, int LDA);                   // value=min(abs(x))
+int cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB); // C=A./*B
+int cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB);        // C=a./*B
+int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b);        // C=A./*b
+int cmat_inv(int n, cmulti **B, int LDB, cmulti **A, int LDA);                             // B=inv(A)
+int cmat_power(int n, cmulti **B, int LDB, cmulti **A, int LDA, int p);                    // B=A^p
+int cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                      // B=abs(A)
+int cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA);
+int cmat_max_absc(rmulti *value, int m, int n, cmulti **A, int LDA);                       // value=max(abs(x))
+int cmat_min_abs(rmulti *value, int m, int n, cmulti **A, int LDA);                        // value=min(abs(x))
 int cmat_cols_normalize(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);
 int cmat_cols_normalize_sgn(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);
 int cmat_cols_max_abs_sub(rmulti **x, int m, int n, cmulti **A, int LDA, cmulti **B, int LDB); // x(j)=max(abs(A(:,j)-B(:,j))) for j=1,2,..,n

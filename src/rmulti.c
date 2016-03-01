@@ -450,6 +450,23 @@ int ris_negative(rmulti *x)
   return ris_number(x) && rget_sgn(x)<0;
 }
 
+/**
+ @brief       rmulti型が整数であるかの判定.
+ @param[in] x 初期化済みのrmulti型.
+ @return      判定結果の真偽値.
+*/
+int ris_integer(rmulti *x)
+{
+  int value;
+  rmulti *y=NULL;
+  NULL_EXC1(x);
+  RAp(y,x);
+  rfloor(y,x);
+  value=req(y,x);
+  RF(y);
+  return value;
+}
+
 /** @} */
 /////////////////////////////////////////////////////////////
 
