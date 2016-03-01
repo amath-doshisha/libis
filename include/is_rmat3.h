@@ -90,6 +90,10 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
  */
 // C=abs(A)
 int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
+// B=max(A)
+int rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
+// B=min(A)
+int rmat3_min(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 // C=A./B
 int rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=a./B

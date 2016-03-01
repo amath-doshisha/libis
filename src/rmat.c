@@ -1077,6 +1077,26 @@ int rmat_diag_sub_r(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmul
 }
 
 /**
+ @brief rmulti型の列ごとの最大値 B=max(A)
+*/
+int rvec_max_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=rvec_max(B[j],m,&COL(A,j,LDA)); }
+  return e;
+}
+
+/**
+ @brief rmulti型の列ごとの最小値 B=min(A)
+*/
+int rvec_min_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=rvec_min(B[j],m,&COL(A,j,LDA)); }
+  return e;
+}
+
+/**
  @brief rmulti型の行列の要素の絶対値の最大値 value=max(abs(x))
 */
 int rmat_max_abs(rmulti *value, int m, int n, rmulti **A, int LDA)

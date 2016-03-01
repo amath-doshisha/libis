@@ -114,6 +114,10 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
  */
 // C=abs(A)
 int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2);
+// B=max(A)
+int cmat3_max(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+// B=min(A)
+int cmat3_min(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // C=A./B
 int cmat3_div(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2);
 // C=A./B

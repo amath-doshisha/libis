@@ -205,6 +205,9 @@ int catanh_c(cmulti *y, cmulti *x);                  // y=atanh(x)
 /*
  * comparisions
  */
+void ccmp_set_real_imag();
+void ccmp_set_abs_arg();
+int ccmp_get_type();
 int ccmp(cmulti *x, cmulti *y);       // x<=>y
 int ccmp_z(cmulti *x, dcomplex y);    // x<=>y
 int ccmp_r1(rmulti *x, cmulti *y);    // x<=>y

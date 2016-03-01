@@ -1922,15 +1922,54 @@ int catanh_c(cmulti *y, cmulti *x)
 /** @name cmulti型の値の比較に関する関数 */
 /** @{ */
 
+static int __cmulti_cmp_order=0;
+
+/**
+ @brief cmulti型の値の比較 x<=>y を実部，虚部で判定
+*/
+void ccmp_set_real_imag()
+{
+  __cmulti_cmp_order=0;
+}
+
+/**
+ @brief cmulti型の値の比較 x<=>y を絶対値，偏角で判定
+*/
+void ccmp_set_abs_arg()
+{
+  __cmulti_cmp_order=1;
+}
+
+/**
+ @brief cmulti型の値の比較 x<=>y の方法の取得
+*/
+int ccmp_get_type()
+{
+  return __cmulti_cmp_order;
+}
+
+
+
 /**
  @brief cmulti型の値の比較 x<=>y
 */
 int ccmp(cmulti *x, cmulti *y)
 {
+  rmulti *xr=NULL,*yr=NULL,*xt=NULL,*yt=NULL;
   int value;
-  value=rcmp(C_R(x),C_R(y));
-  if(value!=0) return value;
-  return rcmp(C_I(x),C_I(y));
+  if(ccmp_get_type()){
+    RAc(xr,x); RAc(yr,y); RAc(xt,x); RAc(yt,y);
+    cget_polar(xr,xt,x);
+    cget_polar(yr,yt,y);
+    value=rcmp(xr,yr);
+    if(value==0){ value=rcmp(xt,yt); }
+    RF(xr); RF(yr); RF(xt); RF(yt);
+    return value;
+  }else{
+    value=rcmp(C_R(x),C_R(y));
+    if(value!=0) return value;
+    return rcmp(C_I(x),C_I(y));
+  }
 }
 
 /**

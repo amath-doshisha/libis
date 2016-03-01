@@ -2,9 +2,8 @@ clear all
 close all
 set_default_prec(128);
 
-A=[1 2; 3 4]
-A=multi(A)
-B=A^-4
-A^4*B-eye(2)
-inv(A)
-inv(A)*A-eye(2)
+A=[1+i; 3+4*i; 1-i; -3+4*i; -1+i; -1-i; -3-4*i]
+A=multi(A);
+%B=sort(A)
+max(A)
+min(A)

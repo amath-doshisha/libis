@@ -1633,6 +1633,26 @@ int cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 }
 
 /**
+ @brief cmulti型の列ごとの最大値 B=max(A)
+*/
+int cvec_max_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=cvec_max(B[j],m,&COL(A,j,LDA)); }
+  return e;
+}
+
+/**
+ @brief cmulti型の列ごとの最小値 B=min(A)
+*/
+int cvec_min_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=cvec_min(B[j],m,&COL(A,j,LDA)); }
+  return e;
+}
+
+/**
  @brief cmulti型の行列の要素の絶対値の最大値 value=max(abs(x))
 */
 int cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA)

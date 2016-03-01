@@ -767,6 +767,30 @@ int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, i
 }
 
 /**
+ @brief cmulti型の3次元配列の最大値 B=max(A).
+*/
+int cmat3_max(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=cvec_max_cmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の最小値 B=min(A).
+*/
+int cmat3_min(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=cvec_min_cmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
  @brief cmulti型の3次元配列の割り算 C=A./B.
 */
 int cmat3_div(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2)

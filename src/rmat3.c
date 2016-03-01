@@ -596,7 +596,8 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /**
  @brief rmulti型の3次元配列の絶対値 C=abs(A).
 */
-int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2){
+int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+{
   int i,j,k,e=0;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
@@ -604,6 +605,31 @@ int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, i
 	e+=rabs(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
+  }
+  return e;
+}
+
+
+/**
+ @brief rmulti型の3次元配列の最大値 B=max(A).
+*/
+int rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=rvec_max_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列の最小値 B=min(A).
+*/
+int rmat3_min(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=rvec_min_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
   }
   return e;
 }
