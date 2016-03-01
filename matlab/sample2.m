@@ -18,7 +18,9 @@ z=x.^4-4*y.^2-4*y.^4
 disp('[auto precision mode]');
 set_default_prec(53)
 auto_prec_enabled()
-z=x*x*x*x
+z=x*x*x*x-4*y*y-4*y*y*y*y
 z.get_prec
+
+y=multi(470831);
 z=x*x*x*x-4*y*y-4*y*y*y*y
 z.get_prec

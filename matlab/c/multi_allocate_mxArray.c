@@ -22,6 +22,7 @@ multi *multi_allocate_mxArray(const mxArray *x)
   if(mxGetNumberOfDimensions(x)>=2){ n=mxGetDimensions(x)[1]; }
   if(mxGetNumberOfDimensions(x)>=3){ l=mxGetDimensions(x)[2]; }
   if(mxGetNumberOfDimensions(x)>=4){ MATLAB_ERROR("multi_allocate_mxArray: Number of dimensions is too big."); }
+  if(m==0 && n==0){ l=0; }
   // allocate
   A=multi_allocate(type,m,n,l);
   // get data

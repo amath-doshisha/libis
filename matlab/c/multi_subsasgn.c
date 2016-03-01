@@ -38,10 +38,11 @@ void multi_subsasgn(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     if(ivec_min(s->dims[0],s->index[0])<0){ MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }
     // check size
     m=ivec_max(s->dims[0],s->index[0])+1;
-         if(_N(x)==1 && _L(x)==1 && m>_M(x)*_N(x)*_L(x)){ m=m;     n=1;     l=1;     }
-    else if(_N(x)==1 && _L(x)==1)                       { m=_M(x); n=_N(x); l=_L(x); }
+         if(_M(x)==0 && _N(x)==0 && _L(x)==0)           { n=m;     m=1;     l=1;     }
     else if(_M(x)==1 && _L(x)==1 && m>_M(x)*_N(x)*_L(x)){ n=m;     m=1;     l=1;     }
     else if(_M(x)==1 && _L(x)==1)                       { n=_N(x); m=_M(x); l=_L(x); }
+    else if(_N(x)==1 && _L(x)==1 && m>_M(x)*_N(x)*_L(x)){ m=m;     n=1;     l=1;     }
+    else if(_N(x)==1 && _L(x)==1)                       { m=_M(x); n=_N(x); l=_L(x); }
     else if(m>_M(x)*_N(x)*_L(x))                        { MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }
     else                                                { m=_M(x); n=_N(x); l=_L(x); }
     // allocate
@@ -70,9 +71,10 @@ void multi_subsasgn(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     // check size
     m=ivec_max(s->dims[0],s->index[0])+1;
     n=ivec_max(s->dims[1],s->index[1])+1;
-         if(_L(x)==1)                { m=MAX2(_M(x),m); n=MAX2(_N(x),n); l=_L(x); }    
-    else if(_L(x)>1 && n>_N(x)*_L(x)){ MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }
-    else                             { m=MAX2(_M(x),m); n=_N(x);         l=_L(x); }
+         if(_M(x)==0 && _N(x)==0 && _L(x)==0){ m=m; n=n; l=1; }
+    else if(_L(x)==1)                        { m=MAX2(_M(x),m); n=MAX2(_N(x),n); l=_L(x); }    
+    else if(_L(x)>1 && n>_N(x)*_L(x))        { MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }
+    else                                     { m=MAX2(_M(x),m); n=_N(x); l=_L(x); }
     // allocate
     if(_T(x)=='c' || _T(y)=='c'){ z=multi_allocate('c',m,n,l); }
     else                        { z=multi_allocate('r',m,n,l); }

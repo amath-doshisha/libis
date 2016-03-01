@@ -6,7 +6,8 @@ switch s(1).type
         if isa(x,'multi')
             y=multi(cmd,x.data,s);
         else
-            y=builtin(cmd,x,s);
+            y=multi(cmd,multi(x).data,s);
+            %y=builtin(cmd,x,s);
         end
     case '.'
         y=builtin(cmd,x,s);

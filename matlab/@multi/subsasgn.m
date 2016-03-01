@@ -3,14 +3,14 @@ function x=subsasgn(x,s,y)
 cmd='subsasgn';
 switch s(1).type
     case '()'
-        if isa(x,'multi')
-            if isa(y,'multi')
-                x=multi(cmd,x.data,s,y.data);
-            else
-                x=multi(cmd,x.data,s,multi(y).data);
-            end
+        if isa(x,'multi') && isa(y,'multi')
+            x=multi(cmd,x.data,s,y.data);
+        elseif isa(x,'multi')
+            x=multi(cmd,x.data,s,multi(y).data);
+        elseif isa(y,'multi')
+            x=multi(cmd,multi(x).data,s,y.data);
         else
-            x=builtin(cmd,x,s,y);
+            x=multi(cmd,multi(x).data,s,multi(y).data);
         end
     case '.'
         x=builtin(cmd,x,s,y);
