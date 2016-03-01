@@ -63,8 +63,10 @@ void multi_subsasgn(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else if(_T(z)=='c' && _T(y)=='c'){ cvec_index_copy     (s->dims[0],_C(z),_C(y),s->index[0]); }
     else{ MATLAB_ERROR("multi_subsasgn: Unkown type"); }
   }else if(s->ndim==2){ // A(*,*)
-    if(s->dims[0]==0 && s->index[0]==NULL){ s->dims[0]=_M(x);       s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
-    if(s->dims[1]==0 && s->index[1]==NULL){ s->dims[1]=_N(x)*_L(x); s->index[1]=ivec_allocate(s->dims[1]); ivec_grid(s->dims[1],s->index[1]); }
+    if(s->dims[0]==0 && s->index[0]==NULL && _M(x)>0)       { s->dims[0]=_M(x);       s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
+    if(s->dims[1]==0 && s->index[1]==NULL && _N(x)*_L(x)>0) { s->dims[1]=_N(x)*_L(x); s->index[1]=ivec_allocate(s->dims[1]); ivec_grid(s->dims[1],s->index[1]); }
+    if(s->dims[0]==0 && s->index[0]==NULL && _M(x)==0)      { s->dims[0]=_M(y);       s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
+    if(s->dims[1]==0 && s->index[1]==NULL && _N(x)*_L(x)==0){ s->dims[1]=_N(y)*_L(y); s->index[1]=ivec_allocate(s->dims[1]); ivec_grid(s->dims[1],s->index[1]); }
     if(!(s->dims[0]==_M(y) && s->dims[1]==_N(y)*_L(y))){ MATLAB_ERROR("multi_subsasgn: The dimensions of both sides are not equal."); }    
     if(ivec_min(s->dims[0],s->index[0])<0){ MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }
     if(ivec_min(s->dims[1],s->index[1])<0){ MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }    
@@ -93,9 +95,12 @@ void multi_subsasgn(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else if(_T(z)=='c' && _T(y)=='c'){ cmat_index_copy     (s->dims[0],s->dims[1],_C(z),_LD1(z),_C(y),_LD1(y),s->index[0],s->index[1]); }
     else{ MATLAB_ERROR("multi_subsasgn: Unkown type"); }
   }else if(s->ndim==3){ // A(*,*,*)
-    if(s->dims[0]==0 && s->index[0]==NULL){ s->dims[0]=_M(x); s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
-    if(s->dims[1]==0 && s->index[1]==NULL){ s->dims[1]=_N(x); s->index[1]=ivec_allocate(s->dims[1]); ivec_grid(s->dims[1],s->index[1]); }
-    if(s->dims[2]==0 && s->index[2]==NULL){ s->dims[2]=_L(x); s->index[2]=ivec_allocate(s->dims[2]); ivec_grid(s->dims[2],s->index[2]); }
+    if(s->dims[0]==0 && s->index[0]==NULL && _M(x)>0) { s->dims[0]=_M(x); s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
+    if(s->dims[1]==0 && s->index[1]==NULL && _N(x)>0) { s->dims[1]=_N(x); s->index[1]=ivec_allocate(s->dims[1]); ivec_grid(s->dims[1],s->index[1]); }
+    if(s->dims[2]==0 && s->index[2]==NULL && _L(x)>0) { s->dims[2]=_L(x); s->index[2]=ivec_allocate(s->dims[2]); ivec_grid(s->dims[2],s->index[2]); }
+    if(s->dims[0]==0 && s->index[0]==NULL && _M(x)==0){ s->dims[0]=_M(y); s->index[0]=ivec_allocate(s->dims[0]); ivec_grid(s->dims[0],s->index[0]); }
+    if(s->dims[1]==0 && s->index[1]==NULL && _N(x)==0){ s->dims[1]=_N(y); s->index[1]=ivec_allocate(s->dims[1]); ivec_grid(s->dims[1],s->index[1]); }
+    if(s->dims[2]==0 && s->index[2]==NULL && _L(x)==0){ s->dims[2]=_L(y); s->index[2]=ivec_allocate(s->dims[2]); ivec_grid(s->dims[2],s->index[2]); }
     if(!(s->dims[0]==_M(y) && s->dims[1]==_N(y) && s->dims[2]==_L(y))){ MATLAB_ERROR("multi_subsasgn: The dimensions of both sides are not equal."); }
     if(ivec_min(s->dims[0],s->index[0])<0){ MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }
     if(ivec_min(s->dims[1],s->index[1])<0){ MATLAB_ERROR("multi_subsasgn: The index is out of the dimensions of the matrix."); }    
