@@ -40,6 +40,7 @@ void rmat3_print(int m, int n, int l, rmulti **A, int LDA1, int LDA2, const char
  */
 // B=rmulti(A)
 int rmat3_set_d(int m, int n, int l, rmulti **B, int LDB1, int LDB2, double *A, int LDA1, int LDA2);
+void rmat3_set_s(int m, int n, int l, rmulti **B, int LDB1, int LDB2, char **A, int LDA1, int LDA2);
 // A=a*ones(m,n,l)
 int rmat3_set_all_d(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double a);
 // A=zeros(m,n,l)

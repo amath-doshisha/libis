@@ -3,6 +3,7 @@
  */
 multi *multi_allocate(char type, int m, int n, int l)
 {
+  int i;
   multi *A=NULL;
   A=(multi*)malloc(sizeof(multi_struct)*1);
   A->type=type;
@@ -16,7 +17,14 @@ multi *multi_allocate(char type, int m, int n, int l)
   else if(type=='d'){ A->p0=(void*) dvec_allocate(_LD1(A)*_LD2(A)*_L(A)); A->p1=NULL; }
   else if(type=='z'){ A->p0=(void*) zvec_allocate(_LD1(A)*_LD2(A)*_L(A)); A->p1=NULL; }
   else if(type=='i'){ A->p0=(void*) ivec_allocate(_LD1(A)*_LD2(A)*_L(A)); A->p1=NULL; }
-  else              { MATLAB_ERROR("multi_allocate: Unknow type."); }
+  else if(type=='s'){
+    A->p0=(void*)malloc(sizeof(char*)*_LD1(A)*_LD2(A)*_L(A));
+    for(i=0; i<_LD1(A)*_LD2(A)*_L(A); i++){
+      ((char**)(A->p0))[i]=NULL;
+    };
+    A->p1=NULL;
+  }
+  else{ MATLAB_ERROR("multi_allocate: Unknow type."); }
   return A;
 }
 

@@ -316,6 +316,20 @@ int rmat3_set_d(int m, int n, int l, rmulti **B, int LDB1, int LDB2, double *A, 
   return e;
 }
 
+/**
+ @brief rmulti型の3次元配列の値を文字列型から設定 B=rmulti(A).
+*/
+void rmat3_set_s(int m, int n, int l, rmulti **B, int LDB1, int LDB2, char **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rset_s(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
 
 /**
  @brief rmulti型の3次元配列の値を倍精度浮動小数点数から設定.

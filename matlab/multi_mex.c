@@ -7,6 +7,7 @@
 #define IS_ROW(N,P,I)   ((N>I && mxIsDouble(P[I]) && mxGetM(P[I])==1 && mxGetN(P[I])>1 && (mxGetNumberOfDimensions(P[I])<=2 || (mxGetNumberOfDimensions(P[I])==3 && mxGetDimensions(P[I])[2]==1))))
 #define IS_CHAR(N,P,I)  ((N>I && mxIsChar(P[I])))
 #define IS_STRT(N,P,I)  ((N>I && mxIsStruct(P[I])))
+#define IS_CELL(N,P,I)  ((N>I && mxIsCell(P[I])))
 #define GET_DOUBLE(P)   ((double*)mxGetData(P))
 #define MATLAB_ERROR(S) (mexErrMsgIdAndTxt("MATLAB:multi_mex",S));
 #define N0 3
@@ -26,6 +27,7 @@
 #define _D(A)   ((double*)(A->p0))
 #define _Z(A)   ((dcomplex*)(A->p0))
 #define _I(A)   ((int*)(A->p0))
+#define _S(A)   ((char**)(A->p0))
 
 typedef struct {
   char type;     // type='r','c','R','C','i'
@@ -79,6 +81,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_set_zeros.c"
 #include"./c/multi_set_ones.c"
 #include"./c/multi_set_d.c"
+#include"./c/multi_set_s.c"
 #include"./c/multi_copy.c"
 #include"./c/multi_uminus.c"
 #include"./c/multi_ctranspose.c"
@@ -129,6 +132,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros(nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
   else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
   else if(STR_EQ(cmd,"set_d"))     { multi_set_d    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
+  else if(STR_EQ(cmd,"set_s"))     { multi_set_s    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is cell of char
   else if(STR_EQ(cmd,"double"))    { multi_double   (nlhs,plhs,nrhs,prhs); }  // y=double(x), where x is multi
   else if(STR_EQ(cmd,"copy"))      { multi_copy     (nlhs,plhs,nrhs,prhs); }  // y=x
   else if(STR_EQ(cmd,"uminus"))    { multi_uminus   (nlhs,plhs,nrhs,prhs); }  // y=-x

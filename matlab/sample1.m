@@ -13,6 +13,8 @@ A=multi(A);
 % Calculations
 x=A\b;
 r=A*x-b;
-
-% Done
-disp(sprintf('||A*x-b||_inf=%.1e',double(max(abs(r)))));
+rmax=max(abs(r));
+disp('x=inv(A)*b=');
+disp(x);
+disp('||A*x-b||_inf=');
+disp(rmax);

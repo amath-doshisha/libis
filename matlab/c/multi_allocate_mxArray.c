@@ -16,6 +16,8 @@ multi *multi_allocate_mxArray(const mxArray *x)
   }else if(mxIsDouble(x)){
     if(mxIsComplex(x)){ type='z'; }
     else              { type='d'; }
+  }else if(mxIsCell(x)){
+    type='s';
   }else{ MATLAB_ERROR("multi_allocate_mxArray: Unsupported type.");}
   // get size
   if(mxGetNumberOfDimensions(x)>=1){ m=mxGetDimensions(x)[0]; }
@@ -41,6 +43,10 @@ multi *multi_allocate_mxArray(const mxArray *x)
                              mxArrayToMulti(C_I(MAT3(_C1(A),i,j,k,_LD1(A),_LD2(A))),x,t,C1i_field_names); }
 	else if(_T(A)=='d'){ MAT3(_D(A),i,j,k,_LD1(A),_LD2(A))=mxGetPr(x)[t]; }
 	else if(_T(A)=='z'){ Z_SET(MAT3(_Z(A),i,j,k,_LD1(A),_LD2(A)),mxGetPr(x)[t],mxGetPi(x)[t]); }
+	else if(_T(A)=='s'){
+	  if(mxGetCell(x,t)!=NULL && mxIsChar(mxGetCell(x,t))){ MAT3(_S(A),i,j,k,_LD1(A),_LD2(A))=mxArrayToString(mxGetCell(x,t)); }
+	  else{ MATLAB_ERROR("multi_allocate_mxArray: The entries of cell should be Char."); }
+	}
 	else{ MATLAB_ERROR("multi_allocate_mxArray: Unsupported type.");}
       }
     }
