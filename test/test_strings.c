@@ -7,6 +7,22 @@
 
 int main(int argc, char *argv[])
 {
+  char *s;
+  strings *list=NULL;
+    
+  if(argc>=2){
+    s=malloc(sizeof(char)*(strlen(argv[1])+1));
+    strcpy(s,argv[1]);
+  }else{
+    s=malloc(sizeof(char)*(strlen("1234567890")+1));
+    strcpy(s,"1234567890");
+  }
+  printf("s=%s\n",s);
+  list=strings_split_number(s);
+  strings_print(list);
+  printf("\n");
+    
+  /*
   int k=0;
   const char *str[]={"  a ","b","c","d",NULL};
   const char *Str[]={"A","   B ","C",NULL};
@@ -90,7 +106,7 @@ int main(int argc, char *argv[])
   s="abc(1234{5678}90)def";  p="^%(%m+%)$";  printf("match('%s',/%s/)=%d\n",s,p,str_match(s,p,MASK0,MASK1));
   s="abc(12[34{5678}9]0)def";  p="^%(%m+%)$";  printf("match('%s',/%s/)=%d\n",s,p,str_match(s,p,MASK0,MASK1));
   s="(12[34{5678}9]0)";  p="^%(%m+%)$";  printf("match('%s',/%s/)=%d\n",s,p,str_match(s,p,MASK0,MASK1));
-
+  */
 
   return 0;
 }

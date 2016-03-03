@@ -32,8 +32,8 @@ void cmat3_print(int m, int n, int l, cmulti **A, int LDA1, int LDA2, const char
  */
 // B=cmulti(A)
 int cmat3_set_z(int m, int n, int l, cmulti **B, int LDB1, int LDB2, dcomplex *A, int LDA1, int LDA2);
-// B=cmulti(A)
 int cmat3_set_d(int m, int n, int l, cmulti **B, int LDB1, int LDB2, double *A, int LDA1, int LDA2);
+void cmat3_set_s(int m, int n, int l, cmulti **B, int LDB1, int LDB2, char **A, int LDA1, int LDA2);
 // A=a*ones(m,n,l)
 int cmat3_set_all_z(int m, int n, int l, cmulti **A, int LDA1, int LDA2, dcomplex a);
 // A=a*ones(m,n,l)

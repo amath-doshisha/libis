@@ -27,8 +27,10 @@ void strings_item_replace(strings *list, int k, strings *list2);
 strings* strings_split(const char *str, const char *sep, const char *mask_start, const char *mask_end, const char *skip);
 strings* strings_split_mask(const char *str, const char *mask_begin, const char *mask_end, const char *skip);
 strings* strings_split_path(const char *str, const char *suffix);
+strings* strings_split_number(const char *s);
 int strings_cmp(strings *f, strings *g);
 char *str_create_mask(const char *s, const char *mask_begin, const char *mask_end);
+int str_has_any_char(const char *s, const char *c);
 
 char *char_new(const char *str, const char *skip);
 char *char_del(char *p);

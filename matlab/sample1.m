@@ -1,3 +1,5 @@
+%function sample1
+addpath('../');
 clear all;
 
 % Initialization by double

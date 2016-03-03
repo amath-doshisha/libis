@@ -1,7 +1,35 @@
 #include<isys.h>
 
-int main()
+int main(int argc, const char *argv[])
 {
+  
+  cmulti *x=NULL;
+  set_default_prec(128);
+  x=callocate();
+  if(argc>=2){
+    printf("str='%s'\n",argv[1]);
+    cset_s(x,argv[1]);
+  }else{
+    cset_s(x,"1234");
+  }
+  mpfr_printf("x=%.10Rg%+.10Rgi\n",C_R(x),C_I(x));
+  x=cfree(x);
+  
+  /*
+  rmulti *x=NULL;
+  set_default_prec(128);
+  x=rallocate();
+  if(argc>=2){
+    printf("str='%s'\n",argv[1]);
+    rset_s(x,argv[1]);
+  }else{
+    rset_s(x,"1234");
+  }
+  mpfr_printf("x=%.40Rg\n",x);  
+  x=rfree(x);
+  */
+
+  /*
   int n=6;
   func_t *f=NULL;
   rmulti *x=NULL,**rx=NULL,**ry=NULL,*rz=NULL;
@@ -53,5 +81,6 @@ int main()
   f=func_del(f);
   func_clear();
   printf("check sum: %d\n",func_new_del_check_sum()); 
+  */
   return 0;
 }

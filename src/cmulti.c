@@ -272,10 +272,22 @@ void cset_ss(cmulti *x, const char *str_real, const char *str_imag)
 /**
  @brief cmulti型の浮動小数点数を文字列から設定.
 */
-void cset_s(cmulti *x, const char *str_real)
+void cset_s(cmulti *x, const char *value)
 {
-  rset_s(C_R(x),str_real);
-  rset_s(C_I(x),(char*)"0");
+  strings *list=NULL;
+  int ret1=0,ret2=0;
+  NULL_EXC2(x,value);
+  list=strings_split_number(value);
+  if(list==NULL){
+    rset_nan(C_R(x));
+    rset_nan(C_I(x));
+  }else{
+    cset_zero(x);
+    if(strings_size(list)>=1 && strings_at(list,0)!=NULL){ ret1=mpfr_set_str(C_R(x),strings_at(list,0),10,get_round_mode()); }
+    if(strings_size(list)>=2 && strings_at(list,1)!=NULL){ ret2=mpfr_set_str(C_I(x),strings_at(list,1),10,get_round_mode()); }
+    if(ret1 || ret2){ cset_nan(x); }
+  }
+  list=strings_del(list);
 }
 
 /**

@@ -110,6 +110,20 @@ int char_match_any(char c, const char *str, int *pos)
   return value;
 }
 
+////////////////////////////////////////////////////////
+
+int str_has_any_char(const char *s, const char *c)
+{
+  int ret=0;
+  while(ret==0 && (*s)!='\0'){
+    if(char_match_any((*s),c,NULL)){ ret=1; }
+    s++;
+  }
+  return ret;
+}
+
+////////////////////////////////////////////////////////
+
 char *str_create_mask(const char *s, const char *mask_begin, const char *mask_end)
 {
   int n,count,i,k;
@@ -140,6 +154,9 @@ char *str_create_mask(const char *s, const char *mask_begin, const char *mask_en
 #define STR_ALPHA     "abcdefghijklmnopqrstuvwxyz"
 #define STR_ALPHA_ALL "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #define STR_IDENT     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+#define STR_SIGN      "+-"
+#define STR_POINT     "."
+#define STR_EXP       "eE"
 
 int str_match(const char *s, const char *p0, const char *mask_begin, const char *mask_end)
 {
@@ -545,6 +562,79 @@ strings* strings_split_mask(const char *str, const char *mask_begin, const char 
 }
 
 ///////////////////////////////////
+
+strings* strings_split_number(const char *s)
+{
+    strings *list=NULL;
+    int done,mode,*p,i,j,n,c,w,q;
+    char *t;
+    // check mode
+    n=strlen(s)+1;
+    p=ivec_allocate(n);
+    for(done=0, mode=0, i=0; !done; i++)
+    {
+        if(mode==0 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=1; }
+        else if(mode==0 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+        else if(mode==0 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+        else if(mode==1 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+        else if(mode==1 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+        else if(mode==2 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+        else if(mode==2 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+        else if(mode==2 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
+        else if(mode==3 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=4; }
+        else if(mode==3 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
+        else if(mode==4 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=4; }
+        else if(mode==4 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
+        else if(mode==5 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=6; }
+        else if(mode==5 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
+        else if(mode==6 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
+        else if(mode==7 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
+        else                                                    { mode=0; }
+        if(mode==0 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=1; }
+        else if(mode==0 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+        else if(mode==0 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+        if(s[i]=='\0'){ done=1; }
+        p[i]=mode;
+    }
+    // count letters and words
+    for(q=0, c=0, w=0, i=0; i<n; i++){
+        if(p[i]!=0){ c++; }
+        if(p[i]>q){ q=p[i]; }
+        else if(p[i]!=0 && p[i]<q){ q=p[i]; w++; }
+    }
+    w++;
+    // split strings
+    t=malloc(sizeof(char)*(c+w));
+    for(i=0, j=0, q=0; i<n; i++){
+        if(p[i]>q){ q=p[i]; }
+        else if(p[i]!=0 && p[i]<q){ q=p[i]; t[j++]='\0'; }
+        if(p[i]!=0){ t[j++]=s[i]; }
+        else if(s[i]=='\0'){ t[j++]='\0'; }
+    }
+    // allocate list
+    list=strings_new(w);
+    i=0; j=0;
+    if(t[i]!='\0'){
+        strings_item_set(list,j,&t[i],NULL);
+        j++;
+    }
+    for(i=0, q=0; i<c+w; i++){
+        if(t[i]=='\0'){ q=1; }
+        if(t[i]!='\0' && q){
+            strings_item_set(list,j,&t[i],NULL);
+            j++;
+            q=0;
+        }
+    }
+    // free
+    p=ivec_free(p);
+    free(t);
+    // done
+    return list;
+}
+
+///////////////////////////////////
+
 
 int strings_cmp(strings *f, strings *g)
 {

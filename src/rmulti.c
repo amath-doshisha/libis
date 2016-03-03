@@ -3,6 +3,7 @@
 #include<mpfr.h>
 #include"is_macros.h"
 #include"is_rmulti.h"
+#include"is_strings.h"
 #include"mt19937ar.h"
 
 /**
@@ -583,10 +584,15 @@ rmulti *rbin_load(FILE *fid)
  */
 void rset_s(rmulti *x, const char *value)
 {
+  strings *list=NULL;
   int ret;
   NULL_EXC2(x,value);
-  ret=mpfr_set_str(x,value,10,get_round_mode());
-  if(ret){ ERROR_EXIT("Error!\nThe function int rset_s(rmulti *x, char *value) returns %d.",ret); }
+  list=strings_split_number(value);
+  if(list!=NULL && strings_size(list)>=1 && strings_at(list,0)!=NULL){
+    ret=mpfr_set_str(x,strings_at(list,0),10,get_round_mode());
+    if(ret){ mpfr_set_nan(x); }
+  }else{ mpfr_set_nan(x); }  
+  list=strings_del(list);
 }
 
 /**

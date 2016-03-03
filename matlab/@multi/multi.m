@@ -15,7 +15,7 @@ classdef multi
             elseif nargin==1 && isa(cmd,'int64')
                 obj.data=multi_mex('set_d',get_default_prec(),double(get_auto_prec_mode()),double(cmd));
             elseif nargin==1 && isa(cmd,'cell')
-                obj.data=multi_mex('set_s',get_default_prec(),double(get_auto_prec_mode()),strcellchomp(cmd));
+                obj.data=multi_mex('set_s',get_default_prec(),double(get_auto_prec_mode()),cmd);
             elseif nargin==1 && isa(cmd,'char')
                 obj.data=multi_mex('set_s',get_default_prec(),double(get_auto_prec_mode()),strsplitcell(cmd));
             else

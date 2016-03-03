@@ -2,8 +2,9 @@ clear all
 close all
 set_default_prec(256);
 
-A=[123.4+i*0.5678 1-i; 0.12345e-8 -i*0.12345e-8]
-A=multi(A)
-%A=multi('0.1234 1; 0.12345 0.12345');
-S=get_s(A,'%.7e')
-B=multi(S)
+S='1+0i  -1+0i; 0+1i 0-1i'
+%S='1  1e-3; -1e+2 +3e2'
+A=multi(S)
+%s=get_s(A,'%.8e     ')
+s=num2str(A,'%.8e     ')
+B=multi(s)
