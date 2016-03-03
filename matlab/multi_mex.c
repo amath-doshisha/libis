@@ -77,11 +77,12 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_get_prec.c"
 #include"./c/multi_get_sign.c"
 #include"./c/multi_get_exp.c"
-#include"./c/multi_double.c"
 #include"./c/multi_set_zeros.c"
 #include"./c/multi_set_ones.c"
 #include"./c/multi_set_d.c"
+#include"./c/multi_get_d.c"
 #include"./c/multi_set_s.c"
+#include"./c/multi_get_s.c"
 #include"./c/multi_copy.c"
 #include"./c/multi_uminus.c"
 #include"./c/multi_ctranspose.c"
@@ -132,8 +133,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros(nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
   else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
   else if(STR_EQ(cmd,"set_d"))     { multi_set_d    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
+  else if(STR_EQ(cmd,"get_d"))     { multi_get_d    (nlhs,plhs,nrhs,prhs); }  // y=double(x)
   else if(STR_EQ(cmd,"set_s"))     { multi_set_s    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is cell of char
-  else if(STR_EQ(cmd,"double"))    { multi_double   (nlhs,plhs,nrhs,prhs); }  // y=double(x), where x is multi
+  else if(STR_EQ(cmd,"get_s"))     { multi_get_s    (nlhs,plhs,nrhs,prhs); }  // y=char(x)
   else if(STR_EQ(cmd,"copy"))      { multi_copy     (nlhs,plhs,nrhs,prhs); }  // y=x
   else if(STR_EQ(cmd,"uminus"))    { multi_uminus   (nlhs,plhs,nrhs,prhs); }  // y=-x
   else if(STR_EQ(cmd,"ctranspose")){ multi_ctranspose(nlhs,plhs,nrhs,prhs); } // y=x'

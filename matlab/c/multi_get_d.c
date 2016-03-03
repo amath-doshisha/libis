@@ -1,21 +1,21 @@
 /**
  * @breif double型へのキャスト y=double(x)
  */
-void multi_double(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+void multi_get_d(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   mwSize ndim=3,dims[]={1,1,1};
   int m=1,n=1,l=1,i,j,k,t,s;
   multi *A=NULL;
   dcomplex z;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
-  if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_double: The 1st-arg should be Struct."); }
+  if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_get_d: The 1st-arg should be Struct."); }
   A=multi_allocate_mxArray(prhs[N0]);
   dims[0]=_M(A);  dims[1]=_N(A);  dims[2]=_L(A);  
   if(_T(A)=='R' || _T(A)=='C'){ dims[1]*=2; }
   if(dims[2]==1){ ndim=2; }
        if(_T(A)=='r' || _T(A)=='R'){ plhs[0]=mxCreateNumericArray(ndim,dims,mxDOUBLE_CLASS,mxREAL); }
   else if(_T(A)=='c' || _T(A)=='C'){ plhs[0]=mxCreateNumericArray(ndim,dims,mxDOUBLE_CLASS,mxCOMPLEX); }
-  else                             { MATLAB_ERROR("multi_double: Unknow type."); }
+  else                             { MATLAB_ERROR("multi_get_d: Unknow type."); }
   for(k=0; k<_L(A); k++){
     for(j=0; j<_N(A); j++){
       for(i=0; i<_M(A); i++){
@@ -37,7 +37,7 @@ void multi_double(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	  mxGetPr(plhs[0])[s]=Z_R(z);
 	  mxGetPi(plhs[0])[s]=Z_I(z);
 	}else{
-	  MATLAB_ERROR("multi_double: Unknow type.");
+	  MATLAB_ERROR("multi_get_d: Unknow type.");
 	}
       }
     }

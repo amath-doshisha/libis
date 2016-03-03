@@ -9,9 +9,7 @@ x=multi(x);
 while x~=1
     e=(x-1)/2;
     x=1+e;
-    eps(end+1)=e;
 end
-eps=eps(1:end-1);
 e=e*2
 disp('Check: (1+e)-1=e')
 (1+e)-1
