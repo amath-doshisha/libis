@@ -58,7 +58,7 @@ while n<=M-1
     A=A*R(:,:,M-1-n+1);
     n=n+1;
 end
-format short
-A
+disp('A=');
+disp(num2str(A,'%.2f     '));
 format long
 sort(eig(double(A)))

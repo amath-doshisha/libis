@@ -15,6 +15,5 @@ x=A\b;
 r=A*x-b;
 rmax=max(abs(r));
 disp('x=inv(A)*b=');
-disp(x);
-disp('||A*x-b||_inf=');
-disp(rmax);
+disp(num2str(x,'   %+.30e '));
+disp(sprintf('||A*x-b||_inf=%s',num2str(rmax,'%.1e')));

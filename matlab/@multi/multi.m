@@ -15,9 +15,9 @@ classdef multi
             elseif nargin==1 && isa(cmd,'int64')
                 obj.data=multi_mex('set_d',get_default_prec(),double(get_auto_prec_mode()),double(cmd));
             elseif nargin==1 && isa(cmd,'cell')
-                obj.data=multi_mex('set_s',get_default_prec(),double(get_auto_prec_mode()),cmd);
+                obj.data=multi_mex('set_s',get_default_prec(),double(get_auto_prec_mode()),strcellchomp(cmd));
             elseif nargin==1 && isa(cmd,'char')
-               obj.data=multi_mex('set_s',get_default_prec(),double(get_auto_prec_mode()),strsplitcell(cmd));
+                obj.data=multi_mex('set_s',get_default_prec(),double(get_auto_prec_mode()),strsplitcell(cmd));
             else
                 obj.data=multi_mex(cmd,get_default_prec(),double(get_auto_prec_mode()),varargin{1:end});
             end
@@ -35,7 +35,7 @@ classdef multi
         end
         
         function A=rand(varargin)
-%            A=multi('set_rand','r',varargin{1:end});
+            %            A=multi('set_rand','r',varargin{1:end});
             A=multi(rand(varargin{1:end},'double'));
         end
         
