@@ -34,6 +34,7 @@ int cvec_get_exp_max(int n, cmulti **x);
 void cvec_get_exp(int n, int *p, cmulti **x);
 int cvec_is_number(int n, cmulti **x);
 int cvec_has_nan(int n, cmulti **x);
+int cvec_is_real(int n, cmulti **x);
 
 /*
  * I/O

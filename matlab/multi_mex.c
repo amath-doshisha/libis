@@ -79,6 +79,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_get_exp.c"
 #include"./c/multi_set_zeros.c"
 #include"./c/multi_set_ones.c"
+#include"./c/multi_set_eye.c"
 #include"./c/multi_set_d.c"
 #include"./c/multi_get_d.c"
 #include"./c/multi_set_s.c"
@@ -110,6 +111,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_abs.c"
 #include"./c/multi_max.c"
 #include"./c/multi_min.c"
+#include"./c/multi_eig.c"
 
 /**
  * @breif mexFunction() for multi_mex
@@ -132,6 +134,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"get_exp"))   { multi_get_exp  (nlhs,plhs,nrhs,prhs); }  // y=get_exp(x)
   else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros(nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
   else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
+  else if(STR_EQ(cmd,"set_eye"))   { multi_set_eye  (nlhs,plhs,nrhs,prhs); }  // x=eye(M,N)
   else if(STR_EQ(cmd,"set_d"))     { multi_set_d    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
   else if(STR_EQ(cmd,"get_d"))     { multi_get_d    (nlhs,plhs,nrhs,prhs); }  // y=double(x)
   else if(STR_EQ(cmd,"set_s"))     { multi_set_s    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is cell of char
@@ -164,6 +167,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"abs"))       { multi_abs      (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
   else if(STR_EQ(cmd,"max"))       { multi_max      (nlhs,plhs,nrhs,prhs); }  // y=max(x)
   else if(STR_EQ(cmd,"min"))       { multi_min      (nlhs,plhs,nrhs,prhs); }  // y=min(x)
+  else if(STR_EQ(cmd,"eig"))       { multi_eig      (nlhs,plhs,nrhs,prhs); }  // lambda=eig(A), [V,D]=eig(A)
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");

@@ -1,6 +1,6 @@
 function R=sample_bidiag_upper(q)
 m=length(q);
-R=zeros(m,m,class(q)); % point!
+R=zeros(m,m,'like',q);
 i=1;
 while i<=m
     R(i,i)=q(i);

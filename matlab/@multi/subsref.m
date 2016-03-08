@@ -7,10 +7,7 @@ switch s(1).type
             y=multi(cmd,x.data,s);
         else
             y=multi(cmd,multi(x).data,s);
-            %y=builtin(cmd,x,s);
         end
-    case '.'
-        y=builtin(cmd,x,s);
     otherwise
-        error('subsref_error');
+        y=builtin(cmd,x,s);
 end

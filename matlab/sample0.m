@@ -23,11 +23,11 @@ A=zeros(3,3,2,'multi')
 disp('The multi array can be initialized by functions zeros(), ones(), eye() and rand().');
 A=zeros(1,3,'multi')
 A=ones(1,3,'multi')
-%A=eye(3,3,'multi')
+A=eye(3,3,'multi')
 A=rand(3,3,'multi')
 disp('The multi array can be obtained by function multi() from a double array.');
-D=[1.2456789 -1; -2 3]
-A=multi(D)
+A=multi([1.2456789 -1; -2 3])
+A=multi([1+i -1-i; +i -i])
 disp('The multi vector can be initialized by string.');
 S='1 2 3 4'
 A=multi(S)

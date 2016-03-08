@@ -236,6 +236,16 @@ int cvec_has_nan(int n, cmulti **x)
   return 0;
 }
 
+/**
+ @brief cmulti型のベクトルが実数であるかの判定.
+*/
+int cvec_is_real(int n, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ if(!cis_real(x[i])){ return 0; } }
+  return 1;
+}
+
 /** @} */
 
 /////////////////////////////////////////////////////

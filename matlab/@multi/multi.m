@@ -1,10 +1,13 @@
 classdef multi
-    properties(SetAccess=private,GetAccess=public)
+%    properties(SetAccess=private,GetAccess=public)
+    properties
         data;
     end
     methods
         function obj=multi(cmd,varargin)
-            if nargin==1 && isa(cmd,'multi')
+            if nargin==0
+                obj.data=multi_mex('set_zeros',get_default_prec(),double(get_auto_prec_mode()),'r',0,0,0);
+            elseif nargin==1 && isa(cmd,'multi')
                 obj.data=multi_mex('copy',get_default_prec(),double(get_auto_prec_mode()),cmd.data);
             elseif nargin==1 && isa(cmd,'double')
                 obj.data=multi_mex('set_d',get_default_prec(),double(get_auto_prec_mode()),cmd);

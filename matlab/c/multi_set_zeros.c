@@ -19,6 +19,7 @@ void multi_set_zeros(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   }else{ MATLAB_ERROR("multi_set_zeros: The 2nd-arg should be scalar Double or row double vector."); }  
   if(IS_NUMR(nrhs,prhs,N0+2)){ n=GET_DOUBLE(prhs[N0+2])[0]; }
   if(IS_NUMR(nrhs,prhs,N0+3)){ l=GET_DOUBLE(prhs[N0+3])[0]; }
+  if(nrhs-N0==2 && IS_NUMR(nrhs,prhs,N0+1)){ n=m; l=1; }
   A=multi_allocate(type,m,n,l);
        if(_T(A)=='r'){ rmat3_set_zeros(_M(A),_N(A),_L(A),_R(A),_LD1(A),_LD2(A)); }
   else if(_T(A)=='c'){ cmat3_set_zeros(_M(A),_N(A),_L(A),_C(A),_LD1(A),_LD2(A)); }
