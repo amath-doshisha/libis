@@ -1,6 +1,6 @@
-% y=abs(x)
-function y=abs(x)
-cmd='abs';
+% y=angle(x)
+function y=angle(x)
+cmd='angle';
 if isa(x,'multi')
     y=multi(cmd,x.data);
 else

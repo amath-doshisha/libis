@@ -1,6 +1,6 @@
-% y=abs(x)
-function y=abs(x)
-cmd='abs';
+% y=real(x)
+function y=real(x)
+cmd='real';
 if isa(x,'multi')
     y=multi(cmd,x.data);
 else

@@ -1386,6 +1386,18 @@ int cadd_abs(rmulti *y, cmulti *x)
   return e;
 }
 
+
+/**
+ @brief cmulti型の偏角 theta=arg(z)
+*/
+int cargument(rmulti *theta, cmulti *z)
+{
+  int e=0;
+  e+=ratan2(theta,C_I(z),C_R(z));
+  return e;
+}
+
+
 /**
  @brief cmulti型の規格化 y=x/abs(x)
 */

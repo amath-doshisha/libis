@@ -1633,6 +1633,20 @@ int cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 }
 
 /**
+ @brief cmulti型の行列の要素の偏角 B=arg(A).
+*/
+int cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=cargument(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+    }
+  }
+  return e;
+}
+
+/**
  @brief cmulti型の列ごとの最大値 B=max(A)
 */
 int cvec_max_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)

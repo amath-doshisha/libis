@@ -12,6 +12,7 @@ prec=128;set_default_prec(prec);lambda=multi(lambda);
 %prec=256;set_default_prec(prec);lambda=multi(lambda);
 disp(sprintf('Precision: %d',prec));
 A=sample_matTN(lambda,M);
+%A=double(A);
 disp('Generated matrix: ');
 disp(num2str(A,'%.2f     '));
 disp('Compute eigenvalues of generated matrix on double precision: ');

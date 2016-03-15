@@ -197,6 +197,7 @@ int cvec_max_abs_sub(rmulti *value, int n, cmulti **x, cmulti **y);  // value=ma
 int cvec_min_abs(rmulti *value, int n, cmulti **x);                  // value=min(abs(x))
 int cvec_min_abs_index(rmulti *value, int n, cmulti **x, int *I);    // value=min(abs(x))
 int cvec_max_absc(rmulti *value, int n, cmulti **x);                 // value=max(abs(x))
+int cvec_arg(int n, rmulti **y, cmulti **x);                         // y=arg(x)
 int cvec_dcos(cmulti *value, int n, cmulti **x, cmulti **y);         // value=x'*y/\sqrt(x'*x)/sqrt(y'*y)
 int cvec_abs_dcos(rmulti *value, int n, cmulti **x, cmulti **y);     // value=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
 int cvec_angle(rmulti *theta, int n, cmulti **x, cmulti **y);        // theta=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))

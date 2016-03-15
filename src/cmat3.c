@@ -440,6 +440,55 @@ int cmat3_index_copy_rmat3(int m, int n, int l, cmulti **B, int LDB1, int LDB2, 
   return e;
 }
 
+
+/**
+ @brief cmulti型の3次元配列の実部 B=real(A)
+*/
+int cmat3_real(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rcopy(MAT3(B,i,j,k,LDB1,LDB2),C_R(MAT3(A,i,j,k,LDA1,LDA2)));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の虚部 B=imag(A)
+*/
+int cmat3_imag(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rcopy(MAT3(B,i,j,k,LDB1,LDB2),C_I(MAT3(A,i,j,k,LDA1,LDA2)));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の共役 B=conj(A)
+*/
+int cmat3_conj(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cconj(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
 /**
  @brief cmulti型の3次元配列の符号反転 B=-A.
 */
@@ -770,12 +819,29 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
 /**
  @brief cmulti型の3次元配列の絶対値 C=abs(A).
 */
-int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2){
+int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2)
+{
   int i,j,k,e=0;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
 	e+=cabsv(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の偏角 B=arg(A).
+*/
+int cmat3_arg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cargument(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }

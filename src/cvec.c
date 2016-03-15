@@ -2118,6 +2118,19 @@ int cvec_min_abs_index(rmulti *value, int n, cmulti **x, int *I)
   return e;
 }
 
+
+/**
+ @brief cmulti型のベクトルの要素の偏角 y=arg(x)
+*/
+int cvec_arg(int n, rmulti **y, cmulti **x)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=cargument(y[i],x[i]); }
+  return e;
+}
+
+
+
 /**
  @brief cmulti型のベクトルの方向余弦 value=x'*y/sqrt(x'*x)/sqrt(y'*y)
 */

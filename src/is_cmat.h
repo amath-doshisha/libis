@@ -136,6 +136,7 @@ int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *
 int cmat_inv(int n, cmulti **B, int LDB, cmulti **A, int LDA);                             // B=inv(A)
 int cmat_power(int n, cmulti **B, int LDB, cmulti **A, int LDA, int p);                    // B=A^p
 int cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                      // B=abs(A)
+int cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                      // B=arg(A)
 int cvec_max_cmat(int m, int n, cmulti **B, cmulti **A, int LDA);                          // B=max(A)
 int cvec_min_cmat(int m, int n, cmulti **B, cmulti **A, int LDA);                          // B=min(A)
 int cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA);

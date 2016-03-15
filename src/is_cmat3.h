@@ -68,6 +68,12 @@ int cmat3_copy_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti
 // B(I,J,K)=A
 int cmat3_index_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K);
 int cmat3_index_copy_rmat3(int m, int n, int l, cmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K);
+// B=real(A)
+int cmat3_real(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+// B=imag(A)
+int cmat3_imag(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+// B=conj(A)
+int cmat3_conj(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // B=-A
 int cmat3_neg(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // C=A+B
@@ -114,6 +120,8 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
  */
 // C=abs(A)
 int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2);
+// B=abs(A)
+int cmat3_arg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // B=max(A)
 int cmat3_max(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // B=min(A)

@@ -171,6 +171,7 @@ int cabs_sub_r(rmulti *z, cmulti *x, rmulti *y);     // z=abs(x-y)
 int cdiv_abs(rmulti *z, rmulti *x, cmulti *y);       // z=x/abs(y)
 int cadd_abs(rmulti *y, cmulti *x);                  // y+=abs(x)
 int cnormalize(cmulti *y, cmulti *x);                // y=x/abs(x)
+int cargument(rmulti *theta, cmulti *z);             // theta=arg(z)
 int cget_polar(rmulti *r, rmulti *theta, cmulti *z); // z=r*exp(i*theta)
 int cset_polar(cmulti *z, rmulti *r, rmulti *theta); // z=r*exp(i*theta)
 int cpow_si(cmulti *y, cmulti *x, long n);           // y=x^n

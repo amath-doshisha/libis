@@ -68,7 +68,3 @@ set_default_prec(512);
 C=A+B
 get_prec(C)
 
-
-
-
-

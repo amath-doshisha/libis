@@ -1,6 +1,6 @@
-% y=abs(x)
-function y=abs(x)
-cmd='abs';
+% y=imag(x)
+function y=imag(x)
+cmd='imag';
 if isa(x,'multi')
     y=multi(cmd,x.data);
 else

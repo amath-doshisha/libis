@@ -29,14 +29,14 @@ void multi_get_s(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	t=i+j*_M(x)+k*_M(x)*_N(x);
 	if(_T(x)=='r'){
 	  if(fmt==NULL){
-	    if(j==0){ mpfr_sprintf(buf,"%7.5Rg", MAT3(_R(x),i,j,k,_LD1(x),_LD2(x))); }
-	    else    { mpfr_sprintf(buf,"%12.5Rg",MAT3(_R(x),i,j,k,_LD1(x),_LD2(x))); }
+	    if(j==0){ mpfr_sprintf(buf,"%.5Rg", MAT3(_R(x),i,j,k,_LD1(x),_LD2(x))); }
+	    else    { mpfr_sprintf(buf,"    %.5Rg",MAT3(_R(x),i,j,k,_LD1(x),_LD2(x))); }
 	  }else{ mpfr_sprintf(buf,fmt,MAT3(_R(x),i,j,k,_LD1(x),_LD2(x))); }
 	  s=mxCreateString(buf);
 	}else if(_T(x)=='c'){
 	  if(fmt==NULL){
-	    if(j==0){ mpfr_sprintf(buf,"%7.5Rg%+.5Rgi",C_R(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x))),C_I(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x)))); }
-	    else    { mpfr_sprintf(buf,"%17.5Rg%+.5Rgi",C_R(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x))),C_I(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x)))); }
+	    if(j==0){ mpfr_sprintf(buf,"%.5Rg%+.5Rgi",C_R(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x))),C_I(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x)))); }
+	    else    { mpfr_sprintf(buf,"    %.5Rg%+.5Rgi",C_R(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x))),C_I(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x)))); }
 	  }else{ mpfr_sprintf(buf,fmt,C_R(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x))),C_I(MAT3(_C(x),i,j,k,_LD1(x),_LD2(x)))); }
 	  s=mxCreateString(buf);		 
 	}else{

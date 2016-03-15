@@ -108,7 +108,11 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_horzcat.c"
 #include"./c/multi_vertcat.c"
 #include"./c/multi_inv.c"
+#include"./c/multi_real.c"
+#include"./c/multi_imag.c"
+#include"./c/multi_conj.c"
 #include"./c/multi_abs.c"
+#include"./c/multi_angle.c"
 #include"./c/multi_max.c"
 #include"./c/multi_min.c"
 #include"./c/multi_eig.c"
@@ -164,7 +168,11 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"horzcat"))   { multi_horzcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1 x2 ...]
   else if(STR_EQ(cmd,"vertcat"))   { multi_vertcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1; x2; ...]
   else if(STR_EQ(cmd,"inv"))       { multi_inv      (nlhs,plhs,nrhs,prhs); }  // y=inv(x)
+  else if(STR_EQ(cmd,"real"))      { multi_real     (nlhs,plhs,nrhs,prhs); }  // y=real(x)
+  else if(STR_EQ(cmd,"imag"))      { multi_imag     (nlhs,plhs,nrhs,prhs); }  // y=imag(x)
+  else if(STR_EQ(cmd,"conj"))      { multi_conj     (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
   else if(STR_EQ(cmd,"abs"))       { multi_abs      (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
+  else if(STR_EQ(cmd,"angle"))     { multi_angle    (nlhs,plhs,nrhs,prhs); }  // y=angle(x)      
   else if(STR_EQ(cmd,"max"))       { multi_max      (nlhs,plhs,nrhs,prhs); }  // y=max(x)
   else if(STR_EQ(cmd,"min"))       { multi_min      (nlhs,plhs,nrhs,prhs); }  // y=min(x)
   else if(STR_EQ(cmd,"eig"))       { multi_eig      (nlhs,plhs,nrhs,prhs); }  // lambda=eig(A), [V,D]=eig(A)
