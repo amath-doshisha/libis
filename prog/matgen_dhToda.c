@@ -6,7 +6,7 @@
 #define TXT_SUFFIX  "txt"
 #define BIN_SUFFIX "dat"
 #define PROG "matgen_dhToda"
-#define N 1000  
+//#define N 1000  
 #define FILE_NAME_LENGTH_MAX 100000
 
 
@@ -80,7 +80,7 @@ void set_set_lambda_geome2(int m,  double *lambda, double parameter)
 
 int main(int argc, char *argv[])
 {
-  int i,LDA,LDQ,debug=1,M=1,prec=1024,autoname=0,m=0,digits=15,matgen=1;
+  int i,LDA,LDQ,LDE,debug=1,M=1,N=1,prec=1024,autoname=0,m=0,digits=15,matgen=1;
   rmulti **A=NULL,**E=NULL,**Q=NULL, **rLambda=NULL,**c=NULL;
   char *fname=NULL,*fname_lambda=NULL,*fname_Q=NULL,*fname_E=NULL,*in_fname=NULL,*dir=NULL,format[]="f",*mattype=NULL,*l_mode=NULL,*c_mode=NULL;
   double *dLambda=NULL,lambda_min=0.5,time=-1;
@@ -110,6 +110,7 @@ int main(int argc, char *argv[])
     else if(STR_EQ(argv[i],"-n") && i+1<argc)           { ++i; m=atoi(argv[i]); }
     else if(STR_EQ(argv[i],"-m") && i+1<argc)           { ++i; m=atoi(argv[i]); }
     else if(STR_EQ(argv[i],"-M") && i+1<argc)           { ++i; M=atoi(argv[i]); }
+    else if(STR_EQ(argv[i],"-N") && i+1<argc)           { ++i; N=atoi(argv[i]); }
     else if(STR_EQ(argv[i],"-size") && i+1<argc)        { ++i; m=atoi(argv[i]); }
     else if(STR_EQ(argv[i],"-e") && i+1<argc)           { ++i; format[0]='e'; digits=atoi(argv[i]); }
     else if(STR_EQ(argv[i],"-f") && i+1<argc)           { ++i; format[0]='f'; digits=atoi(argv[i]); }
@@ -137,6 +138,7 @@ int main(int argc, char *argv[])
   // precision
   if(debug>=1){
     printf("MPFR_Precision: %d [bits]\n",prec);
+    printf("Size: m=%d; N=%d; M=%d\n",m,N,M);
     printf("Eigenvalues_Mode: ");
     if     (char_eq(l_mode,"a")){ printf("lambda=a; arithmetic interval with [1,%g)\n",lambda_min); }
     else if(char_eq(l_mode,"g")){ printf("lambda=a; geometric interval with [1,%g)\n",lambda_min); }
@@ -153,26 +155,27 @@ int main(int argc, char *argv[])
   // autoname
   if(autoname){
     if(char_eq(l_mode,"i") || strlen(in_fname)>0){
-      fname=char_renew_sprintf(fname,NULL,"%srmat{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|c=%s}.%s",dir,prec,MATNAME,mattype,m,M,l_mode,c_mode,BIN_SUFFIX);
-      fname_E=char_renew_sprintf(fname_E,NULL,"%srvec{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|c=%s}_E.%s",dir,prec,MATNAME,mattype,m,M,l_mode,c_mode,BIN_SUFFIX);
-      fname_Q=char_renew_sprintf(fname_Q,NULL,"%srmat{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|c=%s}_Q.%s",dir,prec,MATNAME,mattype,m,M,l_mode,c_mode,BIN_SUFFIX);
-      fname_lambda=char_renew_sprintf(fname_lambda,NULL,"%sdvec{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|c=%s}_lambda.%s",dir,prec,MATNAME,mattype,m,M,l_mode,c_mode,BIN_SUFFIX);
+      fname=char_renew_sprintf(fname,NULL,"%srmat{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|c=%s}.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,c_mode,BIN_SUFFIX);
+      fname_E=char_renew_sprintf(fname_E,NULL,"%srvec{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|c=%s}_E.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,c_mode,BIN_SUFFIX);
+      fname_Q=char_renew_sprintf(fname_Q,NULL,"%srmat{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|c=%s}_Q.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,c_mode,BIN_SUFFIX);
+      fname_lambda=char_renew_sprintf(fname_lambda,NULL,"%sdvec{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|c=%s}_lambda.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,c_mode,BIN_SUFFIX);
     }else{
-      fname=char_renew_sprintf(fname,NULL,"%srmat{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|min=%g|c=%s}.%s",dir,prec,MATNAME,mattype,m,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
-      fname_E=char_renew_sprintf(fname_E,NULL,"%srvec{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|min=%g|c=%s}_E.%s",dir,prec,MATNAME,mattype,m,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
-      fname_Q=char_renew_sprintf(fname_Q,NULL,"%srmat{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|min=%g|c=%s}_Q.%s",dir,prec,MATNAME,mattype,m,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
-      fname_lambda=char_renew_sprintf(fname_lambda,NULL,"%sdvec{%dbits|%s|%s|size=%04d|M=%04d|lambda=%s|min=%g|c=%s}_lambda.%s",dir,prec,MATNAME,mattype,m,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
+      fname=char_renew_sprintf(fname,NULL,"%srmat{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|min=%g|c=%s}.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
+      fname_E=char_renew_sprintf(fname_E,NULL,"%srvec{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|min=%g|c=%s}_E.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
+      fname_Q=char_renew_sprintf(fname_Q,NULL,"%srmat{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|min=%g|c=%s}_Q.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
+      fname_lambda=char_renew_sprintf(fname_lambda,NULL,"%sdvec{%dbits|%s|%s|size=%04d|N=%04d|M=%04d|lambda=%s|min=%g|c=%s}_lambda.%s",dir,prec,MATNAME,mattype,m,N,M,l_mode,lambda_min,c_mode,BIN_SUFFIX);
     }
   }
 
   // allocate
   LDA=m;
   LDQ=m;
+  LDE=m;
   A=rmat_allocate_prec(LDA,m,prec);
   rLambda=rvec_allocate_prec(m,prec);
   c=rvec_allocate_prec(m,prec);
   dLambda=dvec_allocate(m);
-  E=rvec_allocate_prec(m,prec);
+  E=rmat_allocate_prec(LDE,N,prec);
   Q=rmat_allocate_prec(LDQ,M,prec);
 
   //matrix mode
@@ -196,7 +199,11 @@ int main(int argc, char *argv[])
 
   // generate matrix
   t1=clock();
-  riep_dhToda_TN(m,M,A,LDA,Q,LDQ,E,rLambda,c,debug-1);
+  if(N==1){
+    riep_dhToda_TN(m,M,A,LDA,Q,LDQ,E,rLambda,c,debug-1);
+  }else{
+    riep_EXTdhToda_TN(m,N,M,A,LDA,Q,LDQ,E,LDE,rLambda,c,debug-1);
+  }
   t2=clock();
   time=(double)(t2-t1)/CLOCKS_PER_SEC;
 

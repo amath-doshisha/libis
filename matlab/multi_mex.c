@@ -116,6 +116,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_max.c"
 #include"./c/multi_min.c"
 #include"./c/multi_eig.c"
+#include"./c/multi_matgen_dhToda.c"
 
 /**
  * @breif mexFunction() for multi_mex
@@ -176,6 +177,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"max"))       { multi_max      (nlhs,plhs,nrhs,prhs); }  // y=max(x)
   else if(STR_EQ(cmd,"min"))       { multi_min      (nlhs,plhs,nrhs,prhs); }  // y=min(x)
   else if(STR_EQ(cmd,"eig"))       { multi_eig      (nlhs,plhs,nrhs,prhs); }  // lambda=eig(A), [V,D]=eig(A)
+  else if(STR_EQ(cmd,"matgen_dhToda")){ multi_matgen_dhToda(nlhs,plhs,nrhs,prhs); } // A=matgen_dhToda(...)       
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");
