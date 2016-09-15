@@ -847,22 +847,22 @@ dcomplex *zvec_bin_load(int *n, char* fmt, ...)
 dcomplex zpow_si(dcomplex x, int n)
 {
   int i;
-  dcomplex y,a;
+  dcomplex y={0,0},a;
   if(n==0){
     Z_SET(y,1,0);
-  }
-  else if(n>0){
+  }else if(n>0){
     Z_LET(y,x);
     for(i=1 ;i<n ;i++){
       Z_SET_TIMES(a,y,x); Z_LET(y,a);
     }
-  }
-  else if(n<0){
+  }else if(n<0){
     Z_LET(y,x);
     for(i=1; i<(-n); i++){
       Z_SET_TIMES(a,y,x); Z_LET(y,a);
     }
     Z_SET_INV(a,y); Z_LET(y,a);
+  }else{
+    // error
   }
   return y;
 }

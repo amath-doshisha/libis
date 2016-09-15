@@ -1,4 +1,4 @@
-function [out1,out2]=multi_eig(A,varargin)
+function [out1,out2]=eig(A,varargin)
 cmd='eig';
 if isa(A,'multi')
     if nargout<=1

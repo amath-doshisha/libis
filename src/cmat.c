@@ -286,6 +286,21 @@ int cmat_has_nan(int m, int n, cmulti **A, int LDA)
   return 0;
 }
 
+/**
+ @brief cmulti型の行列が実数であるかの判定.
+*/
+int cmat_is_real(int m, int n, cmulti **A, int LDA)
+{
+  int i,j;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      if(!cis_real(MAT(A,i,j,LDA))){ return 0; }
+    }
+  }
+  return 1;
+}
+
+
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////

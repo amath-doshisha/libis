@@ -1,6 +1,7 @@
 classdef multi
 %    properties(SetAccess=private,GetAccess=public)
-    properties
+%    properties
+    properties(SetAccess=public,GetAccess=public)
         data;
     end
     methods

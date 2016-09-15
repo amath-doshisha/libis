@@ -1,4 +1,4 @@
-%% y=subsref(x,s)
+% y=subsref(x,s)
 function y=subsref(x,s)
 cmd='subsref';
 switch s(1).type

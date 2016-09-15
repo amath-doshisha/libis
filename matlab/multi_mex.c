@@ -116,6 +116,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_max.c"
 #include"./c/multi_min.c"
 #include"./c/multi_eig.c"
+#include"./c/multi_eig_verify.c"
 #include"./c/multi_matgen_dhToda.c"
 
 /**
@@ -134,49 +135,50 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   set_default_prec(prec);
   set_auto_prec_mode(ap_mode);
   //  mexPrintf("cmd=%s prec=%d ap_mode=%d\n",cmd,prec,ap_mode);  
-       if(STR_EQ(cmd,"get_prec"))  { multi_get_prec (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
-  else if(STR_EQ(cmd,"get_sign"))  { multi_get_sign (nlhs,plhs,nrhs,prhs); }  // y=get_sign(x)
-  else if(STR_EQ(cmd,"get_exp"))   { multi_get_exp  (nlhs,plhs,nrhs,prhs); }  // y=get_exp(x)
-  else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros(nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
-  else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
-  else if(STR_EQ(cmd,"set_eye"))   { multi_set_eye  (nlhs,plhs,nrhs,prhs); }  // x=eye(M,N)
-  else if(STR_EQ(cmd,"set_d"))     { multi_set_d    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
-  else if(STR_EQ(cmd,"get_d"))     { multi_get_d    (nlhs,plhs,nrhs,prhs); }  // y=double(x)
-  else if(STR_EQ(cmd,"set_s"))     { multi_set_s    (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is cell of char
-  else if(STR_EQ(cmd,"get_s"))     { multi_get_s    (nlhs,plhs,nrhs,prhs); }  // y=char(x)
-  else if(STR_EQ(cmd,"copy"))      { multi_copy     (nlhs,plhs,nrhs,prhs); }  // y=x
-  else if(STR_EQ(cmd,"uminus"))    { multi_uminus   (nlhs,plhs,nrhs,prhs); }  // y=-x
-  else if(STR_EQ(cmd,"ctranspose")){ multi_ctranspose(nlhs,plhs,nrhs,prhs); } // y=x'
-  else if(STR_EQ(cmd,"transpose")) { multi_transpose(nlhs,plhs,nrhs,prhs); }  // y=x.'
-  else if(STR_EQ(cmd,"uminus"))    { multi_uminus   (nlhs,plhs,nrhs,prhs); }  // y=-x
-  else if(STR_EQ(cmd,"plus"))      { multi_plus     (nlhs,plhs,nrhs,prhs); }  // z=x+y
-  else if(STR_EQ(cmd,"minus"))     { multi_minus    (nlhs,plhs,nrhs,prhs); }  // z=x-y
-  else if(STR_EQ(cmd,"times"))     { multi_times    (nlhs,plhs,nrhs,prhs); }  // z=x.*y
-  else if(STR_EQ(cmd,"mtimes"))    { multi_mtimes   (nlhs,plhs,nrhs,prhs); }  // z=x*y
-  else if(STR_EQ(cmd,"rdivide"))   { multi_rdivide  (nlhs,plhs,nrhs,prhs); }  // z=x./y
-  else if(STR_EQ(cmd,"mrdivide"))  { multi_mrdivide (nlhs,plhs,nrhs,prhs); }  // z=x/y
-  else if(STR_EQ(cmd,"mldivide"))  { multi_mldivide (nlhs,plhs,nrhs,prhs); }  // z=x\y
-  else if(STR_EQ(cmd,"power"))     { multi_power    (nlhs,plhs,nrhs,prhs); }  // z=x.^y
-  else if(STR_EQ(cmd,"mpower"))    { multi_mpower   (nlhs,plhs,nrhs,prhs); }  // z=x^y
-  else if(STR_EQ(cmd,"eq"))        { multi_eq       (nlhs,plhs,nrhs,prhs); }  // z=(x==y)
-  else if(STR_EQ(cmd,"ne"))        { multi_ne       (nlhs,plhs,nrhs,prhs); }  // z=(x~=y)
-  else if(STR_EQ(cmd,"ge"))        { multi_ge       (nlhs,plhs,nrhs,prhs); }  // z=(x>=y)
-  else if(STR_EQ(cmd,"gt"))        { multi_gt       (nlhs,plhs,nrhs,prhs); }  // z=(x>y)
-  else if(STR_EQ(cmd,"le"))        { multi_le       (nlhs,plhs,nrhs,prhs); }  // z=(x<=y)
-  else if(STR_EQ(cmd,"lt"))        { multi_lt       (nlhs,plhs,nrhs,prhs); }  // z=(x<y)
-  else if(STR_EQ(cmd,"subsref"))   { multi_subsref  (nlhs,plhs,nrhs,prhs); }  // y=x(s)
-  else if(STR_EQ(cmd,"subsasgn"))  { multi_subsasgn (nlhs,plhs,nrhs,prhs); }  // y(s)=x
-  else if(STR_EQ(cmd,"horzcat"))   { multi_horzcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1 x2 ...]
-  else if(STR_EQ(cmd,"vertcat"))   { multi_vertcat  (nlhs,plhs,nrhs,prhs); }  // y=[x1; x2; ...]
-  else if(STR_EQ(cmd,"inv"))       { multi_inv      (nlhs,plhs,nrhs,prhs); }  // y=inv(x)
-  else if(STR_EQ(cmd,"real"))      { multi_real     (nlhs,plhs,nrhs,prhs); }  // y=real(x)
-  else if(STR_EQ(cmd,"imag"))      { multi_imag     (nlhs,plhs,nrhs,prhs); }  // y=imag(x)
-  else if(STR_EQ(cmd,"conj"))      { multi_conj     (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
-  else if(STR_EQ(cmd,"abs"))       { multi_abs      (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
-  else if(STR_EQ(cmd,"angle"))     { multi_angle    (nlhs,plhs,nrhs,prhs); }  // y=angle(x)      
-  else if(STR_EQ(cmd,"max"))       { multi_max      (nlhs,plhs,nrhs,prhs); }  // y=max(x)
-  else if(STR_EQ(cmd,"min"))       { multi_min      (nlhs,plhs,nrhs,prhs); }  // y=min(x)
-  else if(STR_EQ(cmd,"eig"))       { multi_eig      (nlhs,plhs,nrhs,prhs); }  // lambda=eig(A), [V,D]=eig(A)
+       if(STR_EQ(cmd,"get_prec"))  { multi_get_prec  (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
+  else if(STR_EQ(cmd,"get_sign"))  { multi_get_sign  (nlhs,plhs,nrhs,prhs); }  // y=get_sign(x)
+  else if(STR_EQ(cmd,"get_exp"))   { multi_get_exp   (nlhs,plhs,nrhs,prhs); }  // y=get_exp(x)
+  else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros (nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
+  else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones  (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
+  else if(STR_EQ(cmd,"set_eye"))   { multi_set_eye   (nlhs,plhs,nrhs,prhs); }  // x=eye(M,N)
+  else if(STR_EQ(cmd,"set_d"))     { multi_set_d     (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
+  else if(STR_EQ(cmd,"get_d"))     { multi_get_d     (nlhs,plhs,nrhs,prhs); }  // y=double(x)
+  else if(STR_EQ(cmd,"set_s"))     { multi_set_s     (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is cell of char
+  else if(STR_EQ(cmd,"get_s"))     { multi_get_s     (nlhs,plhs,nrhs,prhs); }  // y=char(x)
+  else if(STR_EQ(cmd,"copy"))      { multi_copy      (nlhs,plhs,nrhs,prhs); }  // y=x
+  else if(STR_EQ(cmd,"uminus"))    { multi_uminus    (nlhs,plhs,nrhs,prhs); }  // y=-x
+  else if(STR_EQ(cmd,"ctranspose")){ multi_ctranspose(nlhs,plhs,nrhs,prhs); }  // y=x'
+  else if(STR_EQ(cmd,"transpose")) { multi_transpose (nlhs,plhs,nrhs,prhs); }  // y=x.'
+  else if(STR_EQ(cmd,"uminus"))    { multi_uminus    (nlhs,plhs,nrhs,prhs); }  // y=-x
+  else if(STR_EQ(cmd,"plus"))      { multi_plus      (nlhs,plhs,nrhs,prhs); }  // z=x+y
+  else if(STR_EQ(cmd,"minus"))     { multi_minus     (nlhs,plhs,nrhs,prhs); }  // z=x-y
+  else if(STR_EQ(cmd,"times"))     { multi_times     (nlhs,plhs,nrhs,prhs); }  // z=x.*y
+  else if(STR_EQ(cmd,"mtimes"))    { multi_mtimes    (nlhs,plhs,nrhs,prhs); }  // z=x*y
+  else if(STR_EQ(cmd,"rdivide"))   { multi_rdivide   (nlhs,plhs,nrhs,prhs); }  // z=x./y
+  else if(STR_EQ(cmd,"mrdivide"))  { multi_mrdivide  (nlhs,plhs,nrhs,prhs); }  // z=x/y
+  else if(STR_EQ(cmd,"mldivide"))  { multi_mldivide  (nlhs,plhs,nrhs,prhs); }  // z=x\y
+  else if(STR_EQ(cmd,"power"))     { multi_power     (nlhs,plhs,nrhs,prhs); }  // z=x.^y
+  else if(STR_EQ(cmd,"mpower"))    { multi_mpower    (nlhs,plhs,nrhs,prhs); }  // z=x^y
+  else if(STR_EQ(cmd,"eq"))        { multi_eq        (nlhs,plhs,nrhs,prhs); }  // z=(x==y)
+  else if(STR_EQ(cmd,"ne"))        { multi_ne        (nlhs,plhs,nrhs,prhs); }  // z=(x~=y)
+  else if(STR_EQ(cmd,"ge"))        { multi_ge        (nlhs,plhs,nrhs,prhs); }  // z=(x>=y)
+  else if(STR_EQ(cmd,"gt"))        { multi_gt        (nlhs,plhs,nrhs,prhs); }  // z=(x>y)
+  else if(STR_EQ(cmd,"le"))        { multi_le        (nlhs,plhs,nrhs,prhs); }  // z=(x<=y)
+  else if(STR_EQ(cmd,"lt"))        { multi_lt        (nlhs,plhs,nrhs,prhs); }  // z=(x<y)
+  else if(STR_EQ(cmd,"subsref"))   { multi_subsref   (nlhs,plhs,nrhs,prhs); }  // y=x(s)
+  else if(STR_EQ(cmd,"subsasgn"))  { multi_subsasgn  (nlhs,plhs,nrhs,prhs); }  // y(s)=x
+  else if(STR_EQ(cmd,"horzcat"))   { multi_horzcat   (nlhs,plhs,nrhs,prhs); }  // y=[x1 x2 ...]
+  else if(STR_EQ(cmd,"vertcat"))   { multi_vertcat   (nlhs,plhs,nrhs,prhs); }  // y=[x1; x2; ...]
+  else if(STR_EQ(cmd,"inv"))       { multi_inv       (nlhs,plhs,nrhs,prhs); }  // y=inv(x)
+  else if(STR_EQ(cmd,"real"))      { multi_real      (nlhs,plhs,nrhs,prhs); }  // y=real(x)
+  else if(STR_EQ(cmd,"imag"))      { multi_imag      (nlhs,plhs,nrhs,prhs); }  // y=imag(x)
+  else if(STR_EQ(cmd,"conj"))      { multi_conj      (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
+  else if(STR_EQ(cmd,"abs"))       { multi_abs       (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
+  else if(STR_EQ(cmd,"angle"))     { multi_angle     (nlhs,plhs,nrhs,prhs); }  // y=angle(x)      
+  else if(STR_EQ(cmd,"max"))       { multi_max       (nlhs,plhs,nrhs,prhs); }  // y=max(x)
+  else if(STR_EQ(cmd,"min"))       { multi_min       (nlhs,plhs,nrhs,prhs); }  // y=min(x)
+  else if(STR_EQ(cmd,"eig"))       { multi_eig       (nlhs,plhs,nrhs,prhs); }  // lambda=eig(A), [V,D]=eig(A)
+  else if(STR_EQ(cmd,"eig_verify")){ multi_eig_verify(nlhs,plhs,nrhs,prhs); }  // [V,D,EV,ED]=eig_verify(A)
   else if(STR_EQ(cmd,"matgen_dhToda")){ multi_matgen_dhToda(nlhs,plhs,nrhs,prhs); } // A=matgen_dhToda(...)       
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);

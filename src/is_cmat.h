@@ -33,6 +33,7 @@ void cmat_get_exp(int m, int n, int *P, int LDP, cmulti **A, int LDA);
 int cmat_get_exp_max(int m, int n, cmulti **A, int LDA);
 int cmat_is_number(int m, int n, cmulti **A, int LDA);
 int cmat_has_nan(int m, int n, cmulti **A, int LDA);
+int cmat_is_real(int m, int n, cmulti **A, int LDA);
 
 /*
  * I/O
