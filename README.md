@@ -25,11 +25,14 @@ This contains the functions using MPFR library, multi precision floating point a
    `# cd libis/src`  
    `# make`  
    `# make install`  
-4. Compile libs/prog.  
+4. Compile libs/prog if you need them.  
    `# cd libis/prog`  
    `# make`  
    `# make install`  
-5. Compile libs/matlab.  
-   `# cd matlab`  
-   `# mex -I/usr/local/include -I../include -L/usr/local/lib -L../MACOSX -lis -lmpfr -lgmp multi_mex.c`
-   
+5. Compile libs/matlab if you need them.
+   Exec MATLAB.  
+   Change directory to libis/matlab.  
+   Run the following commands on MATLAB.  
+   `# mex -setup C`  
+   `# make`  
+
