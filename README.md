@@ -29,7 +29,7 @@ This contains the functions using MPFR library, multi precision floating point a
    `# cd libis/prog`  
    `# make`  
    `# make install`  
-5. Compile libs/matlab if you need them.
+5. Compile libs/matlab if you need them.  
    Exec MATLAB.  
    Change directory to libis/matlab.  
    Run the following commands on MATLAB.  
