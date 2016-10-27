@@ -1,4 +1,4 @@
-# iSys Library (libis)
+# iSystem Library (libis)
 iSys Library provides some functions, which runs on multi precision floating point arithmetic.
 
 ## Description
