@@ -1,5 +1,6 @@
-
+###### MacOS X
 OS=MACOSX
+######
 GCC=gcc
 INST_DIR_INC=../include
 INST_DIR_LIB=../$(OS)

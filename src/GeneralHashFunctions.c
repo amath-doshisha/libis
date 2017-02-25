@@ -1,4 +1,5 @@
-#include<strings.h>
+//#include<strings.h>
+#include<string.h>
 #include "GeneralHashFunctions.h"
 
 unsigned int RSHash(const char *str)

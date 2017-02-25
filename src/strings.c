@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<strings.h>
+//#include<strings.h>
+#include<string.h>
 #include<limits.h>
 #include"is_macros.h"
 #include"is_strings.h"

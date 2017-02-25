@@ -5,7 +5,11 @@
 function [d1,d2,d3]=size(x,dim)
 s=size(x.data);
 if nargin==2
-    d1=s(dim);
+    if dim<=length(s)
+        d1=s(dim);
+    else
+        d1=1;
+    end
 elseif nargin==1
     if nargout<=1
         d1=s;

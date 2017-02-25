@@ -9,8 +9,8 @@ message()
 [ ! -f /usr/local/lib/libgmp.dylib ] && message
 [ ! -f /usr/local/lib/libmpfr.dylib ] && message
 
-ver_gmp_ok="14.1.0"
-ver_mpfr_ok="6.4.0"
+ver_gmp_ok="14.2.0"
+ver_mpfr_ok="6.5.0"
 
 ver_gmp=`otool -L /usr/local/lib/libmpfr.dylib | grep libgmp | sed 's/[()]//g' | awk '{print$7}'`
 ver_mpfr=`otool -L /usr/local/lib/libmpfr.dylib | grep libmpfr | tail -n 1 | sed 's/[()]//g' | awk '{print$7}'`
