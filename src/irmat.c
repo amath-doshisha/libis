@@ -16,6 +16,20 @@
 /** @{ */
 
 /**
+ @brief 区間rmulti型の行列の値を倍精度実数から設定 [B0,B1]=A.
+*/
+int irmat_set_d(int m, int n, rmulti **B0, rmulti **B1, int LDB, const double *A, int LDA)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=irset_d(MAT(B0,i,j,LDB),MAT(B1,i,j,LDB),MAT(A,i,j,LDA));
+    }
+  }
+  return e;
+}
+
+/**
  @brief コピー [B0,B1]=[A0,A1]
 */
 int irmat_copy(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
@@ -67,6 +81,48 @@ void irmat_print(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, con
     }
     printf("\n");
   }
+}
+
+/**
+ @brief 区間の中心 [m-r,m+r]=[A0,A1]
+*/
+int irmat_mid(int m, int n, rmulti **mid, int LDmid, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=irmid(MAT(mid,i,j,LDmid),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 区間の半径 [m-r,m+r]=[A0,A1]
+*/
+int irmat_rad(int m, int n, rmulti **rad, int LDrad, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=irrad(MAT(rad,i,j,LDrad),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 区間の中心と半径 [m-r,m+r]=[A0,A1]
+*/
+int irmat_mr(int m, int n, rmulti **mid, int LDmid, rmulti **rad, int LDrad, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=irmr(MAT(mid,i,j,LDmid),MAT(rad,i,j,LDrad),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+    }
+  }
+  return e;
 }
 
 /**

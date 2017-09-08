@@ -7,6 +7,9 @@ int icmat_copy(int m, int n, cmulti **B0, int LDB0, cmulti **B1, int LDB1, cmult
 int icmat_copy_t(int m, int n, cmulti **B0, int LDB0, cmulti **B1, int LDB1, cmulti **A0, int LDA0, cmulti **A1, int LDA1);        // [B0,B1]=[A0,A1]'
 int icmat_copy_ct(int m, int n, cmulti **B0, int LDB0, cmulti **B1, int LDB1, cmulti **A0, int LDA0, cmulti **A1, int LDA1);       // [B0,B1]=[A0,A1]'
 void icmat_print(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1, const char *name, const char *f, int digits);         // output
+int icmat_mid(int m, int n, cmulti **mid, int LDmid, cmulti **A0, int LDA0, cmulti **A1, int LDA1); // [m+r,m-r]=[A0,A1]
+int icmat_rad(int m, int n, cmulti **rad, int LDrad, cmulti **A0, int LDA0, cmulti **A1, int LDA1); // [m+r,m-r]=[A0,A1]
+int icmat_mr(int m, int n, cmulti **mid, int LDmid, cmulti **rad, int LDrad, cmulti **A0, int LDA0, cmulti **A1, int LDA1); // [m+r,m-r]=[A0,A1]
 int icmat_center_radius(int m, int n, cmulti **Ac, int LDAc, cmulti **Ar, int LDAr, cmulti **A0, int LDA0, cmulti **A1, int LDA1); // Ac=(A1+A0)/2, Ar=A1-A0
 int icmat_set_all_d(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1, double a);                                         // [A0,A1]=ones(m,n)*a
 int icmat_set_zeros(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1);                                                   // [A0,A1]=[zeros(m,n),zeros(m,n)]

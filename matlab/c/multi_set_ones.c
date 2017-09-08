@@ -23,8 +23,10 @@ void multi_set_ones(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   A=multi_allocate(type,m,n,l);
        if(_T(A)=='r'){ rmat3_set_ones(_M(A),_N(A),_L(A),_R(A),_LD1(A),_LD2(A)); }
   else if(_T(A)=='c'){ cmat3_set_ones(_M(A),_N(A),_L(A),_C(A),_LD1(A),_LD2(A)); }
-  else if(_T(A)=='R'){ rmat3_set_ones(_M(A),_N(A),_L(A),_R0(A),_LD1(A),_LD2(A)); rmat3_set_ones(_M(A),_N(A),_L(A),_R1(A),_LD1(A),_LD2(A)); }
-  else if(_T(A)=='C'){ cmat3_set_ones(_M(A),_N(A),_L(A),_C0(A),_LD1(A),_LD2(A)); cmat3_set_ones(_M(A),_N(A),_L(A),_C1(A),_LD1(A),_LD2(A)); }
+  else if(_T(A)=='R'){ rmat3_set_ones(_M(A),_N(A),_L(A),_R0(A),_LD1(A),_LD2(A));
+                       rmat3_set_ones(_M(A),_N(A),_L(A),_R1(A),_LD1(A),_LD2(A)); }
+  else if(_T(A)=='C'){ cmat3_set_ones(_M(A),_N(A),_L(A),_C0(A),_LD1(A),_LD2(A));
+                       cmat3_set_ones(_M(A),_N(A),_L(A),_C1(A),_LD1(A),_LD2(A)); }
   else{ MATLAB_ERROR("multi_set_ones: Unkown type"); }
   plhs[0]=mxCreateStructMulti(A);
   A=multi_free(A);

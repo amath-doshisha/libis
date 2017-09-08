@@ -147,6 +147,28 @@ int icadd_pm(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y)
 }
 
 /**
+ @brief 区間の中心 [m-r,m+r]=[x0,x1]
+ */
+int icmid(cmulti *mid, cmulti *x0, cmulti *x1)
+{
+  int e=0;
+  e+=irmid(C_R(mid),C_R(x0),C_R(x1));
+  e+=irmid(C_I(mid),C_I(x0),C_I(x1));
+  return e;
+}
+
+/**
+ @brief 区間の半径 [m-r,m+r]=[x0,x1]
+ */
+int icrad(cmulti *rad, cmulti *x0, cmulti *x1)
+{
+  int e=0;
+  e+=irrad(C_R(rad),C_R(x0),C_R(x1));
+  e+=irrad(C_I(rad),C_I(x0),C_I(x1));
+  return e;
+}
+
+/**
  @brief 区間の中心と半径 [m-r,m+r]=[x0,x1]
  */
 int icmr(cmulti *mid, cmulti *rad, cmulti *x0, cmulti *x1)

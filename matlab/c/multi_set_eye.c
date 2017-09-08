@@ -24,6 +24,10 @@ void multi_set_eye(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   A=multi_allocate(type,m,n,l);
        if(_T(A)=='r'){ rmat_set_eye(_M(A),_N(A),_R(A),_LD1(A)); }
   else if(_T(A)=='c'){ cmat_set_eye(_M(A),_N(A),_C(A),_LD1(A)); }
+  else if(_T(A)=='R'){ rmat_set_eye(_M(A),_N(A),_R0(A),_LD1(A));
+                       rmat_set_eye(_M(A),_N(A),_R1(A),_LD1(A)); }
+  else if(_T(A)=='C'){ cmat_set_eye(_M(A),_N(A),_C0(A),_LD1(A));
+                       cmat_set_eye(_M(A),_N(A),_C1(A),_LD1(A)); }
   else{ MATLAB_ERROR("multi_set_eye: Unkown type"); }
   plhs[0]=mxCreateStructMulti(A);
   A=multi_free(A);

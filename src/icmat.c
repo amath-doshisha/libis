@@ -90,6 +90,49 @@ void icmat_print(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1, con
 }
 
 /**
+ @brief 区間の中心 [m-r,m+r]=[A0,A1]
+*/
+int icmat_mid(int m, int n, cmulti **mid, int LDmid, cmulti **A0, int LDA0, cmulti **A1, int LDA1)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=icmid(MAT(mid,i,j,LDmid),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 区間の半径 [m-r,m+r]=[A0,A1]
+*/
+int icmat_rad(int m, int n, cmulti **rad, int LDrad, cmulti **A0, int LDA0, cmulti **A1, int LDA1)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=icrad(MAT(rad,i,j,LDrad),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 区間の中心と半径 [m-r,m+r]=[A0,A1]
+*/
+int icmat_mr(int m, int n, cmulti **mid, int LDmid, cmulti **rad, int LDrad, cmulti **A0, int LDA0, cmulti **A1, int LDA1)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      e+=icmr(MAT(mid,i,j,LDmid),MAT(rad,i,j,LDrad),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+    }
+  }
+  return e;
+}
+
+
+/**
  @brief 区間の中心 Ac=(A1+A0)/2 と半径 Ar=A1-A0
 */
 int icmat_center_radius(int m, int n, cmulti **Ac, int LDAc, cmulti **Ar, int LDAr, cmulti **A0, int LDA0, cmulti **A1, int LDA1)

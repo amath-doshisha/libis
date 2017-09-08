@@ -5,6 +5,8 @@
 #include<is_rvec.h>
 #include<is_func.h>
 
+// [B0,B1]=A
+int irmat_set_d(int m, int n, rmulti **B0, rmulti **B1, int LDB, const double *A, int LDA);
 // print
 void irmat_print(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, const char *name, const char *f, int digits);
 // [B0,B1]=[A0,A1]
@@ -12,6 +14,9 @@ int irmat_copy(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rmult
 // [B0,B1]=[A0,A1]'
 int irmat_copy_t(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rmulti **A0, int LDA0, rmulti **A1, int LDA1);
 // Ac=(A1+A0)/2, Ar=A1-A0
+int irmat_mid(int m, int n, rmulti **mid, int LDmid, rmulti **A0, int LDA0, rmulti **A1, int LDA1);
+int irmat_rad(int m, int n, rmulti **rad, int LDrad, rmulti **A0, int LDA0, rmulti **A1, int LDA1);
+int irmat_mr(int m, int n, rmulti **mid, int LDmid, rmulti **rad, int LDrad, rmulti **A0, int LDA0, rmulti **A1, int LDA1);
 int irmat_center_radius(int m, int n, rmulti **Ac, int LDAc, rmulti **Ar, int LDAr, rmulti **A0, int LDA0, rmulti **A1, int LDA1);
 // [A0,A1]=ones(m,n)*a
 int irmat_set_all_d(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, double a);

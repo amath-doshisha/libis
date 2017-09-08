@@ -19,6 +19,8 @@ int icneg(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1);                      
 int icpm(cmulti *y0, cmulti *y1, cmulti *x);                                           // [y0,y1]=[-x,x]
 int icadd(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1);     // [z0,z1]=[x0,x1]+[y0,y1]
 int icadd_pm(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y);               // [z0,z1]=[x0,x1]+[-y,y]
+int icmid(cmulti *mid, cmulti *x0, cmulti *x1);                                        // [m-r,m+r]=[x0,x1]
+int icrad(cmulti *rad, cmulti *x0, cmulti *x1);                                        // [m-r,m+r]=[x0,x1]
 int icmr(cmulti *mid, cmulti *rad, cmulti *x0, cmulti *x1);                            // [m-r,m+r]=[x0,x1]
 int icsub(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1);     // [z0,z1]=[x0,x1]-[y0,y1]
 int icsub_d2(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y);                // [z0,z1]=[x0,x1]-[y,y]

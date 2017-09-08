@@ -110,6 +110,26 @@ int icvec_add_pm(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmul
 }
 
 /**
+ @brief 区間の中心 [m-r,m+r]=[x0,x1]
+ */
+int icvec_mid(int n, cmulti **mid, cmulti **x0, cmulti **x1)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=icmid(mid[i],x0[i],x1[i]); }
+  return e;
+}
+
+/**
+ @brief 区間の半径 [m-r,m+r]=[x0,x1]
+ */
+int icvec_rad(int n, cmulti **rad, cmulti **x0, cmulti **x1)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=icrad(rad[i],x0[i],x1[i]); }
+  return e;
+}
+
+/**
  @brief 区間の中心と半径 [m-r,m+r]=[x0,x1]
  */
 int icvec_mr(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1)

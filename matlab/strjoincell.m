@@ -17,7 +17,7 @@ while i<=M
     s{i}=c{i,1};
     j=2;
     while j<=N*L
-        s{i}=[s{i} c{i,j}];
+        s{i}=[s{i} '  ' c{i,j}];
         j=j+1;
     end
     i=i+1;

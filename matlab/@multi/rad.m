@@ -1,6 +1,6 @@
-% y=-x
-function y=uminus(x)
-cmd='uminus';
+% y=rad(x)
+function y=rad(x)
+cmd='rad';
 if isa(x,'multi')
     y=multi(cmd,x.data);
 else

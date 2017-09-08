@@ -10,7 +10,7 @@
 #define IS_CELL(N,P,I)  ((N>I && mxIsCell(P[I])))
 #define GET_DOUBLE(P)   ((double*)mxGetData(P))
 #define MATLAB_ERROR(S) (mexErrMsgIdAndTxt("MATLAB:multi_mex",S));
-#define N0 3
+#define N0 4
 
 #define _T(A)   (A->type)
 #define _M(A)   (A->M)
@@ -81,10 +81,16 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_set_ones.c"
 #include"./c/multi_set_eye.c"
 #include"./c/multi_set_d.c"
+#include"./c/multi_iset_d.c"
 #include"./c/multi_get_d.c"
 #include"./c/multi_set_s.c"
 #include"./c/multi_get_s.c"
 #include"./c/multi_copy.c"
+#include"./c/multi_icopy.c"
+#include"./c/multi_mid.c"
+#include"./c/multi_rad.c"
+#include"./c/multi_up.c"
+#include"./c/multi_down.c"
 #include"./c/multi_uminus.c"
 #include"./c/multi_ctranspose.c"
 #include"./c/multi_transpose.c"
@@ -124,15 +130,20 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
  */
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  int prec=64,ap_mode=0;
+  int prec=64,rnd_mode=0,ap_mode=0;
   char *cmd=NULL;
   if(!(IS_CHAR(nrhs,prhs,0))){ MATLAB_ERROR("mexFunction: The arg0 should be Char."); }
   if(!(IS_NUMR(nrhs,prhs,1))){ MATLAB_ERROR("mexFunction: The arg1 should be Double."); }
   if(!(IS_NUMR(nrhs,prhs,2))){ MATLAB_ERROR("mexFunction: The arg2 should be Double."); }
+  if(!(IS_NUMR(nrhs,prhs,3))){ MATLAB_ERROR("mexFunction: The arg3 should be Double."); }
   if(IS_CHAR(nrhs,prhs,0)){ cmd=mxArrayToString(prhs[0]); }
   if(IS_NUMR(nrhs,prhs,1)){ prec=GET_DOUBLE(prhs[1])[0]; }
-  if(IS_NUMR(nrhs,prhs,2)){ ap_mode=GET_DOUBLE(prhs[2])[0]; }
+  if(IS_NUMR(nrhs,prhs,2)){ rnd_mode=GET_DOUBLE(prhs[2])[0]; }
+  if(IS_NUMR(nrhs,prhs,3)){ ap_mode=GET_DOUBLE(prhs[3])[0]; }
   set_default_prec(prec);
+       if(rnd_mode>0){ set_round_mode(MPFR_RNDU); }
+  else if(rnd_mode<0){ set_round_mode(MPFR_RNDD); }
+  else               { set_round_mode(MPFR_RNDN); }
   set_auto_prec_mode(ap_mode);
   //  mexPrintf("cmd=%s prec=%d ap_mode=%d\n",cmd,prec,ap_mode);  
        if(STR_EQ(cmd,"get_prec"))  { multi_get_prec  (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
@@ -142,10 +153,16 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones  (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
   else if(STR_EQ(cmd,"set_eye"))   { multi_set_eye   (nlhs,plhs,nrhs,prhs); }  // x=eye(M,N)
   else if(STR_EQ(cmd,"set_d"))     { multi_set_d     (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
+  else if(STR_EQ(cmd,"iset_d"))    { multi_iset_d    (nlhs,plhs,nrhs,prhs); }  // [y0,y1]=imulti(x), where x is double
   else if(STR_EQ(cmd,"get_d"))     { multi_get_d     (nlhs,plhs,nrhs,prhs); }  // y=double(x)
   else if(STR_EQ(cmd,"set_s"))     { multi_set_s     (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is cell of char
   else if(STR_EQ(cmd,"get_s"))     { multi_get_s     (nlhs,plhs,nrhs,prhs); }  // y=char(x)
   else if(STR_EQ(cmd,"copy"))      { multi_copy      (nlhs,plhs,nrhs,prhs); }  // y=x
+  else if(STR_EQ(cmd,"icopy"))     { multi_icopy     (nlhs,plhs,nrhs,prhs); }  // [y0,y1]=x
+  else if(STR_EQ(cmd,"mid"))       { multi_mid       (nlhs,plhs,nrhs,prhs); }  // [m+r,m-r]=[x0,x1]
+  else if(STR_EQ(cmd,"rad"))       { multi_rad       (nlhs,plhs,nrhs,prhs); }  // [m+r,m-r]=[x0,x1]
+  else if(STR_EQ(cmd,"up"))        { multi_up        (nlhs,plhs,nrhs,prhs); }  // y=x1
+  else if(STR_EQ(cmd,"down"))      { multi_down      (nlhs,plhs,nrhs,prhs); }  // y=x0
   else if(STR_EQ(cmd,"uminus"))    { multi_uminus    (nlhs,plhs,nrhs,prhs); }  // y=-x
   else if(STR_EQ(cmd,"ctranspose")){ multi_ctranspose(nlhs,plhs,nrhs,prhs); }  // y=x'
   else if(STR_EQ(cmd,"transpose")) { multi_transpose (nlhs,plhs,nrhs,prhs); }  // y=x.'

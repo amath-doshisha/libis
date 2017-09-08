@@ -1,4 +1,4 @@
-%% s=get_s(A,opt)
+% s=get_s(A,opt)
 function s=get_s(A,opt)
 cmd='get_s';
 if nargin==1
@@ -11,12 +11,7 @@ else
     if isa(opt,'char')
         opt=strrep(opt,'g','Rg');
         opt=strrep(opt,'f','Rf');
-        opt=strrep(opt,'e','Re');
-    end
-    if ~isreal(A)
-        opt2=strrep(opt,' ','');
-        opt3=strrep(opt2,'%','%+');
-        opt=strrep(opt,opt2,[opt2 opt3 'i']);
+        opt=strrep(opt,'e','Re');        
     end
     if isa(A,'multi')
         s=multi(cmd,A.data,opt).data;

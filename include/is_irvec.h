@@ -10,12 +10,15 @@
  @brief 多倍長精度実数型rmultiの機械区間演算のベクトルに関する関数の宣言.
 */
 
+int irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x);                                            // [y0,y1]=x
 int irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);                              // [y0,y1]=[x0,x1]
 void irvec_print(int n, rmulti **x0, rmulti **x1, const char *name, const char *f, int digits);         // output
 int irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **x1);                     // xc=(x1+x0)/2, xr=x1-x0
 int irvec_neg(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);                               // [y0,y1]=-[x0,x1]
 int irvec_pm(int n, rmulti **y0, rmulti **y1, rmulti **x);                                              // [y0,y1]=[-x,x]
 int irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y);                // [z0,z1]=[x0,z1]+[-y,y]
+int irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1);                                           // [m-r,m+r]=[x0,x1]
+int irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1);                                           // [m-r,m+r]=[x0,x1]
 int irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1);                              // [m-r,m+r]=[x0,x1]
 int irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1);     // [z0,z1]=[x0,z1]+[y0,y1]
 

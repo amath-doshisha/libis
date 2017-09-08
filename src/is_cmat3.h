@@ -21,6 +21,7 @@ int cmat3_clone_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmult
 /*
  * member variables
  */
+void cmat3_get_prec(int m, int n, int l, int *P, int LDP1, int LDP2, cmulti **A, int LDA1, int LDA2);
 int cmat3_get_prec_max(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
 
 /*

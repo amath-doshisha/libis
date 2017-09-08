@@ -61,6 +61,8 @@
 #include<is_icvec.h>
 #include<is_irmat.h>
 #include<is_icmat.h>
+#include<is_irmat3.h>
+#include<is_icmat3.h>
 #include<is_ireig.h>
 #include<is_iceig.h>
 #include<is_riep_dht.h>

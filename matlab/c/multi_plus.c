@@ -16,6 +16,7 @@ void multi_plus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else if(_T(x)=='r' && _T(y)=='c'){ z=multi_allocate('c',_M(x),_N(x),_L(x)); cmat3_add_rmat3(_M(z),_N(z),_L(z),_C(z),_LD1(z),_LD2(z),_C(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x)); }
     else if(_T(x)=='c' && _T(y)=='r'){ z=multi_allocate('c',_M(x),_N(x),_L(x)); cmat3_add_rmat3(_M(z),_N(z),_L(z),_C(z),_LD1(z),_LD2(z),_C(x),_LD1(x),_LD2(x),_R(y),_LD1(y),_LD2(y)); }
     else if(_T(x)=='c' && _T(y)=='c'){ z=multi_allocate('c',_M(x),_N(x),_L(x)); cmat3_add      (_M(z),_N(z),_L(z),_C(z),_LD1(z),_LD2(z),_C(x),_LD1(x),_LD2(x),_C(y),_LD1(y),_LD2(y)); }
+    else if(_T(x)=='R' && _T(y)=='R'){ z=multi_allocate('R',_M(x),_N(x),_L(x)); irmat3_add     (_M(z),_N(z),_L(z),_R0(z),_R1(z),_LD1(z),_LD2(z),_R0(x),_R1(x),_LD1(x),_LD2(x),_R0(y),_R1(y),_LD1(y),_LD2(y)); }
     else{ MATLAB_ERROR("multi_plus: Unkown type"); }
   }else if(_M(x)==1 && _N(x)==1 && _L(x)==1){    // In the case of x is scalar    
          if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('r',_M(y),_N(y),_L(y)); rmat3_add_r(_M(z),_N(z),_L(z),_R(z),_LD1(z),_LD2(z),_R(y),_LD1(y),_LD2(y),MAT3(_R(x),0,0,0,_LD1(x),_LD2(x))); }

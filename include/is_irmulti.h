@@ -18,6 +18,8 @@ int irneg(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                      
 int irpm(rmulti *y0, rmulti *y1, rmulti *x);                                           // [y0,y1]=[-abs(x),abs(x)]
 int iradd(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]+[y0,y1]
 int iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y);               // [z0,z1]=[x0,x1]+[-y,y]
+int irmid(rmulti *mid, rmulti *x0, rmulti *x1);                                        // [m-r,m+r]=[x0,x1]
+int irrad(rmulti *rad, rmulti *x0, rmulti *x1);                                        // [m-r,m+r]=[x0,x1]
 int irmr(rmulti *mid, rmulti *rad, rmulti *x0, rmulti *x1);                            // [m-r,m+r]=[x0,x1]
 int irsub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]-[y0,y1]
 int irsub_d2(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y);                // [z0,z1]=[x0,x1]-[y,y]

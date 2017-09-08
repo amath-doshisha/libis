@@ -109,6 +109,39 @@ int iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y)
 }
 
 /**
+ @brief 区間の中心 [m-r,m+r]=[x0,x1]
+ */
+int irmid(rmulti *mid, rmulti *x0, rmulti *x1)
+{
+  int prec,e=0;
+  rmulti *a0=NULL,*a1=NULL;
+  prec=rget_prec(mid);
+  RA(a0,prec); RA(a1,prec);
+  e+=abs(mpfr_sub(a0,x1,x0,MPFR_RNDU));    // a0=(x1-x0) by upper
+  e+=abs(mpfr_mul_d(a0,a0,0.5,MPFR_RNDU)); // a0=(x1-x0)/2 by upper
+  e+=abs(mpfr_add(mid,a0,x0,MPFR_RNDU));   // mid=x0+(x1-x0)/2 by upper
+  RF(a0); RF(a1);
+  return e;
+}
+
+/**
+ @brief 区間の半径 [m-r,m+r]=[x0,x1]
+ */
+int irrad(rmulti *rad, rmulti *x0, rmulti *x1)
+{
+  int prec,e=0;
+  rmulti *a0=NULL,*a1=NULL;
+  prec=rget_prec(rad);
+  RA(a0,prec); RA(a1,prec);
+  e+=abs(mpfr_sub(a0,x1,x0,MPFR_RNDU));    // a0=(x1-x0) by upper
+  e+=abs(mpfr_mul_d(a0,a0,0.5,MPFR_RNDU)); // a0=(x1-x0)/2 by upper
+  e+=abs(mpfr_add(a0,a0,x0,MPFR_RNDU));    // a0=x0+(x1-x0)/2 by upper
+  e+=abs(mpfr_sub(rad,a0,x0,MPFR_RNDU));   // rad=(x1-x0)/2 by upper
+  RF(a0); RF(a1);
+  return e;
+}
+
+/**
  @brief 区間の中心と半径 [m-r,m+r]=[x0,x1]
  */
 int irmr(rmulti *mid, rmulti *rad, rmulti *x0, rmulti *x1)
@@ -117,11 +150,11 @@ int irmr(rmulti *mid, rmulti *rad, rmulti *x0, rmulti *x1)
   rmulti *a0=NULL,*a1=NULL;
   p0=rget_prec(mid); p1=rget_prec(rad); prec=MAX2(p0,p1);
   RA(a0,prec); RA(a1,prec);
-  e+=abs(mpfr_sub(a0,x1,x0,MPFR_RNDU)); // upper bound
-  e+=abs(mpfr_mul_d(a0,a0,0.5,MPFR_RNDU)); // upper bound
-  e+=abs(mpfr_add(a0,a0,x0,MPFR_RNDU)); // upper bound
-  e+=abs(mpfr_sub(a1,a0,x0,MPFR_RNDU)); // upper bound
-  e+=ircopy(mid,rad,a0,a1);
+  e+=abs(mpfr_sub(a0,x1,x0,MPFR_RNDU));    // a0=(x1-x0) by upper
+  e+=abs(mpfr_mul_d(a0,a0,0.5,MPFR_RNDU)); // a0=(x1-x0)/2 by upper
+  e+=abs(mpfr_add(a0,a0,x0,MPFR_RNDU));    // a0=x0+(x1-x0)/2 by upper
+  e+=abs(mpfr_sub(a1,a0,x0,MPFR_RNDU));    // a1=(x1-x0)/2 by upper
+  e+=ircopy(mid,rad,a0,a1);                // [mid,rad]=[a0,a1]
   RF(a0); RF(a1);
   return e;
 }

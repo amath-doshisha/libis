@@ -10,6 +10,8 @@ int icvec_neg(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);       
 int icvec_pm(int n, cmulti **y0, cmulti **y1, cmulti **x);                                          // [y0,y1]=[-x,x]
 int icvec_add(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1); // [z0,z1]=[x0,z1]+[y0,y1]
 int icvec_add_pm(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y);            // [z0,z1]=[x0,x1]+[-y,y]
+int icvec_mid(int n, cmulti **mid, cmulti **x0, cmulti **x1);                                       // [m-r,m+r]=[x0,x1]
+int icvec_rad(int n, cmulti **rad, cmulti **x0, cmulti **x1);                                       // [m-r,m+r]=[x0,x1]
 int icvec_mr(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1);                          // [m-r,m+r]=[x0,x1]
 int icvec_add_c(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1); // [z0,z1]=[x0,z1]+[y0,y1]
 int icvec_sub(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1); // [z0,z1]=[x0,z1]-[y0,y1]

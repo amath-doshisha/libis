@@ -1,6 +1,6 @@
-% y=-x
-function y=uminus(x)
-cmd='uminus';
+% y=up(x)
+function y=up(x)
+cmd='up';
 if isa(x,'multi')
     y=multi(cmd,x.data);
 else

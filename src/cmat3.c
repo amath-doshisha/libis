@@ -127,6 +127,21 @@ int cmat3_clone_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmult
 /** @name cmulti型の3次元配列のメンバ変数に関する関数 */
 /** @{ */
 
+/**
+ @brief cmulti型の3次元配列の浮動小数点数の精度(ビット数)を取得.
+*/
+void cmat3_get_prec(int m, int n, int l, int *P, int LDP1, int LDP2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(P,i,j,k,LDP1,LDP2)=cget_prec(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
+
 int cmat3_get_prec_max(int m, int n, int l, cmulti **A, int LDA1, int LDA2)
 {
   int value,p,i=0,j=0,k=0;

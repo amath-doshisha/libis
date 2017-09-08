@@ -68,3 +68,35 @@ set_default_prec(512);
 C=A+B
 get_prec(C)
 
+disp('')
+disp('The values can be rounded with naer/up/down rouding mode.');
+set_default_prec(64);
+A=rand(1,2,'multi');
+disp(['Original data:        ' num2str(A,'%+.14e')])
+set_default_prec(26);
+set_default_round_mode(0);
+B=multi(A);
+disp(['Rounded by near mode: ' num2str(B,'%+.14e')]);
+set_default_round_mode(1);
+B=multi(A);
+disp(['Rounded by up   mode: ' num2str(B,'%+.14e')]);
+set_default_round_mode(-1);
+B=multi(A);
+disp(['Rounded by down mode: ' num2str(B,'%+.14e')])
+
+disp('   ');
+disp('The operations can be executed under naer/up/down rounding mode.');
+set_default_prec(26);
+set_default_round_mode(0);
+a=multi(1.23456789012345);
+b=multi(7.89012345678901);
+set_default_round_mode(0);
+c=a+b;
+disp(['near mode:' num2str(c,'%+.10e')]);
+set_default_round_mode(1);
+c=a+b;
+disp(['  up mode:' num2str(c,'%+.10e')]);
+set_default_round_mode(-1);
+c=a+b;
+disp(['down mode:' num2str(c,'%+.10e')]);
+

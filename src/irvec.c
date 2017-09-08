@@ -22,6 +22,16 @@
 /** @{ */
 
 /**
+ @brief rmulti型のベクトルの値を倍精度実数から設定.
+*/
+int irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=irset_d(y0[i],y1[i],x[i]); }
+  return e;
+}
+
+/**
  @brief コピー [y0,y1]=[x0,x1]
 */
 int irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
@@ -100,6 +110,26 @@ int irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmul
 {
   int i,e=0;
   for(i=0; i<n; i++){ e+=iradd_pm(z0[i],z1[i],x0[i],x1[i],y[i]); }
+  return e;
+}
+
+/**
+ @brief 区間の中心 [m-r,m+r]=[x0,x1]
+ */
+int irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=irmid(mid[i],x0[i],x1[i]); }
+  return e;
+}
+
+/**
+ @brief 区間の半径 [m-r,m+r]=[x0,x1]
+ */
+int irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1)
+{
+  int i,e=0;
+  for(i=0; i<n; i++){ e+=irrad(rad[i],x0[i],x1[i]); }
   return e;
 }
 
