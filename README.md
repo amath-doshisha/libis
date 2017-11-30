@@ -35,4 +35,5 @@ This contains the functions using MPFR library, multi precision floating point a
    Run the following commands on MATLAB.  
    `# mex -setup C`  
    `# make`  
-
+## Easy Installation
+   Run iSystem Toolbox.mltbx
