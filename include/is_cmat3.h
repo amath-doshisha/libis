@@ -45,6 +45,10 @@ int cmat3_set_all_d(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double 
 int cmat3_set_zeros(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
 // A=ones(m,n,l)
 int cmat3_set_ones(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
+// A=nan(m,n,l)
+int cmat3_set_nan(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
+// A=inf(m,n,l)
+int cmat3_set_inf(int m, int n, int l, cmulti **A, int LDA1, int LDA2);
 // A=a*rand(m,n,l)+b
 void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double a, double b);
 
@@ -167,6 +171,10 @@ int rmat3_pow_c1(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti *a,
 /*
  * compare
  */
+// B=isnan(A)
+void cmat3_isnan(int m, int n, int l, int *B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+// B=isinf(A)
+void cmat3_isinf(int m, int n, int l, int *B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // C=(A==B)
 void cmat3_eq(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti **B, int LDB1, int LDB2);
 // C=(A==B)

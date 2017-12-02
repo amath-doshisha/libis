@@ -364,6 +364,38 @@ int rmat3_set_ones(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
 }
 
 /**
+ @brief rmulti型の3次元配列の値をnanに設定.
+*/
+int rmat3_set_nan(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rset_nan(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列の値をinfに設定.
+*/
+int rmat3_set_inf(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rset_inf(MAT3(A,i,j,k,LDA1,LDA2),1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief rmulti型の3次元配列の値を区間(b,a+b)の疑似乱数値を設定.
 */
 void rmat3_set_rand(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double a, double b)
@@ -751,6 +783,39 @@ int rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A
 
 /** @name rmulti型の3次元配列の要素の比較に関する関数 */
 /** @{ */
+
+/**
+ @brief rmulti型の3次元配列の比較 B=isnan(A).
+*/
+void rmat3_isnan(int m, int n, int l, int *B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(B,i,j,k,LDB1,LDB2)=ris_nan(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief rmulti型の3次元配列の比較 B=isinf(A).
+*/
+void rmat3_isinf(int m, int n, int l, int *B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(B,i,j,k,LDB1,LDB2)=ris_inf(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return;
+}
+
 
 /**
  @brief rmulti型の3次元配列の比較 C=(A==B).

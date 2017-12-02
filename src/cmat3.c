@@ -337,6 +337,38 @@ void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double 
 }
 
 
+/**
+ @brief cmulti型の3次元配列の値をnanに設定.
+*/
+int cmat3_set_nan(int m, int n, int l, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	cset_nan(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値をinfに設定.
+*/
+int cmat3_set_inf(int m, int n, int l, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	cset_inf(MAT3(A,i,j,k,LDA1,LDA2),1,1);
+      }
+    }
+  }
+  return e;
+}
+
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////
@@ -1181,6 +1213,39 @@ int rmat3_pow_c1(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti *a,
 
 /** @name cmulti型の3次元配列の要素の比較に関する関数 */
 /** @{ */
+
+
+/**
+ @brief rmulti型の3次元配列の比較 B=isnan(A).
+*/
+void cmat3_isnan(int m, int n, int l, int *B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(B,i,j,k,LDB1,LDB2)=cis_nan(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return;
+}
+
+/**
+ @brief rmulti型の3次元配列の比較 B=isinf(A).
+*/
+void cmat3_isinf(int m, int n, int l, int *B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	MAT3(B,i,j,k,LDB1,LDB2)=cis_inf(MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return;
+}
 
 /**
  @brief cmulti型の3次元配列の比較　C=(A==B).

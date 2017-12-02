@@ -34,6 +34,14 @@ classdef multi
             A=multi('set_ones','r',varargin{1:end});
         end
         
+        function A=nan(varargin)
+            A=multi('set_nan','r',varargin{1:end});
+        end
+        
+        function A=inf(varargin)
+            A=multi('set_inf','r',varargin{1:end});
+        end
+        
         function A=rand(varargin)
             %            A=multi('set_rand','r',varargin{1:end});
             A=multi(rand(varargin{1:end},'double'));

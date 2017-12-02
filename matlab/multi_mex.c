@@ -79,6 +79,8 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_get_exp.c"
 #include"./c/multi_set_zeros.c"
 #include"./c/multi_set_ones.c"
+#include"./c/multi_set_nan.c"
+#include"./c/multi_set_inf.c"
 #include"./c/multi_set_eye.c"
 #include"./c/multi_set_d.c"
 #include"./c/multi_iset_d.c"
@@ -103,6 +105,8 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_mldivide.c"
 #include"./c/multi_power.c"
 #include"./c/multi_mpower.c"
+#include"./c/multi_isnan.c"
+#include"./c/multi_isinf.c"
 #include"./c/multi_eq.c"
 #include"./c/multi_ne.c"
 #include"./c/multi_ge.c"
@@ -151,6 +155,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"get_exp"))   { multi_get_exp   (nlhs,plhs,nrhs,prhs); }  // y=get_exp(x)
   else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros (nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
   else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones  (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
+  else if(STR_EQ(cmd,"set_nan"))   { multi_set_nan   (nlhs,plhs,nrhs,prhs); }  // x=nan(M,N,L)
+  else if(STR_EQ(cmd,"set_inf"))   { multi_set_inf   (nlhs,plhs,nrhs,prhs); }  // x=nan(M,N,L)    
   else if(STR_EQ(cmd,"set_eye"))   { multi_set_eye   (nlhs,plhs,nrhs,prhs); }  // x=eye(M,N)
   else if(STR_EQ(cmd,"set_d"))     { multi_set_d     (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
   else if(STR_EQ(cmd,"iset_d"))    { multi_iset_d    (nlhs,plhs,nrhs,prhs); }  // [y0,y1]=imulti(x), where x is double
@@ -176,6 +182,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"mldivide"))  { multi_mldivide  (nlhs,plhs,nrhs,prhs); }  // z=x\y
   else if(STR_EQ(cmd,"power"))     { multi_power     (nlhs,plhs,nrhs,prhs); }  // z=x.^y
   else if(STR_EQ(cmd,"mpower"))    { multi_mpower    (nlhs,plhs,nrhs,prhs); }  // z=x^y
+  else if(STR_EQ(cmd,"isnan"))     { multi_isnan     (nlhs,plhs,nrhs,prhs); }  // y=isnan(x)
+  else if(STR_EQ(cmd,"isinf"))     { multi_isinf     (nlhs,plhs,nrhs,prhs); }  // y=isinf(x)
   else if(STR_EQ(cmd,"eq"))        { multi_eq        (nlhs,plhs,nrhs,prhs); }  // z=(x==y)
   else if(STR_EQ(cmd,"ne"))        { multi_ne        (nlhs,plhs,nrhs,prhs); }  // z=(x~=y)
   else if(STR_EQ(cmd,"ge"))        { multi_ge        (nlhs,plhs,nrhs,prhs); }  // z=(x>=y)
