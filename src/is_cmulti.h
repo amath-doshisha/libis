@@ -105,6 +105,9 @@ int cmul_2exp(cmulti *y, cmulti *x, int nr, int ni); // y=x*2^n
 int cdiv_2exp(cmulti *y, cmulti *x, int nr, int ni); // y=x/2^n
 int cneg(cmulti *y, cmulti *x);                      // y=-x
 int cabs2(rmulti *y, cmulti *x);                     // y=abs(x)^2
+//追加
+int cabs2_ws(rmulti *y, cmulti *x, int *rwss, rmulti **rws); // rwss>1
+//ここまで
 int cabsc(cmulti *y, cmulti *x);                     // y=abs(x.r)+i*abs(r.i)
 int cmax_absc(rmulti *y, cmulti *x);                 // y=max(abs(x.r),abs(r.i))
 int cadd(cmulti *z, cmulti *x, cmulti *y);           // z=x+y
@@ -125,6 +128,9 @@ int csub_ui2(cmulti *z, cmulti *x, ulong y);         // z=x-y
 int csub_si1(cmulti *z, long x, cmulti *y);          // z=x-y
 int csub_si2(cmulti *z, cmulti *x, long y);          // z=x-y
 int cmul(cmulti *z, cmulti *x, cmulti *y);           // z=x*y
+//追加
+int cmul_ws(cmulti *z, cmulti *x, cmulti *y, int *rwss, rmulti **rws, int *cwss, cmulti **cws);  // rwss>1,cwss>1
+//ここまで
 int cmul_z(cmulti *z, cmulti *x, dcomplex y);        // z=x*y
 int cmul_r(cmulti *z, cmulti *x, rmulti *y);         // z=x*y
 int cmul_d(cmulti *z, cmulti *x, double y);          // z=x*y
@@ -138,6 +144,9 @@ int cadd_mul_r(cmulti *z, cmulti *x, rmulti *y);     // z+=x*y
 int cadd_mul_z(cmulti *z, cmulti *x, dcomplex y);    // z+=x*y
 int cadd_mul_d(cmulti *z, cmulti *x, double y);      // z+=x*y
 int csub_mul(cmulti *z, cmulti *x, cmulti *y);       // z-=x*y
+//追加
+int csub_mul_ws(cmulti *z, cmulti *x, cmulti *y, int *rwss, rmulti **rws, int *cwss, cmulti **cws);  // rwss>1,cwss>2
+//ここまで
 int csub_mul_r(cmulti *z, cmulti *x, rmulti *y);     // z-=x*y
 int csub_mul_z(cmulti *z, cmulti *x, dcomplex y);    // z-=x*y
 int csub_mul_d(cmulti *z, cmulti *x, double y);      // z-=x*y
@@ -154,6 +163,9 @@ int cpow_ui(cmulti *y, cmulti *x, ulong n);          // y=x^n
  * operations
  */
 int cinv(cmulti *z, cmulti *x);                      // z=1/x
+//追加
+int cinv_ws(cmulti *z, cmulti *x, int *rwss, rmulti **rws, int *cwss, cmulti **cws); // rwss>2,cwss>1
+//ここまで
 int cdiv(cmulti *z, cmulti *x, cmulti *y);           // z=x/y
 int cdiv_z1(cmulti *z, dcomplex x, cmulti *y);       // z=x/y
 int cdiv_z2(cmulti *z, cmulti *x, dcomplex y);       // z=x/y
@@ -166,6 +178,9 @@ int cdiv_ui2(cmulti *z, cmulti *x, ulong y);         // z=x/y
 int cdiv_si1(cmulti *z, long x, cmulti *y);          // z=x/y
 int cdiv_si2(cmulti *z, cmulti *x, long y);          // z=x/y
 int cabsv(rmulti *y, cmulti *x);                     // y=abs(x)
+//追加
+int cabsv_ws(rmulti *y, cmulti *x, int *rwss, rmulti **rws); // rwss>1
+//ここまで
 int cabs_sub(rmulti *z, cmulti *x, cmulti *y);       // z=abs(x-y)
 int cabs_sub_r(rmulti *z, cmulti *x, rmulti *y);     // z=abs(x-y)
 int cdiv_abs(rmulti *z, rmulti *x, cmulti *y);       // z=x/abs(y)

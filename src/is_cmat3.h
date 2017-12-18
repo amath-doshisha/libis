@@ -123,6 +123,10 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
 int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2);
 // B=abs(A)
 int cmat3_arg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+//追加
+// B=sum(A)
+int cmat3_sum(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+//ここまで
 // B=max(A)
 int cmat3_max(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // B=min(A)

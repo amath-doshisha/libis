@@ -36,6 +36,9 @@ int irvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // 
 int irvec_dmin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[min(x0),x1]
 int irvec_umax_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // value=max(abs(x))
 int irvec_dmin_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // value=min(abs(x))
+//追加
+int irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // value=sum(x)
+//ここまで
 
 int irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);        // [y0,y1]=[A0,A1]*[x0,x1]
 int irvec_add_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);    // [y0,y1]+=[A0,A1]*[x0,x1]

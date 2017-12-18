@@ -91,6 +91,14 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
  */
 // C=abs(A)
 int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
+//編集済み
+// C=log10(A)
+int rmat3_log10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
+//C=sqrt(A)
+int rmat3_sqrt(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
+// C=sum(A)
+int rmat3_sum(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
+//ここまで
 // B=max(A)
 int rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 // B=min(A)

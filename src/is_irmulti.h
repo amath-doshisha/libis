@@ -22,13 +22,25 @@ int irmid(rmulti *mid, rmulti *x0, rmulti *x1);                                 
 int irrad(rmulti *rad, rmulti *x0, rmulti *x1);                                        // [m-r,m+r]=[x0,x1]
 int irmr(rmulti *mid, rmulti *rad, rmulti *x0, rmulti *x1);                            // [m-r,m+r]=[x0,x1]
 int irsub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]-[y0,y1]
+//追加
+int irsub_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws);     // rwss>2
+//ここまで
 int irsub_d2(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y);                // [z0,z1]=[x0,x1]-[y,y]
 int irmul(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]*[y0,y1]
+//追加
+int irmul_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws);     // rwss>4
+//ここまで
 int irmul_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y);                 // [z0,z1]=[x0,x1]*y
 int irdiv(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]/[y0,y1]
+//編集済み
+int irinv(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1);
+//ここまで
 int iradd_mul(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1); // [z0,z1]=[z0,z1]+[x0,x1]*[y0,y1]
+int iradd_mul_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws);  // rwss>6
 int irsub_mul(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1); // [z0,z1]=[z0,z1]-[x0,x1]*[y0,y1]
-
+//追加
+int irsub_mul_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws); // rwss>6
+//ここまで
 int irabs(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                             // [y0,y1]=abs([x0,x1])
 int irabs_sub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1); // [z0,z1]=abs([x0,x1]-[y0,y1])
 int irdiv_abs(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1); // [z0,z1]=[x0,x1]/abs([y0,y1])
