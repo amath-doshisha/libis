@@ -2,7 +2,6 @@
 int main(void)
 //int main(int argc, const char *argv[])
 {
- 
   int ws_size=0;
   rmulti *x=NULL,*y=NULL,*z=NULL,**ws=NULL;
   x=rallocate();
