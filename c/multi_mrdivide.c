@@ -1,0 +1,48 @@
+/**
+ * @breif z=mrdivide(x,y)
+ */
+void multi_mrdivide(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+{
+  multi *x=NULL,*y=NULL,*z=NULL,*u=NULL,*v=NULL;
+  int info=-1;
+  if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
+  if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_mrdivide: The 1st-arg should be Struct."); }
+  if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_mrdivide: The 2nd-arg should be Struct."); }
+  // allocate by clone
+  x=multi_allocate_mxArray(prhs[N0]);
+  y=multi_allocate_mxArray(prhs[N0+1]);
+  // operation
+  if(_M(y)==1 && _N(y)==1 && _L(y)==1){
+    // In the case of y is scalar
+         if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('r',_M(x),_N(x),_L(x)); rmat3_div_r2(_M(z),_N(z),_L(z),_R(z),_LD1(z),_LD2(z),_R(x),_LD1(x),_LD2(x),MAT3(_R(y),0,0,0,_LD1(y),_LD2(y))); }
+    else if(_T(x)=='r' && _T(y)=='c'){ z=multi_allocate('c',_M(x),_N(x),_L(x)); rmat3_div_c2(_M(z),_N(z),_L(z),_C(z),_LD1(z),_LD2(z),_R(x),_LD1(x),_LD2(x),MAT3(_C(y),0,0,0,_LD1(y),_LD2(y))); }
+    else if(_T(x)=='c' && _T(y)=='r'){ z=multi_allocate('c',_M(x),_N(x),_L(x)); cmat3_div_r2(_M(z),_N(z),_L(z),_C(z),_LD1(z),_LD2(z),_C(x),_LD1(x),_LD2(x),MAT3(_R(y),0,0,0,_LD1(y),_LD2(y))); }
+    else if(_T(x)=='c' && _T(y)=='c'){ z=multi_allocate('c',_M(x),_N(x),_L(x)); cmat3_div_c2(_M(z),_N(z),_L(z),_C(z),_LD1(z),_LD2(z),_C(x),_LD1(x),_LD2(x),MAT3(_C(y),0,0,0,_LD1(y),_LD2(y))); }
+    else{ MATLAB_ERROR("multi_rdivide: Unkown type"); }
+  }else if(_M(x)==1 && _N(x)==1 && _L(x)==1){
+    // In the case of x is scalar
+    MATLAB_ERROR("multi_mrdivide: z=x/y: Dimensions of x and y are NOT same.");
+  }else if(_M(y)==_N(y) && _L(y)==1 && _M(y)==_N(x) && _M(x)==1 && _L(x)==1){
+    // In the case where y is square matrix and x's colums is same as y's row
+         if(_T(x)=='r' && _T(y)=='r'){ u=multi_allocate('r',_N(y),_M(y),1); v=multi_allocate('r',_N(x),_M(x),1); z=multi_allocate('r',_M(x),_N(x),1); rmat_copy_t     (_M(y),_N(y),_R(u),_LD1(u),_R(y),_LD1(y)); rmat_copy_t     (_M(x),_N(x),_R(v),_LD1(v),_R(x),_LD1(x)); rsolve(_M(v),_N(v),_R(v),_LD1(v),_R(u),_LD1(u),&info); rmat_copy_t(_M(v),_N(v),_R(z),_LD1(z),_R(v),_LD1(v)); }
+    else if(_T(x)=='r' && _T(y)=='c'){ u=multi_allocate('c',_N(y),_M(y),1); v=multi_allocate('c',_N(x),_M(x),1); z=multi_allocate('c',_M(x),_N(x),1); cmat_copy_t     (_M(y),_N(y),_C(u),_LD1(u),_C(y),_LD1(y)); cmat_copy_rmat_t(_M(x),_N(x),_C(v),_LD1(v),_R(x),_LD1(x)); csolve(_M(v),_N(v),_C(v),_LD1(v),_C(u),_LD1(u),&info); cmat_copy_t(_M(v),_N(v),_C(z),_LD1(z),_C(v),_LD1(v)); }
+    else if(_T(x)=='c' && _T(y)=='r'){ u=multi_allocate('c',_N(y),_M(y),1); v=multi_allocate('c',_N(x),_M(x),1); z=multi_allocate('c',_M(x),_N(x),1); cmat_copy_rmat_t(_M(y),_N(y),_C(u),_LD1(u),_R(y),_LD1(y)); cmat_copy_t     (_M(x),_N(x),_C(v),_LD1(v),_C(x),_LD1(x)); csolve(_M(v),_N(v),_C(v),_LD1(v),_C(u),_LD1(u),&info); cmat_copy_t(_M(v),_N(v),_C(z),_LD1(z),_C(v),_LD1(v)); }
+    else if(_T(x)=='c' && _T(y)=='c'){ u=multi_allocate('c',_N(y),_M(y),1); v=multi_allocate('c',_N(x),_M(x),1); z=multi_allocate('c',_M(x),_N(x),1); cmat_copy_t     (_M(y),_N(y),_C(u),_LD1(u),_C(y),_LD1(y)); cmat_copy_t     (_M(x),_N(x),_C(v),_LD1(v),_C(x),_LD1(x)); csolve(_M(v),_N(v),_C(v),_LD1(v),_C(u),_LD1(u),&info); cmat_copy_t(_M(v),_N(v),_C(z),_LD1(z),_C(v),_LD1(v)); }
+    else{ MATLAB_ERROR("multi_mtimes: Unkown type"); }
+    if(info!=0){ MATLAB_ERROR("multi_mtimes: csolve error."); }
+  }else{
+    MATLAB_ERROR("multi_mrdivide: z=x/y: This function is not implemented");
+  }
+  // done
+  plhs[0]=mxCreateStructMulti(z);
+  x=multi_free(x);
+  y=multi_free(y);
+  z=multi_free(z);
+  u=multi_free(u);
+  v=multi_free(v);
+  return;
+}
+
+//EOF
+
+
