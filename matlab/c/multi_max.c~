@@ -19,9 +19,6 @@ void multi_max(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   }else if(_L(x)>1 && _M(x)==1 && _N(x)==1){
          if(_T(x)=='r'){ y=multi_allocate('r',1,1,1); rvec_max(_R(y)[0],_M(x)*_N(x)*_L(x),_R(x)); }
     else if(_T(x)=='c'){ y=multi_allocate('c',1,1,1); cvec_max(_C(y)[0],_M(x)*_N(x)*_L(x),_C(x)); }
-  }else if(_L(x)>1 && _M(x)>1 && _N(x)==1){
-        if(_T(x)=='r'){ y=multi_allocate('r',1,1,_L(x)); rvec_max_rmat(_M(x),_L(x),_R(y),_R(x),_M(x)); }
-   else if(_T(x)=='c'){ y=multi_allocate('c',1,1,_L(x)); cvec_max_cmat(_M(x),_L(x),_C(y),_C(x),_M(x)); }
   }else if(_L(x)>1 && _M(x)==1 && _N(x)>1){
          if(_T(x)=='r'){ y=multi_allocate('r',1,1,_L(x)); rvec_max_rmat(_N(x),_L(x),_R(y),_R(x),_N(x)); }
     else if(_T(x)=='c'){ y=multi_allocate('c',1,1,_L(x)); cvec_max_cmat(_N(x),_L(x),_C(y),_C(x),_N(x)); }
