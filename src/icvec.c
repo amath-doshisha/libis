@@ -313,6 +313,21 @@ int icvec_dmin_abs(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
   return e;
 }
 
+//追加
+
+/**
+ @brief icmulti型のベクトルの要素の総和 value=sum(x)
+ */
+int icvec_sum(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+{
+  int i,e=0;
+  e+=icset_d(y0,y1,0);
+  for(i=0; i<n; i++){ e+=icadd(y0,y1,y0,y1,x0[i],x1[i]); }
+  return e;
+}
+
+//ここまで
+
 /** @} */
 
 //////////////////////////////////////////////////////////////////////////

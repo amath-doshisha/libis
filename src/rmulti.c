@@ -976,6 +976,21 @@ int radd_mul(rmulti *z, rmulti *x, rmulti *y)
   return e;
 }
 
+//追加
+
+/**
+ @brief rmulti型の掛け算の加算 z+=x*y
+*/
+int radd_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws)
+{
+  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in radd_mul_ws().\n",*rwss); }
+  int e=0;
+  e+=rmul(rws[0],x,y); // rws[0]=x*y
+  e+=radd(z,z,rws[0]); // z=z+x*y
+  return e;
+}
+//ここまで
+
 /**
  @brief rmulti型の掛け算の加算 z+=x*y
 */
@@ -1005,6 +1020,21 @@ int rsub_mul(rmulti *z, rmulti *x, rmulti *y)
   RF(a);
   return e;
 }
+//追加
+/**
+ @brief rmulti型の掛け算の減算 z-=x*y
+*/
+int rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws)
+{
+  int e=0;
+  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in rsub_mul_ws().\n",*rwss); }
+  *rwss=*rwss-1;
+  e+=rmul(rws[0],x,y); // a=x*y
+  e+=rsub(z,z,rws[0]); // z=z-x*y
+  *rwss=*rwss+1;
+  return e;
+}
+//
 
 /**
  @brief rmulti型の掛け算の減算 z-=x*y

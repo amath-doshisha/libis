@@ -3,6 +3,10 @@
 #include"is_irmulti.h"
 #include"is_irvec.h"
 #include"is_func.h"
+//追加済み
+#include"is_irsolve.h"
+#include"is_irmat.h"
+//
 
 /**
  @file  irmat.c
@@ -141,7 +145,17 @@ int irmat_center_radius(int m, int n, rmulti **Ac, int LDAc, rmulti **Ar, int LD
   set_round_mode(mode);                     // back
   return e;
 }
-
+//追加
+/**
+ @brief [A0,A1]=NaN(m,n)
+*/
+int irmat_set_nan(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
+{
+  rmat_set_nan(m,n,A0,LDA0);
+  rmat_set_nan(m,n,A1,LDA1);
+  return 0;
+}
+//ここまで
 /**
  @brief [A0,A1]=ones(m,n)*a
 */
@@ -166,10 +180,23 @@ int irmat_set_zeros(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
   return e;
 }
 
+//新規作成
+/**
+ @brief rmulti型の行列の値を単位行列に設定.
+*/
+int irmat_set_eye(int m, int n, rmulti **A0, rmulti **A1, int LDA)
+{
+  int i,j,e=0;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      if(i==j){ e+=irset_d(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),1); }
+      else    { e+=irset_d(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),0); }
+    }
+  }
+  return e;
+}
+//ここまで
 /** @} */
-
-//////////////////////////////////////////////////////////////////////////
-
 /** @name 四則演算 */
 /** @{ */
 
@@ -242,6 +269,37 @@ int irmat_sub_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int 
 
 /** @} */
 
+////////////////////////////////////////////////////////////////////////
+//新規作成
+
+/** @name rmulti型の行列の数学関数に関する関数 */
+/** @{ */
+/**
+ @brief irmulti型の逆行列 [B0,B1]=inv(A0,A1)
+ @param[in]  A 初期化済みのサイズが(n,n)の行列.
+ @param[out] B 初期化済みのサイズが(n,n)の行列.
+*/
+int irmat_inv(int n, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A1, int LDA)
+{
+  int info,e=0;
+  e+=irmat_set_eye(n,n,B0,B1,LDB);
+  e+=irsolve(n,n,B0,B1,LDB,A0,A1,LDA,&info);
+  return e;
+}
+
+/**
+ @brief irmulti型の列ごとの和 B=sum(A)
+*/
+int irvec_sum_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=irvec_sum(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  return e;
+}
+
+
+//ここまで
+/** @} */
 //////////////////////////////////////////////////////////////////////////
 
 /** @name 写像 */

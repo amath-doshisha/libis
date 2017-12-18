@@ -329,6 +329,21 @@ int irvec_dmin_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
   return e;
 }
 
+//追加
+
+/**
+ @brief irmulti型のベクトルの要素の総和 value=sum(x)
+ */
+int irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+{
+  int i,e=0;
+  e+=irset_d(y0,y1,0);
+  for(i=0; i<n; i++){ e+=iradd(y0,y1,y0,y1,x0[i],x1[i]); }
+  return e;
+}
+
+//ここまで
+
 /** @} */
 
 //////////////////////////////////////////////////////////////////////////

@@ -1076,6 +1076,19 @@ int rmat_diag_sub_r(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmul
   return e;  
 }
 
+//追加
+/**
+ @brief rmulti型の列ごとの和 B=sum(A)
+*/
+int rvec_sum_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=rvec_sum(B[j],m,&COL(A,j,LDA)); }
+  return e;
+}
+
+
+//ここまで
 /**
  @brief rmulti型の列ごとの最大値 B=max(A)
 */

@@ -10,6 +10,7 @@
 #include"is_icmulti.h"
 #include"is_irmat3.h"
 #include"is_icmat3.h"
+#include"is_icmat.h"
 
 /**
  @file  icmat.c
@@ -153,6 +154,497 @@ int icmat3_mr(int m, int n, int l, cmulti **mid, int LD1mid, int LD2mid, cmulti 
   return e;
 }
 
+//編集済み
+/**
+ @brief icmulti型の3次元配列の符号反転 B=-A.
+*/
+int icmat3_neg(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, cmulti **A0, cmulti **A1, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icneg(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+//ここまで
+
+/**
+ @brief 足し算 [Z0,Z1]=[X0,X1]+[Y0,Y1]
+*/
+int icmat3_add(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icadd(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 足し算 [Z0,Z1]=[X0,X1]+[Y0,Y1]
+*/
+int icmat3_add_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti **Y0, rmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icadd_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+//編集済み
+/**
+@brief 足し算 [Z0,Z1]=[X0,X1]+[y0,y1]
+*/
+int icmat3_add_r(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti *Y0, rmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icadd_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+@brief 足し算 [Z0,Z1]=[X0,X1]+[y0,y1]
+*/
+int icmat3_add_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icadd(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+/**
+@brief 足し算 [Z0,Z1]=[X0,X1]+[y0,y1]
+*/
+int irmat3_add_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti **X0, rmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icadd_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),Y0,Y1,MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2));
+      }
+    }
+  }
+  return e;
+}
+/**
+ @brief 引き算 [Z0,Z1]=[X0,X1]-[Y0,Y1]
+*/
+int icmat3_sub(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+//編集済み
+
+/**
+@brief 引き算 [Z0,Z1]=[x0,x1]-[Y0,Y1]
+*/
+int icmat3_sub_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti *X0, cmulti *X1, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+/**
+@brief 引き算 [Z0,Z1]=[X0,X1]-[y0,y1]
+*/
+int icmat3_sub_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+@brief 引き算 [Z0,Z1]=[x0,x1]-[Y0,Y1]
+*/
+int icmat3_sub_r1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti *X0, rmulti *X1, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=irsub_c(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+@brief 引き算 [Z0,Z1]=[X0,X1]-[y0,y1]
+*/
+int icmat3_sub_r2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti *Y0, rmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icsub_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+@brief 引き算 [Z0,Z1]=[x0,x1]-[Y0,Y1]
+*/
+int irmat3_sub_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti *X0, cmulti *X1, rmulti **Y0, rmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icsub_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+@brief 引き算 [Z0,Z1]=[X0,X1]-[y0,y1]
+*/
+int irmat3_sub_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti **X0, rmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=irsub_c(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 引き算 [Z0,Z1]=[X0,X1]-[Y0,Y1]
+*/
+int icmat3_sub_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti **Y0, rmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icsub_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+/**
+ @brief 引き算 [Z0,Z1]=[X0,X1]-[Y0,Y1]
+*/
+int irmat3_sub_cmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti **X0, rmulti **X1, int LDX1, int LDX2, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=irsub_c(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+
+/**
+@brief 掛け算 [Z0,Z1]=[X0,X1]*[Y0,Y1]
+*/
+int icmat3_mul(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icmul(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+
+/**
+@brief 掛け算 [Z0,Z1]=[X0,X1]*[Y0,Y1]
+*/
+int icmat3_mul_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti **Y0, rmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icmul_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+@brief 掛け算 [Z0,Z1]=[X0,X1]*[y0,y1]
+*/
+int icmat3_mul_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icmul(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+@brief 掛け算 [Z0,Z1]=[X0,X1]*[y0,y1]
+*/
+int icmat3_mul_r(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti *Y0, rmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icmul_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+
+/**
+@brief 掛け算 [Z0,Z1]=[X0,X1]*[y0,y1]
+*/
+int irmat3_mul_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti **X0, rmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icmul_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+
+/**
+ @brief 割り算 [Z0,Z1]=[X0,X1]./[Y0,Y1]
+*/
+int icmat3_div(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 割り算 [Z0,Z1]=[X0,X1]./[Y0,Y1]
+*/
+int icmat3_div_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti **Y0, rmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 割り算 [Z0,Z1]=[X0,X1]./[Y0,Y1]
+*/
+int irmat3_div_cmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti **X0, rmulti **X1, int LDX1, int LDX2, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 割り算 [Z0,Z1]=[x0,x1]./[Y0,Y1]
+*/
+int icmat3_div_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti *X0, cmulti *X1, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 割り算 [Z0,Z1]=[X0,X1]./[y0,y1]
+*/
+int icmat3_div_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 割り算 [Z0,Z1]=[x0,x1]./[Y0,Y1]
+*/
+int icmat3_div_r1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti *X0, rmulti *X1, cmulti **Y0, cmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+
+/**
+ @brief 割り算 [Z0,Z1]=[X0,X1]./[y0,y1]
+*/
+int icmat3_div_r2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti **X0, cmulti **X1, int LDX1, int LDX2, rmulti *Y0, rmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 割り算 [Z0,Z1]=[x0,x1]./[Y0,Y1]
+*/
+int irmat3_div_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, cmulti *X0, cmulti *X1, rmulti **Y0, rmulti **Y1, int LDY1, int LDY2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 割り算 [Z0,Z1]=[X0,X1]./[y0,y1]
+*/
+int irmat3_div_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ2, rmulti **X0, rmulti **X1, int LDX1, int LDX2, cmulti *Y0, cmulti *Y1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icdiv_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
 /** @} */
+
+
+
+////////////////////////////////////////////////////////////////////////
+//追加
+/** @name cmulti型の3次元配列の数学関数に関する関数 */
+/** @{ */
+
+/**
+ @brief icmulti型の3次元配列の和 B=sum(A).
+*/
+int icmat3_sum(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, cmulti **A0, cmulti**A1, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=icvec_sum_icmat(m,n,&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+//ここまで
 
 //EOF
