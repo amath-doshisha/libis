@@ -26,6 +26,9 @@ int icvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);        
 int icvec_dmin(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1);                            // [y0,y1]=[min(x0),x1]
 int icvec_umax_abs(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1);                        // value=max(abs(x))
 int icvec_dmin_abs(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1);                        // value=min(abs(x))
+//追加
+int icvec_sum(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1);                             // value=sum(x)
+//ここまで
 
 int icvec_lintr(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **x0, cmulti **x1);        // [y0,y1]=[A0,A1]*[x0,x1]
 int icvec_add_lintr(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **x0, cmulti **x1);    // [y0,y1]+=[A0,A1]*[x0,x1]
