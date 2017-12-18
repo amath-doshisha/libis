@@ -1661,6 +1661,20 @@ int cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の列ごとの和 B=sum(A)
+*/
+int cvec_sum_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=cvec_sum(B[j],m,&COL(A,j,LDA)); }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief cmulti型の列ごとの最大値 B=max(A)
 */

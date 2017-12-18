@@ -863,6 +863,22 @@ int cmat3_arg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, i
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の3次元配列の和 B=sum(A).
+*/
+int cmat3_sum(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=cvec_sum_cmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief cmulti型の3次元配列の最大値 B=max(A).
 */

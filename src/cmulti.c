@@ -577,6 +577,20 @@ int cabs2(rmulti *y, cmulti *x)
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の絶対値の平方 y=abs(x)^2
+*/
+int cabs2_ws(rmulti *y, cmulti *x, int *rwss, rmulti **rws)
+{
+  int e=0;
+  e+=rmul(y,C_R(x),C_R(x));     //  y=x.r*x.r
+  e+=radd_mul_ws(y,C_I(x),C_I(x),rwss,rws); // y+=x.i*x.i
+  return e;
+}
+//ここまで
+
 /**
  @brief cmulti型の実部と虚部の絶対値 y=abs(x.r)+i*abs(x.i)
 */
@@ -808,6 +822,28 @@ int cmul(cmulti *z, cmulti *x, cmulti *y)
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の掛け算 z=x*y
+*/
+int cmul_ws(cmulti *z, cmulti *x, cmulti *y, int *rwss, rmulti **rws, int *cwss, cmulti **cws)
+{
+  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in cmul_ws().\n",*rwss); }
+  if(*cwss<1){ ERROR_EXIT("Error `cwss=%d<1' in cmul_ws().\n",*cwss); }
+  int e=0;
+  *cwss=*cwss-1;
+  e+=    rmul(C_R(cws[0]),C_R(x),C_R(y)); // z.r =x.r*y.r
+  e+=rsub_mul_ws(C_R(cws[0]),C_I(x),C_I(y),rwss,rws); // z.r-=x.i*y.i
+  e+=    rmul(C_I(cws[0]),C_I(x),C_R(y)); // z.i =x.i*y.r
+  e+=radd_mul_ws(C_I(cws[0]),C_R(x),C_I(y),rwss,rws); // z.i+=x.r*y.i
+  e+=ccopy(z,cws[0]);                     // z=cws[0]
+  *cwss=*cwss+1;
+  return e;
+}
+
+//ここまで
+
 /**
  @brief cmulti型の掛け算 z=x*y
 */
@@ -981,6 +1017,24 @@ int csub_mul(cmulti *z, cmulti *x, cmulti *y)
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の掛け算の減算 z-=x*y
+*/
+int csub_mul_ws(cmulti *z, cmulti *x, cmulti *y, int *rwss, rmulti **rws, int *cwss, cmulti **cws)
+{
+  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in csub_mul_ws().\n",*rwss); }
+  if(*cwss<2){ ERROR_EXIT("Error `cwss=%d<2' in csub_mul_ws().\n",*cwss); }
+  int e=0;
+  *cwss=*cwss-1;
+  e+=cmul_ws(cws[0],x,y,rwss,rws,cwss,&cws[1]);   // cws[0]=x*y
+  e+=csub(z,z,cws[0]);   // z=z-cws[0]
+  *cwss=*cwss+1;
+  return e;
+}
+
+//ここまで
 /**
  @brief cmulti型の掛け算の減算 z-=x*y
 */
@@ -1170,6 +1224,26 @@ int cinv(cmulti *z, cmulti *x)
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の逆数 z=1/x
+*/
+int cinv_ws(cmulti *z, cmulti *x, int *rwss, rmulti **rws, int *cwss, cmulti **cws)
+{
+  if(*rwss<2){ ERROR_EXIT("Error `rwss=%d<1' in cinv_ws().\n",*rwss); }
+  if(*cwss<1){ ERROR_EXIT("Error `cwss=%d<1' in cinv_ws().\n",*cwss); }
+  int e=0;
+  *rwss=*rwss-1; *cwss=*cwss-1;
+  e+=cabs2_ws(rws[0],x,rwss,&rws[1]);     // rws[0]=|x|^2
+  e+=cconj(cws[0],x);       // z=conj(x)
+  e+=cdiv_r2(cws[0],cws[0],rws[0]); // z/=rws[0]
+  e+=ccopy(z,cws[0]);       // z=cws[0]
+  *rwss=*rwss+1; *cwss=*cwss+1;
+  return e;
+}
+
+//ここまで
 /**
  @brief cmulti型の割り算 z=x/y
 */
@@ -1329,6 +1403,20 @@ int cabsv(rmulti *y, cmulti *x)
   e+=rsqrt(y,y); // y=sqrt(y)
   return e;
 }
+
+//追加
+
+/**
+ @brief cmulti型の絶対値 y=abs(x)
+*/
+int cabsv_ws(rmulti *y, cmulti *x, int *rwss, rmulti **rws)
+{
+  int e=0;
+  e+=cabs2_ws(y,x,rwss,rws); // y=abs(x)^2
+  e+=rsqrt(y,y); // y=sqrt(y)
+  return e;
+}
+//ここまで
 
 /**
  @brief cmulti型の差の絶対値 z=abs(x-y)
