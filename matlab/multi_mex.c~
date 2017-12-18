@@ -125,10 +125,8 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_eig.c"
 #include"./c/multi_eig_verify.c"
 #include"./c/multi_matgen_dhToda.c"
-//追加
 #include"./c/multi_log10.c"
 #include"./c/multi_sum.c"
-#include"./c/multi_sqrt.c"
 
 /**
  * @breif mexFunction() for multi_mex
@@ -204,7 +202,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"matgen_dhToda")){ multi_matgen_dhToda(nlhs,plhs,nrhs,prhs); } // A=matgen_dhToda(...)       
   else if(STR_EQ(cmd,"log10"))     { multi_log10     (nlhs,plhs,nrhs,prhs); }  // y=log10(x)
   else if(STR_EQ(cmd,"sum"))       { multi_sum       (nlhs,plhs,nrhs,prhs); }  // y=sum(x)
-  else if(STR_EQ(cmd,"sqrt"))      { multi_sqrt      (nlhs,plhs,nrhs,prhs); }  // y=sqrt(x)     
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");

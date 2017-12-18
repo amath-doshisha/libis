@@ -1,6 +1,6 @@
 % machine epsilon of multi precision
 clear all;
-prec=512;
+prec=53;
 set_default_prec(prec);
 disp(sprintf('The machine epsilon on prec=%d is e=%.4e',prec,2^(-prec+1)));
 disp('Finding it by calculations...')

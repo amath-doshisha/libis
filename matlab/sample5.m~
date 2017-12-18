@@ -55,7 +55,7 @@ close all
 %clear all
 N=10;
 %A=2*rand(N,N,N)-1;
-A=2*rand(N,N,N)-1+1i*(2*rand(N,N,N)-1);
+A=2*rand(N,1,1)-1+1i*(2*rand(N,1,1)-1);
 %b=2*rand(N,1)-1;
 %b=2*rand(N,1)-1+1i*(2*rand(N,1)-1);
 
