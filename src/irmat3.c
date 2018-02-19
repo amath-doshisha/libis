@@ -74,6 +74,25 @@ int irmat3_set_d(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LD
   return e;
 }
 
+//追加
+
+/**
+ @brief rmulti型の3次元配列の値を倍精度実数から設定 C=rmulti(A,B).
+*/
+int irmat3_set_dd(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, double *A, int LDA1, int LDA2, double *B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=irset_dd(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
 /** @} */
 
 
@@ -325,6 +344,38 @@ int irmat3_div_r2(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int L
 /** @{ */
 
 /**
+ @brief irmulti型の3次元配列の絶対値 C=abs(A).
+*/
+int irmat3_abs(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=irabs(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief irmulti型の3次元配列のlog10を取った値 C=log10(A).
+*/
+int irmat3_log10(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=irlog10(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief 3次元配列の平方根 C=sqrt(A).
 */
 int irmat3_sqrt(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
@@ -348,6 +399,42 @@ int irmat3_sum(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LDB2
   int k,e=0;
   for(k=0; k<l; k++){
     e+=irvec_sum_irmat(m,n,&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
+ @brief irmulti型の3次元配列の最大値 [B0,B1]=[max(A0),max(A1)].
+*/
+int irmat3_max(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LDB2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=irvec_max_irmat(m,n,&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
+ @brief irmulti型の3次元配列の最大値 [B0,B1]=[A0,max(A1)].
+*/
+int irmat3_umax(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LDB2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=irvec_umax_irmat(m,n,&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
+ @brief irmulti型の3次元配列の最小値 [B0,B1]=[min(A0),min(A1)].
+*/
+int irmat3_min(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LDB2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=irvec_min_irmat(m,n,&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
   }
   return e;
 }

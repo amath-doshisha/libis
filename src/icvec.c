@@ -221,6 +221,28 @@ int icvec_abs_sub(int n, rmulti **z0, rmulti **z1, cmulti **x0, cmulti **x1, cmu
   return e;
 }
 
+//追加
+
+/**
+ @brief 最大値 [y0,y1]=[max(x0),max(x1)]
+*/
+int icvec_max(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+{
+  int i,e=0;
+  e+=iccopy(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
+  for(i=1; i<n; i++){
+    if(cgt(x0[i],y0)){               // x0[i]>y0
+      e+=ccopy(y0,x0[i]);            // y0=x0[i]
+    }
+    if(cgt(x1[i],y1)){               // x1[i]>y1
+      e+=ccopy(y1,x1[i]);            // y1=x1[i]
+    }
+  }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief 最大値 [y0,y1]=[x0,max(x1)]
 */
@@ -251,16 +273,38 @@ int icvec_dmax(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
   return e;
 }
 
+//追加
+
+/**
+ @brief 最小値 [y0,y1]=[min(x0),min(x1)]
+*/
+int icvec_min(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+{
+  int i,e=0;
+  e+=iccopy(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
+  for(i=1; i<n; i++){
+    if(clt(x0[i],y0)){               // x0[i]<y1
+      e+=ccopy(y0,x0[i]);            // y0=x0[i]
+    }
+    if(clt(x1[i],y1)){               // x1[i]<y1
+      e+=ccopy(y1,x1[i]);            // y1=x1[i]
+    }
+  }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief 最小値 [y0,y1]=[x0,min(x1)]
 */
-int icvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+int icvec_umin(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i,e=0;
-  e+=ircopy(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
+  e+=iccopy(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
   for(i=1; i<n; i++){
-    if(rlt(x1[i],y1)){               // x0[i]<y0
-      e+=ircopy(y0,y1,x0[i],x1[i]);  // y0=x0[i], y1=x1[i]
+    if(clt(x1[i],y1)){               // x1[i]<y1
+      e+=iccopy(y0,y1,x0[i],x1[i]);  // y0=x0[i], y1=x1[i]
     }
   }
   return e;

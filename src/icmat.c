@@ -5,6 +5,7 @@
 #include"is_icvec.h"
 #include"is_icmat.h"
 #include"is_func.h"
+#include"is_icsolve.h"
 
 /**
  @file  icmat.c
@@ -208,6 +209,21 @@ int icmat_set_zeros(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1)
   return e;
 }
 
+//追加
+
+/**
+ @brief icmulti型の行列の値を単位行列に設定.
+*/
+int icmat_set_eye(int m, int n, cmulti **A0, cmulti **A1, int LDA)
+{
+  int e=0;
+  e+=cmat_set_eye(m,n,A0,LDA);
+  e+=cmat_set_eye(m,n,A1,LDA);
+  return e;
+}
+
+//ここまで
+
 /** @} */
 
 //////////////////////////////////////////////////////////////////////////
@@ -331,12 +347,55 @@ int icmat_sub_prod(int l, int m, int n, cmulti **C0, int LDC0, cmulti **C1, int 
 //追加
 
 /**
+ @brief icmulti型の逆行列 [B0,B1]=inv(A0,A1)
+ @param[in]  A 初期化済みのサイズが(n,n)の行列.
+ @param[out] B 初期化済みのサイズが(n,n)の行列.
+*/
+int icmat_inv(int n, cmulti **B0, cmulti **B1, int LDB, cmulti **A0, cmulti **A1, int LDA)
+{
+  int info,e=0;
+  e+=icmat_set_eye(n,n,B0,B1,LDB);
+  e+=icsolve(n,n,B0,B1,LDB,A0,A1,LDA,&info);
+  return e;
+}
+
+/**
  @brief icmulti型の列ごとの和 B=sum(A)
 */
 int icvec_sum_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
 {
   int j,e=0;
   for(j=0; j<n; j++){ e+=icvec_sum(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  return e;
+}
+
+/**
+ @brief icmulti型の列ごとの最大値 B=max(A)
+*/
+int icvec_max_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=icvec_max(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  return e;
+}
+
+/**
+ @brief icmulti型の列ごとの最大値 B=max_u(A)
+*/
+int icvec_umax_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=icvec_umax(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  return e;
+}
+
+/**
+ @brief icmulti型の列ごとの最小値 B=min(A)
+*/
+int icvec_min_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=icvec_min(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
   return e;
 }
 

@@ -2027,6 +2027,44 @@ int catanh_c(cmulti *y, cmulti *x)
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の指数部で評価 z=get_exp10(x,offset)
+*/
+int cget_exp10(cmulti *z, cmulti *x, double y)
+{
+  int e=0;
+  rmulti *exp1=NULL,*exp2=NULL;
+  RAc(exp1,x); RAc(exp2,x);
+  e+=rabs(C_R(x),C_R(x));  e+=rabs(C_I(x),C_I(x));
+  e+=rlog10(C_R(x),C_R(x)); e+=rlog10(C_I(x),C_I(x));
+  e+=rsub_d2(C_R(x),C_R(x),y);  e+=rsub_d2(C_I(x),C_I(x),y);
+  e+=rfloor(exp1,C_R(x));  e+=rfloor(exp2,C_I(x));
+  e+=rexp10(C_R(z),exp1);  e+=rexp10(C_I(z),exp2);
+  RF(exp1);RF(exp2);
+  return e;
+}
+
+/**
+ @brief cmulti型の指数部で評価 z=get_exp2(x,offset)
+*/
+int cget_exp2(cmulti *z, cmulti *x, double y)
+{
+  int e=0;
+  rmulti *exp1=NULL,*exp2=NULL;
+  RAc(exp1,x); RAc(exp2,x);
+  e+=rabs(C_R(x),C_R(x));  e+=rabs(C_I(x),C_I(x));
+  e+=rlog2(C_R(x),C_R(x)); e+=rlog2(C_I(x),C_I(x));
+  e+=rsub_d2(C_R(x),C_R(x),y);  e+=rsub_d2(C_I(x),C_I(x),y);
+  e+=rfloor(exp1,C_R(x));  e+=rfloor(exp2,C_I(x));
+  e+=rexp2(C_R(z),exp1);  e+=rexp2(C_I(z),exp2);
+  RF(exp1);RF(exp2);
+  return e;
+}
+
+//ここまで
+
 /** @} */
 
 /////////////////////////////////////////////////////////

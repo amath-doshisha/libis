@@ -38,6 +38,21 @@ int icset_z(cmulti *y0, cmulti *y1, dcomplex x)
   return e;
 }
 
+//追加
+
+/**
+ @brief 倍精度複素数の設定 [y0,y1]=[x0,x1].
+ */
+int icset_zz(cmulti *y0, cmulti *y1, dcomplex x0, dcomplex x1)
+{
+  int e=0;
+  e+=irset_dd(C_R(y0),C_R(y1),Z_R(x0),Z_R(x1));
+  e+=irset_dd(C_I(y0),C_I(y1),Z_I(x0),Z_I(x1));
+  return e;
+}
+
+//ここまで
+
 /**
  @brief 倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi].
  */
@@ -82,6 +97,33 @@ int iccopy(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
   e+=ircopy(C_I(y0),C_I(y1),C_I(x0),C_I(x1));
   return e;
 }
+
+//追加
+
+/**
+ @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
+ */
+int iccopy_r(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1)
+{
+  int e=0;
+  e+=ircopy(C_R(y0),C_R(y1),x0,x1);
+  e+=irset_d(C_I(y0),C_I(y1),0);
+  return e;
+}
+
+
+/**
+ @brief コピー [c0,c1]=[a0,a1]+[b0,b1]i. rmultiをcmultiにキャスト
+ */
+int iccopy_rr(cmulti *c0, cmulti *c1, rmulti *a0, rmulti *a1, rmulti *b0, rmulti *b1)
+{
+  int e=0;
+  e+=ircopy(C_R(c0),C_R(c1),a0,a1);
+  e+=ircopy(C_I(c0),C_I(c1),b0,b1);
+  return e;
+}
+
+//ここまで
 
 /** @} */
 
@@ -554,9 +596,33 @@ int icadd_abs2(rmulti *y0, rmulti *y1, cmulti *x0, cmulti *x1)
 /** @name 数学関数 */
 /** @{ */
 
+//追加
+
 /**
  @brief 絶対値 [y0,y1]=abs([x0,x1])
 */
+int icabs(rmulti *y0, rmulti *y1, cmulti *x0, cmulti *x1)
+{
+  if(cis_nan(x0) || cis_nan(x1)){rset_nan(y0); rset_nan(y1); return 0;
+  }else{
+  int prec,e=0;
+  cmulti *a0=NULL,*a1=NULL;
+  prec=MAX2(rget_prec(y0),rget_prec(y1));
+  CA(a0,prec); CA(a1,prec);
+  e+=irabs(C_R(a0),C_R(a1),C_R(x0),C_R(x1)); 
+  e+=irabs(C_I(a0),C_I(a1),C_I(x0),C_I(x1));  
+  e+=icabs2(y0,y1,a0,a1);
+  e+=irsqrt(y0,y1,y0,y1);
+  CF(a0); CF(a1);
+  return e;
+  }
+}
+//ここまで
+
+/**
+ @brief 絶対値 [y0,y1]=abs([x0,x1])
+*/
+/*
 int icabs(rmulti *y0, rmulti *y1, cmulti *x0, cmulti *x1)
 {
   if(cis_nan(x0) || cis_nan(x1)){rset_nan(y0); rset_nan(y1); return 0;
@@ -654,7 +720,7 @@ int icabs(rmulti *y0, rmulti *y1, cmulti *x0, cmulti *x1)
   }else{
     CF(a0); CF(a1);
     printf("\x1b[31m"); printf("Error! Special case!!\n");
-    mpfr_printf("Input [doun  up] = [%.4Re + %.4Re   %.4Re + %.4Re]\n",C_R(x0),C_I(x0),C_R(x1),C_I(x1));
+    mpfr_printf("Input [down  up] = [%.4Re + %.4Re   %.4Re + %.4Re]\n",C_R(x0),C_I(x0),C_R(x1),C_I(x1));
     printf("\x1b[39m");
     exit(0);
   }
@@ -662,109 +728,23 @@ int icabs(rmulti *y0, rmulti *y1, cmulti *x0, cmulti *x1)
   return e;
   }
 }
+*/
 
-//追加
 /**
  @brief 絶対値 [y0,y1]=abs([x0,x1])
 */
+
 int icabs_ws(rmulti *y0, rmulti *y1, cmulti *x0, cmulti *x1, int *cwss, cmulti **cws)
 {
   if(*cwss<2){ ERROR_EXIT("Error `cwss=%d<2' in icabs_ws().\n",*cwss); }
   if(cis_nan(x0) || cis_nan(x1)){rset_nan(y0); rset_nan(y1); return 0;
-  }else{ int e=0;
-  if(rget_sgn(C_R(x0))>=0 && rget_sgn(C_I(x0))>=0 && rget_sgn(C_R(x1))>0 && rget_sgn(C_I(x1))>0){ // 区間が第一象限にある場合
-    e+=icabs2(y0,y1,x0,x1);
-    e+=irsqrt(y0,y1,y0,y1);
-  }else if(rget_sgn(C_R(x0))<0 && rget_sgn(C_I(x0))>=0 && rget_sgn(C_R(x1))<=0 && rget_sgn(C_I(x1))>0){  // 区間が第二象限にある場合
-    e+=icabs2(y0,y1,x0,x1);
-    e+=irsqrt(y0,y1,y0,y1);
-  }else if(rget_sgn(C_R(x0))<0 && rget_sgn(C_I(x0))<0 && rget_sgn(C_R(x1))<=0 && rget_sgn(C_I(x1))<=0){ // 区間が第三象限にある場合
-    e+=icabs2(y0,y1,x0,x1);
-    e+=irsqrt(y0,y1,y0,y1);
-  }else if(rget_sgn(C_R(x0))>=0 && rget_sgn(C_I(x0))<0 && rget_sgn(C_R(x1))>0 && rget_sgn(C_I(x1))<=0){  // 区間が第四象限にある場合
-    e+=icabs2(y0,y1,x0,x1);
-    e+=irsqrt(y0,y1,y0,y1);
-  }else if(rget_sgn(C_R(x0))>=0 && rget_sgn(C_I(x0))<0 && rget_sgn(C_R(x1))>0 && rget_sgn(C_I(x1))>0){  // 区間が正のx軸をまたぐ場合
-    if(rabs_gt(C_I(x1),C_I(x0))!=0){
-      e+=abs(mpfr_set(C_R(cws[0]),C_R(x0),MPFR_RNDD));
-      e+=abs(mpfr_set_d(C_I(cws[0]),0,MPFR_RNDD));
-      e+=icabs2(y0,y1,cws[0],x1);
-      e+=irsqrt(y0,y1,y0,y1);
-    }else{ 
-      e+=abs(mpfr_set(C_R(cws[1]),C_R(x1),MPFR_RNDU));
-      e+=abs(mpfr_set_d(C_I(cws[1]),0,MPFR_RNDU));
-      e+=icabs2(y0,y1,x0,cws[1]);
-      e+=irsqrt(y0,y1,y0,y1);
-    }
-  }else if(rget_sgn(C_R(x0))<0 && rget_sgn(C_I(x0))>=0 && rget_sgn(C_R(x1))>0 && rget_sgn(C_I(x1))>0){  //  区間が正のy軸をまたぐ場合
-    if(rabs_gt(C_R(x1),C_R(x0))!=0){
-      e+=abs(mpfr_set_d(C_R(cws[0]),0,MPFR_RNDD));
-      e+=abs(mpfr_set(C_I(cws[0]),C_I(x0),MPFR_RNDD));
-      e+=icabs2(y0,y1,cws[0],x1);
-      e+=irsqrt(y0,y1,y0,y1);
-    }else{
-      e+=abs(mpfr_set_d(C_R(cws[1]),0,MPFR_RNDU));
-      e+=abs(mpfr_set(C_I(cws[1]),C_I(x1),MPFR_RNDU));
-      e+=icabs2(y0,y1,x0,cws[1]);
-      e+=irsqrt(y0,y1,y0,y1);
-    }
-  }else if(rget_sgn(C_R(x0))<0 && rget_sgn(C_I(x0))<0 && rget_sgn(C_R(x1))<=0 && rget_sgn(C_I(x1))>0){  //  区間が負のx軸をまたぐ場合
-    if(rabs_gt(C_I(x1),C_I(x0))!=0) { 
-      e+=abs(mpfr_set(C_R(cws[0]),C_R(x0),MPFR_RNDD));
-      e+=abs(mpfr_set_d(C_I(cws[0]),0,MPFR_RNDD));
-      e+=icabs2(y0,y1,cws[0],x1);
-      e+=irsqrt(y0,y1,y0,y1);
-    }else{
-      e+=abs(mpfr_set(C_R(cws[1]),C_R(x1),MPFR_RNDU));
-      e+=abs(mpfr_set_d(C_I(cws[1]),0,MPFR_RNDU));
-      e+=icabs2(y0,y1,x0,cws[1]);
-      e+=irsqrt(y0,y1,y0,y1);
-    }
-  }else if(rget_sgn(C_R(x0))<0 && rget_sgn(C_I(x0))<0 && rget_sgn(C_R(x1))>0 && rget_sgn(C_I(x1))<=0){  //  区間が負のy軸をまたぐ場合
-    if(rabs_gt(C_R(x1),C_R(x0))!=0){
-      e+=abs(mpfr_set_d(C_R(cws[0]),0,MPFR_RNDD));
-      e+=abs(mpfr_set(C_I(cws[0]),C_I(x0),MPFR_RNDD));
-      e+=icabs2(y0,y1,cws[0],x1);
-      e+=irsqrt(y0,y1,y0,y1);
-    }else{
-      e+=abs(mpfr_set_d(C_R(cws[1]),0,MPFR_RNDU));
-      e+=abs(mpfr_set(C_I(cws[1]),C_I(x1),MPFR_RNDU));
-      e+=icabs2(y0,y1,x0,cws[1]);
-      e+=irsqrt(y0,y1,y0,y1);
-    }
-  }else if(rget_sgn(C_R(x0))<0 && rget_sgn(C_I(x0))<0 && rget_sgn(C_R(x1))>0 && rget_sgn(C_I(x1))>0){  // 区間が原点を含む場合
-    if(rabs_ge(C_R(x1),C_R(x0))!=0 && rabs_ge(C_I(x1),C_I(x0))!=0){
-      e+=abs(mpfr_set_d(C_R(cws[0]),0,MPFR_RNDD));
-      e+=abs(mpfr_set_d(C_I(cws[0]),0,MPFR_RNDD));      
-      e+=icabs2(y0,y1,cws[0],x1);
-      e+=irsqrt(y0,y1,y0,y1); 
-    }else if(rabs_ge(C_R(x0),C_R(x1))!=0 && rabs_ge(C_I(x1),C_I(x0))!=0){
-      e+=abs(mpfr_set(C_R(cws[0]),C_R(x0),MPFR_RNDD));
-      e+=abs(mpfr_set_d(C_I(cws[0]),0,MPFR_RNDD));      
-      e+=abs(mpfr_set_d(C_R(cws[1]),0,MPFR_RNDU));
-      e+=abs(mpfr_set(C_I(cws[1]),C_I(x1),MPFR_RNDU));      
-      e+=icabs2(y0,y1,cws[0],cws[1]);
-      e+=irsqrt(y0,y1,y0,y1); 
-    }else if(rabs_ge(C_R(x0),C_R(x1))!=0 && rabs_ge(C_I(x0),C_I(x1))!=0){
-      e+=abs(mpfr_set_d(C_R(cws[1]),0,MPFR_RNDU));
-      e+=abs(mpfr_set_d(C_I(cws[1]),0,MPFR_RNDU));      
-      e+=icabs2(y0,y1,x0,cws[1]);
-      e+=irsqrt(y0,y1,y0,y1); 
-    }else if(rabs_ge(C_R(x1),C_R(x0))!=0 && rabs_ge(C_I(x0),C_I(x1))!=0){
-      e+=abs(mpfr_set_d(C_R(cws[0]),0,MPFR_RNDD));
-      e+=abs(mpfr_set(C_I(cws[0]),C_I(x0),MPFR_RNDD));      
-      e+=abs(mpfr_set(C_R(cws[1]),C_R(x1),MPFR_RNDU));
-      e+=abs(mpfr_set_d(C_I(cws[1]),0,MPFR_RNDU));      
-      e+=icabs2(y0,y1,cws[0],cws[1]);
-      e+=irsqrt(y0,y1,y0,y1); 
-    }
   }else{
-    printf("\x1b[31m"); printf("Error! Special case!!\n");
-    mpfr_printf("Input [doun  up] = [%.4Re + %.4Re   %.4Re + %.4Re]\n",C_R(x0),C_I(x0),C_R(x1),C_I(x1));
-    printf("\x1b[39m");
-    exit(0);
-  }
-  return e;
+  int e=0; 
+  e+=irabs(C_R(cws[0]),C_R(cws[1]),C_R(x0),C_R(x1)); 
+  e+=irabs(C_I(cws[0]),C_I(cws[1]),C_I(x0),C_I(x1));  
+  e+=icabs2(y0,y1,cws[0],cws[1]);
+  e+=irsqrt(y0,y1,y0,y1);
+    return e;
   }
 }
 

@@ -63,6 +63,76 @@ int icmat3_copy(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の3次元配列の値のコピー [B0,B1]=[A0,A1]
+*/
+int icmat3_copy_irmat3(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=iccopy_r(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値のコピー [C0,C1]=[A0,A1]+[B0,B1]i
+*/
+int icmat3_copy_irmat3_irmat3(int m, int n, int l, cmulti **C0, cmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2, rmulti **B0, rmulti **B1, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=iccopy_rr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2),MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+
+/**
+ @brief cmulti型の3次元配列の値のコピー [C0,C1]=[a0,a1]+[B0,B1]i
+*/
+int icmat3_copy_ir_irmat3(int m, int n, int l, cmulti **C0, cmulti **C1, int LDC1, int LDC2, rmulti *a0, rmulti *a1, rmulti **B0, rmulti **B1, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=iccopy_rr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),a0,a1,MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+
+/**
+ @brief cmulti型の3次元配列の値のコピー [C0,C1]=[A0,A1]+[b0,b1]i
+*/
+int icmat3_copy_irmat3_ir(int m, int n, int l, cmulti **C0, cmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2, rmulti *b0, rmulti *b1)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=iccopy_rr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2),b0,b1);
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief cmulti型の3次元配列の値を倍精度実数から設定 [B0,B1]=cmulti(A).
 */
@@ -78,6 +148,26 @@ int icmat3_set_z(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LD
   }
   return e;
 }
+
+//追加
+
+/**
+ @brief cmulti型の3次元配列の値を倍精度実数から設定 C=cmulti(A,B).
+*/
+int icmat3_set_zz(int m, int n, int l, cmulti **C0, cmulti **C1, int LDC1, int LDC2, dcomplex *A, int LDA1, int LDA2, dcomplex *B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icset_zz(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
 
 /**
  @brief cmulti型の3次元配列の値を倍精度実数から設定 [B0,B1]=cmulti(A).
@@ -153,6 +243,26 @@ int icmat3_mr(int m, int n, int l, cmulti **mid, int LD1mid, int LD2mid, cmulti 
   }
   return e;
 }
+
+//追加
+
+/**
+ @brief icmulti型の3次元配列の共役 B=conj(A)
+*/
+int icmat3_conj(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, cmulti **A0, cmulti **A1, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icconj(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
 
 //編集済み
 /**
@@ -634,6 +744,22 @@ int irmat3_div_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int L
 /** @{ */
 
 /**
+ @brief icmulti型の3次元配列の絶対値 C=abs(A).
+*/
+int icmat3_abs(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, cmulti **A0, cmulti **A1, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=icabs(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
  @brief icmulti型の3次元配列の和 B=sum(A).
 */
 int icmat3_sum(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, cmulti **A0, cmulti**A1, int LDA1, int LDA2)
@@ -644,6 +770,43 @@ int icmat3_sum(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2
   }
   return e;
 }
+
+/**
+ @brief icmulti型の3次元配列の最大値 [B0,B1]=[max(A0),max(A1)].
+*/
+int icmat3_max(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, cmulti **A0, cmulti **A1, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=icvec_max_icmat(m,n,&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
+ @brief icmulti型の3次元配列の最大値 [B0,B1]=[A0,max(A1)].
+*/
+int icmat3_umax(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, cmulti **A0, cmulti **A1, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=icvec_umax_icmat(m,n,&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+/**
+ @brief icmulti型の3次元配列の最小値 [B0,B1]=[min(A0),min(A1)].
+*/
+int icmat3_min(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB2, cmulti **A0, cmulti **A1, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=icvec_min_icmat(m,n,&MAT3(B1,0,0,k,LDB1,LDB2),&MAT3(B0,0,0,k,LDB1,LDB2),&MAT3(A0,0,0,k,LDA1,LDA2),&MAT3(A1,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
 
 //ここまで
 

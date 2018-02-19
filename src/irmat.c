@@ -146,6 +146,7 @@ int irmat_center_radius(int m, int n, rmulti **Ac, int LDAc, rmulti **Ar, int LD
   return e;
 }
 //追加
+
 /**
  @brief [A0,A1]=NaN(m,n)
 */
@@ -155,7 +156,9 @@ int irmat_set_nan(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
   rmat_set_nan(m,n,A1,LDA1);
   return 0;
 }
+
 //ここまで
+
 /**
  @brief [A0,A1]=ones(m,n)*a
 */
@@ -181,20 +184,18 @@ int irmat_set_zeros(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1)
 }
 
 //新規作成
+
 /**
  @brief rmulti型の行列の値を単位行列に設定.
 */
 int irmat_set_eye(int m, int n, rmulti **A0, rmulti **A1, int LDA)
 {
-  int i,j,e=0;
-  for(j=0; j<n; j++){
-    for(i=0; i<m; i++){
-      if(i==j){ e+=irset_d(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),1); }
-      else    { e+=irset_d(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),0); }
-    }
-  }
+  int e=0;
+  e+=rmat_set_eye(m,n,A0,LDA);
+  e+=rmat_set_eye(m,n,A1,LDA);
   return e;
 }
+
 //ここまで
 /** @} */
 /** @name 四則演算 */
@@ -203,6 +204,8 @@ int irmat_set_eye(int m, int n, rmulti **A0, rmulti **A1, int LDA)
 /**
  @brief 積 [C0,C1]=[A0,A1]*[B0,B1]
 */
+
+/*
 int irmat_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int LDC1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **B0, int LDB0, rmulti **B1, int LDB1)
 {
   int p0,p1,prec,i,j,k,e=0;
@@ -222,6 +225,41 @@ int irmat_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int LDC1
   Z1=rmat_free(l,n,Z1);
   return e;
 }
+
+*/
+
+//追加
+
+/**
+ @brief 積 [C0,C1]=[A0,A1]*[B0,B1]
+*/
+
+ 
+int irmat_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int LDC1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **B0, int LDB0, rmulti **B1, int LDB1)
+{
+  int p0,p1,prec,i,j,k,rws_size,rwss,e=0;
+  rmulti **Z0=NULL,**Z1=NULL,**rws=NULL;
+  p0=rmat_get_prec_max(l,n,C0,LDC0); p1=rmat_get_prec_max(l,n,C1,LDC1); prec=MAX2(p0,p1);
+  Z0=rmat_allocate_prec(l,n,prec); Z1=rmat_allocate_prec(l,n,prec);
+  rws_size=6; rwss=rws_size;  //ワークスペース
+  rws=rvec_allocate_prec(rws_size,prec);
+  for(i=0; i<l; i++){
+    for(j=0; j<n; j++){
+      e+=irset_d(MAT(Z0,i,j,l),MAT(Z1,i,j,l),0);
+      for(k=0; k<m; k++){
+	e+=iradd_mul_ws(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1),&rwss,rws);
+      }
+    }
+  }
+  e+=irmat_copy(l,n,C0,LDC0,C1,LDC1,Z0,l,Z1,l);
+  Z0=rmat_free(l,n,Z0);
+  Z1=rmat_free(l,n,Z1);
+  rws=rvec_free(rws_size,rws);
+  return e;
+}
+
+
+//ここまで
 
 /**
  @brief 積の加算 [C0,C1]=[C0,C1]+[A0,A1]*[B0,B1]
@@ -297,6 +335,36 @@ int irvec_sum_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti 
   return e;
 }
 
+/**
+ @brief irmulti型の列ごとの最大値 B=max(A)
+*/
+int irvec_max_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=irvec_max(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  return e;
+}
+
+/**
+ @brief irmulti型の列ごとの最大値 B=max_u(A)
+*/
+int irvec_umax_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=irvec_umax(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  return e;
+}
+
+
+/**
+ @brief irmulti型の列ごとの最小値 B=min(A)
+*/
+int irvec_min_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
+{
+  int j,e=0;
+  for(j=0; j<n; j++){ e+=irvec_min(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  return e;
+}
 
 //ここまで
 /** @} */
