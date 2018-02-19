@@ -1,4 +1,4 @@
-% y=subsref(x,s)
+% y=subsref(x,s) i.e. y=x(s)
 function varargout=subsref(x,s)
 cmd='subsref';
 switch s(1).type
@@ -6,9 +6,13 @@ switch s(1).type
         if ~isa(x,'multi')
             x=multi(x);
         end
-        y=multi();
+        %y=multi();
+        % •ÏX ”÷–­
+        y=multi();y=multi_cast(y,get_type(x));
         y.data=subsref(x.data,s);
-        varargout{1}=y;   
+        % ‚±‚±‚Ü‚Å
+        %y.data=subsref(x.data,s);
+        varargout{1}=y;
     otherwise
         varargout={builtin(cmd,x,s)};
 end
