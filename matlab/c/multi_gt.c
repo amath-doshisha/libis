@@ -16,6 +16,7 @@ void multi_gt(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else if(_T(x)=='r' && _T(y)=='c'){ z=multi_allocate('i',_M(x),_N(x),_L(x)); cmat3_lt_rmat3(_M(z),_N(z),_L(z),_I(z),_LD1(z),_LD2(z),_C(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x)); }
     else if(_T(x)=='c' && _T(y)=='r'){ z=multi_allocate('i',_M(x),_N(x),_L(x)); cmat3_gt_rmat3(_M(z),_N(z),_L(z),_I(z),_LD1(z),_LD2(z),_C(x),_LD1(x),_LD2(x),_R(y),_LD1(y),_LD2(y)); }
     else if(_T(x)=='c' && _T(y)=='c'){ z=multi_allocate('i',_M(x),_N(x),_L(x)); cmat3_gt      (_M(z),_N(z),_L(z),_I(z),_LD1(z),_LD2(z),_C(x),_LD1(x),_LD2(x),_C(y),_LD1(y),_LD2(y)); }
+    else if(_T(x)=='R' && _T(y)=='R'){ z=multi_allocate('i',_M(x),_N(x),_L(x)); rmat3_gt      (_M(z),_N(z),_L(z),_I(z),_LD1(z),_LD2(z),_R(x),_LD1(x),_LD2(x),_R(y),_LD1(y),_LD2(y)); }
     else{ MATLAB_ERROR("multi_gt: Unkown type"); }
   }else if(_M(x)==1 && _N(x)==1 && _L(x)==1){    // In the case of x is scalar    
          if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('i',_M(y),_N(y),_L(y)); rmat3_lt_r(_M(z),_N(z),_L(z),_I(z),_LD1(z),_LD2(z),_R(y),_LD1(y),_LD2(y),MAT3(_R(x),0,0,0,_LD1(x),_LD2(x))); }

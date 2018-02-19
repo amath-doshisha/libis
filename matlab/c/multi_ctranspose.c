@@ -14,6 +14,8 @@ void multi_ctranspose(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]
   y=multi_allocate(_T(x),_N(x),_M(x),_L(x));
        if(_T(y)=='r'){ rmat_copy_t (_M(x),_N(x),_R(y),_LD1(y),_R(x),_LD1(x)); }
   else if(_T(y)=='c'){ cmat_copy_ct(_M(x),_N(x),_C(y),_LD1(y),_C(x),_LD1(x)); }
+  else if(_T(y)=='R'){ irmat_copy_t(_M(x),_N(x),_R0(y),_LD1(y),_R1(y),_LD1(y),_R0(x),_LD1(x),_R1(x),_LD1(x)); }
+  else if(_T(y)=='C'){ icmat_copy_ct(_M(x),_N(x),_C0(y),_LD1(y),_C1(y),_LD1(y),_C0(x),_LD1(x),_C1(x),_LD1(x)); }
   else{ MATLAB_ERROR("multi_ctranspose: Unkown type"); }
   // done
   plhs[0]=mxCreateStructMulti(y);
