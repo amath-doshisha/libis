@@ -217,7 +217,10 @@ int cacosh_r(cmulti *y, rmulti *x);                  // y=acosh(x)
 int cacosh_c(cmulti *y, cmulti *x);                  // y=acosh(x)
 int catanh_r(cmulti *y, rmulti *x);                  // y=atanh(x)
 int catanh_c(cmulti *y, cmulti *x);                  // y=atanh(x)
-
+//追加
+int cget_exp10(cmulti *z, cmulti *x, double y);      // z=get_exp10(x,offset)
+int cget_exp2(cmulti *z, cmulti *x, double y);      // z=get_exp2(x,offset)
+//ここまで
 /*
  * comparisions
  */

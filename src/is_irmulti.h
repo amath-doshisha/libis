@@ -11,6 +11,9 @@
 */
 
 int irset_d(rmulti *y0, rmulti *y1, double x);              // [y0,y1]=[x,x]
+//追加
+int irset_dd(rmulti *y0, rmulti *y1, double x0, double x1); // [y0,y1]=[x0,x1]
+//ここまで
 int irset_bigint(rmulti *z0, rmulti *z1, bigint *x);        // [z0,z1]=x.num/x.den
 int ircopy(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1); // [y0,y1]=[x0,x1]
 
@@ -49,6 +52,9 @@ int irpow_si(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1, long n);           
 int irsqrt(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                          // [y0,y1]=sqrt([x0,x1])
 int irexp(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                           // [y0,y1]=exp([x0,x1])
 int irlog(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                           // [y0,y1]=log([x0,x1])
+//追加
+int irlog10(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                         // [y0,y1]=log10([x0,x1])   
+//ここまで
 int irsin(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                           // [y0,y1]=sin([x0,x1])
 int ircos(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                           // [y0,y1]=cos([x0,x1])
 int irtan(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                           // [y0,y1]=tan([x0,x1])

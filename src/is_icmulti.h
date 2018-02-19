@@ -10,10 +10,17 @@
 */
 
 int icset_z(cmulti *y0, cmulti *y1, dcomplex x);                                       // [y0,y1]=x
+//追加
+int icset_zz(cmulti *y0, cmulti *y1, dcomplex x0, dcomplex x1);                        // [y0,y1]=[x0,x1]
+//ここまで
 int icset_dd(cmulti *y0, cmulti *y1, double xr, double xi);                            // [y0,y1]=x
 int icset_d(cmulti *y0, cmulti *y1, double x);                                         // [y0,y1]=x
 int icset_bigint(cmulti *z0, cmulti *z1, bigint *x);                                   // [z0,x1]=x.num/x.den
 int iccopy(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1);                            // [y0,y1]=[x0,x1]
+//追加
+int iccopy_r(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1);                          // [y0,y1]=[x0,x1]
+int iccopy_rr(cmulti *c0, cmulti *c1, rmulti *a0, rmulti *a1, rmulti *b0, rmulti *b1);                                                                               // [c0,c1]=[a0,a1]+[b0,b1]i
+//ここまで
 int icconj(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1);                            // [y0,y1]=conj([x0,x1])
 int icneg(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1);                             // [y0,y1]=-[x0,x1]
 int icpm(cmulti *y0, cmulti *y1, cmulti *x);                                           // [y0,y1]=[-x,x]
