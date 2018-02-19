@@ -41,6 +41,10 @@ int irmat_sub_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int 
 int irmat_inv(int n, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A1, int LDA);
 // [B0,B1]=sum(A0,A1)
 int irvec_sum_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA);
+int irvec_max_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA);
+// [B0,B1]=[A0,max(A1)]
+int irvec_umax_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA);
+int irvec_min_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA);
 //ここまで
 // [A0,A1]=F([x0,x1])
 int irmat_func_list2(int m, int n, rmulti **A0, rmulti **A1, int LDA, func_t *f, int l, rmulti **x0, rmulti **x1);

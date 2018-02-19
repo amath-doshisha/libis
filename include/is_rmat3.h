@@ -47,6 +47,10 @@ int rmat3_set_all_d(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double 
 int rmat3_set_zeros(int m, int n, int l, rmulti **A, int LDA1, int LDA2);
 // A=ones(m,n,l)
 int rmat3_set_ones(int m, int n, int l, rmulti **A, int LDA1, int LDA2);
+// A=nan(m,n,l)
+int rmat3_set_nan(int m, int n, int l, rmulti **A, int LDA1, int LDA2);
+// A=inf(m,n,l)
+int rmat3_set_inf(int m, int n, int l, rmulti **A, int LDA1, int LDA2);
 // A=a*rnad(m,n,l)+b
 void rmat3_set_rand(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double a, double b);
 
@@ -79,8 +83,12 @@ int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 int rmat3_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=a-B
 int rmat3_sub_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2);
-// C-A-b
+// C=A-b
 int rmat3_sub_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+//追加
+// C=A-b
+int rmat3_sub_d2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b);
+//ここまで
 // C=A.*B
 int rmat3_mul(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=A.*b
@@ -89,6 +97,10 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /*
  * oparations
  */
+//追加
+// C=floor(A)
+int rmat3_floor(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
+//ここまで
 // C=abs(A)
 int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2);
 //編集済み
@@ -101,6 +113,10 @@ int rmat3_sum(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, i
 //ここまで
 // B=max(A)
 int rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
+//追加
+// C=max(A,B)
+int rmat3_max2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+//ここまで
 // B=min(A)
 int rmat3_min(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 // C=A./B
@@ -115,10 +131,19 @@ int rmat3_pow(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, i
 int rmat3_pow_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2);
 // C=A.^b
 int rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
-
+//追加
+// C=get_exp10(x,offset)
+int rmat3_get_exp10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b);
+// C=get_exp2(x,offset)
+int rmat3_get_exp2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b);
+//ここまで
 /*
  * compare
  */
+// B=isnan(A)
+void rmat3_isnan(int m, int n, int l, int *B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
+// B=isinf(A)
+void rmat3_isinf(int m, int n, int l, int *B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
 // C=(A==B)
 void rmat3_eq(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
 // C=(A==b)
