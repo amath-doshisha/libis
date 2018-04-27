@@ -11,13 +11,13 @@ if nargin==1
             error('get_type: ???');
         end
     elseif isa(x,'multi')
-        if  is_type_r(x)
+        if  is_type_r1(x)
             c='r';
-        elseif is_type_c(x)
+        elseif is_type_c1(x)
             c='c';
-        elseif is_type_R(x)
+        elseif is_type_r2(x)
             c='R';
-        elseif is_type_C(x)
+        elseif is_type_c2(x)
             c='C';
         else
             error('get_type: ???');
