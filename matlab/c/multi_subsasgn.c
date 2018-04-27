@@ -1,5 +1,5 @@
 /**
- * @breif x=subsasgn(x,s,y), i.e. x(s)=y,
+ * @brief x=subsasgn(x,s,y), i.e. x(s)=y,
  */
 void multi_subsasgn(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

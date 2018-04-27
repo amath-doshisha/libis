@@ -550,8 +550,6 @@ int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
   return e;
 }
 
-
-
 /**
  @brief rmulti型の3次元配列の引き算 C=A-B.
 */
@@ -600,6 +598,26 @@ int rmat3_sub_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A
   return e;
 }
 
+//追加
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=A-b.
+*/
+int rmat3_sub_d2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rsub_d2(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief rmulti型の3次元配列の掛け算 C=A.*B.
 */
@@ -639,6 +657,26 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /** @name rmulti型の3次元配列の数学関数に関する関数 */
 /** @{ */
 
+//追加
+
+/**
+ @brief rmulti型の3次元配列の整数への丸め C=floor(A).
+*/
+int rmat3_floor(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rfloor(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief rmulti型の3次元配列の絶対値 C=abs(A).
 */
@@ -655,6 +693,53 @@ int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, i
   return e;
 }
 
+//編集済み
+
+/**
+ @brief rmulti型の3次元配列のlog10を取った値 C=log10(A).
+*/
+int rmat3_log10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rlog10(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief 3次元配列の平方根 C=sqrt(A).
+*/
+int rmat3_sqrt(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rsqrt(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列の和 B=sum(A).
+*/
+int rmat3_sum(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=rvec_sum_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+//ここまで
 
 /**
  @brief rmulti型の3次元配列の最大値 B=max(A).
@@ -667,6 +752,31 @@ int rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, i
   }
   return e;
 }
+
+//追加
+
+/**
+ @brief rmulti型の3次元配列A,Bの最大要素 C=max(A,B).
+*/
+int rmat3_max2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	if(rgt(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2))){
+	  //A>B
+	  e+=rcopy(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+	}else{
+	  //A<=B
+	  e+=rcopy(MAT3(C,i,j,k,LDC1,LDC2),MAT3(B,i,j,k,LDB1,LDB2));
+	}
+      }
+    }
+  }
+  return e;
+}
+//ここまで
 
 /**
  @brief rmulti型の3次元配列の最小値 B=min(A).
@@ -776,6 +886,41 @@ int rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A
   return e;
 }
 
+//追加
+
+/**
+ @brief rmulti型の3次元配列の指数部で評価 C=get_exp10(x,offset)
+*/
+int rmat3_get_exp10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rget_exp10(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief rmulti型の3次元配列の指数部で評価 C=get_exp2(x,offset)
+*/
+int rmat3_get_exp2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=rget_exp2(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
 /** @} */
 
 
@@ -786,7 +931,7 @@ int rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A
 
 /**
  @brief rmulti型の3次元配列の比較 B=isnan(A).
-*/
+ */
 void rmat3_isnan(int m, int n, int l, int *B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
 {
   int i,j,k;
@@ -815,7 +960,6 @@ void rmat3_isinf(int m, int n, int l, int *B, int LDB1, int LDB2, rmulti **A, in
   }
   return;
 }
-
 
 /**
  @brief rmulti型の3次元配列の比較 C=(A==B).

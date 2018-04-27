@@ -1,5 +1,5 @@
 /**
- * @breif le
+ * @brief le
  */
 void multi_le(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

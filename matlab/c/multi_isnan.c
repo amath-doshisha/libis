@@ -1,5 +1,5 @@
 /**
- * @breif isnan
+ * @brief isnan
  */
 void multi_isnan(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

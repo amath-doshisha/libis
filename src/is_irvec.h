@@ -30,12 +30,17 @@ int irvec_sum_pow2(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);    
 
 int irvec_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);                               // [y0,y1]=abs([x0,x1]
 int irvec_abs_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1);        // [z0,z1]=abs([x0,x1]-[y0,y1])
+int irvec_max(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // [y0,y1]=[max(x0),max(x1)]
 int irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[x0,max(x1)]
 int irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[max(x0),x1]
+int irvec_min(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // [y0,y1]=[min(x0),min(x1)]
 int irvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[x0,min(x1)]
 int irvec_dmin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[min(x0),x1]
 int irvec_umax_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // value=max(abs(x))
 int irvec_dmin_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // value=min(abs(x))
+//追加
+int irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // value=sum(x)
+//ここまで
 
 int irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);        // [y0,y1]=[A0,A1]*[x0,x1]
 int irvec_add_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);    // [y0,y1]+=[A0,A1]*[x0,x1]

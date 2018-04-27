@@ -11,6 +11,8 @@
  @brief 多倍長精度実数型rmultiに関する関数の定義
  @details rmulti型のベクトルの関数に関する定義は@link rvec.c@endlinkを参照のこと.
           rmulti型の行列の関数に関する定義は@link rmat.c@endlinkを参照のこと.
+	  rmulti型の3次元配列の関数に関する定義は@link rmat3.c@endlinkを参照のこと.
+
  */
 
 ////////////////////////////////////////////////////////////
@@ -25,7 +27,7 @@
 // z=func(x,y)
 #define AUTO_PREC(func)\
   int e=0;\
-  rmulti *u=NULL;\
+  rmulti *u=NULL;							\
   if(!get_auto_prec_mode()){ return abs(func(z,x,y,get_round_mode())); }\
   u=rallocate_prec(rget_prec(z));\
   e+=abs(func(u,x,y,get_round_mode()));\
@@ -976,6 +978,21 @@ int radd_mul(rmulti *z, rmulti *x, rmulti *y)
   return e;
 }
 
+//追加
+
+/**
+ @brief rmulti型の掛け算の加算 z+=x*y
+*/
+int radd_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws)
+{
+  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in radd_mul_ws().\n",*rwss); }
+  int e=0;
+  e+=rmul(rws[0],x,y); // rws[0]=x*y
+  e+=radd(z,z,rws[0]); // z=z+x*y
+  return e;
+}
+//ここまで
+
 /**
  @brief rmulti型の掛け算の加算 z+=x*y
 */
@@ -1005,6 +1022,24 @@ int rsub_mul(rmulti *z, rmulti *x, rmulti *y)
   RF(a);
   return e;
 }
+
+//追加
+
+/**
+ @brief rmulti型の掛け算の減算 z-=x*y
+*/
+int rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws)
+{
+  int e=0;
+  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in rsub_mul_ws().\n",*rwss); }
+  *rwss=*rwss-1;
+  e+=rmul(rws[0],x,y); // a=x*y
+  e+=rsub(z,z,rws[0]); // z=z-x*y
+  *rwss=*rwss+1;
+  return e;
+}
+
+//ここまで
 
 /**
  @brief rmulti型の掛け算の減算 z-=x*y
@@ -1210,7 +1245,72 @@ int rasinh(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_asinh(y,x,ge
 int racosh(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_acosh(y,x,get_round_mode())); }
 /** @brief rmulti型の計算 y=arctanh(x) */
 int ratanh(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_atanh(y,x,get_round_mode())); }
+//追加
+/**
+ @brief rmulti型の指数部で評価 z=get_exp10(x,offset)
+*/
+int rget_exp10(rmulti *z, rmulti *x, double y)
+{
+  int e=0;
+  rmulti *exp=NULL;
+  RAp(exp,x);
+  e+=rabs(x,x);
+  e+=rlog10(x,x);
+  e+=rsub_d2(x,x,y);
+  e+=rfloor(exp,x);
+  e+=rexp10(z,exp);
+  RF(exp);
+  return e;
+}
 
+/**
+ @brief rmulti型の指数部で評価 z=get_exp2(x,offset)
+*/
+int rget_exp2(rmulti *z, rmulti *x, double y)
+{
+  int e=0;
+  rmulti *exp=NULL;
+  RAp(exp,x);
+  e+=rabs(x,x);
+  e+=rlog2(x,x);
+  e+=rsub_d2(x,x,y);
+  e+=rfloor(exp,x);
+  e+=rexp2(z,exp);
+  RF(exp);
+  return e;
+}
+
+/**
+ @brief 2つのrmulti型の大きい方 上丸め z=max2(x,y)
+*/
+int rmax2(rmulti *z, rmulti *x, rmulti *y)
+{
+  int e=0;
+  if(rgt(x,y)){
+    e+=abs(mpfr_set(z,x,MPFR_RNDU));
+  }else{
+    e+=abs(mpfr_set(z,y,MPFR_RNDU));
+  }
+  return e;
+}
+
+/**
+ @brief 2つのrmulti型の小さい方 下丸め z=min2(x,y)
+*/
+int rmin2(rmulti *z, rmulti *x, rmulti *y)
+{
+  int e=0;
+  if(rlt(x,y)){
+    e+=abs(mpfr_set(z,x,MPFR_RNDD));
+  }else{
+    e+=abs(mpfr_set(z,y,MPFR_RNDD));
+  }
+  return e;
+}
+
+
+
+//ここまで
 /** @} */
 
 //////////////////////////////////////////////////////////////////////

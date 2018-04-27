@@ -14,7 +14,7 @@ int multi_s_isreal(multi *x)
 }
 
 /**
- * @breif 文字列のセル型行列から行列の生成 y=multi(x)
+ * @brief 文字列のセル型行列から行列の生成 y=multi(x)
  */
 void multi_set_s(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

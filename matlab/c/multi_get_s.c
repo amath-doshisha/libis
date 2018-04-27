@@ -1,5 +1,5 @@
 /**
- * @breif chare型のセルへのキャスト y=get_s(x)
+ * @brief chare型のセルへのキャスト y=get_s(x)
  */
 void multi_get_s(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

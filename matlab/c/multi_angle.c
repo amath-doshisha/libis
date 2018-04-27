@@ -1,5 +1,5 @@
 /**
- * @breif y=angle(x)
+ * @brief y=angle(x)
  */
 void multi_angle(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

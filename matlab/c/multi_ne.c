@@ -1,5 +1,5 @@
 /**
- * @breif ne
+ * @brief ne
  */
 void multi_ne(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

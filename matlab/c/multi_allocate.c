@@ -1,5 +1,5 @@
 /**
- * @breif 多倍長型のメモリの割当
+ * @brief 多倍長型のメモリの割当
  */
 multi *multi_allocate(char type, int m, int n, int l)
 {

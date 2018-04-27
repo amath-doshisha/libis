@@ -6,6 +6,8 @@
 #include"is_ivec.h"
 #include"is_cmat.h"
 #include"is_csolve.h"
+#include"is_cvec.h"
+#include"is_rvec.h"
 
 /**
  @file  csolve.c
@@ -202,6 +204,8 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
   int prec,p0,p1,ret=0,i,j,k,l,e=0;
   cmulti *a=NULL,*b=NULL;
   rmulti *value=NULL,*c=NULL;
+  rmulti **rws=NULL;int rws_size,rwss; //ワークスペース
+  cmulti **cws=NULL;int cws_size,cwss;
   // allocate
   p0=cmat_get_prec_max(n,NRHS,B,LDB);
   p1=cmat_get_prec_max(n,n,A,LDA);
@@ -210,11 +214,15 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
   b=callocate_prec(prec);
   c=rallocate_prec(prec);
   value=rallocate_prec(prec);
+  rws_size=2; rwss=rws_size;
+  cws_size=2; cwss=cws_size;  
+  rws=rvec_allocate_prec(rws_size,prec);
+  cws=cvec_allocate_prec(cws_size,prec);
   for(k=0; k<n; k++){
     //pivot select
-    e+=cabsv(value,MA(k,k));
+    e+=cabsv_ws(value,MA(k,k),&rwss,rws);
     for(l=k,j=k+1; j<n; j++){
-      e+=cabsv(c,MA(j,k));
+      e+=cabsv_ws(c,MA(j,k),&rwss,rws);
       if(rgt(c,value)) { l=j; e+=rcopy(value,c); } // value=c
     }
     if(ris_zero(value)) { ret=l+1; break; } // error
@@ -223,18 +231,18 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
       if(l!=k) cmat_swap_rows(n,n,A,LDA,k,l); //swap A(k,:) <-> A(l,:)
     }
     //軸要素を1にする
-    e+=cinv(a,MA(k,k));
-    for(j=k; j<n; j++)    { e+=cmul(MA(k,j),a,MA(k,j)); }
-    for(j=0; j<NRHS; j++) { e+=cmul(MB(k,j),a,MB(k,j)); }
+    e+=cinv_ws(a,MA(k,k),&rwss,rws,&cwss,cws);
+    for(j=k; j<n; j++)    { e+=cmul_ws(MA(k,j),a,MA(k,j),&rwss,rws,&cwss,cws); }
+    for(j=0; j<NRHS; j++) { e+=cmul_ws(MB(k,j),a,MB(k,j),&rwss,rws,&cwss,cws); }
     //軸要素以外が 0 になるように他の列から軸要素の列を引く
     for(i=k+1; i<n; i++){
       if(i!=k){
 	e+=ccopy(a,MA(i,k));
-	for(j=0; j<n; j++){
-	  e+=csub_mul(MA(i,j),a,MA(k,j));
+	for(j=k; j<n; j++){
+	  e+=csub_mul_ws(MA(i,j),a,MA(k,j),&rwss,rws,&cwss,cws);
 	}
 	for(j=0; j<NRHS; j++){
-	  e+=csub_mul(MB(i,j),a,MB(k,j));
+	  e+=csub_mul_ws(MB(i,j),a,MB(k,j),&rwss,rws,&cwss,cws);
 	}
       }
     }
@@ -244,7 +252,7 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
     for(k=0; k<NRHS; k++){
       for(i=n-1; i>=0; i--){
 	for(j=n-1; j>=i+1; j--){
-	  e+=csub_mul(MB(i,k),MA(i,j),MB(j,k));
+	  e+=csub_mul_ws(MB(i,k),MA(i,j),MB(j,k),&rwss,rws,&cwss,cws);
 	}
       }
     }
@@ -254,6 +262,8 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
   b=cfree(b);
   c=rfree(c);
   value=rfree(value);
+  rws=rvec_free(rws_size,rws);
+  cws=cvec_free(cws_size,cws);
   // done
   (*info)=ret;
   return e;

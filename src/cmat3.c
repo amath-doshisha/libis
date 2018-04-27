@@ -17,7 +17,7 @@
 #include"is_func.h"
 
 /**
- @file  cmat.c
+ @file  cmat3.c
  @brief 多倍長精度複素数型cmultiの3次元配列に関する関数の定義
  @details cmulti型の関数に関する定義は@link cmulti.c@endlinkを参照のこと.
           cmulti型のベクトルの関数に関する定義は@link cvec.c@endlinkを参照のこと.
@@ -336,7 +336,6 @@ void cmat3_set_rand(int m, int n, int l, cmulti **A, int LDA1, int LDA2, double 
   }
 }
 
-
 /**
  @brief cmulti型の3次元配列の値をnanに設定.
 */
@@ -438,6 +437,57 @@ int cmat3_copy_rmat3(int m, int n, int l, cmulti **B, int LDB1, int LDB2, rmulti
   }
   return e;
 }
+
+//追加
+
+/**
+ @brief cmulti型の3次元配列の値のコピー C=A+Bi
+*/
+int cmat3_copy_rmat3_rmat3(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy_rr(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値のコピー C=a+Bi
+*/
+int cmat3_copy_r_rmat3(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy_rr(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の値のコピー C=A+bi
+*/
+int cmat3_copy_rmat3_r(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=ccopy_rr(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+//ここまで
 
 /**
  @brief cmulti型の3次元配列の値を添字を指定してコピー B=A(I,J,K)
@@ -879,6 +929,26 @@ int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, i
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の3次元配列の実部と虚部の絶対値 C=absc(A).
+*/
+int cmat3_absc(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cabsc(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
+
 /**
  @brief cmulti型の3次元配列の偏角 B=arg(A).
 */
@@ -894,6 +964,22 @@ int cmat3_arg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, i
   }
   return e;
 }
+
+//追加
+
+/**
+ @brief cmulti型の3次元配列の和 B=sum(A).
+*/
+int cmat3_sum(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2)
+{
+  int k,e=0;
+  for(k=0; k<l; k++){
+    e+=cvec_sum_cmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+  }
+  return e;
+}
+
+//ここまで
 
 /**
  @brief cmulti型の3次元配列の最大値 B=max(A).
@@ -1207,6 +1293,41 @@ int rmat3_pow_c1(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti *a,
   return e;
 }
 
+//追加
+
+/**
+ @brief cmulti型の3次元配列の指数部で評価 C=get_exp10(x,offset)
+*/
+int cmat3_get_exp10(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, double b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cget_exp10(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+
+/**
+ @brief cmulti型の3次元配列の指数部で評価 C=get_exp2(x,offset)
+*/
+int cmat3_get_exp2(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, double b)
+{
+  int i,j,k,e=0;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	e+=cget_exp2(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+  return e;
+}
+
+//ここまで
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////

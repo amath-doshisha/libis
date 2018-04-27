@@ -1,5 +1,5 @@
 /**
- * @breif y=real(x)
+ * @brief y=real(x)
  */
 void multi_real(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

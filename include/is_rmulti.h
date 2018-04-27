@@ -114,8 +114,14 @@ int rmul_d(rmulti *z, rmulti *x, double y);     // z=x*y
 int rmul_ui(rmulti *z, rmulti *x, ulong y);     // z=x*y
 int rmul_si(rmulti *z, rmulti *x, long y);      // z=x*y
 int radd_mul(rmulti *z, rmulti *x, rmulti *y);  // z+=x*y
+//追加
+int radd_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws);  // rwss>1
+//ここまで
 int radd_mul_d(rmulti *z, rmulti *x, double y); // z+=x*y
 int rsub_mul(rmulti *z, rmulti *x, rmulti *y);  // z-=x*y
+//追加
+int rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws);  // rwss>1
+//ここまで
 int rsub_mul_d(rmulti *z, rmulti *x, double y); // z-=x*y
 int radd_abs(rmulti *y, rmulti *x);             // y+=abs(x)
 int rabs_sub(rmulti *z, rmulti *x, rmulti *y);  // z=abs(x-y)
@@ -166,7 +172,12 @@ int rtanh(rmulti *y, rmulti *x);             // y=tanh(x)
 int rasinh(rmulti *y, rmulti *x);            // y=asinh(x)
 int racosh(rmulti *y, rmulti *x);            // y=acosh(x)
 int ratanh(rmulti *y, rmulti *x);            // y=atanh(x)
-
+//追加
+int rget_exp10(rmulti *z, rmulti *x, double y); // z=get_exp10(x,offset)
+int rget_exp2(rmulti *z, rmulti *x, double y); // z=get_exp2(x,offset)
+int rmax2(rmulti *z, rmulti *x, rmulti *y);  //z=max2(x,y)
+int rmin2(rmulti *z, rmulti *x, rmulti *y);  //z=min2(x,y)
+//ここまで
 /*
  * comparisions
  */

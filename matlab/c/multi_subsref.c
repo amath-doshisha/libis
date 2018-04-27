@@ -1,5 +1,5 @@
 /**
- * @breif y=x(s)
+ * @brief y=x(s)
  */
 void multi_subsref(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

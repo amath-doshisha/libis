@@ -1,6 +1,6 @@
 
 /**
- * @breif 
+ * @brief 
  */
 subs_index_t *subs_index_allocate(const mxArray *s)
 {

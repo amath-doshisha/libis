@@ -100,6 +100,8 @@ int rmat_diag_add_rvec(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, r
 int rmat_diag_add_r(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmulti *a);                // B=A+diag(a)
 int rmat_diag_sub_rvec(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmulti **a);            // B=A-diag(a)
 int rmat_diag_sub_r(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmulti *a);                // B=A-diag(a)
+int rvec_sum_rmat(int m, int n, rmulti **B, rmulti **A, int LDA);
+                          // B=sum(A);
 int rvec_max_rmat(int m, int n, rmulti **B, rmulti **A, int LDA);                                      // B=max(A)
 int rvec_min_rmat(int m, int n, rmulti **B, rmulti **A, int LDA);                                      // B=min(A)
 int rmat_max_abs(rmulti *value, int m, int n, rmulti **A, int LDA);                                    // value=max(abs(x))

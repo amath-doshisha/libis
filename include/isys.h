@@ -66,6 +66,9 @@
 #include<is_ireig.h>
 #include<is_iceig.h>
 #include<is_riep_dht.h>
+//追加済み
+#include<is_irsolve.h>
+#include<is_icsolve.h>
 
 // bigint
 #include<is_bigint.h>

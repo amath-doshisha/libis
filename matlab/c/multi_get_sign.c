@@ -1,5 +1,5 @@
 /**
- * @breif y=get_sign(x)
+ * @brief y=get_sign(x)
  */
 void multi_get_sign(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

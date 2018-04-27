@@ -1,5 +1,5 @@
 /**
- * @breif y=[x1 x2 ...]
+ * @brief y=[x1 x2 ...]
  */
 void multi_horzcat(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

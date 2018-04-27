@@ -1,5 +1,5 @@
 /**
- * @breif lt
+ * @brief lt
  */
 void multi_lt(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

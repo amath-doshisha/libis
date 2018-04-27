@@ -1,5 +1,5 @@
 /**
- * @breif y=imag(x)
+ * @brief y=imag(x)
  */
 void multi_imag(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

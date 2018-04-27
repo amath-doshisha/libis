@@ -1,5 +1,5 @@
 /**
- * @breif 多倍長型のメモリの解放
+ * @brief 多倍長型のメモリの解放
  */
 multi *multi_free(multi *A)
 {

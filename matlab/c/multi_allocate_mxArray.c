@@ -1,5 +1,5 @@
 /**
- * @breif MATLABの構造体から多倍長型のメモリの割当
+ * @brief MATLABの構造体から多倍長型のメモリの割当
  */
 multi *multi_allocate_mxArray(const mxArray *x)
 {

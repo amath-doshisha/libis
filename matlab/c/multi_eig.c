@@ -1,5 +1,5 @@
 /**
- * @breif lambda=eig(A) or [V,D]=eig(A)
+ * @brief lambda=eig(A) or [V,D]=eig(A)
  */
 void multi_eig(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

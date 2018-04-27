@@ -1,5 +1,5 @@
 /**
- * @breif isinf
+ * @brief isinf
  */
 void multi_isinf(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

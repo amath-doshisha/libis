@@ -1,5 +1,5 @@
 /**
- * @breif 多倍長型配列からmxArrayの構造体配列への変換の1要素のみの分担
+ * @brief 多倍長型配列からmxArrayの構造体配列への変換の1要素のみの分担
  */
 void mxCreateStructMultiValue(mxArray *y, int i, rmulti *x, const char *field_names[])
 {

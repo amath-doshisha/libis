@@ -1,5 +1,5 @@
 /**
- * @breif eq
+ * @brief eq
  */
 void multi_eq(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

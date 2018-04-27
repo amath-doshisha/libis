@@ -1,5 +1,5 @@
 /**
- * @breif 零行列の生成 y=zeros(m,n,l)
+ * @brief 零行列の生成 y=zeros(m,n,l)
  */
 void multi_set_zeros(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

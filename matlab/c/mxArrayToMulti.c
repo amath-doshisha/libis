@@ -1,5 +1,5 @@
 /**
- * MATLABの構造体から多倍長型へ変換
+ * @brief MATLABの構造体から多倍長型へ変換
  */
 void mxArrayToMulti(rmulti *y, const mxArray *x, int i, const char *field_names[])
 {

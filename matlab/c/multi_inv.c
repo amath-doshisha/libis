@@ -1,5 +1,5 @@
 /**
- * @breif y=inv(x)
+ * @brief y=inv(x)
  */
 void multi_inv(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
@@ -14,6 +14,10 @@ void multi_inv(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   y=multi_allocate(_T(x),_M(x),_M(x),1);
        if(_T(y)=='r'){ rmat_inv(_M(x),_R(y),_LD1(y),_R(x),_LD1(x)); }
   else if(_T(y)=='c'){ cmat_inv(_M(x),_C(y),_LD1(y),_C(x),_LD1(x)); }
+         //追加
+  else if(_T(y)=='R'){ irmat_inv(_M(x),_R0(y),_R1(y),_LD1(y),_R0(x),_R1(x),_LD1(x)); }
+  else if(_T(y)=='C'){ icmat_inv(_M(x),_C0(y),_C1(y),_LD1(y),_C0(x),_C1(x),_LD1(x)); }   
+      
   else{ MATLAB_ERROR("multi_inv: Unkown type"); }
   // done
   plhs[0]=mxCreateStructMulti(y);

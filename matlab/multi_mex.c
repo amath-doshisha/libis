@@ -10,6 +10,7 @@
 #define IS_CELL(N,P,I)  ((N>I && mxIsCell(P[I])))
 #define GET_DOUBLE(P)   ((double*)mxGetData(P))
 #define MATLAB_ERROR(S) (mexErrMsgIdAndTxt("MATLAB:multi_mex",S));
+#define MATLAB_WARN(S)  (mexWarnMsgIdAndTxt("MATLAB:multi_mex",S));
 #define N0 4
 
 #define _T(A)   (A->type)
@@ -30,7 +31,7 @@
 #define _S(A)   ((char**)(A->p0))
 
 typedef struct {
-  char type;     // type='r','c','R','C','i'
+  char type;     // type='r','c','R','C','d','z','i'
   int LD1,LD2;   // memory=(LD1,LD2,l)
   int M,N,L;     // size=(m,n,l), 
   void *p0,*p1;  // p0 or [p0,p1]
@@ -128,6 +129,20 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_eig.c"
 #include"./c/multi_eig_verify.c"
 #include"./c/multi_matgen_dhToda.c"
+//追加
+#include"./c/multi_log10.c"
+#include"./c/multi_sum.c"
+#include"./c/multi_sqrt.c"
+#include"./c/multi_max_u.c"
+#include"./c/multi_norm_Inf.c"
+#include"./c/multi_mag.c"
+#include"./c/multi_mig.c"
+#include"./c/multi_absc.c"
+#include"./c/multi_get_exp10.c"
+#include"./c/multi_get_exp2.c"
+#include"./c/multi_iset_dd.c"
+#include"./c/multi_icopy2.c"
+#include"./c/multi_complex.c"
 
 /**
  * @breif mexFunction() for multi_mex
@@ -200,11 +215,24 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"conj"))      { multi_conj      (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
   else if(STR_EQ(cmd,"abs"))       { multi_abs       (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
   else if(STR_EQ(cmd,"angle"))     { multi_angle     (nlhs,plhs,nrhs,prhs); }  // y=angle(x)      
-  else if(STR_EQ(cmd,"max"))       { multi_max       (nlhs,plhs,nrhs,prhs); }  // y=max(x)
+  else if(STR_EQ(cmd,"max"))       { multi_max       (nlhs,plhs,nrhs,prhs); }  // y=max(x) or y=max(x,z)
   else if(STR_EQ(cmd,"min"))       { multi_min       (nlhs,plhs,nrhs,prhs); }  // y=min(x)
   else if(STR_EQ(cmd,"eig"))       { multi_eig       (nlhs,plhs,nrhs,prhs); }  // lambda=eig(A), [V,D]=eig(A)
   else if(STR_EQ(cmd,"eig_verify")){ multi_eig_verify(nlhs,plhs,nrhs,prhs); }  // [V,D,EV,ED]=eig_verify(A)
   else if(STR_EQ(cmd,"matgen_dhToda")){ multi_matgen_dhToda(nlhs,plhs,nrhs,prhs); } // A=matgen_dhToda(...)       
+  else if(STR_EQ(cmd,"log10"))     { multi_log10     (nlhs,plhs,nrhs,prhs); }  // y=log10(x)
+  else if(STR_EQ(cmd,"sum"))       { multi_sum       (nlhs,plhs,nrhs,prhs); }  // y=sum(x)
+  else if(STR_EQ(cmd,"sqrt"))      { multi_sqrt      (nlhs,plhs,nrhs,prhs); }  // y=sqrt(x)
+  else if(STR_EQ(cmd,"max_u"))     { multi_max_u     (nlhs,plhs,nrhs,prhs); }  // y=max_u(x)
+  else if(STR_EQ(cmd,"norm_Inf"))  { multi_norm_Inf  (nlhs,plhs,nrhs,prhs); }  // y=norm_Inf(x)
+  else if(STR_EQ(cmd,"mag"))       { multi_mag       (nlhs,plhs,nrhs,prhs); }  // y=mag(x)
+  else if(STR_EQ(cmd,"mig"))       { multi_mig       (nlhs,plhs,nrhs,prhs); }  // y=mig(x)
+  else if(STR_EQ(cmd,"absc"))      { multi_absc      (nlhs,plhs,nrhs,prhs); }  // y=absc(x)
+  else if(STR_EQ(cmd,"get_exp10")) { multi_get_exp10 (nlhs,plhs,nrhs,prhs); }  // y=get_exp10(x)
+  else if(STR_EQ(cmd,"get_exp2"))  { multi_get_exp2  (nlhs,plhs,nrhs,prhs); }  // y=get_exp2(x)
+  else if(STR_EQ(cmd,"iset_dd"))   { multi_iset_dd   (nlhs,plhs,nrhs,prhs); }  // y=imulti(x,u), where x,u is double or multi
+  else if(STR_EQ(cmd,"icopy2"))    { multi_icopy2    (nlhs,plhs,nrhs,prhs); }  // [y0,y1]=imulti(A,B)
+  else if(STR_EQ(cmd,"complex"))   { multi_complex   (nlhs,plhs,nrhs,prhs); }  // y=complex(x)
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");

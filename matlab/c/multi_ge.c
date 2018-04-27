@@ -1,5 +1,5 @@
 /**
- * @breif ge
+ * @brief ge
  */
 void multi_ge(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

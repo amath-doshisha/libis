@@ -29,6 +29,21 @@ int irset_d(rmulti *y0, rmulti *y1, double x)
   return e;
 }
 
+//追加
+
+/**
+ @brief 倍精度実数の設定 [y0,y1]=[x0,x1].
+ */
+int irset_dd(rmulti *y0, rmulti *y1, double x0, double x1)
+{
+  int e=0;
+  e+=abs(mpfr_set_d(y0,x0,MPFR_RNDD));
+  e+=abs(mpfr_set_d(y1,x1,MPFR_RNDU));
+  return e;
+}
+
+//ここまで
+
 /**
  @brief bigint型から[z0,z1]へ型変換.
  */
@@ -124,25 +139,31 @@ int irmid(rmulti *mid, rmulti *x0, rmulti *x1)
   return e;
 }
 
+//変更
+
 /**
- @brief 区間の半径 [m-r,m+r]=[x0,x1]
+ @brief 区間の半径 rad=rad([x0,x1])
  */
 int irrad(rmulti *rad, rmulti *x0, rmulti *x1)
 {
   int prec,e=0;
-  rmulti *a0=NULL,*a1=NULL;
+  rmulti *a0=NULL;
   prec=rget_prec(rad);
-  RA(a0,prec); RA(a1,prec);
+  RA(a0,prec);
   e+=abs(mpfr_sub(a0,x1,x0,MPFR_RNDU));    // a0=(x1-x0) by upper
   e+=abs(mpfr_mul_d(a0,a0,0.5,MPFR_RNDU)); // a0=(x1-x0)/2 by upper
   e+=abs(mpfr_add(a0,a0,x0,MPFR_RNDU));    // a0=x0+(x1-x0)/2 by upper
   e+=abs(mpfr_sub(rad,a0,x0,MPFR_RNDU));   // rad=(x1-x0)/2 by upper
-  RF(a0); RF(a1);
+  RF(a0); 
   return e;
 }
 
+//ここまで
+
+
+
 /**
- @brief 区間の中心と半径 [m-r,m+r]=[x0,x1]
+ @brief 区間の中心と半径の表示(center-radius form) [m-r,m+r]=[x0,x1]
  */
 int irmr(rmulti *mid, rmulti *rad, rmulti *x0, rmulti *x1)
 {
@@ -174,7 +195,20 @@ int irsub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1
   RF(a0); RF(a1);
   return e;
 }
-
+//追加
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+int irsub_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws)
+{
+  if(*rwss<2){ ERROR_EXIT("Error `rwss=%d<2' in irsub_ws().\n",*rwss); }
+  int e=0;
+  e+=abs(mpfr_sub(rws[0],x0,y1,MPFR_RNDD)); // lower bound
+  e+=abs(mpfr_sub(rws[1],x1,y0,MPFR_RNDU)); // upper bound
+  e+=ircopy(z0,z1,rws[0],rws[1]);
+  return e;
+}
+//ここまで
 /**
  @brief 引き算 [z0,z1]=[x0,x1]-[y,y]
  */
@@ -224,6 +258,39 @@ int irmul(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1
   return e;
 }
 
+
+//追加
+/**
+ @brief 掛け算 [z0,z1]=[x0,x1]*[y0,y1]
+*/
+int irmul_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws)
+{
+  int e=0;
+    if(*rwss<4){ ERROR_EXIT("Error `rwss=%d<4' in irmul_ws().\n",*rwss); }
+  if(rget_sgn(x0)>0){
+    if     (rget_sgn(y0)>0){ e+=abs(mpfr_mul(rws[0],x0,y0,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x1,y1,MPFR_RNDU)); }
+    else if(rget_sgn(y1)<0){ e+=abs(mpfr_mul(rws[0],x1,y0,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x0,y1,MPFR_RNDU)); }
+    else                   { e+=abs(mpfr_mul(rws[0],x1,y0,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x1,y1,MPFR_RNDU)); }
+  }else if(rget_sgn(x1)<0){
+    if     (rget_sgn(y0)>0){ e+=abs(mpfr_mul(rws[0],x0,y1,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x1,y0,MPFR_RNDU)); }
+    else if(rget_sgn(y1)<0){ e+=abs(mpfr_mul(rws[0],x1,y1,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x0,y0,MPFR_RNDU)); }
+    else                   { e+=abs(mpfr_mul(rws[0],x0,y1,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x0,y0,MPFR_RNDU)); }
+  }else{
+    if     (rget_sgn(y0)>0){ e+=abs(mpfr_mul(rws[0],x0,y1,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x1,y1,MPFR_RNDU)); }
+    else if(rget_sgn(y1)<0){ e+=abs(mpfr_mul(rws[0],x1,y0,MPFR_RNDD)); e+=abs(mpfr_mul(rws[1],x0,y0,MPFR_RNDU)); }
+    else{
+      e+=abs(mpfr_mul(rws[2],x0,y1,MPFR_RNDD));
+      e+=abs(mpfr_mul(rws[3],x1,y0,MPFR_RNDD));
+      if(rle(rws[2],rws[3])){ e+=abs(mpfr_set(rws[0],rws[2],MPFR_RNDD)); }else{ e+=abs(mpfr_set(rws[0],rws[3],MPFR_RNDD)); }
+      e+=abs(mpfr_mul(rws[2],x0,y0,MPFR_RNDU));
+      e+=abs(mpfr_mul(rws[3],x1,y1,MPFR_RNDU));
+      if(rge(rws[2],rws[3])){ e+=abs(mpfr_set(rws[1],rws[2],MPFR_RNDU)); }else{ e+=abs(mpfr_set(rws[1],rws[3],MPFR_RNDU)); }
+    }
+  }
+  e+=ircopy(z0,z1,rws[0],rws[1]);
+  return e;
+}
+//ここまで
 /**
  @brief 掛け算 [z0,z1]=[x0,x1]*[y,y]
 */
@@ -266,6 +333,23 @@ int irdiv(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1
   return e;
 }
 
+//編集済み
+
+/**
+ @brief 逆数 [z0,z1]=[1,1]/[x0,x1]
+*/
+int irinv(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1)
+{
+  int e=0;
+  if (rget_sgn(x0)<0 && rget_sgn(x1)>0){ rset_nan(z0); rset_nan(z1); }//{ERROR_AT; mpfr_printf("Divided by 0, y=[%.3Re %.3Re].\n",x0,x1); }
+  else {
+    e+=abs(mpfr_d_div(z0,1,x1,MPFR_RNDD));
+    e+=abs(mpfr_d_div(z1,1,x0,MPFR_RNDU));
+  } 
+  return e;
+}
+//ここまで
+
 /**
  @brief 積の加算 [z0,z1]+=[x0,x1]*[y0,y1]
 */
@@ -281,6 +365,22 @@ int iradd_mul(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti
   return e;
 }
 
+//追加
+/**
+ @brief 積の加算 [z0,z1]+=[x0,x1]*[y0,y1]
+*/
+int iradd_mul_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws)
+{
+  if(*rwss<6){ ERROR_EXIT("Error `rwss=%d<6' in iradd_mul_ws().\n",*rwss); }
+  int e=0;
+  *rwss=*rwss-2;
+  e+=irmul_ws(rws[0],rws[1],x0,x1,y0,y1,rwss,&rws[2]); // a=x*y
+  e+=iradd(z0,z1,z0,z1,rws[0],rws[1]); // z=z+x*y
+  *rwss=*rwss+2;
+  return e;
+}
+
+//ここまで
 /**
  @brief 積の減算 [z0,z1]-=[x0,x1]*[y0,y1]
 */
@@ -296,34 +396,56 @@ int irsub_mul(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti
   return e;
 }
 
+//追加
+/**
+ @brief 積の減算 [z0,z1]-=[x0,x1]*[y0,y1]
+*/
+int irsub_mul_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int *rwss, rmulti **rws)
+{
+  int e=0;
+  if(*rwss<6){ ERROR_EXIT("Error `rwss=%d<8' in irsub_mul_ws().\n",*rwss); }
+  *rwss=*rwss-2;
+  e+=irmul_ws(rws[0],rws[1],x0,x1,y0,y1,rwss,&rws[2]); // a=x*y
+  e+=irsub_ws(z0,z1,z0,z1,rws[0],rws[1],rwss,&rws[2]); // z=z-x*y
+  *rwss=*rwss+2;
+  return e;
+}
+//ここまで
+
 /** @} */
 
 //////////////////////////////////////////////////////
 
 /** @name 数学関数 */
 /** @{ */
-
+//変更
 /**
  @brief 絶対値 [y0,y1]=abs([x0,x1])
 */
 int irabs(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
 {
+  if(ris_nan(x0) || ris_nan(x1)){rset_nan(y0); rset_nan(y1); return 0;
+  }else{
   int e=0;
   if(rget_sgn(x0)>=0 && rget_sgn(x1)>=0){         //x0>=0 && x1>=0
-    e+=abs(mpfr_abs(y0,x0,MPFR_RNDD));
-    e+=abs(mpfr_abs(y1,x1,MPFR_RNDU));
+    e+=ircopy(y0,y1,x0,x1);   
   }else if(rget_sgn(x0)<=0 && rget_sgn(x1)<=0){   //x0<=0 && x1<=0
-    e+=abs(mpfr_abs(y0,x1, MPFR_RNDD));
-    e+=abs(mpfr_abs(y1,x0, MPFR_RNDU));
-  }else if(rget_sgn(x0)<0 && rget_sgn(x1)>0 && rabs_le(x0,x1)!=0){        //x0<0 && x1>0 && |x0|<=|x1|
+    e+=irneg(y0,y1,x0,x1);   
+  }else{                                          //x0<0 && x1>0
+    int p0,p1,prec;
+    rmulti *a0=NULL,*a1=NULL;
+    p0=rget_prec(y0); p1=rget_prec(y1); prec=MAX2(p0,p1);
+    RA(a0,prec);RA(a1,prec);
+    e+=abs(mpfr_neg(a0,x0,MPFR_RNDU));
+    e+=rmax2(a1,a0,x1);
     e+=abs(mpfr_set_d(y0,0,MPFR_RNDD));
-    e+=abs(mpfr_abs(y1,x1, MPFR_RNDU));
-  }else{                                                                  //x0<0 && x1>0 && |x0|>|x1|
-    e+=abs(mpfr_set_d(y0,0,MPFR_RNDD));
-    e+=abs(mpfr_abs(y1,x0, MPFR_RNDU));
+    e+=abs(mpfr_set(y1,a1, MPFR_RNDU));
+    RF(a0);RF(a1);
   }
   return e;
+  }
 }
+//ここまで
 
 /**
  @brief 差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])
@@ -429,6 +551,20 @@ int irlog(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
   return e;
 }
 
+//追加
+
+/**
+ @brief 対数関数 [y0,y1]=log([x0,x1])
+*/
+int irlog10(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
+{
+  int e=0;
+  e+=abs(mpfr_log10(y0,x0,MPFR_RNDD));
+  e+=abs(mpfr_log10(y1,x1,MPFR_RNDU));
+  return e;
+}
+
+//ここまで
 
 /**
  @brief 三角関数 [y0,y1]=sin([x0,x1])

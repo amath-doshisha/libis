@@ -1,5 +1,5 @@
 /**
- * @breif [y0,y1]=multi(x)
+ * @brief [y0,y1]=multi(x)
  */
 void multi_icopy(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

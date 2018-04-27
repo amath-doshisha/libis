@@ -1,5 +1,5 @@
 /**
- * @breif 多倍長型配列からmxArrayの構造体配列への変換
+ * @brief 多倍長型配列からmxArrayの構造体配列への変換
  */
 mxArray *mxCreateStructMulti(multi *A)
 {

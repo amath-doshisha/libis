@@ -1,5 +1,5 @@
 /**
- * @breif y=mid(x)
+ * @brief y=mid(x)
  */
 void multi_mid(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

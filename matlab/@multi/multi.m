@@ -1,6 +1,6 @@
 classdef multi
-%    properties(SetAccess=private,GetAccess=public)
-%    properties
+    %    properties(SetAccess=private,GetAccess=public)
+    %    properties
     properties(SetAccess=public,GetAccess=public)
         data;
     end
@@ -41,6 +41,7 @@ classdef multi
         function A=inf(varargin)
             A=multi('set_inf','r',varargin{1:end});
         end
+        
         
         function A=rand(varargin)
             %            A=multi('set_rand','r',varargin{1:end});

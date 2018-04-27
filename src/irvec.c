@@ -237,8 +237,30 @@ int irvec_abs_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmu
   return e;
 }
 
+//追加
+
 /**
- @brief 最大値 [y0,y1]=[x0,max(x1)]
+ @brief 最大値 [y0,y1]=[max(x0),max(x1)]
+*/
+int irvec_max(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+{
+  int i,e=0;
+  e+=ircopy(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
+  for(i=1; i<n; i++){
+    if(rgt(x0[i],y0)){               // x0[i]>y0
+      e+=abs(mpfr_set(y0,x0[i],MPFR_RNDD)); // y0=x0[i]            
+    }
+    if(rgt(x1[i],y1)){               // x1[i]>y1
+      e+=abs(mpfr_set(y1,x1[i],MPFR_RNDU)); // y1=x1[i]              
+    }
+  }
+  return e;
+}
+
+//ここまで
+
+/**
+ @brief 最大値 [y0,y1]=[x0,max(x1)] 上限で比較
 */
 int irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -253,7 +275,7 @@ int irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 最大値 [y0,y1]=[max(x0),x1]
+ @brief 最大値 [y0,y1]=[max(x0),x1] 下限で比較
 */
 int irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -266,6 +288,28 @@ int irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
   }
   return e;
 }
+
+//追加
+
+/**
+ @brief 最小値 [y0,y1]=[min(x0),min(x1)]
+*/
+int irvec_min(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+{
+  int i,e=0;
+  e+=ircopy(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
+  for(i=1; i<n; i++){
+    if(rlt(x0[i],y0)){               // x0[i]<y0
+      e+=abs(mpfr_set(y0,x0[i],MPFR_RNDD)); // y0=x0[i]        
+    }
+    if(rlt(x1[i],y1)){               // x1[i]<y1
+      e+=abs(mpfr_set(y1,x1[i],MPFR_RNDD)); // y0=x0[i]       
+    }
+  }
+  return e;
+}
+
+//ここまで
 
 /**
  @brief 最小値 [y0,y1]=[x0,min(x1)]
@@ -328,6 +372,21 @@ int irvec_dmin_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
   RVF(ax0,n); RVF(ax1,n);
   return e;
 }
+
+//追加
+
+/**
+ @brief irmulti型のベクトルの要素の総和 value=sum(x)
+ */
+int irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+{
+  int i,e=0;
+  e+=irset_d(y0,y1,0);
+  for(i=0; i<n; i++){ e+=iradd(y0,y1,y0,y1,x0[i],x1[i]); }
+  return e;
+}
+
+//ここまで
 
 /** @} */
 

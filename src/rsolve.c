@@ -6,6 +6,7 @@
 #include"is_ivec.h"
 #include"is_rmat.h"
 #include"is_rsolve.h"
+#include"is_rvec.h"
 
 /**
  @file  rsolve.c
@@ -36,7 +37,7 @@ int rsolve(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info)
   rmulti **C=NULL;
   C=rmat_allocate_prec(n,n,rmat_get_prec_max(n,NRHS,B,LDB));
   e+=rmat_copy(n,n,C,n,A,LDA);
-  //  e+=rsolve_lu(n,NRHS,B,LDB,C,n,info);
+  //e+=rsolve_lu(n,NRHS,B,LDB,C,n,info);
   e+=rsolve_gauss_sweeper(n,NRHS,B,LDB,C,n,info);
   C=rmat_free(n,n,C);
   return e;
@@ -199,12 +200,15 @@ int rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int L
 {
   int p0,p1,prec,ret=0,i,j,k,l,e=0;
   rmulti *a=NULL,*value=NULL;
+  rmulti **rws=NULL;int rws_size,rwss; //ワークスペース
   // allocate
   p0=rmat_get_prec_max(n,NRHS,B,LDB);
   p1=rmat_get_prec_max(n,n,A,LDA);
   prec=MAX2(p0,p1);
   a=rallocate_prec(prec);
   value=rallocate_prec(prec);
+  rws_size=1;rwss=rws_size;
+  rws=rvec_allocate_prec(rws_size,prec);
   // 上三角化
   for(k=0; k<n; k++){
     // ピボット選択
@@ -226,11 +230,11 @@ int rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int L
     for(i=k+1; i<n; i++){
       if(i!=k){
 	e+=rcopy(a,MA(i,k));
-	for(j=0; j<n; j++){
-	  e+=rsub_mul(MA(i,j),a,MA(k,j));
+	for(j=k; j<n; j++){
+	  e+=rsub_mul_ws(MA(i,j),a,MA(k,j),&rwss,rws);	 
 	}
 	for(j=0; j<NRHS; j++){
-	  e+=rsub_mul(MB(i,j),a,MB(k,j));
+	  e+=rsub_mul_ws(MB(i,j),a,MB(k,j),&rwss,rws);	 
 	}
       }
     }
@@ -240,7 +244,7 @@ int rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int L
     for(k=0; k<NRHS; k++){
       for(i=n-1; i>=0; i--){
 	for(j=n-1; j>=i+1; j--){
-	  e+=rsub_mul(MB(i,k),MA(i,j),MB(j,k));
+	  e+=rsub_mul_ws(MB(i,k),MA(i,j),MB(j,k),&rwss,rws);
 	}
       }
     }
@@ -248,12 +252,12 @@ int rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int L
   // free
   a=rfree(a);
   value=rfree(value);
+  rws=rvec_free(rws_size,rws);
   // done
   (*info)=ret;
   return e;
 }
 
 /** @} */
-
 
 //EOF

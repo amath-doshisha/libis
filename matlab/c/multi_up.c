@@ -1,5 +1,5 @@
 /**
- * @breif y=up(x)
+ * @brief y=up(x)
  */
 void multi_up(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

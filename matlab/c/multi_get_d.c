@@ -1,5 +1,5 @@
 /**
- * @breif double型へのキャスト y=double(x)
+ * @brief double型へのキャスト y=double(x)
  */
 void multi_get_d(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

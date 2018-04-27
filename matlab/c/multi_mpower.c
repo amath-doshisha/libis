@@ -1,5 +1,5 @@
 /**
- * @breif z=mpower(x,y)
+ * @brief z=mpower(x,y)
  */
 void multi_mpower(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

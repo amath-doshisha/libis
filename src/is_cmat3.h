@@ -68,6 +68,14 @@ void cmat3_get_z(int m, int n, int l, dcomplex *B, int LDB1, int LDB2, cmulti **
 // B=A
 int cmat3_copy(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 int cmat3_copy_rmat3(int m, int n, int l, cmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2);
+//追加
+// C=A+Bi
+int cmat3_copy_rmat3_rmat3(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2);
+// C=a+Bi
+int cmat3_copy_r_rmat3(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2);
+// C=A*bi
+int cmat3_copy_rmat3_r(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
+//ここまで
 // B=A(I,J,K)
 int cmat3_copy_index(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2, int *I, int *J, int *K);
 // B(I,J,K)=A
@@ -125,8 +133,15 @@ int rmat3_mul_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A,
  */
 // C=abs(A)
 int cmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2);
+//追加
+// y=abs(real(x))+i*abs(imag(x))
+int cmat3_absc(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2);
+//ここまで
 // B=abs(A)
 int cmat3_arg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+// B=sum(A)
+int cmat3_sum(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
+//ここまで
 // B=max(A)
 int cmat3_max(int m, int n, int l, cmulti **B, int LDB1, int LDB2, cmulti **A, int LDA1, int LDA2);
 // B=min(A)
@@ -167,7 +182,12 @@ int cmat3_pow_c1(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti *a,
 int cmat3_pow_r1(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti *a, cmulti **B, int LDB1, int LDB2);
 // C=a.^B
 int rmat3_pow_c1(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti *a, rmulti **B, int LDB1, int LDB2);
-
+//追加
+// C=get_exp10(x,offset)
+int cmat3_get_exp10(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, double b);
+// C=get_exp2(x,offset)
+int cmat3_get_exp2(int m, int n, int l, cmulti **C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, double b);
+//ここまで
 /*
  * compare
  */

@@ -1,5 +1,5 @@
 /**
- * @breif y=get_exp(x)
+ * @brief y=get_exp(x)
  */
 void multi_get_exp(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

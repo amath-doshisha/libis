@@ -1,5 +1,5 @@
 /**
- * @breif y=rad(x)
+ * @brief y=rad(x)
  */
 void multi_rad(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

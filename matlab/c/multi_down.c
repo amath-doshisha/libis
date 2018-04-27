@@ -1,5 +1,5 @@
 /**
- * @breif y=down(x)
+ * @brief y=down(x)
  */
 void multi_down(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

@@ -18,7 +18,7 @@ SHARE_HDRS = mt19937ar.h GeneralHashFunctions.h \
 		is_icmulti.h is_icvec.h is_icmat.h is_icmat3.h is_iceig.h \
 		is_ivec.h is_dvec.h is_zvec.h is_rvec.h is_cvec.h \
 		is_imat.h is_dmat.h is_zmat.h is_rmat.h is_cmat.h is_rmat3.h is_cmat3.h \
-		is_dsolve.h is_zsolve.h is_rsolve.h is_csolve.h \
+		is_dsolve.h is_zsolve.h is_rsolve.h is_csolve.h is_irsolve.h is_icsolve.h \
 		is_rsolve_newton.h is_csolve_newton.h \
 		is_deig.h is_zeig.h is_reig.h is_ceig.h \
 		is_reig_hqr.h is_ceig_hqr.h is_reig_ii.h is_ceig_ii.h \
@@ -40,7 +40,7 @@ SHARE_SRCS = mt19937ar.c GeneralHashFunctions.c \
 		icmulti.c icvec.c icvec.c icmat3.c iceig.c \
 		ivec.c dvec.c zvec.c rvec.c cvec.c \
 		imat.c dmat.c zmat.c rmat.c cmat.c rmat3.c cmat3.c \
-		dsolve.c zsolve.c rsolve.c csolve.c \
+		dsolve.c zsolve.c rsolve.c csolve.c  irsolve.c icsolve.c\
 		rsolve_newton.c csolve_newton.c \
 		deig.c zeig.c reig.c ceig.c \
 		reig_hqr.c ceig_hqr.c reig_ii.c ceig_ii.c \
@@ -70,7 +70,7 @@ SHARE_OBJS = mt19937ar.o GeneralHashFunctions.o \
 		icmulti.o icvec.o icmat.o icmat3.o iceig.o \
 		ivec.o dvec.o zvec.o rvec.o cvec.o \
 		imat.o dmat.o zmat.o rmat.o cmat.o rmat3.o cmat3.o \
-		dsolve.o zsolve.o rsolve.o csolve.o \
+		dsolve.o zsolve.o rsolve.o csolve.o  irsolve.o icsolve.o\
 		rsolve_newton.o csolve_newton.o \
 		deig.o zeig.o reig.o ceig.o \
 		reig_hqr.o ceig_hqr.o reig_ii.o ceig_ii.o \

@@ -1,5 +1,5 @@
 /**
- * @breif A=matgen_dhToda(...)
+ * @brief A=matgen_dhToda(...)
 void riep_EXTdhToda_TN(int m, int N, int M, rmulti **A, int LDA, rmulti **Q, int LDQ, rmulti **E, int LDE, rmulti **lambda, rmulti **c, int debug)
  */
 void multi_matgen_dhToda(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])

@@ -1,5 +1,5 @@
 /**
- * @breif y=get_prec(x)
+ * @brief y=get_prec(x)
  */
 void multi_get_prec(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {

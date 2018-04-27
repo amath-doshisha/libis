@@ -1,5 +1,5 @@
 /**
- * @breif [V,D,EV,ED]=eig_verify(A,prec_verify)
+ * @brief [V,D,EV,ED]=eig_verify(A,prec_verify)
  * @detail 
  * D=eig_verify(A,prec_verify)
  * [V,D]=eig_verify(A,prec_verify)
