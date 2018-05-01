@@ -31,17 +31,16 @@ void ceig_residual(int n, cmulti **F, cmulti **A, int LDA, cmulti **x, cmulti *l
 /**
  @brief 固有値問題の全ての残差の最大値ノルム E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))).
  */
-int ceig_residual_norm_max(int n, rmulti **E, cmulti **A, int LDA, cmulti **X, int LDX, cmulti **lambda)
+void ceig_residual_norm_max(int n, rmulti **E, cmulti **A, int LDA, cmulti **X, int LDX, cmulti **lambda)
 {
-  int j,c=0;
+  int j;
   cmulti **F=NULL;
   F=cvec_allocate_prec(n,rvec_get_prec_max(n,E));
   for(j=0; j<n; j++){
     ceig_residual(n,F,A,LDA,&COL(X,j,LDX),lambda[j]);
-    c+=cvec_max_abs(E[j],n,F);
+    cvec_max_abs(E[j],n,F);
   }
   F=cvec_free(n,F); // free  
-  return c;
 }
 
 /**

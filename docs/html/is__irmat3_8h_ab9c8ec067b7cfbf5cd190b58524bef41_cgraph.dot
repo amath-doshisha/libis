@@ -1,0 +1,9 @@
+digraph "irmat3_set_dd"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node86 [label="irmat3_set_dd",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node86 -> Node87 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="irset_dd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$irmulti_8c.html#adaa17d6543dcc7524f7f50439ec14bcd",tooltip="倍精度実数の設定 [y0,y1]=[x0,x1]. "];
+}

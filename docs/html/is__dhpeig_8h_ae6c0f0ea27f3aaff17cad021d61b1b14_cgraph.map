@@ -1,0 +1,26 @@
+<map id="dhpeig_1pair" name="dhpeig_1pair">
+<area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="149,5,231,32"/>
+<area shape="rect" id="node3" href="$dmat_8c.html#af11c6f806b1ea2917fc36cc7a07a0f73" title="dmat_allocate" alt="" coords="148,56,232,83"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a951da4674ce9ea482d27c09bbf78642e" title="dvec_lintr_t" alt="" coords="153,107,227,133"/>
+<area shape="rect" id="node5" href="$dvec_8c.html#a21cb01284e34371b44d92288fab4758b" title="dvec_normalize_sgn" alt="" coords="133,157,247,184"/>
+<area shape="rect" id="node9" href="$dvec_8c.html#af1d8f637aee783904d16d556329fa681" title="dvec_dot" alt="" coords="159,208,221,235"/>
+<area shape="rect" id="node10" href="$deig_8c.html#ae2412c624859f686792f8f01ee41c33a" title="deig_residual" alt="" coords="149,259,231,285"/>
+<area shape="rect" id="node13" href="$dvec_8c.html#a633bbe3a36342399f79195e5f22695ab" title="dvec_norm_max" alt="" coords="142,309,238,336"/>
+<area shape="rect" id="node14" href="$dhpeig_8c.html#a2214589930521f6f011924c7168511b2" title="dhpeig_jacobi_mat" alt="" coords="137,360,243,387"/>
+<area shape="rect" id="node18" href="$dsolve_8c.html#a1769dc5fe448073a6f51ac6dd59b0c4c" title="dsolve" alt="" coords="165,411,215,437"/>
+<area shape="rect" id="node23" href="$dvec_8c.html#a68a2974b7057a31d4c45d29df4093fb6" title="dvec_sub" alt="" coords="157,461,223,488"/>
+<area shape="rect" id="node24" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="dvec_free" alt="" coords="157,512,223,539"/>
+<area shape="rect" id="node25" href="$dmat_8c.html#a119e62380bbfc4367662c0554e563a79" title="dmat_free" alt="" coords="157,563,223,589"/>
+<area shape="rect" id="node6" href="$dvec_8c.html#aec99ee7cec31789015e00b1db773876e" title="dvec_norm2" alt="" coords="317,81,395,108"/>
+<area shape="rect" id="node7" href="$dvec_8c.html#ae6372e696db9f1e93a531a6092d6772a" title="dvec_max_abs_index" alt="" coords="297,132,415,159"/>
+<area shape="rect" id="node8" href="$dvec_8c.html#a07940a0907492d6d6dc9aaa760a36d4d" title="dvec_scale" alt="" coords="320,183,392,209"/>
+<area shape="rect" id="node11" href="$dvec_8c.html#ac95eb2c331e9c8f9f4522a587664c6f3" title="dvec_copy" alt="" coords="321,233,391,260"/>
+<area shape="rect" id="node12" href="$dvec_8c.html#a93782d30ff6c211fa7eab97b9c010f34" title="dvec_add_lintr" alt="" coords="313,284,399,311"/>
+<area shape="rect" id="node15" href="$dmat_8c.html#a02335968e7ff6b7b81ba3efa432b38cd" title="dmat_copy" alt="" coords="321,335,391,361"/>
+<area shape="rect" id="node16" href="$dmat_8c.html#a801de72062cf33154b989ee3c37e2005" title="dmat_diag_sub_scalar" alt="" coords="295,385,417,412"/>
+<area shape="rect" id="node17" href="$dmat_8c.html#abae8d771f83db17b57e29f9add60c75b" title="dmat_rank1op" alt="" coords="313,436,399,463"/>
+<area shape="rect" id="node19" href="$dsolve_8c.html#ae75aba316755881b38afd123343ad1f4" title="dsolve_gauss_LU" alt="" coords="305,487,407,513"/>
+<area shape="rect" id="node20" href="$is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="475,436,555,463"/>
+<area shape="rect" id="node21" href="$dmat_8c.html#ad637b2a3ab4439602da8db44a2ee8eba" title="dmat_swap_rows" alt="" coords="465,487,565,513"/>
+<area shape="rect" id="node22" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="484,537,547,564"/>
+</map>

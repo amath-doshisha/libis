@@ -1,0 +1,30 @@
+<map id="icsqrt" name="icsqrt">
+<area shape="rect" id="node2" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="534,208,599,235"/>
+<area shape="rect" id="node4" href="$icmulti_8c.html#a445148c9f8b1906ede13bb16815da9b7" title="極形式の取得 [z0,z1]=[r0,r1]*exp(i*[theta0,theta1]) " alt="" coords="99,309,169,336"/>
+<area shape="rect" id="node23" href="$irmulti_8c.html#a0c9e43322ce19bb64013242d8d64a504" title="平方根 [y0,y1]=sqrt([x0,x1]) " alt="" coords="317,867,361,893"/>
+<area shape="rect" id="node25" href="$irmulti_8c.html#aa1d51d6d21b1f52aae5504bb606e43c1" title="掛け算 [z0,z1]=[x0,x1]*[y,y] " alt="" coords="423,157,477,184"/>
+<area shape="rect" id="node27" href="$icmulti_8c.html#a881fd25ce69be246dfac4af8f8d16a9b" title="極形式で値を定め得る [z0,z1]=[r0,r1]*exp(i*[theta0,theta1]) " alt="" coords="415,107,485,133"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="648,309,712,336"/>
+<area shape="rect" id="node5" href="$icmulti_8c.html#a781cf9db665c0c697804f15e00ad146e" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="217,715,263,741"/>
+<area shape="rect" id="node24" href="$irmulti_8c.html#a464e359ef0179eb40e533c628bb31858" title="逆三角関数 [z0,z1]=atan2([y0,y1]/[x0,x1]) " alt="" coords="541,309,593,336"/>
+<area shape="rect" id="node6" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="311,715,367,741"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="536,765,597,792"/>
+<area shape="rect" id="node9" href="$irmulti_8c.html#aff300b617848d643d2aa00a2e7040dbe" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="428,627,472,653"/>
+<area shape="rect" id="node17" href="$icmulti_8c.html#a93cfc12bd588f20b589fd9ba7d7c0043" title="絶対値の平方 [y0,y1]=abs([x0,x1])^2 " alt="" coords="313,411,364,437"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="539,715,594,741"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="649,157,711,184"/>
+<area shape="rect" id="node11" href="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="655,233,705,260"/>
+<area shape="rect" id="node12" href="$irmulti_8c.html#aab8b9f471b47e8054152264de875f9ae" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="545,563,589,589"/>
+<area shape="rect" id="node13" href="$is__rmulti_8h.html#a125c6b1140d9123b37acd8d72ea14aaa" title="2つのrmulti型の大きい方 上丸め z=max2(x,y) " alt="" coords="533,664,600,691"/>
+<area shape="rect" id="node14" href="$rmulti_8c.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="661,360,699,387"/>
+<area shape="rect" id="node15" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="760,132,832,159"/>
+<area shape="rect" id="node16" href="$rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="774,81,818,108"/>
+<area shape="rect" id="node18" href="$irmulti_8c.html#a9f9bc42cc6a70b365b032dc7bedd1abb" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="545,157,589,184"/>
+<area shape="rect" id="node21" href="$irmulti_8c.html#a55d04ab7f2884310fcff04b636911df1" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="417,411,483,437"/>
+<area shape="rect" id="node19" href="$is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="661,107,699,133"/>
+<area shape="rect" id="node20" href="$is__rmulti_8h.html#a7544c8c3220be262b43d9cdcacd5f8f2" title="rmulti型の値の比較 x&gt;=y " alt="" coords="661,56,699,83"/>
+<area shape="rect" id="node22" href="$irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="545,411,589,437"/>
+<area shape="rect" id="node26" href="$irmulti_8c.html#a2fdabfa10335af36c3951880616b5589" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="541,107,593,133"/>
+<area shape="rect" id="node28" href="$irmulti_8c.html#aa682fe67f370f1ce0a9453377a8bf51a" title="三角関数 [y0,y1]=cos([x0,x1]) " alt="" coords="545,56,588,83"/>
+<area shape="rect" id="node29" href="$irmulti_8c.html#aebe12836a7e10c10e39fdd44dfbdcb93" title="三角関数 [y0,y1]=sin([x0,x1]) " alt="" coords="547,5,587,32"/>
+</map>

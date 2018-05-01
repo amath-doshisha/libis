@@ -11,6 +11,7 @@ var is__strings_8h =
     [ "char_renew", "is__strings_8h.html#aa6791278c2e78ebebde37778dc579a8f", null ],
     [ "char_renew_sprintf", "is__strings_8h.html#a78b6aec8d1d6c0a503d73474b6e9bbf4", null ],
     [ "str_create_mask", "is__strings_8h.html#a3a43f9c2d94668712c216a80e7594759", null ],
+    [ "str_has_any_char", "is__strings_8h.html#adbda569c2b80abd23cbcde422239783a", null ],
     [ "str_match", "is__strings_8h.html#a44835de3435f02ee1884c917dbb94371", null ],
     [ "strings_at", "is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569", null ],
     [ "strings_cmp", "is__strings_8h.html#ac280a4e5410c1cd244fd0acb87608623", null ],
@@ -30,5 +31,6 @@ var is__strings_8h =
     [ "strings_size", "is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e", null ],
     [ "strings_split", "is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f", null ],
     [ "strings_split_mask", "is__strings_8h.html#a68d82805386047fbbcc917aa10a020d7", null ],
+    [ "strings_split_number", "is__strings_8h.html#a8c99bb44e384b646ed1eaf73599a44db", null ],
     [ "strings_split_path", "is__strings_8h.html#a3cc5fbbee65c1413e7adb1fec39adda0", null ]
 ];

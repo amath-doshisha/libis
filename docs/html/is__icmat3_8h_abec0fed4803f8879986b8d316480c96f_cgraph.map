@@ -1,0 +1,8 @@
+<map id="icmat3_sum" name="icmat3_sum">
+<area shape="rect" id="node2" href="$icmat_8c.html#a47ff755cc5e888ed9cc4da52aedae0f0" title="icmulti型の列ごとの和 B=sum(A) " alt="" coords="129,31,228,57"/>
+<area shape="rect" id="node3" href="$icvec_8c.html#aa7efedbed4a831f592a8897e1fec8fd9" title="icmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="276,31,345,57"/>
+<area shape="rect" id="node4" href="$icmulti_8c.html#a24aa9787077f5f87202ce0004086e3ab" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="393,5,447,32"/>
+<area shape="rect" id="node6" href="$icmulti_8c.html#aa3de8e3663f3a0fc5dcdd71a44ed9ffd" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="397,56,443,83"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#a51b1082698c541223be50375d5dd0961" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="495,5,547,32"/>
+<area shape="rect" id="node7" href="$irmulti_8c.html#a9b773529acf9de84bf3758c8a0026ebc" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="499,56,543,83"/>
+</map>

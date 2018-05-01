@@ -8,8 +8,6 @@ int main()
   b=bigint_allocate_str("50","-30");
   c=bigint_allocate();
 
-
-
   printf("a="); bigint_print(a); printf("\n");
   printf("b="); bigint_print(b); printf("\n");
   bigint_mul(c,a,b); printf("c=a*b="); bigint_print(c); printf("\n");

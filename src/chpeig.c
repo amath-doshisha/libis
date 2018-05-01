@@ -229,6 +229,13 @@ int chpeig(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **A, int LDA, int
   return ret;
 }
 
+int get_next_prec(int prec)
+{
+  if     (prec<=24){ return 53; }
+  else if(prec<=53){ return 128; }
+  else             { return prec*2; }
+}
+
 /**
  @brief 超平面制約法による固有値分解.
  @param[in] debug   デバグ用.
@@ -253,7 +260,7 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
   p0=cvec_get_prec_max(n,Lambda);
   p1=cmat_get_prec_max(n,n,X,LDX);
   (*prec)=MAX2(p0,p1);
-  (*kprec)=__get_next_prec(*prec);
+  (*kprec)=get_next_prec(*prec);
   // allocation
   LDQ=n; Q=cmat_allocate_prec(LDQ,n,(*prec));
   LDH=n; H=cmat_allocate_prec(LDH,n,(*prec));
@@ -310,8 +317,8 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
       }
       if(conv==CHPEIG_DIVERGENT){
 	// gain prec
-	(*prec)=__get_next_prec(*prec);
-	(*kprec)=__get_next_prec(*prec);
+	(*prec)=get_next_prec(*prec);
+	(*kprec)=get_next_prec(*prec);
 	cmat_round(n,LDX,X,LDX,(*prec));
 	cmat_round(n,LDXE,XE,LDXE,(*kprec));
 	cvec_round(n,Lambda,(*prec));
@@ -349,8 +356,8 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
 	conv=CHPEIG_RECOMPUTE; msg='x';
       }
       if(conv==CHPEIG_RECOMPUTE){
-	(*prec)=__get_next_prec(*prec);
-	(*kprec)=__get_next_prec(*prec);
+	(*prec)=get_next_prec(*prec);
+	(*kprec)=get_next_prec(*prec);
 	cmat_round(n,LDX,X,LDX,(*prec));
 	cmat_round(n,LDXE,XE,LDXE,(*kprec));
 	cvec_round(n,Lambda,(*prec));

@@ -9,6 +9,8 @@
 // info type
 enum { CHPEIG_NONE=0, CHPEIG_CONVERGENT, CHPEIG_DIVERGENT, CHPEIG_SINGULAR, CHPEIG_RECOMPUTE, CHPEIG_NUM };
 
+int get_next_prec(int prec);
+
 // hyperplane constrained method
 int chpeig(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **A, int LDA, int debug);
 int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **E_vec, int LDE, cmulti **E_val, cmulti **A, int LDA, int prec_verify, int *prec, int *kprec, int debug);

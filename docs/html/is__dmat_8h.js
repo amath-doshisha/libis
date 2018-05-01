@@ -6,7 +6,7 @@ var is__dmat_8h =
     [ "dmat_bin_load", "is__dmat_8h.html#a85bd2877d3d97c15d61406b9e8b0fa2c", null ],
     [ "dmat_bin_save", "is__dmat_8h.html#abc3ed24fe5fd99e7f01ecf2c65b2595e", null ],
     [ "dmat_copy", "is__dmat_8h.html#a02335968e7ff6b7b81ba3efa432b38cd", null ],
-    [ "dmat_copy_index", "is__dmat_8h.html#a9b1fcf0e1eca5ebaaaf6b4d5aac49262", null ],
+    [ "dmat_copy_col_index", "is__dmat_8h.html#a3fb07a399b0de81936f2864e293e046c", null ],
     [ "dmat_copy_t", "is__dmat_8h.html#af58093888c31c2181b1135515abc9d61", null ],
     [ "dmat_diag_add_scalar", "is__dmat_8h.html#aaa93200c5551bfe2d2ec8d9aef4ddad1", null ],
     [ "dmat_diag_set_scalar", "is__dmat_8h.html#a406b04575a7d0116114480de436cd133", null ],

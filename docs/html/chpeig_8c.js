@@ -22,6 +22,7 @@ var chpeig_8c =
     [ "chpeig_1pair", "chpeig_8c.html#a706b6973125ed0782639f4df01055b4a", null ],
     [ "chpeig_jacobi_mat", "chpeig_8c.html#ae014d8d38a0b08d9012e4ce7755b7701", null ],
     [ "chpeig_verify", "chpeig_8c.html#af270376a5e342e3e564eb9db70fa52e6", null ],
+    [ "get_next_prec", "chpeig_8c.html#acb0480f5af3c5f9c04c2232c078e4992", null ],
     [ "chpeig_status", "chpeig_8c.html#ae47e42bccbfe18903e1a4e62b32cb7f7", null ],
     [ "chpeig_str", "chpeig_8c.html#ab27977479550d24d0e980515a7d78096", null ]
 ];

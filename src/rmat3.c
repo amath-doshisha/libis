@@ -124,50 +124,47 @@ rmulti **rmat3_free(int LDA1, int LDA2, int l, rmulti **A)
 /**
  @brief 初期化済みのrmulti型の3次元配列の浮動小数点数の精度(ビット数)を変更し再初期化.
 */
-int rmat3_round(int m, int n, int l, rmulti **A, int LDA1, int LDA2, int prec)
+void rmat3_round(int m, int n, int l, rmulti **A, int LDA1, int LDA2, int prec)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rround(MAT3(A,i,j,k,LDA1,LDA2),prec);
+	rround(MAT3(A,i,j,k,LDA1,LDA2),prec);
       }
     }
   }
-  return e;
 }
 
 
 /**
  @brief rmulti型の3次元配列を複成 B=A.
 */
-int rmat3_clone(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+void rmat3_clone(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+	rclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列を添字を指定して複成 B=A(I,J,K).
 */
-int rmat3_clone_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+void rmat3_clone_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
+	rclone(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
       }
     }
   }
-  return e;
 }
 
 /**
@@ -303,17 +300,16 @@ void rmat3_print(int m, int n, int l, rmulti **A, int LDA1, int LDA2, const char
 /**
  @brief rmulti型の3次元配列の値を倍精度実数から設定 B=rmulti(A).
 */
-int rmat3_set_d(int m, int n, int l, rmulti **B, int LDB1, int LDB2, double *A, int LDA1, int LDA2)
+void rmat3_set_d(int m, int n, int l, rmulti **B, int LDB1, int LDB2, double *A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rset_d(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+	rset_d(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
-  return e;
 }
 
 /**
@@ -334,23 +330,22 @@ void rmat3_set_s(int m, int n, int l, rmulti **B, int LDB1, int LDB2, char **A, 
 /**
  @brief rmulti型の3次元配列の値を倍精度浮動小数点数から設定.
 */
-int rmat3_set_all_d(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double a)
+void rmat3_set_all_d(int m, int n, int l, rmulti **A, int LDA1, int LDA2, double a)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rset_d(MAT3(A,i,j,k,LDA1,LDA2),a);
+	rset_d(MAT3(A,i,j,k,LDA1,LDA2),a);
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列の値を零に設定.
 */
-int rmat3_set_zeros(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
+void rmat3_set_zeros(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
 {
   return rmat3_set_all_d(m,n,l,A,LDA1,LDA2,0);
 }
@@ -358,7 +353,7 @@ int rmat3_set_zeros(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
 /**
  @brief rmulti型の3次元配列の値を1に設定.
 */
-int rmat3_set_ones(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
+void rmat3_set_ones(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
 {
   return rmat3_set_all_d(m,n,l,A,LDA1,LDA2,1);
 }
@@ -366,9 +361,9 @@ int rmat3_set_ones(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
 /**
  @brief rmulti型の3次元配列の値をnanに設定.
 */
-int rmat3_set_nan(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
+void rmat3_set_nan(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
@@ -376,15 +371,14 @@ int rmat3_set_nan(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列の値をinfに設定.
 */
-int rmat3_set_inf(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
+void rmat3_set_inf(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
@@ -392,7 +386,6 @@ int rmat3_set_inf(int m, int n, int l, rmulti **A, int LDA1, int LDA2)
       }
     }
   }
-  return e;
 }
 
 /**
@@ -438,218 +431,6 @@ void rmat3_get_d(int m, int n, int l, double *B, int LDB1, int LDB2, rmulti **A,
   return;
 }
 
-
-
-/** @} */
-
-////////////////////////////////////////////////////////////////////////
-
-/** @name rmulti型の3次元配列の要素の配置に関する関数 */
-/** @{ */
-
-/** @} */
-
-////////////////////////////////////////////////////////////////////////
-
-/** @name rmulti型の3次元配列の自動精度調整モードが機能する関数 */
-/** @{ */
-
-/**
- @brief rmulti型の3次元配列の値のコピー B=A
-*/
-int rmat3_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rcopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列を添字を指定してコピー B=A(I,J,K).
-*/
-int rmat3_copy_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rcopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列を添字を指定してコピー B(I,J,K)=A.
-*/
-int rmat3_index_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rcopy(MAT3(B,I[i],J[j],K[k],LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列の符号反転 B=-A.
-*/
-int rmat3_neg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rneg(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列の足し算 C=A+B.
-*/
-int rmat3_add(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=radd(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列の足し算 C=A+b.
-*/
-int rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=radd(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列の引き算 C=A-B.
-*/
-int rmat3_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rsub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列の引き算 C=a-B.
-*/
-int rmat3_sub_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rsub(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列の引き算 C=A-b.
-*/
-int rmat3_sub_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rsub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
-      }
-    }
-  }
-  return e;
-}
-
-//追加
-
-/**
- @brief rmulti型の3次元配列の引き算 C=A-b.
-*/
-int rmat3_sub_d2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rsub_d2(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
-      }
-    }
-  }
-  return e;
-}
-
-//ここまで
-
-/**
- @brief rmulti型の3次元配列の掛け算 C=A.*B.
-*/
-int rmat3_mul(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rmul(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
-      }
-    }
-  }
-  return e;
-}
-
-/**
- @brief rmulti型の3次元配列の掛け算 C=A.*b.
-*/
-int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
-{
-  int i,j,k,e=0;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	e+=rmul(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
-      }
-    }
-  }
-  return e;
-}
-
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////
@@ -657,22 +438,206 @@ int rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /** @name rmulti型の3次元配列の数学関数に関する関数 */
 /** @{ */
 
+
+/**
+ @brief rmulti型の3次元配列の値のコピー B=A
+*/
+void rmat3_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rcopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列を添字を指定してコピー B=A(I,J,K).
+*/
+void rmat3_copy_index(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rcopy(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,I[i],J[j],K[k],LDA1,LDA2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列を添字を指定してコピー B(I,J,K)=A.
+*/
+void rmat3_index_copy(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2, int *I, int *J, int *K)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rcopy(MAT3(B,I[i],J[j],K[k],LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の符号反転 B=-A.
+*/
+void rmat3_neg(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rneg(MAT3(B,i,j,k,LDB1,LDB2),MAT3(A,i,j,k,LDA1,LDA2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の足し算 C=A+B.
+*/
+void rmat3_add(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	radd(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の足し算 C=A+b.
+*/
+void rmat3_add_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	radd(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=A-B.
+*/
+void rmat3_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rsub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=a-B.
+*/
+void rmat3_sub_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rsub(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=A-b.
+*/
+void rmat3_sub_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rsub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+}
+
 //追加
+
+/**
+ @brief rmulti型の3次元配列の引き算 C=A-b.
+*/
+void rmat3_sub_d2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rsub_d2(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+}
+
+//ここまで
+
+/**
+ @brief rmulti型の3次元配列の掛け算 C=A.*B.
+*/
+void rmat3_mul(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rmul(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+      }
+    }
+  }
+}
+
+/**
+ @brief rmulti型の3次元配列の掛け算 C=A.*b.
+*/
+void rmat3_mul_r(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
+{
+  int i,j,k;
+  for(k=0; k<l; k++){
+    for(j=0; j<n; j++){
+      for(i=0; i<m; i++){
+	rmul(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+      }
+    }
+  }
+}
+
+
 
 /**
  @brief rmulti型の3次元配列の整数への丸め C=floor(A).
 */
-int rmat3_floor(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+void rmat3_floor(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rfloor(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+	rfloor(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
-  return e;
 }
 
 //ここまで
@@ -680,17 +645,16 @@ int rmat3_floor(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
 /**
  @brief rmulti型の3次元配列の絶対値 C=abs(A).
 */
-int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+void rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rabs(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+	rabs(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
-  return e;
 }
 
 //編集済み
@@ -698,45 +662,42 @@ int rmat3_abs(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, i
 /**
  @brief rmulti型の3次元配列のlog10を取った値 C=log10(A).
 */
-int rmat3_log10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+void rmat3_log10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rlog10(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+	rlog10(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
-  return e;
 }
 
 /**
  @brief 3次元配列の平方根 C=sqrt(A).
 */
-int rmat3_sqrt(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
+void rmat3_sqrt(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rsqrt(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+	rsqrt(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列の和 B=sum(A).
 */
-int rmat3_sum(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+void rmat3_sum(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
 {
-  int k,e=0;
+  int k;
   for(k=0; k<l; k++){
-    e+=rvec_sum_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+    rvec_sum_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
   }
-  return e;
 }
 
 //ここまで
@@ -744,13 +705,12 @@ int rmat3_sum(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, i
 /**
  @brief rmulti型の3次元配列の最大値 B=max(A).
 */
-int rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+void rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
 {
-  int k,e=0;
+  int k;
   for(k=0; k<l; k++){
-    e+=rvec_max_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+    rvec_max_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
   }
-  return e;
 }
 
 //追加
@@ -758,132 +718,124 @@ int rmat3_max(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, i
 /**
  @brief rmulti型の3次元配列A,Bの最大要素 C=max(A,B).
 */
-int rmat3_max2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+void rmat3_max2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
 	if(rgt(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2))){
 	  //A>B
-	  e+=rcopy(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+	  rcopy(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
 	}else{
 	  //A<=B
-	  e+=rcopy(MAT3(C,i,j,k,LDC1,LDC2),MAT3(B,i,j,k,LDB1,LDB2));
+	  rcopy(MAT3(C,i,j,k,LDC1,LDC2),MAT3(B,i,j,k,LDB1,LDB2));
 	}
       }
     }
   }
-  return e;
 }
 //ここまで
 
 /**
  @brief rmulti型の3次元配列の最小値 B=min(A).
 */
-int rmat3_min(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
+void rmat3_min(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)
 {
-  int k,e=0;
+  int k;
   for(k=0; k<l; k++){
-    e+=rvec_min_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
+    rvec_min_rmat(m,n,&MAT3(B,0,0,k,LDB1,LDB2),&MAT3(A,0,0,k,LDA1,LDA2),LDA1);
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列の割り算 C=A./B.
 */
-int rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+void rmat3_div(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rdiv(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	rdiv(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列の割り算 C=a./B.
 */
-int rmat3_div_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
+void rmat3_div_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rdiv(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
+	rdiv(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列の割り算 C=A./b.
 */
-int rmat3_div_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
+void rmat3_div_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rdiv(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+	rdiv(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列のべき乗 C=A.^B.
 */
-int rmat3_pow(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
+void rmat3_pow(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti **B, int LDB1, int LDB2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rpow(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	rpow(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列のべき乗 C=a.^B.
 */
-int rmat3_pow_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
+void rmat3_pow_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rpow(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
+	rpow(MAT3(C,i,j,k,LDC1,LDC2),a,MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列のべき乗 C=A.^b.
 */
-int rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
+void rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rpow(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+	rpow(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
-  return e;
 }
 
 //追加
@@ -891,36 +843,33 @@ int rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A
 /**
  @brief rmulti型の3次元配列の指数部で評価 C=get_exp10(x,offset)
 */
-int rmat3_get_exp10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+void rmat3_get_exp10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rget_exp10(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+	rexp10_floor_log10_abs_sub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
-  return e;
 }
 
 /**
  @brief rmulti型の3次元配列の指数部で評価 C=get_exp2(x,offset)
 */
-int rmat3_get_exp2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+void rmat3_get_exp2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	e+=rget_exp2(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+	rexp2_floor_log2_abs_sub(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
-  return e;
 }
 
-//ここまで
 /** @} */
 
 

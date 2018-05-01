@@ -2,7 +2,63 @@
 
 int main(int argc, const char *argv[])
 {
+  int i,b;
+  rmulti *x=NULL;
   
+  for(i=1; i<argc; i++){
+    if(strcmp(argv[i],"--h")){ printf("Usage: test_rmulti\n"); exit(0); }
+  }
+  
+  set_default_prec(128);
+  x=rallocate();
+
+  // nan
+  rset_nan(x);
+  b=rget_length(x);
+  mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
+  rput(x);
+
+  // zero
+  rset_zero(x);
+  b=rget_length(x);
+  mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
+  rput(x);
+
+  // 1
+  rset_one(x);
+  b=rget_length(x);
+  mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
+  rput(x);
+
+  // -1
+  rset_one(x); rneg(x,x);
+  b=rget_length(x);
+  mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
+  rput(x);
+
+  // 1/2
+  rset_d(x,0.5);
+  b=rget_length(x);
+  mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
+  rput(x);
+ 
+  // loop
+  rset_d(x,2);
+  b=rget_length(x);
+  mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
+  rput(x);
+  for(i=0; i<get_default_prec(); i++){
+    rsub_d2(x,x,1); // x=x-1
+    rdiv_d2(x,x,2); // x=x/2
+    radd_d(x,x,1);  // x=x+1
+    b=rget_length(x);
+    mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
+    rput(x);
+  }
+
+  x=rfree(x);
+  
+  /*
   cmulti *x=NULL;
   set_default_prec(128);
   x=callocate();
@@ -14,6 +70,7 @@ int main(int argc, const char *argv[])
   }
   mpfr_printf("x=%.10Rg%+.10Rgi\n",C_R(x),C_I(x));
   x=cfree(x);
+  */
   
   /*
   rmulti *x=NULL;

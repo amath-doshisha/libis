@@ -1,0 +1,8 @@
+<map id="rvec_average" name="rvec_average">
+<area shape="rect" id="node2" href="$rvec_8c.html#a0a998cf4b6542e656b69376055323811" title="rmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="136,56,201,83"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a54b95f5eb1695065055d4fffa7197b2f" title="rmulti型の割り算 z=x/y " alt="" coords="253,107,309,133"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="249,5,313,32"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="366,56,409,83"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="361,5,413,32"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="461,56,559,83"/>
+</map>

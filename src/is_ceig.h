@@ -11,7 +11,7 @@
 // F=A*X-lambda*X
 void ceig_residual(int n, cmulti **F, cmulti **A, int LDA, cmulti **x, cmulti *lambda);
 // E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))), k=1,2,..,n
-int ceig_residual_norm_max(int n, rmulti **E, cmulti **A, int LDA, cmulti **X, int LDX, cmulti **lambda);
+void ceig_residual_norm_max(int n, rmulti **E, cmulti **A, int LDA, cmulti **X, int LDX, cmulti **lambda);
 // sort by eigenvalues
 void ceig_sort(int n, int k, cmulti **lambda, cmulti **X, int LDX);
 // sort by indecies

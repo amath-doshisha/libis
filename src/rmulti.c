@@ -12,7 +12,6 @@
  @details rmulti型のベクトルの関数に関する定義は@link rvec.c@endlinkを参照のこと.
           rmulti型の行列の関数に関する定義は@link rmat.c@endlinkを参照のこと.
 	  rmulti型の3次元配列の関数に関する定義は@link rmat3.c@endlinkを参照のこと.
-
  */
 
 ////////////////////////////////////////////////////////////
@@ -24,34 +23,11 @@
 #define RAp(X,Y) ((X)=rallocate_prec(rget_prec(Y)))
 #define RF(X) ((X)=rfree(X))
 
-// z=func(x,y)
-#define AUTO_PREC(func)\
-  int e=0;\
-  rmulti *u=NULL;							\
-  if(!get_auto_prec_mode()){ return abs(func(z,x,y,get_round_mode())); }\
-  u=rallocate_prec(rget_prec(z));\
-  e+=abs(func(u,x,y,get_round_mode()));\
-  while(e){\
-    e=0;\
-    e+=rround(u,__get_next_prec(rget_prec(u)));\
-    e+=abs(func(u,x,y,get_round_mode()));\
-  }\
-  e+=rclone(z,u);\
-  u=rfree(u);\
-  if(e){ ERROR_EXIT("Error, e=%d",e); } \
-  return e;
-
 ////////////////////////////////////////////////////////////
 
 /*
  大域変数
  */
-
-/**
- @brief rmulti型の自動精度調整モードの状態を表す変数(ユーザが直接アクセスしてはならない).
- */
-int __auto_prec_mode=0;
-
 
 /**
  @brief rmulti型の丸めモードの状態を表す変数(ユーザが直接アクセスしてはならない).
@@ -83,58 +59,41 @@ int get_default_prec()
   return mpfr_get_default_prec();
 }
 
+/** @} */
+
+/////////////////////////////////////////////////////
+
+/** @name rmulti型の丸めに関する関数 */
+/** @{ */
+
 /**
- @brief   rmulti型の自動精度調整モードの有効化.
- @details 詳細は関数@link set_auto_prec_mode@endlink を参照.
+ @brief     rmulti型の丸めモードの状態の設定.
+ @details   丸めモードの状態 mode を整数の定数で設定する.
+            近接値への丸めはMPFR_RNDN,
+            上への丸めはMPFR_RNDU,
+            下への丸めはMPFR_RNDD,
+            零への丸めはMPFR_RNDZを指定する.
+            これらの定数はMPFR(http://www.mpfr.org/)で定義されたマクロである.
+ @param[in] mode rmulti型の丸めモードの状態を指定する.
  */
-void set_auto_prec_enabled()
+void set_round_mode(mpfr_rnd_t mode)
 {
-  __auto_prec_mode=1;
+  __default_round_mode=mode;
 }
 
 /**
- @brief   rmulti型の自動精度調整モードの無効化.
- @details 詳細は関数@link set_auto_prec_mode@endlink を参照.
+ @brief   rmulti型の丸めモードの状態の取得.
+ @details 丸めモードの状態を表す整数の定数が返される.
+          近接値への丸めはMPFR_RNDN,
+          上への丸めはMPFR_RNDU,
+          下への丸めはMPFR_RNDD,
+          零への丸めはMPFR_RNDZが返される.
+          これらの定数はMPFR(http://www.mpfr.org/)で定義されたマクロである.
+ @return  rmulti型の丸めモードの状態を返す.
  */
-void set_auto_prec_disabled()
+mpfr_rnd_t get_round_mode()
 {
-  __auto_prec_mode=0;
-}
-
-/**
- @brief     rmulti型の自動精度調整モードの状態を設定.
- @details   自動精度調整モードの状態 mode は有効化ならば真の値,無効化なら偽の値を指定する.
-            デフォルトは無効化状態である.
-            有効化状態であれば，
-            関数 @link rcopy@endlink, @link radd@endlink, @link rsub@endlink, @link rmul@endlink において，
-            計算結果の書き込み先の変数の精度(ビット数)が自動的に調整され丸めは発生せず,理論的に完全に真値が計算される.
- @param[in] mode 有効化ならば真の値,無効化なら偽の値を指定する.
- */
-void set_auto_prec_mode(int mode)
-{
-  __auto_prec_mode=mode;
-}
-
-/**
- @brief   rmulti型の自動精度調整モードの状態を取得.
- @details 詳細は関数@link set_auto_prec_mode@endlink を参照.
- @return  有効化ならば真の値,無効化なら偽の値が返される.
- */
-int get_auto_prec_mode(void)
-{
-  return __auto_prec_mode;
-}
-
-/**
- @brief          rmulti型の自動精度調整モードにおける次の浮動小数点数の仮数の桁数の取得(ユーザが直接使用してはならない).
- @param[in] prec 現在使用されている浮動小数点数の仮数の桁数(ビット数)を指定.
- @return         次に使用される浮動小数点数の仮数の桁数(ビット数)が返される.
- */
-int __get_next_prec(int prec)
-{
-  if     (prec<=24){ return 53; }
-  else if(prec<=53){ return 128; }
-  else             { return prec*2; }
+  return __default_round_mode;
 }
 
 /** @} */
@@ -196,11 +155,9 @@ rmulti *rallocate_prec(int prec)
  */
 rmulti *rallocate_clone(rmulti *y)
 {
-  int e=0;
   rmulti *x=NULL;
-  x=rallocate_prec(rget_prec(y));
-  e=mpfr_set(x,y,get_round_mode());
-  if(e){ ERROR_EXIT("Error in rmulti *rallocate_clone(rmulti *y), e=%d",e); }
+  RAp(x,y);
+  mpfr_set(x,y,get_round_mode());
   return x;
 }
 
@@ -214,7 +171,7 @@ rmulti *rallocate_clone(rmulti *y)
  */
 rmulti *rfree(rmulti *x)
 {
-  if(x==NULL) return NULL;
+  if(x==NULL){ return NULL; }
   mpfr_clear(x);
   free(x);
   x=NULL;
@@ -232,11 +189,11 @@ rmulti *rfree(rmulti *x)
  @param[in]  x    初期化済みのrmulti型.
  @param[in]  prec 望みの浮動小数点数の精度(ビット数).
  @param[out] x    浮動小数点数の精度(ビット数)が変更され再初期化されたrmulti型.
- @return          丸めが発生した場合は真,発生しなければ偽の値が返される.
+ @return          なし．
  */
-int rround(rmulti *x, int prec)
+void rround(rmulti *x, int prec)
 {
-  return abs(mpfr_prec_round(x,prec,get_round_mode()));
+  mpfr_prec_round(x,prec,get_round_mode());
 }
 
 /**
@@ -248,17 +205,31 @@ int rround(rmulti *x, int prec)
  @param[in]  x 初期化済みのrmulti型.
  @param[in]  y 初期化済みのrmulti型.
  @param[out] y 変数 x と同じ精度(ビット数)が変更され，x と同じ値が上書きされる.
- @return       常に偽値を返す.
+ @return       なし．
  */
-int rclone(rmulti *y, rmulti *x)
+void rclone(rmulti *y, rmulti *x)
 {
-  int e=0;
   NULL_EXC2(x,y);
-  if(y==x){ return 0; }
+  if(y==x){ return; }
   rround(y,rget_prec(x));
-  e+=abs(mpfr_set(y,x,get_round_mode()));
-  if(e){ ERROR_EXIT("Error in in rclone(rmulti *y, rmulti *x), e=%d",e); }
-  return e;
+  mpfr_set(y,x,get_round_mode());
+}
+
+/**
+ @brief   rmulti型の値のコピー y=x.
+ @details rmulti型の変数 x の値をrmulti型の変数 y に上書きする.
+          ただし，y の浮動小数点数の精度(ビット数)が x の精度(ビット数)より小さい場合は関数@link set_round_mode@endlink で指定された丸めモードで丸めが行われる.
+          y の精度(ビット数)の方が大きい場合は不足する仮数の桁には零が埋められる.
+ @param[in]  x 初期化済みのrmulti型.
+ @param[in]  y 初期化済みのrmulti型.
+ @param[out] y 値が上書きされたrmulti型.場合によっては精度(ビット数)が変更される.
+ @return       丸めが発生した場合は真,発生しなければ偽の値が返される.
+ */
+void rcopy(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(x,y);
+  if(y==x){ return; }
+  mpfr_set(y,x,get_round_mode());
 }
 
 /**
@@ -286,42 +257,6 @@ rmulti *rmepsilon(int prec)
   rset_one(eps);             // eps=1
   rdiv_2exp(eps,eps,prec);   // eps=1/2^n
   return eps;
-}
-
-/** @} */
-/////////////////////////////////////////////////////
-
-/** @name rmulti型の丸めに関する関数 */
-/** @{ */
-
-/**
- @brief     rmulti型の丸めモードの状態の設定.
- @details   丸めモードの状態 mode を整数の定数で設定する.
-            近接値への丸めはMPFR_RNDN,
-            上への丸めはMPFR_RNDU,
-            下への丸めはMPFR_RNDD,
-            零への丸めはMPFR_RNDZを指定する.
-            これらの定数はMPFR(http://www.mpfr.org/)で定義されたマクロである.
- @param[in] mode rmulti型の丸めモードの状態を指定する.
- */
-void set_round_mode(mpfr_rnd_t mode)
-{
-  __default_round_mode=mode;
-}
-
-/**
- @brief   rmulti型の丸めモードの状態の取得.
- @details 丸めモードの状態を表す整数の定数が返される.
-          近接値への丸めはMPFR_RNDN,
-          上への丸めはMPFR_RNDU,
-          下への丸めはMPFR_RNDD,
-          零への丸めはMPFR_RNDZが返される.
-          これらの定数はMPFR(http://www.mpfr.org/)で定義されたマクロである.
- @return  rmulti型の丸めモードの状態を返す.
- */
-mpfr_rnd_t get_round_mode()
-{
-  return __default_round_mode;
 }
 
 /** @} */
@@ -387,6 +322,39 @@ int rget_size(rmulti *x)
   if(x->_mpfr_prec % GMP_NUMB_BITS){ k++; }
   return k;
 }
+
+/**
+ @brief       rmulti型の浮動小数点数の仮数部の0でない桁数の長さ[bits]の取得
+ @param[in] x 初期化済みのrmulti型.
+ @return      桁数の長さ[bits]
+ */
+int rget_length(rmulti *x)
+{
+  mp_limb_t mask;
+  int i,j,n,done,bits;
+  if(!ris_number(x) || ris_zero(x)){ return 0; }
+  n=rget_size(x);
+  bits=n*GMP_NUMB_BITS;
+  done=0;
+  for(i=0; done==0 && i<n; i++){
+    mask=1;
+    for(j=0; done==0 && j<GMP_NUMB_BITS; j++){
+      if((x->_mpfr_d[i]) & mask){ done=1; }
+      else                      { bits--; }
+      mask=mask<<1;
+    }
+  }
+  return bits;
+}
+
+/** @} */
+
+
+
+/////////////////////////////////////////////////////
+
+/** @name rmulti型の数種の判定に関する関数 */
+/** @{ */
 
 /**
  @brief       rmulti型がNaNであるかの判定.
@@ -503,7 +471,7 @@ void rput(rmulti *x)
   NULL_EXC1(x);
   k=mpfr_custom_get_size(rget_prec(x))*8/mp_bits_per_limb;
   printf("prec=%4d, sgn=%+d, exp=%4d, digits=",rget_prec(x),rget_sgn(x),rget_exp(x));
-  for(i=k-1; i>=0; i--){ printf("%lx ",x->_mpfr_d[i]); }
+  for(i=k-1; i>=0; i--){ printf("%016lx ",x->_mpfr_d[i]); }
   printf("\n");
 }
 
@@ -604,10 +572,10 @@ void rset_s(rmulti *x, const char *value)
  @param[out] x     値が設定されたrmulti型.
  @return           丸めが発生した場合は真の値,発生しなければ偽の値が返される.
  */
-int rset_d(rmulti *x, double value)
+void rset_d(rmulti *x, double value)
 {
   NULL_EXC1(x);
-  return abs(mpfr_set_d(x,value,get_round_mode()));
+  mpfr_set_d(x,value,get_round_mode());
 }
 
 /**
@@ -617,10 +585,10 @@ int rset_d(rmulti *x, double value)
  @param[out] x     値が設定されたrmulti型.
  @return           丸めが発生した場合は真の値,発生しなければ偽の値が返される.
  */
-int rset_ui(rmulti *x, ulong value)
+void rset_ui(rmulti *x, ulong value)
 {
   NULL_EXC1(x);
-  return abs(mpfr_set_ui(x,value,get_round_mode()));
+  mpfr_set_ui(x,value,get_round_mode());
 }
 
 /**
@@ -630,10 +598,10 @@ int rset_ui(rmulti *x, ulong value)
  @param[out] x     値が設定されたrmulti型.
  @return           丸めが発生した場合は真の値,発生しなければ偽の値が返される.
  */
-int rset_si(rmulti *x, long value)
+void rset_si(rmulti *x, long value)
 {
   NULL_EXC1(x);
-  return abs(mpfr_set_si(x,value,get_round_mode()));
+  mpfr_set_si(x,value,get_round_mode());
 }
 
 /**
@@ -645,7 +613,7 @@ int rset_si(rmulti *x, long value)
 void rset_inf(rmulti *x, int sgn)
 {
   NULL_EXC1(x);
-  return mpfr_set_inf(x,sgn);
+  mpfr_set_inf(x,sgn);
 }
 
 /**
@@ -656,7 +624,7 @@ void rset_inf(rmulti *x, int sgn)
 void rset_nan(rmulti *x)
 {
   NULL_EXC1(x);
-  return mpfr_set_nan(x);
+  mpfr_set_nan(x);
 }
 
 /**
@@ -665,10 +633,10 @@ void rset_nan(rmulti *x)
  @param[out] x 値が設定されたrmulti型.
  @return       丸めが発生した場合は真の値,発生しなければ偽の値が返される.
  */
-int rset_zero(rmulti *x)
+void rset_zero(rmulti *x)
 {
   NULL_EXC1(x);
-  return rset_si(x,0);
+  rset_si(x,0);
 }
 
 /**
@@ -677,10 +645,10 @@ int rset_zero(rmulti *x)
  @param[out] x 値が設定されたrmulti型.
  @return       丸めが発生した場合は真の値,発生しなければ偽の値が返される.
  */
-int rset_one(rmulti *x)
+void rset_one(rmulti *x)
 {
   NULL_EXC1(x);
-  return rset_si(x,1);
+  rset_si(x,1);
 }
 
 /**
@@ -689,10 +657,10 @@ int rset_one(rmulti *x)
  @param[out] x 値が設定されたrmulti型.
  @return       丸めが発生した場合は真の値,発生しなければ偽の値が返される.
  */
-int rset_one_neg(rmulti *x)
+void rset_one_neg(rmulti *x)
 {
   NULL_EXC1(x);
-  return rset_si(x,-1);
+  rset_si(x,-1);
 }
 
 /**
@@ -727,19 +695,19 @@ double rget_d(rmulti *x)
 /**
  @brief rmulti型を符号なし整数型に変換.
  */
-ulong rget_ui(rmulti *value)
+ulong rget_ui(rmulti *x)
 {
-  NULL_EXC1(value);
-  return mpfr_get_ui(value,get_round_mode());
+  NULL_EXC1(x);
+  return mpfr_get_ui(x,get_round_mode());
 }
 
 /**
  @brief rmulti型を符号あり整数型に変換.
  */
-long rget_si(rmulti *value)
+long rget_si(rmulti *x)
 {
-  NULL_EXC1(value);
-  return mpfr_get_si(value,get_round_mode());
+  NULL_EXC1(x);
+  return mpfr_get_si(x,get_round_mode());
 }
 
 
@@ -747,570 +715,678 @@ long rget_si(rmulti *value)
 
 /////////////////////////////////////////////////////////////////
 
-/** @name rmulti型の自動精度調整モードが機能する関数 */
+/** @name rmulti型の１入力の数学演算子 */
 /** @{ */
-
-
-/**
- @brief   rmulti型の値のコピー y=x.
- @details rmulti型の変数 x の値をrmulti型の変数 y に上書きする.
-          ただし，y の浮動小数点数の精度(ビット数)が x の精度(ビット数)より小さい場合は関数@link set_round_mode@endlink で指定された丸めモードで丸めが行われる.
-          y の精度(ビット数)の方が大きい場合は不足する仮数の桁には零が埋められる.
-          関数 @link set_auto_prec_enabled@endlink, @link set_auto_prec_mode@endlink により
-          自動精度調整モードが有効化状態であれば，
-          書き込み先の変数 y の精度(ビット数)が自動的に調整され丸めは発生せず,完全に同じ値がコピーされる.
-          返値として丸めが発生したどうかの真偽値を返す.
- @param[in]  x 初期化済みのrmulti型.
- @param[in]  y 初期化済みのrmulti型.
- @param[out] y 値が上書きされたrmulti型.場合によっては精度(ビット数)が変更される.
- @return       丸めが発生した場合は真,発生しなければ偽の値が返される.
- */
-int rcopy(rmulti *y, rmulti *x)
-{
-  NULL_EXC2(x,y);
-  if(y==x){ return 0; }
-  if(get_auto_prec_mode()){ return rclone(y,x); }
-  return abs(mpfr_set(y,x,get_round_mode()));
-}
-
-
-/**
- @brief rmulti型の指数部の足し算 y=x*2^n
-*/
-int rmul_2exp(rmulti *y, rmulti *x, int n)
-{
-  int e=0;
-  NULL_EXC2(x,y);
-  if(get_auto_prec_mode()){ rround(y,rget_prec(x)); }
-  if(n>=0){ e=abs(mpfr_mul_2exp(y,x,n,get_round_mode())); }
-  else    { e=abs(mpfr_div_2exp(y,x,-n,get_round_mode())); }
-  if(e && get_auto_prec_mode()){ ERROR_EXIT("Error in in rmul_2exp(rmulti *y, rmulti *x, int n), e=%d",e); }
-  return e;
-}
-
-/**
- @brief rmulti型の指数部の引き算 y=x/2^n
-*/
-int rdiv_2exp(rmulti *y, rmulti *x, int n)
-{
-  int e=0;
-  NULL_EXC2(x,y);
-  if(get_auto_prec_mode()){ rround(y,rget_prec(x)); }
-  if(n>=0){ e=abs(mpfr_div_2exp(y,x,n,get_round_mode())); }
-  else    { e=abs(mpfr_mul_2exp(y,x,-n,get_round_mode())); }
-  if(e && get_auto_prec_mode()){ ERROR_EXIT("Error in in rdiv_2exp(rmulti *y, rmulti *x, int n), e=%d",e); }
-  return e;
-}
 
 /**
  @brief rmulti型の符号反転 y=-x
 */
-int rneg(rmulti *y, rmulti *x)
+void rneg(rmulti *y, rmulti *x)
 {
-  int e=0;
   NULL_EXC2(x,y);
-  if(get_auto_prec_mode()){ rround(y,rget_prec(x)); }
-  e=abs(mpfr_neg(y,x,get_round_mode()));
-  if(e && get_auto_prec_mode()){ ERROR_EXIT("Error in in rneg(rmulti *y, rmulti *x), e=%d",e); }
-  return e;
+  mpfr_neg(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の逆数 y=1/x */
+void rinv(rmulti *y, rmulti *x){
+  NULL_EXC2(y,x);
+  rdiv_d1(y,1,x);
+}
+
+/** @brief rmulti型の逆数 y=1/x */
+void rinv_d(rmulti *y, double x)
+{
+  NULL_EXC1(y);
+  rset_one(y);
+  rdiv_d2(y,y,x);
+}
+
+/** @brief rmulti型の整数への丸め y=floor(x) */
+void rfloor(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_floor(y,x);
+}
+
+/** @brief rmulti型の整数への丸め y=ceil(x) */
+void rceil(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_ceil(y,x);
+}
+
+/** @brief rmulti型の整数への丸め y=trunc(x) */
+void rtrunc(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_trunc(y,x);
 }
 
 /**
  @brief rmulti型の絶対値 y=abs(x)
 */
-int rabs(rmulti *y, rmulti *x)
+void rabs(rmulti *y, rmulti *x)
 {
-  int e=0;
   NULL_EXC2(x,y);
-  if(get_auto_prec_mode()){ rround(y,rget_prec(x)); }
-  e=abs(mpfr_abs(y,x,get_round_mode()));
-  if(e && get_auto_prec_mode()){ ERROR_EXIT("Error in in rabs(rmulti *y, rmulti *x), e=%d",e); }
-  return e;
-}
-
-/**
- @brief rmulti型の足し算 z=x+y
-*/
-int radd(rmulti *z, rmulti *x, rmulti *y)
-{
-  NULL_EXC3(z,x,y);
-  AUTO_PREC(mpfr_add);
-}
-
-/**
- @brief rmulti型の足し算 z=x+y
-*/
-// z=x+y
-int radd_d(rmulti *z, rmulti *x, double y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_add_d);
-}
-
-/**
- @brief rmulti型の足し算 z=x+y
-*/
-int radd_ui(rmulti *z, rmulti *x, ulong y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_add_ui);
-}
-
-/**
- @brief rmulti型の足し算 z=x+y
-*/
-int radd_si(rmulti *z, rmulti *x, long y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_add_si);
-}
-
-/**
- @brief rmulti型の引き算 z=x-y
-*/
-int rsub(rmulti *z, rmulti *x, rmulti *y)
-{
-  NULL_EXC3(z,x,y);
-  AUTO_PREC(mpfr_sub);
-}
-
-/**
- @brief rmulti型の引き算 z=x-y
-*/
-int rsub_d1(rmulti *z, double x, rmulti *y)
-{
-  NULL_EXC2(z,y);
-  AUTO_PREC(mpfr_d_sub);
-}
-
-/**
- @brief rmulti型の引き算 z=x-y
-*/
-int rsub_d2(rmulti *z, rmulti *x, double y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_sub_d);
-}
-
-/**
- @brief rmulti型の引き算 z=x-y
-*/
-int rsub_ui1(rmulti *z, ulong x, rmulti *y)
-{
-  NULL_EXC2(z,y);
-  AUTO_PREC(mpfr_ui_sub);
-}
-
-/**
- @brief rmulti型の引き算 z=x-y
-*/
-int rsub_ui2(rmulti *z, rmulti *x, ulong y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_sub_ui);
-}
-
-/**
- @brief rmulti型の引き算 z=x-y
-*/
-int rsub_si1(rmulti *z, long x, rmulti *y)
-{
-  NULL_EXC2(z,y);
-  AUTO_PREC(mpfr_si_sub);
-}
-
-/**
- @brief rmulti型の引き算 z=x-y
-*/
-int rsub_si2(rmulti *z, rmulti *x, long y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_sub_si);
-}
-
-/**
- @brief rmulti型の掛け算 z=x*y
-*/
-int rmul(rmulti *z, rmulti *x, rmulti *y)
-{
-  NULL_EXC3(z,x,y);
-  AUTO_PREC(mpfr_mul);
-}
-
-/**
- @brief rmulti型の掛け算 z=x*y
-*/
-int rmul_d(rmulti *z, rmulti *x, double y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_mul_d);
-}
-
-/**
- @brief rmulti型の掛け算 z=x*y
-*/
-int rmul_ui(rmulti *z, rmulti *x, ulong y)
-{
-  AUTO_PREC(mpfr_mul_ui);
-}
-
-/**
- @brief rmulti型の掛け算 z=x*y
-*/
-int rmul_si(rmulti *z, rmulti *x, long y)
-{
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_mul_si);
-}
-
-/**
- @brief rmulti型の掛け算の加算 z+=x*y
-*/
-int radd_mul(rmulti *z, rmulti *x, rmulti *y)
-{
-  int e=0;
-  rmulti *a=NULL;
-  NULL_EXC3(z,x,y);
-  RAp(a,z);
-  e+=rmul(a,x,y); // a=x*y
-  e+=radd(z,z,a); // z=z+x*y
-  RF(a);
-  return e;
-}
-
-//追加
-
-/**
- @brief rmulti型の掛け算の加算 z+=x*y
-*/
-int radd_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws)
-{
-  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in radd_mul_ws().\n",*rwss); }
-  int e=0;
-  e+=rmul(rws[0],x,y); // rws[0]=x*y
-  e+=radd(z,z,rws[0]); // z=z+x*y
-  return e;
-}
-//ここまで
-
-/**
- @brief rmulti型の掛け算の加算 z+=x*y
-*/
-int radd_mul_d(rmulti *z, rmulti *x, double y)
-{
-  int e=0;
-  rmulti *a=NULL;
-  NULL_EXC2(z,x);
-  RAp(a,z);
-  e+=rmul_d(a,x,y); // a=x*y
-  e+=radd(z,z,a);   // z=z+x*y
-  RF(a);
-  return e;
-}
-
-/**
- @brief rmulti型の掛け算の減算 z-=x*y
-*/
-int rsub_mul(rmulti *z, rmulti *x, rmulti *y)
-{
-  int e=0;
-  rmulti *a=NULL;
-  NULL_EXC3(z,x,y);
-  RAp(a,z);
-  e+=rmul(a,x,y); // a=x*y
-  e+=rsub(z,z,a); // z=z-x*y
-  RF(a);
-  return e;
-}
-
-//追加
-
-/**
- @brief rmulti型の掛け算の減算 z-=x*y
-*/
-int rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int *rwss, rmulti **rws)
-{
-  int e=0;
-  if(*rwss<1){ ERROR_EXIT("Error `rwss=%d<1' in rsub_mul_ws().\n",*rwss); }
-  *rwss=*rwss-1;
-  e+=rmul(rws[0],x,y); // a=x*y
-  e+=rsub(z,z,rws[0]); // z=z-x*y
-  *rwss=*rwss+1;
-  return e;
-}
-
-//ここまで
-
-/**
- @brief rmulti型の掛け算の減算 z-=x*y
-*/
-int rsub_mul_d(rmulti *z, rmulti *x, double y)
-{
-  int e=0;
-  rmulti *a=NULL;
-  NULL_EXC2(z,x);
-  RAp(a,z);
-  e+=rmul_d(a,x,y); // a=x*y
-  e+=rsub(z,z,a);   // z=z-x*y
-  RF(a);
-  return e;
+  mpfr_abs(y,x,get_round_mode());
 }
 
 /**
  @brief rmulti型の絶対値の加算 y+=abs(x)
 */
-int radd_abs(rmulti *y, rmulti *x)
+void radd_abs(rmulti *y, rmulti *x)
 {
-  int e=0;
   rmulti *a=NULL;
   NULL_EXC2(y,x);
   RAp(a,y);
-  e+=rabs(a,x);   // a=abs(x)
-  e+=radd(y,y,a); // y=y+a
+  rabs(a,x);   // a=abs(x)
+  radd(y,y,a); // y=y+a
   RF(a);
-  return e;
 }
 
-/**
- @brief rmulti型の差の絶対値 z=abs(x-y)
-*/
-int rabs_sub(rmulti *z, rmulti *x, rmulti *y)
+/** @brief rmulti型の計算 y=sqrt(x) */
+void rsqrt(rmulti *y, rmulti *x)
 {
-  int e=0;
-  e+=rsub(z,x,y);
-  e+=rabs(z,z);
-  return e;
+  NULL_EXC2(y,x);
+  mpfr_sqrt(y,x,get_round_mode());
 }
 
-/**
- @brief rmulti型の差の絶対値 z=abs(x-y)
-*/
-int rabs_sub_d(rmulti *z, rmulti *x, double y)
+/** @brief rmulti型の計算 y=exp(x) */
+void rexp(rmulti *y, rmulti *x)
 {
-  int e=0;
-  NULL_EXC2(z,x);
-  e+=rsub_d2(z,x,y);
-  e+=rabs(z,z);
-  return e;
+  NULL_EXC2(y,x);
+  mpfr_exp(y,x,get_round_mode());
 }
 
-/**
- @brief rmulti型の商の分母が絶対値 z=x/abs(y)
-*/
-int rdiv_abs(rmulti *z, rmulti *x, rmulti *y)
+/** @brief rmulti型の計算 y=2^x */
+void rexp2(rmulti *y, rmulti *x)
 {
-  int e=0;
-  e+=rabs(z,y);   // z=abs(y)
-  e+=rdiv(z,x,z); // z=x/abs(y)
-  return e;
+  NULL_EXC2(y,x);
+  mpfr_exp2(y,x,get_round_mode());
 }
 
-/**
- @brief rmulti型のべき乗 z=x^y
-*/
-int rpow_ui(rmulti *z, rmulti *x, ulong y)
+/** @brief rmulti型の計算 y=10^x */
+void rexp10(rmulti *y, rmulti *x)
 {
-  NULL_EXC2(z,x);
-  AUTO_PREC(mpfr_pow_ui);
+  NULL_EXC2(y,x);
+  mpfr_exp10(y,x,get_round_mode());
 }
 
-/**
- @brief rmulti型の2値の絶対値の和 z=abs(x)+abs(y)
-*/
-int rsum_abs_r2(rmulti *z, rmulti *x, rmulti *y)
+/** @brief rmulti型の計算 y=log(x) */
+void rlog(rmulti *y, rmulti *x)
 {
-  int e=0;
-  NULL_EXC3(z,x,y);
-  e+=rset_zero(z);
-  e+=radd_abs(z,x);
-  e+=radd_abs(z,y);
-  return e;
+  NULL_EXC2(y,x);
+  mpfr_log(y,x,get_round_mode());
 }
 
-/**
- @brief rmulti型の3値の絶対値の和 z=abs(x0)+abs(x1)+abs(x2)
-*/
-int rsum_abs_r3(rmulti *z, rmulti *x0, rmulti *x1, rmulti *x2)
+/** @brief rmulti型の計算 y=log_2(x) */
+void rlog2(rmulti *y, rmulti *x)
 {
-  int e=0;
-  NULL_EXC4(z,x0,x1,x2);
-  e+=rset_zero(z);
-  e+=radd_abs(z,x0);
-  e+=radd_abs(z,x1);
-  e+=radd_abs(z,x2);
-  return e;
+  NULL_EXC2(y,x);
+  mpfr_log2(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=log_10(x) */
+void rlog10(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_log10(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=sin(x) */
+void rsin(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_sin(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=cos(x) */
+void rcos(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_cos(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=tan(x) */
+void rtan(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_tan(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=sec(x) */
+void rsec(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_sec(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=cosec(x) */
+void rcsc(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_csc(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=cot(x) */
+void rcot(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_cot(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=arcsin(x) */
+void rasin(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_asin(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=arccos(x) */
+void racos(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_acos(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=arctan(x) */
+void ratan(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_atan(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=sinh(x) */
+void rsinh(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_sinh(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=cosh(x) */
+void rcosh(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_cosh(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=tanh(x) */
+void rtanh(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_tanh(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=arcsinh(x) */
+void rasinh(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_asinh(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=arccosh(x) */
+void racosh(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_acosh(y,x,get_round_mode());
+}
+
+/** @brief rmulti型の計算 y=arctanh(x) */
+void ratanh(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(y,x);
+  mpfr_atanh(y,x,get_round_mode());
 }
 
 /** @} */
 
 /////////////////////////////////////////////////////////////////
 
-/** @name rmulti型の数学関数に関する関数 */
+/** @name rmulti型の２入力の数学演算子 */
 /** @{ */
 
-/** @brief rmulti型の整数への丸め y=floor(x) */
-int rfloor(rmulti *y, rmulti *x){ NULL_EXC2(y,x); return abs(mpfr_floor(y,x)); }
-/** @brief rmulti型の整数への丸め y=ceil(x) */
-int rceil(rmulti *y, rmulti *x){ NULL_EXC2(y,x); return abs(mpfr_ceil(y,x)); }
-/** @brief rmulti型の整数への丸め y=trunc(x) */
-int rtrunc(rmulti *y, rmulti *x){ NULL_EXC2(y,x); return abs(mpfr_trunc(y,x)); }
-/** @brief rmulti型の逆数 z=1/x */
-int rinv(rmulti *z, rmulti *x){ NULL_EXC2(z,x); return rdiv_d1(z,1,x); }
-/** @brief rmulti型の逆数 z=1/x */
-int rinv_d(rmulti *z, double x)
+/**
+ @brief rmulti型の足し算 z=x+y
+*/
+void radd(rmulti *z, rmulti *x, rmulti *y)
 {
-  int e=0;
-  NULL_EXC1(z);
-  e+=rset_one(z);
-  e+=rdiv_d2(z,z,x);
-  return e;
+  NULL_EXC3(z,x,y);
+  mpfr_add(z,x,y,get_round_mode());
 }
+
+/**
+ @brief rmulti型の足し算 z=x+y
+*/
+void radd_d(rmulti *z, rmulti *x, double y)
+{
+  NULL_EXC2(z,x);
+  mpfr_add_d(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の足し算 z=x+y
+*/
+void radd_ui(rmulti *z, rmulti *x, ulong y)
+{
+  NULL_EXC2(z,x);
+  mpfr_add_ui(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の足し算 z=x+y
+*/
+void radd_si(rmulti *z, rmulti *x, long y)
+{
+  NULL_EXC2(z,x);
+  mpfr_add_si(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+void rsub(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  mpfr_sub(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+void rsub_d1(rmulti *z, double x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_d_sub(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+void rsub_d2(rmulti *z, rmulti *x, double y)
+{
+  NULL_EXC2(z,x);
+  mpfr_sub_d(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+void rsub_ui1(rmulti *z, ulong x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_ui_sub(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+void rsub_ui2(rmulti *z, rmulti *x, ulong y)
+{
+  NULL_EXC2(z,x);
+  mpfr_sub_ui(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+void rsub_si1(rmulti *z, long x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_si_sub(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+void rsub_si2(rmulti *z, rmulti *x, long y)
+{
+  NULL_EXC2(z,x);
+  mpfr_sub_si(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の掛け算 z=x*y
+*/
+void rmul(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  mpfr_mul(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の掛け算 z=x*y
+*/
+void rmul_d(rmulti *z, rmulti *x, double y)
+{
+  NULL_EXC2(z,x);
+  mpfr_mul_d(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の掛け算 z=x*y
+*/
+void rmul_ui(rmulti *z, rmulti *x, ulong y)
+{
+  NULL_EXC2(z,x);
+  mpfr_mul_ui(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の掛け算 z=x*y
+*/
+void rmul_si(rmulti *z, rmulti *x, long y)
+{
+  NULL_EXC2(z,x);
+  mpfr_mul_si(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の掛け算の加算 z+=x*y
+*/
+void radd_mul(rmulti *z, rmulti *x, rmulti *y)
+{
+  rmulti *a=NULL;
+  NULL_EXC3(z,x,y);
+  RAp(a,z);
+  rmul(a,x,y); // a=x*y
+  radd(z,z,a); // z=z+x*y
+  RF(a);
+}
+
+/**
+ @brief rmulti型の掛け算の加算 z+=x*y（作業領域モード）
+*/
+void radd_mul_ws(rmulti *z, rmulti *x, rmulti *y, int n_rws, rmulti **rws)
+{
+  NULL_EXC3(z,x,y);
+  if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in radd_mul_ws().\n",n_rws); }
+  rmul(rws[0],x,y); // rws[0]=x*y
+  radd(z,z,rws[0]); // z=z+x*y
+}
+
+/**
+ @brief rmulti型の掛け算の加算 z+=x*y
+*/
+void radd_mul_d(rmulti *z, rmulti *x, double y)
+{
+  rmulti *a=NULL;
+  NULL_EXC2(z,x);
+  RAp(a,z);
+  rmul_d(a,x,y); // a=x*y
+  radd(z,z,a);   // z=z+x*y
+  RF(a);
+}
+
+/**
+ @brief rmulti型の掛け算の減算 z-=x*y
+*/
+void rsub_mul(rmulti *z, rmulti *x, rmulti *y)
+{
+  rmulti *a=NULL;
+  NULL_EXC3(z,x,y);
+  RAp(a,z);
+  rmul(a,x,y); // a=x*y
+  rsub(z,z,a); // z=z-x*y
+  RF(a);
+}
+
+/**
+ @brief rmulti型の掛け算の減算 z-=x*y
+*/
+void rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int n_rws, rmulti **rws)
+{
+  NULL_EXC3(z,x,y);
+  if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in rsub_mul_ws().\n",n_rws); }
+  rmul(rws[0],x,y); // a=x*y
+  rsub(z,z,rws[0]); // z=z-x*y
+}
+
+/**
+ @brief rmulti型の掛け算の減算 z-=x*y
+*/
+void rsub_mul_d(rmulti *z, rmulti *x, double y)
+{
+  rmulti *a=NULL;
+  NULL_EXC2(z,x);
+  RAp(a,z);
+  rmul_d(a,x,y); // a=x*y
+  rsub(z,z,a);   // z=z-x*y
+  RF(a);
+}
+
 /** @brief rmulti型の割り算 z=x/y */
-int rdiv(rmulti *z, rmulti *x, rmulti *y){ NULL_EXC3(z,x,y); return abs(mpfr_div(z,x,y,get_round_mode())); }
+void rdiv(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  mpfr_div(z,x,y,get_round_mode());
+}
+
 /** @brief rmulti型の割り算 z=x/y */
-int rdiv_d1(rmulti *z, double x, rmulti *y){ NULL_EXC2(z,y); return abs(mpfr_d_div(z,x,y,get_round_mode())); }
+void rdiv_d1(rmulti *z, double x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_d_div(z,x,y,get_round_mode());
+}
+
 /** @brief rmulti型の割り算 z=x/y */
-int rdiv_d2(rmulti *z, rmulti *x, double y){ NULL_EXC2(z,x); return abs(mpfr_div_d(z,x,y,get_round_mode())); }
+void rdiv_d2(rmulti *z, rmulti *x, double y)
+{
+  NULL_EXC2(z,x);
+  mpfr_div_d(z,x,y,get_round_mode());
+}
+
 /** @brief rmulti型の割り算 z=x/y */
-int rdiv_ui1(rmulti *z, ulong x, rmulti *y){ NULL_EXC2(z,y); return abs(mpfr_ui_div(z,x,y,get_round_mode())); }
+void rdiv_ui1(rmulti *z, ulong x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_ui_div(z,x,y,get_round_mode());
+}
+
 /** @brief rmulti型の割り算 z=x/y */
-int rdiv_ui2(rmulti *z, rmulti *x, ulong y){ NULL_EXC2(z,x); return abs(mpfr_div_ui(z,x,y,get_round_mode())); }
+void rdiv_ui2(rmulti *z, rmulti *x, ulong y)
+{
+  NULL_EXC2(z,x);
+  mpfr_div_ui(z,x,y,get_round_mode());
+}
+
 /** @brief rmulti型の割り算 z=x/y */
-int rdiv_si1(rmulti *z, long x, rmulti *y){  NULL_EXC2(z,y); return abs(mpfr_si_div(z,x,y,get_round_mode())); }
+void rdiv_si1(rmulti *z, long x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_si_div(z,x,y,get_round_mode());
+}
+
 /** @brief rmulti型の割り算 z=x/y */
-int rdiv_si2(rmulti *z, rmulti *x, long y){ NULL_EXC2(z,x);  return abs(mpfr_div_si(z,x,y,get_round_mode())); }
+void rdiv_si2(rmulti *z, rmulti *x, long y)
+{
+  NULL_EXC2(z,x);
+  mpfr_div_si(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の2値の絶対値の和 z=abs(x)+abs(y)
+*/
+void radd_abs_abs(rmulti *z, rmulti *x, rmulti *y)
+{
+  rmulti *a=NULL;
+  NULL_EXC3(z,x,y);
+  RAp(a,z);
+  rset_zero(a);
+  radd_abs(a,x);
+  radd_abs(a,y);
+  rcopy(z,a);
+  RF(a);
+}
+
+/**
+ @brief rmulti型の差の絶対値 z=abs(x-y)
+*/
+void rabs_sub(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  rsub(z,x,y);
+  rabs(z,z);
+}
+
+/**
+ @brief rmulti型の差の絶対値 z=abs(x-y)
+*/
+void rabs_sub_d(rmulti *z, rmulti *x, double y)
+{
+  NULL_EXC2(z,x);
+  rsub_d2(z,x,y);
+  rabs(z,z);
+}
+
+/**
+ @brief rmulti型の商の分母が絶対値 z=x/abs(y)
+*/
+void rdiv_abs(rmulti *z, rmulti *x, rmulti *y)
+{
+  rmulti *a=NULL;
+  NULL_EXC3(z,x,y);
+  RAp(a,z);
+  rabs(a,y);   // a=abs(y)
+  rdiv(z,x,a); // z=x/abs(y)
+  RF(a);
+}
+
 /** @brief rmulti型のべき乗 z=x^y */
-int rpow_si(rmulti *z, rmulti *x, long y){ NULL_EXC2(z,x); return abs(mpfr_pow_si(z,x,y,get_round_mode())); }
-/** @brief rmulti型のべき乗 z=x^y */
-int rpow(rmulti *z, rmulti *x, rmulti *y){ NULL_EXC3(z,x,y); return abs(mpfr_pow(z,x,y,get_round_mode())); }
+void rpow(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  mpfr_pow(z,x,y,get_round_mode());
+}
 
 /**
  @brief rmulti型のべき乗 z=x^y
 */
-int rpow_d2(rmulti *z, rmulti *x, double y)
+void rpow_d2(rmulti *z, rmulti *x, double y)
 {
-  int e=0;
   rmulti *a=NULL;
   NULL_EXC2(z,x);
   RAp(a,z);
-  e+=rset_d(a,y);
-  e+=rpow(z,x,a); // z=x^y
+  rset_d(a,y);
+  rpow(z,x,a); // z=x^y
   RF(a);
-  return e;
 }
 
-/** @brief rmulti型の計算 y=sqrt(x) */
-int rsqrt(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_sqrt(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=exp(x) */
-int rexp(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_exp(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=2^x */
-int rexp2(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_exp2(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=10^x */
-int rexp10(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_exp10(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=log(x) */
-int rlog(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_log(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=log_2(x) */
-int rlog2(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_log2(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=log_10(x) */
-int rlog10(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_log10(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=sin(x) */
-int rsin(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_sin(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=cos(x) */
-int rcos(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_cos(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=tan(x) */
-int rtan(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_tan(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=sec(x) */
-int rsec(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_sec(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=cosec(x) */
-int rcsc(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_csc(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=cot(x) */
-int rcot(rmulti *y, rmulti *x)    { NULL_EXC2(y,x); return abs(mpfr_cot(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=arcsin(x) */
-int rasin(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_asin(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=arccos(x) */
-int racos(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_acos(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=arctan(x) */
-int ratan(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_atan(y,x,get_round_mode())); }
+/**
+ @brief rmulti型のべき乗 z=x^y
+*/
+void rpow_ui(rmulti *z, rmulti *x, ulong y)
+{
+  NULL_EXC2(z,x);
+  mpfr_pow_ui(z,x,y,get_round_mode());
+}
+
+/** @brief rmulti型のべき乗 z=x^y */
+void rpow_si(rmulti *z, rmulti *x, long y)
+{
+  NULL_EXC2(z,x);
+  mpfr_pow_si(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の指数部の足し算 y=x*2^n
+*/
+void rmul_2exp(rmulti *y, rmulti *x, int n)
+{
+  NULL_EXC2(x,y);
+  if(n>=0){ mpfr_mul_2exp(y,x,n,get_round_mode()); }
+  else    { mpfr_div_2exp(y,x,-n,get_round_mode()); }
+}
+
+/**
+ @brief rmulti型の指数部の引き算 y=x/2^n
+*/
+void rdiv_2exp(rmulti *y, rmulti *x, int n)
+{
+  NULL_EXC2(x,y);
+  if(n>=0){ mpfr_div_2exp(y,x,n,get_round_mode()); }
+  else    { mpfr_mul_2exp(y,x,-n,get_round_mode()); }
+}
+
 /** @brief rmulti型の計算 y=arctan(x/y) */
-int ratan2(rmulti *z, rmulti *x, rmulti *y) { NULL_EXC3(z,x,y); return abs(mpfr_atan2(z,x,y,get_round_mode())); } // z=atan(x/y)
-/** @brief rmulti型の計算 y=sinh(x) */
-int rsinh(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_sinh(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=cosh(x) */
-int rcosh(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_cosh(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=tanh(x) */
-int rtanh(rmulti *y, rmulti *x)   { NULL_EXC2(y,x); return abs(mpfr_tanh(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=arcsinh(x) */
-int rasinh(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_asinh(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=arccosh(x) */
-int racosh(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_acosh(y,x,get_round_mode())); }
-/** @brief rmulti型の計算 y=arctanh(x) */
-int ratanh(rmulti *y, rmulti *x)  { NULL_EXC2(y,x); return abs(mpfr_atanh(y,x,get_round_mode())); }
-//追加
-/**
- @brief rmulti型の指数部で評価 z=get_exp10(x,offset)
-*/
-int rget_exp10(rmulti *z, rmulti *x, double y)
+void ratan2(rmulti *z, rmulti *x, rmulti *y)
 {
-  int e=0;
-  rmulti *exp=NULL;
-  RAp(exp,x);
-  e+=rabs(x,x);
-  e+=rlog10(x,x);
-  e+=rsub_d2(x,x,y);
-  e+=rfloor(exp,x);
-  e+=rexp10(z,exp);
-  RF(exp);
-  return e;
-}
-
-/**
- @brief rmulti型の指数部で評価 z=get_exp2(x,offset)
-*/
-int rget_exp2(rmulti *z, rmulti *x, double y)
-{
-  int e=0;
-  rmulti *exp=NULL;
-  RAp(exp,x);
-  e+=rabs(x,x);
-  e+=rlog2(x,x);
-  e+=rsub_d2(x,x,y);
-  e+=rfloor(exp,x);
-  e+=rexp2(z,exp);
-  RF(exp);
-  return e;
+  NULL_EXC3(z,x,y);
+  mpfr_atan2(z,x,y,get_round_mode());
 }
 
 /**
  @brief 2つのrmulti型の大きい方 上丸め z=max2(x,y)
 */
-int rmax2(rmulti *z, rmulti *x, rmulti *y)
+void rmax2_up(rmulti *z, rmulti *x, rmulti *y)
 {
-  int e=0;
-  if(rgt(x,y)){
-    e+=abs(mpfr_set(z,x,MPFR_RNDU));
-  }else{
-    e+=abs(mpfr_set(z,y,MPFR_RNDU));
-  }
-  return e;
+  if(rgt(x,y)){ mpfr_set(z,x,MPFR_RNDU); }
+  else        { mpfr_set(z,y,MPFR_RNDU); }
 }
 
 /**
  @brief 2つのrmulti型の小さい方 下丸め z=min2(x,y)
 */
-int rmin2(rmulti *z, rmulti *x, rmulti *y)
+void rmin2_down(rmulti *z, rmulti *x, rmulti *y)
 {
-  int e=0;
-  if(rlt(x,y)){
-    e+=abs(mpfr_set(z,x,MPFR_RNDD));
-  }else{
-    e+=abs(mpfr_set(z,y,MPFR_RNDD));
-  }
-  return e;
+  if(rlt(x,y)){ mpfr_set(z,x,MPFR_RNDD); }
+  else        { mpfr_set(z,y,MPFR_RNDD); }
 }
 
+/**
+ @brief rmulti型の指数部で評価 z=10^(floor(log10(abs(x))-y))
+*/
+void rexp10_floor_log10_abs_sub(rmulti *z, rmulti *x, double y)
+{
+  rmulti *a=NULL;
+  NULL_EXC2(z,x);
+  RAp(a,z);
+  rabs(a,x);      // a=abs(x)
+  rlog10(a,a);    // a=log10(abs(x))
+  rsub_d2(a,a,y); // a=log10(abs(x))-y
+  rfloor(a,a);    // a=floor(log10(abs(x))-y)
+  rexp10(z,a);    // z=10^floor(log10(abs(x))-y)
+  RF(a);
+}
 
+/**
+ @brief rmulti型の指数部で評価 z=2^(floor(log2(abs(x))-y))
+*/
+void rexp2_floor_log2_abs_sub(rmulti *z, rmulti *x, double y)
+{
+  rmulti *a=NULL;
+  NULL_EXC2(z,x);
+  RAp(a,z);
+  rabs(a,x);      // a=abs(x)
+  rlog2(a,a);     // a=log2(abs(x))
+  rsub_d2(a,a,y); // a=log2(abs(x))-y
+  rfloor(a,a);    // a=floor(log2(abs(x))-y)
+  rexp2(z,a);     // z=10^floor(log2(abs(x))-y)
+  RF(a);
+}
 
-//ここまで
+/** @} */
+
+/////////////////////////////////////////////////////////////////
+
+/** @name rmulti型の２入力の数学演算子 */
+/** @{ */
+
+/**
+ @brief rmulti型の3値の絶対値の和 z=abs(x0)+abs(x1)+abs(x2)
+*/
+void radd_abs_abs_abs(rmulti *z, rmulti *x0, rmulti *x1, rmulti *x2)
+{
+  rmulti *a=NULL;
+  NULL_EXC4(z,x0,x1,x2);
+  RAp(a,z);
+  rset_zero(a);
+  radd_abs(a,x0);
+  radd_abs(a,x1);
+  radd_abs(a,x2);
+  rcopy(z,a);
+  RF(a);
+}
+
 /** @} */
 
 //////////////////////////////////////////////////////////////////////

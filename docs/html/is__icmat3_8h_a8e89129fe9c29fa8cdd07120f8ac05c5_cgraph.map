@@ -1,0 +1,21 @@
+<map id="irmat3_div_cmat3" name="irmat3_div_cmat3">
+<area shape="rect" id="node2" href="$icmulti_8c.html#af598bc6d856fdfb35a29601c96622aa9" title="割り算 [z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="155,208,211,235"/>
+<area shape="rect" id="node3" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="259,183,324,209"/>
+<area shape="rect" id="node5" href="$icmulti_8c.html#a88861d2a69b31e98ec25a8e94034a764" title="絶対値の平方 [y0,y1]=abs([x0,x1])^2 " alt="" coords="266,132,317,159"/>
+<area shape="rect" id="node6" href="$irmulti_8c.html#a5de2d24f1771a9c7cf8d66fb70250e48" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="485,31,529,57"/>
+<area shape="rect" id="node15" href="$icmulti_8c.html#a6efffc2b85fac1771f715c9a91167390" title="複素共役 [y0,y1]=conj([x0,x1]) " alt="" coords="381,284,429,311"/>
+<area shape="rect" id="node17" href="$icmulti_8c.html#abf54bdd7fc3574259be0649e51701636" title="割り算 [z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="263,233,319,260"/>
+<area shape="rect" id="node20" href="$icmulti_8c.html#a1acf1eee1b4d7a5549f972b8c53519e6" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="266,360,317,387"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="577,183,641,209"/>
+<area shape="rect" id="node13" href="$irmulti_8c.html#ae955feff51f7b83ca4cc89690f1160e9" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="372,132,437,159"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="579,107,640,133"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="590,5,629,32"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#a7544c8c3220be262b43d9cdcacd5f8f2" title="rmulti型の値の比較 x&gt;=y " alt="" coords="590,56,629,83"/>
+<area shape="rect" id="node12" href="$irmulti_8c.html#a75127c83ea5216e67755d6d959b630c8" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="585,284,634,311"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="689,5,761,32"/>
+<area shape="rect" id="node10" href="$rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="703,56,747,83"/>
+<area shape="rect" id="node14" href="$irmulti_8c.html#a9b773529acf9de84bf3758c8a0026ebc" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="485,81,529,108"/>
+<area shape="rect" id="node16" href="$irmulti_8c.html#afa386bc5a2e6b1ed3102a23286241dd3" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="485,284,529,311"/>
+<area shape="rect" id="node18" href="$irmulti_8c.html#a022a0412b8e8ce54333b909d942c21a1" title="割り算 [z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="487,233,527,260"/>
+<area shape="rect" id="node19" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="579,233,640,260"/>
+</map>

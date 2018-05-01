@@ -12,9 +12,9 @@ var bigint_8c =
     [ "bigint_copy", "bigint_8c.html#ad6d3d95f38aaac182b1b00c4912f6809", null ],
     [ "bigint_div", "bigint_8c.html#ac2e0501b736a8e8b5e94143a3b38e55e", null ],
     [ "bigint_free", "bigint_8c.html#a21d7343d1c2f458c7b19e5e63b783689", null ],
-    [ "bigint_gcd", "bigint_8c.html#a804707374b55eceac6a1fc4156eb2027", null ],
+    [ "bigint_gcd", "bigint_8c.html#a680c9d49e91b52b81b0e02bfa6b16bc1", null ],
     [ "bigint_get_cmulti", "bigint_8c.html#a9b2fa60798d016b5ce2e944e50cfd120", null ],
-    [ "bigint_get_rmulti", "bigint_8c.html#a33669d996e06470e244dcef388acac29", null ],
+    [ "bigint_get_rmulti", "bigint_8c.html#a4f0992bf040ee7788cd759ed3b606bdb", null ],
     [ "bigint_get_si", "bigint_8c.html#afa81537e8c06ae0f598ed87467c2027e", null ],
     [ "bigint_inv", "bigint_8c.html#a5032ce44586b29fe3da1e3e2876a23b7", null ],
     [ "bigint_is_inf", "bigint_8c.html#a2eb29d03db4cd0cd6c5e44fa22f81af4", null ],
@@ -37,5 +37,5 @@ var bigint_8c =
     [ "bigint_sgn", "bigint_8c.html#a01ffca6237d6a5ffdb6d87e2929197c2", null ],
     [ "bigint_sub", "bigint_8c.html#a09028d57f425a8a6f72e41ace36eb359", null ],
     [ "bigint_swap", "bigint_8c.html#a9ac02428a33f7b73c2526cdc21dc66c6", null ],
-    [ "rset_bi", "bigint_8c.html#a0e523ebeb61c7fa6d9b70d13935c24de", null ]
+    [ "rset_bi", "bigint_8c.html#a4324ae528fd6e5df3e696de08a113fa6", null ]
 ];

@@ -115,71 +115,66 @@ cmulti **cmat_free(int LDA, int n, cmulti **A)
 /**
  @brief 初期化済みのcmulti型の行列の浮動小数点数の精度(ビット数)を変更し再初期化.
 */
-int cmat_round(int m, int n, cmulti **A, int LDA, int prec)
+void cmat_round(int m, int n, cmulti **A, int LDA, int prec)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cround(MAT(A,i,j,LDA),prec);
+      cround(MAT(A,i,j,LDA),prec);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を複成 B=A.
 */
-int cmat_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cclone(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cclone(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を複成 B=A.
 */
-int cmat_clone_r(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
+void cmat_clone_r(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cclone_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cclone_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の転置をとり値を複成 B=A^T.
 */
-int cmat_clone_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_clone_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      e+=cclone(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      cclone(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の共役転置をとり値を複成 B=A'.
 */
-int cmat_clone_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_clone_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      e+=cconj_clone(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      cconj_clone(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
@@ -509,91 +504,85 @@ void cmat_set_nan(int m, int n, cmulti **A, int LDA)
 /**
  @brief cmulti型の行列の値を倍精度複素数から設定.
 */
-int cmat_set_z(int m, int n, cmulti **B, int LDB, const dcomplex *A, int LDA)
+void cmat_set_z(int m, int n, cmulti **B, int LDB, const dcomplex *A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cset_z(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cset_z(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を倍精度実数から設定.
 */
-int cmat_set_d(int m, int n, cmulti **B, int LDB, const double *A, int LDA)
+void cmat_set_d(int m, int n, cmulti **B, int LDB, const double *A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cset_d(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cset_d(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を倍精度実数から設定.
 */
-int cmat_set_dd(int m, int n, cmulti **B, int LDB, const double *Ar, int LDAr, const double *Ai, int LDAi)
+void cmat_set_dd(int m, int n, cmulti **B, int LDB, const double *Ar, int LDAr, const double *Ai, int LDAi)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cset_dd(MAT(B,i,j,LDB),MAT(Ar,i,j,LDAr),MAT(Ai,i,j,LDAi));
+      cset_dd(MAT(B,i,j,LDB),MAT(Ar,i,j,LDAr),MAT(Ai,i,j,LDAi));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を倍精度複素数から設定.
 */
-int cmat_set_all_z(int m, int n, cmulti **A, int LDA, dcomplex a)
+void cmat_set_all_z(int m, int n, cmulti **A, int LDA, dcomplex a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cset_z(MAT(A,i,j,LDA),a);
+      cset_z(MAT(A,i,j,LDA),a);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を倍精度実数から設定.
 */
-int cmat_set_all_dd(int m, int n, cmulti **A, int LDA, double a_r, double a_i)
+void cmat_set_all_dd(int m, int n, cmulti **A, int LDA, double a_r, double a_i)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cset_dd(MAT(A,i,j,LDA),a_r,a_i);
+      cset_dd(MAT(A,i,j,LDA),a_r,a_i);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を倍精度実数から設定.
 */
-int cmat_set_all_d(int m, int n, cmulti **A, int LDA, double a)
+void cmat_set_all_d(int m, int n, cmulti **A, int LDA, double a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cset_d(MAT(A,i,j,LDA),a);
+      cset_d(MAT(A,i,j,LDA),a);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を零に設定.
 */
-int cmat_set_zeros(int m, int n, cmulti **A, int LDA)
+void cmat_set_zeros(int m, int n, cmulti **A, int LDA)
 {
   return cmat_set_all_d(m,n,A,LDA,0);
 }
@@ -601,7 +590,7 @@ int cmat_set_zeros(int m, int n, cmulti **A, int LDA)
 /**
  @brief cmulti型の行列の値を1に設定.
 */
-int cmat_set_ones(int m, int n, cmulti **A, int LDA)
+void cmat_set_ones(int m, int n, cmulti **A, int LDA)
 {
   return cmat_set_all_d(m,n,A,LDA,1);
 }
@@ -609,16 +598,15 @@ int cmat_set_ones(int m, int n, cmulti **A, int LDA)
 /**
  @brief cmulti型の行列の値を単位行列の設定.
 */
-int cmat_set_eye(int m, int n, cmulti **A, int LDA)
+void cmat_set_eye(int m, int n, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=cset_d(MAT(A,i,j,LDA),1); }
-      else    { e+=cset_d(MAT(A,i,j,LDA),0); }
+      if(i==j){ cset_d(MAT(A,i,j,LDA),1); }
+      else    { cset_d(MAT(A,i,j,LDA),0); }
     }
   }
-  return e;
 }
 
 /**
@@ -641,32 +629,30 @@ void cmat_set_rand(int m, int n, cmulti **A, int LDA, double a, double b)
  @brief cmulti型の行列の対角成分にスカラーをコピー.
  @details A(k,k+offset)=a for k=0,1,..
 */
-int cmat_set_diag_c(int m, int n, cmulti **A, int LDA, cmulti *a, int offset)
+void cmat_set_diag_c(int m, int n, cmulti **A, int LDA, cmulti *a, int offset)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     j=i+offset;
     if(i>=0 && j>=0 && i<m && j<n){
-      e+=ccopy(MAT(A,i,j,LDA),a);
+      ccopy(MAT(A,i,j,LDA),a);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角成分にスカラーをコピー.
  @details A(k,k+offset)=a for k=0,1,..
 */
-int cmat_set_diag_d(int m, int n, cmulti **A, int LDA, double a, int offset)
+void cmat_set_diag_d(int m, int n, cmulti **A, int LDA, double a, int offset)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     j=i+offset;
     if(i>=0 && j>=0 && i<m && j<n){
-      e+=cset_d(MAT(A,i,j,LDA),a);
+      cset_d(MAT(A,i,j,LDA),a);
     }
   }
-  return e;
 }
 
 /** @} */
@@ -768,37 +754,35 @@ void cmat_cols_rotate_left(int m, int n, cmulti **A, int LDA)
 
 /** @} */
 
-////////////////////////////////////////////////////////////////////////
+///////////////////////////////////
 
-/** @name cmulti型の行列の自動精度調整モードが機能する関数 */
+/** @name cmulti型の行列の数学関数に関する関数 */
 /** @{ */
 
 /**
  @brief cmulti型の行列の値のコピー B=A
 */
-int cmat_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値のコピー B=A
 */
-int cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
+void cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=ccopy_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      ccopy_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
@@ -811,15 +795,14 @@ int cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
  @param[out] B   コピーされた結果.
  @param[in]  LDB Bの第1次元.
 */
-int cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      e+=ccopy(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      ccopy(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
@@ -832,15 +815,14 @@ int cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
  @param[out] B   コピーされた結果.
  @param[in]  LDB Bの第1次元.
 */
-int cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
+void cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      e+=ccopy_r(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      ccopy_r(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
@@ -853,15 +835,14 @@ int cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
  @param[out] B   コピーされた結果.
  @param[in]  LDB Bの第1次元.
 */
-int cmat_copy_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_copy_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      e+=cconj(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      cconj(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 
@@ -880,339 +861,315 @@ void cmat_copy_col_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA,
 /**
  @brief cmulti型の行列の値を要素を添字を指定してコピー B=A(I,J)
 */
-int cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J)
+void cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(I!=NULL && J!=NULL){ e+=ccopy(MAT(B,i,j,LDB),MAT(A,I[i],J[j],LDA)); }
+      if(I!=NULL && J!=NULL){ ccopy(MAT(B,i,j,LDB),MAT(A,I[i],J[j],LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を要素を添字を指定してコピー B(I,J)=A
 */
-int cmat_index_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J)
+void cmat_index_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int *I, int *J)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(I!=NULL && J!=NULL){ e+=ccopy(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
+      if(I!=NULL && J!=NULL){ ccopy(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の値を要素を添字を指定してコピー B(I,J)=A
 */
-int cmat_index_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA, int *I, int *J)
+void cmat_index_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA, int *I, int *J)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(I!=NULL && J!=NULL){ e+=ccopy_r(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
+      if(I!=NULL && J!=NULL){ ccopy_r(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の実部のコピー B=real(A)
  */
-int cmat_real(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_real(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=rcopy(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
+      rcopy(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の実部の複製 B=real(A)
  */
-int cmat_real_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_real_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=rclone(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
+      rclone(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の虚部のコピー B=imag(A)
  */
-int cmat_imag(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_imag(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=rcopy(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
+      rcopy(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の虚部の複製 B=imag(A)
  */
-int cmat_imag_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_imag_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=rclone(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
+      rclone(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の複素共役のコピー B=conj(A)
 */
-int cmat_conj(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_conj(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cconj(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cconj(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の複素共役の複製 B=conj(A)
 */
-int cmat_conj_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_conj_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cconj_clone(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cconj_clone(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の符号反転 B=-A.
 */
-int cmat_neg(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_neg(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cneg(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cneg(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素の絶対値の平方 B=abs2(A).
 */
-int cmat_abs2(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_abs2(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cabs2(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cabs2(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の足し算 C=A+B.
 */
-int cmat_add(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_add(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cadd(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cadd(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の足し算 C=A+B.
 */
-int cmat_add_rmat(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
+void cmat_add_rmat(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cadd_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cadd_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の足し算 C=A+b.
 */
-int cmat_add_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+void cmat_add_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cadd(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cadd(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の引き算 C=A-B.
 */
-int cmat_sub(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_sub(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=csub(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      csub(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の引き算 C=A-B.
 */
-int cmat_sub_rmat1(int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_sub_rmat1(int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=csub_r1(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      csub_r1(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の引き算 C=A-B.
 */
-int cmat_sub_rmat2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
+void cmat_sub_rmat2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=csub_r2(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      csub_r2(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 
 /**
  @brief cmulti型の行列の引き算 C=a-B.
 */
-int cmat_sub_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
+void cmat_sub_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=csub(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+      csub(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の引き算 C=A-b.
 */
-int cmat_sub_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+void cmat_sub_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=csub(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      csub(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
-  return e;
 }
 
 
 /**
  @brief cmulti型の行列の要素ごとの掛け算 C=A.*B
 */
-int cmat_mul(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_mul(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cmul(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cmul(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素ごととスカラーの掛け算 C=A*b.
 */
-int cmat_mul_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+void cmat_mul_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cmul(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素ごととスカラーの掛け算 C=A*b.
 */
-int cmat_mul_r(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti *b)
+void cmat_mul_r(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti *b)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cmul_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素ごととスカラーの掛け算 C=A*b.
 */
-int cmat_mul_z(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, dcomplex b)
+void cmat_mul_z(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, dcomplex b)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cmul_z(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul_z(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素ごととスカラーの掛け算 C=A*b.
 */
-int cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b)
+void cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cmul_d(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul_d(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
-  return e;
 }
 
 /**
@@ -1222,22 +1179,21 @@ int cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b)
  @param[in]  C 初期化済みのサイズが(l,n)の行列.
  @param[out] C 計算結果.
 */
-int cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   cmulti **Z=NULL;
   Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      e+=cset_zero(MAT(Z,i,j,l)); // Z=0
+      cset_zero(MAT(Z,i,j,l)); // Z=0
       for(k=0; k<m; k++){
-	e+=cadd_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
+	cadd_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
       }
     }
   }
-  e+=cmat_copy(l,n,C,LDC,Z,l); // C=Z
+  cmat_copy(l,n,C,LDC,Z,l); // C=Z
   Z=cmat_free(l,n,Z);
-  return e;
 }
 
 
@@ -1248,22 +1204,21 @@ int cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmu
  @param[in]  C 初期化済みのサイズが(l,n)の行列.
  @param[out] C 計算結果.
 */
-int cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   cmulti **Z=NULL;
   Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      e+=cset_zero(MAT(Z,i,j,l)); // Z=0
+      cset_zero(MAT(Z,i,j,l)); // Z=0
       for(k=0; k<m; k++){
-	e+=cadd_mul_r(MAT(Z,i,j,l),MAT(B,k,j,LDB),MAT(A,i,k,LDA)); // Z=A*B
+	cadd_mul_r(MAT(Z,i,j,l),MAT(B,k,j,LDB),MAT(A,i,k,LDA)); // Z=A*B
       }
     }
   }
-  e+=cmat_copy(l,n,C,LDC,Z,l); // C=Z
+  cmat_copy(l,n,C,LDC,Z,l); // C=Z
   Z=cmat_free(l,n,Z);
-  return e;
 }
 
 /**
@@ -1273,22 +1228,21 @@ int cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, 
  @param[in]  C 初期化済みのサイズが(l,n)の行列.
  @param[out] C 計算結果.
 */
-int cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
+void cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   cmulti **Z=NULL;
   Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      e+=cset_zero(MAT(Z,i,j,l)); // Z=0
+      cset_zero(MAT(Z,i,j,l)); // Z=0
       for(k=0; k<m; k++){
-	e+=cadd_mul_r(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
+	cadd_mul_r(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
       }
     }
   }
-  e+=cmat_copy(l,n,C,LDC,Z,l); // C=Z
+  cmat_copy(l,n,C,LDC,Z,l); // C=Z
   Z=cmat_free(l,n,Z);
-  return e;
 }
 
 /**
@@ -1298,22 +1252,21 @@ int cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, 
  @param[in]  C 初期化済みのサイズが(l,n)の行列.
  @param[out] C 計算結果.
 */
-int cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   cmulti **Z=NULL;
   Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      e+=ccopy(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
+      ccopy(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
       for(k=0; k<m; k++){
-	e+=cadd_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z+=A*B
+	cadd_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z+=A*B
       }
     }
   }
-  e+=cmat_copy(l,n,C,LDC,Z,l); // C=Z
+  cmat_copy(l,n,C,LDC,Z,l); // C=Z
   Z=cmat_free(l,n,Z);
-  return e;
 }
 
 /**
@@ -1323,272 +1276,247 @@ int cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA,
  @param[in]  C 初期化済みのサイズが(l,n)の行列.
  @param[out] C 計算結果.
 */
-int cmat_sub_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_sub_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,k,e=0;
+  int i,j,k;
   cmulti **Z=NULL;
   Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      e+=ccopy(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
+      ccopy(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
       for(k=0; k<m; k++){
-	e+=csub_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z-=A*B
+	csub_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z-=A*B
       }
     }
   }
-  e+=cmat_copy(l,n,C,LDC,Z,l); // C=Z
+  cmat_copy(l,n,C,LDC,Z,l); // C=Z
   Z=cmat_free(l,n,Z);
-  return e;
 }
 
 /**
  @brief cmulti型の1ランク更新 B=A+a*x*y'
 */
-int cmat_rank1op(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a, cmulti **x, cmulti **y)
+void cmat_rank1op(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a, cmulti **x, cmulti **y)
 {
-  int i,j,e=0;
+  int i,j;
   cmulti *value=NULL;
   value=callocate_prec(cmat_get_prec_max(m,n,B,LDB));
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cdot(value,y[j],x[i]);                     // vlaue=conj(y[j])*x[i]
-      e+=cmul(value,a,value);                       // value=a*conj(y[j])*x[i]
-      e+=cadd(MAT(B,i,j,LDB),MAT(A,i,j,LDA),value); // B(i,j)=A(i,j)+a*x[i]*conj(y[j])
+      cdot(value,y[j],x[i]);                     // vlaue=conj(y[j])*x[i]
+      cmul(value,a,value);                       // value=a*conj(y[j])*x[i]
+      cadd(MAT(B,i,j,LDB),MAT(A,i,j,LDA),value); // B(i,j)=A(i,j)+a*x[i]*conj(y[j])
     }
   }
   value=cfree(value);
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列 A=diag(a).
 */
-int cmat_diag_copy_cvec(int m, int n, cmulti **A, int LDA, cmulti **a)
+void cmat_diag_copy_cvec(int m, int n, cmulti **A, int LDA, cmulti **a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=ccopy(MAT(A,i,j,LDA),a[i]); }
-      else    { e+=cset_zero(MAT(A,i,j,LDA)); }
+      if(i==j){ ccopy(MAT(A,i,j,LDA),a[i]); }
+      else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列 A=diag(a).
 */
-int cmat_diag_copy_rvec(int m, int n, cmulti **A, int LDA, rmulti **a)
+void cmat_diag_copy_rvec(int m, int n, cmulti **A, int LDA, rmulti **a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=ccopy_r(MAT(A,i,j,LDA),a[i]); }
-      else    { e+=cset_zero(MAT(A,i,j,LDA)); }
+      if(i==j){ ccopy_r(MAT(A,i,j,LDA),a[i]); }
+      else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列 A=diag(a).
 */
-int cmat_diag_copy_c(int m, int n, cmulti **A, int LDA, cmulti *a)
+void cmat_diag_copy_c(int m, int n, cmulti **A, int LDA, cmulti *a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=ccopy(MAT(A,i,j,LDA),a); }
-      else    { e+=cset_zero(MAT(A,i,j,LDA)); }
+      if(i==j){ ccopy(MAT(A,i,j,LDA),a); }
+      else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列 A=diag(a).
 */
-int cmat_diag_copy_r(int m, int n, cmulti **A, int LDA, rmulti *a)
+void cmat_diag_copy_r(int m, int n, cmulti **A, int LDA, rmulti *a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=ccopy_r(MAT(A,i,j,LDA),a); }
-      else    { e+=cset_zero(MAT(A,i,j,LDA)); }
+      if(i==j){ ccopy_r(MAT(A,i,j,LDA),a); }
+      else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 
 /**
  @brief cmulti型の行列の対角行列との足し算 B=A+diag(a).
 */
-int cmat_diag_add_cvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti **a)
+void cmat_diag_add_cvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti **a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=cadd(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列との足し算 B=A+diag(a).
 */
-int cmat_diag_add_c(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a)
+void cmat_diag_add_c(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=cadd(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列との足し算 B=A+diag(a).
 */
-int cmat_diag_add_rvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti **a)
+void cmat_diag_add_rvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti **a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=cadd_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列との足し算 B=A+diag(a).
 */
-int cmat_diag_add_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti *a)
+void cmat_diag_add_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti *a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=cadd_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の対角行列との引き算 B=A-diag(a).
 */
-int cmat_diag_sub_cvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti **a)
+void cmat_diag_sub_cvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti **a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=csub(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;  
 }
 
 /**
  @brief cmulti型の行列の対角行列との引き算 B=A-diag(a).
 */
-int cmat_diag_sub_c(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a)
+void cmat_diag_sub_c(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti *a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=csub(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;  
 }
 
 /**
  @brief cmulti型の行列の対角行列との引き算 B=A-diag(a).
 */
-int cmat_diag_sub_rvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti **a)
+void cmat_diag_sub_rvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti **a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=csub_r2(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub_r2(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;  
 }
 
 /**
  @brief cmulti型の行列の対角行列との引き算 B=A-diag(a).
 */
-int cmat_diag_sub_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti *a)
+void cmat_diag_sub_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmulti *a)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ e+=csub_r2(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { e+=ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub_r2(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
-  return e;  
 }
-
-
-/** @} */
-
-///////////////////////////////////
-
-/** @name cmulti型の行列の数学関数に関する関数 */
-/** @{ */
 
 /**
  @brief cmulti型の行列の要素ごとの割り算 C=A./B
 */
-int cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素ごとの割り算 C=a./B
 */
-int cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
+void cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int LDB)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cdiv(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+      cdiv(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素ごとの割り算 C=A./b
 */
-int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
+void cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *b)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cdiv(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
-  return e;
 }
 
 /**
@@ -1596,12 +1524,11 @@ int cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *
  @param[in]  A 初期化済みのサイズが(n,n)の行列.
  @param[out] B 初期化済みのサイズが(n,n)の行列.
 */
-int cmat_inv(int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_inv(int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int info,e=0;
-  e+=cmat_set_eye(n,n,B,LDB);
-  e+=csolve(n,n,B,LDB,A,LDA,&info);
-  return e;
+  int info;
+  cmat_set_eye(n,n,B,LDB);
+  csolve(n,n,B,LDB,A,LDA,&info);
 }
 
 /**
@@ -1610,55 +1537,52 @@ int cmat_inv(int n, cmulti **B, int LDB, cmulti **A, int LDA)
  @param[in]  x スカラー
  @param[out] B 初期化済みのサイズが(l,l)の行列.
 */
-int cmat_power(int n, cmulti **B, int LDB, cmulti **A, int LDA, int p)
+void cmat_power(int n, cmulti **B, int LDB, cmulti **A, int LDA, int p)
 {
-  int LDZ,i,e=0;
+  int LDZ,i;
   cmulti **Z=NULL;
   LDZ=n; Z=cmat_allocate_prec(LDZ,n,cmat_get_prec_max(n,n,B,LDB));
   if(p<0){
-    e+=cmat_inv(n,Z,LDZ,A,LDA);
-    e+=cmat_power(n,B,LDB,Z,LDZ,-p);
+    cmat_inv(n,Z,LDZ,A,LDA);
+    cmat_power(n,B,LDB,Z,LDZ,-p);
   }else if(p==0){
-    e+=cmat_set_eye(n,n,B,LDB);
+    cmat_set_eye(n,n,B,LDB);
   }else if(p==1){
-    e+=cmat_copy(n,n,B,LDB,A,LDA);
+    cmat_copy(n,n,B,LDB,A,LDA);
   }else{
-    e+=cmat_copy(n,n,B,LDB,A,LDA);
+    cmat_copy(n,n,B,LDB,A,LDA);
     for(i=1; i<p; i++){
-      e+=cmat_prod(n,n,n,Z,LDZ,B,LDB,A,LDA);
-      e+=cmat_copy(n,n,B,LDB,Z,LDZ);
+      cmat_prod(n,n,n,Z,LDZ,B,LDB,A,LDA);
+      cmat_copy(n,n,B,LDB,Z,LDZ);
     }
   }
   Z=cmat_free(LDZ,n,Z);
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素の絶対値 B=abs(A).
 */
-int cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cabsv(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cabsv(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素の偏角 B=arg(A).
 */
-int cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cargument(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cargument(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
-  return e;
 }
 
 //追加
@@ -1666,11 +1590,10 @@ int cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 /**
  @brief cmulti型の列ごとの和 B=sum(A)
 */
-int cvec_sum_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
+void cvec_sum_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 {
-  int j,e=0;
-  for(j=0; j<n; j++){ e+=cvec_sum(B[j],m,&COL(A,j,LDA)); }
-  return e;
+  int j;
+  for(j=0; j<n; j++){ cvec_sum(B[j],m,&COL(A,j,LDA)); }
 }
 
 //ここまで
@@ -1678,136 +1601,127 @@ int cvec_sum_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 /**
  @brief cmulti型の列ごとの最大値 B=max(A)
 */
-int cvec_max_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
+void cvec_max_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 {
-  int j,e=0;
-  for(j=0; j<n; j++){ e+=cvec_max(B[j],m,&COL(A,j,LDA)); }
-  return e;
+  int j;
+  for(j=0; j<n; j++){ cvec_max(B[j],m,&COL(A,j,LDA)); }
 }
 
 /**
  @brief cmulti型の列ごとの最小値 B=min(A)
 */
-int cvec_min_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
+void cvec_min_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 {
-  int j,e=0;
-  for(j=0; j<n; j++){ e+=cvec_min(B[j],m,&COL(A,j,LDA)); }
-  return e;
+  int j;
+  for(j=0; j<n; j++){ cvec_min(B[j],m,&COL(A,j,LDA)); }
 }
 
 /**
  @brief cmulti型の行列の要素の絶対値の最大値 value=max(abs(x))
 */
-int cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
+void cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  e+=cabs2(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
+  cabs2(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cabs2(a,MAT(A,i,j,LDA));  // a=abs(x[i])^2
+      cabs2(a,MAT(A,i,j,LDA));  // a=abs(x[i])^2
       if(rgt(a,value)){            // a>value
-	e+=rcopy(value,a);         // value=a
+	rcopy(value,a);         // value=a
       }
     }
   }
-  e+=rsqrt(value,value); // value=sqrt(value)
+  rsqrt(value,value); // value=sqrt(value)
   a=rfree(a);            // free
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素の実部，虚部の絶対値の最大値 value=max(abs(x))
 */
-int cmat_max_absc(rmulti *value, int m, int n, cmulti **A, int LDA)
+void cmat_max_absc(rmulti *value, int m, int n, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  e+=rabs(value,C_R(MAT(A,0,0,LDA)));
-  e+=rabs(a,C_I(MAT(A,0,0,LDA)));
-  if(rgt(a,value)){ e+=rcopy(value,a); }
+  rabs(value,C_R(MAT(A,0,0,LDA)));
+  rabs(a,C_I(MAT(A,0,0,LDA)));
+  if(rgt(a,value)){ rcopy(value,a); }
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=rabs(a,C_R(MAT(A,i,j,LDA)));
-      if(rgt(a,value)){ e+=rcopy(value,a); }
-      e+=rabs(a,C_I(MAT(A,i,j,LDA)));
-      if(rgt(a,value)){ e+=rcopy(value,a); }
+      rabs(a,C_R(MAT(A,i,j,LDA)));
+      if(rgt(a,value)){ rcopy(value,a); }
+      rabs(a,C_I(MAT(A,i,j,LDA)));
+      if(rgt(a,value)){ rcopy(value,a); }
     }
   }
   a=rfree(a);
-  return e;
 }
 
 /**
  @brief cmulti型の行列の要素の絶対値の最小値 value=min(abs(x))
 */
-int cmat_min_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
+void cmat_min_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  e+=cabs2(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
+  cabs2(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cabs2(a,MAT(A,i,j,LDA));    // a=abs(x[i])^2
+      cabs2(a,MAT(A,i,j,LDA));    // a=abs(x[i])^2
       if(rlt(a,value)){ // a<value
-	e+=rcopy(value,a); // value=a
+	rcopy(value,a); // value=a
       }
     }
   }
-  e+=rsqrt(value,value); // value=sqrt(value)
+  rsqrt(value,value); // value=sqrt(value)
   a=rfree(a);         // free
-  return e;
 }
 
 /**
  @brief cmulti型の行列の列ごとの正規化.
 */
-int cmat_cols_normalize(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_cols_normalize(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int e=0,j;
+  int j;
   for(j=0; j<n; j++){
-    e+=cvec_normalize(m,&COL(B,j,LDB),&COL(A,j,LDA));
+    cvec_normalize(m,&COL(B,j,LDB),&COL(A,j,LDA));
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の列ごとの正規化.
 */
-int cmat_cols_normalize_sgn(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
+void cmat_cols_normalize_sgn(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
-  int e=0,j;
+  int j;
   for(j=0; j<n; j++){
-    e+=cvec_normalize_sgn(m,&COL(B,j,LDB),&COL(A,j,LDA));
+    cvec_normalize_sgn(m,&COL(B,j,LDB),&COL(A,j,LDA));
   }
-  return e;
 }
 
 /**
  @brief cmulti型の行列の列どうしの差の絶対値の最大値 x(j)=max(abs(A(:,j)-B(:,j))).
 */
-int cmat_cols_max_abs_sub(rmulti **x, int m, int n, cmulti **A, int LDA, cmulti **B, int LDB)
+void cmat_cols_max_abs_sub(rmulti **x, int m, int n, cmulti **A, int LDA, cmulti **B, int LDB)
 {
-  int j,e=0;
+  int j;
   for(j=0; j<n; j++){
-    e+=cvec_max_abs_sub(x[j],m,&COL(A,j,LDA),&COL(B,j,LDB));
+    cvec_max_abs_sub(x[j],m,&COL(A,j,LDA),&COL(B,j,LDB));
   }
-  return e;
 }
 
 /**
  @brief rmulti型の行列の列とベクトルとの差の絶対値の最大値 y(j)=max(abs(A(:,j)-x)).
 */
-int cmat_cols_max_abs_sub_cvec(rmulti **y, int m, int n, cmulti **A, int LDA, cmulti **x)
+void cmat_cols_max_abs_sub_cvec(rmulti **y, int m, int n, cmulti **A, int LDA, cmulti **x)
 {
-  int j,e=0;
+  int j;
   for(j=0; j<n; j++){
-    e+=cvec_max_abs_sub(y[j],m,&COL(A,j,LDA),x);
+    cvec_max_abs_sub(y[j],m,&COL(A,j,LDA),x);
   }
-  return e;
 }
 
 
@@ -1847,17 +1761,16 @@ int cmat_cmp(int m, int n, cmulti **A, int LDA, int k, int l, cmulti **B, int LD
 /**
  @brief cmulti型の行列に関する行列写像 A=f(x).
 */
-int cmat_func_list2(int m, int n, cmulti **A, int LDA, func_t *f, int l, cmulti **x)
+void cmat_func_list2(int m, int n, cmulti **A, int LDA, func_t *f, int l, cmulti **x)
 {
-  int i,j,e=0;
+  int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
       if(func_is_list(f) && i<func_asize(f) && func_is_list(func_aget(f,i)) && j<func_asize(func_aget(f,i))){
-	e+=cvec_func(MAT(A,i,j,LDA),func_aget(func_aget(f,i),j),l,x);
+	cvec_func(MAT(A,i,j,LDA),func_aget(func_aget(f,i),j),l,x);
       }else{ cset_nan(MAT(A,i,j,LDA)); }
     }
   }
-  return e;
 }
 
 /** @} */
@@ -1867,15 +1780,14 @@ int cmat_func_list2(int m, int n, cmulti **A, int LDA, func_t *f, int l, cmulti 
 /** @name 未処理 */
 /** @{ */
 
-int cmat_angle_deg_list(rmulti **angle, int m, int n, cmulti **A, int LDA)
+void cmat_angle_deg_list(rmulti **angle, int m, int n, cmulti **A, int LDA)
 {
-  int e=0,i,j,k=0;
+  int i,j,k=0;
   for(i=0; i<n; i++){
     for(j=i+1; j<n; j++){
-      e+=cvec_angle_deg(angle[k++],m,&COL(A,i,LDA),&COL(A,j,LDA));
+      cvec_angle_deg(angle[k++],m,&COL(A,i,LDA),&COL(A,j,LDA));
     }
   }
-  return e;
 }
 
 /** @} */

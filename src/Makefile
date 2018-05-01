@@ -14,11 +14,8 @@ SHARE_HDRS = mt19937ar.h GeneralHashFunctions.h \
 		is_bigint.h \
 		is_print.h is_dcomplex.h \
 		is_rmulti.h is_cmulti.h \
-		is_irmulti.h is_irvec.h is_irmat.h is_irmat3.h is_ireig.h \
-		is_icmulti.h is_icvec.h is_icmat.h is_icmat3.h is_iceig.h \
 		is_ivec.h is_dvec.h is_zvec.h is_rvec.h is_cvec.h \
-		is_imat.h is_dmat.h is_zmat.h is_rmat.h is_cmat.h is_rmat3.h is_cmat3.h \
-		is_dsolve.h is_zsolve.h is_rsolve.h is_csolve.h is_irsolve.h is_icsolve.h \
+		is_dsolve.h is_zsolve.h is_rsolve.h is_csolve.h \
 		is_rsolve_newton.h is_csolve_newton.h \
 		is_deig.h is_zeig.h is_reig.h is_ceig.h \
 		is_reig_hqr.h is_ceig_hqr.h is_reig_ii.h is_ceig_ii.h \
@@ -28,6 +25,9 @@ SHARE_HDRS = mt19937ar.h GeneralHashFunctions.h \
 		is_rhsnbrg.h is_chsnbrg.h \
 		is_dhpeig.h is_zhpeig.h is_rhpeig.h is_chpeig.h \
 		is_dhpsvd.h \
+		is_imat.h is_dmat.h is_zmat.h is_rmat.h is_cmat.h is_rmat3.h is_cmat3.h is_irsolve.h is_icsolve.h \
+		is_irmulti.h is_irvec.h is_irmat.h is_irmat3.h is_ireig.h \
+		is_icmulti.h is_icvec.h is_icmat.h is_icmat3.h is_iceig.h \
 		is_func.h \
 		is_riep_dht.h
 
@@ -36,11 +36,9 @@ SHARE_SRCS = mt19937ar.c GeneralHashFunctions.c \
 		bigint.c \
 		print.c dcomplex.c \
 		rmulti.c cmulti.c \
-		irmulti.c irvec.c irmat.c irmat3.c ireig.c \
-		icmulti.c icvec.c icvec.c icmat3.c iceig.c \
 		ivec.c dvec.c zvec.c rvec.c cvec.c \
 		imat.c dmat.c zmat.c rmat.c cmat.c rmat3.c cmat3.c \
-		dsolve.c zsolve.c rsolve.c csolve.c  irsolve.c icsolve.c\
+		dsolve.c zsolve.c rsolve.c csolve.c \
 		rsolve_newton.c csolve_newton.c \
 		deig.c zeig.c reig.c ceig.c \
 		reig_hqr.c ceig_hqr.c reig_ii.c ceig_ii.c \
@@ -50,6 +48,8 @@ SHARE_SRCS = mt19937ar.c GeneralHashFunctions.c \
 		rhsnbrg.c chsnbrg.c \
 		dhpeig.c zhpeig.c rhpeig.c chpeig.c \
 		dhpsvd.c \
+		irmulti.c icmulti.c irvec.c icvec.c irmat.c icvec.c \
+		irmat3.c icmat3.c ireig.c iceig.c irsolve.c icsolve.c \
 		func_builtin.c func_find.c func_op.c func_table.c func.c func_strings.c func_def.c \
 		func_scope.c func_import.c func_power.c func_cmp.c \
 		func_print.c func_script.c func_args.c \
@@ -66,11 +66,9 @@ SHARE_OBJS = mt19937ar.o GeneralHashFunctions.o \
 		bigint.o \
 		print.o dcomplex.o \
 		rmulti.o cmulti.o \
-		irmulti.o irvec.o irmat.o irmat3.o ireig.o \
-		icmulti.o icvec.o icmat.o icmat3.o iceig.o \
 		ivec.o dvec.o zvec.o rvec.o cvec.o \
 		imat.o dmat.o zmat.o rmat.o cmat.o rmat3.o cmat3.o \
-		dsolve.o zsolve.o rsolve.o csolve.o  irsolve.o icsolve.o\
+		dsolve.o zsolve.o rsolve.o csolve.o \
 		rsolve_newton.o csolve_newton.o \
 		deig.o zeig.o reig.o ceig.o \
 		reig_hqr.o ceig_hqr.o reig_ii.o ceig_ii.o \
@@ -80,6 +78,8 @@ SHARE_OBJS = mt19937ar.o GeneralHashFunctions.o \
 		rhsnbrg.o chsnbrg.o \
 		dhpeig.o zhpeig.o rhpeig.o chpeig.o \
 		dhpsvd.o \
+		irmulti.o icmulti.o irvec.o icvec.o irmat.o icmat.o \
+		irmat3.o icmat3.o ireig.o iceig.o irsolve.o icsolve.o \
 		func_builtin.o func_find.o func_op.o func_table.o func.o func_strings.o func_def.o \
 		func_scope.o func_import.o func_power.o func_cmp.o \
 		func_print.o func_script.o func_args.o \

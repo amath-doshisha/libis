@@ -11,6 +11,7 @@ var reig__hqr_8c =
     [ "reig_hqr_calculate_formula_11_6_26_v", "reig__hqr_8c.html#ae5f8927884db25bae0fe089ddcdde9f0", null ],
     [ "reig_hqr_calculate_norm", "reig__hqr_8c.html#a498aa8e15bdd009d5358c085d907458f", null ],
     [ "reig_hqr_main", "reig__hqr_8c.html#ac783e771a2515a5f700e02d250e3d3e8", null ],
+    [ "reig_hqr_mt", "reig__hqr_8c.html#a0363b8ee94f0f5c921519724db2be84e", null ],
     [ "reig_hqr_scale", "reig__hqr_8c.html#a10b788ac5e56a1bf4c69f3a468cca017", null ],
     [ "reig_hqr_test_formula_11_6_26", "reig__hqr_8c.html#a519dd9722b9d12d6979aafccc2404297", null ],
     [ "reig_hqr_test_UDE", "reig__hqr_8c.html#a1ae38d6fb13b9ecaf0d12ca5a4c60d4c", null ]

@@ -1,0 +1,41 @@
+<map id="casinh_r" name="casinh_r">
+<area shape="rect" id="node2" href="$cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="115,715,173,741"/>
+<area shape="rect" id="node7" href="$cmulti_8c.html#a6b13621b7f503d784e2734aa7b569ad6" title="cmulti型の計算 y=asinh(x) " alt="" coords="113,461,175,488"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="469,664,515,691"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="223,715,287,741"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="1001,385,1099,412"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="576,791,628,817"/>
+<area shape="rect" id="node8" href="$cmulti_8c.html#ad5f1e890ff473b1d8c05ba90df4d1f67" title="cmulti型が実数であるかの判定. " alt="" coords="227,56,283,83"/>
+<area shape="rect" id="node12" href="$is__rmulti_8h.html#a98fa056e4473c261334657331f4ca9a6" title="rmulti型の計算 y=arcsinh(x) " alt="" coords="577,56,627,83"/>
+<area shape="rect" id="node13" href="$cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="233,512,276,539"/>
+<area shape="rect" id="node20" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="347,613,395,640"/>
+<area shape="rect" id="node21" href="$cmulti_8c.html#a630be55c263a817d2751c463b0c7ec04" title="cmulti型の足し算 z=x+y " alt="" coords="227,664,283,691"/>
+<area shape="rect" id="node23" href="$cmulti_8c.html#ab5b002aade48f0db66584bb8bebdf47a" title="cmulti型の計算 y=sqrt(x) " alt="" coords="227,411,282,437"/>
+<area shape="rect" id="node37" href="$cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="233,107,277,133"/>
+<area shape="rect" id="node39" href="$cmulti_8c.html#a8168c3ad5161e6500e5f2c628c1c56cf" title="cmulti型の計算 y=log(x) " alt="" coords="346,284,397,311"/>
+<area shape="rect" id="node9" href="$cmulti_8c.html#a0873a88220c125143451a70a83a712f6" title="cmulti型が数であるかの判定. " alt="" coords="335,5,408,32"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="343,56,400,83"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="456,5,528,32"/>
+<area shape="rect" id="node14" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="803,563,845,589"/>
+<area shape="rect" id="node15" href="$is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="793,613,855,640"/>
+<area shape="rect" id="node18" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="792,411,856,437"/>
+<area shape="rect" id="node16" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="908,613,949,640"/>
+<area shape="rect" id="node17" href="$rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="908,664,949,691"/>
+<area shape="rect" id="node19" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="907,411,950,437"/>
+<area shape="rect" id="node22" href="$is__rmulti_8h.html#aa5a168c25854e329caf7098b1d69cc18" title="radd_si" alt="" coords="344,715,399,741"/>
+<area shape="rect" id="node24" href="$cmulti_8c.html#a437d4eee34b5776cf56f71b1579fc3a7" title="cmulti型のべき乗 z=x^y " alt="" coords="340,360,403,387"/>
+<area shape="rect" id="node25" href="$cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="457,259,527,285"/>
+<area shape="rect" id="node30" href="$is__rmulti_8h.html#a40c3b02fafdb75728c59fe77c93319f8" title="rmulti型のべき乗 z=x^y " alt="" coords="794,309,854,336"/>
+<area shape="rect" id="node33" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="576,360,628,387"/>
+<area shape="rect" id="node34" href="$cmulti_8c.html#aaa8a19431cf6f99ead0badf3b0b15400" title="cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta) " alt="" coords="676,512,744,539"/>
+<area shape="rect" id="node26" href="$cmulti_8c.html#ae6aa56ed1fbc6ffe1d33b6dea08330af" title="cmulti型の絶対値 y=abs(x) " alt="" coords="578,259,626,285"/>
+<area shape="rect" id="node29" href="$is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="685,169,735,196"/>
+<area shape="rect" id="node27" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="685,461,735,488"/>
+<area shape="rect" id="node28" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="689,233,731,260"/>
+<area shape="rect" id="node31" href="$rmulti_8c.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="904,259,953,285"/>
+<area shape="rect" id="node32" href="$rmulti_8c.html#aa0c79243aad50484f6b79774c245d458" title="rmulti型のべき乗 z=x^y " alt="" coords="907,309,951,336"/>
+<area shape="rect" id="node35" href="$is__rmulti_8h.html#a1edeec7e41c8f6cb460192e5f17d924b" title="rmulti型の計算 y=cos(x) " alt="" coords="908,512,949,539"/>
+<area shape="rect" id="node36" href="$is__rmulti_8h.html#ad66ca5ba97fbddd89b86346c2d3301a9" title="rmulti型の計算 y=sin(x) " alt="" coords="805,461,843,488"/>
+<area shape="rect" id="node38" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="471,81,513,108"/>
+<area shape="rect" id="node40" href="$is__rmulti_8h.html#a3582139ef5d769709f033269ddc5d606" title="rmulti型の計算 y=log(x) " alt="" coords="473,208,511,235"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="reig_hqr_calculate_formula_11_6_25" name="reig_hqr_calculate_formula_11_6_25">
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="169,5,233,32"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="181,56,222,83"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="180,107,223,133"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="180,157,223,184"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a8153c7e83727dfeb077041872ce4f431" title="rmulti型の掛け算 z=x*y " alt="" coords="174,208,229,235"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#ae363867ff237f199c245221c408d2dde" title="rmulti型の浮動小数点数xの符号部の取得.x&gt;=0のとき1，x&lt;0のとき&#45;1を返す． " alt="" coords="159,259,244,285"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="292,132,389,159"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="310,259,371,285"/>
+</map>

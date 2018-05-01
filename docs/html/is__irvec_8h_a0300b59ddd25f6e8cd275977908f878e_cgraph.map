@@ -1,0 +1,18 @@
+<map id="irvec_umax_abs" name="irvec_umax_abs">
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="556,194,620,220"/>
+<area shape="rect" id="node3" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="148,282,253,308"/>
+<area shape="rect" id="node5" href="$irvec_8c.html#a74d30f2d0e821cb9a31e3ae422794e14" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="168,180,233,207"/>
+<area shape="rect" id="node16" href="$irvec_8c.html#a113dfccfe605a4d54cf12ec76cfc37ae" title="最大値 [y0,y1]=[x0,max(x1)] 上限で比較 " alt="" coords="435,383,508,410"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="301,282,387,308"/>
+<area shape="rect" id="node6" href="$irmulti_8c.html#a1284fc06163ebd6ab11d13886fda2bef" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="322,180,366,207"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="444,79,499,106"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="441,180,502,207"/>
+<area shape="rect" id="node9" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="441,231,502,258"/>
+<area shape="rect" id="node10" href="$irmulti_8c.html#a75127c83ea5216e67755d6d959b630c8" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="563,307,613,334"/>
+<area shape="rect" id="node11" href="$irmulti_8c.html#afa386bc5a2e6b1ed3102a23286241dd3" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="449,282,493,308"/>
+<area shape="rect" id="node12" href="$is__rmulti_8h.html#a125c6b1140d9123b37acd8d72ea14aaa" title="2つのrmulti型の大きい方 上丸め z=max2(x,y) " alt="" coords="438,28,505,55"/>
+<area shape="rect" id="node13" href="$rmulti_8c.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="569,143,607,170"/>
+<area shape="rect" id="node14" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="668,231,740,258"/>
+<area shape="rect" id="node15" href="$rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="682,307,726,334"/>
+<area shape="rect" id="node17" href="$is__rmulti_8h.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="569,358,607,384"/>
+</map>

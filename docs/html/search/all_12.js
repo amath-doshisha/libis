@@ -2,9 +2,6 @@ var searchData=
 [
   ['s',['s',['../unionfunc__p__struct.html#a649170db47cba780aeed2c30a69e4783',1,'func_p_struct']]],
   ['sdbmhash',['SDBMHash',['../_general_hash_functions_8c.html#a1d4d30e1cd10bab49f1594b35b8ba5db',1,'SDBMHash(const char *str):&#160;GeneralHashFunctions.c'],['../_general_hash_functions_8h.html#a1d4d30e1cd10bab49f1594b35b8ba5db',1,'SDBMHash(const char *str):&#160;GeneralHashFunctions.c']]],
-  ['set_5fauto_5fprec_5fdisabled',['set_auto_prec_disabled',['../is__rmulti_8h.html#ae43a20d10b103466e6a74b1ee328c545',1,'set_auto_prec_disabled(void):&#160;rmulti.c'],['../rmulti_8c.html#a70248b408cc815c6a7ef294a6eee3c2d',1,'set_auto_prec_disabled():&#160;rmulti.c']]],
-  ['set_5fauto_5fprec_5fenabled',['set_auto_prec_enabled',['../is__rmulti_8h.html#aef8aaf84c1791144525ebd92df758592',1,'set_auto_prec_enabled(void):&#160;rmulti.c'],['../rmulti_8c.html#a5ae13cd3360ef9a2ff85c9fc8785db95',1,'set_auto_prec_enabled():&#160;rmulti.c']]],
-  ['set_5fauto_5fprec_5fmode',['set_auto_prec_mode',['../is__rmulti_8h.html#ac0a95de5da46cf63a31898f9aa88ad9d',1,'set_auto_prec_mode(int mode):&#160;rmulti.c'],['../rmulti_8c.html#ac0a95de5da46cf63a31898f9aa88ad9d',1,'set_auto_prec_mode(int mode):&#160;rmulti.c']]],
   ['set_5fdefault_5fprec',['set_default_prec',['../is__rmulti_8h.html#a0f2a8a1774c4c3fb63d5cd06e69f7e36',1,'set_default_prec(int prec):&#160;rmulti.c'],['../rmulti_8c.html#a0f2a8a1774c4c3fb63d5cd06e69f7e36',1,'set_default_prec(int prec):&#160;rmulti.c']]],
   ['set_5fround_5fdown',['SET_ROUND_DOWN',['../is__rounding_8h.html#a0ed35f7d63b7095cdebcd5780475a860',1,'is_rounding.h']]],
   ['set_5fround_5fmode',['set_round_mode',['../is__rmulti_8h.html#a051976f29c7faa806d3dc021a3f9adb5',1,'set_round_mode(mpfr_rnd_t default_round):&#160;rmulti.c'],['../rmulti_8c.html#adb7393c2cedeaca144588b437af1f863',1,'set_round_mode(mpfr_rnd_t mode):&#160;rmulti.c']]],
@@ -19,8 +16,12 @@ var searchData=
   ['str_5fdigits',['STR_DIGITS',['../strings_8c.html#a2b32d4deba75a600f67861434d45e0a8',1,'strings.c']]],
   ['str_5feq',['STR_EQ',['../is__macros_8h.html#a12d5268368359848b159e9229ca2e9c3',1,'is_macros.h']]],
   ['str_5feq_5fn',['STR_EQ_N',['../is__macros_8h.html#ae339fdf9d25472be10db43d53d352552',1,'is_macros.h']]],
+  ['str_5fexp',['STR_EXP',['../strings_8c.html#a6c7c18688884bd3e0b8352f6a68a2dc4',1,'strings.c']]],
+  ['str_5fhas_5fany_5fchar',['str_has_any_char',['../is__strings_8h.html#adbda569c2b80abd23cbcde422239783a',1,'str_has_any_char(const char *s, const char *c):&#160;strings.c'],['../strings_8c.html#adbda569c2b80abd23cbcde422239783a',1,'str_has_any_char(const char *s, const char *c):&#160;strings.c']]],
   ['str_5fident',['STR_IDENT',['../strings_8c.html#a8f8108f5f119b246f714faa776dbf0d1',1,'strings.c']]],
   ['str_5fmatch',['str_match',['../is__strings_8h.html#a44835de3435f02ee1884c917dbb94371',1,'str_match(const char *str, const char *pattern, const char *mask_start, const char *mask_end):&#160;strings.c'],['../strings_8c.html#a93da6cd5f5441bef66622f97f82f7c06',1,'str_match(const char *s, const char *p0, const char *mask_begin, const char *mask_end):&#160;strings.c']]],
+  ['str_5fpoint',['STR_POINT',['../strings_8c.html#aa97ab19fd4ce3dfbdd82e7c61c078222',1,'strings.c']]],
+  ['str_5fsign',['STR_SIGN',['../strings_8c.html#a4bfdd55894db8f85d19c6d1f2d0e7def',1,'strings.c']]],
   ['strings',['strings',['../structstrings.html',1,'']]],
   ['strings_2ec',['strings.c',['../strings_8c.html',1,'']]],
   ['strings_5fat',['strings_at',['../is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569',1,'strings_at(strings *str, int i):&#160;strings.c'],['../strings_8c.html#aa137b865116b8931f3ca7322f8b23569',1,'strings_at(strings *str, int i):&#160;strings.c']]],
@@ -41,6 +42,7 @@ var searchData=
   ['strings_5fsize',['strings_size',['../is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e',1,'strings_size(strings *str):&#160;strings.c'],['../strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e',1,'strings_size(strings *str):&#160;strings.c']]],
   ['strings_5fsplit',['strings_split',['../is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f',1,'strings_split(const char *str, const char *sep, const char *mask_start, const char *mask_end, const char *skip):&#160;strings.c'],['../strings_8c.html#aed6fc2910cf66df10d85687eafae6a0a',1,'strings_split(const char *str, const char *sep, const char *mask_begin, const char *mask_end, const char *skip):&#160;strings.c']]],
   ['strings_5fsplit_5fmask',['strings_split_mask',['../is__strings_8h.html#a68d82805386047fbbcc917aa10a020d7',1,'strings_split_mask(const char *str, const char *mask_begin, const char *mask_end, const char *skip):&#160;strings.c'],['../strings_8c.html#a68d82805386047fbbcc917aa10a020d7',1,'strings_split_mask(const char *str, const char *mask_begin, const char *mask_end, const char *skip):&#160;strings.c']]],
+  ['strings_5fsplit_5fnumber',['strings_split_number',['../is__strings_8h.html#a8c99bb44e384b646ed1eaf73599a44db',1,'strings_split_number(const char *s):&#160;strings.c'],['../strings_8c.html#a8c99bb44e384b646ed1eaf73599a44db',1,'strings_split_number(const char *s):&#160;strings.c']]],
   ['strings_5fsplit_5fpath',['strings_split_path',['../is__strings_8h.html#a3cc5fbbee65c1413e7adb1fec39adda0',1,'strings_split_path(const char *str, const char *suffix):&#160;strings.c'],['../strings_8c.html#a3cc5fbbee65c1413e7adb1fec39adda0',1,'strings_split_path(const char *str, const char *suffix):&#160;strings.c']]],
   ['swap2',['SWAP2',['../is__macros_8h.html#a9e1dbf0024c0fdd247172fe23ef3e755',1,'is_macros.h']]]
 ];

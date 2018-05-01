@@ -1,0 +1,2681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Desktop/Dropbox/g-kondo/libis/src/is_irmat3.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('is__irmat3_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_irmat3.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="is__irmat3_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:addcaf1cca6fc2ae179892e2f9403ed81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#addcaf1cca6fc2ae179892e2f9403ed81">irmat3_copy</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B1, int LDB1, int LDB2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:addcaf1cca6fc2ae179892e2f9403ed81"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の3次元配列の値のコピー [B0,B1]=[A0,A1]  <a href="#addcaf1cca6fc2ae179892e2f9403ed81">[詳解]</a><br /></td></tr>
+<tr class="separator:addcaf1cca6fc2ae179892e2f9403ed81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2124c9b683868dfdd6c5413cefd695f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a2124c9b683868dfdd6c5413cefd695f7">irmat3_set_d</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B1, int LDB1, int LDB2, double *A, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:a2124c9b683868dfdd6c5413cefd695f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の3次元配列の値を倍精度実数から設定 B=rmulti(A).  <a href="#a2124c9b683868dfdd6c5413cefd695f7">[詳解]</a><br /></td></tr>
+<tr class="separator:a2124c9b683868dfdd6c5413cefd695f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac055170526b5447920ce418130914f1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#ac055170526b5447920ce418130914f1e">irmat3_set_dd</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C1, int LDC1, int LDC2, double *A, int LDA1, int LDA2, double *B, int LDB1, int LDB2)</td></tr>
+<tr class="memdesc:ac055170526b5447920ce418130914f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の3次元配列の値を倍精度実数から設定 C=rmulti(A,B).  <a href="#ac055170526b5447920ce418130914f1e">[詳解]</a><br /></td></tr>
+<tr class="separator:ac055170526b5447920ce418130914f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4d90b2c7a263807905695c07849a38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a5f4d90b2c7a263807905695c07849a38">irmat3_mid</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **mid, int LD1mid, int LD2mid, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:a5f4d90b2c7a263807905695c07849a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の中心 [m-r,m+r]=[A0,A1]  <a href="#a5f4d90b2c7a263807905695c07849a38">[詳解]</a><br /></td></tr>
+<tr class="separator:a5f4d90b2c7a263807905695c07849a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a450e0b9653e4fbadd3a92b1ca7fc73fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a450e0b9653e4fbadd3a92b1ca7fc73fc">irmat3_rad</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **rad, int LD1rad, int LD2rad, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:a450e0b9653e4fbadd3a92b1ca7fc73fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の半径 [m-r,m+r]=[A0,A1]  <a href="#a450e0b9653e4fbadd3a92b1ca7fc73fc">[詳解]</a><br /></td></tr>
+<tr class="separator:a450e0b9653e4fbadd3a92b1ca7fc73fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa28f28b628508099b5a9ac9d9b9ce638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#aa28f28b628508099b5a9ac9d9b9ce638">irmat3_mr</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **mid, int LD1mid, int LD2mid, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **rad, int LD1rad, int LD2rad, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:aa28f28b628508099b5a9ac9d9b9ce638"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の中心と半径 [m-r,m+r]=[A0,A1]  <a href="#aa28f28b628508099b5a9ac9d9b9ce638">[詳解]</a><br /></td></tr>
+<tr class="separator:aa28f28b628508099b5a9ac9d9b9ce638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c5ab0acc28ad969a5330f2897c0c45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a39c5ab0acc28ad969a5330f2897c0c45">irmat3_neg</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B1, int LDB1, int LDB2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:a39c5ab0acc28ad969a5330f2897c0c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型の3次元配列の符号反転 B=-A.  <a href="#a39c5ab0acc28ad969a5330f2897c0c45">[詳解]</a><br /></td></tr>
+<tr class="separator:a39c5ab0acc28ad969a5330f2897c0c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ae584dc867f73f90f72576a93e7888"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a91ae584dc867f73f90f72576a93e7888">irmat3_add</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y1, int LDY1, int LDY2)</td></tr>
+<tr class="memdesc:a91ae584dc867f73f90f72576a93e7888"><td class="mdescLeft">&#160;</td><td class="mdescRight">足し算 [Z0,Z1]=[X0,X1]+[Y0,Y1]  <a href="#a91ae584dc867f73f90f72576a93e7888">[詳解]</a><br /></td></tr>
+<tr class="separator:a91ae584dc867f73f90f72576a93e7888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e97d69844191554e3c39470bb2187ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a2e97d69844191554e3c39470bb2187ac">irmat3_add_r</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y1)</td></tr>
+<tr class="memdesc:a2e97d69844191554e3c39470bb2187ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">足し算 [Z0,Z1]=[X0,X1]+b  <a href="#a2e97d69844191554e3c39470bb2187ac">[詳解]</a><br /></td></tr>
+<tr class="separator:a2e97d69844191554e3c39470bb2187ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d2de862415826754d163844d72729e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a76d2de862415826754d163844d72729e">irmat3_sub</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y1, int LDY1, int LDY2)</td></tr>
+<tr class="memdesc:a76d2de862415826754d163844d72729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [Z0,Z1]=[X0,X1]-[Y0,Y1]  <a href="#a76d2de862415826754d163844d72729e">[詳解]</a><br /></td></tr>
+<tr class="separator:a76d2de862415826754d163844d72729e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40adf237ce39256447e2c93c312f8cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#ab40adf237ce39256447e2c93c312f8cc">irmat3_sub_r1</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *X1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y1, int LDY1, int LDY2)</td></tr>
+<tr class="memdesc:ab40adf237ce39256447e2c93c312f8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [Z0,Z1]=[x0,x1]-[Y0,Y1]  <a href="#ab40adf237ce39256447e2c93c312f8cc">[詳解]</a><br /></td></tr>
+<tr class="separator:ab40adf237ce39256447e2c93c312f8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75108a0985f221a2cb423acef57ad92b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a75108a0985f221a2cb423acef57ad92b">irmat3_sub_r2</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y1)</td></tr>
+<tr class="memdesc:a75108a0985f221a2cb423acef57ad92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">引き算 [Z0,Z1]=[X0,X1]-[y0,y1]  <a href="#a75108a0985f221a2cb423acef57ad92b">[詳解]</a><br /></td></tr>
+<tr class="separator:a75108a0985f221a2cb423acef57ad92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b14034937ab2813e77ffba5161d002"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#ab0b14034937ab2813e77ffba5161d002">irmat3_mul</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y1, int LDY1, int LDY2)</td></tr>
+<tr class="memdesc:ab0b14034937ab2813e77ffba5161d002"><td class="mdescLeft">&#160;</td><td class="mdescRight">掛け算 [Z0,Z1]=[X0,X1]*[Y0,Y1]  <a href="#ab0b14034937ab2813e77ffba5161d002">[詳解]</a><br /></td></tr>
+<tr class="separator:ab0b14034937ab2813e77ffba5161d002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f2a2e229e033f2203b3d3b1161a6b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a63f2a2e229e033f2203b3d3b1161a6b3">irmat3_mul_r</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y1)</td></tr>
+<tr class="memdesc:a63f2a2e229e033f2203b3d3b1161a6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">掛け算 [Z0,Z1]=[X0,X1]*[y0,y1]  <a href="#a63f2a2e229e033f2203b3d3b1161a6b3">[詳解]</a><br /></td></tr>
+<tr class="separator:a63f2a2e229e033f2203b3d3b1161a6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3d3c6594aefb6f25e723e02a477c9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#aea3d3c6594aefb6f25e723e02a477c9b">irmat3_div</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y1, int LDY1, int LDY2)</td></tr>
+<tr class="memdesc:aea3d3c6594aefb6f25e723e02a477c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り算 [Z0,Z1]=[X0,X1]./[Y0,Y1]  <a href="#aea3d3c6594aefb6f25e723e02a477c9b">[詳解]</a><br /></td></tr>
+<tr class="separator:aea3d3c6594aefb6f25e723e02a477c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac57bf5408088d69214324e2e19911d74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#ac57bf5408088d69214324e2e19911d74">irmat3_div_r1</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *X1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Y1, int LDY1, int LDY2)</td></tr>
+<tr class="memdesc:ac57bf5408088d69214324e2e19911d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り算 [Z0,Z1]=[x0,y1]./[Y0,Y1]  <a href="#ac57bf5408088d69214324e2e19911d74">[詳解]</a><br /></td></tr>
+<tr class="separator:ac57bf5408088d69214324e2e19911d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431d82f4eb086a21390c400681beecf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a431d82f4eb086a21390c400681beecf2">irmat3_div_r2</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Z1, int LDZ1, int LDZ2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X1, int LDX1, int LDX2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *Y1)</td></tr>
+<tr class="memdesc:a431d82f4eb086a21390c400681beecf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り算 [Z0,Z1]=[X0,Y1]./[x0,y1]  <a href="#a431d82f4eb086a21390c400681beecf2">[詳解]</a><br /></td></tr>
+<tr class="separator:a431d82f4eb086a21390c400681beecf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2ad8092567233aa65ec34cc130bb10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#aef2ad8092567233aa65ec34cc130bb10">irmat3_abs</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C1, int LDC1, int LDC2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:aef2ad8092567233aa65ec34cc130bb10"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型の3次元配列の絶対値 C=abs(A).  <a href="#aef2ad8092567233aa65ec34cc130bb10">[詳解]</a><br /></td></tr>
+<tr class="separator:aef2ad8092567233aa65ec34cc130bb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c0f5b9b47ca05433e3c27a35d31e52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a35c0f5b9b47ca05433e3c27a35d31e52">irmat3_sqrt</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C1, int LDC1, int LDC2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:a35c0f5b9b47ca05433e3c27a35d31e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">3次元配列の平方根 C=sqrt(A).  <a href="#a35c0f5b9b47ca05433e3c27a35d31e52">[詳解]</a><br /></td></tr>
+<tr class="separator:a35c0f5b9b47ca05433e3c27a35d31e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197a20e8e3a680cccef428c1c5e0f0b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a197a20e8e3a680cccef428c1c5e0f0b5">irmat3_log10</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **C1, int LDC1, int LDC2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:a197a20e8e3a680cccef428c1c5e0f0b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型の3次元配列のlog10を取った値 C=log10(A).  <a href="#a197a20e8e3a680cccef428c1c5e0f0b5">[詳解]</a><br /></td></tr>
+<tr class="separator:a197a20e8e3a680cccef428c1c5e0f0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac950932a49a30dcf42387aec3d08a4ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#ac950932a49a30dcf42387aec3d08a4ca">irmat3_sum</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B1, int LDB1, int LDB2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:ac950932a49a30dcf42387aec3d08a4ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型の3次元配列の和 B=sum(A).  <a href="#ac950932a49a30dcf42387aec3d08a4ca">[詳解]</a><br /></td></tr>
+<tr class="separator:ac950932a49a30dcf42387aec3d08a4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f68fd2358bebf3ac6351380736c0dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#ae3f68fd2358bebf3ac6351380736c0dd">irmat3_max</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B1, int LDB1, int LDB2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:ae3f68fd2358bebf3ac6351380736c0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型の3次元配列の最大値 [B0,B1]=[max(A0),max(A1)].  <a href="#ae3f68fd2358bebf3ac6351380736c0dd">[詳解]</a><br /></td></tr>
+<tr class="separator:ae3f68fd2358bebf3ac6351380736c0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5700a4b4f9b0b5723956435adbd56c2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#a5700a4b4f9b0b5723956435adbd56c2e">irmat3_umax</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B1, int LDB1, int LDB2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:a5700a4b4f9b0b5723956435adbd56c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型の3次元配列の最大値 [B0,B1]=[A0,max(A1)].  <a href="#a5700a4b4f9b0b5723956435adbd56c2e">[詳解]</a><br /></td></tr>
+<tr class="separator:a5700a4b4f9b0b5723956435adbd56c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5a45339882cc5a0cfed7491c8d15f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__irmat3_8h.html#acf5a45339882cc5a0cfed7491c8d15f4">irmat3_min</a> (int m, int n, int l, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B1, int LDB1, int LDB2, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A1, int LDA1, int LDA2)</td></tr>
+<tr class="memdesc:acf5a45339882cc5a0cfed7491c8d15f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型の3次元配列の最小値 [B0,B1]=[min(A0),min(A1)].  <a href="#acf5a45339882cc5a0cfed7491c8d15f4">[詳解]</a><br /></td></tr>
+<tr class="separator:acf5a45339882cc5a0cfed7491c8d15f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aef2ad8092567233aa65ec34cc130bb10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2ad8092567233aa65ec34cc130bb10">&#9670;&nbsp;</a></span>irmat3_abs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_abs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型の3次元配列の絶対値 C=abs(A). </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00285">285</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_aef2ad8092567233aa65ec34cc130bb10_cgraph.png" border="0" usemap="#is__irmat3_8h_aef2ad8092567233aa65ec34cc130bb10_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_aef2ad8092567233aa65ec34cc130bb10_cgraph" id="is__irmat3_8h_aef2ad8092567233aa65ec34cc130bb10_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#aff300b617848d643d2aa00a2e7040dbe" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="125,157,169,184"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="223,5,278,32"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="220,56,281,83"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="220,107,281,133"/>
+<area shape="rect" id="node6" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="339,171,389,197"/>
+<area shape="rect" id="node7" href="irmulti_8c.html#aab8b9f471b47e8054152264de875f9ae" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="229,208,273,235"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="332,233,396,260"/>
+<area shape="rect" id="node9" href="is__rmulti_8h.html#a125c6b1140d9123b37acd8d72ea14aaa" title="2つのrmulti型の大きい方 上丸め z=max2(x,y) " alt="" coords="217,309,284,336"/>
+<area shape="rect" id="node10" href="rmulti_8c.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="345,309,383,336"/>
+<area shape="rect" id="node11" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="444,284,516,311"/>
+<area shape="rect" id="node12" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="458,335,502,361"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a91ae584dc867f73f90f72576a93e7888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ae584dc867f73f90f72576a93e7888">&#9670;&nbsp;</a></span>irmat3_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>足し算 [Z0,Z1]=[X0,X1]+[Y0,Y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00134">134</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a91ae584dc867f73f90f72576a93e7888_cgraph.png" border="0" usemap="#is__irmat3_8h_a91ae584dc867f73f90f72576a93e7888_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a91ae584dc867f73f90f72576a93e7888_cgraph" id="is__irmat3_8h_a91ae584dc867f73f90f72576a93e7888_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="125,5,169,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2e97d69844191554e3c39470bb2187ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e97d69844191554e3c39470bb2187ac">&#9670;&nbsp;</a></span>irmat3_add_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_add_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>足し算 [Z0,Z1]=[X0,X1]+b </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00149">149</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a2e97d69844191554e3c39470bb2187ac_cgraph.png" border="0" usemap="#is__irmat3_8h_a2e97d69844191554e3c39470bb2187ac_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a2e97d69844191554e3c39470bb2187ac_cgraph" id="is__irmat3_8h_a2e97d69844191554e3c39470bb2187ac_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="135,5,179,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="addcaf1cca6fc2ae179892e2f9403ed81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addcaf1cca6fc2ae179892e2f9403ed81">&#9670;&nbsp;</a></span>irmat3_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_copy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の3次元配列の値のコピー [B0,B1]=[A0,A1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_addcaf1cca6fc2ae179892e2f9403ed81_cgraph.png" border="0" usemap="#is__irmat3_8h_addcaf1cca6fc2ae179892e2f9403ed81_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_addcaf1cca6fc2ae179892e2f9403ed81_cgraph" id="is__irmat3_8h_addcaf1cca6fc2ae179892e2f9403ed81_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="129,5,179,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aea3d3c6594aefb6f25e723e02a477c9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3d3c6594aefb6f25e723e02a477c9b">&#9670;&nbsp;</a></span>irmat3_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_div </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り算 [Z0,Z1]=[X0,X1]./[Y0,Y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00239">239</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_aea3d3c6594aefb6f25e723e02a477c9b_cgraph.png" border="0" usemap="#is__irmat3_8h_aea3d3c6594aefb6f25e723e02a477c9b_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_aea3d3c6594aefb6f25e723e02a477c9b_cgraph" id="is__irmat3_8h_aea3d3c6594aefb6f25e723e02a477c9b_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a7758aa632b1f979d363156f0957a4e67" title="割り算 [z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="121,81,161,108"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="209,5,273,32"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="211,56,272,83"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="211,107,272,133"/>
+<area shape="rect" id="node6" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="217,157,266,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac57bf5408088d69214324e2e19911d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57bf5408088d69214324e2e19911d74">&#9670;&nbsp;</a></span>irmat3_div_r1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_div_r1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り算 [Z0,Z1]=[x0,y1]./[Y0,Y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00254">254</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_ac57bf5408088d69214324e2e19911d74_cgraph.png" border="0" usemap="#is__irmat3_8h_ac57bf5408088d69214324e2e19911d74_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_ac57bf5408088d69214324e2e19911d74_cgraph" id="is__irmat3_8h_ac57bf5408088d69214324e2e19911d74_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a7758aa632b1f979d363156f0957a4e67" title="割り算 [z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="136,81,176,108"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="224,5,288,32"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="225,56,287,83"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="225,107,287,133"/>
+<area shape="rect" id="node6" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="231,157,281,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a431d82f4eb086a21390c400681beecf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431d82f4eb086a21390c400681beecf2">&#9670;&nbsp;</a></span>irmat3_div_r2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_div_r2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り算 [Z0,Z1]=[X0,Y1]./[x0,y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00270">270</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a431d82f4eb086a21390c400681beecf2_cgraph.png" border="0" usemap="#is__irmat3_8h_a431d82f4eb086a21390c400681beecf2_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a431d82f4eb086a21390c400681beecf2_cgraph" id="is__irmat3_8h_a431d82f4eb086a21390c400681beecf2_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a7758aa632b1f979d363156f0957a4e67" title="割り算 [z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="136,81,176,108"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="224,5,288,32"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="225,56,287,83"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="225,107,287,133"/>
+<area shape="rect" id="node6" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="231,157,281,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a197a20e8e3a680cccef428c1c5e0f0b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197a20e8e3a680cccef428c1c5e0f0b5">&#9670;&nbsp;</a></span>irmat3_log10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_log10 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型の3次元配列のlog10を取った値 C=log10(A). </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00300">300</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a197a20e8e3a680cccef428c1c5e0f0b5_cgraph.png" border="0" usemap="#is__irmat3_8h_a197a20e8e3a680cccef428c1c5e0f0b5_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a197a20e8e3a680cccef428c1c5e0f0b5_cgraph" id="is__irmat3_8h_a197a20e8e3a680cccef428c1c5e0f0b5_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a12b98f43b39fd51956cfd84cb7549de3" title="対数関数 [y0,y1]=log([x0,x1]) " alt="" coords="133,5,185,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae3f68fd2358bebf3ac6351380736c0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f68fd2358bebf3ac6351380736c0dd">&#9670;&nbsp;</a></span>irmat3_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_max </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型の3次元配列の最大値 [B0,B1]=[max(A0),max(A1)]. </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00341">341</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_ae3f68fd2358bebf3ac6351380736c0dd_cgraph.png" border="0" usemap="#is__irmat3_8h_ae3f68fd2358bebf3ac6351380736c0dd_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_ae3f68fd2358bebf3ac6351380736c0dd_cgraph" id="is__irmat3_8h_ae3f68fd2358bebf3ac6351380736c0dd_cgraph">
+<area shape="rect" id="node2" href="irmat_8c.html#a64b4ab585b206ad6c239bf88223d26d9" title="irmulti型の列ごとの最大値 B=max(A) " alt="" coords="128,31,224,57"/>
+<area shape="rect" id="node3" href="irvec_8c.html#a1f24369fe1085e4d34d72cc16260745a" title="最大値 [y0,y1]=[max(x0),max(x1)] " alt="" coords="272,31,340,57"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="388,5,437,32"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="393,56,432,83"/>
+<area shape="rect" id="node6" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="485,31,557,57"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="499,81,543,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f4d90b2c7a263807905695c07849a38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4d90b2c7a263807905695c07849a38">&#9670;&nbsp;</a></span>irmat3_mid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_mid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD1mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD2mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の中心 [m-r,m+r]=[A0,A1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a5f4d90b2c7a263807905695c07849a38_cgraph.png" border="0" usemap="#is__irmat3_8h_a5f4d90b2c7a263807905695c07849a38_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a5f4d90b2c7a263807905695c07849a38_cgraph" id="is__irmat3_8h_a5f4d90b2c7a263807905695c07849a38_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="125,5,169,32"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="217,5,281,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf5a45339882cc5a0cfed7491c8d15f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf5a45339882cc5a0cfed7491c8d15f4">&#9670;&nbsp;</a></span>irmat3_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_min </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型の3次元配列の最小値 [B0,B1]=[min(A0),min(A1)]. </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00363">363</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_acf5a45339882cc5a0cfed7491c8d15f4_cgraph.png" border="0" usemap="#is__irmat3_8h_acf5a45339882cc5a0cfed7491c8d15f4_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_acf5a45339882cc5a0cfed7491c8d15f4_cgraph" id="is__irmat3_8h_acf5a45339882cc5a0cfed7491c8d15f4_cgraph">
+<area shape="rect" id="node2" href="irmat_8c.html#a3708e3f4948e93cabc89a3861dbc4a82" title="irmulti型の列ごとの最小値 B=min(A) " alt="" coords="125,31,217,57"/>
+<area shape="rect" id="node3" href="irvec_8c.html#a87c7a30f5107fde81085bc28f0835556" title="最小値 [y0,y1]=[min(x0),min(x1)] " alt="" coords="265,31,331,57"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="379,5,428,32"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="384,56,423,83"/>
+<area shape="rect" id="node6" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="476,31,548,57"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="490,81,534,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa28f28b628508099b5a9ac9d9b9ce638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28f28b628508099b5a9ac9d9b9ce638">&#9670;&nbsp;</a></span>irmat3_mr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_mr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD1mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD2mid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD1rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD2rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の中心と半径 [m-r,m+r]=[A0,A1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00104">104</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_aa28f28b628508099b5a9ac9d9b9ce638_cgraph.png" border="0" usemap="#is__irmat3_8h_aa28f28b628508099b5a9ac9d9b9ce638_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_aa28f28b628508099b5a9ac9d9b9ce638_cgraph" id="is__irmat3_8h_aa28f28b628508099b5a9ac9d9b9ce638_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a93012ff805accf0b210b10f7591ebcc3" title="区間の中心と半径の表示(center&#45;radius form) [m&#45;r,m+r]=[x0,x1] " alt="" coords="120,31,159,57"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="207,5,271,32"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="214,56,263,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab0b14034937ab2813e77ffba5161d002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0b14034937ab2813e77ffba5161d002">&#9670;&nbsp;</a></span>irmat3_mul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_mul </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>掛け算 [Z0,Z1]=[X0,X1]*[Y0,Y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00209">209</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_ab0b14034937ab2813e77ffba5161d002_cgraph.png" border="0" usemap="#is__irmat3_8h_ab0b14034937ab2813e77ffba5161d002_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_ab0b14034937ab2813e77ffba5161d002_cgraph" id="is__irmat3_8h_ab0b14034937ab2813e77ffba5161d002_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a9f9bc42cc6a70b365b032dc7bedd1abb" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="125,107,169,133"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="217,5,281,32"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="219,56,280,83"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="230,157,269,184"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#a7544c8c3220be262b43d9cdcacd5f8f2" title="rmulti型の値の比較 x&gt;=y " alt="" coords="230,107,269,133"/>
+<area shape="rect" id="node9" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="225,208,274,235"/>
+<area shape="rect" id="node6" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="329,107,401,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="343,157,387,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63f2a2e229e033f2203b3d3b1161a6b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f2a2e229e033f2203b3d3b1161a6b3">&#9670;&nbsp;</a></span>irmat3_mul_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_mul_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>掛け算 [Z0,Z1]=[X0,X1]*[y0,y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00224">224</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a63f2a2e229e033f2203b3d3b1161a6b3_cgraph.png" border="0" usemap="#is__irmat3_8h_a63f2a2e229e033f2203b3d3b1161a6b3_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a63f2a2e229e033f2203b3d3b1161a6b3_cgraph" id="is__irmat3_8h_a63f2a2e229e033f2203b3d3b1161a6b3_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a9f9bc42cc6a70b365b032dc7bedd1abb" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="133,107,177,133"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="225,5,289,32"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="227,56,288,83"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="238,157,277,184"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#a7544c8c3220be262b43d9cdcacd5f8f2" title="rmulti型の値の比較 x&gt;=y " alt="" coords="238,107,277,133"/>
+<area shape="rect" id="node9" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="233,208,282,235"/>
+<area shape="rect" id="node6" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="337,107,409,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="351,157,395,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a39c5ab0acc28ad969a5330f2897c0c45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c5ab0acc28ad969a5330f2897c0c45">&#9670;&nbsp;</a></span>irmat3_neg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_neg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型の3次元配列の符号反転 B=-A. </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00119">119</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a39c5ab0acc28ad969a5330f2897c0c45_cgraph.png" border="0" usemap="#is__irmat3_8h_a39c5ab0acc28ad969a5330f2897c0c45_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a39c5ab0acc28ad969a5330f2897c0c45_cgraph" id="is__irmat3_8h_a39c5ab0acc28ad969a5330f2897c0c45_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#aab8b9f471b47e8054152264de875f9ae" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="125,31,169,57"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="217,5,281,32"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="225,56,274,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a450e0b9653e4fbadd3a92b1ca7fc73fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a450e0b9653e4fbadd3a92b1ca7fc73fc">&#9670;&nbsp;</a></span>irmat3_rad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_rad </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD1rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LD2rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の半径 [m-r,m+r]=[A0,A1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00089">89</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a450e0b9653e4fbadd3a92b1ca7fc73fc_cgraph.png" border="0" usemap="#is__irmat3_8h_a450e0b9653e4fbadd3a92b1ca7fc73fc_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a450e0b9653e4fbadd3a92b1ca7fc73fc_cgraph" id="is__irmat3_8h_a450e0b9653e4fbadd3a92b1ca7fc73fc_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a3b8efbf84f9a0f5f22f4cbdaa9834d84" title="区間の半径 rad=rad([x0,x1]) " alt="" coords="123,5,165,32"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="213,5,277,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2124c9b683868dfdd6c5413cefd695f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2124c9b683868dfdd6c5413cefd695f7">&#9670;&nbsp;</a></span>irmat3_set_d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_set_d </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の3次元配列の値を倍精度実数から設定 B=rmulti(A). </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a2124c9b683868dfdd6c5413cefd695f7_cgraph.png" border="0" usemap="#is__irmat3_8h_a2124c9b683868dfdd6c5413cefd695f7_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a2124c9b683868dfdd6c5413cefd695f7_cgraph" id="is__irmat3_8h_a2124c9b683868dfdd6c5413cefd695f7_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a2fdabfa10335af36c3951880616b5589" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="133,5,185,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac055170526b5447920ce418130914f1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac055170526b5447920ce418130914f1e">&#9670;&nbsp;</a></span>irmat3_set_dd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_set_dd </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の3次元配列の値を倍精度実数から設定 C=rmulti(A,B). </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_ac055170526b5447920ce418130914f1e_cgraph.png" border="0" usemap="#is__irmat3_8h_ac055170526b5447920ce418130914f1e_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_ac055170526b5447920ce418130914f1e_cgraph" id="is__irmat3_8h_ac055170526b5447920ce418130914f1e_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#adaa17d6543dcc7524f7f50439ec14bcd" title="倍精度実数の設定 [y0,y1]=[x0,x1]. " alt="" coords="139,5,196,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35c0f5b9b47ca05433e3c27a35d31e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c0f5b9b47ca05433e3c27a35d31e52">&#9670;&nbsp;</a></span>irmat3_sqrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_sqrt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>C1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDC2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3次元配列の平方根 C=sqrt(A). </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00315">315</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a35c0f5b9b47ca05433e3c27a35d31e52_cgraph.png" border="0" usemap="#is__irmat3_8h_a35c0f5b9b47ca05433e3c27a35d31e52_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a35c0f5b9b47ca05433e3c27a35d31e52_cgraph" id="is__irmat3_8h_a35c0f5b9b47ca05433e3c27a35d31e52_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a0c9e43322ce19bb64013242d8d64a504" title="平方根 [y0,y1]=sqrt([x0,x1]) " alt="" coords="125,5,169,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a76d2de862415826754d163844d72729e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d2de862415826754d163844d72729e">&#9670;&nbsp;</a></span>irmat3_sub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_sub </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [Z0,Z1]=[X0,X1]-[Y0,Y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00164">164</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a76d2de862415826754d163844d72729e_cgraph.png" border="0" usemap="#is__irmat3_8h_a76d2de862415826754d163844d72729e_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a76d2de862415826754d163844d72729e_cgraph" id="is__irmat3_8h_a76d2de862415826754d163844d72729e_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#ad83b8a1e9ca77caeaf833f866853ac35" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="125,31,169,57"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="217,5,281,32"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="225,56,274,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab40adf237ce39256447e2c93c312f8cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab40adf237ce39256447e2c93c312f8cc">&#9670;&nbsp;</a></span>irmat3_sub_r1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_sub_r1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDY2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [Z0,Z1]=[x0,x1]-[Y0,Y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00179">179</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_ab40adf237ce39256447e2c93c312f8cc_cgraph.png" border="0" usemap="#is__irmat3_8h_ab40adf237ce39256447e2c93c312f8cc_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_ab40adf237ce39256447e2c93c312f8cc_cgraph" id="is__irmat3_8h_ab40adf237ce39256447e2c93c312f8cc_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#ad83b8a1e9ca77caeaf833f866853ac35" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="139,31,183,57"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="231,5,295,32"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="238,56,287,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a75108a0985f221a2cb423acef57ad92b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75108a0985f221a2cb423acef57ad92b">&#9670;&nbsp;</a></span>irmat3_sub_r2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_sub_r2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDZ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>Y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引き算 [Z0,Z1]=[X0,X1]-[y0,y1] </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00194">194</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a75108a0985f221a2cb423acef57ad92b_cgraph.png" border="0" usemap="#is__irmat3_8h_a75108a0985f221a2cb423acef57ad92b_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a75108a0985f221a2cb423acef57ad92b_cgraph" id="is__irmat3_8h_a75108a0985f221a2cb423acef57ad92b_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#ad83b8a1e9ca77caeaf833f866853ac35" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="139,31,183,57"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="231,5,295,32"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="238,56,287,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac950932a49a30dcf42387aec3d08a4ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac950932a49a30dcf42387aec3d08a4ca">&#9670;&nbsp;</a></span>irmat3_sum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_sum </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型の3次元配列の和 B=sum(A). </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00330">330</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_ac950932a49a30dcf42387aec3d08a4ca_cgraph.png" border="0" usemap="#is__irmat3_8h_ac950932a49a30dcf42387aec3d08a4ca_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_ac950932a49a30dcf42387aec3d08a4ca_cgraph" id="is__irmat3_8h_ac950932a49a30dcf42387aec3d08a4ca_cgraph">
+<area shape="rect" id="node2" href="irmat_8c.html#af38af8651ab149569f376fb68829f2dc" title="irmulti型の列ごとの和 B=sum(A) " alt="" coords="128,31,224,57"/>
+<area shape="rect" id="node3" href="irvec_8c.html#af6b1831a90b21f995b72c909ca0a2d38" title="irmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="272,31,340,57"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#a2fdabfa10335af36c3951880616b5589" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="388,5,440,32"/>
+<area shape="rect" id="node5" href="irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="392,56,436,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5700a4b4f9b0b5723956435adbd56c2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5700a4b4f9b0b5723956435adbd56c2e">&#9670;&nbsp;</a></span>irmat3_umax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void irmat3_umax </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>B1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irmulti型の3次元配列の最大値 [B0,B1]=[A0,max(A1)]. </p>
+
+<p class="definition"> <a class="el" href="irmat3_8c_source.html">irmat3.c</a> の <a class="el" href="irmat3_8c_source.html#l00352">352</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__irmat3_8h_a5700a4b4f9b0b5723956435adbd56c2e_cgraph.png" border="0" usemap="#is__irmat3_8h_a5700a4b4f9b0b5723956435adbd56c2e_cgraph" alt=""/></div>
+<map name="is__irmat3_8h_a5700a4b4f9b0b5723956435adbd56c2e_cgraph" id="is__irmat3_8h_a5700a4b4f9b0b5723956435adbd56c2e_cgraph">
+<area shape="rect" id="node2" href="irmat_8c.html#ac53828ca10615524e90e6503db77fdd7" title="irmulti型の列ごとの最大値 B=max_u(A) " alt="" coords="133,31,235,57"/>
+<area shape="rect" id="node3" href="irvec_8c.html#a7e7a1f52ea010af885dba9541f6b2a2e" title="最大値 [y0,y1]=[x0,max(x1)] 上限で比較 " alt="" coords="283,31,356,57"/>
+<area shape="rect" id="node4" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="404,5,453,32"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="409,56,448,83"/>
+<area shape="rect" id="node6" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="501,31,573,57"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="515,81,559,108"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__irmat3_8h.html">is_irmat3.h</a></li>
+    <li class="footer">2018年05月01日(火) 15時47分22秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -20,11 +20,11 @@ bigint *bigint_allocate_script(const char *str);
 bigint *bigint_allocate_clone(bigint *x);
 bigint *bigint_free(bigint *x);
 void bigint_check(bigint *x);
-int bigint_gcd(rmulti *gcd, rmulti *m0, rmulti *n0);
+void bigint_gcd(rmulti *gcd, rmulti *m0, rmulti *n0);
 
 // cast
 // x=(bigint)value
-int rset_bi(rmulti *x, bigint *value);
+void rset_bi(rmulti *x, bigint *value);
 
 // init
 void bigint_set_nan(bigint *x);
@@ -54,7 +54,7 @@ int bigint_is_one(bigint *x);
 int bigint_is_neg_one(bigint *x);
 int bigint_sgn(bigint *x);
 int bigint_get_si(bigint *x);
-int bigint_get_rmulti(rmulti *z, bigint *x);
+void bigint_get_rmulti(rmulti *z, bigint *x);
 int bigint_get_cmulti(cmulti *z, bigint *x);
 void bigint_print(bigint *x);
 

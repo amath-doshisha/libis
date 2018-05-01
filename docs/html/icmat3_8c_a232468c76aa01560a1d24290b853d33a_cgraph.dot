@@ -1,0 +1,11 @@
+digraph "icmat3_copy_irmat3_ir"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node50 [label="icmat3_copy_irmat3_ir",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node50 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="iccopy_rr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$icmulti_8c.html#ab32ffca90bb0ee6184564f667901565b",tooltip="コピー [c0,c1]=[a0,a1]+[b0,b1]i. rmultiをcmultiにキャスト "];
+  Node51 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="ircopy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e",tooltip="コピー [y0,y1]=[x0,x1]. "];
+}

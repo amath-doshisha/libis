@@ -1,0 +1,101 @@
+<map id="iceig_1pair_krawczyk" name="iceig_1pair_krawczyk">
+<area shape="rect" id="node2" href="$cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3" title="cmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="487,2235,599,2261"/>
+<area shape="rect" id="node5" href="$cmat_8c.html#aea94f0c5f7aef3723bf9ade385f916f1" title="cmulti型の行列の値を零に設定. " alt="" coords="172,164,264,191"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="675,157,724,184"/>
+<area shape="rect" id="node10" href="$cmat_8c.html#ab3a150132f4568d6cfb7090da9bd870c" title="cmulti型の行列の値のコピー B=A " alt="" coords="341,1475,411,1501"/>
+<area shape="rect" id="node13" href="$cvec_8c.html#a93be33067bb0a997d227a050c59b6a2e" title="cmulti型のベクトルの符号反転 y=&#45;x " alt="" coords="343,309,409,336"/>
+<area shape="rect" id="node16" href="$cmat_8c.html#a179c70b57f8f52841572b3f951b1e64d" title="rmulti型の行列を共役転置をとり値のコピー B=A&#39;. " alt="" coords="176,461,260,488"/>
+<area shape="rect" id="node18" href="$icmat_8c.html#a0fd9ac2496348e85934ac4cc6104235d" title="[A0,A1]=[zeros(m,n),zeros(m,n)] " alt="" coords="171,2285,265,2312"/>
+<area shape="rect" id="node20" href="$icmulti_8c.html#aa1d9d43bc59bf611a30ac972fb0bb971" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="516,2513,569,2540"/>
+<area shape="rect" id="node22" href="$icmat_8c.html#afb39d5f9fed6cb55ced723d6e892f718" title="[B0,B1]=[A0,A1] " alt="" coords="507,1779,579,1805"/>
+<area shape="rect" id="node25" href="$icvec_8c.html#a95fc4d5c5f881698adf61b05c67044fa" title="符号の反転 [y0,y1]=&#45;[x0,x1] " alt="" coords="343,2032,409,2059"/>
+<area shape="rect" id="node28" href="$icmat_8c.html#ab20fb134b66b3f9d428ff81e018a6311" title="共役転置のコピー [B0,B1]=[A0,A1]&#39; " alt="" coords="175,1829,261,1856"/>
+<area shape="rect" id="node30" href="$cmat_8c.html#abf97d3721d78fc1ab19125f64a5e3d0b" title="cmulti型の行列の値を単位行列の設定. " alt="" coords="176,303,260,329"/>
+<area shape="rect" id="node31" href="$csolve_8c.html#a576868e96834c095ebc8ee49823ff790" title="線形方程式A*X=Bの解法. " alt="" coords="193,1525,243,1552"/>
+<area shape="rect" id="node51" href="$ceig_8c.html#a8f45c32026ba77b2e4e130fe40bca7bd" title="固有値問題の残差 F=A*x&#45;lambda*x. " alt="" coords="177,943,259,969"/>
+<area shape="rect" id="node59" href="$cvec_8c.html#a51a1da29a58b00fe54ad7a976cf6856a" title="cmulti型のベクトルの要素の絶対値の平方の総和 value=sum(abs(x).^2) " alt="" coords="495,1677,590,1704"/>
+<area shape="rect" id="node64" href="$cmulti_8c.html#acc2fb4ad494fde3c9e8bda9cc4888a13" title="cmulti型の引き算 z=x&#45;y " alt="" coords="813,1335,873,1361"/>
+<area shape="rect" id="node66" href="$iceig_8c.html#a7a9296624ac02dfb159798f6ebbc1f91" title="固有値問題の残差 F=A*X&#45;lambda*X " alt="" coords="177,2032,259,2059"/>
+<area shape="rect" id="node69" href="$icvec_8c.html#a8dfda122f3b428cff63ef378ded3c025" title="線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1] " alt="" coords="331,1981,421,2008"/>
+<area shape="rect" id="node74" href="$icvec_8c.html#a9255eccf614941e38364894bf5caa74c" title="絶対値の平方の総和 [y0,y1]=sum(abs([x0,x1]).^2) " alt="" coords="495,2336,591,2363"/>
+<area shape="rect" id="node77" href="$icmulti_8c.html#ae3d0e6ca9d8ad6143cbd76965f64f7ea" title="引き算 [z0,z1]=[x0,x1]&#45;[y,y] " alt="" coords="345,2133,407,2160"/>
+<area shape="rect" id="node80" href="$cvec_8c.html#ac3b637f3d7a4550caf7a81e83d3d55c9" title="cmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="344,1373,408,1400"/>
+<area shape="rect" id="node82" href="$cvec_8c.html#af38ff2ca844c408bb7bac8e757fae8f0" title="cmulti型のベクトルの要素の実部，虚部の絶対値 y=abs(real(x)+i*imag(x)) " alt="" coords="183,5,253,32"/>
+<area shape="rect" id="node85" href="$cvec_8c.html#a8bbfdd0bfe2c6cec873f994fab4b67c9" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="180,56,256,83"/>
+<area shape="rect" id="node88" href="$icvec_8c.html#aa3208bbe85a44b087e64a142243f69ec" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)] " alt="" coords="186,2387,250,2413"/>
+<area shape="rect" id="node91" href="$icmat_8c.html#a8a8dcfbc5870089ee980a961dc500829" title="積の減算 [C0,C1]=[C0,C1]&#45;[A0,A1]*[B0,B1] " alt="" coords="329,1677,423,1704"/>
+<area shape="rect" id="node94" href="$cvec_8c.html#a88c8b643d2b9af9df4720b86bee9e9b2" title="cmulti型のベクトルの値を零に設定. " alt="" coords="172,227,264,253"/>
+<area shape="rect" id="node96" href="$icvec_8c.html#aa5b9cc53debf27b47463470b1ecb60d7" title="線形変換の減算 [y0,y1]&#45;=[A0,A1]*[x0,x1] " alt="" coords="332,1931,420,1957"/>
+<area shape="rect" id="node97" href="$cvec_8c.html#a307a3f7a0d2961c82d4360c285bdaf27" title="cmulti型のベクトルがNaNを含むかの判定. " alt="" coords="175,2437,261,2464"/>
+<area shape="rect" id="node99" href="$cvec_8c.html#aaa6133491d8ebf54ae5e8ecd0d99bbc0" title="cmulti型のベクトルの値の比較 X&lt;=Y " alt="" coords="187,2488,249,2515"/>
+<area shape="rect" id="node3" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="810,2361,875,2388"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="933,2361,997,2388"/>
+<area shape="rect" id="node6" href="$cmat_8c.html#a2524fa8a9c1ac1b2d25afa026272c0d2" title="cmulti型の行列の値を倍精度実数から設定. " alt="" coords="331,157,421,184"/>
+<area shape="rect" id="node7" href="$cmulti_8c.html#a2bb4d36f3ed668f47d70fbe88982f61b" title="cmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="517,157,569,184"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="1045,323,1143,349"/>
+<area shape="rect" id="node11" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="819,943,867,969"/>
+<area shape="rect" id="node12" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="942,360,989,387"/>
+<area shape="rect" id="node14" href="$cmulti_8c.html#afd1574f7e1e9df79121555022f41e5dc" title="cmulti型の符号反転 y=&#45;x " alt="" coords="677,208,721,235"/>
+<area shape="rect" id="node15" href="$is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="821,259,864,285"/>
+<area shape="rect" id="node17" href="$cmulti_8c.html#aeb3ffb3f4b2ba8bec98f2eb47ff681e3" title="cmulti型の複素共役 y=conj(x). " alt="" coords="677,259,722,285"/>
+<area shape="rect" id="node19" href="$icmat_8c.html#a514cb182e8b878696c4ca4ca223d14c6" title="[A0,A1]=ones(m,n)*a " alt="" coords="330,2285,422,2312"/>
+<area shape="rect" id="node21" href="$irmulti_8c.html#a2fdabfa10335af36c3951880616b5589" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="673,2640,725,2667"/>
+<area shape="rect" id="node23" href="$icmulti_8c.html#a0e3f5efa94c1a1e8cc0a527d6cbcbdee" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="817,1880,868,1907"/>
+<area shape="rect" id="node24" href="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="941,2032,990,2059"/>
+<area shape="rect" id="node26" href="$icmulti_8c.html#a8575e8ccb3705e58bc442a75b68dbd00" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="677,2032,722,2059"/>
+<area shape="rect" id="node27" href="$irmulti_8c.html#aab8b9f471b47e8054152264de875f9ae" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="821,2032,865,2059"/>
+<area shape="rect" id="node29" href="$icmulti_8c.html#aeda1293ecab82c2ca6e146b9a5bc4eb8" title="複素共役 [y0,y1]=conj([x0,x1]) " alt="" coords="675,1981,723,2008"/>
+<area shape="rect" id="node32" href="$cmat_8c.html#a9ee764a5b39ff5f4938c03e72ebefc30" title="cmulti型の行列の精度を指定しての新規生成. " alt="" coords="488,1171,597,1197"/>
+<area shape="rect" id="node35" href="$cmat_8c.html#af158ba3988992435e2d0bf74519f03cf" title="cmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="487,1525,599,1552"/>
+<area shape="rect" id="node36" href="$csolve_8c.html#a578ec23ed74789795e73b7a7a98ca479" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="313,816,439,843"/>
+<area shape="rect" id="node50" href="$cmat_8c.html#ac70deb47241d9aa82afb30a5b461626d" title="cmulti型の行列の終了処理. " alt="" coords="509,1576,576,1603"/>
+<area shape="rect" id="node33" href="$cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="656,867,743,893"/>
+<area shape="rect" id="node34" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="800,512,885,539"/>
+<area shape="rect" id="node37" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="647,512,752,539"/>
+<area shape="rect" id="node38" href="$cvec_8c.html#ad1af5c539ed1b7dcee816e2378508e84" title="cmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="489,1120,597,1147"/>
+<area shape="rect" id="node39" href="$cmulti_8c.html#aa503b94586b8cd19e4876548c14e7c94" title="cmulti型の絶対値 y=abs(x) " alt="" coords="510,613,575,640"/>
+<area shape="rect" id="node40" href="$is__rmulti_8h.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="523,664,562,691"/>
+<area shape="rect" id="node41" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="514,715,571,741"/>
+<area shape="rect" id="node42" href="$cmat_8c.html#a6d06870922c8cdbce02f4a5d5a56cad0" title="cmulti型の行列の第k行と第l行を入れ替える. " alt="" coords="493,765,592,792"/>
+<area shape="rect" id="node43" href="$cmulti_8c.html#acc53c8af1fab907ef4e3fee3ed24e6ae" title="cmulti型の逆数 z=1/x " alt="" coords="514,309,571,336"/>
+<area shape="rect" id="node44" href="$cmulti_8c.html#a4ec442906efb8971bffdeb8917b6ed01" title="cmulti型の掛け算 z=x*y " alt="" coords="669,816,730,843"/>
+<area shape="rect" id="node45" href="$cmulti_8c.html#a1738d50d3985797aa6134d2ceec7cfec" title="cmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="501,867,584,893"/>
+<area shape="rect" id="node46" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="677,1177,721,1204"/>
+<area shape="rect" id="node47" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="821,1120,864,1147"/>
+<area shape="rect" id="node48" href="$is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="667,1069,731,1096"/>
+<area shape="rect" id="node49" href="$cvec_8c.html#a6791c96c35ff01e0aa9f3e0cfb63893b" title="cmulti型のベクトルの終了処理. " alt="" coords="510,1272,575,1299"/>
+<area shape="rect" id="node52" href="$cvec_8c.html#af62f592ca1513e780448bfce2d65ace1" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="339,613,413,640"/>
+<area shape="rect" id="node54" href="$cvec_8c.html#a43a9a9e4e8096ff4b3387a6e363ec845" title="cmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x " alt="" coords="333,1272,419,1299"/>
+<area shape="rect" id="node53" href="$cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="678,968,721,995"/>
+<area shape="rect" id="node55" href="$cmulti_8c.html#a1896b1ce557151d6f8cb8d62c5097a3a" title="cmulti型の掛け算の加算 z+=x*y " alt="" coords="510,1323,575,1349"/>
+<area shape="rect" id="node58" href="$cvec_8c.html#a262e5f18706be868351a213ef4c89d1a" title="cmulti型のベクトルの値のコピー y=x. " alt="" coords="508,1373,577,1400"/>
+<area shape="rect" id="node56" href="$cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="677,1297,721,1324"/>
+<area shape="rect" id="node57" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="821,1233,864,1260"/>
+<area shape="rect" id="node60" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="667,1525,731,1552"/>
+<area shape="rect" id="node62" href="$cmulti_8c.html#ac5a9ab58420fbb070d80044c53772710" title="cmulti型の絶対値の平方の加算 y+=abs(x)^2 " alt="" coords="664,1677,735,1704"/>
+<area shape="rect" id="node61" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="939,745,991,772"/>
+<area shape="rect" id="node63" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="818,1677,867,1704"/>
+<area shape="rect" id="node65" href="$is__rmulti_8h.html#a5e51ce3244395f8cafc096695fafa0fe" title="rmulti型の引き算 z=x&#45;y " alt="" coords="936,1176,995,1203"/>
+<area shape="rect" id="node67" href="$icvec_8c.html#ada51baee2bdc4b3131701f791169fcbf" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="337,2083,415,2109"/>
+<area shape="rect" id="node68" href="$icmulti_8c.html#acd8e365f46bd3fab9ffdf23b677a8f4d" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="677,2235,722,2261"/>
+<area shape="rect" id="node70" href="$icmulti_8c.html#a0fe3ffc70158834e96ac684b94b0d915" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="509,2133,577,2160"/>
+<area shape="rect" id="node73" href="$icvec_8c.html#a1417e5d49968225fc2d64c250ead9841" title="コピー [y0,y1]=[x0,x1] " alt="" coords="507,1931,579,1957"/>
+<area shape="rect" id="node71" href="$icmulti_8c.html#a1a18078d2a7c25e6225ceb5f2b6f561b" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="677,2133,722,2160"/>
+<area shape="rect" id="node72" href="$irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="821,2159,865,2185"/>
+<area shape="rect" id="node75" href="$icmulti_8c.html#ab16c3d6bb29e282fce6fbe2d8e461ec7" title="絶対値の平方の加算 [y0,y1]+=abs([x0,x1])^2 " alt="" coords="663,2285,736,2312"/>
+<area shape="rect" id="node76" href="$icmulti_8c.html#a93cfc12bd588f20b589fd9ba7d7c0043" title="絶対値の平方 [y0,y1]=abs([x0,x1])^2 " alt="" coords="817,2260,868,2287"/>
+<area shape="rect" id="node78" href="$irmulti_8c.html#a6e08aa86895eb5a94f67f11660ec0ae5" title="引き算 [z0,z1]=[x0,x1]&#45;[y,y] " alt="" coords="513,2463,573,2489"/>
+<area shape="rect" id="node79" href="$irmulti_8c.html#ad83b8a1e9ca77caeaf833f866853ac35" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="821,2463,865,2489"/>
+<area shape="rect" id="node81" href="$cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="510,1424,575,1451"/>
+<area shape="rect" id="node83" href="$cmulti_8c.html#ac51f9a54df2068b9d2bd8077bbced995" title="cmulti型の実部と虚部の絶対値 y=abs(x.r)+i*abs(x.i) " alt="" coords="819,12,867,39"/>
+<area shape="rect" id="node84" href="$is__rmulti_8h.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="945,63,986,89"/>
+<area shape="rect" id="node86" href="$cmulti_8c.html#adcac5110b6dc65a6fed2e430b15d5b75" title="cmulti型の掛け算 z=x*y " alt="" coords="815,93,870,120"/>
+<area shape="rect" id="node87" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="939,125,991,152"/>
+<area shape="rect" id="node89" href="$icmulti_8c.html#a6801239dcbea10ce1ad48d0caa41155a" title="符号の正負 [y0,y1]=[&#45;abs(real(x))&#45;i*abs(imag(x))],abs(real(x))+i*abs(imag(x))]. " alt="" coords="355,2387,397,2413"/>
+<area shape="rect" id="node90" href="$irmulti_8c.html#a2fb4aea3587b6786964811c9e47e7182" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)]. " alt="" coords="522,2564,563,2591"/>
+<area shape="rect" id="node92" href="$icmulti_8c.html#ab35119729c73efd46ea5f4a7d7bb73c5" title="積の減算 [z0,z1]&#45;=[x0,x1]*[y0,y1] " alt="" coords="509,2184,576,2211"/>
+<area shape="rect" id="node93" href="$icmulti_8c.html#a5f8e70c609ebc9ec4217b512f0e4823b" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="677,2488,722,2515"/>
+<area shape="rect" id="node95" href="$cvec_8c.html#a9c3fe05db1ab80a6c6fcd88a5a7c66e4" title="cmulti型のベクトルの全ての値を倍精度実数から設定. " alt="" coords="332,208,420,235"/>
+<area shape="rect" id="node98" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="348,2437,404,2464"/>
+<area shape="rect" id="node100" href="$cmulti_8c.html#aad21d421a63c33569ddb2f6fc95a366c" title="cmulti型の値の比較 x.r&lt;=y.r &amp;&amp; x.i&lt;=y.i " alt="" coords="356,2488,396,2515"/>
+</map>

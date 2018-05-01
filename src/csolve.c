@@ -32,16 +32,14 @@
  @param[in]  B サイズ(n,NRHS)の解の行列X.
  @param[in]  A サイズnの正方行列で係数行列A.
  */
-int csolve(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
+void csolve(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
 {
-  int e=0;
   cmulti **C=NULL;
   C=cmat_allocate_prec(n,n,cmat_get_prec_max(n,NRHS,B,LDB));
-  e+=cmat_copy(n,n,C,n,A,LDA);
-  //  e+=csolve_lu(n,NRHS,B,LDB,C,n,info);
-  e+=csolve_gauss_sweeper(n,NRHS,B,LDB,C,n,info);
+  cmat_copy(n,n,C,n,A,LDA);
+  //  csolve_lu(n,NRHS,B,LDB,C,n,info);
+  csolve_gauss_sweeper(n,NRHS,B,LDB,C,n,info);
   C=cmat_free(n,n,C);
-  return e;
 }
 
 /**
@@ -51,12 +49,10 @@ int csolve(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
  @param[in]  X サイズ(n,NRHS)の解の行列X.
  @param[out] R サイズ(n,NRHS)の残差の行列X.
 */
-int csolve_residual(int n, int NRHS, cmulti **R, int LDR, cmulti **A, int LDA, cmulti **X, int LDX, cmulti **B, int LDB)
+void csolve_residual(int n, int NRHS, cmulti **R, int LDR, cmulti **A, int LDA, cmulti **X, int LDX, cmulti **B, int LDB)
 {
-  int e=0;
-  e+=cmat_copy(n,NRHS,R,LDR,B,LDB);              // R=B
-  e+=cmat_sub_prod(n,n,NRHS,R,LDR,A,LDA,X,LDX);  // R=R-A*X
-  return e;
+  cmat_copy(n,NRHS,R,LDR,B,LDB);              // R=B
+  cmat_sub_prod(n,n,NRHS,R,LDR,A,LDA,X,LDX);  // R=R-A*X
 }
 
 /** @} */
@@ -73,20 +69,19 @@ int csolve_residual(int n, int NRHS, cmulti **R, int LDR, cmulti **A, int LDA, c
  @param[in]  A 係数行列A.サイズは(n,n).
  @param[out] A 破壊される.
  */
-int csolve_lu(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
+void csolve_lu(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
 {
-  int ret=0,*p=NULL,e=0;
+  int ret=0,*p=NULL;
   // allocate
   p=ivec_allocate(n);
   // LU decomposition
-  e+=csolve_lu_decomp(n,A,LDA,p,&ret);
+  csolve_lu_decomp(n,A,LDA,p,&ret);
   // solve by A=L*U,L*y=b,U*x=y
-  if(ret==0){ e+=csolve_lu_backsubs(n,NRHS,B,LDB,A,LDA,p); }
+  if(ret==0){ csolve_lu_backsubs(n,NRHS,B,LDB,A,LDA,p); }
   // free
   p=ivec_free(p);
   // done
   (*info)=ret;
-  return e;
 }
 
 /**
@@ -96,9 +91,9 @@ int csolve_lu(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *in
  @param[in]  p サイズがnの初期化済みの配列.
  @param[out] p ピボット選択の結果.
  */
-int csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
+void csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
 {
-  int prec,ret=0,e=0,i,j,k,l;
+  int prec,ret=0,i,j,k,l;
   cmulti *a=NULL;
   rmulti *c=NULL,*value=NULL;
   // allocate
@@ -109,10 +104,10 @@ int csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
   // LU分解
   for(k=0; k<n; k++){
     // pivot select
-    e+=cabsv(value,MA(k,k));
+    cabsv(value,MA(k,k));
     for(l=k,j=k+1; j<n; j++){
-      e+=cabsv(c,MA(j,k));
-      if(rgt(c,value)) { l=j; e+=rcopy(value,c); } // value=c
+      cabsv(c,MA(j,k));
+      if(rgt(c,value)) { l=j; rcopy(value,c); } // value=c
     }
     // エラー処理
     if(ris_zero(value)) { ret=l+1; break; }
@@ -125,12 +120,12 @@ int csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
     }
     // L行列とU行列の作成
     for(i=k+1; i<n; i++){
-      e+=cdiv(a,MA(i,k),MA(k,k));
+      cdiv(a,MA(i,k),MA(k,k));
       // L行列 A(i,k)=a
-      e+=ccopy(MA(i,k),a);
+      ccopy(MA(i,k),a);
       // U行列 A(i,k+1:end)+=(-a)*A(k,k+1:end)
       for(j=k+1; j<n; j++){
-	e+=csub_mul(MA(i,j),a,MA(k,j));
+	csub_mul(MA(i,j),a,MA(k,j));
       }
     }
   }
@@ -139,7 +134,6 @@ int csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
   c=rfree(c);
   value=rfree(value);
   (*info)=ret;
-  return e;
 }
 
 /**
@@ -149,9 +143,9 @@ int csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
  @param[in]  A サイズがnの正方行列でLU分解済みの係数行列A.
  @param[in]  p ピボット選択の要素の並び.
  */
-int csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *p)
+void csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *p)
 {
-  int prec,e=0,i,j,k;
+  int prec,i,j,k;
   cmulti *a=NULL,*b=NULL;
   // allocate
   prec=cmat_get_prec_max(n,NRHS,B,LDB);
@@ -163,26 +157,25 @@ int csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA
     cmat_swap_rows(n,NRHS,B,LDB,k,p[k]);
     for(i=k+1; i<n; i++){
       for(j=0; j<NRHS; j++){
-	e+=csub_mul(MB(i,j),MA(i,k),MB(k,j));
+	csub_mul(MB(i,j),MA(i,k),MB(k,j));
       }
     }
   }
   // x=inv(U)*y
   for(k=n-1; k>=0; k--){
     for(j=0; j<NRHS; j++){
-      e+=cset_d(a,0);
+      cset_d(a,0);
       for(i=k+1; i<n; i++){
-	e+=cadd_mul(a,MA(k,i),MB(i,j));
+	cadd_mul(a,MA(k,i),MB(i,j));
       }
-      e+=csub(MB(k,j),MB(k,j),a);
-      e+=cdiv(b,MB(k,j),MA(k,k));
-      e+=ccopy(MB(k,j),b);
+      csub(MB(k,j),MB(k,j),a);
+      cdiv(b,MB(k,j),MA(k,k));
+      ccopy(MB(k,j),b);
     }
   }
   // done
   a=cfree(a);
   b=cfree(b);
-  return e;
 }
 
 /** @} */
@@ -199,13 +192,14 @@ int csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA
  @param[in]  A 係数行列A.サイズは(n,n).
  @param[out] A 破壊される.
  */
-int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
+void csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
 {
-  int prec,p0,p1,ret=0,i,j,k,l,e=0;
+  int prec,p0,p1,ret=0,i,j,k,l;
   cmulti *a=NULL,*b=NULL;
   rmulti *value=NULL,*c=NULL;
-  rmulti **rws=NULL;int rws_size,rwss; //ワークスペース
-  cmulti **cws=NULL;int cws_size,cwss;
+  //ワークスペース  
+  int rws_size; rmulti **rws=NULL;  
+  int cws_size; cmulti **cws=NULL;
   // allocate
   p0=cmat_get_prec_max(n,NRHS,B,LDB);
   p1=cmat_get_prec_max(n,n,A,LDA);
@@ -214,16 +208,14 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
   b=callocate_prec(prec);
   c=rallocate_prec(prec);
   value=rallocate_prec(prec);
-  rws_size=2; rwss=rws_size;
-  cws_size=2; cwss=cws_size;  
-  rws=rvec_allocate_prec(rws_size,prec);
-  cws=cvec_allocate_prec(cws_size,prec);
+  rws_size=2; rws=rvec_allocate_prec(rws_size,prec);
+  cws_size=2; cws=cvec_allocate_prec(cws_size,prec);
   for(k=0; k<n; k++){
     //pivot select
-    e+=cabsv_ws(value,MA(k,k),&rwss,rws);
+    cabsv_ws(value,MA(k,k),rws_size,rws);
     for(l=k,j=k+1; j<n; j++){
-      e+=cabsv_ws(c,MA(j,k),&rwss,rws);
-      if(rgt(c,value)) { l=j; e+=rcopy(value,c); } // value=c
+      cabsv_ws(c,MA(j,k),rws_size,rws);
+      if(rgt(c,value)) { l=j; rcopy(value,c); } // value=c
     }
     if(ris_zero(value)) { ret=l+1; break; } // error
     if(l!=k){
@@ -231,18 +223,18 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
       if(l!=k) cmat_swap_rows(n,n,A,LDA,k,l); //swap A(k,:) <-> A(l,:)
     }
     //軸要素を1にする
-    e+=cinv_ws(a,MA(k,k),&rwss,rws,&cwss,cws);
-    for(j=k; j<n; j++)    { e+=cmul_ws(MA(k,j),a,MA(k,j),&rwss,rws,&cwss,cws); }
-    for(j=0; j<NRHS; j++) { e+=cmul_ws(MB(k,j),a,MB(k,j),&rwss,rws,&cwss,cws); }
+    cinv_ws(a,MA(k,k),rws_size,rws,cws_size,cws);
+    for(j=k; j<n; j++)    { cmul_ws(MA(k,j),a,MA(k,j),rws_size,rws,cws_size,cws); }
+    for(j=0; j<NRHS; j++) { cmul_ws(MB(k,j),a,MB(k,j),rws_size,rws,cws_size,cws); }
     //軸要素以外が 0 になるように他の列から軸要素の列を引く
     for(i=k+1; i<n; i++){
       if(i!=k){
-	e+=ccopy(a,MA(i,k));
+	ccopy(a,MA(i,k));
 	for(j=k; j<n; j++){
-	  e+=csub_mul_ws(MA(i,j),a,MA(k,j),&rwss,rws,&cwss,cws);
+	  csub_mul_ws(MA(i,j),a,MA(k,j),rws_size,rws,cws_size,cws);
 	}
 	for(j=0; j<NRHS; j++){
-	  e+=csub_mul_ws(MB(i,j),a,MB(k,j),&rwss,rws,&cwss,cws);
+	  csub_mul_ws(MB(i,j),a,MB(k,j),rws_size,rws,cws_size,cws);
 	}
       }
     }
@@ -252,7 +244,7 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
     for(k=0; k<NRHS; k++){
       for(i=n-1; i>=0; i--){
 	for(j=n-1; j>=i+1; j--){
-	  e+=csub_mul_ws(MB(i,k),MA(i,j),MB(j,k),&rwss,rws,&cwss,cws);
+	  csub_mul_ws(MB(i,k),MA(i,j),MB(j,k),rws_size,rws,cws_size,cws);
 	}
       }
     }
@@ -266,7 +258,6 @@ int csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int L
   cws=cvec_free(cws_size,cws);
   // done
   (*info)=ret;
-  return e;
 }
 
 /** @} */

@@ -12,21 +12,21 @@
 // Sove A*X=B by LU decomposition
 // X: input=B, output=X
 // A: input=A, output=destroyed
-int rsolve(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info);
+void rsolve(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info);
 
 // R=B-A*X
-int rsolve_residual(int n, int NRHS, rmulti **R, int LDR, rmulti **A, int LDA, rmulti **X, int LDX, rmulti **B, int LDB);
+void rsolve_residual(int n, int NRHS, rmulti **R, int LDR, rmulti **A, int LDA, rmulti **X, int LDX, rmulti **B, int LDB);
 
 // Sove A*X=B by LU decomposition
 // X: input=B, output=X
 // A: input=A, output=destroyed
-int rsolve_lu(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info);
-int rsolve_lu_decomp(int n, rmulti **A, int LDA, int *p, int *info);
-int rsolve_lu_backsubs(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *p);
+void rsolve_lu(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info);
+void rsolve_lu_decomp(int n, rmulti **A, int LDA, int *p, int *info);
+void rsolve_lu_backsubs(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *p);
 
 // Sove A*X=B by Gauss sweeper
 // X: input=B, output=X
 // A: input=A, output=destroyed
-int rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info);
+void rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info);
 
 #endif

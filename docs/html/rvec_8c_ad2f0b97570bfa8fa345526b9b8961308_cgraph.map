@@ -1,0 +1,16 @@
+<map id="rvec_abs_dcos" name="rvec_abs_dcos">
+<area shape="rect" id="node2" href="$rvec_8c.html#a285ab4bb0bc5fcff4f9f39d54c242434" title="rmulti型のベクトルの方向余弦 (x&#39;*y)/sqrt(x&#39;*x)/sqrt(y&#39;*y) " alt="" coords="143,201,211,228"/>
+<area shape="rect" id="node15" href="$is__rmulti_8h.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="156,277,197,304"/>
+<area shape="rect" id="node3" href="$rvec_8c.html#a397a6d456362872213039db0835f5525" title="rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) " alt="" coords="259,63,333,89"/>
+<area shape="rect" id="node12" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="408,201,449,228"/>
+<area shape="rect" id="node13" href="$rvec_8c.html#ab01237aee1bf0e440efe031a701e234c" title="rmulti型のベクトルの内積 value=sum(x.*y) " alt="" coords="385,113,472,140"/>
+<area shape="rect" id="node14" href="$is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="277,252,315,279"/>
+<area shape="rect" id="node4" href="$rvec_8c.html#a48a98f536e91a362d32435706adbcc46" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="381,63,476,89"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="535,5,577,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="524,63,588,89"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="524,113,588,140"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="636,49,688,76"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="736,151,833,177"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="641,151,683,177"/>
+<area shape="rect" id="node10" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="641,100,683,127"/>
+</map>

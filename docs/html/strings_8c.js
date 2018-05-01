@@ -4,7 +4,10 @@ var strings_8c =
     [ "STR_ALPHA", "strings_8c.html#a839fbb4426e322eed9dd2b54a90201e0", null ],
     [ "STR_ALPHA_ALL", "strings_8c.html#ae0ab1b983539ce62e1c644bb681812e9", null ],
     [ "STR_DIGITS", "strings_8c.html#a2b32d4deba75a600f67861434d45e0a8", null ],
+    [ "STR_EXP", "strings_8c.html#a6c7c18688884bd3e0b8352f6a68a2dc4", null ],
     [ "STR_IDENT", "strings_8c.html#a8f8108f5f119b246f714faa776dbf0d1", null ],
+    [ "STR_POINT", "strings_8c.html#aa97ab19fd4ce3dfbdd82e7c61c078222", null ],
+    [ "STR_SIGN", "strings_8c.html#a4bfdd55894db8f85d19c6d1f2d0e7def", null ],
     [ "char_cat", "strings_8c.html#ad1228de611244ac79dcb72254362b69d", null ],
     [ "char_clone", "strings_8c.html#aab2fd5ec9767f8953d6341c77b348c2d", null ],
     [ "char_cmp", "strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23", null ],
@@ -15,6 +18,7 @@ var strings_8c =
     [ "char_renew", "strings_8c.html#aa6791278c2e78ebebde37778dc579a8f", null ],
     [ "char_renew_sprintf", "strings_8c.html#a78b6aec8d1d6c0a503d73474b6e9bbf4", null ],
     [ "str_create_mask", "strings_8c.html#a3a43f9c2d94668712c216a80e7594759", null ],
+    [ "str_has_any_char", "strings_8c.html#adbda569c2b80abd23cbcde422239783a", null ],
     [ "str_match", "strings_8c.html#a93da6cd5f5441bef66622f97f82f7c06", null ],
     [ "strings_at", "strings_8c.html#aa137b865116b8931f3ca7322f8b23569", null ],
     [ "strings_cmp", "strings_8c.html#ac280a4e5410c1cd244fd0acb87608623", null ],
@@ -34,5 +38,6 @@ var strings_8c =
     [ "strings_size", "strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e", null ],
     [ "strings_split", "strings_8c.html#aed6fc2910cf66df10d85687eafae6a0a", null ],
     [ "strings_split_mask", "strings_8c.html#a68d82805386047fbbcc917aa10a020d7", null ],
+    [ "strings_split_number", "strings_8c.html#a8c99bb44e384b646ed1eaf73599a44db", null ],
     [ "strings_split_path", "strings_8c.html#a3cc5fbbee65c1413e7adb1fec39adda0", null ]
 ];

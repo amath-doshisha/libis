@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['hk',['Hk',['../chpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f',1,'Hk():&#160;chpeig.c'],['../chpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f',1,'Hk():&#160;chpeig.c'],['../dhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f',1,'Hk():&#160;dhpeig.c'],['../rhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f',1,'Hk():&#160;rhpeig.c'],['../zhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f',1,'Hk():&#160;zhpeig.c']]],
-  ['hu',['Hu',['../dhpsvd_8c.html#ac5a7a9b877ffbb9cd21dcce62acc3451',1,'dhpsvd.c']]],
-  ['hv',['Hv',['../dhpsvd_8c.html#a10209ec8781f7a4f08c65b3a7647e7a7',1,'dhpsvd.c']]]
+  ['iva',['IVA',['../csolve__newton_8c.html#ae8079c480029f14861b5a51cdba82dd6',1,'csolve_newton.c']]],
+  ['ivf',['IVF',['../csolve__newton_8c.html#a1dcb738ae214c90f0220871b6c683622',1,'csolve_newton.c']]]
 ];

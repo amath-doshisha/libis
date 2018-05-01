@@ -10,5 +10,6 @@ var is__chpeig_8h =
     [ "chpeig", "is__chpeig_8h.html#acfcaf4548ffcd02edda925f5dce61648", null ],
     [ "chpeig_1pair", "is__chpeig_8h.html#a706b6973125ed0782639f4df01055b4a", null ],
     [ "chpeig_jacobi_mat", "is__chpeig_8h.html#ae014d8d38a0b08d9012e4ce7755b7701", null ],
-    [ "chpeig_verify", "is__chpeig_8h.html#a34d6fbca229e2ba15ac9e098932b8f46", null ]
+    [ "chpeig_verify", "is__chpeig_8h.html#a34d6fbca229e2ba15ac9e098932b8f46", null ],
+    [ "get_next_prec", "is__chpeig_8h.html#acb0480f5af3c5f9c04c2232c078e4992", null ]
 ];

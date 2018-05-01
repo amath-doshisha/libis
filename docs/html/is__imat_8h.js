@@ -5,7 +5,7 @@ var is__imat_8h =
     [ "imat_allocate", "is__imat_8h.html#ac82bbefee03ed6076cea3591505ca24f", null ],
     [ "imat_column_count_if", "is__imat_8h.html#a5b46183b2113ea93c8e6344a8d3e6152", null ],
     [ "imat_copy", "is__imat_8h.html#a52ec349bfd8d89c09f1f0ce064378c68", null ],
-    [ "imat_copy_index", "is__imat_8h.html#aedf47d46a852db9f62fdb7ac32fe20f4", null ],
+    [ "imat_copy_col_index", "is__imat_8h.html#a18f3856b354e0f07f8460b787af167d0", null ],
     [ "imat_eye", "is__imat_8h.html#a29e97638bc7594651ad6def6ec030aba", null ],
     [ "imat_free", "is__imat_8h.html#ae70479cbb7a1b32cf09d65c06942d514", null ],
     [ "imat_load_allocate", "is__imat_8h.html#a1cd99ca18fac50277814868e2f8206ba", null ],

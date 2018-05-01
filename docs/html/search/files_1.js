@@ -7,6 +7,7 @@ var searchData=
   ['chshldr_2ec',['chshldr.c',['../chshldr_8c.html',1,'']]],
   ['chsnbrg_2ec',['chsnbrg.c',['../chsnbrg_8c.html',1,'']]],
   ['cmat_2ec',['cmat.c',['../cmat_8c.html',1,'']]],
+  ['cmat3_2ec',['cmat3.c',['../cmat3_8c.html',1,'']]],
   ['cmulti_2ec',['cmulti.c',['../cmulti_8c.html',1,'']]],
   ['csolve_2ec',['csolve.c',['../csolve_8c.html',1,'']]],
   ['csolve_5fnewton_2ec',['csolve_newton.c',['../csolve__newton_8c.html',1,'']]],

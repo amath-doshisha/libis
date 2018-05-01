@@ -26,6 +26,7 @@ var dvec_8c =
     [ "dvec_free", "dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877", null ],
     [ "dvec_lintr", "dvec_8c.html#a8d18062269da8e3fba00e3658b79060a", null ],
     [ "dvec_lintr_t", "dvec_8c.html#a951da4674ce9ea482d27c09bbf78642e", null ],
+    [ "dvec_load", "dvec_8c.html#af360bb2dced714e04225c5b0a7a41150", null ],
     [ "dvec_log2_abs", "dvec_8c.html#aa4749e683bb0231f70fea12fde8bce56", null ],
     [ "dvec_max", "dvec_8c.html#ad77401c13ec7c70cd0d2738c2c0ad9be", null ],
     [ "dvec_max_abs", "dvec_8c.html#a0c7d1846d7760f159019d2b273a9cec4", null ],

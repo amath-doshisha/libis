@@ -123,7 +123,7 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
       // 収束しているか
       for(l=nn; l>=2; l--){
 	// s=abs(A(l-2,l-2))+abs(A(l-1,l-1))
-	rsum_abs_r2(s,MAT(A,l-2,l-2,LDA),MAT(A,l-1,l-1,LDA));
+	radd_abs_abs(s,MAT(A,l-2,l-2,LDA),MAT(A,l-1,l-1,LDA));
 	// s=anorm if s==0
 	if(ris_zero(s)){ rcopy(s,anorm); }
 	// break if s+abs(A(l-1,l-2))==s
@@ -194,7 +194,7 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	    // 原点シフト
 	    for(i=0; i<nn; i++){ rsub(MAT(A,i,i,LDA),MAT(A,i,i,LDA),x); }
 	    // s=abs(A(n-1,n-2))+abs(A(n-2,n-3))
-	    rsum_abs_r2(s,MAT(A,nn-1,nn-2,LDA),MAT(A,nn-2,nn-3,LDA));
+	    radd_abs_abs(s,MAT(A,nn-1,nn-2,LDA),MAT(A,nn-2,nn-3,LDA));
 	    // y=s*0.75
 	    rmul_d(y,s,0.750);
 	    // x=s*0.75
@@ -213,7 +213,7 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	    reig_hqr_calculate_formula_11_6_23_p(p,r,s,w,MAT(A,m,m-1,LDA),MAT(A,m-1,m,LDA));
 	    reig_hqr_calculate_formula_11_6_23_q(q,MAT(A,m,m,LDA),r,s,z);
 	    rcopy(r,MAT(A,m+1,m,LDA));
-	    rsum_abs_r3(s,p,q,r);
+	    radd_abs_abs_abs(s,p,q,r);
 	    reig_hqr_scale(p,q,r,s);
 	    if(m==l){ break; }
 	    reig_hqr_calculate_formula_11_6_26_u(u,MAT(A,m-1,m-2,LDA),q,r);
@@ -230,7 +230,7 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	      rcopy(q,MAT(A,k,k-2,LDA));
 	      rset_zero(r);
 	      if(k!=(nn-1)){ rcopy(r,MAT(A,k+1,k-2,LDA)); }
-	      rsum_abs_r3(x,p,q,r);
+	      radd_abs_abs_abs(x,p,q,r);
 	      if(ris_zero(x)!=1){ reig_hqr_scale(p,q,r,x); }
 	    }
 	    reig_hqr_calculate_formula_11_6_25(s,p,q,r);
@@ -350,7 +350,7 @@ void reig_hqr_calculate_formula_11_6_26_u(rmulti *u, rmulti *a, rmulti *q, rmult
   prec=rget_prec(u);
   RA(X,prec);
   // compute
-  rsum_abs_r2(X,q,r); // X=abs(q)+abs(r)
+  radd_abs_abs(X,q,r); // X=abs(q)+abs(r)
   rabs(u,a);          // u=abs(a)
   rmul(u,u,X);        // u=abs(a)*(abs(q)+abs(r))
   // done
@@ -368,7 +368,7 @@ void reig_hqr_calculate_formula_11_6_26_v(rmulti *v, rmulti *a1, rmulti *a2, rmu
   prec=rget_prec(v);
   RA(X,prec);
   // compute
-  rsum_abs_r3(X,a1,z,a2); // X=abs(a1)+abs(z)+abs(a2)
+  radd_abs_abs_abs(X,a1,z,a2); // X=abs(a1)+abs(z)+abs(a2)
   rabs(v,p);              // v=abs(p)
   rmul(v,v,X);            // v=abs(p)*(abs(a1)+abs(z)+abs(a2))
   // done

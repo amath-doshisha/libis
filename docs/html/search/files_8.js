@@ -9,6 +9,7 @@ var searchData=
   ['rhsnbrg_2ec',['rhsnbrg.c',['../rhsnbrg_8c.html',1,'']]],
   ['riep_5fdht_2ec',['riep_dht.c',['../riep__dht_8c.html',1,'']]],
   ['rmat_2ec',['rmat.c',['../rmat_8c.html',1,'']]],
+  ['rmat3_2ec',['rmat3.c',['../rmat3_8c.html',1,'']]],
   ['rmulti_2ec',['rmulti.c',['../rmulti_8c.html',1,'']]],
   ['rsolve_2ec',['rsolve.c',['../rsolve_8c.html',1,'']]],
   ['rsolve_5fnewton_2ec',['rsolve_newton.c',['../rsolve__newton_8c.html',1,'']]],

@@ -1,0 +1,15 @@
+digraph "icmat3_sub"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node282 [label="icmat3_sub",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node282 -> Node283 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node283 [label="icsub",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$icmulti_8c.html#a5f8e70c609ebc9ec4217b512f0e4823b",tooltip="引き算 [z0,z1]=[x0,x1]-[y0,y1] "];
+  Node283 -> Node284 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node284 [label="irsub",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$irmulti_8c.html#ad83b8a1e9ca77caeaf833f866853ac35",tooltip="引き算 [z0,z1]=[x0,x1]-[y0,y1] "];
+  Node284 -> Node285 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node285 [label="rget_prec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442",tooltip="rmulti型の浮動小数点数の精度(ビット数)を取得. "];
+  Node284 -> Node286 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node286 [label="ircopy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e",tooltip="コピー [y0,y1]=[x0,x1]. "];
+}

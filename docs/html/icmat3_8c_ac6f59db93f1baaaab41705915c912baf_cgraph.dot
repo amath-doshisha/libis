@@ -1,0 +1,16 @@
+digraph "icmat3_conj"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node35 [label="icmat3_conj",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node35 -> Node36 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="icconj",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$icmulti_8c.html#aeda1293ecab82c2ca6e146b9a5bc4eb8",tooltip="複素共役 [y0,y1]=conj([x0,x1]) "];
+  Node36 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node37 [label="ircopy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e",tooltip="コピー [y0,y1]=[x0,x1]. "];
+  Node36 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node38 [label="irneg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$irmulti_8c.html#aab8b9f471b47e8054152264de875f9ae",tooltip="符号の反転 [y0,y1]=-[x0,x1]. "];
+  Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node39 [label="rget_prec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442",tooltip="rmulti型の浮動小数点数の精度(ビット数)を取得. "];
+  Node38 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

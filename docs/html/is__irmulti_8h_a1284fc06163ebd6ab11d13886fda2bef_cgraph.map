@@ -1,0 +1,12 @@
+<map id="irabs" name="irabs">
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="103,5,158,32"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="100,56,161,83"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="100,107,161,133"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#a75127c83ea5216e67755d6d959b630c8" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="219,171,269,197"/>
+<area shape="rect" id="node6" href="$irmulti_8c.html#afa386bc5a2e6b1ed3102a23286241dd3" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="109,208,153,235"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="212,233,276,260"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a125c6b1140d9123b37acd8d72ea14aaa" title="2つのrmulti型の大きい方 上丸め z=max2(x,y) " alt="" coords="97,309,164,336"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="225,309,263,336"/>
+<area shape="rect" id="node10" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="324,284,396,311"/>
+<area shape="rect" id="node11" href="$rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="338,335,382,361"/>
+</map>

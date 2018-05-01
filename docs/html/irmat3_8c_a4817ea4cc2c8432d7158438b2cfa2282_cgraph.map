@@ -1,0 +1,6 @@
+<map id="irmat3_sum" name="irmat3_sum">
+<area shape="rect" id="node2" href="$irmat_8c.html#af5184557807cf247dc42c953a3e44d9c" title="irmulti型の列ごとの和 B=sum(A) " alt="" coords="128,31,224,57"/>
+<area shape="rect" id="node3" href="$irvec_8c.html#a5ed7becd67a38fe84a91e37cfafe6b5d" title="irmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="272,31,340,57"/>
+<area shape="rect" id="node4" href="$irmulti_8c.html#a51b1082698c541223be50375d5dd0961" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="388,5,440,32"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#a9b773529acf9de84bf3758c8a0026ebc" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="392,56,436,83"/>
+</map>

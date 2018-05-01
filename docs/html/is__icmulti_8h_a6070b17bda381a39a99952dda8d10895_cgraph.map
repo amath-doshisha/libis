@@ -1,0 +1,40 @@
+<map id="icasin" name="icasin">
+<area shape="rect" id="node2" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="532,157,597,184"/>
+<area shape="rect" id="node4" href="$icmulti_8c.html#ac58b702ed9c53631b4bd6f96089ef175" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="426,360,471,387"/>
+<area shape="rect" id="node16" href="$icmulti_8c.html#a1acf1eee1b4d7a5549f972b8c53519e6" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="539,816,590,843"/>
+<area shape="rect" id="node17" href="$icmulti_8c.html#ab720fcdeab199e329183ee8ab0244dde" title="倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi]. " alt="" coords="201,360,259,387"/>
+<area shape="rect" id="node19" href="$icmulti_8c.html#a47f7a7ec6249fe4ef904fc3491137ef8" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="101,639,147,665"/>
+<area shape="rect" id="node20" href="$icmulti_8c.html#a7416c6bb1e6083f8989efebe487babb3" title="平方根 [y0,y1]=sqrt([x0,x1]) " alt="" coords="101,284,147,311"/>
+<area shape="rect" id="node37" href="$icmulti_8c.html#aa3de8e3663f3a0fc5dcdd71a44ed9ffd" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="317,943,362,969"/>
+<area shape="rect" id="node38" href="$icmulti_8c.html#a00fe2b40ddf3c8031403b18cf4ca4ec1" title="対数関数 [y0,y1]=log([x0,x1]) " alt="" coords="103,512,145,539"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="760,335,824,361"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#a5de2d24f1771a9c7cf8d66fb70250e48" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="657,208,701,235"/>
+<area shape="rect" id="node12" href="$irmulti_8c.html#a21cf962b8106aecfbafd71dd96f51d52" title="積の減算 [z0,z1]&#45;=[x0,x1]*[y0,y1] " alt="" coords="532,411,597,437"/>
+<area shape="rect" id="node14" href="$irmulti_8c.html#ae955feff51f7b83ca4cc89690f1160e9" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="532,461,597,488"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="761,208,823,235"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="773,157,811,184"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a7544c8c3220be262b43d9cdcacd5f8f2" title="rmulti型の値の比較 x&gt;=y " alt="" coords="773,107,811,133"/>
+<area shape="rect" id="node11" href="$irmulti_8c.html#a75127c83ea5216e67755d6d959b630c8" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="767,512,817,539"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="872,183,944,209"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="886,132,930,159"/>
+<area shape="rect" id="node13" href="$irmulti_8c.html#aee308e9a81bc742a5f6a4d3792470e46" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="657,563,701,589"/>
+<area shape="rect" id="node15" href="$irmulti_8c.html#a9b773529acf9de84bf3758c8a0026ebc" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="657,613,701,640"/>
+<area shape="rect" id="node18" href="$irmulti_8c.html#a51b1082698c541223be50375d5dd0961" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="313,309,365,336"/>
+<area shape="rect" id="node21" href="$icmulti_8c.html#a56e88bba17abaa3dd5f721cae613964a" title="極形式の取得 [z0,z1]=[r0,r1]*exp(i*[theta0,theta1]) " alt="" coords="195,512,265,539"/>
+<area shape="rect" id="node31" href="$irmulti_8c.html#a22cee3018280d15551f1f5adeb5d5003" title="平方根 [y0,y1]=sqrt([x0,x1]) " alt="" coords="427,411,471,437"/>
+<area shape="rect" id="node33" href="$irmulti_8c.html#af60118c7cb9b4fb9dce810e066a62d9f" title="掛け算 [z0,z1]=[x0,x1]*[y,y] " alt="" coords="203,259,257,285"/>
+<area shape="rect" id="node34" href="$icmulti_8c.html#ab9a299e5d3182a6fc77fa4c496558cf4" title="極形式で値を定め得る [z0,z1]=[r0,r1]*exp(i*[theta0,theta1]) " alt="" coords="413,5,484,32"/>
+<area shape="rect" id="node22" href="$icmulti_8c.html#a6e50595b4c825038f58c5576e375116a" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="317,563,362,589"/>
+<area shape="rect" id="node32" href="$irmulti_8c.html#a47f87863a6997ce52eb97492de70e94e" title="逆三角関数 [z0,z1]=atan2([y0,y1]/[x0,x1]) " alt="" coords="653,461,705,488"/>
+<area shape="rect" id="node23" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="421,765,477,792"/>
+<area shape="rect" id="node25" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="648,664,709,691"/>
+<area shape="rect" id="node26" href="$irmulti_8c.html#a1284fc06163ebd6ab11d13886fda2bef" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="543,765,587,792"/>
+<area shape="rect" id="node30" href="$icmulti_8c.html#a88861d2a69b31e98ec25a8e94034a764" title="絶対値の平方 [y0,y1]=abs([x0,x1])^2 " alt="" coords="423,461,474,488"/>
+<area shape="rect" id="node24" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="651,968,706,995"/>
+<area shape="rect" id="node27" href="$irmulti_8c.html#afa386bc5a2e6b1ed3102a23286241dd3" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="657,765,701,792"/>
+<area shape="rect" id="node28" href="$is__rmulti_8h.html#a125c6b1140d9123b37acd8d72ea14aaa" title="2つのrmulti型の大きい方 上丸め z=max2(x,y) " alt="" coords="645,917,712,944"/>
+<area shape="rect" id="node29" href="$rmulti_8c.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="773,563,811,589"/>
+<area shape="rect" id="node35" href="$irmulti_8c.html#a522715b3554b902a0b8c0af7b0a19f20" title="三角関数 [y0,y1]=cos([x0,x1]) " alt="" coords="657,56,700,83"/>
+<area shape="rect" id="node36" href="$irmulti_8c.html#af4e7dbc1f5e93ad744dbdc23a0df2bef" title="三角関数 [y0,y1]=sin([x0,x1]) " alt="" coords="659,107,699,133"/>
+<area shape="rect" id="node39" href="$irmulti_8c.html#ad5ef1d1b2089776149669b3bddadf538" title="対数関数 [y0,y1]=log([x0,x1]) " alt="" coords="209,563,251,589"/>
+</map>
