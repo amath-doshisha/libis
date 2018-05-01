@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<mpfr.h>
@@ -957,6 +958,25 @@ void radd(rmulti *z, rmulti *x, rmulti *y)
 /**
  @brief rmulti型の足し算 z=x+y
 */
+int radd_exact(rmulti *z, rmulti *x, rmulti *y)
+{
+  int nx0,nx1,ny0,ny1,nz0,nz1,lz,e;
+  NULL_EXC3(z,x,y);
+  nx0=rget_exp(x);
+  ny0=rget_exp(y);
+  nx1=rget_exp(x)-rget_length(x)+1;
+  ny1=rget_exp(y)-rget_length(y)+1;
+  nz0=MAX2(nx0,ny0);
+  nz1=MIN2(nx1,ny1);
+  lz=nz0-nz1+2;
+  rround(z,((lz/GMP_NUMB_BITS)+1)*GMP_NUMB_BITS);  
+  if((e=abs(mpfr_add(z,x,y,get_round_mode())))!=0){ ERROR_AT; exit(-1); }  
+  return e;
+}
+
+/**
+ @brief rmulti型の足し算 z=x+y
+*/
 void radd_d(rmulti *z, rmulti *x, double y)
 {
   NULL_EXC2(z,x);
@@ -988,6 +1008,26 @@ void rsub(rmulti *z, rmulti *x, rmulti *y)
 {
   NULL_EXC3(z,x,y);
   mpfr_sub(z,x,y,get_round_mode());
+}
+
+/**
+ @brief rmulti型の引き算 z=x-y
+*/
+int rsub_exact(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  int nx0,nx1,ny0,ny1,nz0,nz1,lz,e;
+  NULL_EXC3(z,x,y);
+  nx0=rget_exp(x);
+  ny0=rget_exp(y);
+  nx1=rget_exp(x)-rget_length(x)+1;
+  ny1=rget_exp(y)-rget_length(y)+1;
+  nz0=MAX2(nx0,ny0);
+  nz1=MIN2(nx1,ny1);
+  lz=nz0-nz1+2;
+  rround(z,((lz/GMP_NUMB_BITS)+1)*GMP_NUMB_BITS);  
+  if((e=abs(mpfr_sub(z,x,y,get_round_mode())))!=0){ ERROR_AT; exit(-1); }  
+  return e;
 }
 
 /**
@@ -1056,6 +1096,21 @@ void rmul(rmulti *z, rmulti *x, rmulti *y)
 /**
  @brief rmulti型の掛け算 z=x*y
 */
+int rmul_exact(rmulti *z, rmulti *x, rmulti *y)
+{
+  int lx,ly,lz,e=0;
+  NULL_EXC3(z,x,y);
+  lx=rget_length(x);
+  ly=rget_length(y);
+  lz=lx+ly;
+  rround(z,((lz/GMP_NUMB_BITS)+1)*GMP_NUMB_BITS);
+  if((e=abs(mpfr_mul(z,x,y,get_round_mode())))!=0){ ERROR_AT; exit(-1); }
+  return e;
+}
+
+/**
+ @brief rmulti型の掛け算 z=x*y
+*/
 void rmul_d(rmulti *z, rmulti *x, double y)
 {
   NULL_EXC2(z,x);
@@ -1091,6 +1146,21 @@ void radd_mul(rmulti *z, rmulti *x, rmulti *y)
   rmul(a,x,y); // a=x*y
   radd(z,z,a); // z=z+x*y
   RF(a);
+}
+
+/**
+ @brief rmulti型の掛け算の加算 z+=x*y
+*/
+int radd_mul_exact(rmulti *z, rmulti *x, rmulti *y)
+{
+  int e=0;
+  rmulti *a=NULL;
+  NULL_EXC3(z,x,y);
+  RAp(a,z);
+  e+=rmul_exact(a,x,y); // a=x*y
+  e+=radd_exact(z,z,a); // z=z+x*y
+  RF(a);
+  return e;
 }
 
 /**
@@ -1133,6 +1203,21 @@ void rsub_mul(rmulti *z, rmulti *x, rmulti *y)
 /**
  @brief rmulti型の掛け算の減算 z-=x*y
 */
+int rsub_mul_exact(rmulti *z, rmulti *x, rmulti *y)
+{
+  int e=0;
+  rmulti *a=NULL;
+  NULL_EXC3(z,x,y);
+  RAp(a,z);
+  e+=rmul_exact(a,x,y); // a=x*y
+  e+=rsub_exact(z,z,a); // z=z-x*y
+  RF(a);
+  return e;
+}
+
+/**
+ @brief rmulti型の掛け算の減算 z-=x*y
+*/
 void rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int n_rws, rmulti **rws)
 {
   NULL_EXC3(z,x,y);
@@ -1159,6 +1244,13 @@ void rdiv(rmulti *z, rmulti *x, rmulti *y)
 {
   NULL_EXC3(z,x,y);
   mpfr_div(z,x,y,get_round_mode());
+}
+
+/** @brief rmulti型の割り算 z=x/y */
+int rdiv_rouding_check(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  return abs(mpfr_div(z,x,y,get_round_mode()));
 }
 
 /** @brief rmulti型の割り算 z=x/y */

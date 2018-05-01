@@ -171,6 +171,12 @@ void rmax2_up(rmulti *z, rmulti *x, rmulti *y);    // z=max2(x,y)
 void rmin2_down(rmulti *z, rmulti *x, rmulti *y);  // z=min2(x,y)
 void rexp10_floor_log10_abs_sub(rmulti *z, rmulti *x, double y); // z=10^(floor(log10(abs(x))-y))
 void rexp2_floor_log2_abs_sub(rmulti *z, rmulti *x, double y);   // z=2^(floor(log2(abs(x))-y))
+int radd_exact(rmulti *z, rmulti *x, rmulti *y);         // z=x+y
+int rsub_exact(rmulti *z, rmulti *x, rmulti *y);         // z=x-y
+int rmul_exact(rmulti *z, rmulti *x, rmulti *y);         // z=x*y
+int radd_mul_exact(rmulti *z, rmulti *x, rmulti *y);     // z+=x*y
+int rsub_mul_exact(rmulti *z, rmulti *x, rmulti *y);     // z-=x*y
+int rdiv_rouding_check(rmulti *z, rmulti *x, rmulti *y); // z=x/y
 
 /*
  * operatior for tree arguments

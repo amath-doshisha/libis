@@ -36,7 +36,7 @@ void bigint_set_str(bigint *x, const char *num, const char *den);
 void bigint_set_script(bigint *x, const char *str);
 
 // operations
-void bigint_copy(bigint *y, bigint *x);           // y=x
+void bigint_clone(bigint *y, bigint *x);          // y=x
 void bigint_swap(bigint *x, bigint *y);           // x<->y
 void bigint_neg(bigint *z, bigint *x);            // z=-x
 void bigint_mul(bigint *z, bigint *x, bigint *y); // z=x*y
@@ -55,7 +55,7 @@ int bigint_is_neg_one(bigint *x);
 int bigint_sgn(bigint *x);
 int bigint_get_si(bigint *x);
 void bigint_get_rmulti(rmulti *z, bigint *x);
-int bigint_get_cmulti(cmulti *z, bigint *x);
+void bigint_get_cmulti(cmulti *z, bigint *x);
 void bigint_print(bigint *x);
 
 #endif
