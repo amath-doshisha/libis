@@ -841,9 +841,9 @@ void rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **
 //追加
 
 /**
- @brief rmulti型の3次元配列の指数部で評価 C=get_exp10(x,offset)
+ @brief rmulti型の3次元配列の指数部で評価 C=10^(floor(log10(abs(A))-b))
 */
-void rmat3_get_exp10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+void rmat3_exp10_floor_log10_abs_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
 {
   int i,j,k;
   for(k=0; k<l; k++){
@@ -858,7 +858,7 @@ void rmat3_get_exp10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti
 /**
  @brief rmulti型の3次元配列の指数部で評価 C=get_exp2(x,offset)
 */
-void rmat3_get_exp2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
+void rmat3_exp2_floor_log2_abs_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b)
 {
   int i,j,k;
   for(k=0; k<l; k++){

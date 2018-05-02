@@ -119,10 +119,10 @@ void rmat3_pow(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, 
 void rmat3_pow_r1(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti *a, rmulti **B, int LDB1, int LDB2);
 // C=A.^b
 void rmat3_pow_r2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b);
-// C=get_exp10(x,offset)
-void rmat3_get_exp10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b);
-// C=get_exp2(x,offset)
-void rmat3_get_exp2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b);
+// C=10^(floor(log10(abs(A))-b))
+void rmat3_exp10_floor_log10_abs_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b);
+// C=2^(floor(log2(abs(A))-b))
+void rmat3_exp2_floor_log2_abs_sub(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, double b);
 
 /*
  * compare

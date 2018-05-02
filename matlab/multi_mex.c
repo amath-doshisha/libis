@@ -11,7 +11,7 @@
 #define GET_DOUBLE(P)   ((double*)mxGetData(P))
 #define MATLAB_ERROR(S) (mexErrMsgIdAndTxt("MATLAB:multi_mex",S));
 #define MATLAB_WARN(S)  (mexWarnMsgIdAndTxt("MATLAB:multi_mex",S));
-#define N0 4
+#define N0 3
 
 #define _T(A)   (A->type)
 #define _M(A)   (A->M)
@@ -129,7 +129,6 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_eig.c"
 #include"./c/multi_eig_verify.c"
 #include"./c/multi_matgen_dhToda.c"
-//追加
 #include"./c/multi_log10.c"
 #include"./c/multi_sum.c"
 #include"./c/multi_sqrt.c"
@@ -149,22 +148,19 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
  */
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  int prec=64,rnd_mode=0,ap_mode=0;
+  int prec=64,rnd_mode=0;
   char *cmd=NULL;
   if(!(IS_CHAR(nrhs,prhs,0))){ MATLAB_ERROR("mexFunction: The arg0 should be Char."); }
   if(!(IS_NUMR(nrhs,prhs,1))){ MATLAB_ERROR("mexFunction: The arg1 should be Double."); }
   if(!(IS_NUMR(nrhs,prhs,2))){ MATLAB_ERROR("mexFunction: The arg2 should be Double."); }
-  if(!(IS_NUMR(nrhs,prhs,3))){ MATLAB_ERROR("mexFunction: The arg3 should be Double."); }
   if(IS_CHAR(nrhs,prhs,0)){ cmd=mxArrayToString(prhs[0]); }
   if(IS_NUMR(nrhs,prhs,1)){ prec=GET_DOUBLE(prhs[1])[0]; }
   if(IS_NUMR(nrhs,prhs,2)){ rnd_mode=GET_DOUBLE(prhs[2])[0]; }
-  if(IS_NUMR(nrhs,prhs,3)){ ap_mode=GET_DOUBLE(prhs[3])[0]; }
   set_default_prec(prec);
        if(rnd_mode>0){ set_round_mode(MPFR_RNDU); }
   else if(rnd_mode<0){ set_round_mode(MPFR_RNDD); }
   else               { set_round_mode(MPFR_RNDN); }
-  set_auto_prec_mode(ap_mode);
-  //  mexPrintf("cmd=%s prec=%d ap_mode=%d\n",cmd,prec,ap_mode);  
+  //mexPrintf("cmd=%s prec=%d\n",cmd,prec);
        if(STR_EQ(cmd,"get_prec"))  { multi_get_prec  (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
   else if(STR_EQ(cmd,"get_sign"))  { multi_get_sign  (nlhs,plhs,nrhs,prhs); }  // y=get_sign(x)
   else if(STR_EQ(cmd,"get_exp"))   { multi_get_exp   (nlhs,plhs,nrhs,prhs); }  // y=get_exp(x)

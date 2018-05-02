@@ -14,8 +14,8 @@ void multi_get_exp10(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   // operation
   if(IS_NUMR(nrhs,prhs,N0+1)){ offset=GET_DOUBLE(prhs[N0+1])[0];}
   // allocate by clone
-       if(_T(x)=='r'){ y=multi_allocate('r',_M(x),_N(x),_L(x)); rmat3_get_exp10(_M(x),_N(x),_L(x),_R(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x),offset); }
-  else if(_T(x)=='c'){ y=multi_allocate('c',_M(x),_N(x),_L(x)); cmat3_get_exp10(_M(x),_N(x),_L(x),_C(y),_LD1(y),_LD2(y),_C(x),_LD1(x),_LD2(x),offset); }
+       if(_T(x)=='r'){ y=multi_allocate('r',_M(x),_N(x),_L(x)); rmat3_exp10_floor_log10_abs_sub(_M(x),_N(x),_L(x),_R(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x),offset); }
+  else if(_T(x)=='c'){ y=multi_allocate('c',_M(x),_N(x),_L(x)); cmat3_exp10_floor_log10_abs_sub(_M(x),_N(x),_L(x),_C(y),_LD1(y),_LD2(y),_C(x),_LD1(x),_LD2(x),offset); }
   else{ MATLAB_ERROR("multi_get_exp10: error"); }
   // done
   plhs[0]=mxCreateStructMulti(y);
