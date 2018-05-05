@@ -3,9 +3,9 @@ function c=get_type(x,y)
 if nargin==1
     if ~isa(x,'multi')
         x=multi(x);
-        if is_type_r(x)
+        if is_type_r1(x)
             c='d';
-        elseif is_type_c(x)
+        elseif is_type_c1(x)
             c='z';
         else
             error('get_type: ???');

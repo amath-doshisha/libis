@@ -3,6 +3,8 @@
 #include<math.h>
 #include<stdarg.h>
 #include"is_macros.h"
+#include"is_strings.h"
+#include"is_svec.h"
 #include"is_rmulti.h"
 #include"is_rmat.h"
 #include"is_dmat.h"
@@ -162,6 +164,29 @@ void rmat_swap(int m, int n, rmulti **A, int LDA, rmulti **B, int LDB)
 
 /** @} */
 
+/////////////////////////////////////////////////////
+
+/** @name rmulti型の行列の型変換に関する関数 */
+/** @{ */
+
+/**
+ @brief rmulti型の行列を文字列型に変換 y=char(x)
+*/
+void rmat_get_s(int m, int n, char **B, int LDB, rmulti **A, int LDA, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i,j;
+  sprintf(f,"%%-.%dR%c",digits,format);
+  if(A==NULL){ return; }
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      mpfr_sprintf(buf,f,MAT(A,i,j,LDA));
+      MAT(B,i,j,LDB)=char_renew(MAT(B,i,j,LDB),buf,NULL);
+    }
+  }
+}
+
+/** @} */
 
 /////////////////////////////////////////////////////
 
@@ -260,36 +285,25 @@ int rmat_has_nan(int m, int n, rmulti **A, int LDA)
 
 ////////////////////////////////////////////////////////////////////////
 
-
 /** @name rmulti型の行列の入出力に関する関数 */
 /** @{ */
 
 /**
  @brief rmulti型の行列の表示.
 */
-void rmat_print(int m, int n, rmulti **A, int LDA, const char *name, const char *f, int digits)
+void rmat_print(int m, int n, rmulti **A, int LDA, char *name, char format, int digits)
 {
-  int i,j,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){ k=3; }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){ k=7; }
-  else{ k=3; }
-  sprintf(format,"%%%d.%dR%s ",digits+k,digits,f);
+  char **s=NULL;
   if(A==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(A==NULL) return;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      mpfr_printf(format,MAT(A,i,j,LDA));
-    }
-    printf("\n");
-  }
+  s=svec_allocate(m*n);
+  rmat_get_s(m,n,s,m,A,LDA,format,digits);
+  smat_print(m,n,s,m,name);
+  s=svec_free(m*n,s);
 }
-
 
 /**
  @brief rmulti型の行列の保存.

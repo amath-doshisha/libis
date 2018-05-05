@@ -22,12 +22,12 @@ void irmat_copy(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rmul
 /*
  * I/O
  */
-void irmat_print(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, const char *name, const char *f, int digits);
-
+void irmat_print(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, char *name, char format, int digits);
 
 /*
  * casting
  */
+void irmat_get_s(int m, int n, char **B, int LDB, rmulti **A0, int LDA0, rmulti **A1, int LDA1, char format, int digits);
 
 /*
  * operations

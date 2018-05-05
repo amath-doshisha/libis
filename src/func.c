@@ -44,7 +44,7 @@ int func_new_del_check_sum()
 
 ////////////////////////////////////////////////
 
-func_t *func_new(const char *op)
+func_t *func_new(char *op)
 {
   func_t *f=NULL;
   if(op==NULL || char_eq(op,"NULL") || char_eq(op,"null")){ return f; }
@@ -131,14 +131,14 @@ int func_ptype(func_t *f)
   return f->ptype;
 }
 
-const char *func_op(func_t *f)
+char *func_op(func_t *f)
 {
   if(f==NULL){ return "NULL"; }
   if(f->op==NULL){ return "null"; }
   return f->op;
 }
 
-int func_is(func_t *f, const char *op)
+int func_is(func_t *f, char *op)
 {
   if(op==NULL)   { return 0; }  
   if(f==NULL)    { if(char_eq(op,"NULL")) return 1; else return 0; }
@@ -157,7 +157,7 @@ int func_is_coeff(func_t *f)
 
 ////////////////////////////////////////////////////////////
 
-func_t *func_flatten(func_t *f, const char *op)
+func_t *func_flatten(func_t *f, char *op)
 {
   int i,j,k=0,redo;
   func_t *g=NULL;
@@ -185,7 +185,7 @@ func_t *func_flatten(func_t *f, const char *op)
 
 ///private//////////////////////////////////////////////////
 
-func_t *func_arg1_new(const char *op, func_t *g)
+func_t *func_arg1_new(char *op, func_t *g)
 {
   func_t *f=NULL;
   f=func_new(op);
@@ -194,7 +194,7 @@ func_t *func_arg1_new(const char *op, func_t *g)
   return f;
 }
 
-func_t *func_arg2_new(const char *op, func_t *g0, func_t *g1)
+func_t *func_arg2_new(char *op, func_t *g0, func_t *g1)
 {
   func_t *f=NULL;
   f=func_new(op);

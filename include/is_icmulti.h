@@ -12,14 +12,26 @@
 /*
  * setting
  */
-void icset_z(cmulti *y0, cmulti *y1, dcomplex x);                                       // [y0,y1]=x
-void icset_zz(cmulti *y0, cmulti *y1, dcomplex x0, dcomplex x1);                        // [y0,y1]=[x0,x1]
-void icset_dd(cmulti *y0, cmulti *y1, double xr, double xi);                            // [y0,y1]=x
-void icset_d(cmulti *y0, cmulti *y1, double x);                                         // [y0,y1]=x
-void icset_bigint(cmulti *z0, cmulti *z1, bigint *x);                                   // [z0,x1]=x.num/x.den
-void iccopy(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1);                            // [y0,y1]=[x0,x1]
-void iccopy_r(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1);                          // [y0,y1]=[x0,x1]
-void iccopy_rr(cmulti *c0, cmulti *c1, rmulti *a0, rmulti *a1, rmulti *b0, rmulti *b1); // [c0,c1]=[a0,a1]+[b0,b1]i
+// [y0,y1]=x
+void icset_z(cmulti *y0, cmulti *y1, dcomplex x);
+void icset_d(cmulti *y0, cmulti *y1, double x);
+void icset_s(cmulti *x0, cmulti *x1, char *s);
+// [y0,y1]=[x0,x1]
+void icset_zz(cmulti *y0, cmulti *y1, dcomplex x0, dcomplex x1);
+void icset_dd(cmulti *y0, cmulti *y1, double xr, double xi);
+void icset_zd(cmulti *y0, cmulti *y1, dcomplex x0, double x1);
+void icset_dz(cmulti *y0, cmulti *y1, double x0, dcomplex x1);
+// [z0,x1]=x.num/x.den
+void icset_bigint(cmulti *z0, cmulti *z1, bigint *x);
+
+// [y0,y1]=[x0,x1]
+void iccopy(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1);
+void iccopy_rr(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1);
+void iccopy_rc(cmulti *y0, cmulti *y1, rmulti *x0, cmulti *x1);
+void iccopy_cr(cmulti *y0, cmulti *y1, cmulti *x0, rmulti *x1);
+// [c0,c1]=[a0,a1]+[b0,b1]i
+void iccopy_rrrr(cmulti *c0, cmulti *c1, rmulti *a0, rmulti *a1, rmulti *b0, rmulti *b1);
+
 
 /*
  * operatior of one argument

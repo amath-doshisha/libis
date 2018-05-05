@@ -8,13 +8,13 @@
 <area shape="rect" id="node39" href="$rmat_8c.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="396,974,461,1001"/>
 <area shape="rect" id="node3" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="697,88,783,114"/>
 <area shape="rect" id="node5" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="708,742,772,769"/>
-<area shape="rect" id="node10" href="$is__rsolve_8h.html#abc319bd84113ee60b4af701b070172d9" title="線形方程式A*X=Bの解法. " alt="" coords="253,645,302,672"/>
+<area shape="rect" id="node10" href="$is__rsolve_8h.html#a71c2e6e66b1f9d214bf05dbedd150333" title="線形方程式A*X=Bの解法. " alt="" coords="253,645,302,672"/>
 <area shape="rect" id="node8" href="$is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="404,138,453,165"/>
 <area shape="rect" id="node9" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="831,366,928,393"/>
 <area shape="rect" id="node11" href="$is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="375,417,482,444"/>
 <area shape="rect" id="node12" href="$is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="539,670,649,697"/>
 <area shape="rect" id="node13" href="$is__rmat_8h.html#a296ac18d9563fa49e31e42d516ccb44a" title="rmulti型の行列の値のコピー B=A " alt="" coords="394,721,463,748"/>
-<area shape="rect" id="node15" href="$rsolve_8c.html#a0b8d596cf9d649e2c30a543fbd822310" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="367,468,491,494"/>
+<area shape="rect" id="node15" href="$rsolve_8c.html#a19970574d4acd5a148c5554e96fc2c2e" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="367,468,491,494"/>
 <area shape="rect" id="node32" href="$is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="396,670,461,697"/>
 <area shape="rect" id="node14" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="571,772,617,798"/>
 <area shape="rect" id="node16" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="541,164,647,190"/>

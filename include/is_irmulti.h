@@ -14,10 +14,18 @@
 /*
  * setting
  */
-void irset_d(rmulti *y0, rmulti *y1, double x);              // [y0,y1]=[x,x]
-void irset_dd(rmulti *y0, rmulti *y1, double x0, double x1); // [y0,y1]=[x0,x1]
-void irset_bigint(rmulti *z0, rmulti *z1, bigint *x);        // [z0,z1]=x.num/x.den
-void ircopy(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1); // [y0,y1]=[x0,x1]
+// [y0,y1]=[x,x]
+void irset_d(rmulti *y0, rmulti *y1, double x);
+// [y0,y1]=[x0,x1]
+void irset_d1(rmulti *y0, rmulti *y1, double x0, rmulti *x1);
+void irset_d2(rmulti *y0, rmulti *y1, rmulti *x0, double x1);
+void irset_dd(rmulti *y0, rmulti *y1, double x0, double x1);
+// [y0,y1]='[x0,x1]'
+void irset_s(rmulti *x0, rmulti *x1, char *str);
+// [z0,z1]=x.num/x.den
+void irset_bigint(rmulti *z0, rmulti *z1, bigint *x);
+// [y0,y1]=[x0,x1]
+void ircopy(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);
 
 /*
  * operatior of one argument

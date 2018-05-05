@@ -3,6 +3,8 @@
 #include<math.h>
 #include<stdarg.h>
 #include"is_macros.h"
+#include"is_strings.h"
+#include"is_svec.h"
 #include"is_dcomplex.h"
 #include"is_rmulti.h"
 #include"is_cmulti.h"
@@ -192,6 +194,31 @@ void cmat_swap(int m, int n, cmulti **A, int LDA, cmulti **B, int LDB)
 
 /////////////////////////////////////////////////////
 
+/** @name cmulti型の行列の型変換に関する関数 */
+/** @{ */
+
+/**
+ @brief cmulti型の行列を文字列型に変換 y=char(x)
+*/
+void cmat_get_s(int m, int n, char **B, int LDB, cmulti **A, int LDA, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i,j;
+  sprintf(f,"%%-.%dR%c%%+.%dR%ci",digits,format,digits,format);
+  if(A==NULL){ return; }
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      mpfr_sprintf(buf,f,C_R(MAT(A,i,j,LDA)),C_I(MAT(A,i,j,LDA)));
+      MAT(B,i,j,LDB)=char_renew(MAT(B,i,j,LDB),buf,NULL);
+    }
+  }
+}
+
+
+/** @} */
+
+/////////////////////////////////////////////////////
+
 /** @name cmulti型の行列のメンバ変数に関する関数 */
 /** @{ */
 
@@ -306,35 +333,18 @@ int cmat_is_real(int m, int n, cmulti **A, int LDA)
 /**
  @brief cmulti型の行列の表示.
 */
-void cmat_print(int m, int n, cmulti **A, int LDA, const char *name, const char *f, int digits)
+void cmat_print(int m, int n, cmulti **A, int LDA, char *name, char format, int digits)
 {
-  int i,j,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){
-    k=3;
-    sprintf(format,"%%%d.%dR%s %%%d.%dR%s  ",digits+k,digits,f,digits+k,digits,f);
-  }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){
-    k=7;
-    sprintf(format,"%%%d.%dR%s %%%d.%dR%s  ",digits+k,digits,f,digits+k,digits,f);
-  }
-  else{
-    k=3;
-    sprintf(format,"(%%%d.%dR%s, %%%d.%dR%s) ",digits+k,digits,f,digits+k,digits,f);
-  }
+  char **s=NULL;
   if(A==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(A==NULL || m<=0 || n<=0) return;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      mpfr_printf(format,C_R(MAT(A,i,j,LDA)),C_I(MAT(A,i,j,LDA)));
-    }
-    printf("\n");
-  }
+  s=svec_allocate(m*n);
+  cmat_get_s(m,n,s,m,A,LDA,format,digits);
+  smat_print(m,n,s,m,name);
+  s=svec_free(m*n,s);
 }
 
 /**

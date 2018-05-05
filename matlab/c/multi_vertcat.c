@@ -5,15 +5,15 @@ void multi_vertcat(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   char type='r';
   int num,i=0,m,n,l;
-  multi **x=NULL,*y=NULL;
+  array **x=NULL,*y=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   // get number of args
   num=nrhs-N0;
   // allocate
-  x=malloc(num*sizeof(multi*));
+  x=malloc(num*sizeof(array*));
   for(i=0; i<num; i++){
     if(!(IS_STRT(nrhs,prhs,N0+i))){ MATLAB_ERROR("multi_plus: The arg should be Struct."); }
-    x[i]=multi_allocate_mxArray(prhs[N0+i]);
+    x[i]=mxArray_to_array(prhs[N0+i]);
   }
   // check size
   type=_T(x[0]);
@@ -37,11 +37,11 @@ void multi_vertcat(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     m=m+_M(x[i]);
   }
   // done
-  plhs[0]=mxCreateStructMulti(y);
+  plhs[0]=array_to_mxArray(y);
   // free
-  for(i=0; i<num; i++){ x[i]=multi_free(x[i]); }
+  for(i=0; i<num; i++){ x[i]=array_free(x[i]); }
   free(x); x=NULL;
-  y=multi_free(y);
+  y=array_free(y);
   return;
 }
 

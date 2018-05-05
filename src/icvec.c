@@ -1,3 +1,6 @@
+#include"is_strings.h"
+#include"is_svec.h"
+#include"is_zvec.h"
 #include"is_cmulti.h"
 #include"is_cvec.h"
 #include"is_cmat.h"
@@ -36,6 +39,106 @@ void icvec_copy(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
   for(i=0; i<n; i++){ iccopy(y0[i],y1[i],x0[i],x1[i]); }
 }
 
+/**
+ @brief コピー [y0,y1]=[x0,x1]
+*/
+void icvec_copy_rr(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy_rr(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=[x0,x1]
+*/
+void icvec_copy_cr(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy_cr(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=[x0,x1]
+*/
+void icvec_copy_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy_rc(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=[x0,x1]
+*/
+void icvec_copy_rrrr(int n, cmulti **y0, cmulti **y1, rmulti **x0r, rmulti **x0i, rmulti **x1r, rmulti **x1i)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy_rrrr(y0[i],y1[i],x0r[i],x0i[i],x1r[i],x1i[i]); }
+}
+
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_z(int n, cmulti **y0, cmulti **y1, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_z(y0[i],y1[i],x[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_zz(int n, cmulti **y0, cmulti **y1, dcomplex *x0, dcomplex *x1)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_zz(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_dz(int n, cmulti **y0, cmulti **y1, double *x0, dcomplex *x1)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_dz(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_zd(int n, cmulti **y0, cmulti **y1, dcomplex *x0, double *x1)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_zd(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_d(int n, cmulti **y0, cmulti **y1, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_d(y0[i],y1[i],x[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_si(int n, cmulti **y0, cmulti **y1, int *x)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_d(y0[i],y1[i],x[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_s(int n, cmulti **y0, cmulti **y1, char **x)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_s(y0[i],y1[i],x[i]); }
+}
+
 /** @} */
 /** @name icmulti型ベクトルの入出力に関する関数 */
 /** @{ */
@@ -43,22 +146,70 @@ void icvec_copy(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
 /**
  @brief 表示
  */
-void icvec_print(int n, cmulti **x0, cmulti **x1, const char *name, const char *f, int digits)
+void icvec_print(int n, cmulti **x0, cmulti **x1, char *name, char format, int digits)
 {
-  int i,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){ k=3; }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){ k=7; }
-  else{ k=3; }
-  sprintf(format,"[%%%d.%dR%s, %%%d.%dR%s] [%%%d.%dR%s, %%%d.%dR%s]\n",digits+k,digits,f,digits+k,digits,f,digits+k,digits,f,digits+k,digits,f);
-  if(name!=NULL){ printf("%s\n",name); }
-  if(x0==NULL || x1==NULL){ printf("NULL\n"); return; }
-  for(i=0; i<n; i++){ mpfr_printf(format,C_R(x0[i]),C_R(x1[i]),C_I(x0[i]),C_I(x1[i])); }
+  char **s=NULL;
+  if(x0==NULL || x1==NULL){
+    if(name!=NULL){ printf("%s=NULL\n",name); }
+    else          { printf("NULL\n"); }
+    return;
+  }
+  s=svec_allocate(n);
+  icvec_get_s(n,s,x0,x1,format,digits);
+  svec_print(n,s,name);
+  s=svec_free(n,s);
 }
 
 /** @} */
 /** @name icmulti型ベクトルの型変換に関する関数 */
 /** @{ */
+
+/**
+ @brief cmulti型のベクトルを整数型に変換.
+ */
+void icvec_get_si(int n, int *y, cmulti **x0, cmulti **x1)
+{
+  dcomplex z0,z1;
+  int i;
+  for(i=0; i<n; i++){
+    z0=cget_z(x0[i]);
+    z1=cget_z(x1[i]);
+    Z_ADD(z0,z1);
+    Z_SCALE(z0,0.5);
+    y[i]=Z_R(z0);
+  }
+}
+
+/**
+ @brief cmulti型のベクトルを倍精度複素数型に変換.
+ */
+void icvec_get_z(int n, dcomplex *y, cmulti **x0, cmulti **x1)
+{
+  dcomplex z0,z1;
+  int i;
+  for(i=0; i<n; i++){
+    z0=cget_z(x0[i]);
+    z1=cget_z(x1[i]);
+    Z_ADD(z0,z1);
+    Z_SCALE(z0,0.5);
+    y[i]=z0;
+  }
+}
+
+/**
+ @brief icmulti型のベクトルを文字列型に変換 y=char(x)
+ */
+void icvec_get_s(int n, char **y, cmulti **x0, cmulti **x1, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i;
+  if(format=='e'){ sprintf(f,"[%%+.%dR%c%%+.%dR%ci, %%+.%dR%c%%+.%dR%ci]",digits,format,digits,format,digits,format,digits,format); }
+  else           { sprintf(f,"[%%-.%dR%c%%+.%dR%ci, %%-.%dR%c%%+.%dR%ci]",digits,format,digits,format,digits,format,digits,format); }
+  for(i=0; i<n; i++){
+    mpfr_sprintf(buf,f,C_R(x0[i]),C_I(x0[i]),C_R(x1[i]),C_I(x1[i]));
+    y[i]=char_renew(y[i],buf,NULL);
+  }
+}
 
 /** @} */
 /** @name icmulti型ベクトルに関する関数子 */
@@ -78,6 +229,17 @@ void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **
   cvec_sub(n,xr,xc,x0);    // xr=xc-x0
   set_round_mode(mode);       // back
 }
+
+
+/**
+ @brief icmulti型の実部のコピー y=real(x)
+ */
+void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],C_R(x0[i]),C_R(x1[i])); }
+}
+
 
 /**
  @brief 符号の反転 [y0,y1]=-[x0,x1]

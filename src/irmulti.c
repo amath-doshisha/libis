@@ -1,5 +1,7 @@
 #include"is_rmulti.h"
 #include"is_rmat.h"
+#include"is_rmulti.h"
+#include"is_cmulti.h"
 #include"is_irmulti.h"
 #include"is_icmulti.h"
 #include"is_func.h"
@@ -13,7 +15,11 @@
 
 
 #define RA(X,P) ((X)=rallocate_prec(P))
+#define CA(X,P) ((X)=callocate_prec(P))
 #define RF(X) ((X)=rfree(X))
+#define CF(X) ((X)=cfree(X))
+#define RAr(X,P) ((X)=rallocate_prec(rget_prec(P)))
+#define CAr(X,P) ((X)=callocate_prec(rget_prec(P)))
 
 
 /** @name irmulti型の値の設定に関する関数 */
@@ -38,12 +44,42 @@ void irset_d(rmulti *y0, rmulti *y1, double x)
 }
 
 /**
+ @brief 倍精度実数の設定 [y0,y1]=[x,x].
+ */
+void irset_d1(rmulti *y0, rmulti *y1, double x0, rmulti *x1)
+{
+  mpfr_set_d(y0,x0,MPFR_RNDD); // lower bound
+  mpfr_set  (y1,x1,MPFR_RNDU); // upper bound
+}
+
+/**
+ @brief 倍精度実数の設定 [y0,y1]=[x,x].
+ */
+void irset_d2(rmulti *y0, rmulti *y1, rmulti *x0, double x1)
+{
+  mpfr_set  (y0,x0,MPFR_RNDD); // lower bound
+  mpfr_set_d(y1,x1,MPFR_RNDU); // uppper bound
+}
+
+/**
  @brief 倍精度実数の設定 [y0,y1]=[x0,x1].
  */
 void irset_dd(rmulti *y0, rmulti *y1, double x0, double x1)
 {
   mpfr_set_d(y0,x0,MPFR_RNDD); // lower bound
   mpfr_set_d(y1,x1,MPFR_RNDU); // upper bound
+}
+
+
+void irset_s(rmulti *x0, rmulti *x1, char *s)
+{
+  int p0,p1,prec;
+  cmulti *a0=NULL,*a1=NULL;
+  p0=rget_prec(x0); p1=rget_prec(x1); prec=MAX2(p0,p1);
+  a0=callocate_prec(prec);
+  a1=callocate_prec(prec);  
+  icset_s(a0,a1,s);
+  ircopy(x0,x1,C_R(a0),C_R(a1));
 }
 
 /** @} */

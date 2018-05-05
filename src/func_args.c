@@ -256,7 +256,7 @@ int func_args_have(func_t *f, func_t *g)
 
 /////private////////////////////////////////////////
 
-int func_args_count_op(func_t *f, const char *op)
+int func_args_count_op(func_t *f, char *op)
 {
   int k,i;
   if(func_find_amax(f)<0){
@@ -280,7 +280,7 @@ void func_args_arrange(func_t *f, int *I)
   func_a_replace(f,n,arg);
 }
 
-void func_args_rm_op(func_t *f, const char *op)
+void func_args_rm_op(func_t *f, char *op)
 {
   int i;
   if(f==NULL) return;
@@ -356,7 +356,7 @@ void func_args_sort(func_t *f)
 void func_args_sort_index(func_t *f, int *I)
 {
   if(f==NULL) return;
-  ivec_grid(func_asize(f),I);
+  ivec_set_grid(func_asize(f),I);
   func_args_quick_sort(f,I,0,(func_asize(f))-1);
 }
 

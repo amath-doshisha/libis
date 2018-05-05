@@ -1,3 +1,3 @@
-function disp(obj)
-disp(double(obj));
-
+function disp(x)
+%disp(double(x));
+disp_display(x);

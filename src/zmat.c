@@ -3,8 +3,10 @@
 #include<math.h>
 #include<stdarg.h>
 
-#include"is_ivec.h"
 #include"is_macros.h"
+#include"is_strings.h"
+#include"is_svec.h"
+#include"is_ivec.h"
 #include"is_zvec.h"
 #include"is_zmat.h"
 #include"is_dmat.h"
@@ -30,7 +32,7 @@ dcomplex* zmat_free(dcomplex *A)
 }
 
 // A=zeros(m,n)
-void zmat_zeros(int m, int n, dcomplex *A, int LDA)
+void zmat_set_zeros(int m, int n, dcomplex *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -41,7 +43,7 @@ void zmat_zeros(int m, int n, dcomplex *A, int LDA)
 }
 
 // A=ones(m,n)
-void zmat_ones(int m, int n, dcomplex *A, int LDA)
+void zmat_set_ones(int m, int n, dcomplex *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -52,7 +54,7 @@ void zmat_ones(int m, int n, dcomplex *A, int LDA)
 }
 
 // A=ones(m,n)*a
-void zmat_set(int m, int n, dcomplex *A, int LDA, dcomplex a)
+void zmat_set_all_z(int m, int n, dcomplex *A, int LDA, dcomplex a)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -63,7 +65,7 @@ void zmat_set(int m, int n, dcomplex *A, int LDA, dcomplex a)
 }
 
 // A=ones(m,n)*a
-void zmat_set_d(int m, int n, dcomplex *A, int LDA, double a)
+void zmat_set_all_d(int m, int n, dcomplex *A, int LDA, double a)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -74,7 +76,7 @@ void zmat_set_d(int m, int n, dcomplex *A, int LDA, double a)
 }
 
 // A=eye(m,n); % identiy matrix
-void zmat_eye(int m, int n, dcomplex *A, int LDA)
+void zmat_set_eye(int m, int n, dcomplex *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -90,7 +92,7 @@ void zmat_eye(int m, int n, dcomplex *A, int LDA)
 }
 
 // A=rand(m,n)*a+b
-void zmat_rand(int m, int n, dcomplex *A, int LDA, double a, double b)
+void zmat_set_rand(int m, int n, dcomplex *A, int LDA, double a, double b)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -374,36 +376,34 @@ void zmat_dist_norm_max(double *y, int m, int n, const dcomplex *A, int LDA, con
 
 /////////////////////////////////////////
 
-void zmat_print(int m, int n, const dcomplex *A, int LDA, const char *name, const char *f, int digits)
+// y=char(x)
+void zmat_get_s(int m, int n, char **B, int LDB, dcomplex *A, int LDA, char format, int digits)
 {
-  int i,j,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){
-    //k=3; 
-    //sprintf(format,"%%%d.%d%s%%+%d.%d%sI ",digits+k,digits,f,digits+k,digits,f);
-    k=3; 
-    sprintf(format,"%%%d.%d%s %%%d.%d%s  ",digits+k,digits,f,digits+k,digits,f);
-  }else if(STR_EQ(f,"e") || STR_EQ(f,"E")){
-    k=7; 
-    sprintf(format,"(%%+%d.%d%s %%+%d.%d%s) ",digits+k,digits,f,digits+k,digits,f);
+  char f[1024];
+  int i,j;
+  sprintf(f,"%%-.%d%c%%+.%d%ci",digits,format,digits,format);
+  if(A==NULL){ return; }
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      MAT(B,i,j,LDB)=char_renew_sprintf(MAT(B,i,j,LDB),NULL,f,Z_R(MAT(A,i,j,LDA)),Z_I(MAT(A,i,j,LDA)));
+    }
   }
-  else{
-    k=3; 
-    sprintf(format,"(%%%d.%d%s, %%%d.%d%s) ",digits+k,digits,f,digits+k,digits,f);
-  }
+}
+
+/////////////////////////////////////////
+
+void zmat_print(int m, int n, dcomplex *A, int LDA, char *name, char format, int digits)
+{
+  char **s=NULL;
   if(A==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(A==NULL) return;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      printf(format,Z_R(MAT(A,i,j,LDA)),Z_I(MAT(A,i,j,LDA)));
-    }
-    printf("\n");
-  }
+  s=svec_allocate(m*n);
+  zmat_get_s(m,n,s,m,A,LDA,format,digits);
+  smat_print(m,n,s,m,name);
+  s=svec_free(m*n,s);
 }
 
 /////////////////////////////////////////////////////////////////////////

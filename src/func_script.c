@@ -43,7 +43,7 @@ func_t *func_scriptf_echo(char* fmt, ...)
 
 //////////////////////////////////////////////////////////
 
-func_t *func_script(const char *str)
+func_t *func_script(char *str)
 {
   func_t *f=NULL;
   func_init();
@@ -67,7 +67,7 @@ func_t *func_script(const char *str)
   f=func_builtin_script(f); // built-in: f, f(...)
   f=func_def_script(f);     // def: f, f(...)
   if(func_is_strings(f)){
-    printf("Error in func_script(const char *str)\n");
+    printf("Error in func_script(char *str)\n");
     printf("str='%s'\n",str);
     printf("f="); func_print(f); printf("\n");
     exit(0);

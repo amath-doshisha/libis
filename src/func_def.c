@@ -8,7 +8,7 @@
 
 ///////////////////////////////////////////////
 
-static const char *__func_def="@D";
+static char *__func_def="@D";
 
 
 ////////////////////////////////////////
@@ -122,7 +122,7 @@ func_t *func_op_def_new(void)
 ////////////////////////////////////////
 
 // def
-func_t *func_def(const char *name, func_t *g, int amin, int amax)
+func_t *func_def(char *name, func_t *g, int amin, int amax)
 {
   func_t *f=NULL;
   f=func_new(__func_def);

@@ -44,7 +44,7 @@ func_t *func_mul_script(func_t *f)
 
 /////////////////////////////////////
 
-static const char *__func_mul="mul";
+static char *__func_mul="mul";
 
 ///////////////////////////////////
 

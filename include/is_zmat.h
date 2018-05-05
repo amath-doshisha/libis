@@ -12,18 +12,23 @@ dcomplex* zmat_free(dcomplex *A);
  * initialization
  */
 // A=zeros(m,n)
-void zmat_zeros(int m, int n, dcomplex *A, int LDA);
+void zmat_set_zeros(int m, int n, dcomplex *A, int LDA);
 // A=ones(m,n)
-void zmat_ones(int m, int n, dcomplex *A, int LDA);
+void zmat_set_ones(int m, int n, dcomplex *A, int LDA);
 // A=ones(m,n)*a
-void zmat_set(int m, int n, dcomplex *A, int LDA, dcomplex a);
+void zmat_set_all_z(int m, int n, dcomplex *A, int LDA, dcomplex a);
 // A=ones(m,n)*a
-void zmat_set_d(int m, int n, dcomplex *A, int LDA, double a);
+void zmat_set_all_d(int m, int n, dcomplex *A, int LDA, double a);
 // A=eye(m,n); % identiy matrix
-void zmat_eye(int m, int n, dcomplex *A, int LDA);
+void zmat_set_eye(int m, int n, dcomplex *A, int LDA);
 // A=rand(m,n)*a+b
-void zmat_rand(int m, int n, dcomplex *A, int LDA, double a, double b);
+void zmat_set_rand(int m, int n, dcomplex *A, int LDA, double a, double b);
 
+/*
+ * casting
+ */
+// y=char(x)
+void zmat_get_s(int m, int n, char **B, int LDB, dcomplex *A, int LDA, char format, int digits);
 
 /*
  * convert its elements
@@ -93,7 +98,7 @@ void zmat_dist_norm_max(double *y, int m, int n, const dcomplex *A, int LDA, con
 /*
  * output and input
  */
-void zmat_print(int m, int n, const dcomplex *A, int LDA, const char *name, const char *f, int digits);
+void zmat_print(int m, int n, dcomplex *A, int LDA, char *name, char format, int digits);
 void zmat_save(int m, int n, dcomplex *A, int LDA, char* fmt, ...);
 void zmat_bin_save(int m, int n, dcomplex *A, int LDA, char* fmt, ...);
 dcomplex *zmat_bin_load(int *m, int *n, char* fmt, ...);

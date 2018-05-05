@@ -1,3 +1,4 @@
+#include"is_svec.h"
 #include"is_rmulti.h"
 #include"is_rmat.h"
 #include"is_irmulti.h"
@@ -50,32 +51,43 @@ void irmat_copy(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rmul
 /**
  @brief 表示
  */
-void irmat_print(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, const char *name, const char *f, int digits)
+void irmat_print(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, char *name, char format, int digits)
 {
-  int i,j,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){ k=3; }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){ k=7; }
-  else{ k=3; }
-  sprintf(format,"[%%%d.%dR%s, %%%d.%dR%s] ",digits+k,digits,f,digits+k,digits,f);
+  int LDA;
+  char **s=NULL;
   if(A0==NULL || A1==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(A0==NULL || A1==NULL) return;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      mpfr_printf(format,MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
-    }
-    printf("\n");
-  }
+  LDA=LDA0; LDA=LDA1;
+  s=svec_allocate(m*n);
+  irmat_get_s(m,n,s,m,A0,LDA0,A0,LDA0,format,digits);
+  smat_print(m,n,s,m,name);
+  s=svec_free(m*n,s);
 }
 
 /** @} */
 /** @name irmulti型行列の型変換に関する関数 */
 /** @{ */
+
+/**
+ @brief irmulti型の行列を文字列型に変換 y=char(x)
+*/
+void irmat_get_s(int m, int n, char **B, int LDB, rmulti **A0, int LDA0, rmulti **A1, int LDA1, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i,j;
+  if(format=='e'){ sprintf(f,"[%%+.%dR%c, %%+.%dR%c]",digits,format,digits,format); }
+  else           { sprintf(f,"[%%-.%dR%c, %%-.%dR%c]",digits,format,digits,format); }
+  if(A0==NULL || A1==NULL){ return; }
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      mpfr_sprintf(buf,f,MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+      MAT(B,i,j,LDB)=char_renew(MAT(B,i,j,LDB),buf,NULL);
+    }
+  }
+}
 
 /** @} */
 /** @name irmulti型行列に関する関数 */

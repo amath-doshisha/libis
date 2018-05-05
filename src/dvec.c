@@ -6,6 +6,7 @@
 #include"is_ivec.h"
 #include"is_dvec.h"
 #include"is_strings.h"
+#include"is_svec.h"
 #include"mt19937ar.h"
 
 #define FILE_NAME_LENGTH_MAX 100000
@@ -44,31 +45,46 @@ double *dvec_allocate_s(char *str, int *n)
 
 /////////////////////////////////////////////////////////////
 
-// x=zeros(n,1)
-void dvec_zeros(int n, double *x)
+// x=nan(n,1)
+void dvec_set_nan(int n, double *x)
 {
   int i;
-  for(i=0; i<n; i++) x[i]=0;
+  for(i=0; i<n; i++){ x[i]=NAN; }
+}
+
+// x=inf(n,1)
+void dvec_set_inf(int n, double *x, int sgn) 
+{
+  double zero=0;
+  int i;
+  for(i=0; i<n; i++){ x[i]=sgn/zero; }
+}
+
+// x=zeros(n,1)
+void dvec_set_zeros(int n, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ x[i]=0; }
 }
 
 // x=ones(n,1)
-void dvec_ones(int n, double *x)
+void dvec_set_ones(int n, double *x)
 {
   int i;
-  for(i=0; i<n; i++) x[i]=1;
+  for(i=0; i<n; i++){ x[i]=1; }
 }
 
 // x=ones(n,1)*a
-void dvec_set(int n, double *x, double a)
+void dvec_set_all(int n, double *x, double a)
 {
   int i;
-  for(i=0; i<n; i++) x[i]=a;
+  for(i=0; i<n; i++){ x[i]=a; }
 }
 
 // x=zeros(n,1); x[k]=1
-void dvec_unit(int n, double *x, int k)
+void dvec_set_unit(int n, double *x, int k)
 {
-  dvec_zeros(n,x);
+  dvec_set_zeros(n,x);
   x[k]=1;
 }
 
@@ -80,12 +96,49 @@ void dvec_set_grid(int n, double *x)
 }
 
 // x=rand(n,1)*a+b
-void dvec_rand(int n, double *x, double a, double b){
+void dvec_set_rand(int n, double *x, double a, double b){
   int i;
   for(i=0; i<n; i++){
-    x[i]=genrand_real3()*a+b;
+    x[i]=genrand_int32();
+    x[i]/=0xffffffff;
+    x[i]=x[i]*a+b;
   }
 }
+
+// y=x
+void dvec_set_si(int n, double *y, int *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=x[i]; }
+}
+
+// y=x
+void dvec_set_s(int n, double *y, char **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=atof(x[i]); }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+// y=int(x)
+void dvec_get_si(int n, int *y, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=x[i]; }
+}
+
+// y=char(x)
+void dvec_get_s(int n, char **y, double *x, char format, int digits)
+{
+  char f[1024];
+  int i;
+  sprintf(f,"%%-.%d%c",digits,format);
+  for(i=0; i<n; i++){ y[i]=char_renew_sprintf(y[i],NULL,f,x[i]); }
+}
+
+///////////////////////////////////////////////////////////////////////
+
 
 // x[0]=x[n-1]; x[1]=x[n-2]; x[2]=x[n-3]; ...
 void dvec_reverse(int n, double *x)
@@ -148,7 +201,7 @@ void dvec_quick_sort(int n, double *x, int *I, int left, int right)
 // if I!=NULL, then I is stored with sorted indexes
 void dvec_sort(int n, double *x, int *I)
 {
-  if(I!=NULL) ivec_grid(n,I);
+  if(I!=NULL){ ivec_set_grid(n,I); }
   dvec_quick_sort(n,x,I,0,n-1);
 }
 
@@ -679,22 +732,18 @@ double dvec_min(int n, const double *x)
   return value;
 }
 
-void dvec_print(int n, const double *x, const char *name, const char *f, int digits)
+void dvec_print(int n, double *x, char *name, char format, int digits)
 {
-  int i;
-  char format[128];
-  if(STR_EQ(f,"f")){ sprintf(format,"%%%d.%d%s\n",digits+3,digits,f); }
-  else             { sprintf(format,"%%%d.%d%s\n",digits+9,digits,f); }
+  char **s=NULL;
   if(x==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(x==NULL) return;
-  for(i=0; i<n; i++){
-    printf((const char*)format,x[i]);
-  }
+  s=svec_allocate(n);
+  dvec_get_s(n,s,x,format,digits);
+  svec_print(n,s,name);
+  s=svec_free(n,s);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

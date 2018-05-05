@@ -5,8 +5,8 @@
 int main()
 {
   int n,LDJ,digits=5;
-  const char *begin="begin(x,y,z,w,v,u)";
-  const char *str="{-x+x^2+2*y^2+2*z^2+2*w^2,-y+2*x*y+2*y*z+2*z*w,-z+y^2+2*x*z+2*y*w,-1+x+2*y+2*z+2*w}";
+  char *begin="begin(x,y,z,w,v,u)";
+  char *str="{-x+x^2+2*y^2+2*z^2+2*w^2,-y+2*x*y+2*y*z+2*z*w,-z+y^2+2*x*z+2*y*w,-1+x+2*y+2*z+2*w}";
   //  const char *sx[]={ "2", "-1", "3", "-4", NULL };
   func_t *fF=NULL,*fJ=NULL;
   rmulti **rF=NULL,**rF0=NULL,**rF1=NULL,**rJ=NULL,**rJ0=NULL,**rJ1=NULL,**rx=NULL;
@@ -65,21 +65,21 @@ int main()
   printf("fF="); func_print(fF); printf("\n");
   printf("fJ="); func_print(fJ); printf("\n");
   printf("------- real \n");
-  rvec_print(n,rx,"x=","f",digits);
-  rvec_print(n,rF,"F=","f",digits);
-  irvec_print(n,rF0,rF1,"[F]=","f",digits);
-  rmat_print(n,n,rJ,LDJ,"J=","f",digits);
-  irmat_print(n,n,rJ0,LDJ,rJ1,LDJ,"[J]=","f",digits);
+  rvec_print(n,rx,"x=",'f',digits);
+  rvec_print(n,rF,"F=",'f',digits);
+  irvec_print(n,rF0,rF1,"[F]=",'f',digits);
+  rmat_print(n,n,rJ,LDJ,"J=",'f',digits);
+  irmat_print(n,n,rJ0,LDJ,rJ1,LDJ,"[J]=",'f',digits);
   printf("------- complex \n");
-  cvec_print(n,cx,"x=","f",digits);
-  cvec_print(n,cF,"F=","f",digits);
-  icvec_print(n,cF0,cF1,"[F]=","f",digits);
-  cvec_print(n,cFc,"Fc=","f",3);
-  cvec_print(n,cFr,"Fr=","e",3);
-  cmat_print(n,n,cJ,LDJ,"J=","f",digits);
-  icmat_print(n,n,cJ0,LDJ,cJ1,LDJ,"[J]=","f",digits);
-  cmat_print(n,n,cJc,LDJ,"Jc=","f",3);
-  cmat_print(n,n,cJr,LDJ,"Jr=","e",3);
+  cvec_print(n,cx,"x=",'f',digits);
+  cvec_print(n,cF,"F=",'f',digits);
+  icvec_print(n,cF0,cF1,"[F]=",'f',digits);
+  cvec_print(n,cFc,"Fc=",'f',3);
+  cvec_print(n,cFr,"Fr=",'e',3);
+  cmat_print(n,n,cJ,LDJ,"J=",'f',digits);
+  icmat_print(n,n,cJ0,LDJ,cJ1,LDJ,"[J]=",'f',digits);
+  cmat_print(n,n,cJc,LDJ,"Jc=",'f',3);
+  cmat_print(n,n,cJr,LDJ,"Jr=",'e',3);
 
 
   // free

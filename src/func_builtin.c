@@ -52,7 +52,7 @@ func_t *func_builtin_script(func_t *f)
 
 /////////////////////////////////////////////////////////////
 
-static const char *__func_builtin="@B";
+static char *__func_builtin="@B";
 
 /////////////////////////////////////////////////////////////
 
@@ -76,7 +76,7 @@ int func_is_builtin(func_t *f)
   return func_is(f,__func_builtin);
 }
 
-func_t *func_builtin_new(const char *name)
+func_t *func_builtin_new(char *name)
 {
   func_t *f=NULL;
   f=func_new(__func_builtin);

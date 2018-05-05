@@ -10,6 +10,7 @@ var searchData=
   ['name_5fkrawczyk',['NAME_KRAWCZYK',['../iceig_8c.html#aa429c5ffdeb849e00c6d5483f56ad341',1,'NAME_KRAWCZYK():&#160;iceig.c'],['../ireig_8c.html#aa429c5ffdeb849e00c6d5483f56ad341',1,'NAME_KRAWCZYK():&#160;ireig.c']]],
   ['name_5freigii',['NAME_REIGII',['../reig__ii_8c.html#ab7867137db3ac6a0edb143f173ee23e6',1,'reig_ii.c']]],
   ['name_5freigii_5f1pair',['NAME_REIGII_1PAIR',['../reig__ii_8c.html#a80b2bad59688af3a184084ac5db2005e',1,'reig_ii.c']]],
+  ['ndim',['ndim',['../structarray__struct.html#a0d9c8cbc461c7cf86cad8e548f195bd1',1,'array_struct']]],
   ['null_5fexc1',['NULL_EXC1',['../is__macros_8h.html#aa6737516f4eec410ba1c894420efc3f8',1,'is_macros.h']]],
   ['null_5fexc2',['NULL_EXC2',['../is__macros_8h.html#ab5fd656bc9ceff65f4aaeb2fb30793fb',1,'is_macros.h']]],
   ['null_5fexc3',['NULL_EXC3',['../is__macros_8h.html#a61102770202d6a4690a589b83b941b14',1,'is_macros.h']]],

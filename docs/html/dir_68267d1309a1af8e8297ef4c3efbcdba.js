@@ -1,5 +1,6 @@
 var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
+    [ "array.c", "array_8c.html", "array_8c" ],
     [ "bigint.c", "bigint_8c.html", "bigint_8c" ],
     [ "ceig.c", "ceig_8c.html", "ceig_8c" ],
     [ "ceig_hqr.c", "ceig__hqr_8c.html", "ceig__hqr_8c" ],
@@ -75,6 +76,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "irmulti.c", "irmulti_8c.html", "irmulti_8c" ],
     [ "irsolve.c", "irsolve_8c.html", "irsolve_8c" ],
     [ "irvec.c", "irvec_8c.html", "irvec_8c" ],
+    [ "is_array.h", "is__array_8h.html", "is__array_8h" ],
     [ "is_bigint.h", "is__bigint_8h.html", "is__bigint_8h" ],
     [ "is_ceig.h", "is__ceig_8h.html", "is__ceig_8h" ],
     [ "is_ceig_hqr.h", "is__ceig__hqr_8h.html", "is__ceig__hqr_8h" ],
@@ -134,6 +136,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "is_rtestmat.h", "is__rtestmat_8h.html", "is__rtestmat_8h" ],
     [ "is_rvec.h", "is__rvec_8h.html", "is__rvec_8h" ],
     [ "is_strings.h", "is__strings_8h.html", "is__strings_8h" ],
+    [ "is_svec.h", "is__svec_8h.html", "is__svec_8h" ],
     [ "is_zeig.h", "is__zeig_8h.html", "is__zeig_8h" ],
     [ "is_zhpeig.h", "is__zhpeig_8h.html", "is__zhpeig_8h" ],
     [ "is_zhshldr.h", "is__zhshldr_8h.html", "is__zhshldr_8h" ],
@@ -162,6 +165,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "rtestmat.c", "rtestmat_8c.html", "rtestmat_8c" ],
     [ "rvec.c", "rvec_8c.html", "rvec_8c" ],
     [ "strings.c", "strings_8c.html", "strings_8c" ],
+    [ "svec.c", "svec_8c.html", "svec_8c" ],
     [ "zeig.c", "zeig_8c.html", "zeig_8c" ],
     [ "zhpeig.c", "zhpeig_8c.html", "zhpeig_8c" ],
     [ "zhshldr.c", "zhshldr_8c.html", "zhshldr_8c" ],

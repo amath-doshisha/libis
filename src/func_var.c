@@ -135,7 +135,7 @@ int func_var_pow(func_t *f, int i)
 
 /////////////////////////////////////////////////////
 
-static const char *__func_var="@#";
+static char *__func_var="@#";
 
 func_t *func_var(int n)
 {

@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
   char *s;
   strings *list=NULL;
-    
+
   if(argc>=2){
     s=malloc(sizeof(char)*(strlen(argv[1])+1));
     strcpy(s,argv[1]);
@@ -17,11 +17,96 @@ int main(int argc, char *argv[])
     s=malloc(sizeof(char)*(strlen("1234567890")+1));
     strcpy(s,"1234567890");
   }
+  
   printf("s=%s\n",s);
   list=strings_split_number(s);
   strings_print(list);
   printf("\n");
-    
+
+  s=char_renew(s,"[1+2i,-3-4i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[1+i,-1-i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[i,-1]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"1+2i",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"2i",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"i",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[i,i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[-i,+i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[2-i,2+i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[2.345-3.4567i,-5.7890+6.7890i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[0,-5.7890+6.7890i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[0,-5.7890+6.7890i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[2.345e12-3.4567e-12i,-5.7890e+34+6.7890e-24i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
+  s=char_renew(s,"[-3.4567e-12i,6.7890e-24i]",NULL);
+  printf("s=%s\n",s);
+  list=strings_split_str_to_irmulti(s);
+  strings_print(list);
+  printf("\n");
+
   /*
   int k=0;
   const char *str[]={"  a ","b","c","d",NULL};

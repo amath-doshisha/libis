@@ -1,3 +1,4 @@
+#include"is_svec.h"
 #include"is_rmulti.h"
 #include"is_rmat.h"
 #include"is_irmulti.h"
@@ -23,7 +24,16 @@
 /** @{ */
 
 /**
- @brief rmulti型のベクトルの値を倍精度実数から設定.
+ @brief irmulti型のベクトルのコピー [y0,y1]=[x0,x1]
+*/
+void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの値を倍精度実数から設定.
 */
 void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x)
 {
@@ -32,12 +42,67 @@ void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x)
 }
 
 /**
- @brief コピー [y0,y1]=[x0,x1]
+ @brief irmulti型のベクトルの値を倍精度実数から設定.
 */
-void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+void irvec_set_dd(int n, rmulti **y0, rmulti **y1, double *x0, double *x1)
 {
   int i;
-  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
+  for(i=0; i<n; i++){ irset_dd(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの値を整数型から設定.
+*/
+void irvec_set_si(int n, rmulti **y0, rmulti **y1, int *x)
+{
+  int i;
+  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],x[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの値を文字列型から設定.
+*/
+void irvec_set_s(int n, rmulti **y0, rmulti **y1, char **x)
+{
+  int i;
+  for(i=0; i<n; i++){ irset_s(y0[i],y1[i],x[i]); }
+}
+
+/** @* */
+/** @name irmulti型ベクトルの型変換に関する関数 */
+/** @{ */
+
+/**
+ @brief irmulti型のベクトルを整数型に変換.
+ */
+void irvec_get_si(int n, int *y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=0.5*(rget_d(x0[i])+rget_d(x1[i])); }
+}
+
+/**
+ @brief irmulti型のベクトルを倍精度実数型に変換.
+ */
+void irvec_get_d(int n, double *y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=0.5*(rget_d(x0[i])+rget_d(x1[i])); }
+}
+
+/**
+ @brief irmulti型のベクトルを文字列型に変換 y=char(x)
+ */
+void irvec_get_s(int n, char **y, rmulti **x0, rmulti **x1, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i;
+  if(format=='e'){ mpfr_sprintf(f,"[%%+.%dR%c, %%+.%dR%c]",digits,format,digits,format); }
+  else           { mpfr_sprintf(f,"[%%.%dR%c, %%.%dR%c]",digits,format,digits,format); }
+  for(i=0; i<n; i++){
+    mpfr_sprintf(buf,f,x0[i],x1[i]);
+    y[i]=char_renew(y[i],buf,NULL);
+  }
 }
 
 /** @} */
@@ -45,20 +110,20 @@ void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 /** @{ */
 
 /**
- @brief 表示
+ @brief irmulti型のベクトルの表示
  */
-void irvec_print(int n, rmulti **x0, rmulti **x1, const char *name, const char *f, int digits)
+void irvec_print(int n, rmulti **x0, rmulti **x1, char *name, char format, int digits)
 {
-  int i,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){ k=3; }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){ k=7; }
-  else if((strcmp(f,"g")==0) || (strcmp(f,"G")==0)){ k=6; }
-  else{ k=3; }
-  sprintf(format,"[%%%d.%dR%s, %%%d.%dR%s]\n",digits+k,digits,f,digits+k,digits,f);
-  if(name!=NULL){ printf("%s\n",name); }
-  if(x0==NULL || x1==NULL){ printf("NULL\n"); return; }
-  for(i=0; i<n; i++){ mpfr_printf(format,x0[i],x1[i]); }
+  char **s=NULL;
+  if(x0==NULL || x1==NULL){
+    if(name!=NULL){ printf("%s=NULL\n",name); }
+    else          { printf("NULL\n"); }
+    return;
+  }
+  s=svec_allocate(n);
+  irvec_get_s(n,s,x0,x1,format,digits);
+  svec_print(n,s,name);
+  s=svec_free(n,s);
 }
 
 
@@ -71,7 +136,7 @@ void irvec_print(int n, rmulti **x0, rmulti **x1, const char *name, const char *
 /** @{ */
 
 /**
- @brief 区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0
+ @brief irmulti型のベクトルの区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0
 */
 void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **x1)
 {
@@ -86,7 +151,7 @@ void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **
 }
 
 /**
- @brief 符号の反転 [y0,y1]=-[x0,x1]
+ @brief irmulti型のベクトルの符号の反転 [y0,y1]=-[x0,x1]
 */
 void irvec_neg(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 {
@@ -95,7 +160,7 @@ void irvec_neg(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 符号の正負 [y0,y1]=[-abs(x),abs(x)]
+ @brief irmulti型のベクトルの符号の正負 [y0,y1]=[-abs(x),abs(x)]
 */
 void irvec_pm(int n, rmulti **y0, rmulti **y1, rmulti **x)
 {
@@ -104,7 +169,7 @@ void irvec_pm(int n, rmulti **y0, rmulti **y1, rmulti **x)
 }
 
 /**
- @brief 区間の拡張 [z0,z1]=[x0,x1]+[-y,y]
+ @brief irmulti型のベクトルの区間の拡張 [z0,z1]=[x0,x1]+[-y,y]
 */
 void irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y)
 {
@@ -113,7 +178,7 @@ void irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmu
 }
 
 /**
- @brief 区間の中心 [m-r,m+r]=[x0,x1]
+ @brief irmulti型のベクトルの区間の中心 [m-r,m+r]=[x0,x1]
  */
 void irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1)
 {
@@ -122,7 +187,7 @@ void irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 区間の半径 [m-r,m+r]=[x0,x1]
+ @brief irmulti型のベクトルの区間の半径 [m-r,m+r]=[x0,x1]
  */
 void irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1)
 {
@@ -131,7 +196,7 @@ void irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 区間の中心と半径 [m-r,m+r]=[x0,x1]
+ @brief irmulti型のベクトルの区間の中心と半径 [m-r,m+r]=[x0,x1]
  */
 void irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1)
 {
@@ -140,7 +205,7 @@ void irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
 */
 void irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
@@ -149,7 +214,7 @@ void irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti
 }
 
 /**
- @brief 足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
 */
 void irvec_add_r(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
@@ -158,7 +223,7 @@ void irvec_add_r(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmul
 }
 
 /**
- @brief 引き算 [z0,z1]=[x0,z1]-[y0,y1]
+ @brief irmulti型のベクトルの引き算 [z0,z1]=[x0,z1]-[y0,y1]
 */
 void irvec_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
@@ -167,7 +232,7 @@ void irvec_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti
 }
 
 /**
- @brief 掛け算 [z0,z1]=[x0,x1]*[y0,y1]
+ @brief irmulti型のベクトルの掛け算 [z0,z1]=[x0,x1]*[y0,y1]
  */
 void irvec_mul_r(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
@@ -176,7 +241,7 @@ void irvec_mul_r(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmul
 }
 
 /**
- @brief 割り算 [z0,z1]=[x0,x1]/[y0,y1]
+ @brief irmulti型のベクトルの割り算 [z0,z1]=[x0,x1]/[y0,y1]
  */
 void irvec_div(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
@@ -185,7 +250,7 @@ void irvec_div(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti
 }
 
 /**
- @brief 平方の総和 [y0,y1]=sum([x0,x1].^2)
+ @brief irmulti型のベクトルの平方の総和 [y0,y1]=sum([x0,x1].^2)
 */
 void irvec_sum_pow2(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -195,7 +260,7 @@ void irvec_sum_pow2(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 絶対値 [y0,y1]=abs([x0,x1])
+ @brief irmulti型のベクトルの絶対値 [y0,y1]=abs([x0,x1])
 */
 void irvec_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 {
@@ -204,7 +269,7 @@ void irvec_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])
+ @brief irmulti型のベクトルの差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])
 */
 void irvec_abs_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
@@ -213,7 +278,7 @@ void irvec_abs_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rm
 }
 
 /**
- @brief 最大値 [y0,y1]=[max(x0),max(x1)]
+ @brief irmulti型のベクトルの最大値 [y0,y1]=[max(x0),max(x1)]
 */
 void irvec_max(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -230,7 +295,7 @@ void irvec_max(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 最大値 [y0,y1]=[x0,max(x1)] 上限で比較
+ @brief irmulti型のベクトルの最大値 [y0,y1]=[x0,max(x1)] 上限で比較
 */
 void irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -244,7 +309,7 @@ void irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 最大値 [y0,y1]=[max(x0),x1] 下限で比較
+ @brief irmulti型のベクトルの最大値 [y0,y1]=[max(x0),x1] 下限で比較
 */
 void irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -258,7 +323,7 @@ void irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 最小値 [y0,y1]=[min(x0),min(x1)]
+ @brief irmulti型のベクトルの最小値 [y0,y1]=[min(x0),min(x1)]
 */
 void irvec_min(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -275,7 +340,7 @@ void irvec_min(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 最小値 [y0,y1]=[x0,min(x1)]
+ @brief irmulti型のベクトルの最小値 [y0,y1]=[x0,min(x1)]
 */
 void irvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -289,7 +354,7 @@ void irvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 最小値 [y0,y1]=[min(x0),x1]
+ @brief irmulti型のベクトルの最小値 [y0,y1]=[min(x0),x1]
 */
 void irvec_dmin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
@@ -343,7 +408,7 @@ void irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 }
 
 /**
- @brief 線形変換 [y0,y1]=[A0,A1]*[x0,x1]
+ @brief irmulti型のベクトルの線形変換 [y0,y1]=[A0,A1]*[x0,x1]
 */
 void irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
 {
@@ -361,7 +426,7 @@ void irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, 
 }
 
 /**
- @brief 線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1]
+ @brief irmulti型のベクトルの線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1]
 */
 void irvec_add_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
 {
@@ -379,7 +444,7 @@ void irvec_add_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LD
 }
 
 /**
- @brief 線形変換の減算 [y0,y1]-=[A0,A1]*[x0,x1]
+ @brief irmulti型のベクトルの線形変換の減算 [y0,y1]-=[A0,A1]*[x0,x1]
 */
 void irvec_sub_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
 {
@@ -397,7 +462,7 @@ void irvec_sub_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LD
 }
 
 /**
- @brief 転置行列の線形変換 [y0,y1]=[A0,A1]'*[x0,x1]
+ @brief irmulti型のベクトルの転置行列の線形変換 [y0,y1]=[A0,A1]'*[x0,x1]
 */
 void irvec_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
 {
@@ -415,7 +480,7 @@ void irvec_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0
 }
 
 /**
- @brief 転置行列の線形変換の加算 [y0,y1]+=[A0,A1]'*[x0,x1]
+ @brief irmulti型のベクトルの転置行列の線形変換の加算 [y0,y1]+=[A0,A1]'*[x0,x1]
 */
 void irvec_add_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
 {
@@ -433,7 +498,7 @@ void irvec_add_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int 
 }
 
 /**
- @brief 転置行列の線形変換の減算 [y0,y1]-=[A0,A1]'*[x0,x1]
+ @brief irmulti型のベクトルの転置行列の線形変換の減算 [y0,y1]-=[A0,A1]'*[x0,x1]
 */
 void irvec_sub_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
 {
@@ -451,7 +516,7 @@ void irvec_sub_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int 
 }
 
 /**
- @brief 写像 [y0,y1]=f([x0,x1])
+ @brief irmulti型のベクトルの写像 [y0,y1]=f([x0,x1])
 */
 void irvec_func(rmulti *y0, rmulti *y1, func_t *f, int n, rmulti **x0, rmulti **x1)
 {
@@ -516,7 +581,7 @@ void irvec_func(rmulti *y0, rmulti *y1, func_t *f, int n, rmulti **x0, rmulti **
 }
 
 /**
- @brief ベクトル写像 [y0,y1]=f([x0,x1])
+ @brief irmulti型のベクトルのベクトル写像 [y0,y1]=f([x0,x1])
  */
 void irvec_func_list(int m, rmulti **y0, rmulti **y1, func_t *f, int n, rmulti **x0, rmulti **x1)
 {

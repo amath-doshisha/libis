@@ -164,9 +164,9 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <tr class="memdesc:a7488da1331199e45ebb6a5d3ea89d155"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルがNaNを含むかの判定.  <a href="#a7488da1331199e45ebb6a5d3ea89d155">[詳解]</a><br /></td></tr>
 <tr class="separator:a7488da1331199e45ebb6a5d3ea89d155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">rmulti型のベクトルの入出力に関する関数</div></td></tr>
-<tr class="memitem:ac790b68f9f62e7f20fa821a5f703f8c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#ac790b68f9f62e7f20fa821a5f703f8c4">rvec_print</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, const char *name, const char *f, int digits)</td></tr>
-<tr class="memdesc:ac790b68f9f62e7f20fa821a5f703f8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの表示.  <a href="#ac790b68f9f62e7f20fa821a5f703f8c4">[詳解]</a><br /></td></tr>
-<tr class="separator:ac790b68f9f62e7f20fa821a5f703f8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d987366a9350acd1a920bf77b2b6f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#ac9d987366a9350acd1a920bf77b2b6f0">rvec_print</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, char *name, char format, int digits)</td></tr>
+<tr class="memdesc:ac9d987366a9350acd1a920bf77b2b6f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの表示.  <a href="#ac9d987366a9350acd1a920bf77b2b6f0">[詳解]</a><br /></td></tr>
+<tr class="separator:ac9d987366a9350acd1a920bf77b2b6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a810d50cde81b8e78ce2be52ccc3ef621"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#a810d50cde81b8e78ce2be52ccc3ef621">rvec_print_bin</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, const char *name, int digits)</td></tr>
 <tr class="memdesc:a810d50cde81b8e78ce2be52ccc3ef621"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの表示.  <a href="#a810d50cde81b8e78ce2be52ccc3ef621">[詳解]</a><br /></td></tr>
 <tr class="separator:a810d50cde81b8e78ce2be52ccc3ef621"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,9 +198,15 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <tr class="memitem:a982deb590245c5d61184d234c484d90c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#a982deb590245c5d61184d234c484d90c">rvec_set_nan</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
 <tr class="memdesc:a982deb590245c5d61184d234c484d90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの値をNaNに設定.  <a href="#a982deb590245c5d61184d234c484d90c">[詳解]</a><br /></td></tr>
 <tr class="separator:a982deb590245c5d61184d234c484d90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9a7ba85cfe4653a37b35a505165458a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#ab9a7ba85cfe4653a37b35a505165458a">rvec_set_s</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, const char **str)</td></tr>
-<tr class="memdesc:ab9a7ba85cfe4653a37b35a505165458a"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの値を文字列から設定.  <a href="#ab9a7ba85cfe4653a37b35a505165458a">[詳解]</a><br /></td></tr>
-<tr class="separator:ab9a7ba85cfe4653a37b35a505165458a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd9286d432df62c73d20579573cfeef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#aabd9286d432df62c73d20579573cfeef">rvec_set_inf</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, int sgn)</td></tr>
+<tr class="memdesc:aabd9286d432df62c73d20579573cfeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの値をInfに設定.  <a href="#aabd9286d432df62c73d20579573cfeef">[詳解]</a><br /></td></tr>
+<tr class="separator:aabd9286d432df62c73d20579573cfeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f93de28a3ea677af8ecc3c73a53bb88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#a3f93de28a3ea677af8ecc3c73a53bb88">rvec_set_s</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, char **str)</td></tr>
+<tr class="memdesc:a3f93de28a3ea677af8ecc3c73a53bb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの値を文字列から設定.  <a href="#a3f93de28a3ea677af8ecc3c73a53bb88">[詳解]</a><br /></td></tr>
+<tr class="separator:a3f93de28a3ea677af8ecc3c73a53bb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066b7ca0072fe710792d71468ed9443a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#a066b7ca0072fe710792d71468ed9443a">rvec_set_si</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y, int *x)</td></tr>
+<tr class="memdesc:a066b7ca0072fe710792d71468ed9443a"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの値を整数 から設定.  <a href="#a066b7ca0072fe710792d71468ed9443a">[詳解]</a><br /></td></tr>
+<tr class="separator:a066b7ca0072fe710792d71468ed9443a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade4bc92dec733e67d1295a6a652a283c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#ade4bc92dec733e67d1295a6a652a283c">rvec_set_d</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **y, double *x)</td></tr>
 <tr class="memdesc:ade4bc92dec733e67d1295a6a652a283c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの値を倍精度実数から設定.  <a href="#ade4bc92dec733e67d1295a6a652a283c">[詳解]</a><br /></td></tr>
 <tr class="separator:ade4bc92dec733e67d1295a6a652a283c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,12 +232,18 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <tr class="memdesc:a04cb680d9e5e283dd2b73626cd95fd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの値を区間(b,a+b)の疑似乱数値を設定.  <a href="#a04cb680d9e5e283dd2b73626cd95fd48">[詳解]</a><br /></td></tr>
 <tr class="separator:a04cb680d9e5e283dd2b73626cd95fd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">rmulti型のベクトルの型変換に関する関数</div></td></tr>
+<tr class="memitem:aec86679d9b6c17e0511e2613c08ffcbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#aec86679d9b6c17e0511e2613c08ffcbe">rvec_get_si</a> (int n, int *y, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
+<tr class="memdesc:aec86679d9b6c17e0511e2613c08ffcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルを整数型に変換.  <a href="#aec86679d9b6c17e0511e2613c08ffcbe">[詳解]</a><br /></td></tr>
+<tr class="separator:aec86679d9b6c17e0511e2613c08ffcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9024c8bc0106843327175b4292fccde1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#a9024c8bc0106843327175b4292fccde1">rvec_get_d</a> (int n, double *y, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
 <tr class="memdesc:a9024c8bc0106843327175b4292fccde1"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルを倍精度実数型に変換.  <a href="#a9024c8bc0106843327175b4292fccde1">[詳解]</a><br /></td></tr>
 <tr class="separator:a9024c8bc0106843327175b4292fccde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2812f6edca0f8a755b3607410a7d6ecc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#a2812f6edca0f8a755b3607410a7d6ecc">rvec_get_z</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
 <tr class="memdesc:a2812f6edca0f8a755b3607410a7d6ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルを倍精度複素数型に変換.  <a href="#a2812f6edca0f8a755b3607410a7d6ecc">[詳解]</a><br /></td></tr>
 <tr class="separator:a2812f6edca0f8a755b3607410a7d6ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44cced173448a48362cc6ccad59d230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#aa44cced173448a48362cc6ccad59d230">rvec_get_s</a> (int n, char **y, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, char format, int digits)</td></tr>
+<tr class="memdesc:aa44cced173448a48362cc6ccad59d230"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルを文字列型に変換 y=char(x)  <a href="#aa44cced173448a48362cc6ccad59d230">[詳解]</a><br /></td></tr>
+<tr class="separator:aa44cced173448a48362cc6ccad59d230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">rmulti型のベクトルの要素の配置に関する関数</div></td></tr>
 <tr class="memitem:ad510ed9e256b23e3d067c894a89fee14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rvec_8c.html#ad510ed9e256b23e3d067c894a89fee14">rvec_reverse</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x)</td></tr>
 <tr class="memdesc:ad510ed9e256b23e3d067c894a89fee14"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のベクトルの要素の順を逆に入れ替える.  <a href="#ad510ed9e256b23e3d067c894a89fee14">[詳解]</a><br /></td></tr>
@@ -507,7 +519,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00032">32</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -527,7 +539,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00024">24</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00025">25</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -557,7 +569,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00026">26</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -593,7 +605,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00026">26</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00027">27</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -613,7 +625,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00028">28</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -649,7 +661,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00029">29</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -679,7 +691,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00029">29</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00030">30</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -718,7 +730,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型に関する写像 y=f(x0) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01675">1675</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01717">1717</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -733,7 +745,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node6" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="429,2640,480,2667"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="551,1981,648,2008"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="423,2539,487,2565"/>
-<area shape="rect" id="node10" href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="428,487,481,513"/>
+<area shape="rect" id="node10" href="func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="428,487,481,513"/>
 <area shape="rect" id="node13" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="280,309,341,336"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="283,360,338,387"/>
 <area shape="rect" id="node15" href="func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="271,715,350,741"/>
@@ -782,10 +794,10 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node60" href="func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="270,613,351,640"/>
 <area shape="rect" id="node61" href="func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="407,1120,503,1147"/>
 <area shape="rect" id="node62" href="func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="274,1171,347,1197"/>
-<area shape="rect" id="node11" href="is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="570,487,629,513"/>
-<area shape="rect" id="node12" href="strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="696,487,761,513"/>
+<area shape="rect" id="node11" href="is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="570,487,629,513"/>
+<area shape="rect" id="node12" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="696,487,761,513"/>
 <area shape="rect" id="node22" href="func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="564,993,635,1020"/>
-<area shape="rect" id="node37" href="func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="426,1677,483,1704"/>
+<area shape="rect" id="node37" href="func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="426,1677,483,1704"/>
 <area shape="rect" id="node64" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="289,2589,332,2616"/>
 </map>
 </div>
@@ -832,7 +844,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型に関する写像 y=f(x0,x1) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01688">1688</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01730">1730</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -847,7 +859,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node6" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="429,2640,480,2667"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="551,1981,648,2008"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="423,2539,487,2565"/>
-<area shape="rect" id="node10" href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="428,487,481,513"/>
+<area shape="rect" id="node10" href="func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="428,487,481,513"/>
 <area shape="rect" id="node13" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="280,309,341,336"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="283,360,338,387"/>
 <area shape="rect" id="node15" href="func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="271,715,350,741"/>
@@ -896,10 +908,10 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node60" href="func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="270,613,351,640"/>
 <area shape="rect" id="node61" href="func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="407,1120,503,1147"/>
 <area shape="rect" id="node62" href="func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="274,1171,347,1197"/>
-<area shape="rect" id="node11" href="is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="570,487,629,513"/>
-<area shape="rect" id="node12" href="strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="696,487,761,513"/>
+<area shape="rect" id="node11" href="is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="570,487,629,513"/>
+<area shape="rect" id="node12" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="696,487,761,513"/>
 <area shape="rect" id="node22" href="func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="564,993,635,1020"/>
-<area shape="rect" id="node37" href="func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="426,1677,483,1704"/>
+<area shape="rect" id="node37" href="func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="426,1677,483,1704"/>
 <area shape="rect" id="node64" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="289,2589,332,2616"/>
 </map>
 </div>
@@ -952,7 +964,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型に関する写像 y=f(x0,x1,x2) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01702">1702</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01744">1744</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -967,7 +979,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node6" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="429,2640,480,2667"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="551,1981,648,2008"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="423,2539,487,2565"/>
-<area shape="rect" id="node10" href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="428,487,481,513"/>
+<area shape="rect" id="node10" href="func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="428,487,481,513"/>
 <area shape="rect" id="node13" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="280,309,341,336"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="283,360,338,387"/>
 <area shape="rect" id="node15" href="func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="271,715,350,741"/>
@@ -1016,10 +1028,10 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node60" href="func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="270,613,351,640"/>
 <area shape="rect" id="node61" href="func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="407,1120,503,1147"/>
 <area shape="rect" id="node62" href="func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="274,1171,347,1197"/>
-<area shape="rect" id="node11" href="is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="570,487,629,513"/>
-<area shape="rect" id="node12" href="strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="696,487,761,513"/>
+<area shape="rect" id="node11" href="is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="570,487,629,513"/>
+<area shape="rect" id="node12" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="696,487,761,513"/>
 <area shape="rect" id="node22" href="func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="564,993,635,1020"/>
-<area shape="rect" id="node37" href="func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="426,1677,483,1704"/>
+<area shape="rect" id="node37" href="func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="426,1677,483,1704"/>
 <area shape="rect" id="node64" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="289,2589,332,2616"/>
 </map>
 </div>
@@ -1060,7 +1072,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の絶対値 y=abs(x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00748">748</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00790">790</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1113,7 +1125,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの方向余弦の絶対値 abs(x'*y)/sqrt(x'*x)/sqrt(y'*y) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01442">1442</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01484">1484</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1178,7 +1190,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の差の絶対値 z=abs(x-y) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00893">893</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00935">935</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1233,7 +1245,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素とスカラーの差の絶対値 z=abs(x-y) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00904">904</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00946">946</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1288,7 +1300,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの足し算 z=x+y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00757">757</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00799">799</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1341,7 +1353,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの足し算 z=x+y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00775">775</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00817">817</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1419,7 +1431,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>丸めの発生回数. </dd></dl>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00958">958</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01000">1000</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1501,7 +1513,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>丸めの発生回数. </dd></dl>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01036">1036</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01078">1078</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1558,7 +1570,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素ごとの掛け算の加算 z+=x.*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00839">839</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00881">881</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1613,7 +1625,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルxとスカラーyの掛け算の加算 z+=x*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00857">857</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00899">899</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1668,7 +1680,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルxとスカラーyの掛け算の加算 z+=x*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00848">848</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00890">890</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1723,7 +1735,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの足し算 z=x+y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00766">766</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00808">808</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1754,7 +1766,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの新規生成. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00041">41</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00042">42</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1794,7 +1806,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの複製の生成. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00065">65</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00066">66</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1835,7 +1847,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの精度を指定しての新規生成. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00054">54</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1887,7 +1899,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの角度 theta=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01451">1451</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01493">1493</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1958,7 +1970,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの角度[deg] theta=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01464">1464</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01506">1506</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2025,7 +2037,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の平均 value=sum(x)/n </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01398">1398</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01440">1440</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2076,7 +2088,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの読み込み. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00421">421</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00422">422</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2143,7 +2155,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの保存. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00396">396</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00397">397</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2190,7 +2202,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を複成 y=x. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00099">99</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00100">100</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2245,7 +2257,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を添字を指定して複成 y=x(I). </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00108">108</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00109">109</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2300,7 +2312,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&lt;=&gt;Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01481">1481</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01523">1523</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2346,7 +2358,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値のコピー y=x. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00691">691</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00733">733</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2400,7 +2412,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <p>rmulti型のベクトルの値の要素番号Iに従ったコピー y=x. </p>
 <p>y[i]=x[I[i]], i=0,1,2,..,n-1. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00702">702</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00744">744</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2460,7 +2472,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの方向余弦 (x'*y)/sqrt(x'*x)/sqrt(y'*y) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01427">1427</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01469">1469</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2523,7 +2535,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素ごとの割り算 z=x./y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01261">1261</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01303">1303</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2576,7 +2588,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの指数部の引き算 y=x/2^p </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00730">730</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00772">772</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2629,7 +2641,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のスカラーとベクトルの要素との割り算 z=x/y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01288">1288</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01330">1330</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2682,7 +2694,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素とスカラーの割り算 z=x/y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01297">1297</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01339">1339</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2735,7 +2747,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のスカラーとベクトルの要素との割り算 z=x./y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01270">1270</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01312">1312</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2788,7 +2800,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素とスカラーの割り算 z=x/y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01279">1279</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01321">1321</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2835,7 +2847,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X==Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01496">1496</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01538">1538</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2883,7 +2895,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X==Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01546">1546</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01588">1588</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2925,7 +2937,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの終了処理. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00077">77</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00078">78</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2977,13 +2989,13 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルに関する写像 y=f(x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01604">1604</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01646">1646</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rvec_8c_aeb97e149b236453940b59451f2e8bddc_cgraph.png" border="0" usemap="#rvec_8c_aeb97e149b236453940b59451f2e8bddc_cgraph" alt=""/></div>
 <map name="rvec_8c_aeb97e149b236453940b59451f2e8bddc_cgraph" id="rvec_8c_aeb97e149b236453940b59451f2e8bddc_cgraph">
-<area shape="rect" id="node2" href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="284,436,337,463"/>
+<area shape="rect" id="node2" href="func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="284,436,337,463"/>
 <area shape="rect" id="node5" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="136,56,197,83"/>
 <area shape="rect" id="node6" href="is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="139,107,194,133"/>
 <area shape="rect" id="node7" href="func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="127,512,206,539"/>
@@ -3032,11 +3044,11 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node53" href="func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="126,411,207,437"/>
 <area shape="rect" id="node54" href="func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="263,867,359,893"/>
 <area shape="rect" id="node55" href="func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="130,816,203,843"/>
-<area shape="rect" id="node3" href="is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="426,436,485,463"/>
-<area shape="rect" id="node4" href="strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="552,436,617,463"/>
+<area shape="rect" id="node3" href="is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="426,436,485,463"/>
+<area shape="rect" id="node4" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="552,436,617,463"/>
 <area shape="rect" id="node9" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="407,1880,504,1907"/>
 <area shape="rect" id="node15" href="func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="420,993,491,1020"/>
-<area shape="rect" id="node30" href="func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="282,1525,339,1552"/>
+<area shape="rect" id="node30" href="func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="282,1525,339,1552"/>
 </map>
 </div>
 
@@ -3088,7 +3100,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルに関するベクトル写像 y=f(x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01660">1660</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01702">1702</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3099,9 +3111,9 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node7" href="rvec_8c.html#aeb97e149b236453940b59451f2e8bddc" title="rmulti型のベクトルに関する写像 y=f(x) " alt="" coords="136,1247,201,1273"/>
 <area shape="rect" id="node8" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="267,107,328,133"/>
 <area shape="rect" id="node31" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c" title="func_aget" alt="" coords="265,5,330,32"/>
-<area shape="rect" id="node3" href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="415,537,468,564"/>
-<area shape="rect" id="node4" href="is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="557,537,615,564"/>
-<area shape="rect" id="node5" href="strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="683,537,748,564"/>
+<area shape="rect" id="node3" href="func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="415,537,468,564"/>
+<area shape="rect" id="node4" href="is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="557,537,615,564"/>
+<area shape="rect" id="node5" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="683,537,748,564"/>
 <area shape="rect" id="node9" href="is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="270,1525,325,1552"/>
 <area shape="rect" id="node10" href="func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="258,867,337,893"/>
 <area shape="rect" id="node11" href="is__rmulti_8h.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="415,1417,467,1444"/>
@@ -3148,7 +3160,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node56" href="func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="261,1069,334,1096"/>
 <area shape="rect" id="node12" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="537,1931,635,1957"/>
 <area shape="rect" id="node18" href="func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="551,1044,621,1071"/>
-<area shape="rect" id="node32" href="func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="413,5,470,32"/>
+<area shape="rect" id="node32" href="func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="413,5,470,32"/>
 </map>
 </div>
 
@@ -3188,7 +3200,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&gt;=Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01516">1516</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01558">1558</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3236,7 +3248,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&gt;=Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01566">1566</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01608">1608</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3284,7 +3296,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルを倍精度実数型に変換. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00576">576</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00604">604</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3331,7 +3343,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの浮動小数点数の指数部の取得. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00165">165</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00166">166</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3371,7 +3383,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの浮動小数点数の指数部の最大値の取得. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00174">174</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00175">175</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3417,7 +3429,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの浮動小数点数の精度(ビット数)を取得. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00142">142</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00143">143</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3457,13 +3469,121 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00151">151</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00152">152</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rvec_8c_ad3153e9e45ce7820cbe83a0b6eb0f2ec_cgraph.png" border="0" usemap="#rvec_8c_ad3153e9e45ce7820cbe83a0b6eb0f2ec_cgraph" alt=""/></div>
 <map name="rvec_8c_ad3153e9e45ce7820cbe83a0b6eb0f2ec_cgraph" id="rvec_8c_ad3153e9e45ce7820cbe83a0b6eb0f2ec_cgraph">
 <area shape="rect" id="node2" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="163,5,227,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa44cced173448a48362cc6ccad59d230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44cced173448a48362cc6ccad59d230">&#9670;&nbsp;</a></span>rvec_get_s()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rvec_get_s </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型のベクトルを文字列型に変換 y=char(x) </p>
+
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00622">622</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rvec_8c_aa44cced173448a48362cc6ccad59d230_cgraph.png" border="0" usemap="#rvec_8c_aa44cced173448a48362cc6ccad59d230_cgraph" alt=""/></div>
+<map name="rvec_8c_aa44cced173448a48362cc6ccad59d230_cgraph" id="rvec_8c_aa44cced173448a48362cc6ccad59d230_cgraph">
+<area shape="rect" id="node2" href="is__strings_8h.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="124,31,199,57"/>
+<area shape="rect" id="node3" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="249,5,309,32"/>
+<area shape="rect" id="node4" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="247,56,312,83"/>
+<area shape="rect" id="node5" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="360,56,456,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aec86679d9b6c17e0511e2613c08ffcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec86679d9b6c17e0511e2613c08ffcbe">&#9670;&nbsp;</a></span>rvec_get_si()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rvec_get_si </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型のベクトルを整数型に変換. </p>
+
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00595">595</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rvec_8c_aec86679d9b6c17e0511e2613c08ffcbe_cgraph.png" border="0" usemap="#rvec_8c_aec86679d9b6c17e0511e2613c08ffcbe_cgraph" alt=""/></div>
+<map name="rvec_8c_aec86679d9b6c17e0511e2613c08ffcbe_cgraph" id="rvec_8c_aec86679d9b6c17e0511e2613c08ffcbe_cgraph">
+<area shape="rect" id="node2" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="127,5,177,32"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="225,5,323,32"/>
 </map>
 </div>
 
@@ -3503,7 +3623,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルを倍精度複素数型に変換. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00585">585</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00613">613</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3550,7 +3670,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&gt;Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01506">1506</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01548">1548</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3598,7 +3718,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&gt;Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01556">1556</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01598">1598</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3640,7 +3760,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルがNaNを含むかの判定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00198">198</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00199">199</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3692,7 +3812,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を添字を指定して複成 y(I)=x. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00117">117</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00118">118</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3747,7 +3867,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を添字を指定してコピー y(I)=x. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00712">712</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00754">754</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3788,7 +3908,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルが数であるかの判定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00188">188</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00189">189</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3834,7 +3954,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&lt;=Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01536">1536</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01578">1578</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3882,7 +4002,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&lt;=Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01586">1586</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01628">1628</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3961,7 +4081,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>丸めの発生回数. </dd></dl>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00932">932</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00974">974</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4045,7 +4165,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>丸めの発生回数. </dd></dl>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01010">1010</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01052">1052</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4104,36 +4224,50 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの読み込み. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00372">372</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00373">373</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rvec_8c_afee41d3674edb2f052130b4a1a555416_cgraph.png" border="0" usemap="#rvec_8c_afee41d3674edb2f052130b4a1a555416_cgraph" alt=""/></div>
 <map name="rvec_8c_afee41d3674edb2f052130b4a1a555416_cgraph" id="rvec_8c_afee41d3674edb2f052130b4a1a555416_cgraph">
-<area shape="rect" id="node2" href="is__rmulti_8h.html#ae2dc574e88d208779c45f55858b430e9" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="119,252,168,279"/>
-<area shape="rect" id="node3" href="is__strings_8h.html#a8c99bb44e384b646ed1eaf73599a44db" title="strings_split_number" alt="" coords="216,139,331,165"/>
-<area shape="rect" id="node16" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="236,201,311,228"/>
-<area shape="rect" id="node17" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="241,252,306,279"/>
-<area shape="rect" id="node18" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="225,303,322,329"/>
-<area shape="rect" id="node19" href="is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="238,379,309,405"/>
-<area shape="rect" id="node4" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="386,5,466,32"/>
-<area shape="rect" id="node5" href="strings_8c.html#ae363dfd1150049090df04b33a6253bc8" title="char_match_any" alt="" coords="664,81,760,108"/>
-<area shape="rect" id="node6" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="388,107,464,133"/>
-<area shape="rect" id="node7" href="strings_8c.html#a61461a579c8005f40d98b21557dc6384" title="strings_item_set" alt="" coords="379,157,473,184"/>
-<area shape="rect" id="node15" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="395,208,457,235"/>
-<area shape="rect" id="node8" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="808,157,903,184"/>
-<area shape="rect" id="node9" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="958,233,1018,260"/>
-<area shape="rect" id="node10" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="527,259,611,285"/>
-<area shape="rect" id="node14" href="strings_8c.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="536,107,601,133"/>
-<area shape="rect" id="node11" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="673,309,751,336"/>
-<area shape="rect" id="node12" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="812,309,899,336"/>
-<area shape="rect" id="node13" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="951,309,1025,336"/>
-<area shape="rect" id="node20" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="380,411,472,437"/>
-<area shape="rect" id="node23" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="391,461,461,488"/>
-<area shape="rect" id="node21" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="521,411,616,437"/>
-<area shape="rect" id="node22" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="675,411,749,437"/>
-<area shape="rect" id="node24" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="533,461,605,488"/>
-<area shape="rect" id="node25" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="678,461,746,488"/>
+<area shape="rect" id="node2" href="is__rmulti_8h.html#a247cfa927a4c365f56c6808811b915f0" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="119,157,168,184"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="227,81,291,108"/>
+<area shape="rect" id="node4" href="cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="216,132,303,159"/>
+<area shape="rect" id="node6" href="icmulti_8c.html#a833ba847343572e6701368d6db236853" title="icset_s" alt="" coords="233,183,286,209"/>
+<area shape="rect" id="node38" href="irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="237,292,281,319"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="361,5,446,32"/>
+<area shape="rect" id="node7" href="cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="372,208,435,235"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="531,133,592,160"/>
+<area shape="rect" id="node9" href="is__strings_8h.html#aa72cb3072042b74edc36b7a75afea01f" title="strings_split_str_to\l_irmulti" alt="" coords="351,306,456,347"/>
+<area shape="rect" id="node34" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="366,372,441,399"/>
+<area shape="rect" id="node35" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="371,56,436,83"/>
+<area shape="rect" id="node36" href="cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="375,107,431,133"/>
+<area shape="rect" id="node10" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="679,336,755,363"/>
+<area shape="rect" id="node11" href="strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903" title="strings_split" alt="" coords="524,285,599,312"/>
+<area shape="rect" id="node16" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="670,437,765,464"/>
+<area shape="rect" id="node17" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="817,577,911,604"/>
+<area shape="rect" id="node21" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="1239,709,1313,736"/>
+<area shape="rect" id="node22" href="strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="529,184,594,211"/>
+<area shape="rect" id="node23" href="strings_8c.html#a6589520d40398687afb1987bce711ecc" title="strings_split_number" alt="" coords="504,387,619,413"/>
+<area shape="rect" id="node26" href="strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="526,665,597,692"/>
+<area shape="rect" id="node33" href="strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="667,133,768,160"/>
+<area shape="rect" id="node12" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="831,235,897,261"/>
+<area shape="rect" id="node13" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="960,184,1056,211"/>
+<area shape="rect" id="node14" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="816,83,912,109"/>
+<area shape="rect" id="node15" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1246,451,1306,477"/>
+<area shape="rect" id="node18" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="822,476,906,503"/>
+<area shape="rect" id="node19" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="969,527,1047,553"/>
+<area shape="rect" id="node20" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="1104,628,1191,655"/>
+<area shape="rect" id="node24" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="677,539,757,565"/>
+<area shape="rect" id="node25" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="686,488,749,515"/>
+<area shape="rect" id="node27" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="671,741,763,768"/>
+<area shape="rect" id="node30" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="683,691,752,717"/>
+<area shape="rect" id="node28" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="817,741,911,768"/>
+<area shape="rect" id="node29" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="971,741,1045,768"/>
+<area shape="rect" id="node31" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="828,691,900,717"/>
+<area shape="rect" id="node32" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="974,691,1042,717"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="534,83,589,109"/>
+<area shape="rect" id="node39" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="371,423,435,449"/>
 </map>
 </div>
 
@@ -4173,7 +4307,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素ごとの絶対値の対数 y=log2(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01333">1333</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01375">1375</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4221,7 +4355,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&lt;Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01526">1526</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01568">1568</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4269,7 +4403,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の比較 X&lt;Y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01576">1576</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01618">1618</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4317,7 +4451,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の最大値 value=max(x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01137">1137</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01179">1179</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4367,7 +4501,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01151">1151</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01193">1193</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4424,7 +4558,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) とその添え字 I </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01169">1169</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01211">1211</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4481,7 +4615,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の差の絶対値の最大値 value=max(abs(x-y)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01189">1189</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01231">1231</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4539,7 +4673,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の絶対値の比の最大値 value=max(abs(x)./abs(y)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01407">1407</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01449">1449</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4591,7 +4725,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の最小値 value=min(x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01209">1209</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01251">1251</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4641,7 +4775,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01223">1223</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01265">1265</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4698,7 +4832,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x)) とその添え字 I </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01241">1241</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01283">1283</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4755,7 +4889,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素ごとの掛け算 z=x.*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00812">812</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00854">854</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4808,7 +4942,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの指数部の足し算 y=x*2^p </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00721">721</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00763">763</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4861,7 +4995,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルxとスカラーyの掛け算 z=x*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00830">830</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00872">872</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4914,7 +5048,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルxとスカラーyの掛け算 z=x*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00821">821</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00863">863</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4961,7 +5095,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの符号反転 y=-x </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00739">739</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00781">781</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5008,7 +5142,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01389">1389</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01431">1431</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5061,7 +5195,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの規格化 y=x/sqrt(x'*x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01348">1348</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01390">1390</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5119,7 +5253,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの規格化 y=x/sqrt(x'*x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01361">1361</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01403">1403</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5186,7 +5320,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの直交化 y-=(x'*y)*x where x'*x=1 </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01377">1377</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01419">1419</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5247,7 +5381,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のべき乗 z=x.^y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01306">1306</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01348">1348</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5300,7 +5434,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01324">1324</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01366">1366</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5353,7 +5487,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01315">1315</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01357">1357</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5406,7 +5540,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00915">915</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00957">957</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5419,8 +5553,8 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 </div>
 </div>
-<a id="ac790b68f9f62e7f20fa821a5f703f8c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac790b68f9f62e7f20fa821a5f703f8c4">&#9670;&nbsp;</a></span>rvec_print()</h2>
+<a id="ac9d987366a9350acd1a920bf77b2b6f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d987366a9350acd1a920bf77b2b6f0">&#9670;&nbsp;</a></span>rvec_print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5440,14 +5574,14 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -5465,7 +5599,24 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの表示. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00216">216</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00217">217</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rvec_8c_ac9d987366a9350acd1a920bf77b2b6f0_cgraph.png" border="0" usemap="#rvec_8c_ac9d987366a9350acd1a920bf77b2b6f0_cgraph" alt=""/></div>
+<map name="rvec_8c_ac9d987366a9350acd1a920bf77b2b6f0_cgraph" id="rvec_8c_ac9d987366a9350acd1a920bf77b2b6f0_cgraph">
+<area shape="rect" id="node2" href="is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="119,5,201,32"/>
+<area shape="rect" id="node3" href="rvec_8c.html#aa44cced173448a48362cc6ccad59d230" title="rmulti型のベクトルを文字列型に変換 y=char(x) " alt="" coords="125,56,195,83"/>
+<area shape="rect" id="node8" href="is__svec_8h.html#ab2d5063e3c4cb212b45137dc7de2983c" title="svec_print" alt="" coords="126,107,194,133"/>
+<area shape="rect" id="node10" href="is__svec_8h.html#a2e19962ed7f4feac304f82c6368d8b72" title="svec_free" alt="" coords="127,157,193,184"/>
+<area shape="rect" id="node4" href="is__strings_8h.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="262,56,337,83"/>
+<area shape="rect" id="node5" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="400,31,460,57"/>
+<area shape="rect" id="node6" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="397,81,463,108"/>
+<area shape="rect" id="node7" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="511,81,607,108"/>
+<area shape="rect" id="node9" href="svec_8c.html#a2384dbadcf07b68964f17e0741c03232" title="svec_max_length" alt="" coords="249,107,349,133"/>
+<area shape="rect" id="node11" href="is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="269,157,329,184"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -5509,7 +5660,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの表示. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00233">233</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00234">234</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5559,7 +5710,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの表示. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00276">276</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00277">277</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5618,7 +5769,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの表示. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00255">255</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00256">256</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5676,7 +5827,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素に関するクイックソートアルゴリズム(ユーザは直接使用してはならない). </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00649">649</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00691">691</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5720,7 +5871,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の順を逆に入れ替える. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00601">601</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00643">643</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5766,7 +5917,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>初期化済みのrmulti型のベクトルの浮動小数点数の精度(ビット数)を変更し再初期化. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00090">90</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00091">91</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5831,7 +5982,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの保存. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00296">296</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00297">297</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -5881,7 +6032,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの保存. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00348">348</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00349">349</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -5937,7 +6088,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの保存. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00318">318</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00319">319</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5987,7 +6138,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの全ての値を倍精度実数から設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00511">511</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00530">530</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6034,7 +6185,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を倍精度実数から設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00493">493</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00512">512</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6075,7 +6226,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を0,1,2,...に設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00545">545</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00564">564</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6083,6 +6234,52 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <map name="rvec_8c_a370bc160a6ad60e79fb561dfe909963f_cgraph" id="rvec_8c_a370bc160a6ad60e79fb561dfe909963f_cgraph">
 <area shape="rect" id="node2" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="136,5,185,32"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="233,5,331,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aabd9286d432df62c73d20579573cfeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd9286d432df62c73d20579573cfeef">&#9670;&nbsp;</a></span>rvec_set_inf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rvec_set_inf </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sgn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型のベクトルの値をInfに設定. </p>
+
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00485">485</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rvec_8c_aabd9286d432df62c73d20579573cfeef_cgraph.png" border="0" usemap="#rvec_8c_aabd9286d432df62c73d20579573cfeef_cgraph" alt=""/></div>
+<map name="rvec_8c_aabd9286d432df62c73d20579573cfeef_cgraph" id="rvec_8c_aabd9286d432df62c73d20579573cfeef_cgraph">
+<area shape="rect" id="node2" href="is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="129,5,184,32"/>
 </map>
 </div>
 
@@ -6116,7 +6313,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値をNaNに設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00475">475</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00476">476</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6156,7 +6353,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を1に設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00528">528</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00547">547</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6210,7 +6407,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を区間(b,a+b)の疑似乱数値を設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00554">554</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00573">573</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6228,8 +6425,8 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 </div>
 </div>
-<a id="ab9a7ba85cfe4653a37b35a505165458a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9a7ba85cfe4653a37b35a505165458a">&#9670;&nbsp;</a></span>rvec_set_s()</h2>
+<a id="a3f93de28a3ea677af8ecc3c73a53bb88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f93de28a3ea677af8ecc3c73a53bb88">&#9670;&nbsp;</a></span>rvec_set_s()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6249,7 +6446,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char **&#160;</td>
+          <td class="paramtype">char **&#160;</td>
           <td class="paramname"><em>str</em>&#160;</td>
         </tr>
         <tr>
@@ -6262,36 +6459,97 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を文字列から設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00484">484</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00494">494</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="rvec_8c_ab9a7ba85cfe4653a37b35a505165458a_cgraph.png" border="0" usemap="#rvec_8c_ab9a7ba85cfe4653a37b35a505165458a_cgraph" alt=""/></div>
-<map name="rvec_8c_ab9a7ba85cfe4653a37b35a505165458a_cgraph" id="rvec_8c_ab9a7ba85cfe4653a37b35a505165458a_cgraph">
-<area shape="rect" id="node2" href="is__rmulti_8h.html#ae2dc574e88d208779c45f55858b430e9" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="124,252,173,279"/>
-<area shape="rect" id="node3" href="is__strings_8h.html#a8c99bb44e384b646ed1eaf73599a44db" title="strings_split_number" alt="" coords="221,139,336,165"/>
-<area shape="rect" id="node16" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="241,201,316,228"/>
-<area shape="rect" id="node17" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="246,252,311,279"/>
-<area shape="rect" id="node18" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="230,303,327,329"/>
-<area shape="rect" id="node19" href="is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="243,379,314,405"/>
-<area shape="rect" id="node4" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="391,5,471,32"/>
-<area shape="rect" id="node5" href="strings_8c.html#ae363dfd1150049090df04b33a6253bc8" title="char_match_any" alt="" coords="669,81,765,108"/>
-<area shape="rect" id="node6" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="393,107,469,133"/>
-<area shape="rect" id="node7" href="strings_8c.html#a61461a579c8005f40d98b21557dc6384" title="strings_item_set" alt="" coords="384,157,479,184"/>
-<area shape="rect" id="node15" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="400,208,463,235"/>
-<area shape="rect" id="node8" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="813,157,908,184"/>
-<area shape="rect" id="node9" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="963,233,1023,260"/>
-<area shape="rect" id="node10" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="532,259,616,285"/>
-<area shape="rect" id="node14" href="strings_8c.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="541,107,607,133"/>
-<area shape="rect" id="node11" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="678,309,757,336"/>
-<area shape="rect" id="node12" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="817,309,904,336"/>
-<area shape="rect" id="node13" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="956,309,1031,336"/>
-<area shape="rect" id="node20" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="385,411,477,437"/>
-<area shape="rect" id="node23" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="397,461,466,488"/>
-<area shape="rect" id="node21" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="527,411,621,437"/>
-<area shape="rect" id="node22" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="681,411,754,437"/>
-<area shape="rect" id="node24" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="538,461,610,488"/>
-<area shape="rect" id="node25" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="683,461,751,488"/>
+<div class="center"><img src="rvec_8c_a3f93de28a3ea677af8ecc3c73a53bb88_cgraph.png" border="0" usemap="#rvec_8c_a3f93de28a3ea677af8ecc3c73a53bb88_cgraph" alt=""/></div>
+<map name="rvec_8c_a3f93de28a3ea677af8ecc3c73a53bb88_cgraph" id="rvec_8c_a3f93de28a3ea677af8ecc3c73a53bb88_cgraph">
+<area shape="rect" id="node2" href="is__rmulti_8h.html#a247cfa927a4c365f56c6808811b915f0" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="124,157,173,184"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="233,81,297,108"/>
+<area shape="rect" id="node4" href="cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="221,132,308,159"/>
+<area shape="rect" id="node6" href="icmulti_8c.html#a833ba847343572e6701368d6db236853" title="icset_s" alt="" coords="238,183,291,209"/>
+<area shape="rect" id="node38" href="irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="243,292,287,319"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="366,5,451,32"/>
+<area shape="rect" id="node7" href="cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="377,208,440,235"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="536,133,597,160"/>
+<area shape="rect" id="node9" href="is__strings_8h.html#aa72cb3072042b74edc36b7a75afea01f" title="strings_split_str_to\l_irmulti" alt="" coords="356,306,461,347"/>
+<area shape="rect" id="node34" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="371,372,446,399"/>
+<area shape="rect" id="node35" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="376,56,441,83"/>
+<area shape="rect" id="node36" href="cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="381,107,437,133"/>
+<area shape="rect" id="node10" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="685,336,761,363"/>
+<area shape="rect" id="node11" href="strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903" title="strings_split" alt="" coords="529,285,604,312"/>
+<area shape="rect" id="node16" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="675,437,770,464"/>
+<area shape="rect" id="node17" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="822,577,917,604"/>
+<area shape="rect" id="node21" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="1244,709,1319,736"/>
+<area shape="rect" id="node22" href="strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="534,184,599,211"/>
+<area shape="rect" id="node23" href="strings_8c.html#a6589520d40398687afb1987bce711ecc" title="strings_split_number" alt="" coords="509,387,624,413"/>
+<area shape="rect" id="node26" href="strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="531,665,602,692"/>
+<area shape="rect" id="node33" href="strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="672,133,773,160"/>
+<area shape="rect" id="node12" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="837,235,902,261"/>
+<area shape="rect" id="node13" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="965,184,1061,211"/>
+<area shape="rect" id="node14" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="821,83,917,109"/>
+<area shape="rect" id="node15" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1251,451,1311,477"/>
+<area shape="rect" id="node18" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="827,476,911,503"/>
+<area shape="rect" id="node19" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="974,527,1053,553"/>
+<area shape="rect" id="node20" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="1109,628,1196,655"/>
+<area shape="rect" id="node24" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="683,539,763,565"/>
+<area shape="rect" id="node25" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="691,488,754,515"/>
+<area shape="rect" id="node27" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="677,741,769,768"/>
+<area shape="rect" id="node30" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="688,691,757,717"/>
+<area shape="rect" id="node28" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="822,741,917,768"/>
+<area shape="rect" id="node29" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="977,741,1050,768"/>
+<area shape="rect" id="node31" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="833,691,905,717"/>
+<area shape="rect" id="node32" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="979,691,1047,717"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="539,83,594,109"/>
+<area shape="rect" id="node39" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="377,423,441,449"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a066b7ca0072fe710792d71468ed9443a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a066b7ca0072fe710792d71468ed9443a">&#9670;&nbsp;</a></span>rvec_set_si()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rvec_set_si </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型のベクトルの値を整数 から設定. </p>
+
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00503">503</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rvec_8c_a066b7ca0072fe710792d71468ed9443a_cgraph.png" border="0" usemap="#rvec_8c_a066b7ca0072fe710792d71468ed9443a_cgraph" alt=""/></div>
+<map name="rvec_8c_a066b7ca0072fe710792d71468ed9443a_cgraph" id="rvec_8c_a066b7ca0072fe710792d71468ed9443a_cgraph">
+<area shape="rect" id="node2" href="is__rmulti_8h.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="125,5,177,32"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="225,5,323,32"/>
 </map>
 </div>
 
@@ -6331,7 +6589,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を第k要素が1の基本ベクトルに設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00536">536</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00555">555</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6380,7 +6638,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を倍精度複素数から設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00502">502</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00521">521</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6421,7 +6679,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値を零に設定. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00520">520</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00539">539</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6479,13 +6737,13 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00640">640</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00682">682</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rvec_8c_ad2897e1c30b845bfca52a65803aae013_cgraph.png" border="0" usemap="#rvec_8c_ad2897e1c30b845bfca52a65803aae013_cgraph" alt=""/></div>
 <map name="rvec_8c_ad2897e1c30b845bfca52a65803aae013_cgraph" id="rvec_8c_ad2897e1c30b845bfca52a65803aae013_cgraph">
-<area shape="rect" id="node2" href="is__ivec_8h.html#abaeaae9c4553c4807ad0a008c3719b6e" title="ivec_grid" alt="" coords="131,5,193,32"/>
+<area shape="rect" id="node2" href="is__ivec_8h.html#ac0445d252a74dff7ff91cfe9fd2ba4f4" title="ivec_set_grid" alt="" coords="121,5,203,32"/>
 <area shape="rect" id="node3" href="rvec_8c.html#ac727f2ea17f3806e4ed773a91dc76019" title="rmulti型のベクトルの要素に関するクイックソートアルゴリズム(ユーザは直接使用してはならない). " alt="" coords="116,56,208,83"/>
 <area shape="rect" id="node4" href="is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da" title="rmulti型の値の交換. " alt="" coords="273,5,322,32"/>
 <area shape="rect" id="node5" href="is__ivec_8h.html#a06758a0b78210c47ea3c74d1eb54091c" title="ivec_swap_at" alt="" coords="256,56,339,83"/>
@@ -6531,7 +6789,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素を小さい順に入れ替えたときの要素番号の配列の取得. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00672">672</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00714">714</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6542,7 +6800,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <area shape="rect" id="node13" href="rvec_8c.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="169,132,233,159"/>
 <area shape="rect" id="node3" href="is__rmulti_8h.html#a3ab36d8527ef192c290046883aaad519" title="rmulti型の複製の生成. " alt="" coords="305,5,395,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="444,5,541,32"/>
-<area shape="rect" id="node6" href="is__ivec_8h.html#abaeaae9c4553c4807ad0a008c3719b6e" title="ivec_grid" alt="" coords="319,56,381,83"/>
+<area shape="rect" id="node6" href="is__ivec_8h.html#ac0445d252a74dff7ff91cfe9fd2ba4f4" title="ivec_set_grid" alt="" coords="309,56,391,83"/>
 <area shape="rect" id="node7" href="rvec_8c.html#ac727f2ea17f3806e4ed773a91dc76019" title="rmulti型のベクトルの要素に関するクイックソートアルゴリズム(ユーザは直接使用してはならない). " alt="" coords="304,107,396,133"/>
 <area shape="rect" id="node8" href="is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da" title="rmulti型の値の交換. " alt="" coords="468,56,517,83"/>
 <area shape="rect" id="node9" href="is__ivec_8h.html#a06758a0b78210c47ea3c74d1eb54091c" title="ivec_swap_at" alt="" coords="451,107,534,133"/>
@@ -6595,7 +6853,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの引き算 z=x-y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00784">784</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00826">826</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6673,7 +6931,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>丸めの発生回数. </dd></dl>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00984">984</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01026">1026</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6755,7 +7013,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>丸めの発生回数. </dd></dl>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01062">1062</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01104">1104</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6812,7 +7070,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素ごとの掛け算の減算 z-=x.*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00866">866</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00908">908</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6867,7 +7125,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルxとスカラーyの掛け算の減算 z-=x*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00884">884</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00926">926</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6922,7 +7180,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルxとスカラーyの掛け算の減算 z-=x*y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00875">875</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00917">917</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6977,7 +7235,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの引き算 z=x-y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00793">793</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00835">835</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7030,7 +7288,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの引き算 z=x-y </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00802">802</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00844">844</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7077,7 +7335,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の総和 value=sum(x) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01080">1080</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01122">1122</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7126,7 +7384,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の絶対値の総和 value=sum(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01090">1090</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01132">1132</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7183,7 +7441,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の差の絶対値の総和 value=sum(abs(x-y)) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01120">1120</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01162">1162</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7241,7 +7499,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの内積 value=sum(x.*y) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01110">1110</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01152">1152</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7292,7 +7550,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01100">1100</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l01142">1142</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7343,7 +7601,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの値の交換 x&lt;==&gt;y. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00126">126</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00127">127</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7389,7 +7647,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの第i要素と第j要素を入れ替える. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00612">612</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00654">654</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7435,7 +7693,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 
 <p>rmulti型のベクトルの要素を要素番号の配列Iの値に従って入れ替える. </p>
 
-<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00620">620</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rvec_8c_source.html">rvec.c</a> の <a class="el" href="rvec_8c_source.html#l00662">662</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7458,7 +7716,7 @@ $(document).ready(function(){initNavTree('rvec_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="rvec_8c.html">rvec.c</a></li>
-    <li class="footer">2018年05月01日(火) 15時47分23秒作成 - libis / 構成: 
+    <li class="footer">2018年05月05日(土) 22時08分55秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

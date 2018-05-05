@@ -2,7 +2,10 @@
 #include<stdlib.h>
 #include<stdarg.h>
 #include"is_macros.h"
+#include"is_strings.h"
 #include"is_ivec.h"
+#include"is_svec.h"
+#include"mt19937ar.h"
 
 void ivec_scale(int n, int *x, int a)
 {
@@ -25,9 +28,9 @@ int ivec_ne(int n, const int *X, const int *Y)
 int ivec_eq(int n, const int *X, const int *Y)
 {
   int i;
-  if(n<=0) return 0;
+  if(n<=0){ return 0; }
   for(i=0; i<n; i++){
-    if(X[i]!=Y[i]) return 0;
+    if(X[i]!=Y[i]){ return 0; }
   }
   return 1;
 }
@@ -43,6 +46,38 @@ int ivec_cmp(int n, const int *X, int m, const int *Y)
   if     (n<m){ return -1; } // X<Y
   else if(n>m){ return +1; } // X>Y
   else        { return  0; } // X=Y
+}
+
+// x[i]>y for all i
+int ivec_all_gt(int n, const int *x, int y)
+{
+  int value=1,i;
+  for(i=0; value==1 && i<n; i++){ if(x[i]<=y){ value=0; } }
+  return value;
+}
+
+// x[i]>=y for all i
+int ivec_all_ge(int n, const int *x, int y)
+{
+  int value=1,i;
+  for(i=0; value==1 && i<n; i++){ if(x[i]<y){ value=0; } }
+  return value;
+}
+
+// x[i]<y for all i
+int ivec_all_lt(int n, const int *x, int y)
+{
+  int value=1,i;
+  for(i=0; value==1 && i<n; i++){ if(x[i]>=y){ value=0; } }
+  return value;
+}
+
+// x[i]<=y for all i
+int ivec_all_le(int n, const int *x, int y)
+{
+  int value=1,i;
+  for(i=0; value==1 && i<n; i++){ if(x[i]>y){ value=0; } }
+  return value;
 }
 
 int ivec_first_index_if(int n, const int *X, int value)
@@ -160,7 +195,7 @@ double ivec_average(int n, const int *x)
 // if I!=NULL, then I is stored with sorted indexes
 void ivec_sort(int n, int *X, int *I)
 {
-  if(I!=NULL) ivec_grid(n,I);
+  if(I!=NULL){ ivec_set_grid(n,I); }
   ivec_quick_sort(n,X,I,0,n-1);
 }
 
@@ -266,42 +301,77 @@ void ivec_swap(int n, int *x, int *y)
   }
 }
 
-
-
 // X[0]=0; X[1]=1; X[2]=2; ...; X[n-1]=n-1
-void ivec_grid(int n, int *X)
+void ivec_set_grid(int n, int *X)
 {
   int i;
   for(i=0; i<n; i++) X[i]=i;
 }
 
 // X=ones(n,1)*a
-void ivec_set(int n, int *X, int a)
+void ivec_set_all(int n, int *X, int a)
 {
   int i;
   for(i=0; i<n; i++) X[i]=a;
 }
 
 // X=ones(n,1)
-void ivec_ones(int n, int *X)
+void ivec_set_ones(int n, int *X)
 {
   int i;
   for(i=0;i<n;i++) X[i]=1;
 }
 
 // X=zeros(n,1)
-void ivec_zeros(int n, int *X)
+void ivec_set_zeros(int n, int *X)
 {
   int i;
   for(i=0; i<n; i++) X[i]=0;
 }
 
-int* ivec_allocate(int n)
+// x=rand(n,1)
+void ivec_set_rand(int n, int *x, int a0, int a1)
+{
+  int i;
+  for(i=0; i<n; i++){
+    x[i]=(int)((((double)genrand_int32())/0xffffffff)*(a1-a0)+a0);
+  }
+}
+
+// y=x
+void ivec_set_s(int n, int *y, char **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=atoi(x[i]); }
+}
+
+
+/////////////////////////////////////////
+
+// y=char(x)
+void ivec_get_s(int n, char **y, int *x)
+{
+  int i;
+  if(x==NULL){ return; }
+  for(i=0; i<n; i++){ y[i]=char_renew_sprintf(y[i],NULL,"%d",x[i]); }
+}
+
+///////////////////////////////////////////
+
+int *ivec_allocate(int n)
 {
   return (int*)malloc(sizeof(int)*n);
 }
 
-int* ivec_free(int *x)
+int *ivec_allocate_clone(int n, int *y)
+{
+  int *x=NULL;
+  x=ivec_allocate(n);
+  ivec_copy(n,x,y);
+  return x;
+}
+
+int *ivec_free(int *x)
 {
   if(x==NULL) return NULL;
   free(x);
@@ -333,23 +403,29 @@ void ivec_sub(int n, int *y, int *x)
   for(i=0; i<n; i++) y[i]-=x[i];
 }
 
-
 //////////////////////////////////////////////////////////////////
 
-void ivec_print(int n, const int *X, char *name)
+void ivec_put(int n, int *x, char *sep)
 {
   int i;
-  if(X==NULL){
-    if(name!=NULL){ printf("%s NULL\n",name); }
-    else{ printf("NULL\n"); }
+  for(i=0; i<n; i++){
+    if(i>0){ if(sep==NULL){ printf(" "); }else{ printf("%s",sep); }}
+    printf("%d",x[i]);
+  }
+}
+
+void ivec_print(int n, int *x, char *name)
+{
+  char **s=NULL;
+  if(x==NULL){
+    if(name!=NULL){ printf("%s=NULL\n",name); }
+    else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s",name); }
-  if(X==NULL) return;
-  for(i=0; i<n; i++){
-    printf("%d ",X[i]);
-  }
-  printf("\n");
+  s=svec_allocate(n);
+  ivec_get_s(n,s,x);
+  svec_print(n,s,name);
+  s=svec_free(n,s);
 }
 
 void ivec_save(int n, int *x, int offset, char *fmt, ...)

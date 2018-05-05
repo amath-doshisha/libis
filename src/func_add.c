@@ -43,7 +43,7 @@ func_t *func_add_script(func_t *f)
 
 /////////////////////////////////////
 
-static const char *__func_add="add";
+static char *__func_add="add";
 
 /////////////////////////////////////
 

@@ -1,9 +1,11 @@
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<mpfr.h>
 #include"is_macros.h"
 #include"is_rmulti.h"
+#include"is_irmulti.h"
+#include"is_cmulti.h"
+#include"is_icmulti.h"
 #include"is_strings.h"
 #include"mt19937ar.h"
 
@@ -553,8 +555,16 @@ rmulti *rbin_load(FILE *fid)
  @param[in]  value 浮動小数点数に変換される値.
  @param[out] x     値が設定されたrmulti型.
  */
-void rset_s(rmulti *x, const char *value)
+void rset_s(rmulti *x, char *s)
 {
+  int prec;
+  cmulti *a0=NULL,*a1=NULL;
+  prec=rget_prec(x);
+  a0=callocate_prec(prec);
+  a1=callocate_prec(prec);  
+  icset_s(a0,a1,s);  
+  irmid(x,C_R(a0),C_R(a1));
+  /*
   strings *list=NULL;
   int ret;
   NULL_EXC2(x,value);
@@ -564,6 +574,7 @@ void rset_s(rmulti *x, const char *value)
     if(ret){ mpfr_set_nan(x); }
   }else{ mpfr_set_nan(x); }  
   list=strings_del(list);
+  */
 }
 
 /**

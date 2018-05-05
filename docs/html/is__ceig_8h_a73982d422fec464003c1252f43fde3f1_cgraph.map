@@ -5,7 +5,7 @@
 <area shape="rect" id="node26" href="$cvec_8c.html#ad64ec212d2e1962db0d6cba3f2a99353" title="cmulti型のベクトルの要素の順を逆に入れ替える. " alt="" coords="303,340,385,367"/>
 <area shape="rect" id="node27" href="$cmat_8c.html#a5f2164e6c8925e9d0aad0917179c7d12" title="rmulti型の行列の列を列番号の配列Iの値に従って入れ替える. " alt="" coords="116,442,241,468"/>
 <area shape="rect" id="node36" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="147,492,210,519"/>
-<area shape="rect" id="node4" href="$is__ivec_8h.html#abaeaae9c4553c4807ad0a008c3719b6e" title="ivec_grid" alt="" coords="313,290,375,316"/>
+<area shape="rect" id="node4" href="$is__ivec_8h.html#ac0445d252a74dff7ff91cfe9fd2ba4f4" title="ivec_set_grid" alt="" coords="303,290,385,316"/>
 <area shape="rect" id="node5" href="$cvec_8c.html#a34f90213ba70ac77d0de358c97fda287" title="cmulti型のベクトルの要素に関するクイックソートアルゴリズム(ユーザは直接使用してはならない). " alt="" coords="297,239,391,266"/>
 <area shape="rect" id="node6" href="$cmulti_8c.html#a3eaf584486e0fd0fde7d479d1b020afc" title="cmulti型の値の交換. " alt="" coords="599,340,649,367"/>
 <area shape="rect" id="node8" href="$is__ivec_8h.html#a06758a0b78210c47ea3c74d1eb54091c" title="ivec_swap_at" alt="" coords="449,290,531,316"/>

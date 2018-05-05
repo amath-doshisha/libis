@@ -1,6 +1,6 @@
 <map id="func_mat_solve" name="func_mat_solve">
 <area shape="rect" id="node2" href="$func__number_8c.html#abc45108e92164911a3a99619d59272ed" title="func_evalf" alt="" coords="145,1270,213,1297"/>
-<area shape="rect" id="node4" href="$func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="1059,2062,1112,2089"/>
+<area shape="rect" id="node4" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="1059,2062,1112,2089"/>
 <area shape="rect" id="node26" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="787,1346,847,1373"/>
 <area shape="rect" id="node40" href="$func_8c.html#adc50d54a334fe665254a93b411429433" title="func_clone" alt="" coords="283,2030,353,2057"/>
 <area shape="rect" id="node63" href="$func__vec_8c.html#a59a182950231c938313d03dd1f2567ba" title="func_rows" alt="" coords="284,3538,352,3565"/>
@@ -8,11 +8,11 @@
 <area shape="rect" id="node69" href="$func_8c.html#a2610e103243140dbbe65f9601dd2d5d2" title="func_size" alt="" coords="286,2784,350,2810"/>
 <area shape="rect" id="node70" href="$func__rvec_8c.html#a0bde33121f8f8100bec4997b8f506aea" title="func_rvec_size" alt="" coords="437,3094,526,3121"/>
 <area shape="rect" id="node71" href="$func__cvec_8c.html#a6bc254669518226cb47306623d7abba6" title="func_cvec_size" alt="" coords="436,3145,527,3172"/>
-<area shape="rect" id="node72" href="$is__rsolve_8h.html#abc319bd84113ee60b4af701b070172d9" title="線形方程式A*X=Bの解法. " alt="" coords="457,3981,506,4008"/>
+<area shape="rect" id="node72" href="$is__rsolve_8h.html#a71c2e6e66b1f9d214bf05dbedd150333" title="線形方程式A*X=Bの解法. " alt="" coords="457,3981,506,4008"/>
 <area shape="rect" id="node85" href="$func__rvec_8c.html#ad99eaedd17ed0fc6356e304ea06d239a" title="func_rvec_p" alt="" coords="443,3196,519,3222"/>
 <area shape="rect" id="node86" href="$func__rmat_8c.html#aeee9e9565ccc13a69700563d68af8b6f" title="func_rmat_p" alt="" coords="443,3398,520,3425"/>
 <area shape="rect" id="node87" href="$func__rmat_8c.html#a24af10809dcf048e071bd95724864529" title="func_rmat_ld" alt="" coords="441,3702,521,3729"/>
-<area shape="rect" id="node88" href="$csolve_8c.html#ab8add6fcda2525073b2cc5a0351a8a84" title="線形方程式A*X=Bの解法. " alt="" coords="456,4272,507,4298"/>
+<area shape="rect" id="node88" href="$csolve_8c.html#a576868e96834c095ebc8ee49823ff790" title="線形方程式A*X=Bの解法. " alt="" coords="456,4272,507,4298"/>
 <area shape="rect" id="node94" href="$func__cvec_8c.html#a58e3915a9ec4b3935b4ebfe545f27c3c" title="func_cvec_p" alt="" coords="442,2942,521,2969"/>
 <area shape="rect" id="node95" href="$func__cmat_8c.html#a960bda1b2d2931e301f0d07bcf548119" title="func_cmat_p" alt="" coords="442,3297,521,3324"/>
 <area shape="rect" id="node96" href="$func__cmat_8c.html#adc06bdb67303883abd6accf194445f29" title="func_cmat_ld" alt="" coords="441,3348,522,3374"/>
@@ -32,8 +32,8 @@
 <area shape="rect" id="node55" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="783,1694,852,1721"/>
 <area shape="rect" id="node56" href="$func__args_8c.html#a59c61338c39841891ae08724e2602762" title="func_aset" alt="" coords="618,1473,683,1500"/>
 <area shape="rect" id="node57" href="$func__find_8c.html#ab9782db57753fa95baee6398d00bddd5" title="func_find_eval" alt="" coords="275,2360,361,2386"/>
-<area shape="rect" id="node5" href="$is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="1160,2062,1219,2089"/>
-<area shape="rect" id="node6" href="$strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="1267,2062,1332,2089"/>
+<area shape="rect" id="node5" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="1160,2062,1219,2089"/>
+<area shape="rect" id="node6" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="1267,2062,1332,2089"/>
 <area shape="rect" id="node14" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="450,409,513,436"/>
 <area shape="rect" id="node15" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="620,612,681,638"/>
 <area shape="rect" id="node16" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="444,1929,519,1956"/>
@@ -57,10 +57,10 @@
 <area shape="rect" id="node38" href="$cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="622,2841,679,2868"/>
 <area shape="rect" id="node39" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="794,4057,841,4084"/>
 <area shape="rect" id="node41" href="$func_8c.html#acd4481611ac7a446cec5acbf860160c8" title="func_struct_new" alt="" coords="434,2233,529,2260"/>
-<area shape="rect" id="node42" href="$is__strings_8h.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="449,2132,514,2158"/>
+<area shape="rect" id="node42" href="$is__strings_8h.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="449,2132,514,2158"/>
 <area shape="rect" id="node44" href="$func_8c.html#a8ad6e9129ce02b02452cd9ecde9b35e6" title="func_p_clone" alt="" coords="441,2030,522,2057"/>
 <area shape="rect" id="node54" href="$func__args_8c.html#a9aa3c883f65eb9305926ea7a7eb4b9ed" title="func_a_clone" alt="" coords="610,1676,691,1702"/>
-<area shape="rect" id="node43" href="$strings_8c.html#ae363dfd1150049090df04b33a6253bc8" title="char_match_any" alt="" coords="603,2334,699,2361"/>
+<area shape="rect" id="node43" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="603,2334,699,2361"/>
 <area shape="rect" id="node45" href="$func__find_8c.html#a0812092f1760e75ce8c268f87a09ef43" title="func_find_p_clone" alt="" coords="599,2233,702,2260"/>
 <area shape="rect" id="node46" href="$func__builtin_8c.html#a93600b658725ef58d9cf55fda4f24af3" title="func_is_builtin" alt="" coords="775,2588,860,2614"/>
 <area shape="rect" id="node47" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="781,2638,853,2665"/>
@@ -68,8 +68,8 @@
 <area shape="rect" id="node49" href="$func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979" title="func_is_strings" alt="" coords="773,2334,862,2361"/>
 <area shape="rect" id="node50" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="923,2245,1009,2272"/>
 <area shape="rect" id="node51" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="781,2132,854,2158"/>
-<area shape="rect" id="node52" href="$func__scope_8c.html#a2c1bd279da8d85ba0b2f5df12262ff94" title="func_scope_find" alt="" coords="770,2233,865,2260"/>
-<area shape="rect" id="node53" href="$func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="789,1556,846,1582"/>
+<area shape="rect" id="node52" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="770,2233,865,2260"/>
+<area shape="rect" id="node53" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="789,1556,846,1582"/>
 <area shape="rect" id="node58" href="$func__list_8c.html#a31e23f332dffebf3b6a2d50c1ca5a9a7" title="func_list_eval" alt="" coords="440,1777,523,1804"/>
 <area shape="rect" id="node61" href="$func__builtin_8c.html#aa6ee9ec437b2ba8dd635d99a557eb082" title="func_builtin_eval_call" alt="" coords="423,2892,540,2918"/>
 <area shape="rect" id="node62" href="$func__def_8c.html#afd1496cddcfed6566b8278279d89d814" title="func_def_any_eval" alt="" coords="429,1625,534,1652"/>
@@ -82,7 +82,7 @@
 <area shape="rect" id="node73" href="$is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="764,4310,871,4337"/>
 <area shape="rect" id="node75" href="$is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="762,3854,873,3881"/>
 <area shape="rect" id="node77" href="$is__rmat_8h.html#a296ac18d9563fa49e31e42d516ccb44a" title="rmulti型の行列の値のコピー B=A " alt="" coords="616,4057,685,4084"/>
-<area shape="rect" id="node78" href="$rsolve_8c.html#a0b8d596cf9d649e2c30a543fbd822310" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="589,4006,713,4033"/>
+<area shape="rect" id="node78" href="$rsolve_8c.html#a19970574d4acd5a148c5554e96fc2c2e" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="589,4006,713,4033"/>
 <area shape="rect" id="node84" href="$is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="618,3956,683,3982"/>
 <area shape="rect" id="node74" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="923,4209,1009,4236"/>
 <area shape="rect" id="node76" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="934,3854,998,3881"/>
@@ -94,8 +94,8 @@
 <area shape="rect" id="node89" href="$cmat_8c.html#a9ee764a5b39ff5f4938c03e72ebefc30" title="cmulti型の行列の精度を指定しての新規生成. " alt="" coords="596,4297,705,4324"/>
 <area shape="rect" id="node90" href="$cmat_8c.html#af158ba3988992435e2d0bf74519f03cf" title="cmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="761,4373,873,4400"/>
 <area shape="rect" id="node91" href="$cmat_8c.html#ab3a150132f4568d6cfb7090da9bd870c" title="cmulti型の行列の値のコピー B=A " alt="" coords="615,4348,686,4374"/>
-<area shape="rect" id="node92" href="$csolve_8c.html#aa5b7f1d085f9a08132e17f8b1bc864a8" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="588,4145,713,4172"/>
+<area shape="rect" id="node92" href="$csolve_8c.html#a578ec23ed74789795e73b7a7a98ca479" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="588,4145,713,4172"/>
 <area shape="rect" id="node93" href="$cmat_8c.html#ac70deb47241d9aa82afb30a5b461626d" title="cmulti型の行列の終了処理. " alt="" coords="617,4246,684,4273"/>
-<area shape="rect" id="node98" href="$cvec_8c.html#a9fab460f8346b5a02c717700b656c8b0" title="cmulti型のベクトルの値のrmulti型からのコピー y=x. " alt="" coords="435,2841,528,2868"/>
+<area shape="rect" id="node98" href="$cvec_8c.html#a389280ee8f9c9f4410f4b4582d85a523" title="cmulti型のベクトルの値のrmulti型からのコピー y=x. " alt="" coords="442,2841,521,2868"/>
 <area shape="rect" id="node100" href="$cmat_8c.html#abae1b8cc9cadce40cb38f0b6e07fd841" title="cmulti型の行列の値のコピー B=A " alt="" coords="433,3246,529,3273"/>
 </map>

@@ -36,7 +36,7 @@ int rvec_has_nan(int n, rmulti **x);
 /*
  * I/O
  */
-void rvec_print(int n, rmulti **x, const char *name, const char *format, int digits);
+void rvec_print(int n, rmulti **x, char *name, char format, int digits);
 void rvec_print_bin(int n, rmulti **x, const char *name, int digits);
 void rvec_print_prec(int n, rmulti **x, const char *name, const char *f, int digits);
 void rvec_print_exp(int n, rmulti **x, const char *name);
@@ -52,7 +52,9 @@ rmulti **rvec_bin_load(int *n, char* fmt, ...);
  * setting
  */
 void rvec_set_nan(int n, rmulti **x);
-void rvec_set_s(int n, rmulti **x, const char **str);
+void rvec_set_inf(int n, rmulti **x, int sgn);
+void rvec_set_s(int n, rmulti **x, char **str);
+void rvec_set_si(int n, rmulti **y, int *x);
 void rvec_set_d(int n, rmulti **y, double *x);
 void rvec_set_z(int n, rmulti **y, dcomplex *x);
 void rvec_set_all_d(int n, rmulti **x, double a);
@@ -65,8 +67,10 @@ void rvec_set_rand(int n, rmulti **x, double a, double b);
 /*
  * casting
  */
-void rvec_get_d(int n, double *y, rmulti **x);
-void rvec_get_z(int n, dcomplex *y, rmulti **x);
+void rvec_get_si(int n, int *y, rmulti **x);     // y=int(x)
+void rvec_get_d(int n, double *y, rmulti **x);   // y=double(x)
+void rvec_get_z(int n, dcomplex *y, rmulti **x); // y=dcomplex(x)
+void rvec_get_s(int n, char **y, rmulti **x, char format, int digits); // y=char(x)
 
 /*
  * rearange elements

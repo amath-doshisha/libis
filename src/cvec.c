@@ -3,6 +3,7 @@
 #include<math.h>
 #include<stdarg.h>
 #include"is_macros.h"
+#include"is_svec.h"
 #include"is_rmulti.h"
 #include"is_cmulti.h"
 #include"is_cvec.h"
@@ -250,22 +251,18 @@ int cvec_is_real(int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの表示.
 */
-void cvec_print(int n, cmulti **x, const char *name, const char *f, int digits)
+void cvec_print(int n, cmulti **x, char *name, char format, int digits)
 {
-  int i,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){ k=3; }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){ k=9; }
-  else{ k=3; }
-  sprintf(format,"%%%d.%dR%s %%%d.%dR%s\n",digits+k,digits,f,digits+k,digits,f);
+  char **s=NULL;
   if(x==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(x==NULL) return;
-  for(i=0; i<n; i++){ mpfr_printf(format,C_R(x[i]),C_I(x[i])); }
+  s=svec_allocate(n);
+  cvec_get_s(n,s,x,format,digits);
+  svec_print(n,s,name);
+  s=svec_free(n,s);
 }
 
 /**
@@ -479,9 +476,18 @@ void cvec_set_nan(int n, cmulti **x)
 }
 
 /**
+ @brief cmulti型のベクトルの値をNaNに設定.
+*/
+void cvec_set_inf(int n, cmulti **x, int rsgn, int isgn)
+{
+  int i;
+  for(i=0; i<n; i++){ cset_inf(x[i],rsgn,isgn); }
+}
+
+/**
  @brief cmulti型のベクトルの値を文字列から設定.
 */
-void cvec_set_s(int n, cmulti **x, const char **str)
+void cvec_set_s(int n, cmulti **x, char **str)
 {
   int i;
   for(i=0; i<n; i++){ cset_s(x[i],str[i]); }
@@ -490,7 +496,7 @@ void cvec_set_s(int n, cmulti **x, const char **str)
 /**
  @brief cmulti型のベクトルの値を文字列から設定.
 */
-void cvec_set_ss(int n, cmulti **x, const char **str)
+void cvec_set_ss(int n, cmulti **x, char **str)
 {
   int i;
   for(i=0; i<n; i++){ cset_ss(x[i],str[2*i],str[2*i+1]); }
@@ -589,11 +595,13 @@ void cvec_set_grid(int n, cmulti **x)
 */
 void cvec_set_rand(int n, cmulti **x, double a, double b)
 {
+  dcomplex bz;
+  Z_SET(bz,b,b);
   int i;
   for(i=0; i<n; i++){
     cset_rand(x[i]);
     cmul_d(x[i],x[i],a);
-    cadd_d(x[i],x[i],b);
+    cadd_z(x[i],x[i],bz);
   }
 }
 
@@ -620,6 +628,29 @@ void cvec_get_d(int n, double *y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=cget_d(x[i]); }
+}
+
+/**
+ @brief cmulti型のベクトルを整数型に変換.
+ */
+void cvec_get_si(int n, int *y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=cget_d(x[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルを文字列型に変換 y=char(x)
+ */
+void cvec_get_s(int n, char **y, cmulti **x, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i;
+  sprintf(f,"%%-.%dR%c%%+.%dR%ci",digits,format,digits,format);
+  for(i=0; i<n; i++){
+    mpfr_sprintf(buf,f,C_R(x[i]),C_I(x[i]));
+    y[i]=char_renew(y[i],buf,NULL);
+  }
 }
 
 /** @} */
@@ -673,7 +704,7 @@ void cvec_swap_index(int n, cmulti **x, const int *I)
 */
 void cvec_sort(int n, cmulti **x, int *I)
 {
-  if(I!=NULL){ ivec_grid(n,I); }
+  if(I!=NULL){ ivec_set_grid(n,I); }
   cvec_quick_sort(n,x,I,0,n-1);
 }
 
@@ -732,7 +763,7 @@ void cvec_copy(int n, cmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの値のrmulti型からのコピー y=x.
 */
-void cvec_copy_rvec(int n, cmulti **y, rmulti **x)
+void cvec_copy_r(int n, cmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ ccopy_r(y[i],x[i]); }
@@ -741,7 +772,7 @@ void cvec_copy_rvec(int n, cmulti **y, rmulti **x)
 /**
  @brief cmulti型のベクトルの値のrmulti型からのコピー y=x.
 */
-void cvec_copy_rvec_rvec(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
+void cvec_copy_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
 {
   int i;
   for(i=0; i<n; i++){ ccopy_rr(y[i],x_r[i],x_i[i]); }

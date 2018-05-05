@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////
 
-static const char *__func_nan="nan";
+static char *__func_nan="nan";
 
 int func_is_nan(func_t *f)
 {
@@ -51,7 +51,7 @@ func_t *func_nan_script(func_t *f)
 
 ////////////////////////////////////////////////
 
-static const char *__func_inf="inf";
+static char *__func_inf="inf";
 
 int func_is_inf(func_t *f)
 {
@@ -89,7 +89,7 @@ func_t *func_inf_script(func_t *f)
 
 ////////////////////////////////////////////////
 
-static const char *__func_zero="0";
+static char *__func_zero="0";
 
 func_t *func_zero(void)
 {
@@ -127,7 +127,7 @@ func_t *func_zero_script(func_t *f)
 
 ////////////////////////////////////////////////
 
-static const char *__func_one="1";
+static char *__func_one="1";
 
 func_t *func_one(void)
 {

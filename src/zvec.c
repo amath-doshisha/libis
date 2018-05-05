@@ -3,9 +3,11 @@
 #include<math.h>
 #include<stdarg.h>
 
-#include"is_macros.h"
-#include"is_ivec.h"
 #include"mt19937ar.h"
+#include"is_macros.h"
+#include"is_strings.h"
+#include"is_svec.h"
+#include"is_ivec.h"
 #include"is_dcomplex.h"
 #include"is_zvec.h"
 #include"is_dvec.h"
@@ -30,60 +32,100 @@ dcomplex* zvec_free(dcomplex *x)
 }
 
 
+// x=nan(n,1)
+void zvec_set_nan(int n, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ Z_SET(x[i],NAN,NAN); }
+}
+
+// x=inf(n,1)
+void zvec_set_inf(int n, dcomplex *x, int rsgn, int isgn)
+{
+  double zero=0;
+  int i;
+  for(i=0; i<n; i++){ Z_SET(x[i],rsgn/zero,isgn/zero); }
+}
+
+
 // x=zeros(n,1)
-void zvec_zeros(int n, dcomplex *x)
+void zvec_set_zeros(int n, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(x[i],0,0); }
 }
 
 // x=ones(n,1)
-void zvec_ones(int n, dcomplex *x)
+void zvec_set_ones(int n, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(x[i],1,0); }
 }
 
 // x=ones(n,1)*a
-void zvec_set(int n, dcomplex *x, dcomplex a)
+void zvec_set_all(int n, dcomplex *x, dcomplex a)
 {
   int i;
   for(i=0; i<n; i++){ x[i]=a; }
 }
 
 // x=ones(n,1)*a
-void zvec_set_d(int n, dcomplex *x, double a)
+void zvec_set_all_d(int n, dcomplex *x, double a)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(x[i],a,0); }
 }
 
 // x=ones(n,1)*a
-void zvec_set_dd(int n, dcomplex *x, double real, double imag)
+void zvec_set_all_dd(int n, dcomplex *x, double real, double imag)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(x[i],real,imag); }
 }
 
 // x=zeros(n,1); x[k]=1
-void zvec_unit(int n, dcomplex *x, int k)
+void zvec_set_unit(int n, dcomplex *x, int k)
 {
-  zvec_zeros(n,x);
+  zvec_set_zeros(n,x);
   Z_SET(x[k],1,0);
 }
 
 // x[0]=0; x[1]=1; x[2]=2; ...; x[n-1]=n-1
-void zvec_grid(int n, dcomplex *x)
+void zvec_set_grid(int n, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(x[i],i,0); }
 }
 
 // x=rand(n,1)*a+b
-void zvec_rand(int n, dcomplex *x, double a, double b){
+void zvec_set_rand(int n, dcomplex *x, double a, double b){
+  double xr,xi;
   int i;
   for(i=0; i<n; i++){
-    Z_SET(x[i],genrand_real3()*a+b,genrand_real3()*a+b);
+    xr=genrand_int32();
+    xi=genrand_int32();
+    xr/=0xffffffff;
+    xi/=0xffffffff;
+    xr=xr*a+b;
+    xi=xi*a+b;
+    Z_SET(x[i],xr,xi);
+  }
+}
+
+// y=x
+void zvec_set_s(int n, dcomplex *y, char **x)
+{
+  strings *list=NULL;
+  int i;
+  for(i=0; i<n; i++){
+    list=strings_split_number(x[i]);
+    if(list==NULL){ Z_SET(y[i],NAN,NAN); }
+    else{
+      Z_SET(y[i],0,0);
+      if(strings_size(list)>=1 && strings_at(list,0)!=NULL){ Z_R(y[i])=atof(strings_at(list,0)); }
+      if(strings_size(list)>=2 && strings_at(list,1)!=NULL){ Z_I(y[i])=atof(strings_at(list,1)); }
+    }    
+    list=strings_del(list);
   }
 }
 
@@ -136,7 +178,7 @@ void zvec_swap_index(int n, dcomplex *x, const int *I)
 // if I!=NULL, then I is stored with sorted indexes
 void zvec_sort(int n, dcomplex *x, int *I)
 {
-  if(I!=NULL) ivec_grid(n,I);
+  if(I!=NULL){ ivec_set_grid(n,I); }
   zvec_quick_sort(n,x,I,0,n-1);
 }
 
@@ -723,12 +765,40 @@ dcomplex zvec_avarage(int n, const dcomplex *x)
 
 ///////////////////////////////////////////////////////////////////
 
-void zvec_print(int n, const dcomplex *x, const char *name, const char *f, int digits)
+// y=int(x)
+void zvec_get_si(int n, int *y, dcomplex *x)
 {
   int i;
+  for(i=0; i<n; i++){ y[i]=Z_R(x[i]); }
+}
+
+void zvec_get_s(int n, char **y, dcomplex *x, char format, int digits)
+{
+  char f[1024];
+  int i;
+  sprintf(f,"%%-.%d%c%%+.%d%ci",digits,format,digits,format);
+  for(i=0; i<n; i++){ y[i]=char_renew_sprintf(y[i],NULL,f,Z_R(x[i]),Z_I(x[i])); }
+}
+
+///////////////////////////////////////////////////////////////////
+
+void zvec_print(int n, dcomplex *x, char *name, char format, int digits)
+{
+  char **s=NULL;
+  if(x==NULL){
+    if(name!=NULL){ printf("%s=NULL\n",name); }
+    else          { printf("NULL\n"); }
+    return;
+  }
+  s=svec_allocate(n);
+  zvec_get_s(n,s,x,format,digits);
+  svec_print(n,s,name);
+  s=svec_free(n,s);
+  /*  
+  int i;
   char format[128];
-  if(STR_EQ(f,"f")){ sprintf(format,"%%%d.%d%s %%%d.%d%s\n",digits+3,digits,f,digits+3,digits,f); }
-  else             { sprintf(format,"%%%d.%d%s %%%d.%d%s\n",digits+9,digits,f,digits+9,digits,f); }
+  if(STR_EQ(f,"e")){ sprintf(format,"(%%%d.%d%s, %%%d.%d%s)\n",digits+7,digits,f,digits+7,digits,f); }
+  else             { sprintf(format,"%%-.%d%s%%+.%d%si\n",digits,f,digits,f); }
   if(x==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
@@ -739,6 +809,7 @@ void zvec_print(int n, const dcomplex *x, const char *name, const char *f, int d
   for(i=0; i<n; i++){
     printf(format,Z_R(x[i]),Z_I(x[i]));
   }
+  */
 }
 
 ///////////////////////////////////////////////////////////////////

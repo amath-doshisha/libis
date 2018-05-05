@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="775,157,839,184"/>
 <area shape="rect" id="node3" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="149,259,255,285"/>
 <area shape="rect" id="node5" href="$icvec_8c.html#a0f72abff7149e4905ea94aac99be7280" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="169,309,235,336"/>
-<area shape="rect" id="node25" href="$irvec_8c.html#a7e7a1f52ea010af885dba9541f6b2a2e" title="最大値 [y0,y1]=[x0,max(x1)] 上限で比較 " alt="" coords="653,600,727,627"/>
+<area shape="rect" id="node25" href="$irvec_8c.html#a7e7a1f52ea010af885dba9541f6b2a2e" title="irmulti型のベクトルの最大値 [y0,y1]=[x0,max(x1)] 上限で比較 " alt="" coords="653,600,727,627"/>
 <area shape="rect" id="node4" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="303,259,388,285"/>
 <area shape="rect" id="node6" href="$icmulti_8c.html#a781cf9db665c0c697804f15e00ad146e" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="323,309,368,336"/>
 <area shape="rect" id="node7" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="436,277,492,304"/>

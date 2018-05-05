@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
 
   // initialize
   zmat_toeplitz(n,n,A,LDA,4,tp,1);
-  zmat_eye(n,n,X,LDX);
-  zvec_zeros(n,lambda);
+  zmat_set_eye(n,n,X,LDX);
+  zvec_set_zeros(n,lambda);
 
   // print
-  zmat_print(n,n,A,LDA,"A=","f",0);
+  zmat_print(n,n,A,LDA,"A=",'f',0);
 
   // compute
   k=zhpeig(n,A,LDA,X,LDX,lambda,debug);
@@ -51,10 +51,10 @@ int main(int argc, char *argv[])
     printf("Succeeded to compute.\n");
   }
 
-  zmat_print(n,k,X,LDX,"X=","f",1);
-  zvec_print(k,lambda,"lambda=","f",2);
-  dvec_print(k,E,"E=","e",0);
-  dvec_print(k,Ebin,"log2(E)=","f",1);
+  zmat_print(n,k,X,LDX,"X=",'f',1);
+  zvec_print(k,lambda,"lambda=",'f',2);
+  dvec_print(k,E,"E=",'e',0);
+  dvec_print(k,Ebin,"log2(E)=",'f',1);
   printf("max(E)=%.0e\n",dvec_norm_max(k,E));
   printf("max(log2(E))=%.2g\n",dvec_max(k,Ebin));
 

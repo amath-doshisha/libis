@@ -126,6 +126,9 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <tr class="memitem:a28f3d9884a38bd50bbd073253f68e89e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a28f3d9884a38bd50bbd073253f68e89e">rmat_swap</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **B, int LDB)</td></tr>
 <tr class="memdesc:a28f3d9884a38bd50bbd073253f68e89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の値の交換 A&lt;=&gt;B.  <a href="#a28f3d9884a38bd50bbd073253f68e89e">[詳解]</a><br /></td></tr>
 <tr class="separator:a28f3d9884a38bd50bbd073253f68e89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6de9d661128a5421bf900c1ef968a1ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a6de9d661128a5421bf900c1ef968a1ba">rmat_get_s</a> (int m, int n, char **B, int LDB, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, char format, int digits)</td></tr>
+<tr class="memdesc:a6de9d661128a5421bf900c1ef968a1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列を文字列型に変換 y=char(x)  <a href="#a6de9d661128a5421bf900c1ef968a1ba">[詳解]</a><br /></td></tr>
+<tr class="separator:a6de9d661128a5421bf900c1ef968a1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a341b041e78020e85c8b790f1694abc61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a341b041e78020e85c8b790f1694abc61">rmat_get_prec</a> (int m, int n, int *P, int LDP, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
 <tr class="memdesc:a341b041e78020e85c8b790f1694abc61"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の浮動小数点数の精度(ビット数)を取得.  <a href="#a341b041e78020e85c8b790f1694abc61">[詳解]</a><br /></td></tr>
 <tr class="separator:a341b041e78020e85c8b790f1694abc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,9 +147,9 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <tr class="memitem:af049b555b1a1f612cb88143759b1af9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#af049b555b1a1f612cb88143759b1af9f">rmat_has_nan</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA)</td></tr>
 <tr class="memdesc:af049b555b1a1f612cb88143759b1af9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列がNaNを含むかの判定.  <a href="#af049b555b1a1f612cb88143759b1af9f">[詳解]</a><br /></td></tr>
 <tr class="separator:af049b555b1a1f612cb88143759b1af9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac48ad790e081c51bc9e56d51c95024f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#ac48ad790e081c51bc9e56d51c95024f9">rmat_print</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, const char *name, const char *f, int digits)</td></tr>
-<tr class="memdesc:ac48ad790e081c51bc9e56d51c95024f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の表示.  <a href="#ac48ad790e081c51bc9e56d51c95024f9">[詳解]</a><br /></td></tr>
-<tr class="separator:ac48ad790e081c51bc9e56d51c95024f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba96f148f005fff550a236d3b42d7b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#aeba96f148f005fff550a236d3b42d7b8">rmat_print</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, char *name, char format, int digits)</td></tr>
+<tr class="memdesc:aeba96f148f005fff550a236d3b42d7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の表示.  <a href="#aeba96f148f005fff550a236d3b42d7b8">[詳解]</a><br /></td></tr>
+<tr class="separator:aeba96f148f005fff550a236d3b42d7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8924a3d40b718290bce6a0f970152b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmat_8h.html#a8924a3d40b718290bce6a0f970152b15">rmat_save</a> (int m, int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int digits, char *fmt,...)</td></tr>
 <tr class="memdesc:a8924a3d40b718290bce6a0f970152b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の行列の保存.  <a href="#a8924a3d40b718290bce6a0f970152b15">[詳解]</a><br /></td></tr>
 <tr class="separator:a8924a3d40b718290bce6a0f970152b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -393,7 +396,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素の絶対値 B=abs(A). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00744">744</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00758">758</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -470,7 +473,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の足し算 C=A+B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00758">758</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00772">772</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -561,7 +564,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00888">888</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00902">902</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -642,7 +645,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の足し算 C=A+b. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00771">771</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00785">785</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -683,7 +686,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の新規生成. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00032">32</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00034">34</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -729,7 +732,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の複製の生成. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00064">64</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00066">66</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -776,7 +779,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の精度を指定しての新規生成. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00048">48</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00050">50</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -828,7 +831,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の読み込み. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00381">381</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00395">395</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -902,7 +905,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の保存. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00351">351</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00365">365</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -967,7 +970,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を複成 B=A. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00111">111</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00113">113</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1041,7 +1044,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <p>rmulti型の行列の列を列番号Iに従って複成 B(:,j)=A(:,I(j)). </p>
 <p>B(:,j)=A(:,I(j)), j=0,1,2,..,n-1. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00144">144</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00146">146</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1120,7 +1123,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00130">130</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00132">132</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1199,7 +1202,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値の比較 A&lt;==&gt;B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01263">1263</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01277">1277</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1269,7 +1272,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の列どうしの差の絶対値の最大値 x(j)=max(abs(A(:,j)-B(:,j))). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01119">1119</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01133">1133</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1340,7 +1343,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の列とベクトルとの差の絶対値の最大値 y(j)=max(abs(A(:,j)-x)). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01130">1130</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01144">1144</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1411,7 +1414,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の列ごとの正規化. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01233">1233</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01247">1247</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1488,7 +1491,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の列ごとの正規化. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01244">1244</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01258">1258</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1574,7 +1577,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の第k列と第l列を入れ替える. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00617">617</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00631">631</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1633,7 +1636,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の列を列番号の配列Iの値に従って入れ替える. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00627">627</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00641">641</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1703,7 +1706,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値のコピー B=A </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00660">660</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00674">674</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1775,7 +1778,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <p>rmulti型の行列の列を列番号Iに従ったコピー B=A. </p>
 <p>B(:,j)=A(:,I(j)) j=0,1,2,..,n-1. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00694">694</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00708">708</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1853,7 +1856,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を要素を添字を指定してコピー B=A(I,J) </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00705">705</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00719">719</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1930,7 +1933,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00680">680</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00694">694</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2001,7 +2004,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の対角行列との足し算 B=A+diag(a). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01005">1005</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01019">1019</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2073,7 +2076,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の対角行列との足し算 B=A+diag(a). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00991">991</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01005">1005</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2133,7 +2136,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の対角行列 A=diag(a). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00977">977</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00991">991</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2194,7 +2197,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の対角行列 A=diag(a). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00963">963</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00977">977</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2255,7 +2258,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の対角行列 A=diag(a). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00949">949</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00963">963</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2328,7 +2331,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の対角行列との引き算 B=A-diag(a). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01033">1033</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01047">1047</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2400,7 +2403,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の対角行列との引き算 B=A-diag(a). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01019">1019</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01033">1033</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2478,7 +2481,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素ごとの割り算 C=A./B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01141">1141</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01155">1155</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2607,7 +2610,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素ごととスカラーの割り算 C=a./B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01167">1167</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01181">1181</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2678,7 +2681,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素ごととスカラーの割り算 C=A./b. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01154">1154</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01168">1168</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2725,7 +2728,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の終了処理. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00081">81</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00083">83</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2795,7 +2798,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列に関する行列写像 A=f(x). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01289">1289</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01303">1303</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2806,10 +2809,10 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <area shape="rect" id="node7" href="func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c" title="func_aget" alt="" coords="271,5,337,32"/>
 <area shape="rect" id="node9" href="is__rvec_8h.html#aeb97e149b236453940b59451f2e8bddc" title="rmulti型のベクトルに関する写像 y=f(x) " alt="" coords="143,1247,208,1273"/>
 <area shape="rect" id="node10" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="273,107,335,133"/>
-<area shape="rect" id="node3" href="func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="421,537,475,564"/>
-<area shape="rect" id="node4" href="is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="563,537,622,564"/>
-<area shape="rect" id="node5" href="strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="689,537,755,564"/>
-<area shape="rect" id="node8" href="func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="419,5,477,32"/>
+<area shape="rect" id="node3" href="func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="421,537,475,564"/>
+<area shape="rect" id="node4" href="is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="563,537,622,564"/>
+<area shape="rect" id="node5" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="689,537,755,564"/>
+<area shape="rect" id="node8" href="func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="419,5,477,32"/>
 <area shape="rect" id="node11" href="is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="277,1525,331,1552"/>
 <area shape="rect" id="node12" href="func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="265,867,343,893"/>
 <area shape="rect" id="node13" href="is__rmulti_8h.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="422,1417,474,1444"/>
@@ -2913,7 +2916,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列を倍精度型に変換. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00582">582</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00596">596</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2978,7 +2981,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の浮動小数点数の指数部の取得. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00204">204</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00229">229</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3030,7 +3033,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の浮動小数点数の指数部の最大値の取得. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00217">217</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00242">242</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3094,7 +3097,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の浮動小数点数の精度(ビット数)を取得. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00175">175</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00200">200</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3146,13 +3149,92 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型行列の精度(ビット数)の最大値の取得. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00188">188</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00213">213</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="is__rmat_8h_aa8d8bebcc4d6f4f9594215e41dff4bfa_cgraph.png" border="0" usemap="#is__rmat_8h_aa8d8bebcc4d6f4f9594215e41dff4bfa_cgraph" alt=""/></div>
 <map name="is__rmat_8h_aa8d8bebcc4d6f4f9594215e41dff4bfa_cgraph" id="is__rmat_8h_aa8d8bebcc4d6f4f9594215e41dff4bfa_cgraph">
 <area shape="rect" id="node2" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="164,5,228,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6de9d661128a5421bf900c1ef968a1ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6de9d661128a5421bf900c1ef968a1ba">&#9670;&nbsp;</a></span>rmat_get_s()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmat_get_s </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の行列を文字列型に変換 y=char(x) </p>
+
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00175">175</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__rmat_8h_a6de9d661128a5421bf900c1ef968a1ba_cgraph.png" border="0" usemap="#is__rmat_8h_a6de9d661128a5421bf900c1ef968a1ba_cgraph" alt=""/></div>
+<map name="is__rmat_8h_a6de9d661128a5421bf900c1ef968a1ba_cgraph" id="is__rmat_8h_a6de9d661128a5421bf900c1ef968a1ba_cgraph">
+<area shape="rect" id="node2" href="is__strings_8h.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="125,31,200,57"/>
+<area shape="rect" id="node3" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="251,5,311,32"/>
+<area shape="rect" id="node4" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="248,56,313,83"/>
+<area shape="rect" id="node5" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="361,56,457,83"/>
 </map>
 </div>
 
@@ -3210,7 +3292,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型をdcomplex型へキャストする B=double(A). </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00595">595</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00609">609</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3263,7 +3345,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列がNaNを含むかの判定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00247">247</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00272">272</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3339,7 +3421,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を要素を添字を指定してコピー B(I,J)=A </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00718">718</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00732">732</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3405,20 +3487,20 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01195">1195</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01209">1209</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="is__rmat_8h_a6db33bd8ecb38b5b83a914ab8f4c22b7_cgraph.png" border="0" usemap="#is__rmat_8h_a6db33bd8ecb38b5b83a914ab8f4c22b7_cgraph" alt=""/></div>
 <map name="is__rmat_8h_a6db33bd8ecb38b5b83a914ab8f4c22b7_cgraph" id="is__rmat_8h_a6db33bd8ecb38b5b83a914ab8f4c22b7_cgraph">
 <area shape="rect" id="node2" href="rmat_8c.html#a3a7e33dc6de6eae69353f217b64f132e" title="rmulti型の行列の値を単位行列の設定. " alt="" coords="113,44,196,71"/>
-<area shape="rect" id="node5" href="is__rsolve_8h.html#abc319bd84113ee60b4af701b070172d9" title="線形方程式A*X=Bの解法. " alt="" coords="130,132,179,159"/>
+<area shape="rect" id="node5" href="is__rsolve_8h.html#a71c2e6e66b1f9d214bf05dbedd150333" title="線形方程式A*X=Bの解法. " alt="" coords="130,132,179,159"/>
 <area shape="rect" id="node3" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="281,5,331,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="708,512,805,539"/>
 <area shape="rect" id="node6" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="253,56,359,83"/>
 <area shape="rect" id="node8" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="416,107,527,133"/>
 <area shape="rect" id="node10" href="is__rmat_8h.html#a296ac18d9563fa49e31e42d516ccb44a" title="rmulti型の行列の値のコピー B=A " alt="" coords="271,157,341,184"/>
-<area shape="rect" id="node12" href="rsolve_8c.html#a0b8d596cf9d649e2c30a543fbd822310" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="244,385,368,412"/>
+<area shape="rect" id="node12" href="rsolve_8c.html#a19970574d4acd5a148c5554e96fc2c2e" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="244,385,368,412"/>
 <area shape="rect" id="node29" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="273,613,339,640"/>
 <area shape="rect" id="node7" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="575,208,660,235"/>
 <area shape="rect" id="node9" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="585,107,649,133"/>
@@ -3484,7 +3566,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列が数であるかの判定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00233">233</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00258">258</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3548,36 +3630,50 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の読み込み. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00325">325</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00339">339</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="is__rmat_8h_a01143185591cb8795a9e6f864ef8a512_cgraph.png" border="0" usemap="#is__rmat_8h_a01143185591cb8795a9e6f864ef8a512_cgraph" alt=""/></div>
 <map name="is__rmat_8h_a01143185591cb8795a9e6f864ef8a512_cgraph" id="is__rmat_8h_a01143185591cb8795a9e6f864ef8a512_cgraph">
-<area shape="rect" id="node2" href="is__rmulti_8h.html#ae2dc574e88d208779c45f55858b430e9" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="120,252,169,279"/>
-<area shape="rect" id="node3" href="is__strings_8h.html#a8c99bb44e384b646ed1eaf73599a44db" title="strings_split_number" alt="" coords="217,139,332,165"/>
-<area shape="rect" id="node16" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="237,201,312,228"/>
-<area shape="rect" id="node17" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="242,252,307,279"/>
-<area shape="rect" id="node18" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="226,303,323,329"/>
-<area shape="rect" id="node19" href="is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="239,379,310,405"/>
-<area shape="rect" id="node4" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="387,5,467,32"/>
-<area shape="rect" id="node5" href="strings_8c.html#ae363dfd1150049090df04b33a6253bc8" title="char_match_any" alt="" coords="665,81,761,108"/>
-<area shape="rect" id="node6" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="389,107,465,133"/>
-<area shape="rect" id="node7" href="strings_8c.html#a61461a579c8005f40d98b21557dc6384" title="strings_item_set" alt="" coords="380,157,475,184"/>
-<area shape="rect" id="node15" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="396,208,459,235"/>
-<area shape="rect" id="node8" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="809,157,904,184"/>
-<area shape="rect" id="node9" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="959,233,1019,260"/>
-<area shape="rect" id="node10" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="528,259,612,285"/>
-<area shape="rect" id="node14" href="strings_8c.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="537,107,603,133"/>
-<area shape="rect" id="node11" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="674,309,753,336"/>
-<area shape="rect" id="node12" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="813,309,900,336"/>
-<area shape="rect" id="node13" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="952,309,1027,336"/>
-<area shape="rect" id="node20" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="381,411,473,437"/>
-<area shape="rect" id="node23" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="393,461,462,488"/>
-<area shape="rect" id="node21" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="523,411,617,437"/>
-<area shape="rect" id="node22" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="677,411,750,437"/>
-<area shape="rect" id="node24" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="534,461,606,488"/>
-<area shape="rect" id="node25" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="679,461,747,488"/>
+<area shape="rect" id="node2" href="is__rmulti_8h.html#a247cfa927a4c365f56c6808811b915f0" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="120,157,169,184"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="229,81,293,108"/>
+<area shape="rect" id="node4" href="cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="217,132,304,159"/>
+<area shape="rect" id="node6" href="icmulti_8c.html#a833ba847343572e6701368d6db236853" title="icset_s" alt="" coords="234,183,287,209"/>
+<area shape="rect" id="node38" href="irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="239,292,283,319"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="362,5,447,32"/>
+<area shape="rect" id="node7" href="cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="373,208,436,235"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="532,133,593,160"/>
+<area shape="rect" id="node9" href="is__strings_8h.html#aa72cb3072042b74edc36b7a75afea01f" title="strings_split_str_to\l_irmulti" alt="" coords="352,306,457,347"/>
+<area shape="rect" id="node34" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="367,372,442,399"/>
+<area shape="rect" id="node35" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="372,56,437,83"/>
+<area shape="rect" id="node36" href="cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="377,107,433,133"/>
+<area shape="rect" id="node10" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="681,336,757,363"/>
+<area shape="rect" id="node11" href="strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903" title="strings_split" alt="" coords="525,285,600,312"/>
+<area shape="rect" id="node16" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="671,437,766,464"/>
+<area shape="rect" id="node17" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="818,577,913,604"/>
+<area shape="rect" id="node21" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="1240,709,1315,736"/>
+<area shape="rect" id="node22" href="strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="530,184,595,211"/>
+<area shape="rect" id="node23" href="strings_8c.html#a6589520d40398687afb1987bce711ecc" title="strings_split_number" alt="" coords="505,387,620,413"/>
+<area shape="rect" id="node26" href="strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="527,665,598,692"/>
+<area shape="rect" id="node33" href="strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="668,133,769,160"/>
+<area shape="rect" id="node12" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="833,235,898,261"/>
+<area shape="rect" id="node13" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="961,184,1057,211"/>
+<area shape="rect" id="node14" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="817,83,913,109"/>
+<area shape="rect" id="node15" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1247,451,1307,477"/>
+<area shape="rect" id="node18" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="823,476,907,503"/>
+<area shape="rect" id="node19" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="970,527,1049,553"/>
+<area shape="rect" id="node20" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="1105,628,1192,655"/>
+<area shape="rect" id="node24" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="679,539,759,565"/>
+<area shape="rect" id="node25" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="687,488,750,515"/>
+<area shape="rect" id="node27" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="673,741,765,768"/>
+<area shape="rect" id="node30" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="684,691,753,717"/>
+<area shape="rect" id="node28" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="818,741,913,768"/>
+<area shape="rect" id="node29" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="973,741,1046,768"/>
+<area shape="rect" id="node31" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="829,691,901,717"/>
+<area shape="rect" id="node32" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="975,691,1043,717"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="535,83,590,109"/>
+<area shape="rect" id="node39" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="373,423,437,449"/>
 </map>
 </div>
 
@@ -3629,7 +3725,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素の絶対値の最大値 value=max(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01078">1078</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01092">1092</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3695,7 +3791,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素の絶対値の最小値 value=min(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01098">1098</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01112">1112</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3779,7 +3875,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素ごとの掛け算 C=A.*B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00823">823</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00837">837</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3850,7 +3946,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素ごととスカラーの掛け算 C=A*b. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00849">849</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00863">863</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3921,7 +4017,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の要素ごととスカラーの掛け算 C=A*b. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00836">836</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00850">850</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3986,7 +4082,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の符号反転 B=-A. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00731">731</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00745">745</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4059,7 +4155,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01208">1208</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01222">1222</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4074,13 +4170,13 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <area shape="rect" id="node39" href="rmat_8c.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="396,974,461,1001"/>
 <area shape="rect" id="node3" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="697,88,783,114"/>
 <area shape="rect" id="node5" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="708,742,772,769"/>
-<area shape="rect" id="node10" href="is__rsolve_8h.html#abc319bd84113ee60b4af701b070172d9" title="線形方程式A*X=Bの解法. " alt="" coords="253,645,302,672"/>
+<area shape="rect" id="node10" href="is__rsolve_8h.html#a71c2e6e66b1f9d214bf05dbedd150333" title="線形方程式A*X=Bの解法. " alt="" coords="253,645,302,672"/>
 <area shape="rect" id="node8" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="404,138,453,165"/>
 <area shape="rect" id="node9" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="831,366,928,393"/>
 <area shape="rect" id="node11" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="375,417,482,444"/>
 <area shape="rect" id="node12" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="539,670,649,697"/>
 <area shape="rect" id="node13" href="is__rmat_8h.html#a296ac18d9563fa49e31e42d516ccb44a" title="rmulti型の行列の値のコピー B=A " alt="" coords="394,721,463,748"/>
-<area shape="rect" id="node15" href="rsolve_8c.html#a0b8d596cf9d649e2c30a543fbd822310" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="367,468,491,494"/>
+<area shape="rect" id="node15" href="rsolve_8c.html#a19970574d4acd5a148c5554e96fc2c2e" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="367,468,491,494"/>
 <area shape="rect" id="node32" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="396,670,461,697"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="571,772,617,798"/>
 <area shape="rect" id="node16" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="541,164,647,190"/>
@@ -4108,8 +4204,8 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 </div>
 </div>
-<a id="ac48ad790e081c51bc9e56d51c95024f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac48ad790e081c51bc9e56d51c95024f9">&#9670;&nbsp;</a></span>rmat_print()</h2>
+<a id="aeba96f148f005fff550a236d3b42d7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeba96f148f005fff550a236d3b42d7b8">&#9670;&nbsp;</a></span>rmat_print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4141,14 +4237,14 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -4166,7 +4262,26 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の表示. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00270">270</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00294">294</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__rmat_8h_aeba96f148f005fff550a236d3b42d7b8_cgraph.png" border="0" usemap="#is__rmat_8h_aeba96f148f005fff550a236d3b42d7b8_cgraph" alt=""/></div>
+<map name="is__rmat_8h_aeba96f148f005fff550a236d3b42d7b8_cgraph" id="is__rmat_8h_aeba96f148f005fff550a236d3b42d7b8_cgraph">
+<area shape="rect" id="node2" href="is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="120,31,203,57"/>
+<area shape="rect" id="node3" href="rmat_8c.html#a6de9d661128a5421bf900c1ef968a1ba" title="rmulti型の行列を文字列型に変換 y=char(x) " alt="" coords="125,81,197,108"/>
+<area shape="rect" id="node8" href="is__svec_8h.html#a25ac06242faf8480c698f29032e0a103" title="smat_print" alt="" coords="127,132,196,159"/>
+<area shape="rect" id="node12" href="is__svec_8h.html#a2e19962ed7f4feac304f82c6368d8b72" title="svec_free" alt="" coords="129,208,194,235"/>
+<area shape="rect" id="node4" href="is__strings_8h.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="283,31,357,57"/>
+<area shape="rect" id="node5" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="440,5,500,32"/>
+<area shape="rect" id="node6" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="437,56,503,83"/>
+<area shape="rect" id="node7" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="551,56,647,83"/>
+<area shape="rect" id="node9" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="280,81,360,108"/>
+<area shape="rect" id="node10" href="svec_8c.html#a93aa94129fd6f4a52f96e5c8b7c14102" title="smat_max_length_column" alt="" coords="251,132,389,159"/>
+<area shape="rect" id="node11" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="289,183,351,209"/>
+<area shape="rect" id="node13" href="is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="290,233,350,260"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -4248,7 +4363,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00865">865</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00879">879</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4343,7 +4458,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の1ランク更新 B=A+a*x*y' </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00931">931</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00945">945</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4407,7 +4522,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>初期化済みのrmulti型の行列の浮動小数点数の精度(ビット数)を変更し再初期化. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00097">97</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00099">99</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4472,7 +4587,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の第addと第l行を入れ替える. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00640">640</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00654">654</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4542,7 +4657,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の保存. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00297">297</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00311">311</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -4592,7 +4707,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を倍精度浮動小数点数から設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00485">485</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00499">499</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4657,7 +4772,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を倍精度実数から設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00459">459</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00473">473</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4723,7 +4838,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <p>rmulti型の行列の対角成分にスカラーをコピー. </p>
 <p>A(k,k+offset)=a for k=0,1,.. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00559">559</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00573">573</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4789,7 +4904,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <p>rmulti型の行列の対角成分にスカラーをコピー. </p>
 <p>A(k,k+offset)=a for k=0,1,.. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00544">544</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00558">558</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4842,7 +4957,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を単位行列の設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00514">514</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00528">528</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4895,7 +5010,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値をNaNに設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00433">433</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00447">447</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4947,7 +5062,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を1に設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00506">506</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00520">520</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5013,7 +5128,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を区間(b,a+b)の疑似乱数値を設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00528">528</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00542">542</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5083,36 +5198,50 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を文字列から設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00446">446</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00460">460</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="is__rmat_8h_a53f317202582ae7f1cd48cf4458b8c90_cgraph.png" border="0" usemap="#is__rmat_8h_a53f317202582ae7f1cd48cf4458b8c90_cgraph" alt=""/></div>
 <map name="is__rmat_8h_a53f317202582ae7f1cd48cf4458b8c90_cgraph" id="is__rmat_8h_a53f317202582ae7f1cd48cf4458b8c90_cgraph">
-<area shape="rect" id="node2" href="is__rmulti_8h.html#ae2dc574e88d208779c45f55858b430e9" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="125,252,175,279"/>
-<area shape="rect" id="node3" href="is__strings_8h.html#a8c99bb44e384b646ed1eaf73599a44db" title="strings_split_number" alt="" coords="223,139,337,165"/>
-<area shape="rect" id="node16" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="243,201,317,228"/>
-<area shape="rect" id="node17" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="247,252,313,279"/>
-<area shape="rect" id="node18" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="231,303,329,329"/>
-<area shape="rect" id="node19" href="is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="245,379,315,405"/>
-<area shape="rect" id="node4" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="393,5,473,32"/>
-<area shape="rect" id="node5" href="strings_8c.html#ae363dfd1150049090df04b33a6253bc8" title="char_match_any" alt="" coords="671,81,767,108"/>
-<area shape="rect" id="node6" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="395,107,471,133"/>
-<area shape="rect" id="node7" href="strings_8c.html#a61461a579c8005f40d98b21557dc6384" title="strings_item_set" alt="" coords="385,157,480,184"/>
-<area shape="rect" id="node15" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="401,208,464,235"/>
-<area shape="rect" id="node8" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="815,157,909,184"/>
-<area shape="rect" id="node9" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="965,233,1025,260"/>
-<area shape="rect" id="node10" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="533,259,617,285"/>
-<area shape="rect" id="node14" href="strings_8c.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="543,107,608,133"/>
-<area shape="rect" id="node11" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="679,309,758,336"/>
-<area shape="rect" id="node12" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="819,309,905,336"/>
-<area shape="rect" id="node13" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="957,309,1032,336"/>
-<area shape="rect" id="node20" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="387,411,479,437"/>
-<area shape="rect" id="node23" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="398,461,467,488"/>
-<area shape="rect" id="node21" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="528,411,623,437"/>
-<area shape="rect" id="node22" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="682,411,755,437"/>
-<area shape="rect" id="node24" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="539,461,611,488"/>
-<area shape="rect" id="node25" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="685,461,753,488"/>
+<area shape="rect" id="node2" href="is__rmulti_8h.html#a247cfa927a4c365f56c6808811b915f0" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="125,157,175,184"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="234,81,298,108"/>
+<area shape="rect" id="node4" href="cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="223,132,309,159"/>
+<area shape="rect" id="node6" href="icmulti_8c.html#a833ba847343572e6701368d6db236853" title="icset_s" alt="" coords="239,183,293,209"/>
+<area shape="rect" id="node38" href="irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="244,292,288,319"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="367,5,453,32"/>
+<area shape="rect" id="node7" href="cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="379,208,441,235"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="537,133,599,160"/>
+<area shape="rect" id="node9" href="is__strings_8h.html#aa72cb3072042b74edc36b7a75afea01f" title="strings_split_str_to\l_irmulti" alt="" coords="357,306,463,347"/>
+<area shape="rect" id="node34" href="is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="373,372,447,399"/>
+<area shape="rect" id="node35" href="is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="377,56,443,83"/>
+<area shape="rect" id="node36" href="cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="382,107,438,133"/>
+<area shape="rect" id="node10" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="686,336,762,363"/>
+<area shape="rect" id="node11" href="strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903" title="strings_split" alt="" coords="531,285,605,312"/>
+<area shape="rect" id="node16" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="677,437,771,464"/>
+<area shape="rect" id="node17" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="823,577,918,604"/>
+<area shape="rect" id="node21" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="1245,709,1320,736"/>
+<area shape="rect" id="node22" href="strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="535,184,601,211"/>
+<area shape="rect" id="node23" href="strings_8c.html#a6589520d40398687afb1987bce711ecc" title="strings_split_number" alt="" coords="511,387,625,413"/>
+<area shape="rect" id="node26" href="strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="533,665,603,692"/>
+<area shape="rect" id="node33" href="strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="673,133,775,160"/>
+<area shape="rect" id="node12" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="838,235,903,261"/>
+<area shape="rect" id="node13" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="967,184,1063,211"/>
+<area shape="rect" id="node14" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="823,83,919,109"/>
+<area shape="rect" id="node15" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1253,451,1313,477"/>
+<area shape="rect" id="node18" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="829,476,913,503"/>
+<area shape="rect" id="node19" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="975,527,1054,553"/>
+<area shape="rect" id="node20" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="1111,628,1197,655"/>
+<area shape="rect" id="node24" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="684,539,764,565"/>
+<area shape="rect" id="node25" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="693,488,755,515"/>
+<area shape="rect" id="node27" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="678,741,770,768"/>
+<area shape="rect" id="node30" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="689,691,759,717"/>
+<area shape="rect" id="node28" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="823,741,918,768"/>
+<area shape="rect" id="node29" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="978,741,1051,768"/>
+<area shape="rect" id="node31" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="835,691,907,717"/>
+<area shape="rect" id="node32" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="981,691,1049,717"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="541,83,595,109"/>
+<area shape="rect" id="node39" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="378,423,442,449"/>
 </map>
 </div>
 
@@ -5170,7 +5299,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を倍精度複素数から設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00472">472</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00486">486</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5223,7 +5352,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値を零に設定. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00498">498</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00512">512</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5301,7 +5430,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の引き算 C=A-B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00784">784</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00798">798</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5392,7 +5521,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00911">911</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00925">925</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5473,7 +5602,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の引き算 C=a-B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00797">797</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00811">811</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5544,7 +5673,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の引き算 C=A-b. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00810">810</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00824">824</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5609,7 +5738,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の行列の値の交換 A&lt;=&gt;B. </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00155">155</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l00157">157</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5668,7 +5797,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の列ごとの最大値 B=max(A) </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01060">1060</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01074">1074</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5731,7 +5860,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の列ごとの最小値 B=min(A) </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01069">1069</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01083">1083</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5794,7 +5923,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 
 <p>rmulti型の列ごとの和 B=sum(A) </p>
 
-<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01049">1049</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmat_8c_source.html">rmat.c</a> の <a class="el" href="rmat_8c_source.html#l01063">1063</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5816,7 +5945,7 @@ $(document).ready(function(){initNavTree('is__rmat_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__rmat_8h.html">is_rmat.h</a></li>
-    <li class="footer">2018年05月01日(火) 15時47分22秒作成 - libis / 構成: 
+    <li class="footer">2018年05月05日(土) 22時08分54秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

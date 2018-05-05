@@ -6,6 +6,7 @@
 #include<is_rounding.h>
 #include<is_print.h>
 #include<is_strings.h>
+#include<is_svec.h>
 
 // int
 #include<is_ivec.h>
@@ -66,9 +67,11 @@
 #include<is_ireig.h>
 #include<is_iceig.h>
 #include<is_riep_dht.h>
-//追加済み
 #include<is_irsolve.h>
 #include<is_icsolve.h>
+
+// array
+#include<is_array.h>
 
 // bigint
 #include<is_bigint.h>

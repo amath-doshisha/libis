@@ -9,9 +9,9 @@ var func__table_8c =
     [ "func_table", "func__table_8c.html#afd74660bd658cf7708d7c2549bd2170c", null ],
     [ "func_table_bigger", "func__table_8c.html#a1c52bd3be8b1ba258b93aafb091f11e5", null ],
     [ "func_table_bigger_size", "func__table_8c.html#ad8e1064509758607d59c2c86e4e60862", null ],
-    [ "func_table_find", "func__table_8c.html#adc5e1a530e853c6336c9e40fe219cffe", null ],
+    [ "func_table_find", "func__table_8c.html#aae46a283e20652ad1d521b8dfdcf3760", null ],
     [ "func_table_grow", "func__table_8c.html#a0d7afb97f49da4e83dabfb77b6d99183", null ],
-    [ "func_table_key_index", "func__table_8c.html#a4adfc8364739f0ddc3edf951114d4a46", null ],
+    [ "func_table_key_index", "func__table_8c.html#a0496af86717a6c46c2878d2b7d1e33cb", null ],
     [ "func_table_set", "func__table_8c.html#a5ae4196393e1da6067cceec70d7f2d38", null ],
     [ "__func_table_size", "func__table_8c.html#a9eba8c5532ca902401c16e41b442e89e", null ]
 ];

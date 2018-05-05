@@ -1,23 +1,38 @@
-function s=strjoincell(c)
+function s=strjoincell(c,sp)
 S=size(c);
 M=S(1);
-if length(S)>=2
-    N=S(2);
-else
-    N=1;
-end
-if length(S)>=3
-    L=S(3);
-else
-    L=1;
+N=prod(S(2:end));
+c=reshape(c,[M,N]);
+j=1;
+while j<=N
+    l=0;
+    i=1;
+    while i<=M        
+        a=length(c{i,j});
+        if a>l
+            l=a;
+        end
+        i=i+1;
+    end
+    i=1;
+    while i<=M
+        a=length(c{i,j});
+        k=1;
+        while k<=l-a
+            c{i,j}=[' ' c{i,j}];
+            k=k+1;
+        end        
+        i=i+1;
+    end    
+    j=j+1;
 end
 s={};
 i=1;
 while i<=M
     s{i}=c{i,1};
     j=2;
-    while j<=N*L
-        s{i}=[s{i} '  ' c{i,j}];
+    while j<=N
+        s{i}=[s{i} sp c{i,j}];
         j=j+1;
     end
     i=i+1;

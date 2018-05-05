@@ -192,7 +192,7 @@ func_t *func_list_zeros2(int m, int n)
 
 ///////////////////////////////////////////////
 
-static const char *__func_list="@L";
+static char *__func_list="@L";
 
 ///////////////////////////////////////////////
 

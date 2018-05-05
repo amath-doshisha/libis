@@ -5,6 +5,8 @@
 #include"is_macros.h"
 #include"is_dvec.h"
 #include"is_dmat.h"
+#include"is_strings.h"
+#include"is_svec.h"
 #include"mt19937ar.h"
 
 /////////////////////////////////////////
@@ -26,7 +28,7 @@ double* dmat_free(double *A)
 }
 
 // A=zeros(m,n)
-void dmat_zeros(int m, int n, double *A, int LDA)
+void dmat_set_zeros(int m, int n, double *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -37,7 +39,7 @@ void dmat_zeros(int m, int n, double *A, int LDA)
 }
 
 // A=ones(m,n)
-void dmat_ones(int m, int n, double *A, int LDA)
+void dmat_set_ones(int m, int n, double *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -48,7 +50,7 @@ void dmat_ones(int m, int n, double *A, int LDA)
 }
 
 // A=ones(m,n)*a
-void dmat_set(int m, int n, double *A, int LDA, double a)
+void dmat_set_all_d(int m, int n, double *A, int LDA, double a)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -59,7 +61,7 @@ void dmat_set(int m, int n, double *A, int LDA, double a)
 }
 
 // A=eye(m,n)
-void dmat_eye(int m, int n, double *A, int LDA)
+void dmat_set_eye(int m, int n, double *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -71,7 +73,7 @@ void dmat_eye(int m, int n, double *A, int LDA)
 }
 
 // A=rand(m,n)*a+b
-void dmat_rand(int m, int n, double *A, int LDA, double a, double b)
+void dmat_set_rand(int m, int n, double *A, int LDA, double a, double b)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -304,27 +306,34 @@ void dmat_dist_norm_max(double *y, int m, int n, const double *A, int LDA, const
 
 //////////////////////////////////////
 
-void dmat_print(int m, int n, const double *A, int LDA, const char *name, const char *f, int digits)
+// y=char(x)
+void dmat_get_s(int m, int n, char **B, int LDB, double *A, int LDA, char format, int digits)
 {
-  int i,j,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){ k=3; }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){ k=7; }
-  else{ k=3; }
-  sprintf(format,"%%%d.%d%s ",digits+k,digits,f);
+  char f[1024];
+  int i,j;
+  sprintf(f,"%%-.%d%c",digits,format);
+  if(A==NULL){ return; }
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      MAT(B,i,j,LDB)=char_renew_sprintf(MAT(B,i,j,LDB),NULL,f,MAT(A,i,j,LDA));
+    }
+  }
+}
+
+//////////////////////////////////////
+
+void dmat_print(int m, int n, double *A, int LDA, char *name, char format, int digits)
+{
+  char **s=NULL;
   if(A==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(A==NULL) return;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      printf((const char*)format,A[i+j*LDA]);
-    }
-    printf("\n");
-  }
+  s=svec_allocate(m*n);
+  dmat_get_s(m,n,s,m,A,LDA,format,digits);
+  smat_print(m,n,s,m,name);
+  s=svec_free(m*n,s);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////

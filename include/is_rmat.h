@@ -23,6 +23,12 @@ void rmat_clone_t(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA); // B=
 void rmat_clone_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, const int *I);
 void rmat_swap(int m, int n, rmulti **A, int LDA, rmulti **B, int LDB);   // A<->B
 
+
+/*
+ * casting
+ */
+void rmat_get_s(int m, int n, char **B, int LDB, rmulti **A, int LDA, char format, int digits);
+
 /*
  * member variables
  */
@@ -36,7 +42,7 @@ int rmat_has_nan(int m, int n, rmulti **A, int LDA);
 /*
  * I/O
  */
-void rmat_print(int m, int n, rmulti **A, int LDA, const char *name, const char *f, int digits);
+void rmat_print(int m, int n, rmulti **A, int LDA, char *name, char format, int digits);
 void rmat_save(int m, int n, rmulti **A, int LDA, int digits, char* fmt, ...);
 void rmat_load(int m, int n, rmulti **A, int LDA, char* fmt, ...);
 void rmat_bin_save(int m, int n, rmulti **A, int LDA, char* fmt, ...);

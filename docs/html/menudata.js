@@ -111,7 +111,8 @@ var menudata={children:[
 {text:"r",url:"globals_eval.html#index_r"},
 {text:"z",url:"globals_eval.html#index_z"}]},
 {text:"マクロ定義",url:"globals_defs.html",children:[
-{text:"b",url:"globals_defs.html#index_b"},
+{text:"a",url:"globals_defs.html#index_a"},
+{text:"b",url:"globals_defs_b.html#index_b"},
 {text:"c",url:"globals_defs_c.html#index_c"},
 {text:"d",url:"globals_defs_d.html#index_d"},
 {text:"e",url:"globals_defs_e.html#index_e"},

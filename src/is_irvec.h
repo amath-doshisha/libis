@@ -13,17 +13,25 @@
 /*
  * setting
  */
-void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x);                                            // [y0,y1]=x
-void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);                              // [y0,y1]=[x0,x1]
+// [y0,y1]=x
+void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x);
+void irvec_set_dd(int n, rmulti **y0, rmulti **y1, double *x0, double *x1);
+void irvec_set_si(int n, rmulti **y0, rmulti **y1, int *x);
+void irvec_set_s(int n, rmulti **y0, rmulti **y1, char **x);
+// [y0,y1]=[x0,x1]
+void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);
 
 /*
  * I/O
  */
-void irvec_print(int n, rmulti **x0, rmulti **x1, const char *name, const char *f, int digits);         // output
+void irvec_print(int n, rmulti **x0, rmulti **x1, char *name, char format, int digits);
 
 /*
  * casting
  */
+void irvec_get_si(int n, int *y, rmulti **x0, rmulti **x);
+void irvec_get_d(int n, double *y, rmulti **x0, rmulti **x1);
+void irvec_get_s(int n, char **y, rmulti **x0, rmulti **x1, char format, int digits);
 
 /*
  * operations

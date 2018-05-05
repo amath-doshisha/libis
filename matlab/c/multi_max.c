@@ -4,12 +4,12 @@
 //区間の場合 [y0,y1]=[max(x0),max(x1)]
 void multi_max(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL,*z=NULL;
+  array *x=NULL,*y=NULL,*z=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(nrhs>N0+2){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxrhs","Too many input arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_max: The 1st-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
+  x=mxArray_to_array(prhs[N0]);
   // operation
   ccmp_set_abs_arg();
   if(nrhs==N0+1){
@@ -46,16 +46,16 @@ void multi_max(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     }else{ MATLAB_ERROR("multi_max: error"); }
   }else if(nrhs==N0+2){
     // allocate by clone
-    z=multi_allocate_mxArray(prhs[N0+1]);
+    z=mxArray_to_array(prhs[N0+1]);
     if(_M(x)==_M(z) && _N(x)==_N(z) && _L(x)==_L(z)){
       if(_T(x)=='r' && _T(z)=='r'){ y=multi_allocate('r',_M(x),_N(x),_L(x)); rmat3_max2(_M(x),_N(x),_L(x),_R(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x),_R(z),_LD1(z),_LD2(z)); }
     }else{ MATLAB_ERROR("multi_max: error not supported input combination");}
   }else{ MATLAB_ERROR("multi_max: error"); }
   // done
-  plhs[0]=mxCreateStructMulti(y);
-  x=multi_free(x);
-  y=multi_free(y);
-  z=multi_free(z); 
+  plhs[0]=array_to_mxArray(y);
+  x=array_free(x);
+  y=array_free(y);
+  z=array_free(z); 
   return;
 }
   //EOF

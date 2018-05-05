@@ -12,22 +12,37 @@
 /*
  * setting
  */
-void icvec_copy(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);                          // [y0,y1]=[x0,x1]
-
+// [y0,y1]=x
+void icvec_set_si(int n, cmulti **y0, cmulti **y1, int *x);
+void icvec_set_z(int n, cmulti **y0, cmulti **y1, dcomplex *x);
+void icvec_set_d(int n, cmulti **y0, cmulti **y1, double *x);
+void icvec_set_s(int n, cmulti **y0, cmulti **y1, char **x);
+// [y0,y1]=[x0,x1]
+void icvec_copy(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);
+void icvec_copy_rr(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1);
+void icvec_copy_cr(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1);
+void icvec_copy_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1);
 
 /*
  * I/O
  */
-void icvec_print(int n, cmulti **x0, cmulti **x1, const char *name, const char *f, int digits);     // output
-
+void icvec_print(int n, cmulti **x0, cmulti **x1, char *name, char format, int digits);
 
 /*
  * casting
  */
+void icvec_get_si(int n, int *y, cmulti **x0, cmulti **x1);
+void icvec_get_z(int n, dcomplex *y, cmulti **x0, cmulti **x1);
+void icvec_set_zz(int n, cmulti **y0, cmulti **y1, dcomplex *x0, dcomplex *x1);
+void icvec_set_dz(int n, cmulti **y0, cmulti **y1, double *x0, dcomplex *x1);
+void icvec_set_zd(int n, cmulti **y0, cmulti **y1, dcomplex *x0, double *x1);
+void icvec_copy_rrrr(int n, cmulti **y0, cmulti **y1, rmulti **x0r, rmulti **x0i, rmulti **x1r, rmulti **x1i);
+void icvec_get_s(int n, char **y, cmulti **x0, cmulti **x1, char format, int digits);
 
 /*
  * operations
  */
+void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1);                          // [y0,y1]=real([x0,x1])
 void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **x1);                 // xc=(x1+x0)/2, xr=x1-x0
 void icvec_neg(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);                           // [y0,y1]=-[x0,x1]
 void icvec_pm(int n, cmulti **y0, cmulti **y1, cmulti **x);                                          // [y0,y1]=[-x,x]

@@ -11,18 +11,34 @@ double *dvec_allocate_s(char *str, int *n);
 /*
  * initialization
  */
+// y=x
+void dvec_set_si(int n, double *y, int *x);
+// y=x
+void dvec_set_s(int n, double *y, char **x);
+// x=nan(n,1)
+void dvec_set_nan(int n, double *x);
+// x=inf(n,1)
+void dvec_set_inf(int n, double *x, int sgn);
 // x=zeros(n,1)
-void dvec_zeros(int n, double *x);
+void dvec_set_zeros(int n, double *x);
 // x=ones(n,1)
-void dvec_ones(int n, double *x);
+void dvec_set_ones(int n, double *x);
 // x=ones(n,1)*a
-void dvec_set(int n, double *x, double a);
+void dvec_set_all(int n, double *x, double a);
 // x=zeros(n,1); x[k]=1
-void dvec_unit(int n, double *x, int k);
+void dvec_set_unit(int n, double *x, int k);
 // x[0]=0; x[1]=1; x[2]=2; ...; x[n-1]=n-1
 void dvec_set_grid(int n, double *x);
 // x=rand(n,1)*a+b
-void dvec_rand(int n, double *x, double a, double b);
+void dvec_set_rand(int n, double *x, double a, double b);
+
+/*
+ * casting
+ */
+// y=int(x)
+void dvec_get_si(int n, int *y, double *x);
+// y=char(x)
+void dvec_get_s(int n, char **y, double *x, char format, int digits);
 
 /*
  * convert its elements
@@ -162,7 +178,7 @@ double dvec_min(int n, const double *x);
 /*
  * input and output
  */
-void dvec_print(int n, const double *x, const char *name, const char *format, int digits);
+void dvec_print(int n, double *x, char *name, char format, int digits);
 void dvec_load(int n, double *x, char* fmt, ...);
 void dvec_save(int n, double *x, int offset, char* fmt, ...);
 void dvec_save2(int n, double *x, double *y, char* fmt, ...);

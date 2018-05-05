@@ -8,7 +8,7 @@
 
 ////////////////////////////////
 
-static const char *__func_strings="@S";
+static char *__func_strings="@S";
 
 ////////////////////////////////
 
@@ -87,7 +87,7 @@ char *func_strings_at(func_t *f, int i)
 }
 
 
-void func_strings_set(func_t *f, int i, const char *str)
+void func_strings_set(func_t *f, int i, char *str)
 {
   if(f==NULL || func_ptype(f)!=FUNC_P_STRINGS || f->p.s==NULL){ FUNC_ERROR_ARG1("func_strings_set",f); }
   strings_item_set(f->p.s,i,str,SKIP_SPC);
@@ -96,7 +96,7 @@ void func_strings_set(func_t *f, int i, const char *str)
 
 /////////////////////////////////////
 
-func_t *func_strings_split(const char *str, const char *sep, const char *mask_begin, const char *mask_end, const char *skip)
+func_t *func_strings_split(char *str, char *sep, char *mask_begin, char *mask_end, char *skip)
 {
   func_t *f=NULL;
   strings *a=NULL;
@@ -134,7 +134,7 @@ func_t *func_strings(int n)
   return f;
 }
 
-func_t *func_strings_str(const char *str[])
+func_t *func_strings_str(char *str[])
 {
   func_t *f=NULL;
   f=func_new(__func_strings);
@@ -150,7 +150,7 @@ func_t *func_strings_strings(strings *str)
   return f;
 }
 
-func_t *func_strings_char(const char *str)
+func_t *func_strings_char(char *str)
 {
   func_t *f=NULL;
   f=func_new(__func_strings);

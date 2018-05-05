@@ -8,7 +8,7 @@ var func__builtin_8c =
     [ "func_builtin_cmp_call", "func__builtin_8c.html#af90dc82181d558245273447f4f045bdc", null ],
     [ "func_builtin_eval_call", "func__builtin_8c.html#aa6ee9ec437b2ba8dd635d99a557eb082", null ],
     [ "func_builtin_name", "func__builtin_8c.html#abe74e88a72f20eacda5494422b5c1397", null ],
-    [ "func_builtin_new", "func__builtin_8c.html#a90ae3562774b4f4a57c331247e282dcb", null ],
+    [ "func_builtin_new", "func__builtin_8c.html#a2478811befcb69fc2180cdfce8138f52", null ],
     [ "func_builtin_order", "func__builtin_8c.html#a36d25cbdc69306f0cb51c7ffa81c11ae", null ],
     [ "func_builtin_p", "func__builtin_8c.html#ad5d264780731c751a99d352bcba0ad99", null ],
     [ "func_builtin_p_clone", "func__builtin_8c.html#a329dbe0d3c79f05f641cc9bde334e74d", null ],

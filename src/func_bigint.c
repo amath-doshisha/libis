@@ -86,7 +86,7 @@ func_t *func_bigint_eval(func_t *f)
 
 /////////////////////////////////////////////////////
 
-static const char *__func_bigint="@Q";
+static char *__func_bigint="@Q";
 
 func_t *func_bigint(void)
 {
@@ -101,7 +101,7 @@ func_t *func_bigint_int(int num, int den)
   return func_bigint_eval(f);
 }
 
-func_t *func_bigint_str(const char *num, const char *den)
+func_t *func_bigint_str(char *num, char *den)
 {
   func_t *f=NULL;
   f=func_new(__func_bigint);

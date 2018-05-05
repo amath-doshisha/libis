@@ -5,6 +5,8 @@
 #include"is_macros.h"
 #include"is_rmulti.h"
 #include"is_cmulti.h"
+#include"is_irmulti.h"
+#include"is_icmulti.h"
 #include"is_strings.h"
 
 /**
@@ -290,7 +292,7 @@ cmulti *cbin_load(FILE *fid)
 /**
  @brief cmulti型の浮動小数点数を文字列から設定.
 */
-void cset_ss(cmulti *x, const char *str_real, const char *str_imag)
+void cset_ss(cmulti *x, char *str_real, char *str_imag)
 {
   rset_s(C_R(x),str_real);
   rset_s(C_I(x),str_imag);
@@ -299,28 +301,22 @@ void cset_ss(cmulti *x, const char *str_real, const char *str_imag)
 /**
  @brief cmulti型の浮動小数点数を文字列から設定.
 */
-void cset_s(cmulti *x, const char *value)
+void cset_s(cmulti *x, char *s)
 {
-  strings *list=NULL;
-  int ret1=0,ret2=0;
-  NULL_EXC2(x,value);
-  list=strings_split_number(value);
-  if(list==NULL){
-    rset_nan(C_R(x));
-    rset_nan(C_I(x));
-  }else{
-    cset_zero(x);
-    if(strings_size(list)>=1 && strings_at(list,0)!=NULL){ ret1=mpfr_set_str(C_R(x),strings_at(list,0),10,get_round_mode()); }
-    if(strings_size(list)>=2 && strings_at(list,1)!=NULL){ ret2=mpfr_set_str(C_I(x),strings_at(list,1),10,get_round_mode()); }
-    if(ret1 || ret2){ cset_nan(x); }
-  }
-  list=strings_del(list);
+  int prec;
+  cmulti *a0=NULL,*a1=NULL;
+  prec=cget_prec(x);
+  a0=callocate_prec(prec);
+  a1=callocate_prec(prec);  
+  icset_s(a0,a1,s);  
+  irmid(C_R(x),C_R(a0),C_R(a1));
+  irmid(C_I(x),C_I(a0),C_I(a1));
 }
 
 /**
  @brief cmulti型の浮動小数点数を文字列から設定.
 */
-void cset_script(cmulti *x, const char *str)
+void cset_script(cmulti *x, char *str)
 {
   strings *list=NULL;
   list=strings_split(str," \t\n",NULL,NULL,NULL);
@@ -329,7 +325,7 @@ void cset_script(cmulti *x, const char *str)
   }else if(list!=NULL && list->n==2){
     cset_ss(x,list->str[0],list->str[1]);
   }else{
-    printf("Error in void cset_script(cmulti *x, const char *str)\n");
+    printf("Error in void cset_script(cmulti *x, char *str)\n");
     printf("str=%s\n",str);
     printf("list="); strings_print(list); printf("\n");
     exit(0);

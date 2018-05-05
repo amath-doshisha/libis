@@ -1,10 +1,10 @@
 <map id="func_clone" name="func_clone">
 <area shape="rect" id="node2" href="$func_8c.html#acd4481611ac7a446cec5acbf860160c8" title="func_struct_new" alt="" coords="124,333,219,360"/>
-<area shape="rect" id="node3" href="$is__strings_8h.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="1007,955,1073,981"/>
+<area shape="rect" id="node3" href="$is__strings_8h.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="1007,955,1073,981"/>
 <area shape="rect" id="node5" href="$func_8c.html#a8ad6e9129ce02b02452cd9ecde9b35e6" title="func_p_clone" alt="" coords="385,485,467,512"/>
 <area shape="rect" id="node53" href="$func__args_8c.html#a9aa3c883f65eb9305926ea7a7eb4b9ed" title="func_a_clone" alt="" coords="131,384,212,411"/>
 <area shape="rect" id="node55" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="396,333,456,360"/>
-<area shape="rect" id="node4" href="$strings_8c.html#ae363dfd1150049090df04b33a6253bc8" title="char_match_any" alt="" coords="1464,1017,1560,1044"/>
+<area shape="rect" id="node4" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="1464,1017,1560,1044"/>
 <area shape="rect" id="node6" href="$func_8c.html#ac5d12f1e54448af685ab9ce171c88304" title="func_p_del" alt="" coords="524,359,595,385"/>
 <area shape="rect" id="node38" href="$func__find_8c.html#a0812092f1760e75ce8c268f87a09ef43" title="func_find_p_clone" alt="" coords="652,549,755,576"/>
 <area shape="rect" id="node7" href="$func__find_8c.html#ad399ee5a1d7d999d92d17ff0cab2178d" title="func_find_p_del" alt="" coords="657,347,749,373"/>
@@ -17,12 +17,12 @@
 <area shape="rect" id="node30" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="997,397,1083,424"/>
 <area shape="rect" id="node31" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="827,549,901,576"/>
 <area shape="rect" id="node32" href="$func__def_8c.html#a7fdbff290b2ec06acd8dadc4e946e3fd" title="func_def_p_del" alt="" coords="995,499,1085,525"/>
-<area shape="rect" id="node34" href="$func__scope_8c.html#a2c1bd279da8d85ba0b2f5df12262ff94" title="func_scope_find" alt="" coords="817,347,911,373"/>
-<area shape="rect" id="node36" href="$func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="835,600,893,627"/>
+<area shape="rect" id="node34" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="817,347,911,373"/>
+<area shape="rect" id="node36" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="835,600,893,627"/>
 <area shape="rect" id="node37" href="$func__builtin_8c.html#aae0af1e58719894bfd7c901fc603a2e4" title="func_builtin_p_del_call" alt="" coords="803,93,925,120"/>
-<area shape="rect" id="node9" href="$func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="1189,271,1242,297"/>
-<area shape="rect" id="node10" href="$is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="1341,271,1399,297"/>
-<area shape="rect" id="node11" href="$strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="1479,271,1545,297"/>
+<area shape="rect" id="node9" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="1189,271,1242,297"/>
+<area shape="rect" id="node10" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="1341,271,1399,297"/>
+<area shape="rect" id="node11" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="1479,271,1545,297"/>
 <area shape="rect" id="node13" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="1180,651,1251,677"/>
 <area shape="rect" id="node14" href="$func__builtin_8c.html#a27a0e89298aa416f6684f26e0e4f1504" title="func_builtin_struct_del" alt="" coords="1155,549,1276,576"/>
 <area shape="rect" id="node15" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1340,499,1400,525"/>
@@ -45,11 +45,11 @@
 <area shape="rect" id="node40" href="$func__builtin_8c.html#abd485eb1fed6591d46eac3352e201b02" title="func_builtin_struct_new" alt="" coords="977,1005,1103,1032"/>
 <area shape="rect" id="node42" href="$is__strings_8h.html#a58e42392a9ba81af5bf1c65e47376adf" title="strings_new_clone" alt="" coords="987,904,1093,931"/>
 <area shape="rect" id="node43" href="$strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="1177,955,1253,981"/>
-<area shape="rect" id="node44" href="$strings_8c.html#a61461a579c8005f40d98b21557dc6384" title="strings_item_set" alt="" coords="1168,853,1263,880"/>
+<area shape="rect" id="node44" href="$strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="1168,853,1263,880"/>
 <area shape="rect" id="node49" href="$strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="1183,1005,1248,1032"/>
 <area shape="rect" id="node45" href="$strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="1608,651,1703,677"/>
 <area shape="rect" id="node46" href="$strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="1328,803,1412,829"/>
-<area shape="rect" id="node48" href="$strings_8c.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="1337,980,1403,1007"/>
+<area shape="rect" id="node48" href="$strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="1337,980,1403,1007"/>
 <area shape="rect" id="node47" href="$strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="1473,752,1551,779"/>
 <area shape="rect" id="node51" href="$func__def_8c.html#a96fd88f0d521d91691e4c335383bf583" title="func_def_struct_new" alt="" coords="983,701,1097,728"/>
 <area shape="rect" id="node54" href="$func__args_8c.html#aab560c18c36aaab1c2d6901c6e9e37b0" title="func_a_del" alt="" coords="267,333,337,360"/>

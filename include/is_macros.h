@@ -16,7 +16,7 @@ typedef unsigned long int ulong;
 #define STR_EQ(X,Y) (strcmp((X),(Y))==0)
 #define STR_EQ_N(X,Y,N) (strncmp((X),(Y),(N))==0)
 #define SWAP2(X,Y,T) { T a; a=(X); (X)=(Y); (Y)=a; }
-#define ERROR_EXIT(S,I) { printf((S),(I)); exit(-1); }
+#define ERROR_EXIT(S,I) { printf("Error in the function %s() at the %dth line in the file '%s'.\n", __func__, __LINE__, __FILE__); printf((S),(I)); exit(-1); }
 #define ERROR_AT { printf("Error in the function %s() at the %dth line in the file '%s'.\n", __func__, __LINE__, __FILE__); }
 #define NULL_EXC1(X){ if((X)==NULL) { printf("Null Exception occurs in the function %s() at the %dth line in the file '%s'.\n", __func__, __LINE__, __FILE__); exit(-1); } }
 #define NULL_EXC2(X,Y){ if((X)==NULL || (Y)==NULL) { printf("Null Exception occurs in the function %s() at the %dth line in the file '%s'.\n", __func__, __LINE__, __FILE__); exit(-1); } }

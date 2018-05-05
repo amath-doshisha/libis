@@ -34,26 +34,26 @@ int rsolve_krawczyk(int m, rmulti **e, rmulti **x, func_t *fF, int debug)
   // R=inv(L)
   rmat_set_eye(m,m,R,m); rsolve(m,m,R,m,L,m,&info);
   // F=F(x)
-  rvec_func_list(m,F,fF,m,x); if(debug>0){ rvec_print(m,F,"F=","e",1); }
+  rvec_func_list(m,F,fF,m,x); if(debug>0){ rvec_print(m,F,"F=",'e',1); }
   // [F0,F1]=F(x)
-  irvec_func_list(m,F0,F1,fF,m,x,x); if(debug>0){ irvec_print(m,F0,F1,"[F]=","e",1); }
+  irvec_func_list(m,F0,F1,fF,m,x,x); if(debug>0){ irvec_print(m,F0,F1,"[F]=",'e',1); }
   // e=abs(R*F)
   rvec_lintr(m,m,e,R,m,F); rvec_abs(m,e,e); rvec_mul_d(m,e,e,2);
   // [X0,X1]=[-e,e]
-  irvec_pm(m,X0,X1,e); if(debug>0){ irvec_print(m,X0,X1,"[X]=","e",1); }
+  irvec_pm(m,X0,X1,e); if(debug>0){ irvec_print(m,X0,X1,"[X]=",'e',1); }
   // [T0,T1]=[x-e,x+e]
-  irvec_add(m,T0,T1,X0,X1,x,x); if(debug>1){ irvec_print(m,T0,T1,"[T]=","f",20); }
+  irvec_add(m,T0,T1,X0,X1,x,x); if(debug>1){ irvec_print(m,T0,T1,"[T]=",'f',20); }
   // [L0,L1]=F'([T0,T1])
   irmat_func_list2(m,m,L0,L1,m,fJ,m,T0,T1);
   // [M0,M1]=I-R*[L0,L1]
   rmat_set_eye(m,m,M0,m); rmat_set_eye(m,m,M1,m);
   irmat_sub_prod(m,m,m,M0,m,M1,m,R,m,R,m,L0,m,L1,m);
-  if(debug>1){ irmat_print(m,m,M0,m,M1,m,"[M]=","e",1); }
+  if(debug>1){ irmat_print(m,m,M0,m,M1,m,"[M]=",'e',1); }
   // H=-R*[F0,F1]+[M0,M1]*X
   rvec_set_zeros(m,H0); rvec_set_zeros(m,H1);
   irvec_sub_lintr(m,m,H0,H1,R,m,R,m,F0,F1);
   irvec_add_lintr(m,m,H0,H1,M0,m,M1,m,X0,X1);  
-  if(debug>0){ irvec_print(m,H0,H1,"[H]=","e",1); }
+  if(debug>0){ irvec_print(m,H0,H1,"[H]=",'e',1); }
   // check X0<=H0 and H1<=X1
   if(rvec_le(m,X0,H0) && rvec_le(m,H1,X1)){ ret=0; }
   else                                    { ret=1; }

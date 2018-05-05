@@ -15,8 +15,8 @@ typedef bigint_struct bigint;
 // allocate and free
 bigint *bigint_allocate(void);
 bigint *bigint_allocate_int(int num, int den);
-bigint *bigint_allocate_str(const char *num, const char *den);
-bigint *bigint_allocate_script(const char *str);
+bigint *bigint_allocate_str(char *num, char *den);
+bigint *bigint_allocate_script(char *str);
 bigint *bigint_allocate_clone(bigint *x);
 bigint *bigint_free(bigint *x);
 void bigint_check(bigint *x);
@@ -32,8 +32,8 @@ void bigint_set_inf(bigint *x);
 void bigint_set_zero(bigint *x);
 void bigint_set_one(bigint *x);
 void bigint_set_int(bigint *x, int num, int den);
-void bigint_set_str(bigint *x, const char *num, const char *den);
-void bigint_set_script(bigint *x, const char *str);
+void bigint_set_str(bigint *x, char *num, char *den);
+void bigint_set_script(bigint *x, char *str);
 
 // operations
 void bigint_clone(bigint *y, bigint *x);          // y=x

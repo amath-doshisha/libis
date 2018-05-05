@@ -1,6 +1,6 @@
 <map id="irvec_func" name="irvec_func">
 <area shape="rect" id="node2" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="533,1103,594,1130"/>
-<area shape="rect" id="node3" href="$func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="392,191,445,218"/>
+<area shape="rect" id="node3" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="392,191,445,218"/>
 <area shape="rect" id="node6" href="$is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="253,343,307,370"/>
 <area shape="rect" id="node7" href="$func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="241,191,319,218"/>
 <area shape="rect" id="node8" href="$irmulti_8c.html#a2fdabfa10335af36c3951880616b5589" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="254,495,306,522"/>
@@ -19,7 +19,7 @@
 <area shape="rect" id="node30" href="$irmulti_8c.html#a9f9bc42cc6a70b365b032dc7bedd1abb" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="397,1610,441,1636"/>
 <area shape="rect" id="node32" href="$func__add_8c.html#adb993ffed426ac5101bd9a2b4a4cf7db" title="func_is_add" alt="" coords="242,90,318,116"/>
 <area shape="rect" id="node33" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="384,2571,453,2598"/>
-<area shape="rect" id="node34" href="$irvec_8c.html#acf1d2fe8ef07057b37dda235645b62a6" title="写像 [y0,y1]=f([x0,x1]) " alt="" coords="121,1274,189,1300"/>
+<area shape="rect" id="node34" href="$irvec_8c.html#acf1d2fe8ef07057b37dda235645b62a6" title="irmulti型のベクトルの写像 [y0,y1]=f([x0,x1]) " alt="" coords="121,1274,189,1300"/>
 <area shape="rect" id="node35" href="$func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c" title="func_aget" alt="" coords="247,2546,313,2572"/>
 <area shape="rect" id="node37" href="$irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="258,1634,302,1660"/>
 <area shape="rect" id="node38" href="$func__mul_8c.html#a31e10336b1e56408f81fccef284838a7" title="func_is_mul" alt="" coords="242,140,318,167"/>
@@ -41,8 +41,8 @@
 <area shape="rect" id="node54" href="$is__rmulti_8h.html#aa0c79243aad50484f6b79774c245d458" title="rmulti型のべき乗 z=x^y " alt="" coords="258,2495,302,2522"/>
 <area shape="rect" id="node55" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="371,799,467,826"/>
 <area shape="rect" id="node56" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="243,799,317,826"/>
-<area shape="rect" id="node4" href="$is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="534,191,593,218"/>
-<area shape="rect" id="node5" href="$strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="663,191,729,218"/>
+<area shape="rect" id="node4" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="534,191,593,218"/>
+<area shape="rect" id="node5" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="663,191,729,218"/>
 <area shape="rect" id="node13" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="528,824,599,851"/>
 <area shape="rect" id="node22" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="531,1458,595,1484"/>
 <area shape="rect" id="node23" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="533,1534,594,1560"/>
@@ -53,5 +53,5 @@
 <area shape="rect" id="node26" href="$rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="674,1596,718,1623"/>
 <area shape="rect" id="node28" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="515,2279,612,2306"/>
 <area shape="rect" id="node31" href="$is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="544,1647,583,1674"/>
-<area shape="rect" id="node36" href="$func_8c.html#a76e1da8a7b2a7f73bb25b03b8b333171" title="func_op" alt="" coords="390,2520,447,2547"/>
+<area shape="rect" id="node36" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="390,2520,447,2547"/>
 </map>

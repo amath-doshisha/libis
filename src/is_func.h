@@ -98,7 +98,7 @@ int func_cols(func_t *f);
 
 // built-in
 int func_is_builtin(func_t *f);
-func_t *func_builtin_new(const char *name);
+func_t *func_builtin_new(char *name);
 void func_builtin_p_new(func_t *f);
 void func_builtin_p_del(func_t *f);
 void func_builtin_p_clone(func_t *f, func_t *g);
@@ -171,8 +171,8 @@ func_t *func_op_gbasis_new(void);
 
 // op
 int func_ptype(func_t *f);
-const char *func_op(func_t *f);
-int func_is(func_t *f, const char *op);
+char *func_op(func_t *f);
+int func_is(func_t *f, char *op);
 
 // find-op
 int func_find_ptype(func_t *f);
@@ -209,7 +209,7 @@ func_t *func_scope_previous(int n);
 func_t *func_scope_vlist(int n);
 func_t *func_scope_table(int n);
 void func_scope_set(int n, func_t *f);
-func_t *func_scope_find(int n, const char *name);
+func_t *func_scope_find(int n, char *name);
 
 // scope (private)
 func_t *func_scope_new(func_t *previous, func_t *vlist);
@@ -222,7 +222,7 @@ int func_get_mono_order(void);
 
 // allocation
 int func_new_del_check_sum();
-func_t *func_new(const char *op);
+func_t *func_new(char *op);
 func_t *func_retain(func_t *f);
 func_t *func_del(func_t *f);
 func_t *func_clone(func_t *f);
@@ -236,11 +236,11 @@ func_t *func_struct_del(func_t *f);
 void func_p_new(func_t *f);
 void func_p_del(func_t *f);
 void func_p_clone(func_t *f, func_t *g);
-func_t *func_arg1_new(const char *op, func_t *g);
-func_t *func_arg2_new(const char *op, func_t *g0, func_t *g1);
+func_t *func_arg1_new(char *op, func_t *g);
+func_t *func_arg2_new(char *op, func_t *g0, func_t *g1);
 
 // script
-func_t *func_script(const char *str);
+func_t *func_script(char *str);
 func_t *func_scriptf(char* fmt, ...);
 func_t *func_scriptf_echo(char* fmt, ...);
 func_t *func_null_script(func_t *f);
@@ -286,7 +286,7 @@ void func_bigint_print(func_t *f);
 func_t *func_bigint_script(func_t *f);
 func_t *func_bigint(void);
 func_t *func_bigint_int(int num, int den);
-func_t *func_bigint_str(const char *num, const char *den);
+func_t *func_bigint_str(char *num, char *den);
 int func_bigint_is_integer(func_t *f);
 int func_bigint_sgn(func_t *f);
 int func_bigint_get_si(func_t *f);
@@ -317,7 +317,7 @@ func_t *func_eval_eval(func_t *g);
 // real number
 func_t *func_real(void);
 func_t *func_real_rmulti(rmulti *x);
-func_t *func_real_str(const char *str);
+func_t *func_real_str(char *str);
 int func_real_cmp(func_t *f, func_t *g);
 func_t *func_real_get_bigint(func_t *f);
 int func_is_real(func_t *f);
@@ -427,13 +427,13 @@ int func_is_table(func_t *f);
 char *func_key_name(func_t *f);
 func_t *func_table(void);
 void func_table_set(func_t *f, func_t *g);
-func_t *func_table_find(func_t *f, const char *name);
+func_t *func_table_find(func_t *f, char *name);
 
 // table (private)
 void func_table_grow(func_t *f);
 func_t *func_table_bigger(func_t *g);
 int func_table_bigger_size(func_t *f);
-int func_table_key_index(func_t *f, const char *name);
+int func_table_key_index(func_t *f, char *name);
 
 // list
 int func_is_list(func_t *f);
@@ -661,7 +661,7 @@ func_t *func_acosh_eval(func_t *f);
 func_t *func_atanh(func_t *g);
 func_t *func_atanh_eval(func_t *f);
 // operator (private)
-func_t *func_flatten(func_t *f, const char *op);
+func_t *func_flatten(func_t *f, char *op);
 int func_is_split_mul(func_t *f);
 int func_is_split(func_t *f);
 func_t *func_get_number_part(func_t *f);
@@ -752,7 +752,7 @@ int func_a_has_op(func_t *f, func_is_t *fis);
 int func_a_has_op_pow1(func_t *f, func_is_t *fis);
 
 void func_args_arrange(func_t *f, int *I);
-void func_args_rm_op(func_t *f, const char *op);
+void func_args_rm_op(func_t *f, char *op);
 void func_args_rm_add_pow1(func_t *f);
 void func_args_swap(func_t *f, int i, int j);
 void func_args_quick_sort(func_t *f, int *I, int left, int right);
@@ -761,7 +761,7 @@ void func_args_sort_index(func_t *f, int *I);
 void func_args_reverse(func_t *f);
 int func_args_count_non_null(func_t *f);
 int func_args_have(func_t *f, func_t *g);
-int func_args_count_op(func_t *f, const char *op);
+int func_args_count_op(func_t *f, char *op);
 
 // solve
 func_t *func_mat_solve(func_t *A, func_t *b); // x=A\b
@@ -785,7 +785,7 @@ int func_weierstrass(int n, cmulti **z1, cmulti **z0, cmulti **a);
 
 // def
 int func_is_def(func_t *f);
-func_t *func_def(const char *name, func_t *g, int amin, int amax);
+func_t *func_def(char *name, func_t *g, int amin, int amax);
 void func_def_print(func_t *f);
 func_t *func_def_script(func_t *f);
 func_t *func_def_any_eval(func_t *f);
@@ -803,14 +803,14 @@ func_def_t *func_def_struct_del(func_def_t *def);
 // strings
 int func_is_strings(func_t *f);
 func_t *func_strings(int n);
-func_t *func_strings_str(const char *str[]);
+func_t *func_strings_str(char *str[]);
 func_t *func_strings_strings(strings *str);
-func_t *func_strings_char(const char *str);
-func_t *func_strings_split(const char *str, const char *sep, const char *mask_begin, const char *mask_end, const char *skip);
+func_t *func_strings_char(char *str);
+func_t *func_strings_split(char *str, char *sep, char *mask_begin, char *mask_end, char *skip);
 int func_strings_p_cmp(func_t *f, func_t *g);
 int func_strings_size(func_t *f);
 char *func_strings_at(func_t *f, int i);
-void func_strings_set(func_t *f, int i, const char *str);
+void func_strings_set(func_t *f, int i, char *str);
 strings *func_strings_p(func_t *f);
 
 // strings (private)

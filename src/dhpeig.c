@@ -112,18 +112,18 @@ int dhpeig(int n, const double *A, int LDA, double *X, int LDX, double *Lambda, 
     printf("[%s] max of fails is %d.\n",fname,fail_max);
   }
   // init 
-  dmat_zeros(n,n,X,LDX);
-  dmat_zeros(n,n,H,LDH);
-  dvec_zeros(n,Lambda);
-  dvec_zeros(n,alpha);
-  dmat_eye(n,n,Q,LDQ);
+  dmat_set_zeros(n,n,X,LDX);
+  dmat_set_zeros(n,n,H,LDH);
+  dvec_set_zeros(n,Lambda);
+  dvec_set_zeros(n,alpha);
+  dmat_set_eye(n,n,Q,LDQ);
   // initialize MT
   init_genrand(0);
   // loop
   t=0; done=0;
   for(k=0; !done && k<n; k++){
     dvec_copy(n,z,&Qk);                                        // set normal vector z as Q(:,k).
-    if(k==0) { dvec_rand(n,&Xk,2,-1); dvec_normalize(n,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
+    if(k==0) { dvec_set_rand(n,&Xk,2,-1); dvec_normalize(n,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
     else     { dvec_copy(n,&Xk,z); }                           // set initial vector X(:,k) as z if k!=0.
     fail=0; conv=0; E=1;
     for(fail=0; !conv && fail<fail_max; fail++){
@@ -139,7 +139,7 @@ int dhpeig(int n, const double *A, int LDA, double *X, int LDX, double *Lambda, 
 	printf("step=%03d log2(E)=%+6.1f lambda=%+.16e\n",step,log(fabs(E))/log(2),Lambda[k]);
 	print_reset();
       }
-      if(!conv) { dvec_rand(n,&Xk,2,-1); dvec_normalize_sgn(n,&Xk); } // reset initial vector X(:,k) as unit random vecot
+      if(!conv) { dvec_set_rand(n,&Xk,2,-1); dvec_normalize_sgn(n,&Xk); } // reset initial vector X(:,k) as unit random vecot
     }
     if(!conv){ done=1; }
     if(!done){
@@ -149,8 +149,8 @@ int dhpeig(int n, const double *A, int LDA, double *X, int LDX, double *Lambda, 
   }
   if(done){
     k--;
-    dmat_zeros(n,n-k,&Xk,LDX);
-    dvec_zeros(n-k,&Lambda[k]);
+    dmat_set_zeros(n,n-k,&Xk,LDX);
+    dvec_set_zeros(n-k,&Lambda[k]);
   }
   ret=k;
   if(debug>1){

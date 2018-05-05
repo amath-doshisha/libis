@@ -28,7 +28,7 @@
 void dmat_toeplitz(int m, int n, double *A, int LDA, int k, double *a, int offset)
 {
   int i;
-  dmat_zeros(m,n,A,LDA);
+  dmat_set_zeros(m,n,A,LDA);
   for(i=0; i<k; i++){
     dmat_diag_set_scalar(m,n,A,LDA,a[i],i-offset);
   }

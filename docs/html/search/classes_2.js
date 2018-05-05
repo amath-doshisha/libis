@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dcomplex',['dcomplex',['../structdcomplex.html',1,'']]]
+  ['cmulti_5fstruct',['cmulti_struct',['../structcmulti__struct.html',1,'']]]
 ];

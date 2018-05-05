@@ -1,6 +1,10 @@
 var irmulti_8c =
 [
+    [ "CA", "irmulti_8c.html#a6d029592ee41ae15ff8aeab6f8eb1789", null ],
+    [ "CAr", "irmulti_8c.html#ab11fd1e6a1ba1254308bfa996e27b22d", null ],
+    [ "CF", "irmulti_8c.html#a9e41d8e9196e22ce37a5d4f1ae64694b", null ],
     [ "RA", "irmulti_8c.html#ac67e3b6b58f837fb25526084bda6e8a0", null ],
+    [ "RAr", "irmulti_8c.html#a25fe9e46cd23a7664db2647954f95eff", null ],
     [ "RF", "irmulti_8c.html#aae506ec36706d66ea9abbcca974ce8d4", null ],
     [ "irabs", "irmulti_8c.html#aff300b617848d643d2aa00a2e7040dbe", null ],
     [ "irabs_sub", "irmulti_8c.html#aa8dda95c108543a9b349903d621abc25", null ],
@@ -38,7 +42,10 @@ var irmulti_8c =
     [ "irrad", "irmulti_8c.html#a3b8efbf84f9a0f5f22f4cbdaa9834d84", null ],
     [ "irset_bigint", "irmulti_8c.html#a0a55aa9bc2d8ea1df79f9ff3ab99b88a", null ],
     [ "irset_d", "irmulti_8c.html#a2fdabfa10335af36c3951880616b5589", null ],
+    [ "irset_d1", "irmulti_8c.html#a6813490a134c8276026fc60abcbe3943", null ],
+    [ "irset_d2", "irmulti_8c.html#abf4389c8665cc30ac8649a6fd8a6ca4f", null ],
     [ "irset_dd", "irmulti_8c.html#adaa17d6543dcc7524f7f50439ec14bcd", null ],
+    [ "irset_s", "irmulti_8c.html#a0904a3b450bbf23732647afc2382ed8d", null ],
     [ "irsin", "irmulti_8c.html#aebe12836a7e10c10e39fdd44dfbdcb93", null ],
     [ "irsinh", "irmulti_8c.html#a4eaaba9c68e09424432c17c32bed0b06", null ],
     [ "irsqrt", "irmulti_8c.html#a0c9e43322ce19bb64013242d8d64a504", null ],

@@ -1,25 +1,25 @@
-function y=imulti(x,u)
+function y=imulti(x0,x1)
+cmd='get_imulti';
 if nargin==1
-    if isa(x,'double')
-        y=multi('iset_d',x);
-    elseif isnumeric(x) || islogical(x)
-        y=multi('iset_d',double(x));
-    elseif isa(x,'multi')
-        y=multi('icopy',x.data);
+    if isa(x0,'double')
+        y=multi(cmd,x0);
+    elseif isnumeric(x0) || islogical(x0)
+        y=multi(cmd,double(x0));
+    elseif isa(x0,'multi')
+        y=multi(cmd,x0.data);
     else
-        y=multi('icopy',multi(x).data);
+        y=multi(cmd,multi(x0).data);
     end
-    %’Ç‰Á
 elseif nargin==2
-    if isa(x,'double') && isa(u,'double') 
-        y=multi('iset_dd',x,u);
-    elseif (isnumeric(x) || islogical(x)) &&  (isnumeric(u) || islogical(u))
-        y=multi('iset_dd',double(x),double(u));
-    elseif (isa(x,'multi') && isa(u,'multi'))
-        y=multi('icopy2',x.data,u.data);
+    if isa(x0,'double') && isa(x1,'double') 
+        y=multi(cmd,x0,x1);
+    elseif (isnumeric(x0) || islogical(x0)) && (isnumeric(x1) || islogical(x1))
+        y=multi(cmd,double(x0),double(x1));
+    elseif (isa(x0,'multi') && isa(x1,'multi'))
+        y=multi(cmd,x0.data,x1.data);
     else
-        error('imulti:not supported');
+        error('imulti: not supported');
     end
 else
-    error('imulti:nargin');
+    error('imulti: nargin');
 end

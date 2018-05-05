@@ -22,11 +22,12 @@ void icmat_copy_rmat(int m, int n, cmulti **B0, int LDB0, cmulti **B1, int LDB1,
 /*
  * I/O
  */
-void icmat_print(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1, const char *name, const char *f, int digits);
+void icmat_print(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1, char *name, char format, int digits);
 
 /*
  * casting
  */
+void icmat_get_s(int m, int n, char **B, int LDB, cmulti **A0, int LDA0, cmulti **A1, int LDA1, char format, int digits);
 
 /*
  * operations

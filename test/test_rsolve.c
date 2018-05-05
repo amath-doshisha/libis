@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
   else if(mat==MAT_T4)     { rmat_toeplitz(n,n,A0,LDA,4,tp4,1); }
   else if(mat==MAT_CAUCHY) { rmat_cauchy(n,n,A0,LDA); }
   else if(mat==MAT_SINGULAR) { rmat_set_s(n,n,A0,LDA,str,2); }
-  rmat_print(n,n,A0,LDA,"A=","f",2);
+  rmat_print(n,n,A0,LDA,"A=",'f',2);
   rvec_set_rand(n,b,2,-1);
   rvec_print_prec(n,b,"b=","f",20);
 

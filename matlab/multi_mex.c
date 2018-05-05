@@ -13,36 +13,24 @@
 #define MATLAB_WARN(S)  (mexWarnMsgIdAndTxt("MATLAB:multi_mex",S));
 #define N0 3
 
-#define _T(A)   (A->type)
-#define _M(A)   (A->M)
-#define _N(A)   (A->N)
-#define _L(A)   (A->L)
-#define _LD1(A) (A->LD1)
-#define _LD2(A) (A->LD2)
-#define _R(A)   ((rmulti**)(A->p0))
-#define _R0(A)  ((rmulti**)(A->p0))
-#define _R1(A)  ((rmulti**)(A->p1))
-#define _C(A)   ((cmulti**)(A->p0))
-#define _C0(A)  ((cmulti**)(A->p0))
-#define _C1(A)  ((cmulti**)(A->p1))
-#define _D(A)   ((double*)(A->p0))
-#define _Z(A)   ((dcomplex*)(A->p0))
-#define _I(A)   ((int*)(A->p0))
-#define _S(A)   ((char**)(A->p0))
-
-typedef struct {
-  char type;     // type='r','c','R','C','d','z','i'
-  int LD1,LD2;   // memory=(LD1,LD2,l)
-  int M,N,L;     // size=(m,n,l), 
-  void *p0,*p1;  // p0 or [p0,p1]
-} multi_struct;
-typedef multi_struct multi;
-
-typedef struct {
-  int ndim;
-  int *dims;
-  int **index;
-} subs_index_t;
+// 移行作業中は残したまま．最後に消す．ここから・
+#define _T(A)   (A)->type
+#define _M(A)   ((A)->ndim<=0?1:(A)->dim[0])
+#define _N(A)   ((A)->ndim<=1?1:(A)->dim[1])
+#define _L(A)   ((A)->ndim<=2?1:(A)->dim[2])
+#define _LD1(A) ((A)->ndim<=0?1:(A)->dim[0])
+#define _LD2(A) ((A)->ndim<=1?1:(A)->dim[1])
+#define _R(A)   ((rmulti**)((A)->p0))
+#define _R0(A)  ((rmulti**)((A)->p0))
+#define _R1(A)  ((rmulti**)((A)->p1))
+#define _C(A)   ((cmulti**)((A)->p0))
+#define _C0(A)  ((cmulti**)((A)->p0))
+#define _C1(A)  ((cmulti**)((A)->p1))
+#define _D(A)   ((double*)((A)->p0))
+#define _Z(A)   ((dcomplex*)((A)->p0))
+#define _I(A)   ((int*)((A)->p0))
+#define _S(A)   ((char**)((A)->p0))
+// ここまで．
 
 /**
  * @breif The field names of struct for MATLAB
@@ -68,28 +56,25 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 /**
  * functions
  */
-#include"./c/mxCreateStructMultiValue.c"
-#include"./c/mxCreateStructMulti.c"
-#include"./c/mxArrayToMulti.c"
-#include"./c/subs_allocate.c"
-#include"./c/multi_free.c"
-#include"./c/multi_allocate.c"
-#include"./c/multi_allocate_mxArray.c"
-#include"./c/multi_get_prec.c"
-#include"./c/multi_get_sign.c"
-#include"./c/multi_get_exp.c"
+#include"./c/multi_allocate.c" // 移行作業中は残したまま．最後に消す．
+#include"./c/mxArray_to_rmulti.c"
+#include"./c/mxArray_to_array.c"
+#include"./c/rmulti_to_mxArray.c"
+#include"./c/array_to_mxArray.c"
 #include"./c/multi_set_zeros.c"
 #include"./c/multi_set_ones.c"
 #include"./c/multi_set_nan.c"
 #include"./c/multi_set_inf.c"
-#include"./c/multi_set_eye.c"
-#include"./c/multi_set_d.c"
-#include"./c/multi_iset_d.c"
+#include"./c/multi_get_multi.c"
+#include"./c/multi_get_imulti.c"
 #include"./c/multi_get_d.c"
-#include"./c/multi_set_s.c"
 #include"./c/multi_get_s.c"
-#include"./c/multi_copy.c"
-#include"./c/multi_icopy.c"
+#include"./c/multi_complex.c"
+// ここから未チェック
+#include"./c/multi_set_eye.c"
+#include"./c/multi_get_prec.c"
+#include"./c/multi_get_sign.c"
+#include"./c/multi_get_exp.c"
 #include"./c/multi_mid.c"
 #include"./c/multi_rad.c"
 #include"./c/multi_up.c"
@@ -114,8 +99,6 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_gt.c"
 #include"./c/multi_le.c"
 #include"./c/multi_lt.c"
-#include"./c/multi_subsref.c"
-#include"./c/multi_subsasgn.c"
 #include"./c/multi_horzcat.c"
 #include"./c/multi_vertcat.c"
 #include"./c/multi_inv.c"
@@ -139,9 +122,6 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_absc.c"
 #include"./c/multi_get_exp10.c"
 #include"./c/multi_get_exp2.c"
-#include"./c/multi_iset_dd.c"
-#include"./c/multi_icopy2.c"
-#include"./c/multi_complex.c"
 
 /**
  * @breif mexFunction() for multi_mex
@@ -160,22 +140,21 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
        if(rnd_mode>0){ set_round_mode(MPFR_RNDU); }
   else if(rnd_mode<0){ set_round_mode(MPFR_RNDD); }
   else               { set_round_mode(MPFR_RNDN); }
-  //mexPrintf("cmd=%s prec=%d\n",cmd,prec);
-       if(STR_EQ(cmd,"get_prec"))  { multi_get_prec  (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
+       if(STR_EQ(cmd,"get_multi")) { multi_get_multi (nlhs,plhs,nrhs,prhs); }  // y=multi(x)
+  else if(STR_EQ(cmd,"get_imulti")){ multi_get_imulti(nlhs,plhs,nrhs,prhs); }  // y=imulti(x)
+  else if(STR_EQ(cmd,"get_d"))     { multi_get_d     (nlhs,plhs,nrhs,prhs); }  // y=double(x)
+  else if(STR_EQ(cmd,"get_s"))     { multi_get_s     (nlhs,plhs,nrhs,prhs); }  // y=char(x)
+  else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros (nlhs,plhs,nrhs,prhs); }  // x=zeros(type,size)
+  else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones  (nlhs,plhs,nrhs,prhs); }  // x=ones(type,size)
+  else if(STR_EQ(cmd,"set_nan"))   { multi_set_nan   (nlhs,plhs,nrhs,prhs); }  // x=nan(type,size)
+  else if(STR_EQ(cmd,"set_inf"))   { multi_set_inf   (nlhs,plhs,nrhs,prhs); }  // x=inf(type,size)
+  else if(STR_EQ(cmd,"complex"))   { multi_complex   (nlhs,plhs,nrhs,prhs); }  // y=complex(x)
+  else if(STR_EQ(cmd,"real"))      { multi_real      (nlhs,plhs,nrhs,prhs); }  // y=real(x)
+// ここから未チェック
+  else if(STR_EQ(cmd,"get_prec"))  { multi_get_prec  (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
   else if(STR_EQ(cmd,"get_sign"))  { multi_get_sign  (nlhs,plhs,nrhs,prhs); }  // y=get_sign(x)
   else if(STR_EQ(cmd,"get_exp"))   { multi_get_exp   (nlhs,plhs,nrhs,prhs); }  // y=get_exp(x)
-  else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros (nlhs,plhs,nrhs,prhs); }  // x=zeros(M,N,L)
-  else if(STR_EQ(cmd,"set_ones"))  { multi_set_ones  (nlhs,plhs,nrhs,prhs); }  // x=ones(M,N,L)
-  else if(STR_EQ(cmd,"set_nan"))   { multi_set_nan   (nlhs,plhs,nrhs,prhs); }  // x=nan(M,N,L)
-  else if(STR_EQ(cmd,"set_inf"))   { multi_set_inf   (nlhs,plhs,nrhs,prhs); }  // x=nan(M,N,L)    
   else if(STR_EQ(cmd,"set_eye"))   { multi_set_eye   (nlhs,plhs,nrhs,prhs); }  // x=eye(M,N)
-  else if(STR_EQ(cmd,"set_d"))     { multi_set_d     (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is double
-  else if(STR_EQ(cmd,"iset_d"))    { multi_iset_d    (nlhs,plhs,nrhs,prhs); }  // [y0,y1]=imulti(x), where x is double
-  else if(STR_EQ(cmd,"get_d"))     { multi_get_d     (nlhs,plhs,nrhs,prhs); }  // y=double(x)
-  else if(STR_EQ(cmd,"set_s"))     { multi_set_s     (nlhs,plhs,nrhs,prhs); }  // y=multi(x), where x is cell of char
-  else if(STR_EQ(cmd,"get_s"))     { multi_get_s     (nlhs,plhs,nrhs,prhs); }  // y=char(x)
-  else if(STR_EQ(cmd,"copy"))      { multi_copy      (nlhs,plhs,nrhs,prhs); }  // y=x
-  else if(STR_EQ(cmd,"icopy"))     { multi_icopy     (nlhs,plhs,nrhs,prhs); }  // [y0,y1]=x
   else if(STR_EQ(cmd,"mid"))       { multi_mid       (nlhs,plhs,nrhs,prhs); }  // [m+r,m-r]=[x0,x1]
   else if(STR_EQ(cmd,"rad"))       { multi_rad       (nlhs,plhs,nrhs,prhs); }  // [m+r,m-r]=[x0,x1]
   else if(STR_EQ(cmd,"up"))        { multi_up        (nlhs,plhs,nrhs,prhs); }  // y=x1
@@ -201,12 +180,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"gt"))        { multi_gt        (nlhs,plhs,nrhs,prhs); }  // z=(x>y)
   else if(STR_EQ(cmd,"le"))        { multi_le        (nlhs,plhs,nrhs,prhs); }  // z=(x<=y)
   else if(STR_EQ(cmd,"lt"))        { multi_lt        (nlhs,plhs,nrhs,prhs); }  // z=(x<y)
-  else if(STR_EQ(cmd,"subsref"))   { multi_subsref   (nlhs,plhs,nrhs,prhs); }  // y=x(s)
-  else if(STR_EQ(cmd,"subsasgn"))  { multi_subsasgn  (nlhs,plhs,nrhs,prhs); }  // y(s)=x
   else if(STR_EQ(cmd,"horzcat"))   { multi_horzcat   (nlhs,plhs,nrhs,prhs); }  // y=[x1 x2 ...]
   else if(STR_EQ(cmd,"vertcat"))   { multi_vertcat   (nlhs,plhs,nrhs,prhs); }  // y=[x1; x2; ...]
   else if(STR_EQ(cmd,"inv"))       { multi_inv       (nlhs,plhs,nrhs,prhs); }  // y=inv(x)
-  else if(STR_EQ(cmd,"real"))      { multi_real      (nlhs,plhs,nrhs,prhs); }  // y=real(x)
   else if(STR_EQ(cmd,"imag"))      { multi_imag      (nlhs,plhs,nrhs,prhs); }  // y=imag(x)
   else if(STR_EQ(cmd,"conj"))      { multi_conj      (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
   else if(STR_EQ(cmd,"abs"))       { multi_abs       (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
@@ -226,9 +202,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"absc"))      { multi_absc      (nlhs,plhs,nrhs,prhs); }  // y=absc(x)
   else if(STR_EQ(cmd,"get_exp10")) { multi_get_exp10 (nlhs,plhs,nrhs,prhs); }  // y=get_exp10(x)
   else if(STR_EQ(cmd,"get_exp2"))  { multi_get_exp2  (nlhs,plhs,nrhs,prhs); }  // y=get_exp2(x)
-  else if(STR_EQ(cmd,"iset_dd"))   { multi_iset_dd   (nlhs,plhs,nrhs,prhs); }  // y=imulti(x,u), where x,u is double or multi
-  else if(STR_EQ(cmd,"icopy2"))    { multi_icopy2    (nlhs,plhs,nrhs,prhs); }  // [y0,y1]=imulti(A,B)
-  else if(STR_EQ(cmd,"complex"))   { multi_complex   (nlhs,plhs,nrhs,prhs); }  // y=complex(x)
   else{
     mexPrintf("\n\n\nError!\nmulti_mex(cmd='%s',....)\n",cmd);
     mexErrMsgIdAndTxt("MATLAB:multi_mex","Unknown command.");

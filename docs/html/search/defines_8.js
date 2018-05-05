@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['ldbl_5fepsilon',['LDBL_EPSILON',['../csolve__newton_8c.html#acb139798eaff6b11e334384af8dd3644',1,'csolve_newton.c']]],
-  ['lower_5fmask',['LOWER_MASK',['../mt19937ar_8c.html#a4ddd8cab3564b7a86a4b0e52ba08f70e',1,'mt19937ar.c']]]
+  ['j00',['J00',['../dhpsvd_8c.html#a7cc554de04c659ebf3148dd2c3394d1e',1,'dhpsvd.c']]],
+  ['j01',['J01',['../dhpsvd_8c.html#a142035f9c10448c69ddc2ba4db2b97c6',1,'dhpsvd.c']]],
+  ['j10',['J10',['../dhpsvd_8c.html#aa1053e944e9491fe030dc4abeaec07af',1,'dhpsvd.c']]],
+  ['j11',['J11',['../dhpsvd_8c.html#adbfdd9d4c171d9e06ccbd05a921d7fe1',1,'dhpsvd.c']]]
 ];

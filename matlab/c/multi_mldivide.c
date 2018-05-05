@@ -3,14 +3,14 @@
  */
 void multi_mldivide(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL,*z=NULL,*u=NULL,*v=NULL;
+  array *x=NULL,*y=NULL,*z=NULL,*u=NULL,*v=NULL;
   int i,info=-1;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_mldivide: The 1st-arg should be Struct."); }
   if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_mldivide: The 2nd-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
-  y=multi_allocate_mxArray(prhs[N0+1]);
+  x=mxArray_to_array(prhs[N0]);
+  y=mxArray_to_array(prhs[N0+1]);
   // operation
   if(_M(x)==1 && _N(x)==1 && _L(x)==1){
     // In the case of x is scalar
@@ -80,12 +80,12 @@ void multi_mldivide(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     MATLAB_ERROR("multi_mldivide: z=x\\y: This function is not implemented");
   }
   // done
-  plhs[0]=mxCreateStructMulti(z);
-  x=multi_free(x);
-  y=multi_free(y);
-  z=multi_free(z);
-  u=multi_free(u);
-  v=multi_free(v);
+  plhs[0]=array_to_mxArray(z);
+  x=array_free(x);
+  y=array_free(y);
+  z=array_free(z);
+  u=array_free(u);
+  v=array_free(v);
   return;
 }
 

@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('is__macros_8h.html','');});
 <tr class="separator:ae339fdf9d25472be10db43d53d352552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e1dbf0024c0fdd247172fe23ef3e755"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__macros_8h.html#a9e1dbf0024c0fdd247172fe23ef3e755">SWAP2</a>(X,  Y,  T)&#160;&#160;&#160;{ T a; a=(X); (X)=(Y); (Y)=a; }</td></tr>
 <tr class="separator:a9e1dbf0024c0fdd247172fe23ef3e755"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee8ff16e15460bff94c093dbb90adcd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__macros_8h.html#aee8ff16e15460bff94c093dbb90adcd5">ERROR_EXIT</a>(S,  I)&#160;&#160;&#160;{ printf((S),(I)); exit(-1); }</td></tr>
+<tr class="memitem:aee8ff16e15460bff94c093dbb90adcd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__macros_8h.html#aee8ff16e15460bff94c093dbb90adcd5">ERROR_EXIT</a>(S,  I)&#160;&#160;&#160;{ printf(&quot;Error in the function %s() at the %dth line in the file '%s'.\n&quot;, __func__, __LINE__, __FILE__); printf((S),(I)); exit(-1); }</td></tr>
 <tr class="separator:aee8ff16e15460bff94c093dbb90adcd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e632b258b6fb8c237ccc997f78f0de5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__macros_8h.html#a8e632b258b6fb8c237ccc997f78f0de5">ERROR_AT</a>&#160;&#160;&#160;{ printf(&quot;Error in the function %s() at the %dth line in the file '%s'.\n&quot;, __func__, __LINE__, __FILE__); }</td></tr>
 <tr class="separator:a8e632b258b6fb8c237ccc997f78f0de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -305,7 +305,7 @@ $(document).ready(function(){initNavTree('is__macros_8h.html','');});
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{ printf((S),(I)); exit(-1); }</td>
+          <td></td><td>&#160;&#160;&#160;{ printf(&quot;Error in the function %s() at the %dth line in the file '%s'.\n&quot;, __func__, __LINE__, __FILE__); printf((S),(I)); exit(-1); }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2093,7 +2093,7 @@ $(document).ready(function(){initNavTree('is__macros_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__macros_8h.html">is_macros.h</a></li>
-    <li class="footer">2018年05月01日(火) 15時47分22秒作成 - libis / 構成: 
+    <li class="footer">2018年05月05日(土) 22時08分54秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

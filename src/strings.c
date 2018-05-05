@@ -12,7 +12,7 @@ static int __strings_obj_id=0;
 
 /////////////////////////////////////////////
 
-char *char_new(const char *str, const char *skip)
+char *char_new(char *str, char *skip)
 {
   int len;
   char *p=NULL;
@@ -37,7 +37,7 @@ char *char_del(char *p)
 
 ////////////////////////////////////////////////
 
-char *char_clone(const char *str)
+char *char_clone(char *str)
 {
   char *p=NULL;
   p=(char*)malloc(sizeof(char)*(strlen(str)+1));
@@ -47,7 +47,7 @@ char *char_clone(const char *str)
 
 ////////////////////////////////////////////////
 
-char *char_renew(char *old_str, const char *str, const char *skip)
+char *char_renew(char *old_str, char *str, char *skip)
 {
   old_str=char_del(old_str);
   return char_new(str,skip);
@@ -69,7 +69,7 @@ char *char_renew_sprintf(char *old, char *skip, char* fmt, ...)
 
 ////////////////////////////////////////////////
 
-char *char_cat(char *str_old, const char *str_append)
+char *char_cat(char *str_old, char *str_append)
 {
   char *str_new=NULL;
   str_new=(char*)malloc(sizeof(char)*(strlen(str_old)+strlen(str_append)+1));
@@ -82,7 +82,7 @@ char *char_cat(char *str_old, const char *str_append)
 ////////////////////////////////////////////////
 
 
-int char_cmp(const char *a, const char *b)
+int char_cmp(char *a, char *b)
 {
   if(a==NULL && b==NULL){ return 1; } // a=b
   if(a==NULL){ return -1; }           // a<b
@@ -90,7 +90,7 @@ int char_cmp(const char *a, const char *b)
   return strcmp(a,b);
 }
 
-int char_eq(const char *a, const char *b)
+int char_eq(char *a, char *b)
 {
   return char_cmp(a,b)==0;
 }
@@ -98,7 +98,7 @@ int char_eq(const char *a, const char *b)
 
 ////////////////////////////////////////////////////////
 
-int char_match_any(char c, const char *str, int *pos)
+int char_match_any(char c, char *str, int *pos)
 {
   int value=0;
   if(str==NULL) return 0;
@@ -113,9 +113,10 @@ int char_match_any(char c, const char *str, int *pos)
 
 ////////////////////////////////////////////////////////
 
-int str_has_any_char(const char *s, const char *c)
+int str_has_any_char(char *s, char *c)
 {
   int ret=0;
+  if(s==NULL || c==NULL){ return 0; }
   while(ret==0 && (*s)!='\0'){
     if(char_match_any((*s),c,NULL)){ ret=1; }
     s++;
@@ -125,7 +126,7 @@ int str_has_any_char(const char *s, const char *c)
 
 ////////////////////////////////////////////////////////
 
-char *str_create_mask(const char *s, const char *mask_begin, const char *mask_end)
+char *str_create_mask(char *s, char *mask_begin, char *mask_end)
 {
   int n,count,i,k;
   char *mask=NULL,*m=NULL;
@@ -159,9 +160,9 @@ char *str_create_mask(const char *s, const char *mask_begin, const char *mask_en
 #define STR_POINT     "."
 #define STR_EXP       "eE"
 
-int str_match(const char *s, const char *p0, const char *mask_begin, const char *mask_end)
+int str_match(char *s, char *p0, char *mask_begin, char *mask_end)
 {
-  const char *p=NULL;
+  char *p=NULL;
   char *m0=NULL,*m=NULL;
   int done=0,matched=0,dp=1,ds=1,count=0,doing=0;
   // マスクの抜き出し
@@ -254,7 +255,7 @@ strings* strings_new(int n)
   return list;
 }
 
-strings* strings_new_str(const char *str[], const char *skip)
+strings* strings_new_str(char *str[], char *skip)
 {
   int i;
   strings *list;
@@ -350,7 +351,7 @@ void strings_resize(strings *list, int n)
 
 /////////////////////////////////////////////////////////
 
-int strings_index(strings *list, const char *str)
+int strings_index(strings *list, char *str)
 {
   int i;
   if(list==NULL || (list->n)<=0 || (list->str)==NULL){ return -1; }
@@ -410,7 +411,7 @@ void strings_item_del(strings *list, int n)
   list->str[n]=char_del(list->str[n]);
 }
 
-void strings_item_set(strings *list, int n, const char *str, const char *skip)
+void strings_item_set(strings *list, int n, char *str, char *skip)
 {
   if(list==NULL) return;
   if(n<0) return;
@@ -455,7 +456,7 @@ void strings_item_replace(strings *list, int k, strings *list2)
 
 /////////////////////////////////////////////////////////////
 
-strings* strings_split_path(const char *str, const char *suffix)
+strings* strings_split_path(char *str, char *suffix)
 {
   strings *list=NULL;
   char *s=NULL,*p=NULL;
@@ -500,7 +501,7 @@ strings* strings_split_path(const char *str, const char *suffix)
 
 /////////////////////////////////////////////////////////////
 
-strings* strings_split(const char *str, const char *sep, const char *mask_begin, const char *mask_end, const char *skip)
+strings* strings_split(char *str, char *sep, char *mask_begin, char *mask_end, char *skip)
 {
   int i,len,n,flag;
   char *s,*t,*m=NULL;
@@ -531,7 +532,7 @@ strings* strings_split(const char *str, const char *sep, const char *mask_begin,
   return list;
 }
 
-strings* strings_split_mask(const char *str, const char *mask_begin, const char *mask_end, const char *skip)
+strings* strings_split_mask(char *str, char *mask_begin, char *mask_end, char *skip)
 {
   int i,len,n,flag;
   char *s,*t,*m=NULL;
@@ -564,74 +565,85 @@ strings* strings_split_mask(const char *str, const char *mask_begin, const char 
 
 ///////////////////////////////////
 
-strings* strings_split_number(const char *s)
+strings* strings_split_number(char *s)
 {
-    strings *list=NULL;
-    int done,mode,*p,i,j,n,c,w,q;
-    char *t;
-    // check mode
-    n=strlen(s)+1;
-    p=ivec_allocate(n);
-    for(done=0, mode=0, i=0; !done; i++)
-    {
-        if(mode==0 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=1; }
-        else if(mode==0 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
-        else if(mode==0 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
-        else if(mode==1 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
-        else if(mode==1 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
-        else if(mode==2 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
-        else if(mode==2 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
-        else if(mode==2 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
-        else if(mode==3 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=4; }
-        else if(mode==3 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
-        else if(mode==4 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=4; }
-        else if(mode==4 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
-        else if(mode==5 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=6; }
-        else if(mode==5 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
-        else if(mode==6 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
-        else if(mode==7 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
-        else                                                    { mode=0; }
-        if(mode==0 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=1; }
-        else if(mode==0 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
-        else if(mode==0 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
-        if(s[i]=='\0'){ done=1; }
-        p[i]=mode;
+  strings *list=NULL;
+  int done,mode,*p,i,j,n,c,w,q;
+  char *t;
+  // check mode
+  // メモリの長さ
+  n=strlen(s)+1;
+  // モードの保存用
+  p=ivec_allocate(n);
+  // 浮動小数点数=[+-][数字][.][数字][e][+-][数字]
+  // mode=0: なし
+  // mode=1: 符号
+  // mode=2: 整数部の数字
+  // mode=3: 小数点'.'
+  // mode=4: 小数部の数字
+  // mode=5: 指数部の'e'
+  // mode=6: 指数部の+-
+  // mode=7: 指数部の数字
+  for(done=0, mode=0, i=0; !done; i++){
+         if(mode==0 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=1; }
+    else if(mode==0 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+    else if(mode==0 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+    else if(mode==1 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+    else if(mode==1 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+    else if(mode==2 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+    else if(mode==2 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+    else if(mode==2 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
+    else if(mode==3 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=4; }
+    else if(mode==3 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
+    else if(mode==4 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=4; }
+    else if(mode==4 && char_match_any(s[i],STR_EXP,   NULL)){ mode=5; }
+    else if(mode==5 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=6; }
+    else if(mode==5 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
+    else if(mode==6 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
+    else if(mode==7 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=7; }
+    else                                                    { mode=0; }
+    if(mode==0 && char_match_any(s[i],STR_SIGN,  NULL)){ mode=1; }
+    else if(mode==0 && char_match_any(s[i],STR_DIGITS,NULL)){ mode=2; }
+    else if(mode==0 && char_match_any(s[i],STR_POINT, NULL)){ mode=3; }
+    if(s[i]=='\0'){ done=1; }
+    p[i]=mode;
+  }
+  // count letters and words
+  for(q=0, c=0, w=0, i=0; i<n; i++){
+    // 文字数のカウント mode=1〜7
+    if(p[i]>0){ c++; }
+         if(p[i]>q)          { q=p[i];      }
+    else if(p[i]>0 && p[i]<q){ q=p[i]; w++; }
+  }
+  w++;
+  // split strings
+  t=malloc(sizeof(char)*(c+w));
+  for(i=0, j=0, q=0; i<n; i++){
+         if(p[i]>q)          { q=p[i];              }
+    else if(p[i]>0 && p[i]<q){ q=p[i]; t[j++]='\0'; }
+         if(p[i]>0)    { t[j++]=s[i]; }
+    else if(s[i]=='\0'){ t[j++]='\0'; }
+  }
+  // allocate list
+  list=strings_new(w);
+  i=0; j=0;
+  if(t[i]!='\0'){
+    strings_item_set(list,j,&t[i],NULL);
+    j++;
+  }
+  for(i=0, q=0; i<c+w; i++){
+    if(t[i]=='\0'){ q=1; }
+    if(t[i]!='\0' && q){
+      strings_item_set(list,j,&t[i],NULL);
+      j++;
+      q=0;
     }
-    // count letters and words
-    for(q=0, c=0, w=0, i=0; i<n; i++){
-        if(p[i]!=0){ c++; }
-        if(p[i]>q){ q=p[i]; }
-        else if(p[i]!=0 && p[i]<q){ q=p[i]; w++; }
-    }
-    w++;
-    // split strings
-    t=malloc(sizeof(char)*(c+w));
-    for(i=0, j=0, q=0; i<n; i++){
-        if(p[i]>q){ q=p[i]; }
-        else if(p[i]!=0 && p[i]<q){ q=p[i]; t[j++]='\0'; }
-        if(p[i]!=0){ t[j++]=s[i]; }
-        else if(s[i]=='\0'){ t[j++]='\0'; }
-    }
-    // allocate list
-    list=strings_new(w);
-    i=0; j=0;
-    if(t[i]!='\0'){
-        strings_item_set(list,j,&t[i],NULL);
-        j++;
-    }
-    for(i=0, q=0; i<c+w; i++){
-        if(t[i]=='\0'){ q=1; }
-        if(t[i]!='\0' && q){
-            strings_item_set(list,j,&t[i],NULL);
-            j++;
-            q=0;
-        }
-    }
-    // free
-    p=ivec_free(p);
-    free(t);
-    // done
-    return list;
+  }
+  // free
+  p=ivec_free(p);
+  free(t);
+  // done
+  return list;
 }
 
 ///////////////////////////////////
@@ -648,5 +660,48 @@ int strings_cmp(strings *f, strings *g)
   else if(f->n > g->n){ return +1; }
   else                { return  0; }
 }
+
+///////////////////////////////////
+
+strings *strings_split_str_to_irmulti(char *str)
+{
+  int i;
+  strings *a=NULL,*b=NULL,*c=NULL;
+  c=strings_new(4);
+  a=strings_split(str,", ",NULL,NULL,"()[] \n\t");  
+  if(strings_size(a)>=1 && strings_at(a,0)!=NULL){    
+    if(STR_EQ(strings_at(a,0),"i")){ strings_item_set(a,0,"1i","()[] \n\t"); }
+    b=strings_split_number(strings_at(a,0));
+    if(strings_size(b)>=1 && strings_at(b,0)!=NULL){ strings_item_set(c,0,strings_at(b,0),"()[] \n\t"); }
+    if(strings_size(b)>=2 && strings_at(b,1)!=NULL){ strings_item_set(c,1,strings_at(b,1),"()[] \n\t"); }
+    b=strings_del(b);
+    if(str_has_any_char(strings_at(a,0),"iIjJ") && strings_at(c,0)!=NULL && strings_at(c,1)==NULL){
+      strings_item_set(c,1,strings_at(c,0),"()[] \n\t");
+      strings_item_del(c,0);
+    }    
+  }
+  if(strings_size(a)>=2 && strings_at(a,1)!=NULL){
+    if(STR_EQ(strings_at(a,1),"i")){ strings_item_set(a,1,"1i","()[] \n\t"); }
+    b=strings_split_number(strings_at(a,1));
+    if(strings_size(b)>=1 && strings_at(b,0)!=NULL){ strings_item_set(c,2,strings_at(b,0),"()[] \n\t"); }
+    if(strings_size(b)>=2 && strings_at(b,1)!=NULL){ strings_item_set(c,3,strings_at(b,1),"()[] \n\t"); }
+    b=strings_del(b);
+    if(str_has_any_char(strings_at(a,1),"iIjJ") && strings_at(c,2)!=NULL && strings_at(c,3)==NULL){
+      strings_item_set(c,3,strings_at(c,2),"()[] \n\t");
+      strings_item_del(c,2);
+    }    
+  }
+  for(i=0; i<4; i++){
+    if(strings_at(c,i)!=NULL && STR_EQ(strings_at(c,i),"+")){ strings_item_set(c,i,"1","()[] \n\t"); }
+    if(strings_at(c,i)!=NULL && STR_EQ(strings_at(c,i),"-")){ strings_item_set(c,i,"-1","()[] \n\t"); }
+  }
+  if(strings_at(c,0)!=NULL && strings_at(c,1)==NULL){ strings_item_set(c,1,"0","()[] \n\t"); }
+  if(strings_at(c,2)!=NULL && strings_at(c,3)==NULL){ strings_item_set(c,3,"0","()[] \n\t"); }
+  if(strings_at(c,0)==NULL && strings_at(c,1)!=NULL){ strings_item_set(c,0,"0","()[] \n\t"); }
+  if(strings_at(c,2)==NULL && strings_at(c,3)!=NULL){ strings_item_set(c,2,"0","()[] \n\t"); }
+  a=strings_del(a);
+  return c;
+}
+
 
 //EOF

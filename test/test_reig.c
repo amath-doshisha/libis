@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
   rvec_set_zeros(n,lambda);
 
   // print
-  rmat_print(n,n,A,LDA,"A=","f",0);
+  rmat_print(n,n,A,LDA,"A=",'f',0);
 
   // compute
   k=rhpeig(n,X,LDX,lambda,A,LDA,debug);
@@ -57,10 +57,10 @@ int main(int argc, char *argv[])
     printf("Succeeded to compute.\n");
   }
 
-  rmat_print(n,k,X,LDX,"X=","f",1);
-  rvec_print(k,lambda,"lambda=","e",2);
-  rvec_print(k,E,"E=","e",0);
-  rvec_print(k,Ebin,"log2(E)=","f",1);
+  rmat_print(n,k,X,LDX,"X=",'f',1);
+  rvec_print(k,lambda,"lambda=",'e',2);
+  rvec_print(k,E,"E=",'e',0);
+  rvec_print(k,Ebin,"log2(E)=",'f',1);
   rvec_max_abs(a,k,E); mpfr_printf("max(E)=%.0Re\n",a);
   rvec_max(a,k,Ebin);  mpfr_printf("max(log2(E))=%.2Rf\n",a);
 

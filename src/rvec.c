@@ -3,6 +3,7 @@
 #include<math.h>
 #include<stdarg.h>
 #include"is_macros.h"
+#include"is_svec.h"
 #include"is_rmulti.h"
 #include"is_ivec.h"
 #include"is_rvec.h"
@@ -77,7 +78,7 @@ rmulti **rvec_allocate_clone(int n, rmulti **y)
 rmulti **rvec_free(int n, rmulti **x)
 {
   int i;
-  if(x==NULL) return NULL;
+  if(x==NULL){ return NULL; }
   for(i=0; i<n; i++){ x[i]=rfree(x[i]); }
   free(x);
   x=NULL;
@@ -213,18 +214,18 @@ int rvec_has_nan(int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの表示.
 */
-void rvec_print(int n, rmulti **x, const char *name, const char *f, int digits)
+void rvec_print(int n, rmulti **x, char *name, char format, int digits)
 {
-  int i,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){ k=3; }
-  else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){ k=8; }
-  else if((strcmp(f,"g")==0) || (strcmp(f,"G")==0)){ k=7; }
-  else{ k=3; }
-  sprintf(format,"%%%d.%dR%s\n",digits+k,digits,f);
-  if(name!=NULL){ printf("%s\n",name); }
-  if(x==NULL){ printf("NULL\n"); return; }
-  for(i=0; i<n; i++){ mpfr_printf(format,x[i]); }
+  char **s=NULL;
+  if(x==NULL){
+    if(name!=NULL){ printf("%s=NULL\n",name); }
+    else          { printf("NULL\n"); }
+    return;
+  }
+  s=svec_allocate(n);
+  rvec_get_s(n,s,x,format,digits);
+  svec_print(n,s,name);
+  s=svec_free(n,s);
 }
 
 /**
@@ -479,12 +480,30 @@ void rvec_set_nan(int n, rmulti **x)
 }
 
 /**
+ @brief rmulti型のベクトルの値をInfに設定.
+*/
+void rvec_set_inf(int n, rmulti **x, int sgn)
+{
+  int i;
+  for(i=0; i<n; i++){ rset_inf(x[i],sgn); }
+}
+
+/**
  @brief rmulti型のベクトルの値を文字列から設定.
 */
-void rvec_set_s(int n, rmulti **x, const char **str)
+void rvec_set_s(int n, rmulti **x, char **str)
 {
   int i;
   for(i=0; i<n; i++){ rset_s(x[i],str[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの値を整数 から設定.
+*/
+void rvec_set_si(int n, rmulti **y, int *x)
+{
+  int i;
+  for(i=0; i<n; i++){ rset_si(y[i],x[i]); }
 }
 
 /**
@@ -507,7 +526,7 @@ void rvec_set_z(int n, rmulti **y, dcomplex *x)
 
 /**
  @brief rmulti型のベクトルの全ての値を倍精度実数から設定.
-*/
+ */
 void rvec_set_all_d(int n, rmulti **x, double a)
 {
   int i;
@@ -571,6 +590,15 @@ void rvec_set_rand(int n, rmulti **x, double a, double b)
 /** @{ */
 
 /**
+ @brief rmulti型のベクトルを整数型に変換.
+ */
+void rvec_get_si(int n, int *y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=rget_d(x[i]); }
+}
+
+/**
  @brief rmulti型のベクトルを倍精度実数型に変換.
  */
 void rvec_get_d(int n, double *y, rmulti **x)
@@ -586,6 +614,20 @@ void rvec_get_z(int n, dcomplex *y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(y[i],rget_d(x[i]),0); }
+}
+
+/**
+ @brief rmulti型のベクトルを文字列型に変換 y=char(x)
+ */
+void rvec_get_s(int n, char **y, rmulti **x, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i;
+  sprintf(f,"%%-.%dR%c",digits,format);
+  for(i=0; i<n; i++){
+    mpfr_sprintf(buf,f,x[i]);
+    y[i]=char_renew(y[i],buf,NULL);
+  }
 }
 
 /** @} */
@@ -639,7 +681,7 @@ void rvec_swap_index(int n, rmulti **x, const int *I)
  */
 void rvec_sort(int n, rmulti **x, int *I)
 {
-  if(I!=NULL){ ivec_grid(n,I); }
+  if(I!=NULL){ ivec_set_grid(n,I); }
   rvec_quick_sort(n,x,I,0,n-1);
 }
 

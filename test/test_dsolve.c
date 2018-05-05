@@ -15,30 +15,30 @@ int main()
 
   // initialize
   init_genrand(0);
-  dmat_rand(n,n,A,LDA,2,-1);
+  dmat_set_rand(n,n,A,LDA,2,-1);
   dmat_copy(n,n,A0,LDA,A,LDA);
-  dvec_ones(n,x0);
+  dvec_set_ones(n,x0);
   dvec_lintr(n,n,b,A,LDA,x0);
   dvec_copy(n,x,b);
 
 
   printf("before\n");
-  dmat_print(n,n,A,LDA,"A=","f",2);
-  dvec_print(n,b,"b=","f",2);
-  dvec_print(n,x0,"x0=","f",2);
+  dmat_print(n,n,A,LDA,"A=",'f',2);
+  dvec_print(n,b,"b=",'f',2);
+  dvec_print(n,x0,"x0=",'f',2);
 
   printf("after\n");
   dsolve(n,1,x,n,A,LDA);
-  dmat_print(n,n,A,LDA,"A=","f",2);
-  dvec_print(n,x,"x=","f",2);
-  dvec_print(n,x0,"x0=","f",2);
+  dmat_print(n,n,A,LDA,"A=",'f',2);
+  dvec_print(n,x,"x=",'f',2);
+  dvec_print(n,x0,"x0=",'f',2);
 
   // residual
   dsolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
-  dvec_print(n,r,"r=b-A0*x=","e",2);
+  dvec_print(n,r,"r=b-A0*x=",'e',2);
 
   dvec_sub(n,x,x0);
-  dvec_print(n,x,"x-x0=","e",2);
+  dvec_print(n,x,"x-x0=",'e',2);
   printf("||x-x0||=%.2e\n",dvec_norm_max(n,x));
 
   // free

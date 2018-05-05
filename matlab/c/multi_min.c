@@ -4,11 +4,11 @@
 //区間の場合 [y0,y1]=[min(x0),min(x1)]
 void multi_min(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL;
+  array *x=NULL,*y=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_min: The 1st-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
+  x=mxArray_to_array(prhs[N0]);
   // operation
   ccmp_set_abs_arg();
   if((_M(x)==1 && _L(x)==1) || (_N(x)==1 && _L(x)==1)){
@@ -43,9 +43,9 @@ void multi_min(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else if(_T(x)=='C'){ y=multi_allocate('C',1,_N(x),_L(x)); icmat3_min(_M(x),_N(x),_L(x),_C0(y),_C1(y),_LD1(y),_LD2(y),_C0(x),_C1(x),_LD1(x),_LD2(x)); }
   }else{ MATLAB_ERROR("multi_min: error"); }
   // done
-  plhs[0]=mxCreateStructMulti(y);
-  x=multi_free(x);
-  y=multi_free(y);
+  plhs[0]=array_to_mxArray(y);
+  x=array_free(x);
+  y=array_free(y);
   return;
 }
 

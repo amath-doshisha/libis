@@ -3,13 +3,13 @@
  */
 void multi_lt(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL,*z=NULL;
+  array *x=NULL,*y=NULL,*z=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_lt: The 1st-arg should be Struct."); }
   if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_lt: The 2nd-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
-  y=multi_allocate_mxArray(prhs[N0+1]);
+  x=mxArray_to_array(prhs[N0]);
+  y=mxArray_to_array(prhs[N0+1]);
   // operation
   if(_M(x)==_M(y) && _N(x)==_N(y) && _L(x)==_L(y)){  // In the case of same sizes
          if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('i',_M(x),_N(x),_L(x)); rmat3_lt      (_M(z),_N(z),_L(z),_I(z),_LD1(z),_LD2(z),_R(x),_LD1(x),_LD2(x),_R(y),_LD1(y),_LD2(y)); }
@@ -31,11 +31,11 @@ void multi_lt(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else{ MATLAB_ERROR("multi_lt: Unkown type"); }
   }else{ MATLAB_ERROR("multi_lt: z=x+y: Dimensions of x and y are NOT same."); }
   // done
-  plhs[0]=mxCreateStructMulti(z);
+  plhs[0]=array_to_mxArray(z);
   
-  x=multi_free(x);
-  y=multi_free(y);
-  z=multi_free(z);
+  x=array_free(x);
+  y=array_free(y);
+  z=array_free(z);
   return;
 }
 

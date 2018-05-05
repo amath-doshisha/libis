@@ -76,7 +76,7 @@ void eterm_show(int m, cmulti **x, func_t *fF, int bmax, int kappa)
   CVF(y,m); RVF(e,kmax); RVF(eps,kmax); RVF(em,kmax); RVF(r,kmax); RVF(p,kmax); RF(rmax);
 }
 
-int main(int argc, const char *argv[])
+int main(int argc, char *argv[])
 {
   char *eq[]={"{x-sin(3/2*(x+y)), y-cos(3/2*(x+y))}",
 	      "{x^3+y^2+1, x^2+y^2+2}",
@@ -151,14 +151,14 @@ int main(int argc, const char *argv[])
 
   // set initial vector
   init_genrand(seed);
-  cvec_set_rand(m,x0,2,-1);     cvec_print(m,x0,"x0=","f",6);
+  cvec_set_rand(m,x0,2,-1);     cvec_print(m,x0,"x0=",'f',6);
 
   // solve for true solution
   printf("#-------------------\n");
   cvec_clone(m,x_true,x0);
   csolve_newton(m,x_true,fF,step_max0,debug);
     //prec=csolve_newton_adjust(m,x_true,fF,NULL,eps_true,step_max0,mu,l,kappa,debug);
-  cvec_print(m,x_true,"x*=","e",20);
+  cvec_print(m,x_true,"x*=",'e',20);
   cvec_clone(m,x,x_true);
 
   // solve
@@ -166,7 +166,7 @@ int main(int argc, const char *argv[])
     printf("#-------------------\n");
     cvec_clone(m,x,x0);
     prec=csolve_newton_adjust(m,x,fF,x_true,eps,step_max,mu,l,kappa,debug);
-    cvec_print(m,x,"x=","e",20);
+    cvec_print(m,x,"x=",'e',20);
   }
  
   // error
@@ -177,7 +177,7 @@ int main(int argc, const char *argv[])
   cvec_set_nan(m,e);
   info=csolve_krawczyk(m,e,x,fF,debug-2);
   if(info){ print_red(); printf("failed.\n"); } else{ print_green(); printf("succeeded.\n"); } print_reset();
-  cvec_print(m,e,"e=","e",1);
+  cvec_print(m,e,"e=",'e',1);
 
   if(eterm){
     printf("#-------------------\n");

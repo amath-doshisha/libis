@@ -4,8 +4,9 @@
 #include"is_macros.h"
 #include"is_imat.h"
 #include"is_ivec.h"
+#include"is_strings.h"
+#include"is_svec.h"
 #include"mt19937ar.h"
-
 
 // B+=A
 void imat_add(int m, int n, int *B, int LDB, const int *A, int LDA)
@@ -209,19 +210,32 @@ int imat_column_count_if(int m, int n, int *A, int LDA, int j, int value)
 
 //////////////////////////////////////
 
-void imat_print(int m, int n, const int *A, int LDA, const char *name, int digits)
+// y=char(x)
+void imat_get_s(int m, int n, char **B, int LDB, int *A, int LDA)
 {
   int i,j;
-  char format[128];
-  sprintf(format,"%%%dd",digits+1);
-  if(name!=NULL){ printf("%s\n",name); }
-  if(A==NULL){ printf("NULL\n"); return; }
+  if(A==NULL){ return; }
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      printf((const char*)format,MAT(A,i,j,LDA));
+      MAT(B,i,j,LDB)=char_renew_sprintf(MAT(B,i,j,LDB),NULL,"%d",MAT(A,i,j,LDA));
     }
-    printf("\n");
   }
+}
+
+//////////////////////////////////////
+
+void imat_print(int m, int n, int *A, int LDA, char *name)
+{
+  char **s=NULL;
+  if(A==NULL){
+    if(name!=NULL){ printf("%s=NULL\n",name); }
+    else          { printf("NULL\n"); }
+    return;
+  }  
+  s=svec_allocate(m*n);
+  imat_get_s(m,n,s,m,A,LDA);
+  smat_print(m,n,s,m,name);
+  s=svec_free(m*n,s);
 }
 
 void imat_save(int m, int n, int *A, int LDA, char* fmt, ...)

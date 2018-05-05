@@ -5,11 +5,11 @@
 //区間ベクトルの場合 [y0,y1]=norm_Inf([x])=max(abs([x]))
 void multi_norm_Inf(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL,*u=NULL,*v=NULL,*w=NULL;
+  array *x=NULL,*y=NULL,*u=NULL,*v=NULL,*w=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_norm_Inf: The 1st-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
+  x=mxArray_to_array(prhs[N0]);
   // operation
   // abs([x])
        if(_T(x)=='r'){ u=multi_allocate('r',_M(x),_N(x),_L(x)); rmat3_abs(_M(u),_N(u),_L(u),_R(u),_LD1(u),_LD2(u),_R(x),_LD1(x),_LD2(x)); }
@@ -27,12 +27,12 @@ void multi_norm_Inf(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
       w=multi_allocate('R',1,_N(v),1); irvec_sum_irmat(_M(v),_N(v),_R0(w),_R1(w),_R0(v),_R1(v),_LD1(v)); irvec_max(_R0(y)[0],_R1(y)[0],_N(w),_R0(w),_R1(w)); }
    }else{ MATLAB_ERROR("multi_norm_Inf: error"); }
   // done
-  plhs[0]=mxCreateStructMulti(y);
-  x=multi_free(x);
-  y=multi_free(y);
-  u=multi_free(u);
-  v=multi_free(v);
-  w=multi_free(w);
+  plhs[0]=array_to_mxArray(y);
+  x=array_free(x);
+  y=array_free(y);
+  u=array_free(u);
+  v=array_free(v);
+  w=array_free(w);
   return;
 }
 

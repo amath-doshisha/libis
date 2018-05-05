@@ -1,13 +1,13 @@
 <map id="dvec_allocate_s" name="dvec_allocate_s">
-<area shape="rect" id="node2" href="$is__strings_8h.html#a88f2401a11610bcfe6b2cd48e1c77d2f" title="strings_split" alt="" coords="151,132,225,159"/>
+<area shape="rect" id="node2" href="$is__strings_8h.html#a911cb3c1b6c59fb1483af70cc50c4d9b" title="strings_split" alt="" coords="151,132,225,159"/>
 <area shape="rect" id="node14" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="147,309,229,336"/>
 <area shape="rect" id="node15" href="$is__strings_8h.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="153,461,223,488"/>
-<area shape="rect" id="node3" href="$strings_8c.html#a5e7fe59a8263c351605a303a3e925bd9" title="char_new" alt="" coords="435,132,501,159"/>
-<area shape="rect" id="node4" href="$strings_8c.html#ae363dfd1150049090df04b33a6253bc8" title="char_match_any" alt="" coords="564,81,660,108"/>
-<area shape="rect" id="node5" href="$strings_8c.html#a3a43f9c2d94668712c216a80e7594759" title="str_create_mask" alt="" coords="420,31,516,57"/>
+<area shape="rect" id="node3" href="$strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="435,132,501,159"/>
+<area shape="rect" id="node4" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="564,81,660,108"/>
+<area shape="rect" id="node5" href="$strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="420,31,516,57"/>
 <area shape="rect" id="node6" href="$strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="858,259,918,285"/>
 <area shape="rect" id="node7" href="$strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="287,31,363,57"/>
-<area shape="rect" id="node8" href="$strings_8c.html#a61461a579c8005f40d98b21557dc6384" title="strings_item_set" alt="" coords="277,183,372,209"/>
+<area shape="rect" id="node8" href="$strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="277,183,372,209"/>
 <area shape="rect" id="node9" href="$strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="708,183,803,209"/>
 <area shape="rect" id="node10" href="$strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="426,284,510,311"/>
 <area shape="rect" id="node11" href="$strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="573,335,651,361"/>

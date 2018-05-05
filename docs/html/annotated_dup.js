@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "array_struct", "structarray__struct.html", "structarray__struct" ],
     [ "bigint_struct", "structbigint__struct.html", "structbigint__struct" ],
     [ "cmulti_struct", "structcmulti__struct.html", "structcmulti__struct" ],
     [ "dcomplex", "structdcomplex.html", "structdcomplex" ],

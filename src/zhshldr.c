@@ -32,7 +32,7 @@ void zhouseholder_vec(int n, int k, dcomplex *h, double *alpha, const dcomplex *
   if(eta==0) xi=eta-axk;        // eta=eta-|x(k)|
   else       xi=xi/(eta+axk);   // eta=xi/(eta+|x(k)|)
   //----------- h
-  zvec_zeros(k,h);
+  zvec_set_zeros(k,h);
   zvec_copy(n-k-1,&h[k+1],&x[k+1]);    // h((k+1):end)=x((k+1):end);
   if((Z_R(x[k])*Z_I(x[k]))==0.0){
     Z_SET(h[k],-xi,0);

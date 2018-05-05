@@ -33,7 +33,7 @@ bigint *bigint_allocate_int(int num, int den)
   return x;
 }
 
-bigint *bigint_allocate_str(const char *num, const char *den)
+bigint *bigint_allocate_str(char *num, char *den)
 {
   bigint *x=NULL;
   x=bigint_allocate();
@@ -41,7 +41,7 @@ bigint *bigint_allocate_str(const char *num, const char *den)
   return x;
 }
 
-bigint *bigint_allocate_script(const char *str)
+bigint *bigint_allocate_script(char *str)
 {
   bigint *x=NULL;
   x=bigint_allocate();
@@ -154,7 +154,7 @@ void bigint_set_int(bigint *x, int num, int den)
   bigint_check(x);
 }
 
-void bigint_set_str(bigint *x, const char *num, const char *den)
+void bigint_set_str(bigint *x, char *num, char *den)
 {
   int p_num,p_den;
   p_num=(((int)(((int)strlen(num))/(log10(2.0))))/BIGINT_DEFAULT_PREC+1)*BIGINT_DEFAULT_PREC;
@@ -166,7 +166,7 @@ void bigint_set_str(bigint *x, const char *num, const char *den)
   bigint_check(x);
 }
 
-void bigint_set_script(bigint *x, const char *str)
+void bigint_set_script(bigint *x, char *str)
 {
   strings *list=NULL;
   list=strings_split(str,"/",NULL,NULL," \t\n");
@@ -175,7 +175,7 @@ void bigint_set_script(bigint *x, const char *str)
   }else if(list!=NULL && list->n==2){
     bigint_set_str(x,list->str[0],list->str[1]);
   }else{
-    printf("Error in void bigint_set_script(bigint *x, const char *str)\n");
+    printf("Error in void bigint_set_script(bigint *x, char *str)\n");
     printf("str=%s",str);
     exit(0);
   }

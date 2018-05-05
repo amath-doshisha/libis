@@ -5,19 +5,30 @@
  * allocation
  */
 int* ivec_allocate(int n);
+int* ivec_allocate_clone(int n, int *y);
 int* ivec_free(int *x);
 
 /*
  * initialization
  */
 // X=zeros(n,1)
-void ivec_zeros(int n, int *X);
+void ivec_set_zeros(int n, int *X);
 // X=ones(n,1)
-void ivec_ones(int n, int *X);
+void ivec_set_ones(int n, int *X);
 // X=ones(n,1)*a
-void ivec_set(int n, int *X, int a);
+void ivec_set_all(int n, int *X, int a);
 // X[0]=0; X[1]=1; X[2]=2; ...; X[n-1]=n-1
-void ivec_grid(int n, int *X);
+void ivec_set_grid(int n, int *X);
+// x=rand(n,1) under [a0,a1]
+void ivec_set_rand(int n, int *x, int a0, int a1);
+// y=x
+void ivec_set_s(int n, int *y, char **x);
+
+/*
+ * casting
+ */
+// y=char(x)
+void ivec_get_s(int n, char **y, int *x);
 
 /*
  * convert itself to another vector
@@ -87,6 +98,15 @@ int ivec_eq(int n, const int *X, const int *Y);
 int ivec_ne(int n, const int *X, const int *Y);
 // X<=>Y
 int ivec_cmp(int n, const int *X, int m, const int *Y);
+// x[i]>y for all i
+int ivec_all_gt(int n, const int *x, int y);
+// x[i]>=y for all i
+int ivec_all_ge(int n, const int *x, int y);
+// x[i]<y for all i
+int ivec_all_lt(int n, const int *x, int y);
+// x[i]<=y for all i
+int ivec_all_le(int n, const int *x, int y);
+
 
 /*
  * index operations
@@ -103,7 +123,8 @@ int ivec_first_index_if_not(int n, const int *X, int value);
 /*
  * input and output
  */
-void ivec_print(int n, const int *X, char *name);
+void ivec_put(int n, int *x, char *sep);
+void ivec_print(int n, int *x, char *name);
 void ivec_save(int n, int *x, int offset, char *fmt, ...);
 
 #endif

@@ -3,13 +3,13 @@
  */
 void multi_mpower(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL,*z=NULL;
+  array *x=NULL,*y=NULL,*z=NULL;
   if(nlhs>1)                    { mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0)))  { MATLAB_ERROR("multi_power: The 1st-arg should be Struct."); }
   if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_power: The 2nd-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
-  y=multi_allocate_mxArray(prhs[N0+1]);
+  x=mxArray_to_array(prhs[N0]);
+  y=mxArray_to_array(prhs[N0+1]);
   if(!(_M(x)==_N(x) && _L(y)==1))        { MATLAB_ERROR("multi_mpower: z=x^y: x should be square matrix or scalar."); }
   if(!(_M(y)==1 && _N(y)==1 && _L(y)==1)){ MATLAB_ERROR("multi_mpower: z=x^y: y should be scalar."); }
   // operation
@@ -26,10 +26,10 @@ void multi_mpower(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else{ MATLAB_ERROR("multi_mpower: Unkown type"); }    
   }else{ MATLAB_ERROR("multi_mpower: z=x^y: x should be square matrix."); } 
   // done
-  plhs[0]=mxCreateStructMulti(z);  
-  x=multi_free(x);
-  y=multi_free(y);
-  z=multi_free(z);
+  plhs[0]=array_to_mxArray(z);  
+  x=array_free(x);
+  y=array_free(y);
+  z=array_free(z);
   return;
 }
 

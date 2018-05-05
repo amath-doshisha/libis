@@ -8,14 +8,14 @@
 void multi_eig_verify(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   int m=0,prec_verify=128,prec=-1,kprec=-1,LDA,debug=0;
-  multi *A=NULL,*cA=NULL,*D=NULL,*rD=NULL,*V=NULL,*rV=NULL,*ED=NULL,*rED=NULL,*EV=NULL,*rEV=NULL;
+  array *A=NULL,*cA=NULL,*D=NULL,*rD=NULL,*V=NULL,*rV=NULL,*ED=NULL,*rED=NULL,*EV=NULL,*rEV=NULL;
   if(nlhs>=5)                 { mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(nrhs>N0+3)               { mexErrMsgIdAndTxt("MATLAB:multi_mex:maxrhs","Too many input arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_eig_verify: The 1st-arg should be Struct."); }
   if(IS_NUMR(nrhs,prhs,N0+1)){ prec_verify=GET_DOUBLE(prhs[N0+1])[0]; }
   if(IS_NUMR(nrhs,prhs,N0+2)){ debug=GET_DOUBLE(prhs[N0+2])[0]; }
   // allocate by clone
-  A=multi_allocate_mxArray(prhs[N0]);
+  A=mxArray_to_array(prhs[N0]);
   // check size
   if(!(_M(A)==_N(A) && _L(A)==1)){ MATLAB_ERROR("multi_eig: eig(A): A should be square matrix."); }
   m=_M(A);
@@ -48,35 +48,35 @@ void multi_eig_verify(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]
   }
   // done
   if(nlhs==1){ // D=eig_verify(A,prec_verify)
-    if(rD!=NULL){ plhs[0]=mxCreateStructMulti(rD); }
-    else        { plhs[0]=mxCreateStructMulti(D); }
+    if(rD!=NULL){ plhs[0]=array_to_mxArray(rD); }
+    else        { plhs[0]=array_to_mxArray(D); }
   }else if(nlhs==2){ // [V,D]=eig_verify(A,prec_verify)
-    plhs[0]=mxCreateStructMulti(V);
-    if(rD!=NULL){ plhs[1]=mxCreateStructMulti(rD); }
-    else        { plhs[1]=mxCreateStructMulti(D); }
+    plhs[0]=array_to_mxArray(V);
+    if(rD!=NULL){ plhs[1]=array_to_mxArray(rD); }
+    else        { plhs[1]=array_to_mxArray(D); }
   }else if(nlhs==3){
     MATLAB_ERROR("multi_eig_verify: 3 output arguments is illeagal.");
   }else if(nlhs==4){ // [V,D,EV,ED]=eig_verify(A,prec_verify)
-    if(rV!=NULL){ plhs[0]=mxCreateStructMulti(rV); }
-    else        { plhs[0]=mxCreateStructMulti(V); }    
-    if(rD!=NULL){ plhs[1]=mxCreateStructMulti(rD); }
-    else        { plhs[1]=mxCreateStructMulti(D); }
-    if(rEV!=NULL){ plhs[2]=mxCreateStructMulti(rEV); }
-    else         { plhs[2]=mxCreateStructMulti(EV); }
-    if(rED!=NULL){ plhs[3]=mxCreateStructMulti(rED); }
-    else         { plhs[3]=mxCreateStructMulti(ED); }
+    if(rV!=NULL){ plhs[0]=array_to_mxArray(rV); }
+    else        { plhs[0]=array_to_mxArray(V); }    
+    if(rD!=NULL){ plhs[1]=array_to_mxArray(rD); }
+    else        { plhs[1]=array_to_mxArray(D); }
+    if(rEV!=NULL){ plhs[2]=array_to_mxArray(rEV); }
+    else         { plhs[2]=array_to_mxArray(EV); }
+    if(rED!=NULL){ plhs[3]=array_to_mxArray(rED); }
+    else         { plhs[3]=array_to_mxArray(ED); }
   }else{ MATLAB_ERROR("multi_eig_verify: Too many output arguments."); }
   // free
-  A=multi_free(A);
-  cA=multi_free(cA);
-  V=multi_free(V);
-  rV=multi_free(rV);
-  D=multi_free(D);
-  rD=multi_free(rD);
-  EV=multi_free(EV);
-  rEV=multi_free(rEV);
-  ED=multi_free(ED);
-  rED=multi_free(rED);
+  A=array_free(A);
+  cA=array_free(cA);
+  V=array_free(V);
+  rV=array_free(rV);
+  D=array_free(D);
+  rD=array_free(rD);
+  EV=array_free(EV);
+  rEV=array_free(rEV);
+  ED=array_free(ED);
+  rED=array_free(rED);
   return;
 }
 

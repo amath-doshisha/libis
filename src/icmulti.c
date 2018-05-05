@@ -55,12 +55,45 @@ void icset_dd(cmulti *y0, cmulti *y1, double xr, double xi)
 }
 
 /**
+ @brief 倍精度複素数の設定 [y0,y1]=[x0,x1].
+ */
+void icset_zd(cmulti *y0, cmulti *y1, dcomplex x0, double x1)
+{
+  irset_dd(C_R(y0),C_R(y1),Z_R(x0),x1);
+  irset_dd(C_I(y0),C_I(y1),Z_I(x0),0);
+}
+
+/**
+ @brief 倍精度複素数の設定 [y0,y1]=[x0,x1].
+ */
+void icset_dz(cmulti *y0, cmulti *y1, double x0, dcomplex x1)
+{
+  irset_dd(C_R(y0),C_R(y1),x0,Z_R(x1));
+  irset_dd(C_I(y0),C_I(y1),0, Z_I(x1));
+}
+
+/**
  @brief 倍精度実数の設定 [y0,y1]=[x,x].
  */
 void icset_d(cmulti *y0, cmulti *y1, double x)
 {
   irset_d(C_R(y0),C_R(y1),x);
   irset_d(C_I(y0),C_I(y1),0);
+}
+
+void icset_s(cmulti *x0, cmulti *x1, char *s)
+{
+  int ret;
+  strings *a=NULL;
+  NULL_EXC3(x0,x1,s);
+  cset_nan(x0); cset_nan(x1);
+  a=strings_split_str_to_irmulti(s);
+  if(strings_size(a)!=4){ ERROR_AT; }
+  if(strings_at(a,0)!=NULL){ ret=mpfr_set_str(C_R(x0),strings_at(a,0),10,MPFR_RNDD); if(ret){ rset_nan(C_R(x0)); } }
+  if(strings_at(a,1)!=NULL){ ret=mpfr_set_str(C_I(x0),strings_at(a,1),10,MPFR_RNDD); if(ret){ rset_nan(C_I(x0)); } }
+  if(strings_at(a,2)!=NULL){ ret=mpfr_set_str(C_R(x1),strings_at(a,2),10,MPFR_RNDU); if(ret){ rset_nan(C_R(x1)); } }
+  if(strings_at(a,3)!=NULL){ ret=mpfr_set_str(C_I(x1),strings_at(a,3),10,MPFR_RNDU); if(ret){ rset_nan(C_I(x1)); } }
+  if(cis_nan(x1)){ mpfr_set(C_R(x1),C_R(x0),MPFR_RNDU); mpfr_set(C_I(x1),C_I(x0),MPFR_RNDU); }
 }
 
 /**
@@ -75,20 +108,39 @@ void iccopy(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
 /**
  @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
  */
-void iccopy_r(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1)
+void iccopy_rr(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1)
 {
   ircopy(C_R(y0),C_R(y1),x0,x1);
   irset_d(C_I(y0),C_I(y1),0);
 }
 
 /**
- @brief コピー [c0,c1]=[a0,a1]+[b0,b1]i. rmultiをcmultiにキャスト
+ @brief コピー [c0,c1]=[a0r,a1r]+[a0i,b0i]i. rmultiをcmultiにキャスト
  */
-void iccopy_rr(cmulti *c0, cmulti *c1, rmulti *a0, rmulti *a1, rmulti *b0, rmulti *b1)
+void iccopy_rrrr(cmulti *c0, cmulti *c1, rmulti *a0r, rmulti *a0i, rmulti *a1r, rmulti *a1i)
 {
-  ircopy(C_R(c0),C_R(c1),a0,a1);
-  ircopy(C_I(c0),C_I(c1),b0,b1);
+  ircopy(C_R(c0),C_R(c1),a0r,a1r);
+  ircopy(C_I(c0),C_I(c1),a0i,a1i);
 }
+
+/**
+ @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
+ */
+void iccopy_rc(cmulti *y0, cmulti *y1, rmulti *x0, cmulti *x1)
+{
+  ircopy  (C_R(y0),C_R(y1),x0,C_R(x1));
+  irset_d1(C_I(y0),C_I(y1),.0,C_I(x1));
+}
+
+/**
+ @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
+ */
+void iccopy_cr(cmulti *y0, cmulti *y1, cmulti *x0, rmulti *x1)
+{
+  ircopy  (C_R(y0),C_R(y1),C_R(x0),x1);
+  irset_d2(C_I(y0),C_I(y1),C_I(x0),.0);
+}
+
 
 /** @} */
 

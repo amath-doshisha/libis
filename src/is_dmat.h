@@ -12,15 +12,23 @@ double* dmat_free(double *A);
  * initialization
  */
 // A=zeros(m,n)
-void dmat_zeros(int m, int n, double *A, int LDA);
+void dmat_set_zeros(int m, int n, double *A, int LDA);
 // A=ones(m,n)
-void dmat_ones(int m, int n, double *A, int LDA);
+void dmat_set_ones(int m, int n, double *A, int LDA);
 // A=ones(m,n)*a
-void dmat_set(int m, int n, double *A, int LDA, double a);
+void dmat_set_all_d(int m, int n, double *A, int LDA, double a);
 // A=eye(m,n); % identiy matrix
-void dmat_eye(int m, int n, double *A, int LDA);
+void dmat_set_eye(int m, int n, double *A, int LDA);
 // A=rand(m,n)*a+b
-void dmat_rand(int m, int n, double *A, int LDA, double a, double b);
+void dmat_set_rand(int m, int n, double *A, int LDA, double a, double b);
+
+
+/*
+ * casting
+ */
+// y=char(x)
+void dmat_get_s(int m, int n, char **B, int LDB, double *A, int LDA, char format, int digits);
+
 
 /*
  * convert its elements
@@ -79,7 +87,7 @@ void dmat_dist_norm_max(double *y, int m, int n, const double *A, int LDA, const
 /*
  * output and input
  */
-void dmat_print(int m, int n, const double *A, int LDA, const char *name, const char *f, int digits);
+void dmat_print(int m, int n, double *A, int LDA, char *name, char format, int digits);
 void dmat_save(int m, int n, double *A, int LDA, char* fmt, ...);
 void dmat_bin_save(int m, int n, double *A, int LDA, char* fmt, ...);
 double *dmat_bin_load(int *m, int *n, char* fmt, ...);

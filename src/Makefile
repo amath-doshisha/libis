@@ -10,7 +10,8 @@ CFLAGS=-I/usr/local/include -I. -Wall -Wextra -Wcast-align -O3 -funroll-loops -D
 
 SHARE_HDRS = mt19937ar.h GeneralHashFunctions.h \
 		isys.h \
-		is_macros.h is_rounding.h is_strings.h \
+		is_macros.h is_rounding.h \
+		is_strings.h is_svec.h \
 		is_bigint.h \
 		is_print.h is_dcomplex.h \
 		is_rmulti.h is_cmulti.h \
@@ -29,10 +30,11 @@ SHARE_HDRS = mt19937ar.h GeneralHashFunctions.h \
 		is_irmulti.h is_irvec.h is_irmat.h is_irmat3.h is_ireig.h \
 		is_icmulti.h is_icvec.h is_icmat.h is_icmat3.h is_iceig.h \
 		is_func.h \
-		is_riep_dht.h
+		is_riep_dht.h \
+		is_array.h
 
 SHARE_SRCS = mt19937ar.c GeneralHashFunctions.c \
-		strings.c \
+		strings.c svec.c \
 		bigint.c \
 		print.c dcomplex.c \
 		rmulti.c cmulti.c \
@@ -59,10 +61,11 @@ SHARE_SRCS = mt19937ar.c GeneralHashFunctions.c \
 		func_ivec.c func_rvec.c func_cvec.c func_rmat.c func_cmat.c func_vec.c \
 		func_maps.c func_bigint.c func_real.c func_complex.c \
 		func_number.c func_diff.c \
-		riep_dht.c
+		riep_dht.c \
+		array.c
 
 SHARE_OBJS = mt19937ar.o GeneralHashFunctions.o \
-		strings.o \
+		strings.o svec.o \
 		bigint.o \
 		print.o dcomplex.o \
 		rmulti.o cmulti.o \
@@ -89,7 +92,8 @@ SHARE_OBJS = mt19937ar.o GeneralHashFunctions.o \
 		func_ivec.o func_rvec.o func_cvec.o func_rmat.o func_cmat.o func_vec.o \
 		func_maps.o func_bigint.o func_real.o func_complex.o \
 		func_number.o func_diff.o \
-		riep_dht.o
+		riep_dht.o \
+		array.o
 
 ##################################################################
 

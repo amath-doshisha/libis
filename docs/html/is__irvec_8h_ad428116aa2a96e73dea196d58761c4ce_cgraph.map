@@ -1,8 +1,8 @@
 <map id="irvec_umax_abs" name="irvec_umax_abs">
 <area shape="rect" id="node2" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="556,194,620,220"/>
 <area shape="rect" id="node3" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="148,282,253,308"/>
-<area shape="rect" id="node5" href="$irvec_8c.html#af03283778fbdac7a5f2969b680b14e46" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="168,180,233,207"/>
-<area shape="rect" id="node16" href="$irvec_8c.html#a7e7a1f52ea010af885dba9541f6b2a2e" title="最大値 [y0,y1]=[x0,max(x1)] 上限で比較 " alt="" coords="435,383,508,410"/>
+<area shape="rect" id="node5" href="$irvec_8c.html#af03283778fbdac7a5f2969b680b14e46" title="irmulti型のベクトルの絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="168,180,233,207"/>
+<area shape="rect" id="node16" href="$irvec_8c.html#a7e7a1f52ea010af885dba9541f6b2a2e" title="irmulti型のベクトルの最大値 [y0,y1]=[x0,max(x1)] 上限で比較 " alt="" coords="435,383,508,410"/>
 <area shape="rect" id="node4" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="301,282,387,308"/>
 <area shape="rect" id="node6" href="$irmulti_8c.html#aff300b617848d643d2aa00a2e7040dbe" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="322,180,366,207"/>
 <area shape="rect" id="node7" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="444,79,499,106"/>

@@ -1,3 +1,5 @@
+#include"is_strings.h"
+#include"is_svec.h"
 #include"is_cmulti.h"
 #include"is_cmat.h"
 #include"is_irmulti.h"
@@ -56,35 +58,41 @@ void icmat_copy_rmat(int m, int n, cmulti **B0, int LDB0, cmulti **B1, int LDB1,
 /**
  @brief 表示
  */
-void icmat_print(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1, const char *name, const char *f, int digits)
+void icmat_print(int m, int n, cmulti **A0, int LDA0, cmulti **A1, int LDA1, char *name, char format, int digits)
 {
-  int i,j,k;
-  char format[128];
-  if(STR_EQ(f,"f") || STR_EQ(f,"F")){
-    k=3;
-    sprintf(format,"[%%%d.%dR%s, %%%d.%dR%s] [%%%d.%dR%s, %%%d.%dR%s]  ",digits+k,digits,f,digits+k,digits,f,digits+k,digits,f,digits+k,digits,f);
-  }else if((strcmp(f,"e")==0) || (strcmp(f,"E")==0)){
-    k=7;
-    sprintf(format,"[%%%d.%dR%s, %%%d.%dR%s] [%%%d.%dR%s, %%%d.%dR%s]  ",digits+k,digits,f,digits+k,digits,f,digits+k,digits,f,digits+k,digits,f);
-  }
+  char **s=NULL;
   if(A0==NULL || A1==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  if(name!=NULL){ printf("%s\n",name); }
-  if(A0==NULL || A1==NULL || m<=0 || n<=0) return;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      mpfr_printf(format,C_R(MAT(A0,i,j,LDA0)),C_R(MAT(A1,i,j,LDA1)),C_I(MAT(A0,i,j,LDA0)),C_I(MAT(A1,i,j,LDA1)));
-    }
-    printf("\n");
-  }
+  s=svec_allocate(m*n);
+  icmat_get_s(m,n,s,m,A0,LDA0,A1,LDA1,format,digits);
+  smat_print(m,n,s,m,name);
+  s=svec_free(m*n,s);
 }
 
 /** @} */
 /** @name icmulti型行列の型変換に関する関数 */
 /** @{ */
+
+/**
+ @brief cmulti型の行列を文字列型に変換 y=char(x)
+*/
+void icmat_get_s(int m, int n, char **B, int LDB, cmulti **A0, int LDA0, cmulti **A1, int LDA1, char format, int digits)
+{
+  char f[1024],buf[1<<13];
+  int i,j;
+  if(format=='e'){ sprintf(f,"[%%+.%dR%c%%+.%dR%ci, %%+.%dR%c%%+.%dR%ci]",digits,format,digits,format,digits,format,digits,format); }
+  else           { sprintf(f,"[%%-.%dR%c%%+.%dR%ci, %%-.%dR%c%%+.%dR%ci]",digits,format,digits,format,digits,format,digits,format); }
+  if(A0==NULL || A1==NULL){ return; }
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      mpfr_sprintf(buf,f,C_R(MAT(A0,i,j,LDA0)),C_I(MAT(A0,i,j,LDA0)),C_R(MAT(A1,i,j,LDA1)),C_I(MAT(A1,i,j,LDA1)));
+      MAT(B,i,j,LDB)=char_renew(MAT(B,i,j,LDB),buf,NULL);
+    }
+  }
+}
 
 /** @} */
 /** @name icmulti型行列に関する関数 */

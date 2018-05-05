@@ -3,11 +3,11 @@
  */
 void multi_ctranspose(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL;
+  array *x=NULL,*y=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_ctranspose: The 1st-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
+  x=mxArray_to_array(prhs[N0]);
   // check size
   if(_L(x)!=1){ MATLAB_ERROR("multi_ctranspose: 3D-Array cannot be ctransposed."); }
   // ctranspose
@@ -18,9 +18,9 @@ void multi_ctranspose(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]
   else if(_T(y)=='C'){ icmat_copy_ct(_M(x),_N(x),_C0(y),_LD1(y),_C1(y),_LD1(y),_C0(x),_LD1(x),_C1(x),_LD1(x)); }
   else{ MATLAB_ERROR("multi_ctranspose: Unkown type"); }
   // done
-  plhs[0]=mxCreateStructMulti(y);
-  x=multi_free(x);
-  y=multi_free(y);
+  plhs[0]=array_to_mxArray(y);
+  x=array_free(x);
+  y=array_free(y);
   return;
 }
 

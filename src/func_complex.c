@@ -67,7 +67,7 @@ func_t *func_complex_eval(func_t *f)
 
 ///////////////////////////////////////////
 
-static const char *__func_complex="@C";
+static char *__func_complex="@C";
 
 func_t *func_complex(void)
 {

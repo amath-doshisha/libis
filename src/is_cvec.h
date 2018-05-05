@@ -39,7 +39,7 @@ int cvec_is_real(int n, cmulti **x);
 /*
  * I/O
  */
-void cvec_print(int n, cmulti **x, const char *name, const  char *format, int digits);
+void cvec_print(int n, cmulti **x, char *name, char format, int digits);
 void cvec_print_prec(int n, cmulti **x, const char *name, const  char *format, int digits);
 void cvec_print_exp(int n, cmulti **x, const char *name);
 void cvec_save(int n, cmulti **x, int offset, int digits, char* fmt, ...);
@@ -53,8 +53,9 @@ cmulti **cvec_bin_load(int *n, char* fmt, ...);
  * setting
  */
 void cvec_set_nan(int n, cmulti **x);
-void cvec_set_s(int n, cmulti **x, const char **str);
-void cvec_set_ss(int n, cmulti **x, const char **str);
+void cvec_set_inf(int n, cmulti **x, int rsgn, int isgn);
+void cvec_set_s(int n, cmulti **x, char **str);
+void cvec_set_ss(int n, cmulti **x, char **str);
 void cvec_set_z(int n, cmulti **y, dcomplex *x);
 void cvec_set_d(int n, cmulti **y, double *x);
 void cvec_set_dd(int n, cmulti **y, double *x_r, double *x_i);
@@ -70,8 +71,10 @@ void cvec_set_rand(int n, cmulti **x, double a, double b);
 /*
  * casting
  */
+void cvec_get_si(int n, int *y, cmulti **x);
 void cvec_get_z(int n, dcomplex *y, cmulti **x);
 void cvec_get_d(int n, double *y, cmulti **x);
+void cvec_get_s(int n, char **y, cmulti **x, char format, int digits);
 
 /*
  * rearange elements
@@ -86,12 +89,12 @@ void cvec_sort_index(int *I, int n, cmulti **X);
 /*
  * operations
  */
-void cvec_copy(int n, cmulti **y, cmulti **x);                           // y=x
-void cvec_copy_rvec(int n, cmulti **y, rmulti **x);                      // y=x
-void cvec_copy_rvec_rvec(int n, cmulti **y, rmulti **x_r, rmulti **x_i); // y=x
-void cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I);       // y=x(I)
-void cvec_index_copy(int n, cmulti **y, cmulti **x, int *I);             // y(I)=x
-void cvec_index_copy_rvec(int n, cmulti **y, rmulti **x, int *I);        // y(I)=x
+void cvec_copy(int n, cmulti **y, cmulti **x);                     // y=x
+void cvec_copy_r(int n, cmulti **y, rmulti **x);                   // y=x
+void cvec_copy_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i);  // y=x
+void cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I); // y=x(I)
+void cvec_index_copy(int n, cmulti **y, cmulti **x, int *I);       // y(I)=x
+void cvec_index_copy_rvec(int n, cmulti **y, rmulti **x, int *I);  // y(I)=x
 void cvec_real(int n, rmulti **y, cmulti **x);                     // y=real(x)
 void cvec_real_clone(int n, rmulti **y, cmulti **x);               // y=real(x)
 void cvec_imag(int n, rmulti **y, cmulti **x);                     // y=imag(x)

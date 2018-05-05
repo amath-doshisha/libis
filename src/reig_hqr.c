@@ -34,10 +34,10 @@ void reig_hqr(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
   // allocate
   prec=cvec_get_prec_max(n,lambda);
   B=rmat_allocate_prec(n,n,prec);
-  if(debug>=3){ printf("[%s] input matrix:\n",NAME_HQR); rmat_print(n,n,A,LDA,"A=","f",2); }
+  if(debug>=3){ printf("[%s] input matrix:\n",NAME_HQR); rmat_print(n,n,A,LDA,"A=",'f',2); }
   // convert to Hessenberg-type matrix
   if(debug>=1){ printf("[%s] converting to Hessenberg-type:\n",NAME_HQR); }
-  if(debug>=3){ rmat_print(n,n,B,n,"A=","f",2); }
+  if(debug>=3){ rmat_print(n,n,B,n,"A=",'f',2); }
   rhsnbrg_simtr(n,B,n,A,LDA);
   // compute eigenvalues
   if(debug>=1){ printf("[%s] computing eigenvalues:\n",NAME_HQR); }
@@ -46,7 +46,7 @@ void reig_hqr(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
   cvec_sort(n,lambda,NULL);
   cvec_reverse(n,lambda);
   // done
-  if(debug>=3){ printf("[%s] done:\n",NAME_HQR); rmat_print(n,n,B,n,"A=","f",2); }
+  if(debug>=3){ printf("[%s] done:\n",NAME_HQR); rmat_print(n,n,B,n,"A=",'f',2); }
   B=rmat_free(n,n,B);
 }
 
@@ -69,10 +69,10 @@ void reig_hqr_mt(int m, int n, rmulti **B, int LDB, cmulti **lambda, rmulti **A,
   int prec=53;
   // allocate
   prec=cvec_get_prec_max(n,lambda);
-  if(debug>=3){ printf("[%s] input matrix:\n",NAME_HQR); rmat_print(m,n,A,LDA,"A=","f",2); }
+  if(debug>=3){ printf("[%s] input matrix:\n",NAME_HQR); rmat_print(m,n,A,LDA,"A=",'f',2); }
   // convert to Hessenberg-type matrix
   if(debug>=1){ printf("[%s] converting to Hessenberg-type:\n",NAME_HQR); }
-  if(debug>=3){ rmat_print(m,n,B,LDB,"A=","f",2); }
+  if(debug>=3){ rmat_print(m,n,B,LDB,"A=",'f',2); }
   rhsnbrg_simtr(n,B,LDB,A,LDA);
   // compute eigenvalues
   if(debug>=1){ printf("[%s] computing eigenvalues:\n",NAME_HQR); }
@@ -81,7 +81,7 @@ void reig_hqr_mt(int m, int n, rmulti **B, int LDB, cmulti **lambda, rmulti **A,
   cvec_sort(n,lambda,NULL);
   cvec_reverse(n,lambda);
   // done
-  if(debug>=3){ printf("[%s] done:\n",NAME_HQR); rmat_print(m,n,B,LDB,"A=","f",2); }
+  if(debug>=3){ printf("[%s] done:\n",NAME_HQR); rmat_print(m,n,B,LDB,"A=",'f',2); }
 }
 
 /** @} */

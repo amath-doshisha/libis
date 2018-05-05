@@ -12,7 +12,7 @@
 
 void dhpsvd_jacobi_mat(int m, int n, double *JM, int LDJM, const double *A, int LDA, const double *u, const double *v, const double *w, double sigma, double C)
 {
-  dmat_zeros(m+n,m+n,JM,LDJM);               // JM=zeros(m+n,m+n)
+  dmat_set_zeros(m+n,m+n,JM,LDJM);           // JM=zeros(m+n,m+n)
   dmat_diag_sub_scalar(m,&J00,LDJM,sigma);   // JM(1:m,1:m)=-sigma*Im;
   dmat_copy(m,n,&J01,LDJM,A,LDA);            // JM(1:m,(m+1):end)=A
   dmat_rank1op(m,n,&J01,LDJM,(-1.0/C),u,w);  // JM(1:m,(m+1):end)=A-(u*w')/C;
@@ -113,8 +113,8 @@ int dhpsvd(int m, int n, const double *A, int LDA, double *U, int LDU, double *V
   for(k=0; !done && k<m; k++){
     dvec_copy(m,z,&Uk); // z=U(:,k)
     if(k==0){
-      dvec_rand(m,&Uk,2,-1);
-      dvec_rand(n,&Vk,2,-1);
+      dvec_set_rand(m,&Uk,2,-1);
+      dvec_set_rand(n,&Vk,2,-1);
       dvec_normalize(m,Uk);
       dvec_normalize(n,Vk);
     }

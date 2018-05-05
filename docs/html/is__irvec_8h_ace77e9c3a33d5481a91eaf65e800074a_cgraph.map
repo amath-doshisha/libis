@@ -1,7 +1,7 @@
 <map id="irvec_lintr" name="irvec_lintr">
 <area shape="rect" id="node2" href="$irmulti_8c.html#a2fdabfa10335af36c3951880616b5589" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="125,69,177,96"/>
 <area shape="rect" id="node3" href="$irmulti_8c.html#a55d04ab7f2884310fcff04b636911df1" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="119,120,184,147"/>
-<area shape="rect" id="node13" href="$irvec_8c.html#aaa02168ea740050a912e22a101da3cf2" title="コピー [y0,y1]=[x0,x1] " alt="" coords="232,208,301,235"/>
+<area shape="rect" id="node13" href="$irvec_8c.html#aaa02168ea740050a912e22a101da3cf2" title="irmulti型のベクトルのコピー [y0,y1]=[x0,x1] " alt="" coords="232,208,301,235"/>
 <area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="349,5,413,32"/>
 <area shape="rect" id="node5" href="$irmulti_8c.html#a9f9bc42cc6a70b365b032dc7bedd1abb" title="掛け算 [z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="245,107,289,133"/>
 <area shape="rect" id="node12" href="$irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="245,157,289,184"/>

@@ -25,6 +25,11 @@ void cmat_clone_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);
 void cmat_swap(int m, int n, cmulti **A, int LDA, cmulti **B, int LDB);
 
 /*
+ * casting
+ */
+void cmat_get_s(int m, int n, char **B, int LDB, cmulti **A, int LDA, char format, int digits);
+
+/*
  * member variables
  */
 void cmat_get_prec(int m, int n, int *P, int LDP, cmulti **A, int LDA);
@@ -38,7 +43,7 @@ int cmat_is_real(int m, int n, cmulti **A, int LDA);
 /*
  * I/O
  */
-void cmat_print(int m, int n, cmulti **A, int LDA, const char *name, const char *f, int digits);
+void cmat_print(int m, int n, cmulti **A, int LDA, char *name, char format, int digits);
 void cmat_load(int m, int n, cmulti **A, int LDA, char* fmt, ...);
 void cmat_save(int m, int n, cmulti **A, int LDA, int digits, char* fmt, ...);
 void cmat_bin_save(int m, int n, cmulti **A, int LDA, char* fmt, ...);

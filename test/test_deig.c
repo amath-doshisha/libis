@@ -30,11 +30,11 @@ int main(int argc, char *argv[])
   
   // initialize
   dmat_toeplitz(n,n,A,LDA,4,tp,1);
-  dmat_eye(n,n,X,LDX);
-  dvec_zeros(n,lambda);
+  dmat_set_eye(n,n,X,LDX);
+  dvec_set_zeros(n,lambda);
 
   // print
-  dmat_print(n,n,A,LDA,"A=","f",0);
+  dmat_print(n,n,A,LDA,"A=",'f',0);
 
   // compute
   k=dhpeig(n,A,LDA,X,LDX,lambda,debug);
@@ -50,10 +50,10 @@ int main(int argc, char *argv[])
     printf("Succeeded to compute.\n");
   }
 
-  dmat_print(n,k,X,LDX,"X=","f",1);
-  dvec_print(k,lambda,"lambda=","e",2);
-  dvec_print(k,E,"E=","e",0);
-  dvec_print(k,Ebin,"log2(E)=","f",1);
+  dmat_print(n,k,X,LDX,"X=",'f',1);
+  dvec_print(k,lambda,"lambda=",'e',2);
+  dvec_print(k,E,"E=",'e',0);
+  dvec_print(k,Ebin,"log2(E)=",'f',1);
   printf("max(E)=%.0e\n",dvec_norm_max(k,E));
   printf("max(log2(E))=%.2g\n",dvec_max(k,Ebin));
 

@@ -1,5 +1,5 @@
 <map id="func_diff_tan_pow1" name="func_diff_tan_pow1">
-<area shape="rect" id="node2" href="$func_8c.html#ac1aaf14b9f152f9b6f0ced59b3069462" title="func_is" alt="" coords="2187,3949,2240,3976"/>
+<area shape="rect" id="node2" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="2187,3949,2240,3976"/>
 <area shape="rect" id="node5" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="1491,1360,1564,1387"/>
 <area shape="rect" id="node8" href="$func__diff_8c.html#ad4f1547efbde78dfc298bb36d26ac87b" title="func_diff" alt="" coords="163,6147,223,6173"/>
 <area shape="rect" id="node25" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1653,5260,1713,5287"/>
@@ -7,12 +7,12 @@
 <area shape="rect" id="node58" href="$func__var_8c.html#a54777c2dfaa4a74a470d077089e3fa3a" title="func_var1" alt="" coords="1188,6907,1253,6933"/>
 <area shape="rect" id="node76" href="$func__math_8c.html#a5551892ccf4a61ecb2a99eeedc4f5ded" title="func_cos" alt="" coords="574,5387,637,5413"/>
 <area shape="rect" id="node78" href="$func__math_8c.html#a30106e3b61432e5094dd9204eec5651c" title="func_pow_n" alt="" coords="877,5665,953,5692"/>
-<area shape="rect" id="node3" href="$is__strings_8h.html#af219a46d87e2154d7529f24b9c4694ca" title="char_eq" alt="" coords="2288,6349,2347,6376"/>
-<area shape="rect" id="node4" href="$strings_8c.html#a67bb7112d8dc0d11a4d0c139a9f82d23" title="char_cmp" alt="" coords="2395,6349,2460,6376"/>
+<area shape="rect" id="node3" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="2288,6349,2347,6376"/>
+<area shape="rect" id="node4" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="2395,6349,2460,6376"/>
 <area shape="rect" id="node6" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="1635,1233,1731,1260"/>
 <area shape="rect" id="node7" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="1793,524,1863,551"/>
 <area shape="rect" id="node9" href="$func__diff_8c.html#adb2859065edcf71c468d7c9a23e783d9" title="func_diff_eval" alt="" coords="271,2500,355,2527"/>
-<area shape="rect" id="node54" href="$func_8c.html#a2443b99f2dd748606401bfe3a46e26c3" title="func_arg2_new" alt="" coords="1322,5691,1413,5717"/>
+<area shape="rect" id="node54" href="$func_8c.html#a5d310173294eded581e6fc926e5ee4a1" title="func_arg2_new" alt="" coords="1322,5691,1413,5717"/>
 <area shape="rect" id="node10" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="1649,2525,1718,2552"/>
 <area shape="rect" id="node11" href="$func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c" title="func_aget" alt="" coords="1495,2424,1560,2451"/>
 <area shape="rect" id="node12" href="$func__var_8c.html#a69fd4aec3f572bd847669b3119fd6bdb" title="func_is_1var" alt="" coords="1488,1664,1567,1691"/>
@@ -57,7 +57,7 @@
 <area shape="rect" id="node99" href="$func__diff_8c.html#a627f871c00d14c524688cc1e473d32d6" title="func_diff_atanh_pow1" alt="" coords="699,7185,819,7212"/>
 <area shape="rect" id="node100" href="$func__diff_8c.html#a311b19091001fb2c525c0e7a19200944" title="func_diff_pow_n" alt="" coords="1021,5336,1116,5363"/>
 <area shape="rect" id="node14" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="1641,1715,1725,1741"/>
-<area shape="rect" id="node18" href="$func_8c.html#abeef860bb7cb5a4d540a9079ac1dc66a" title="func_new" alt="" coords="1795,7641,1861,7668"/>
+<area shape="rect" id="node18" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="1795,7641,1861,7668"/>
 <area shape="rect" id="node24" href="$func_8c.html#adc50d54a334fe665254a93b411429433" title="func_clone" alt="" coords="1492,5285,1563,5312"/>
 <area shape="rect" id="node30" href="$func__var_8c.html#a90b1ca56c6a4dc00757946629be85e38" title="func_var_check_mul" alt="" coords="1471,3056,1584,3083"/>
 <area shape="rect" id="node56" href="$func__bigint_8c.html#a7da66de58c68845e06c58fc05aa2e427" title="func_bigint_int" alt="" coords="1177,6957,1264,6984"/>
@@ -88,7 +88,7 @@
 <area shape="rect" id="node47" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="1652,6552,1715,6579"/>
 <area shape="rect" id="node55" href="$func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57" title="func_a_resize" alt="" coords="1485,3411,1569,3437"/>
 <area shape="rect" id="node77" href="$func__math_8c.html#aa28d427db5d939e83a71d12eee83a83e" title="func_cos_eval" alt="" coords="717,4931,802,4957"/>
-<area shape="rect" id="node88" href="$func_8c.html#a9bf433753152b236ebd653fad82fd444" title="private////////////////////////////////////////////////// " alt="" coords="1322,5387,1413,5413"/>
+<area shape="rect" id="node88" href="$func_8c.html#ad9ddf69a3ff0ebd5d0c71c795fb18ed4" title="private////////////////////////////////////////////////// " alt="" coords="1322,5387,1413,5413"/>
 <area shape="rect" id="node79" href="$func__number_8c.html#af5d3fb6015d20aabe80978324fff4a16" title="func_is_nan" alt="" coords="1928,7363,2004,7389"/>
 <area shape="rect" id="node80" href="$func__number_8c.html#aa912ec36780f515de52c871b64e92855" title="func_is_inf" alt="" coords="1931,7413,2001,7440"/>
 <area shape="rect" id="node81" href="$func__bigint_8c.html#a94d386249b268e0728fcb1ef399a088d" title="func_bigint_pow_n" alt="" coords="1315,6451,1420,6477"/>

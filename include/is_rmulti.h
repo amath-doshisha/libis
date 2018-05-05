@@ -73,7 +73,7 @@ rmulti *rbin_load(FILE *fid);
 /*
  * setting
  */
-void rset_s(rmulti *x, const char *value);
+void rset_s(rmulti *x, char *value);
 void rset_d(rmulti *x, double value);
 void rset_ui(rmulti *x, ulong value);
 void rset_si(rmulti *x, long value);

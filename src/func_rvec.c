@@ -128,7 +128,7 @@ func_t *func_rvec_get_cvec(func_t *g)
   func_t *f=NULL;
   if(g==NULL || !func_is(g,"rvec")){ FUNC_ERROR_ARG1("func_rvec_get_cvec",g); }
   f=func_cvec(func_rvec_size(g));
-  cvec_copy_rvec(func_cvec_size(f),func_cvec_p(f),func_rvec_p(g));
+  cvec_copy_r(func_cvec_size(f),func_cvec_p(f),func_rvec_p(g));
   return f;
 }
 

@@ -22,6 +22,12 @@ void imat_eye(int m, int n, int *A, int LDA);
 void imat_rand(int m, int n, int *A, int LDA, int a, int b);
 
 /*
+ * casting
+ */
+// y=char(x)
+void imat_get_s(int m, int n, char **B, int LDB, int *A, int LDA);
+
+/*
  * operators
  */
 // B+=A
@@ -62,7 +68,7 @@ int imat_column_count_if(int m, int n, int *A, int LDA, int j, int value);
 /*
  * output and input
  */
-void imat_print(int m, int n, const int *A, int LDA, const char *name, int digits);
+void imat_print(int m, int n, int *A, int LDA, char *name);
 void imat_save(int m, int n, int *A, int LDA, char* fmt, ...);
 int* imat_load_allocate(int *pm, int *pn, char* fmt, ...);
 

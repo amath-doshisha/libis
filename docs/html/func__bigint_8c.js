@@ -21,7 +21,7 @@ var func__bigint_8c =
     [ "func_bigint_print", "func__bigint_8c.html#a6cfb78823611006ccf7fcf8fc219496b", null ],
     [ "func_bigint_script", "func__bigint_8c.html#a0551e78c42834f7743ec13b60bc78f4f", null ],
     [ "func_bigint_sgn", "func__bigint_8c.html#a579d192e35fce91ba0e908c82e25c35b", null ],
-    [ "func_bigint_str", "func__bigint_8c.html#ad4da32c1793e666572313ddf3071c743", null ],
+    [ "func_bigint_str", "func__bigint_8c.html#a9b6ae40777dfa7587395f7b8b325d039", null ],
     [ "func_bigint_sub", "func__bigint_8c.html#a248a4508d4f73eb0922d288d69bf38e7", null ],
     [ "func_in_bigint", "func__bigint_8c.html#ad39923e28c10109fb73a7218a834e6ac", null ],
     [ "func_is_bigint", "func__bigint_8c.html#a6cf29c440217b50c7d7085feeabf0e04", null ],

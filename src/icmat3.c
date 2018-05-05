@@ -46,7 +46,7 @@ void icmat3_copy_irmat3(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	iccopy_r(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+	iccopy_rr(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -61,7 +61,7 @@ void icmat3_copy_irmat3_irmat3(int m, int n, int l, cmulti **C0, cmulti **C1, in
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	iccopy_rr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2),MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2));
+	iccopy_rrrr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(B0,i,j,k,LDB1,LDB2),MAT3(A1,i,j,k,LDA1,LDA2),MAT3(B1,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -77,7 +77,7 @@ void icmat3_copy_ir_irmat3(int m, int n, int l, cmulti **C0, cmulti **C1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	iccopy_rr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),a0,a1,MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2));
+	iccopy_rrrr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),a0,MAT3(B0,i,j,k,LDB1,LDB2),a1,MAT3(B1,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -93,7 +93,7 @@ void icmat3_copy_irmat3_ir(int m, int n, int l, cmulti **C0, cmulti **C1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	iccopy_rr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2),b0,b1);
+	iccopy_rrrr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),b0,MAT3(A1,i,j,k,LDA1,LDA2),b1);
       }
     }
   }

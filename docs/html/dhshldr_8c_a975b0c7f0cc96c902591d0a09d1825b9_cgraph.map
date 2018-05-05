@@ -1,9 +1,9 @@
 <map id="dhouseholder" name="dhouseholder">
 <area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="147,5,229,32"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#ac95eb2c331e9c8f9f4522a587664c6f3" title="dvec_copy" alt="" coords="290,56,359,83"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#af1d8f637aee783904d16d556329fa681" title="dvec_dot" alt="" coords="293,157,356,184"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#ac95eb2c331e9c8f9f4522a587664c6f3" title="dvec_copy" alt="" coords="299,56,369,83"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#af1d8f637aee783904d16d556329fa681" title="dvec_dot" alt="" coords="303,157,365,184"/>
 <area shape="rect" id="node5" href="$dvec_8c.html#a9074cf7b5936b5f7fa558f814d81a67f" title="dvec_add_scaled" alt="" coords="138,208,238,235"/>
 <area shape="rect" id="node6" href="$dhshldr_8c.html#ad52cece0226b1af49f987d7ebb53df55" title="dhouseholder_vec" alt="" coords="136,107,240,133"/>
 <area shape="rect" id="node8" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="dvec_free" alt="" coords="155,259,221,285"/>
-<area shape="rect" id="node7" href="$dvec_8c.html#af7d823e26fef17599c7733f74ce08a3b" title="dvec_zeros" alt="" coords="288,107,361,133"/>
+<area shape="rect" id="node7" href="$dvec_8c.html#a25786788ae9c4c5522373e909ecc4fdd" title="dvec_set_zeros" alt="" coords="288,107,380,133"/>
 </map>

@@ -30,7 +30,7 @@ void dhouseholder_vec(int n, int k, double *h, double *alpha, const double *x)
   else       xi=xi/(fabs(x[k])+eta);
   if(x[k]<0) s=-1;
   //----------- h
-  dvec_zeros(k,h);
+  dvec_set_zeros(k,h);
   dvec_copy(n-k-1,&h[k+1],&x[k+1]); // h((k+1):end)=x((k+1):end);
   h[k]=-s*xi;
   //----------- alpha

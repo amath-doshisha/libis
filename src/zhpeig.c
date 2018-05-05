@@ -119,18 +119,18 @@ int zhpeig(int n, const dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *La
     printf("[%s] max of fails is %d.\n",fname,fail_max);
   }
   // init 
-  zmat_zeros(n,n,X,LDX);
-  zmat_zeros(n,n,H,LDH);
-  zvec_zeros(n,Lambda);
-  dvec_zeros(n,alpha); 
-  zmat_eye(n,n,Q,LDQ);
+  zmat_set_zeros(n,n,X,LDX);
+  zmat_set_zeros(n,n,H,LDH);
+  zvec_set_zeros(n,Lambda);
+  dvec_set_zeros(n,alpha); 
+  zmat_set_eye(n,n,Q,LDQ);
   // initialize MT
   init_genrand(0);
   // loop
   t=0; done=0;
   for(k=0; !done && k<n; k++){
     zvec_copy(n,z,&Qk);                                            // set normal vector z as Q(:,k).
-    if(k==0) { zvec_rand(n,&Xk,2,-1); zvec_normalize_sgn(n,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
+    if(k==0) { zvec_set_rand(n,&Xk,2,-1); zvec_normalize_sgn(n,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
     else     { zvec_copy(n,&Xk,z); }                               // set initial vector X(:,k) as z if k!=0.
     fail=0; conv=0; E=1;
     for(fail=0; !conv && fail<fail_max; fail++){
@@ -146,7 +146,7 @@ int zhpeig(int n, const dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *La
 	printf("step=%03d log2(E)=%+6.1f lambda=%+.16e %+.16e\n",step,log(fabs(E))/log(2),Z_R(Lambda[k]),Z_I(Lambda[k]));
 	print_reset();
       }
-      if(!conv) { zvec_rand(n,&Xk,2,-1); zvec_normalize_sgn(n,&Xk); } // reset initial vector X(:,k) as unit random vecot
+      if(!conv) { zvec_set_rand(n,&Xk,2,-1); zvec_normalize_sgn(n,&Xk); } // reset initial vector X(:,k) as unit random vecot
     }
     if(!conv){ done=1; }
     if(!done){
@@ -156,8 +156,8 @@ int zhpeig(int n, const dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *La
   }
   if(done){
     k--;
-    zmat_zeros(n,n-k,&Xk,LDX);
-    zvec_zeros(n-k,&Lambda[k]);
+    zmat_set_zeros(n,n-k,&Xk,LDX);
+    zvec_set_zeros(n-k,&Lambda[k]);
   }
   ret=k;
   if(debug>1){

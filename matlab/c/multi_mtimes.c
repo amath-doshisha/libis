@@ -3,13 +3,13 @@
  */
 void multi_mtimes(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL,*z=NULL;
+  array *x=NULL,*y=NULL,*z=NULL;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_mtimes: The 1st-arg should be Struct."); }
   if(!(IS_STRT(nrhs,prhs,N0+1))){ MATLAB_ERROR("multi_mtimes: The 2nd-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
-  y=multi_allocate_mxArray(prhs[N0+1]);
+  x=mxArray_to_array(prhs[N0]);
+  y=mxArray_to_array(prhs[N0+1]);
   // operation
   if(_N(x)==_M(y) && _L(x)==1 && _L(y)==1){  // In the case of same sizes
          if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('r',_M(x),_N(y),1); rmat_prod    (_M(x),_N(x),_N(y),_R(z),_LD1(z),_R(x),_LD1(x),_R(y),_LD1(y)); }
@@ -72,11 +72,11 @@ void multi_mtimes(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     else{ MATLAB_ERROR("multi_mtimes: Unkown type"); }
   }else{ MATLAB_ERROR("multi_mtimes: z=x*y: Dimensions of x and y are NOT same."); }
   // done
-  plhs[0]=mxCreateStructMulti(z);
+  plhs[0]=array_to_mxArray(z);
   
-  x=multi_free(x);
-  y=multi_free(y);
-  z=multi_free(z);
+  x=array_free(x);
+  y=array_free(y);
+  z=array_free(z);
   return;
 }
 

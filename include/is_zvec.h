@@ -12,22 +12,37 @@ dcomplex* zvec_free(dcomplex *x);
 /*
  * initialization
  */
+// x=nan(n,1)
+void zvec_set_nan(int n, dcomplex *x);
+// x=inf(n,1)
+void zvec_set_inf(int n, dcomplex *x, int rsgn, int isgn);
 // x=zeros(n,1)
-void zvec_zeros(int n, dcomplex *x);
+void zvec_set_zeros(int n, dcomplex *x);
 // x=ones(n,1)
-void zvec_ones(int n, dcomplex *x);
+void zvec_set_ones(int n, dcomplex *x);
 // x=ones(n,1)*a
-void zvec_set(int n, dcomplex *x, dcomplex a);
+void zvec_set_all(int n, dcomplex *x, dcomplex a);
 // x=ones(n,1)*a
-void zvec_set_d(int n, dcomplex *x, double a);
+void zvec_set_all_d(int n, dcomplex *x, double a);
 // x=ones(n,1)*a
-void zvec_set_dd(int n, dcomplex *x, double a_r, double a_i);
+void zvec_set_all_dd(int n, dcomplex *x, double a_r, double a_i);
 // x=zeros(n,1); x[k]=1
-void zvec_unit(int n, dcomplex *x, int k);
+void zvec_set_unit(int n, dcomplex *x, int k);
 // x[0]=0; x[1]=1; x[2]=2; ...; x[n-1]=n-1
-void zvec_grid(int n, dcomplex *x);
+void zvec_set_grid(int n, dcomplex *x);
 // x=rand(n,1)*a+b
-void zvec_rand(int n, dcomplex *x, double a, double b);
+void zvec_set_rand(int n, dcomplex *x, double a, double b);
+// y=x
+void zvec_set_s(int n, dcomplex *y, char **x);
+
+/*
+ * casting
+ */
+// y=int(x)
+void zvec_get_si(int n, int *y, dcomplex *x);
+// y=char(x)
+void zvec_get_s(int n, char **y, dcomplex *x, char format, int digits);
+
 
 /*
  * convert its elements
@@ -182,7 +197,7 @@ dcomplex zvec_average(int n, const dcomplex *x);
 /*
  * input and output
  */
-void zvec_print(int n, const dcomplex *x, const char *name, const char *format, int digits);
+void zvec_print(int n, dcomplex *x, char *name, char format, int digits);
 void zvec_save(int n, dcomplex *x, int offset, char* fmt, ...);
 void zvec_save_cplane(int n, dcomplex *x, char* fmt, ...);
 void zvec_save_cplane_label(int n, dcomplex *x, int offset, int *label, char* fmt, ...);

@@ -16,7 +16,7 @@ static func_t *__func_scope_current=NULL;
 
 ///////////////////////////////////////////////
 
-func_t *func_scope_find(int n, const char *name)
+func_t *func_scope_find(int n, char *name)
 {
   func_t *f=NULL,*scope=NULL,*table=NULL;
   func_init();
@@ -184,7 +184,7 @@ void func_print_scope(func_t *f)
 
 ///////////////////////////////////////////////
 
-static const char *__func_scope="@s";
+static char *__func_scope="@s";
 
 ///////////////////////////////////////////////
 

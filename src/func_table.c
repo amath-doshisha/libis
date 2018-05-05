@@ -11,7 +11,7 @@ int __func_table_size[]={ 97,241,397,499,743,997,1499,1999,3989,4999,7499,9973 }
 
 /////////////////////////////////////////////////////////////////////////
 
-static const char *__func_table="@T";
+static char *__func_table="@T";
 
 int func_is_table(func_t *f)
 {
@@ -20,7 +20,7 @@ int func_is_table(func_t *f)
 
 /////////////////////////////////////////////////////////////////////////
 
-func_t *func_table_find(func_t *f, const char *name)
+func_t *func_table_find(func_t *f, char *name)
 {
   int i;
   if(f==NULL || !func_is_table(f)){ FUNC_ERROR_ARG1("func_table_find",f); }
@@ -72,7 +72,7 @@ int func_table_bigger_size(func_t *f)
 
 /////////////////////////////////////////////////////////////////////////
 
-int func_table_key_index(func_t *f, const char *name)
+int func_table_key_index(func_t *f, char *name)
 {
   int i,k,n;
   if(f==NULL || !func_is_table(f) || func_asize(f)<=0 || name==NULL){ FUNC_ERROR_ARG1("func_table_key_index",f); }

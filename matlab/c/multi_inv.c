@@ -3,11 +3,11 @@
  */
 void multi_inv(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-  multi *x=NULL,*y=NULL;
+  array *x=NULL,*y=NULL;
   if(nlhs>1)                  { mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_inv: The 1st-arg should be Struct."); }
   // allocate by clone
-  x=multi_allocate_mxArray(prhs[N0]);
+  x=mxArray_to_array(prhs[N0]);
   // check size
   if(!(_M(x)==_N(x) && _L(x)==1)){ MATLAB_ERROR("multi_inv: y=inv(x): x should be square matrix."); }
   // operation
@@ -20,9 +20,9 @@ void multi_inv(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
       
   else{ MATLAB_ERROR("multi_inv: Unkown type"); }
   // done
-  plhs[0]=mxCreateStructMulti(y);
-  x=multi_free(x);
-  y=multi_free(y);
+  plhs[0]=array_to_mxArray(y);
+  x=array_free(x);
+  y=array_free(y);
   return;
 }
 

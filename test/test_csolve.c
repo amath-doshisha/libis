@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
   else if(mat==MAT_T3)     { cmat_toeplitz(n,n,A0,LDA,3,tp3,1); }
   else if(mat==MAT_T4)     { cmat_toeplitz(n,n,A0,LDA,4,tp4,1); }
   else if(mat==MAT_CAUCHY) { cmat_cauchy(n,n,A0,LDA); }
-  cmat_print(n,n,A0,LDA,"A=","f",2);
+  cmat_print(n,n,A0,LDA,"A=",'f',2);
   cvec_set_rand(n,b,2,-1);
   cvec_print_prec(n,b,"b=","f",20);
 

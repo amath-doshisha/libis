@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bigint_5fstruct',['bigint_struct',['../structbigint__struct.html',1,'']]]
+  ['array_5fstruct',['array_struct',['../structarray__struct.html',1,'']]]
 ];

@@ -82,7 +82,7 @@ func_t *func_real_eval(func_t *f)
 
 //////////////////////////////////////////////////
 
-static const char *__func_real="@R";
+static char *__func_real="@R";
 
 func_t *func_real(void)
 {
@@ -97,7 +97,7 @@ func_t *func_real_rmulti(rmulti *x)
   return func_real_eval(f);
 }
 
-func_t *func_real_str(const char *str)
+func_t *func_real_str(char *str)
 {
   func_t *f=NULL;
   f=func_new(__func_real);

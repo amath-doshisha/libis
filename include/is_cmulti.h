@@ -78,9 +78,9 @@ cmulti *cbin_load(FILE *fid);
 /*
  * setting
  */
-void cset_s(cmulti *x, const char *str_real);
-void cset_ss(cmulti *x, const char *str_real, const char *str_imag);
-void cset_script(cmulti *x, const char *str);
+void cset_s(cmulti *x, char *str_real);
+void cset_ss(cmulti *x, char *str_real, char *str_imag);
+void cset_script(cmulti *x, char *str);
 void cset_z(cmulti *x, dcomplex value);
 void cset_dd(cmulti *x, double value_r, double value_i);
 void cset_d(cmulti *x, double value_r);
