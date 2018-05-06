@@ -59,7 +59,6 @@ void dvec_set_inf(int n, double *x, int sgn)
   int i;
   for(i=0; i<n; i++){ x[i]=sgn/zero; }
 }
-
 // x=zeros(n,1)
 void dvec_set_zeros(int n, double *x)
 {
@@ -104,6 +103,59 @@ void dvec_set_rand(int n, double *x, double a, double b){
     x[i]=x[i]*a+b;
   }
 }
+
+/////////////////////////////////////////////
+
+
+// y=x
+void dvec_set_d(int n, double *y, double *x) 
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=x[i]; }
+}
+
+// y=x
+void dvec_set_z(int n, double *y, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=Z_R(x[i]); }
+}
+
+// y=x
+void dvec_set_r(int n, double *y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=rget_d(x[i]); }
+}
+
+// y=x
+void dvec_set_c(int n, double *y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=rget_d(C_R(x[i])); }
+}
+
+// y=x
+void dvec_set_ir(int n, double *y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=0.5*(rget_d(x0[i])+rget_d(x1[i])); }
+}
+
+// y=x
+void dvec_set_ic(int n, double *y, cmulti **x0, cmulti **x1)
+{
+  dcomplex z0,z1;
+  int i;
+  for(i=0; i<n; i++){
+    z0=cget_z(x0[i]);
+    z1=cget_z(x1[i]);
+    Z_ADD(z0,z1);
+    Z_SCALE(z0,0.5);
+    y[i]=Z_R(z0);
+  }
+}
+
 
 // y=x
 void dvec_set_si(int n, double *y, int *x)

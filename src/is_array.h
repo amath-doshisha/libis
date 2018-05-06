@@ -120,6 +120,7 @@ void array_set_grid(array *x);
 /*
  * casting
  */
+array *array_get(int type, array *x); // y=cast(x)
 array *array_get_char(array *x, char format, int digits); // y=char(x)
 array *array_get_int(array *x);     // y=int(x)
 array *array_get_real(array *x);    // y=real(x)

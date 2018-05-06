@@ -1,6 +1,10 @@
 #ifndef IS_DVEC_H
 #define IS_DVEC_H
 
+#include<is_dcomplex.h>
+#include<is_rmulti.h>
+#include<is_cmulti.h>
+
 /*
  * allocation
  */
@@ -31,6 +35,13 @@ void dvec_set_unit(int n, double *x, int k);
 void dvec_set_grid(int n, double *x);
 // x=rand(n,1)*a+b
 void dvec_set_rand(int n, double *x, double a, double b);
+// y=x
+void dvec_set_d(int n, double *y, double *x);
+void dvec_set_z(int n, double *y, dcomplex *x);
+void dvec_set_r(int n, double *y, rmulti **x);
+void dvec_set_c(int n, double *y, cmulti **x);
+void dvec_set_ir(int n, double *y, rmulti **x0, rmulti **x1);
+void dvec_set_ic(int n, double *y, cmulti **x0, cmulti **x1);
 
 /*
  * casting

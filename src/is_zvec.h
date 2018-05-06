@@ -2,6 +2,8 @@
 #define IS_ZVEC_H
 
 #include<is_dcomplex.h>
+#include<is_rmulti.h>
+#include<is_cmulti.h>
 
 /*
  * allocation
@@ -32,7 +34,14 @@ void zvec_set_unit(int n, dcomplex *x, int k);
 void zvec_set_grid(int n, dcomplex *x);
 // x=rand(n,1)*a+b
 void zvec_set_rand(int n, dcomplex *x, double a, double b);
+
 // y=x
+void zvec_set_d(int n, dcomplex *y, const double *x);
+void zvec_set_z(int n, dcomplex *y, const dcomplex *x);
+void zvec_set_r(int n, dcomplex *y, rmulti **x);
+void zvec_set_c(int n, dcomplex *y, cmulti **x);
+void zvec_set_ir(int n, dcomplex *y, rmulti **x0, rmulti **x1);
+void zvec_set_ic(int n, dcomplex *y, cmulti **x0, cmulti **x1);
 void zvec_set_s(int n, dcomplex *y, char **x);
 
 /*
@@ -67,9 +76,7 @@ void zvec_sort_index(int *I, int n, dcomplex *X);
  */
 // y=x
 void zvec_copy(int n, dcomplex *y, const dcomplex *x);
-// y=x
 void zvec_copy_d(int n, dcomplex *y, const double *x);
-// y=x
 void zvec_copy_dd(int n, dcomplex *y, const double *x_r, const double *x_i);
 // Y[i]=X[I[i]], 0<=i<n
 void zvec_copy_index(int n, dcomplex *Y, const dcomplex *X, const int *I);

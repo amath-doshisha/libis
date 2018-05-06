@@ -1,6 +1,7 @@
 var is__array_8h =
 [
     [ "array_struct", "structarray__struct.html", "structarray__struct" ],
+    [ "ARRAY_AVEC", "is__array_8h.html#a89cacdb5512dc1b6e7c93d990b50681a", null ],
     [ "ARRAY_CMAT", "is__array_8h.html#aeb9530e8ceaee7509e39a28c208cf5c4", null ],
     [ "ARRAY_CMAT0", "is__array_8h.html#a96692a72c3cff7c25eea9d4f43986cc9", null ],
     [ "ARRAY_CMAT1", "is__array_8h.html#a2b6946f6f67fc62fbea4f378956a42e3", null ],
@@ -25,6 +26,7 @@ var is__array_8h =
     [ "ARRAY_N", "is__array_8h.html#a4b0d41a7730dcb28a043bb10f71da577", null ],
     [ "ARRAY_NDIM", "is__array_8h.html#a038f517df53d16a53f82bacd795239a6", null ],
     [ "ARRAY_P0", "is__array_8h.html#a00d1e0b61eb147145f63164e8a4bb2c0", null ],
+    [ "ARRAY_P0_A", "is__array_8h.html#a086de182fc1bf8f9602fe4ab8da91513", null ],
     [ "ARRAY_P0_C", "is__array_8h.html#a2e5d2324f048f41911d2dd51e5dfda67", null ],
     [ "ARRAY_P0_D", "is__array_8h.html#a64712ab32f7ab5d82795da3b9658bb56", null ],
     [ "ARRAY_P0_I", "is__array_8h.html#a618d5d66a33acc04c4ff4127c8f8d01f", null ],
@@ -54,6 +56,7 @@ var is__array_8h =
     [ "array_clone", "is__array_8h.html#ac6bd13ec4aa5db693307936c6d45c085", null ],
     [ "array_copy", "is__array_8h.html#a4e2afcfac05c0a528aeaa408dbf2fd49", null ],
     [ "array_free", "is__array_8h.html#ab8db2f82d2dc062b1bea33a8f6a6ab6f", null ],
+    [ "array_get", "is__array_8h.html#a3fd5cf620ebff0eb070924df96e842f9", null ],
     [ "array_get_char", "is__array_8h.html#a6d81ec781f839381809a6ac139efbfca", null ],
     [ "array_get_complex", "is__array_8h.html#a3e68a317a1d6a246e9b82e257e2ee392", null ],
     [ "array_get_complex2", "is__array_8h.html#a82b80a897c819372c60e8a426ddfcd07", null ],
@@ -75,5 +78,7 @@ var is__array_8h =
     [ "array_set_ones", "is__array_8h.html#a77fbdd49f3142737ff27406d4c4bbd7f", null ],
     [ "array_set_rand", "is__array_8h.html#a6d2cc4d75608be51a3708cec34817b88", null ],
     [ "array_set_zeros", "is__array_8h.html#a310f5399cb80d983ad295a28c50b5108", null ],
-    [ "array_type_check", "is__array_8h.html#af0794d7238e2086b6217f5011ecc848a", null ]
+    [ "array_type_check", "is__array_8h.html#af0794d7238e2086b6217f5011ecc848a", null ],
+    [ "avec_allocate", "is__array_8h.html#a779836d83556c2e5060b756eef253ee4", null ],
+    [ "avec_free", "is__array_8h.html#aa308386def5b6e295e1c45673bc275ef", null ]
 ];

@@ -6,6 +6,8 @@
 #include"is_svec.h"
 #include"is_rmulti.h"
 #include"is_cmulti.h"
+#include"is_irmulti.h"
+#include"is_icmulti.h"
 #include"is_cvec.h"
 #include"is_rvec.h"
 #include"is_zvec.h"
@@ -518,6 +520,42 @@ void cvec_set_d(int n, cmulti **y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ cset_d(y[i],x[i]); }
+}
+
+/**
+ @brief cmulti型のベクトルの値を設定.
+ */
+void cvec_set_r(int n, cmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ ccopy_r(y[i],x[i]); }
+}
+
+/**
+ @brief cmulti型のベクトルの値を設定.
+ */
+void cvec_set_c(int n, cmulti **y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ ccopy(y[i],x[i]); }
+}
+
+/**
+ @brief cmulti型のベクトルの値を設定.
+ */
+void cvec_set_ir(int n, cmulti **y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ irmid(C_R(y[i]),x0[i],x1[i]); rset_d(C_I(y[i]),0); }
+}
+
+/**
+ @brief cmulti型のベクトルの値を設定.
+ */
+void cvec_set_ic(int n, cmulti **y, cmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ icmid(y[i],x0[i],x1[i]); }
 }
 
 /**

@@ -24,16 +24,7 @@
 /** @{ */
 
 /**
- @brief irmulti型のベクトルのコピー [y0,y1]=[x0,x1]
-*/
-void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
-{
-  int i;
-  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
-}
-
-/**
- @brief irmulti型のベクトルの値を倍精度実数から設定.
+ @brief irmulti型のベクトルの値の設定
 */
 void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x)
 {
@@ -42,7 +33,7 @@ void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x)
 }
 
 /**
- @brief irmulti型のベクトルの値を倍精度実数から設定.
+ @brief irmulti型のベクトルの値の設定
 */
 void irvec_set_dd(int n, rmulti **y0, rmulti **y1, double *x0, double *x1)
 {
@@ -51,7 +42,7 @@ void irvec_set_dd(int n, rmulti **y0, rmulti **y1, double *x0, double *x1)
 }
 
 /**
- @brief irmulti型のベクトルの値を整数型から設定.
+ @brief irmulti型のベクトルの値の設定
 */
 void irvec_set_si(int n, rmulti **y0, rmulti **y1, int *x)
 {
@@ -60,12 +51,67 @@ void irvec_set_si(int n, rmulti **y0, rmulti **y1, int *x)
 }
 
 /**
- @brief irmulti型のベクトルの値を文字列型から設定.
+ @brief irmulti型のベクトルの値の設定
 */
 void irvec_set_s(int n, rmulti **y0, rmulti **y1, char **x)
 {
   int i;
   for(i=0; i<n; i++){ irset_s(y0[i],y1[i],x[i]); }
+}
+
+
+/**
+ @brief irmulti型のベクトルの値の設定
+*/
+void irvec_set_z(int n, rmulti **y0, rmulti **y1, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],Z_R(x[i])); }
+}
+
+/**
+ @brief irmulti型のベクトルの値の設定
+*/
+void irvec_set_r(int n, rmulti **y0, rmulti **y1, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x[i],x[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの値の設定
+*/
+void irvec_set_c(int n, rmulti **y0, rmulti **y1, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],C_R(x[i]),C_R(x[i])); }
+}
+
+/**
+ @brief irmulti型のベクトルの値の設定
+*/
+void irvec_set_ir(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの値の設定
+*/
+void irvec_set_ic(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],C_R(x0[i]),C_I(x1[i])); }
+}
+
+/**
+ @brief irmulti型のベクトルのコピー [y0,y1]=[x0,x1]
+*/
+void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
 }
 
 /** @* */
@@ -175,6 +221,24 @@ void irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmu
 {
   int i;
   for(i=0; i<n; i++){ iradd_pm(z0[i],z1[i],x0[i],x1[i],y[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの区間の中心 y=mid([x0,x1])
+ */
+void irvec_get_r(int n, rmulti **y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ irmid(y[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの区間の中心 y=mid([x0,x1])
+ */
+void irvec_get_c(int n, cmulti **y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ irmid(C_R(y[i]),x0[i],x1[i]); rset_d(C_I(y[i]),0); }
 }
 
 /**

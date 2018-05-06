@@ -6,9 +6,13 @@
 #include"mt19937ar.h"
 #include"is_macros.h"
 #include"is_strings.h"
+#include"is_dcomplex.h"
+#include"is_rmulti.h"
+#include"is_cmulti.h"
+#include"is_irmulti.h"
+#include"is_icmulti.h"
 #include"is_svec.h"
 #include"is_ivec.h"
-#include"is_dcomplex.h"
 #include"is_zvec.h"
 #include"is_dvec.h"
 
@@ -218,6 +222,66 @@ void zvec_sort_index(int *I, int n, dcomplex *X)
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+// y=x
+void zvec_set_z(int n, dcomplex *y, const dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=x[i]; }
+}
+
+// y=x
+void zvec_set_d(int n, dcomplex *y, const double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ Z_SET(y[i],x[i],0); }
+}
+
+// y=x
+void zvec_set_r(int n, dcomplex *y, rmulti **x)
+{
+  double a;
+  int i;  
+  for(i=0; i<n; i++){
+    a=rget_d(x[i]);
+    Z_SET(y[i],a,0);
+  }
+}
+
+// y=x
+void zvec_set_c(int n, dcomplex *y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=cget_z(x[i]); }
+}
+
+
+// y=x
+void zvec_set_ir(int n, dcomplex *y, rmulti **x0, rmulti **x1)
+{
+  double a;
+  int i;  
+  for(i=0; i<n; i++){
+    a=0.5*(rget_d(x0[i])+rget_d(x1[i]));
+    Z_SET(y[i],a,0);
+  }
+}
+
+// y=x
+void zvec_set_ic(int n, dcomplex *y, cmulti **x0, cmulti **x1)
+{
+  dcomplex z0,z1;
+  int i;
+  for(i=0; i<n; i++){
+    z0=cget_z(x0[i]);
+    z1=cget_z(x1[i]);
+    Z_ADD(z0,z1);
+    Z_SCALE(z0,0.5);
+    y[i]=z0;
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
 
 // y=x
 void zvec_copy(int n, dcomplex *y, const dcomplex *x)
@@ -243,6 +307,8 @@ void zvec_copy_dd(int n, dcomplex *y, const double *x_r, const double *x_i)
     Z_SET(y[i],x_r[i],x_i[i]);
   }
 }
+
+
 
 // Y[i]=X[I[i]], 0<=i<n
 void zvec_copy_index(int n, dcomplex *Y, const dcomplex *X, const int *I)

@@ -9,6 +9,10 @@
 #include"is_rvec.h"
 #include"is_zvec.h"
 #include"is_dvec.h"
+#include"is_irmulti.h"
+#include"is_icmulti.h"
+#include"is_irvec.h"
+#include"is_icvec.h"
 #include"is_func.h"
 
 
@@ -523,6 +527,46 @@ void rvec_set_z(int n, rmulti **y, dcomplex *x)
   int i;
   for(i=0; i<n; i++){ rset_d(y[i],Z_R(x[i])); }
 }
+
+/**
+ @brief rmulti型のベクトルの値を設定.
+ */
+void rvec_set_r(int n, rmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ rcopy(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの値を設定.
+ */
+void rvec_set_c(int n, rmulti **y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ rcopy(y[i],C_R(x[i])); }
+}
+
+/**
+ @brief rmulti型のベクトルの値を設定.
+ */
+void rvec_set_ir(int n, rmulti **y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ irmid(y[i],x0[i],x1[i]); }
+}
+
+
+/**
+ @brief rmulti型のベクトルの値を設定.
+ */
+void rvec_set_ic(int n, rmulti **y, cmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ irmid(y[i],C_R(x0[i]),C_R(x1[i])); }
+}
+
+
+
 
 /**
  @brief rmulti型のベクトルの全ての値を倍精度実数から設定.

@@ -67,6 +67,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_set_inf.c"
 #include"./c/multi_get_multi.c"
 #include"./c/multi_get_imulti.c"
+#include"./c/multi_get.c"
 #include"./c/multi_get_d.c"
 #include"./c/multi_get_s.c"
 #include"./c/multi_complex.c"
@@ -142,6 +143,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else               { set_round_mode(MPFR_RNDN); }
        if(STR_EQ(cmd,"get_multi")) { multi_get_multi (nlhs,plhs,nrhs,prhs); }  // y=multi(x)
   else if(STR_EQ(cmd,"get_imulti")){ multi_get_imulti(nlhs,plhs,nrhs,prhs); }  // y=imulti(x)
+  else if(STR_EQ(cmd,"get"))       { multi_get       (nlhs,plhs,nrhs,prhs); }  // y=cast(x)
   else if(STR_EQ(cmd,"get_d"))     { multi_get_d     (nlhs,plhs,nrhs,prhs); }  // y=double(x)
   else if(STR_EQ(cmd,"get_s"))     { multi_get_s     (nlhs,plhs,nrhs,prhs); }  // y=char(x)
   else if(STR_EQ(cmd,"set_zeros")) { multi_set_zeros (nlhs,plhs,nrhs,prhs); }  // x=zeros(type,size)

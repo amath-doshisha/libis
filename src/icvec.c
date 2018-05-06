@@ -79,15 +79,6 @@ void icvec_copy_rrrr(int n, cmulti **y0, cmulti **y1, rmulti **x0r, rmulti **x0i
 /**
  @brief コピー [y0,y1]=x
 */
-void icvec_set_z(int n, cmulti **y0, cmulti **y1, dcomplex *x)
-{
-  int i;
-  for(i=0; i<n; i++){ icset_z(y0[i],y1[i],x[i]); }
-}
-
-/**
- @brief コピー [y0,y1]=x
-*/
 void icvec_set_zz(int n, cmulti **y0, cmulti **y1, dcomplex *x0, dcomplex *x1)
 {
   int i;
@@ -120,6 +111,52 @@ void icvec_set_d(int n, cmulti **y0, cmulti **y1, double *x)
   int i;
   for(i=0; i<n; i++){ icset_d(y0[i],y1[i],x[i]); }
 }
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_z(int n, cmulti **y0, cmulti **y1, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ icset_z(y0[i],y1[i],x[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_r(int n, cmulti **y0, cmulti **y1, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy_rr(y0[i],y1[i],x[i],x[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_c(int n, cmulti **y0, cmulti **y1, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy(y0[i],y1[i],x[i],x[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_ir(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy_rr(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
+ @brief コピー [y0,y1]=x
+*/
+void icvec_set_ic(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ iccopy(y0[i],y1[i],x0[i],x1[i]); }
+}
+
 
 /**
  @brief コピー [y0,y1]=x
@@ -211,6 +248,16 @@ void icvec_get_s(int n, char **y, cmulti **x0, cmulti **x1, char format, int dig
   }
 }
 
+/**
+ @brief 区間の中心 y=mid([x0,x1])
+ */
+void icvec_get_c(int n, cmulti **y, cmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ icmid(y[i],x0[i],x1[i]); }
+}
+
+
 /** @} */
 /** @name icmulti型ベクトルに関する関数子 */
 /** @{ */
@@ -239,7 +286,6 @@ void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
   int i;
   for(i=0; i<n; i++){ ircopy(y0[i],y1[i],C_R(x0[i]),C_R(x1[i])); }
 }
-
 
 /**
  @brief 符号の反転 [y0,y1]=-[x0,x1]
