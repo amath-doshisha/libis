@@ -1,6 +1,6 @@
 classdef multi
-    %    properties(SetAccess=private,GetAccess=public)
-    %    properties
+    %properties
+    %properties(SetAccess=private,GetAccess=public)
     properties(SetAccess=public,GetAccess=public)
         data;
     end
@@ -8,6 +8,10 @@ classdef multi
         function obj=multi(cmd,varargin)
             if nargin==0
                 obj.data=multi_mex('set_zeros',get_default_prec(),double(get_default_round_mode()),'r',0,0);
+            elseif nargin==2 && isa(cmd,'char') && strcmp(cmd,'empty') && isa(varargin{1},'char')
+                obj.data=multi_mex('set_zeros',get_default_prec(),double(get_default_round_mode()),varargin{1},0,0);
+            elseif nargin==1 && isstruct(cmd)
+                obj.data=cmd;
             elseif nargin==1 && isa(cmd,'multi')
                 obj.data=multi_mex('get_multi',get_default_prec(),double(get_default_round_mode()),cmd.data);
             elseif nargin==1 && isa(cmd,'double')

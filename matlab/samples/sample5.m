@@ -1,86 +1,99 @@
 clear all
 close all
 
-disp('----------------');
-A=rand(3,1)
-disp('----------------');
-B=multi(A)
-disp('----------------');
-A=rand(1,3)
-disp('----------------');
-B=multi(A)
-disp('----------------');
+Ad=rand(3,3)
+Ar=multi(Ad)
+AR=imulti(Ad)
+Az=Ad+i*rand(3,3)
+Ac=multi(Az)
+AC=imulti(Az)
 
-format short
-A=rand(3,3)
-B=multi(A)
-C=imulti(A)
+B=Ar;
+B(:,2)=Ar(:,3)
+B(:,2)=Ad(:,3)
+B(:,2)=Az(:,3)
 
-
-format short
-A=rand(3,3)+i*rand(3,3)
-B=multi(A)
-C=imulti(A)
-
-set_multi_disp_digits(15);
-format long
-A=rand(2,2)
-B=multi(A)
-C=imulti(A)
-
-set_multi_disp_digits(15);
-format long
-A=rand(2,2)+i*rand(2,2)
-B=multi(A)
-C=imulti(A)
-
-format short
-disp('----------------');
-A=rand(3,3,3)
-disp('----------------');
-B=multi(A)
-disp('----------------');
-C=imulti(A)
-disp('----------------');
-
-
-format short
-disp('----------------');
-A=rand(3,3,3,2)
-disp('----------------');
-B=multi(A)
-disp('----------------');
-C=imulti(A)
-disp('----------------');
-
-
-
-disp('----------------');
-A=rand(3,1);
-disp(A)
-disp('----------------');
-B=multi(A);
-disp(B)
-disp('----------------');
-A=rand(1,3);
-disp(A);
-disp('----------------');
-B=multi(A);
-disp(B)
-disp('----------------');
-
-
-format short
-disp('----------------');
-A=rand(3,3,3,2);
-disp(A);
-disp('----------------');
-B=multi(A);
-disp(B);
-disp('----------------');
-C=imulti(A);
-disp(C);
 % disp('----------------');
+% A=rand(3,1)
+% disp('----------------');
+% B=multi(A)
+% disp('----------------');
+% A=rand(1,3)
+% disp('----------------');
+% B=multi(A)
+% disp('----------------');
+% 
+% format short
+% A=rand(3,3)
+% B=multi(A)
+% C=imulti(A)
+% 
+% 
+% format short
+% A=rand(3,3)+i*rand(3,3)
+% B=multi(A)
+% C=imulti(A)
+% 
+% set_multi_disp_digits(15);
+% format long
+% A=rand(2,2)
+% B=multi(A)
+% C=imulti(A)
+% 
+% set_multi_disp_digits(15);
+% format long
+% A=rand(2,2)+i*rand(2,2)
+% B=multi(A)
+% C=imulti(A)
+% 
+% format short
+% disp('----------------');
+% A=rand(3,3,3)
+% disp('----------------');
+% B=multi(A)
+% disp('----------------');
+% C=imulti(A)
+% disp('----------------');
+% 
+% 
+% format short
+% disp('----------------');
+% A=rand(3,3,3,2)
+% disp('----------------');
+% B=multi(A)
+% disp('----------------');
+% C=imulti(A)
+% disp('----------------');
+% 
+% 
+% 
+% disp('----------------');
+% A=rand(3,1);
+% disp(A)
+% disp('----------------');
+% B=multi(A);
+% disp(B)
+% disp('----------------');
+% A=rand(1,3);
+% disp(A);
+% disp('----------------');
+% B=multi(A);
+% disp(B)
+% disp('----------------');
+% 
+% 
+% format short
+% disp('----------------');
+% A=rand(3,3,3,2);
+% disp(A);
+% disp('----------------');
+% B=multi(A);
+% disp(B);
+% disp('----------------');
+% C=imulti(A);
+% disp(C);
+% disp('----------------');
+% 
 
 
 % format short

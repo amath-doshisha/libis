@@ -1,17 +1,15 @@
 function c=get_type(x,y)
-% 入力1ならそのタイプ 入力2なら2つを内包するタイプ
 if nargin==1
     if ~isa(x,'multi')
-        x=multi(x);
-        if is_type_r1(x)
+        if isa(x,'double') && isreal(x)
             c='d';
-        elseif is_type_c1(x)
+        elseif isa(x,'double') && ~isreal(x)
             c='z';
         else
-            error('get_type: ???');
+            error('get_type(???)');
         end
     elseif isa(x,'multi')
-        if  is_type_r1(x)
+        if is_type_r1(x)
             c='r';
         elseif is_type_c1(x)
             c='c';
@@ -20,15 +18,15 @@ if nargin==1
         elseif is_type_c2(x)
             c='C';
         else
-            error('get_type: ???');
+            error('get_type(???)');
         end
     else
-        error('get_type: ???');
+        error('get_type(???)');
     end
-else
+elseif nargin==2
     cx=get_type(x);
     cy=get_type(y);
-    if cx=='C' || cy=='C'
+    if (cx=='C' || cy=='C')
         c='C';
     elseif (cx=='R' && (cy=='d' || cy=='r' || cy=='R')) || (cy=='R' && (cx=='d' || cx=='r' || cx=='R'))
         c='R';
@@ -45,6 +43,6 @@ else
     elseif (cx=='d' && cy=='d')
         c='d';
     else
-        error('get_type: (?,?)');
+        error('get_type(???,???)');
     end
 end

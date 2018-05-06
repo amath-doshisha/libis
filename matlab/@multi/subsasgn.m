@@ -2,20 +2,6 @@
 function x=subsasgn(x,s,varargin)
 cmd='subsasgn';
 switch s(1).type
-    %      case '()'
-    %         if ~isa(x,'multi')
-    %             x=multi(y);
-    %         end
-    %         y=varargin{1};
-    %         if ~isa(y,'multi')
-    %             y=multi(y);
-    %         end
-    %         x.data=subsasgn(x.data,s,y.data);
-    %     otherwise
-    %         x=builtin(cmd,x,s,varargin{:});
-    %
-    
-    % ïœçXå„ 2Ç¬Ç∆Ç‡multiÇ≈Ç»Ç¢Ç∆builtinÇ™åƒÇŒÇÍÇÈ
     case '()'
         y=varargin{1};
         if ~isa(x,'multi')
@@ -23,37 +9,17 @@ switch s(1).type
         end
         if ~isa(y,'multi')
             y=multi(y);
-        end        
+        end
         cx=get_type(x);
         cy=get_type(y);
-        c=get_type(x,y);              
+        c=get_type(x,y);
         if cx~=c
             x=multi_cast(x,c);
         end
         if cy~=c
             y=multi_cast(y,c);
-        end             
+        end
         x.data=subsasgn(x.data,s,y.data);
     otherwise
         x=builtin(cmd,x,s,varargin{:});
 end
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% old version                                        %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% cmd='subsasgn';
-% switch s(1).type
-%     case '()'
-%         y=varargin{1};
-%         if isa(x,'multi') && isa(y,'multi')
-%             x=multi(cmd,x.data,s,y.data);
-%         elseif isa(x,'multi')
-%             x=multi(cmd,x.data,s,multi(y).data);
-%         elseif isa(varargin,'multi')
-%             x=multi(cmd,multi(x).data,s,y.data);
-%         else
-%             x=multi(cmd,multi(x).data,s,multi(y).data);
-%         end
-%     otherwise
-%         x=builtin(cmd,x,s,varargin{:});
-% end
