@@ -191,8 +191,10 @@ array *array_clone(array *x)
  */ 
 void array_set_all_d(array *x, double y)
 {
+  int i;
   if(x==NULL){ return; }
-       if(ARRAY_TYPE(x)=='s'){ svec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_S(x),y,"%.7g"); }
+  if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_all_d(ARRAY_AVEC(x,i),y); } }
+  else if(ARRAY_TYPE(x)=='s'){ svec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_S(x),y,"%.7g"); }
   else if(ARRAY_TYPE(x)=='i'){ ivec_set_all  (ARRAY_SIZE(x),ARRAY_P0_I(x),(int)y); }
   else if(ARRAY_TYPE(x)=='d'){ dvec_set_all  (ARRAY_SIZE(x),ARRAY_P0_D(x),y); }
   else if(ARRAY_TYPE(x)=='z'){ zvec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_Z(x),y); }
@@ -200,7 +202,6 @@ void array_set_all_d(array *x, double y)
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_C(x),y); }
   else if(ARRAY_TYPE(x)=='R'){ rvec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_R(x),y); rvec_set_all_d(ARRAY_SIZE(x),ARRAY_P1_R(x),y); }
   else if(ARRAY_TYPE(x)=='C'){ cvec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_C(x),y); cvec_set_all_d(ARRAY_SIZE(x),ARRAY_P1_C(x),y); }
-  else { ERROR_EXIT("type=%c\n",ARRAY_TYPE(x)); }
 }
 
 /**
@@ -208,8 +209,10 @@ void array_set_all_d(array *x, double y)
  */ 
 void array_set_zeros(array *x)
 {
+  int i;
   if(x==NULL){ return; }
-       if(ARRAY_TYPE(x)=='s'){ svec_set_all  (ARRAY_SIZE(x),ARRAY_P0_S(x),"0"); }
+  if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_zeros(ARRAY_AVEC(x,i)); } }
+  else if(ARRAY_TYPE(x)=='s'){ svec_set_all  (ARRAY_SIZE(x),ARRAY_P0_S(x),"0"); }
   else if(ARRAY_TYPE(x)=='i'){ ivec_set_zeros(ARRAY_SIZE(x),ARRAY_P0_I(x)); }
   else if(ARRAY_TYPE(x)=='d'){ dvec_set_zeros(ARRAY_SIZE(x),ARRAY_P0_D(x)); }
   else if(ARRAY_TYPE(x)=='z'){ zvec_set_zeros(ARRAY_SIZE(x),ARRAY_P0_Z(x)); }
@@ -217,7 +220,6 @@ void array_set_zeros(array *x)
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_zeros(ARRAY_SIZE(x),ARRAY_P0_C(x)); }
   else if(ARRAY_TYPE(x)=='R'){ rvec_set_zeros(ARRAY_SIZE(x),ARRAY_P0_R(x)); rvec_set_zeros(ARRAY_SIZE(x),ARRAY_P1_R(x)); }
   else if(ARRAY_TYPE(x)=='C'){ cvec_set_zeros(ARRAY_SIZE(x),ARRAY_P0_C(x)); cvec_set_zeros(ARRAY_SIZE(x),ARRAY_P1_C(x)); }
-  else { ERROR_EXIT("type=%c\n",ARRAY_TYPE(x)); }
 }
 
 /**
@@ -225,8 +227,10 @@ void array_set_zeros(array *x)
  */ 
 void array_set_ones(array *x)
 {
+  int i;
   if(x==NULL){ return; }
-       if(ARRAY_TYPE(x)=='s'){ svec_set_all (ARRAY_SIZE(x),ARRAY_P0_S(x),"1"); }
+  if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_ones(ARRAY_AVEC(x,i)); } }
+  else if(ARRAY_TYPE(x)=='s'){ svec_set_all (ARRAY_SIZE(x),ARRAY_P0_S(x),"1"); }
   else if(ARRAY_TYPE(x)=='i'){ ivec_set_ones(ARRAY_SIZE(x),ARRAY_P0_I(x)); }
   else if(ARRAY_TYPE(x)=='d'){ dvec_set_ones(ARRAY_SIZE(x),ARRAY_P0_D(x)); }
   else if(ARRAY_TYPE(x)=='z'){ zvec_set_ones(ARRAY_SIZE(x),ARRAY_P0_Z(x)); }
@@ -234,7 +238,6 @@ void array_set_ones(array *x)
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_ones(ARRAY_SIZE(x),ARRAY_P0_C(x)); }
   else if(ARRAY_TYPE(x)=='R'){ rvec_set_ones(ARRAY_SIZE(x),ARRAY_P0_R(x)); rvec_set_ones(ARRAY_SIZE(x),ARRAY_P1_R(x)); }
   else if(ARRAY_TYPE(x)=='C'){ cvec_set_ones(ARRAY_SIZE(x),ARRAY_P0_C(x)); cvec_set_ones(ARRAY_SIZE(x),ARRAY_P1_C(x)); }
-  else { ERROR_EXIT("type=%c\n",ARRAY_TYPE(x)); }
 }
 
 /**
@@ -242,8 +245,10 @@ void array_set_ones(array *x)
  */ 
 void array_set_nan(array *x)
 {
+  int i;
   if(x==NULL){ return; }
-       if(ARRAY_TYPE(x)=='s'){ svec_set_all  (ARRAY_SIZE(x),ARRAY_P0_S(x),"NaN"); }
+  if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_nan(ARRAY_AVEC(x,i)); } }
+  else if(ARRAY_TYPE(x)=='s'){ svec_set_all  (ARRAY_SIZE(x),ARRAY_P0_S(x),"NaN"); }
   else if(ARRAY_TYPE(x)=='i'){ ivec_set_zeros(ARRAY_SIZE(x),ARRAY_P0_I(x)); }
   else if(ARRAY_TYPE(x)=='d'){ dvec_set_nan  (ARRAY_SIZE(x),ARRAY_P0_D(x)); }
   else if(ARRAY_TYPE(x)=='z'){ zvec_set_nan  (ARRAY_SIZE(x),ARRAY_P0_Z(x)); }
@@ -251,7 +256,6 @@ void array_set_nan(array *x)
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_nan  (ARRAY_SIZE(x),ARRAY_P0_C(x)); }
   else if(ARRAY_TYPE(x)=='R'){ rvec_set_nan  (ARRAY_SIZE(x),ARRAY_P0_R(x)); rvec_set_nan(ARRAY_SIZE(x),ARRAY_P1_R(x)); }
   else if(ARRAY_TYPE(x)=='C'){ cvec_set_nan  (ARRAY_SIZE(x),ARRAY_P0_C(x)); cvec_set_nan(ARRAY_SIZE(x),ARRAY_P1_C(x)); }
-  else { ERROR_EXIT("type=%c\n",ARRAY_TYPE(x)); }
 }
 
 /**
@@ -259,8 +263,10 @@ void array_set_nan(array *x)
  */ 
 void array_set_inf(array *x)
 {
+  int i;
   if(x==NULL){ return; }
-       if(ARRAY_TYPE(x)=='s'){ svec_set_all(ARRAY_SIZE(x),ARRAY_P0_S(x),"Inf"); }
+  if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_inf(ARRAY_AVEC(x,i)); } }
+  else if(ARRAY_TYPE(x)=='s'){ svec_set_all(ARRAY_SIZE(x),ARRAY_P0_S(x),"Inf"); }
   else if(ARRAY_TYPE(x)=='i'){ ivec_set_all(ARRAY_SIZE(x),ARRAY_P0_I(x),((int)1)<<(8*(sizeof(int)-1))); }
   else if(ARRAY_TYPE(x)=='d'){ dvec_set_inf(ARRAY_SIZE(x),ARRAY_P0_D(x),1); }
   else if(ARRAY_TYPE(x)=='z'){ zvec_set_inf(ARRAY_SIZE(x),ARRAY_P0_Z(x),1,1); }
@@ -268,7 +274,6 @@ void array_set_inf(array *x)
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_inf(ARRAY_SIZE(x),ARRAY_P0_C(x),1,1); }
   else if(ARRAY_TYPE(x)=='R'){ rvec_set_inf(ARRAY_SIZE(x),ARRAY_P0_R(x),1); rvec_set_inf(ARRAY_SIZE(x),ARRAY_P1_R(x),1); }
   else if(ARRAY_TYPE(x)=='C'){ cvec_set_inf(ARRAY_SIZE(x),ARRAY_P0_C(x),1,1); cvec_set_inf(ARRAY_SIZE(x),ARRAY_P1_C(x),1,1); }
-  else { ERROR_EXIT("type=%c\n",ARRAY_TYPE(x)); }
 }
 
 /**
@@ -276,9 +281,10 @@ void array_set_inf(array *x)
  */ 
 void array_set_rand(array *x, double a0, double a1)
 {
-  int *y=NULL;
+  int i,*y=NULL;
   if(x==NULL){ return; }
-  if(ARRAY_TYPE(x)=='s'){
+  if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_rand(ARRAY_AVEC(x,i),a0,a1); } }
+  else if(ARRAY_TYPE(x)=='s'){
     y=ivec_allocate(ARRAY_SIZE(x));
     ivec_set_rand(ARRAY_SIZE(x),y,a0,a1);   
     svec_set_si(ARRAY_SIZE(x),ARRAY_P0_S(x),y);
@@ -291,7 +297,6 @@ void array_set_rand(array *x, double a0, double a1)
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_C(x),a1-a0,a0); }
   else if(ARRAY_TYPE(x)=='R'){ rvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_R(x),a1-a0,a0); rvec_copy(ARRAY_SIZE(x),ARRAY_P1_R(x),ARRAY_P0_R(x)); }
   else if(ARRAY_TYPE(x)=='C'){ cvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_C(x),a1-a0,a0); cvec_copy(ARRAY_SIZE(x),ARRAY_P1_C(x),ARRAY_P0_C(x)); }
-  else { ERROR_EXIT("type=%c\n",ARRAY_TYPE(x)); }
 }
 
 /**
@@ -299,8 +304,9 @@ void array_set_rand(array *x, double a0, double a1)
  */ 
 void array_set_grid(array *x)
 {
-  int *y=NULL;
+  int i,*y=NULL;
   if(x==NULL){ return; }
+  if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_grid(ARRAY_AVEC(x,i)); } }
   if(ARRAY_TYPE(x)=='s'){
     y=ivec_allocate(ARRAY_SIZE(x));
     ivec_set_grid(ARRAY_SIZE(x),y);
@@ -314,7 +320,6 @@ void array_set_grid(array *x)
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_grid(ARRAY_SIZE(x),ARRAY_P0_C(x)); }
   else if(ARRAY_TYPE(x)=='R'){ rvec_set_grid(ARRAY_SIZE(x),ARRAY_P0_R(x)); rvec_set_grid(ARRAY_SIZE(x),ARRAY_P1_R(x)); }
   else if(ARRAY_TYPE(x)=='C'){ cvec_set_grid(ARRAY_SIZE(x),ARRAY_P0_C(x)); cvec_set_grid(ARRAY_SIZE(x),ARRAY_P1_C(x)); }
-  else { ERROR_EXIT("type=%c\n",ARRAY_TYPE(x)); }
 }
 
 /** @} */
@@ -377,14 +382,23 @@ void array_put(array *x)
   printf("  p1: %p\n",ARRAY_P1(x));
   printf("}\n");
   for(i=0; i<ARRAY_SIZE(x); i++){
-    if(ARRAY_TYPE(x)=='s'){ printf("array[%d]=%s\n",i,ARRAY_SVEC(x,i)); }
-    if(ARRAY_TYPE(x)=='i'){ printf("array[%d]=%d\n",i,ARRAY_IVEC(x,i)); }
-    if(ARRAY_TYPE(x)=='d'){ printf("array[%d]=%.7g\n",i,ARRAY_DVEC(x,i)); }
-    if(ARRAY_TYPE(x)=='z'){ printf("array[%d]=(%.7g, %.7g)\n",i,Z_R(ARRAY_ZVEC(x,i)),Z_I(ARRAY_ZVEC(x,i))); }
-    if(ARRAY_TYPE(x)=='r'){ mpfr_printf("array[%d]=%.7Rg\n",i,ARRAY_RVEC(x,i)); }
-    if(ARRAY_TYPE(x)=='c'){ mpfr_printf("array[%d]=(%.7Rg, %.7Rg)\n",i,C_R(ARRAY_CVEC(x,i)),C_I(ARRAY_CVEC(x,i))); }
-    if(ARRAY_TYPE(x)=='R'){ mpfr_printf("array[%d]=[%.7Rg, %.7Rg]\n",i,ARRAY_RVEC0(x,i),ARRAY_RVEC1(x,i)); }
-    if(ARRAY_TYPE(x)=='C'){ mpfr_printf("array[%d]=[(%.7Rg, %.7Rg), (%.7Rg, %.7Rg)]\n",i,C_R(ARRAY_CVEC0(x,i)),C_I(ARRAY_CVEC0(x,i)),C_R(ARRAY_CVEC1(x,i)),C_I(ARRAY_CVEC1(x,i))); }
+    if(ARRAY_TYPE(x)=='a'){
+      printf("array[%d]=",i);
+      if(ARRAY_AVEC(x,i)==NULL){ printf("NULL\n"); }
+      else{
+	printf("array('%c',%d,[",ARRAY_TYPE(ARRAY_AVEC(x,i)),ARRAY_NDIM(ARRAY_AVEC(x,i)));
+	ivec_put(ARRAY_NDIM(ARRAY_AVEC(x,i)),ARRAY_DIM_P(ARRAY_AVEC(x,i)),",");
+	printf("])\n");
+      }
+    }
+    else if(ARRAY_TYPE(x)=='s'){ printf("array[%d]=%s\n",i,ARRAY_SVEC(x,i)); }
+    else if(ARRAY_TYPE(x)=='i'){ printf("array[%d]=%d\n",i,ARRAY_IVEC(x,i)); }
+    else if(ARRAY_TYPE(x)=='d'){ printf("array[%d]=%.7g\n",i,ARRAY_DVEC(x,i)); }
+    else if(ARRAY_TYPE(x)=='z'){ printf("array[%d]=(%.7g, %.7g)\n",i,Z_R(ARRAY_ZVEC(x,i)),Z_I(ARRAY_ZVEC(x,i))); }
+    else if(ARRAY_TYPE(x)=='r'){ mpfr_printf("array[%d]=%.7Rg\n",i,ARRAY_RVEC(x,i)); }
+    else if(ARRAY_TYPE(x)=='c'){ mpfr_printf("array[%d]=(%.7Rg, %.7Rg)\n",i,C_R(ARRAY_CVEC(x,i)),C_I(ARRAY_CVEC(x,i))); }
+    else if(ARRAY_TYPE(x)=='R'){ mpfr_printf("array[%d]=[%.7Rg, %.7Rg]\n",i,ARRAY_RVEC0(x,i),ARRAY_RVEC1(x,i)); }
+    else if(ARRAY_TYPE(x)=='C'){ mpfr_printf("array[%d]=[(%.7Rg, %.7Rg), (%.7Rg, %.7Rg)]\n",i,C_R(ARRAY_CVEC0(x,i)),C_I(ARRAY_CVEC0(x,i)),C_R(ARRAY_CVEC1(x,i)),C_I(ARRAY_CVEC1(x,i))); }
   }
 }
 
@@ -411,7 +425,7 @@ void array_print(array *x, char *name, char format, int digits)
 	printf("=NULL\n");
       }else{
 	printf("=array('%c',%d,[",ARRAY_TYPE(ARRAY_AVEC(x,k)),ARRAY_NDIM(ARRAY_AVEC(x,k)));
-	for(i=0; i<ARRAY_NDIM(x); i++){ printf("%s%d",(i==0?"":","),ARRAY_DIM(x,i)); }
+	ivec_put(ARRAY_NDIM(ARRAY_AVEC(x,k)),ARRAY_DIM_P(ARRAY_AVEC(x,k)),",");
 	printf("])\n");
       }
     }

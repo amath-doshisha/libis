@@ -124,7 +124,7 @@ int main(int argc, const char *argv[])
   ARRAY_AVEC(a,0)=x;
   ARRAY_AVEC(a,1)=y;
   ARRAY_AVEC(a,2)=z;
-  //  array_put(a);
+  array_put(a);
   array_print(a,"a",f,digits);
 
   //  x=array_free(x);
