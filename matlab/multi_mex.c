@@ -71,6 +71,8 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_get_d.c"
 #include"./c/multi_get_s.c"
 #include"./c/multi_complex.c"
+#include"./c/multi_real.c"
+#include"./c/multi_conj.c"
 // ここから未チェック
 #include"./c/multi_set_eye.c"
 #include"./c/multi_get_prec.c"
@@ -103,9 +105,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_horzcat.c"
 #include"./c/multi_vertcat.c"
 #include"./c/multi_inv.c"
-#include"./c/multi_real.c"
 #include"./c/multi_imag.c"
-#include"./c/multi_conj.c"
 #include"./c/multi_abs.c"
 #include"./c/multi_angle.c"
 #include"./c/multi_max.c"
@@ -152,6 +152,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"set_inf"))   { multi_set_inf   (nlhs,plhs,nrhs,prhs); }  // x=inf(type,size)
   else if(STR_EQ(cmd,"complex"))   { multi_complex   (nlhs,plhs,nrhs,prhs); }  // y=complex(x)
   else if(STR_EQ(cmd,"real"))      { multi_real      (nlhs,plhs,nrhs,prhs); }  // y=real(x)
+  else if(STR_EQ(cmd,"conj"))      { multi_conj      (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
 // ここから未チェック
   else if(STR_EQ(cmd,"get_prec"))  { multi_get_prec  (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
   else if(STR_EQ(cmd,"get_sign"))  { multi_get_sign  (nlhs,plhs,nrhs,prhs); }  // y=get_sign(x)
@@ -186,7 +187,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"vertcat"))   { multi_vertcat   (nlhs,plhs,nrhs,prhs); }  // y=[x1; x2; ...]
   else if(STR_EQ(cmd,"inv"))       { multi_inv       (nlhs,plhs,nrhs,prhs); }  // y=inv(x)
   else if(STR_EQ(cmd,"imag"))      { multi_imag      (nlhs,plhs,nrhs,prhs); }  // y=imag(x)
-  else if(STR_EQ(cmd,"conj"))      { multi_conj      (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
   else if(STR_EQ(cmd,"abs"))       { multi_abs       (nlhs,plhs,nrhs,prhs); }  // y=abs(x)
   else if(STR_EQ(cmd,"angle"))     { multi_angle     (nlhs,plhs,nrhs,prhs); }  // y=angle(x)      
   else if(STR_EQ(cmd,"max"))       { multi_max       (nlhs,plhs,nrhs,prhs); }  // y=max(x) or y=max(x,z)

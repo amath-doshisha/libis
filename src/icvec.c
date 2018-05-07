@@ -288,6 +288,15 @@ void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
 }
 
 /**
+ @brief [y0,y1]=conj([x0,x1])
+*/
+void icvec_conj(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ icconj(y0[i],y1[i],x0[i],x1[i]); }
+}
+
+/**
  @brief 符号の反転 [y0,y1]=-[x0,x1]
 */
 void icvec_neg(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)

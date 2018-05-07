@@ -72,7 +72,7 @@ int zhpeig_1pair(int n, const dcomplex *A, int LDA, const dcomplex *z, dcomplex 
     else if(info>0) { done=ZHPEIG_SINGULAR; }
     else{
       eta=zvec_norm_max(n,F);                        // eta=norm_max(F)
-      zvec_sub(n,x,F);                               // x=x-F
+      zvec_sub(n,x,x,F);                             // x=x-F
       zvec_normalize_sgn(n,x);                       // x=x/sqrt(x'*x)
       C=zvec_dot(n,z,x);                             // C=z'*x
       dot=zvec_dot(n,w,x);                           // lambda=w'*x

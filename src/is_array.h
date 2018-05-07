@@ -134,10 +134,13 @@ array *array_get_complex2(array *xr, array *xi); // y=complex2(xr,xi)
 /*
  * operatior for one argumentr
  */
+array *array_conj(array *x); // y=conj(x)
 
 /*
  * operatior for two arguments
  */
+array *array_add(array *x, array *y); // z=x+y
+
 
 /*
  * operatior for tree arguments

@@ -83,10 +83,10 @@ void dvec_copy_index(int n, double *Y, const double *X, const int *I);
 void dvec_add_scalar(int n, double *x, double a);
 // x=x-a
 void dvec_sub_scalar(int n, double *x, double a);
-// y=y+x
-void dvec_add(int n, double *y, const double *x);
-// y=y-x
-void dvec_sub(int n, double *y, const double *x);
+// z=x+y
+void dvec_add(int n, double *z, double *x, double *y);
+// z=x-y
+void dvec_sub(int n, double *z, double *x, double *y);
 // y=y+a*x
 void dvec_add_scaled(int n, double *y, double a, const double *x);
 // y=y-a*x

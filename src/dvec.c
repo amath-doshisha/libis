@@ -324,22 +324,18 @@ void dvec_sub_scalar(int n, double *x, double a)
 
 //////////////////////////////////////////////////////
 
-// y=y+x
-void dvec_add(int n, double *y, const double *x)
+// z=x+y
+void dvec_add(int n, double *z, double *x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){
-    y[i]+=x[i];
-  }
+  for(i=0; i<n; i++){ z[i]=x[i]+y[i]; }
 }
 
-// y=y-x
-void dvec_sub(int n, double *y, const double *x)
+// z=x-y
+void dvec_sub(int n, double *z, double *x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){
-    y[i]-=x[i];
-  }
+  for(i=0; i<n; i++){ z[i]=x[i]-y[i]; }
 }
 
 //////////////////////////////////////////////////////

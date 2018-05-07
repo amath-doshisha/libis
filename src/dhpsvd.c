@@ -55,8 +55,8 @@ int dhpsvd_1pair(int m, int n, const double *A, int LDA, const double *z, double
     else if(info>0) { done=2; ret=DHPSVD_SINGULAR; }
     else{
       h=dvec_norm_max(m+n,H);                           // h=norm_max(H)
-      dvec_sub(m,u,&Hu);                                // u=u-H(1:m);    
-      dvec_sub(n,v,&Hv);                                // v=v-H((m+1):end);
+      dvec_sub(m,u,u,&Hu);                              // u=u-H(1:m);    
+      dvec_sub(n,v,v,&Hv);                              // v=v-H((m+1):end);
     }
     if(h<eps_e || e<eps_r) { done=1; ret=DHPSVD_CONVERGENT; }
     if(debug>0){ printf("[dhpsvd_1pair] done=%d ret=%d step=%02d log2(e)=%+6.2f log2(h)=%+6.2f sigma=%+.16e\n",done,ret,step,log(fabs(e))/log(2),log(fabs(h))/log(2),sigma); }

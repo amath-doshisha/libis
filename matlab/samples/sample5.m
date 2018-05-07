@@ -1,76 +1,100 @@
 clear all
 close all
+A = [1 2 3; 4 5 6]
+b = [10; 100]
+B=zeros(2,3,2,2);
+size(B)
+C=zeros(2,3,2,2,2);
+size(C)
+% A+b
+% b+b'
+% B+A
+% B+b
+D=B+C;
+size(D)
 
-Ad=rand(3,3)
-Ar=multi(Ad)
-AR=imulti(Ad)
-Az=Ad+i*rand(3,3)
-Ac=multi(Az)
-AC=imulti(Az)
+% A=multi([1 2 3; 4 5 6])
+% b=multi([10; 100])
+% B=zeros(2,3,2,2)
+% A+b
+% b+b'
+% B+A
+% B+b
 
-B=Ar;
-B(:,2)=Ar(:,3)
-B(:,2)=Ad(:,3)
-B(:,2)=Az(:,3)
+% A=zeros(4,3);A(:)=1:12
+% B=zeros(1,3,3);B(:)=1:9
+% A+B
 
-
-disp('----------------');
-B=Ad
-Bd=multi_cast(B,'d')
-Bz=multi_cast(B,'z')
-Br=multi_cast(B,'r')
-Bc=multi_cast(B,'c')
-BR=multi_cast(B,'R')
-BC=multi_cast(B,'C')
-
-
-disp('----------------');
-B=Az
-Bd=multi_cast(B,'d')
-Bz=multi_cast(B,'z')
-Br=multi_cast(B,'r')
-Bc=multi_cast(B,'c')
-BR=multi_cast(B,'R')
-BC=multi_cast(B,'C')
-
-
-disp('----------------');
-B=Ar
-Bd=multi_cast(B,'d')
-Bz=multi_cast(B,'z')
-Br=multi_cast(B,'r')
-Bc=multi_cast(B,'c')
-BR=multi_cast(B,'R')
-BC=multi_cast(B,'C')
-
-
-disp('----------------');
-B=Ac
-Bd=multi_cast(B,'d')
-Bz=multi_cast(B,'z')
-Br=multi_cast(B,'r')
-Bc=multi_cast(B,'c')
-BR=multi_cast(B,'R')
-BC=multi_cast(B,'C')
-
-
-disp('----------------');
-B=AR
-Bd=multi_cast(B,'d')
-Bz=multi_cast(B,'z')
-Br=multi_cast(B,'r')
-Bc=multi_cast(B,'c')
-BR=multi_cast(B,'R')
-BC=multi_cast(B,'C')
-
-disp('----------------');
-B=AC
-Bd=multi_cast(B,'d')
-Bz=multi_cast(B,'z')
-Br=multi_cast(B,'r')
-Bc=multi_cast(B,'c')
-BR=multi_cast(B,'R')
-BC=multi_cast(B,'C')
+% Ad=rand(3,3)
+% Ar=multi(Ad)
+% AR=imulti(Ad)
+% Az=Ad+i*rand(3,3)
+% Ac=multi(Az)
+% AC=imulti(Az)
+% 
+% B=Ar;
+% B(:,2)=Ar(:,3)
+% B(:,2)=Ad(:,3)
+% B(:,2)=Az(:,3)
+% 
+% 
+% disp('----------------');
+% B=Ad
+% Bd=multi_cast(B,'d')
+% Bz=multi_cast(B,'z')
+% Br=multi_cast(B,'r')
+% Bc=multi_cast(B,'c')
+% BR=multi_cast(B,'R')
+% BC=multi_cast(B,'C')
+% 
+% 
+% disp('----------------');
+% B=Az
+% Bd=multi_cast(B,'d')
+% Bz=multi_cast(B,'z')
+% Br=multi_cast(B,'r')
+% Bc=multi_cast(B,'c')
+% BR=multi_cast(B,'R')
+% BC=multi_cast(B,'C')
+% 
+% 
+% disp('----------------');
+% B=Ar
+% Bd=multi_cast(B,'d')
+% Bz=multi_cast(B,'z')
+% Br=multi_cast(B,'r')
+% Bc=multi_cast(B,'c')
+% BR=multi_cast(B,'R')
+% BC=multi_cast(B,'C')
+% 
+% 
+% disp('----------------');
+% B=Ac
+% Bd=multi_cast(B,'d')
+% Bz=multi_cast(B,'z')
+% Br=multi_cast(B,'r')
+% Bc=multi_cast(B,'c')
+% BR=multi_cast(B,'R')
+% BC=multi_cast(B,'C')
+% 
+% 
+% disp('----------------');
+% B=AR
+% Bd=multi_cast(B,'d')
+% Bz=multi_cast(B,'z')
+% Br=multi_cast(B,'r')
+% Bc=multi_cast(B,'c')
+% BR=multi_cast(B,'R')
+% BC=multi_cast(B,'C')
+% 
+% disp('----------------');
+% B=AC
+% Bd=multi_cast(B,'d')
+% Bz=multi_cast(B,'z')
+% Br=multi_cast(B,'r')
+% Bc=multi_cast(B,'c')
+% BR=multi_cast(B,'R')
+% BC=multi_cast(B,'C')
 
 % disp('----------------');
 % A=rand(3,1)

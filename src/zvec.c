@@ -317,6 +317,14 @@ void zvec_copy_index(int n, dcomplex *Y, const dcomplex *X, const int *I)
   for(i=0; i<n; i++) Y[i]=X[I[i]];
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+
+// y=conj(x)
+void zvec_conj(int n, dcomplex *y, const dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ Z_SET_CONJ(y[i],x[i]); }
+}
 
 /////////////////////////////////////////////////////////////////////////////////////
 
@@ -339,21 +347,43 @@ void zvec_sub_scalar(int n, dcomplex *x, dcomplex a)
   }
 }
 
-// y=y+x
-void zvec_add(int n, dcomplex *y, const dcomplex *x)
+// z=x+y
+void zvec_add(int n, dcomplex *z, dcomplex *x, dcomplex *y)
 {
   int i;
   for(i=0; i<n; i++){
-    Z_ADD(y[i],x[i]);
+    Z_SET_PLUS(z[i],x[i],y[i]);
   }
 }
 
-// y=y-x
-void zvec_sub(int n, dcomplex *y, const dcomplex *x)
+// z=x+y
+void zvec_add_d(int n, dcomplex *z, dcomplex *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){
-    Z_SUB(y[i],x[i]);
+    Z_R(z[i])=Z_R(x[i])+y[i];
+    Z_I(z[i])=Z_I(x[i]);
+  }
+}
+
+// z=x+y
+void zvec_add_d1(int n, dcomplex *z, double *x, dcomplex *y)
+{
+  return zvec_add_d(n,z,y,x);
+}
+
+// z=x+y
+void zvec_add_d2(int n, dcomplex *z, dcomplex *x, double *y)
+{
+  return zvec_add_d(n,z,x,y);
+}
+
+// z=x-y
+void zvec_sub(int n, dcomplex *z, dcomplex *x, dcomplex *y)
+{
+  int i;
+  for(i=0; i<n; i++){
+    Z_SET_MINUS(z[i],x[i],y[i]);
   }
 }
 

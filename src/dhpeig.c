@@ -66,8 +66,8 @@ int dhpeig_1pair(int n, const double *A, int LDA, const double *z, double *x, do
     if(info<0)      { ERROR_EXIT("Error in dhpeig_1pair(), dsolve, info=%d.\n",info); }
     else if(info>0) { done=DHPEIG_SINGULAR; }
     else{
-      eta=dvec_norm_max(n,F);                 // h=norm_max(F);
-      dvec_sub(n,x,F);                      // x=x-F
+      eta=dvec_norm_max(n,F);               // h=norm_max(F);
+      dvec_sub(n,x,x,F);                    // x=x-F
       dvec_normalize_sgn(n,x);              // x=x/sqrt(x'*x)
       C=dvec_dot(n,z,x);                    // C=z'*x
       (*lambda)=dvec_dot(n,w,x)/C;          // lambda=(w'*x)/C

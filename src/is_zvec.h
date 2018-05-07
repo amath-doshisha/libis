@@ -80,14 +80,19 @@ void zvec_copy_d(int n, dcomplex *y, const double *x);
 void zvec_copy_dd(int n, dcomplex *y, const double *x_r, const double *x_i);
 // Y[i]=X[I[i]], 0<=i<n
 void zvec_copy_index(int n, dcomplex *Y, const dcomplex *X, const int *I);
+// y=conj(x)
+void zvec_conj(int n, dcomplex *y, const dcomplex *x);
 // x=x+a
 void zvec_add_scalar(int n, dcomplex *x, dcomplex a);
 // x=x-a
 void zvec_sub_scalar(int n, dcomplex *x, dcomplex a);
-// y=y+x
-void zvec_add(int n, dcomplex *y, const dcomplex *x);
-// y=y-x
-void zvec_sub(int n, dcomplex *y, const dcomplex *x);
+// z=x+y
+void zvec_add(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_add_d(int n, dcomplex *z, dcomplex *x, double *y);
+void zvec_add_d1(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_add_d2(int n, dcomplex *z, dcomplex *x, double *y);
+// z=x-y
+void zvec_sub(int n, dcomplex *z, dcomplex *x, dcomplex *y);
 // y=y+a*x
 void zvec_add_scaled(int n, dcomplex *y, dcomplex a, const dcomplex *x);
 // y=y-a*x
