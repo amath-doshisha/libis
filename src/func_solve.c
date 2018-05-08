@@ -412,7 +412,7 @@ void func_init_val(int n, cmulti **z, cmulti **a)                         //ÂàùÊ
 
 int func_weierstrass(int n, cmulti **z1, cmulti **z0, cmulti **a)
 {
-  int i,j,k;
+  int i,j,k=0;
   double N;
   rmulti *d=NULL,*eps=NULL;
   cmulti *b=NULL,**c=NULL;

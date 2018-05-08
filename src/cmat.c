@@ -797,12 +797,11 @@ void cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
 
 /**
  @brief rmulti型の行列を転置をとり値のコピー B=A^T.
- @param[in]  m   行列Aの行の個数.行列Bの列の個数.
- @param[in]  n   行列Aの列の個数.行列Bの行の個数.
- @param[in]  A   初期化済みのrmulti型の行列.サイズは(m,n).
- @param[in]  LDA Aの第1次元.
- @param[in]  B   初期化済みの行列.サイズは(n,m).
- @param[out] B   コピーされた結果.
+ @param[in]      m   行列Aの行の個数.行列Bの列の個数.
+ @param[in]      n   行列Aの列の個数.行列Bの行の個数.
+ @param[in]      A   初期化済みのrmulti型の行列.サイズは(m,n).
+ @param[in]      LDA Aの第1次元.
+ @param[in,out]  B   [in]初期化済みの行列.サイズは(n,m).[out]コピーされた結果.
  @param[in]  LDB Bの第1次元.
 */
 void cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
@@ -817,12 +816,11 @@ void cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 
 /**
  @brief rmulti型の行列を転置をとり値のコピー B=A^T.
- @param[in]  m   行列Aの行の個数.行列Bの列の個数.
- @param[in]  n   行列Aの列の個数.行列Bの行の個数.
- @param[in]  A   初期化済みのrmulti型の行列.サイズは(m,n).
- @param[in]  LDA Aの第1次元.
- @param[in]  B   初期化済みの行列.サイズは(n,m).
- @param[out] B   コピーされた結果.
+ @param[in]      m   行列Aの行の個数.行列Bの列の個数.
+ @param[in]      n   行列Aの列の個数.行列Bの行の個数.
+ @param[in]      A   初期化済みのrmulti型の行列.サイズは(m,n).
+ @param[in]      LDA Aの第1次元.
+ @param[in,out]  B   [in]初期化済みの行列.サイズは(n,m).[out]コピーされた結果.
  @param[in]  LDB Bの第1次元.
 */
 void cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
@@ -837,12 +835,11 @@ void cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
 
 /**
  @brief rmulti型の行列を共役転置をとり値のコピー B=A'.
- @param[in]  m   行列Aの行の個数.行列Bの列の個数.
- @param[in]  n   行列Aの列の個数.行列Bの行の個数.
- @param[in]  A   初期化済みのrmulti型の行列.サイズは(m,n).
- @param[in]  LDA Aの第1次元.
- @param[in]  B   初期化済みの行列.サイズは(n,m).
- @param[out] B   コピーされた結果.
+ @param[in]      m   行列Aの行の個数.行列Bの列の個数.
+ @param[in]      n   行列Aの列の個数.行列Bの行の個数.
+ @param[in]      A   初期化済みのrmulti型の行列.サイズは(m,n).
+ @param[in]      LDA Aの第1次元.
+ @param[in,out]  B   [in]初期化済みの行列.サイズは(n,m).[out]コピーされた結果.
  @param[in]  LDB Bの第1次元.
 */
 void cmat_copy_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
@@ -1186,8 +1183,7 @@ void cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b
  @brief cmulti型の行列の積 C=A*B.
  @param[in]  A 初期化済みのサイズが(l,m)の行列.
  @param[in]  B 初期化済みのサイズが(m,n)の行列.
- @param[in]  C 初期化済みのサイズが(l,n)の行列.
- @param[out] C 計算結果.
+ @param[in,out]  C [in]初期化済みのサイズが(l,n)の行列.[out]計算結果.
 */
 void cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
@@ -1209,10 +1205,9 @@ void cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cm
 
 /**
  @brief cmulti型の行列の積 C=A*B.
- @param[in]  A 初期化済みのサイズが(l,m)の行列.
- @param[in]  B 初期化済みのサイズが(m,n)の行列.
- @param[in]  C 初期化済みのサイズが(l,n)の行列.
- @param[out] C 計算結果.
+ @param[in]      A 初期化済みのサイズが(l,m)の行列.
+ @param[in]      B 初期化済みのサイズが(m,n)の行列.
+ @param[in,out]  C [in]初期化済みのサイズが(l,n)の行列.[out]計算結果.
 */
 void cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmulti **B, int LDB)
 {
@@ -1235,8 +1230,7 @@ void cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA,
  @brief cmulti型の行列の積 C=A*B.
  @param[in]  A 初期化済みのサイズが(l,m)の行列.
  @param[in]  B 初期化済みのサイズが(m,n)の行列.
- @param[in]  C 初期化済みのサイズが(l,n)の行列.
- @param[out] C 計算結果.
+ @param[in,out]  C [in]初期化済みのサイズが(l,n)の行列.[out]計算結果.
 */
 void cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti **B, int LDB)
 {
@@ -1259,8 +1253,7 @@ void cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA,
  @brief cmulti型の行列の積の加算 C+=A*B.
  @param[in]  A 初期化済みのサイズが(l,m)の行列.
  @param[in]  B 初期化済みのサイズが(m,n)の行列.
- @param[in]  C 初期化済みのサイズが(l,n)の行列.
- @param[out] C 計算結果.
+ @param[in,out]  C [in]初期化済みのサイズが(l,n)の行列.[out]計算結果.
 */
 void cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
@@ -1283,8 +1276,7 @@ void cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA
  @brief cmulti型の行列の積の減算 C-=A*B.
  @param[in]  A 初期化済みのサイズが(l,m)の行列.
  @param[in]  B 初期化済みのサイズが(m,n)の行列.
- @param[in]  C 初期化済みのサイズが(l,n)の行列.
- @param[out] C 計算結果.
+ @param[in,out]  C [in]初期化済みのサイズが(l,n)の行列.[out]計算結果.
 */
 void cmat_sub_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB)
 {
@@ -1544,7 +1536,7 @@ void cmat_inv(int n, cmulti **B, int LDB, cmulti **A, int LDA)
 /**
  @brief cmulti型の行列の累乗 B=A^p.
  @param[in]  A 初期化済みのサイズが(l,l)の行列.
- @param[in]  x スカラー
+ @param[in]  p スカラー
  @param[out] B 初期化済みのサイズが(l,l)の行列.
 */
 void cmat_power(int n, cmulti **B, int LDB, cmulti **A, int LDA, int p)

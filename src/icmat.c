@@ -327,8 +327,8 @@ void icmat_sub_prod(int l, int m, int n, cmulti **C0, int LDC0, cmulti **C1, int
 
 /**
  @brief icmulti型の逆行列 [B0,B1]=inv(A0,A1)
- @param[in]  A 初期化済みのサイズが(n,n)の行列.
- @param[out] B 初期化済みのサイズが(n,n)の行列.
+ @param[in]  A0 A1 初期化済みのサイズが(n,n)の行列.
+ @param[out] B0 B1 初期化済みのサイズが(n,n)の行列.
 */
 void icmat_inv(int n, cmulti **B0, cmulti **B1, int LDB, cmulti **A0, cmulti **A1, int LDA)
 {

@@ -28,9 +28,8 @@
 
 /**
  @brief 線形方程式A*X=Bの解法.
- @param[in]  B サイズ(n,NRHS)の行列B.
- @param[in]  B サイズ(n,NRHS)の解の行列X.
- @param[in]  A サイズnの正方行列で係数行列A.
+ @param[in,out]  B   [in]サイズ(n,NRHS)の行列B.[out]サイズ(n,NRHS)の解の行列X.
+ @param[in]      A   サイズnの正方行列で係数行列A.
  */
 void csolve(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
 {
@@ -64,10 +63,8 @@ void csolve_residual(int n, int NRHS, cmulti **R, int LDR, cmulti **A, int LDA, 
 
 /**
  @brief 線形方程式A*X=BのLU分解による解法.
- @param[in]  B 行列B.サイズは(n,NRHS).
- @param[out] B 解の行列X.サイズは(n,NRHS).
- @param[in]  A 係数行列A.サイズは(n,n).
- @param[out] A 破壊される.
+ @param[in,out]  B   [in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS).
+ @param[in,out]  A   [in]係数行列A.サイズは(n,n).[out]破壊される.
  */
 void csolve_lu(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
 {
@@ -86,10 +83,8 @@ void csolve_lu(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *i
 
 /**
  @brief 行列AのLU分解.
- @param[in]  A サイズnの正方行列A.
- @param[out] A LU分解の結果.
- @param[in]  p サイズがnの初期化済みの配列.
- @param[out] p ピボット選択の結果.
+ @param[in,out]  A   [in]サイズnの正方行列A.[out]LU分解の結果.
+ @param[in,out]  p   [in]サイズがnの初期化済みの配列.[out]ピボット選択の結果.
  */
 void csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
 {
@@ -138,10 +133,9 @@ void csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
 
 /**
  @brief 線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く.
- @param[in]  B サイズは(n,NRHS)の行列B.
- @param[out] B 解の行列X.
- @param[in]  A サイズがnの正方行列でLU分解済みの係数行列A.
- @param[in]  p ピボット選択の要素の並び.
+ @param[in,out]  B   [in]サイズは(n,NRHS)の行列B.[out]解の行列X.
+ @param[in]      A サイズがnの正方行列でLU分解済みの係数行列A.
+ @param[in]      p ピボット選択の要素の並び.
  */
 void csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *p)
 {
@@ -187,10 +181,8 @@ void csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LD
 
 /**
  @brief 線形方程式A*X=Bのガウスの消去法による解法.
- @param[in]  B 行列B.サイズは(n,NRHS).
- @param[in]  B 解の行列X.サイズは(n,NRHS).
- @param[in]  A 係数行列A.サイズは(n,n).
- @param[out] A 破壊される.
+ @param[in,out]  B   [in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS).
+ @param[in,out]  A   [in]係数行列A.サイズは(n,n).[out]破壊される.
  */
 void csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LDA, int *info)
 {

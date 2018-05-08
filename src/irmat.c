@@ -267,8 +267,8 @@ void irmat_sub_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int
 
 /**
  @brief irmulti型の逆行列 [B0,B1]=inv(A0,A1)
- @param[in]  A 初期化済みのサイズが(n,n)の行列.
- @param[out] B 初期化済みのサイズが(n,n)の行列.
+ @param[in]  A0 A1 LDA   初期化済みのサイズが(n,n)の行列.
+ @param[out] B0 B1 LDA   初期化済みのサイズが(n,n)の行列.
 */
 void irmat_inv(int n, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A1, int LDA)
 {

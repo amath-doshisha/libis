@@ -1,0 +1,982 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF717FE720A1C5E70048B19D /* is_rsolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3820A1C5CA0048B19D /* is_rsolve.h */; };
+		FF717FE820A1C5E70048B19D /* is_zhpeig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3920A1C5CB0048B19D /* is_zhpeig.h */; };
+		FF717FE920A1C5E70048B19D /* is_dcomplex.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3A20A1C5CB0048B19D /* is_dcomplex.h */; };
+		FF717FEA20A1C5E70048B19D /* ceig_hqr.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F3B20A1C5CB0048B19D /* ceig_hqr.c */; };
+		FF717FEB20A1C5E70048B19D /* is_dhpeig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3C20A1C5CB0048B19D /* is_dhpeig.h */; };
+		FF717FEC20A1C5E70048B19D /* is_riep_dht.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3D20A1C5CB0048B19D /* is_riep_dht.h */; };
+		FF717FED20A1C5E70048B19D /* ctestmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F3E20A1C5CB0048B19D /* ctestmat.c */; };
+		FF717FEE20A1C5E70048B19D /* rtestmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F3F20A1C5CB0048B19D /* rtestmat.c */; };
+		FF717FEF20A1C5E70048B19D /* dcomplex.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4020A1C5CB0048B19D /* dcomplex.c */; };
+		FF717FF020A1C5E70048B19D /* is_icmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F4220A1C5CB0048B19D /* is_icmat.h */; };
+		FF717FF120A1C5E70048B19D /* reig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4320A1C5CB0048B19D /* reig.c */; };
+		FF717FF220A1C5E70048B19D /* is_zsolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F4420A1C5CB0048B19D /* is_zsolve.h */; };
+		FF717FF320A1C5E70048B19D /* func_print.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4520A1C5CB0048B19D /* func_print.c */; };
+		FF717FF420A1C5E70048B19D /* func_table.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4620A1C5CC0048B19D /* func_table.c */; };
+		FF717FF520A1C5E70048B19D /* chpeig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4720A1C5CC0048B19D /* chpeig.c */; };
+		FF717FF620A1C5E70048B19D /* cmulti.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4820A1C5CC0048B19D /* cmulti.c */; };
+		FF717FF720A1C5E70048B19D /* ceig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4920A1C5CC0048B19D /* ceig.c */; };
+		FF717FF820A1C5E70048B19D /* is_rhshldr.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F4A20A1C5CC0048B19D /* is_rhshldr.h */; };
+		FF717FF920A1C5E70048B19D /* bigint.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4B20A1C5CC0048B19D /* bigint.c */; };
+		FF717FFA20A1C5E70048B19D /* is_chpeig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F4C20A1C5CC0048B19D /* is_chpeig.h */; };
+		FF717FFB20A1C5E70048B19D /* is_iceig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F4D20A1C5CC0048B19D /* is_iceig.h */; };
+		FF717FFC20A1C5E70048B19D /* is_imat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F4E20A1C5CC0048B19D /* is_imat.h */; };
+		FF717FFD20A1C5E70048B19D /* deig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F4F20A1C5CC0048B19D /* deig.c */; };
+		FF717FFE20A1C5E70048B19D /* is_zmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5020A1C5CD0048B19D /* is_zmat.h */; };
+		FF717FFF20A1C5E70048B19D /* func_rmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F5120A1C5CD0048B19D /* func_rmat.c */; };
+		FF71800020A1C5E70048B19D /* chsnbrg.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F5220A1C5CD0048B19D /* chsnbrg.c */; };
+		FF71800120A1C5E70048B19D /* is_bigint.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5320A1C5CD0048B19D /* is_bigint.h */; };
+		FF71800220A1C5E70048B19D /* is_reig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5420A1C5CD0048B19D /* is_reig.h */; };
+		FF71800320A1C5E70048B19D /* csolve_newton.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F5520A1C5CD0048B19D /* csolve_newton.c */; };
+		FF71800420A1C5E70048B19D /* dsvd.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F5620A1C5CD0048B19D /* dsvd.c */; };
+		FF71800520A1C5E70048B19D /* is_reig_ii.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5720A1C5CD0048B19D /* is_reig_ii.h */; };
+		FF71800620A1C5E70048B19D /* is_rmulti.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5820A1C5CE0048B19D /* is_rmulti.h */; };
+		FF71800720A1C5E70048B19D /* func_cmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F5920A1C5CE0048B19D /* func_cmat.c */; };
+		FF71800820A1C5E70048B19D /* is_csolve_newton.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5A20A1C5CE0048B19D /* is_csolve_newton.h */; };
+		FF71800920A1C5E70048B19D /* is_icmat3.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5B20A1C5CE0048B19D /* is_icmat3.h */; };
+		FF71800A20A1C5E70048B19D /* is_icmulti.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5C20A1C5CE0048B19D /* is_icmulti.h */; };
+		FF71800B20A1C5E70048B19D /* is_reig_hqr.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5D20A1C5CE0048B19D /* is_reig_hqr.h */; };
+		FF71800C20A1C5E70048B19D /* is_zhshldr.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F5E20A1C5CF0048B19D /* is_zhshldr.h */; };
+		FF71800D20A1C5E70048B19D /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F5F20A1C5CF0048B19D /* print.c */; };
+		FF71800E20A1C5E70048B19D /* func_add.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6020A1C5CF0048B19D /* func_add.c */; };
+		FF71800F20A1C5E70048B19D /* func_solve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6120A1C5CF0048B19D /* func_solve.c */; };
+		FF71801020A1C5E70048B19D /* is_dsolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F6220A1C5CF0048B19D /* is_dsolve.h */; };
+		FF71801120A1C5E70048B19D /* svec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6320A1C5CF0048B19D /* svec.c */; };
+		FF71801220A1C5E70048B19D /* zmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6420A1C5D00048B19D /* zmat.c */; };
+		FF71801320A1C5E70048B19D /* func_var.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6520A1C5D00048B19D /* func_var.c */; };
+		FF71801420A1C5E70048B19D /* is_chshldr.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F6620A1C5D00048B19D /* is_chshldr.h */; };
+		FF71801520A1C5E70048B19D /* dvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6720A1C5D00048B19D /* dvec.c */; };
+		FF71801620A1C5E70048B19D /* func_list.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6820A1C5D00048B19D /* func_list.c */; };
+		FF71801720A1C5E70048B19D /* isys.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F6920A1C5D00048B19D /* isys.h */; };
+		FF71801820A1C5E70048B19D /* zsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6A20A1C5D00048B19D /* zsolve.c */; };
+		FF71801920A1C5E70048B19D /* is_ireig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F6B20A1C5D10048B19D /* is_ireig.h */; };
+		FF71801A20A1C5E70048B19D /* is_rtestmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F6C20A1C5D10048B19D /* is_rtestmat.h */; };
+		FF71801B20A1C5E70048B19D /* dhpeig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6D20A1C5D10048B19D /* dhpeig.c */; };
+		FF71801C20A1C5E70048B19D /* dhpsvd.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6E20A1C5D10048B19D /* dhpsvd.c */; };
+		FF71801D20A1C5E70048B19D /* dtestmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F6F20A1C5D10048B19D /* dtestmat.c */; };
+		FF71801E20A1C5E70048B19D /* is_rounding.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F7020A1C5D10048B19D /* is_rounding.h */; };
+		FF71801F20A1C5E70048B19D /* imat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7120A1C5D10048B19D /* imat.c */; };
+		FF71802020A1C5E70048B19D /* is_cmat3.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F7220A1C5D20048B19D /* is_cmat3.h */; };
+		FF71802120A1C5E70048B19D /* zvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7320A1C5D20048B19D /* zvec.c */; };
+		FF71802220A1C5E70048B19D /* is_rmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F7420A1C5D20048B19D /* is_rmat.h */; };
+		FF71802320A1C5E70048B19D /* func_expand.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7520A1C5D20048B19D /* func_expand.c */; };
+		FF71802420A1C5E70048B19D /* is_zeig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F7620A1C5D20048B19D /* is_zeig.h */; };
+		FF71802520A1C5E70048B19D /* rmat3.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7720A1C5D20048B19D /* rmat3.c */; };
+		FF71802620A1C5E70048B19D /* csolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7820A1C5D30048B19D /* csolve.c */; };
+		FF71802720A1C5E70048B19D /* func_ivec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7920A1C5D30048B19D /* func_ivec.c */; };
+		FF71802820A1C5E70048B19D /* zhpeig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7A20A1C5D30048B19D /* zhpeig.c */; };
+		FF71802920A1C5E70048B19D /* is_cmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F7B20A1C5D30048B19D /* is_cmat.h */; };
+		FF71802A20A1C5E70048B19D /* mt19937ar.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7C20A1C5D30048B19D /* mt19937ar.c */; };
+		FF71802B20A1C5E70048B19D /* irmulti.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7D20A1C5D30048B19D /* irmulti.c */; };
+		FF71802C20A1C5E70048B19D /* is_irsolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F7E20A1C5D30048B19D /* is_irsolve.h */; };
+		FF71802D20A1C5E70048B19D /* func_def.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F7F20A1C5D40048B19D /* func_def.c */; };
+		FF71802E20A1C5E70048B19D /* ztestmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8020A1C5D40048B19D /* ztestmat.c */; };
+		FF71802F20A1C5E70048B19D /* rhpeig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8120A1C5D40048B19D /* rhpeig.c */; };
+		FF71803020A1C5E70048B19D /* func_import.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8220A1C5D40048B19D /* func_import.c */; };
+		FF71803120A1C5E70048B19D /* func_vec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8320A1C5D40048B19D /* func_vec.c */; };
+		FF71803220A1C5E70048B19D /* func_math.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8420A1C5D40048B19D /* func_math.c */; };
+		FF71803320A1C5E70048B19D /* is_irmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F8520A1C5D40048B19D /* is_irmat.h */; };
+		FF71803420A1C5E70048B19D /* is_dhshldr.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F8620A1C5D50048B19D /* is_dhshldr.h */; };
+		FF71803520A1C5E70048B19D /* is_dhpsvd.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F8720A1C5D50048B19D /* is_dhpsvd.h */; };
+		FF71803620A1C5E70048B19D /* dhshldr.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8820A1C5D50048B19D /* dhshldr.c */; };
+		FF71803720A1C5E70048B19D /* mt19937ar.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F8920A1C5D50048B19D /* mt19937ar.h */; };
+		FF71803820A1C5E70048B19D /* func_strings.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8A20A1C5D50048B19D /* func_strings.c */; };
+		FF71803920A1C5E70048B19D /* is_deig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F8B20A1C5D50048B19D /* is_deig.h */; };
+		FF71803A20A1C5E70048B19D /* is_svec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F8C20A1C5D50048B19D /* is_svec.h */; };
+		FF71803B20A1C5E70048B19D /* func_power.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8D20A1C5D60048B19D /* func_power.c */; };
+		FF71803C20A1C5E70048B19D /* riep_dht.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F8E20A1C5D60048B19D /* riep_dht.c */; };
+		FF71803D20A1C5E70048B19D /* is_dsvd.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F8F20A1C5D60048B19D /* is_dsvd.h */; };
+		FF71803E20A1C5E70048B19D /* is_rsolve_newton.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F9020A1C5D60048B19D /* is_rsolve_newton.h */; };
+		FF71803F20A1C5E70048B19D /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9120A1C5D60048B19D /* array.c */; };
+		FF71804020A1C5E70048B19D /* cmat3.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9220A1C5D60048B19D /* cmat3.c */; };
+		FF71804120A1C5E70048B19D /* func_args.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9320A1C5D70048B19D /* func_args.c */; };
+		FF71804220A1C5E70048B19D /* func_maps.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9420A1C5D70048B19D /* func_maps.c */; };
+		FF71804320A1C5E70048B19D /* is_icsolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F9520A1C5D70048B19D /* is_icsolve.h */; };
+		FF71804420A1C5E70048B19D /* is_irvec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F9620A1C5D70048B19D /* is_irvec.h */; };
+		FF71804520A1C5E70048B19D /* reig_hqr.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9720A1C5D70048B19D /* reig_hqr.c */; };
+		FF71804620A1C5E70048B19D /* is_dtestmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F9820A1C5D70048B19D /* is_dtestmat.h */; };
+		FF71804720A1C5E70048B19D /* rhsnbrg.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9920A1C5D70048B19D /* rhsnbrg.c */; };
+		FF71804820A1C5E70048B19D /* is_pmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F9B20A1C5D80048B19D /* is_pmat.h */; };
+		FF71804920A1C5E70048B19D /* cvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9C20A1C5D80048B19D /* cvec.c */; };
+		FF71804A20A1C5E70048B19D /* is_ztestmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F9D20A1C5D80048B19D /* is_ztestmat.h */; };
+		FF71804B20A1C5E70048B19D /* rvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717F9E20A1C5D80048B19D /* rvec.c */; };
+		FF71804C20A1C5E70048B19D /* is_icvec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F9F20A1C5D80048B19D /* is_icvec.h */; };
+		FF71804D20A1C5E70048B19D /* func_poly.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FA020A1C5D80048B19D /* func_poly.c */; };
+		FF71804E20A1C5E70048B19D /* is_chsnbrg.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FA120A1C5D90048B19D /* is_chsnbrg.h */; };
+		FF71804F20A1C5E70048B19D /* is_rmat3.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FA220A1C5D90048B19D /* is_rmat3.h */; };
+		FF71805020A1C5E70048B19D /* is_dvec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FA320A1C5D90048B19D /* is_dvec.h */; };
+		FF71805120A1C5E70048B19D /* func_find.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FA420A1C5D90048B19D /* func_find.c */; };
+		FF71805220A1C5E70048B19D /* icvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FA520A1C5D90048B19D /* icvec.c */; };
+		FF71805320A1C5E70048B19D /* func_op.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FA620A1C5D90048B19D /* func_op.c */; };
+		FF71805420A1C5E70048B19D /* strings.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FA720A1C5DA0048B19D /* strings.c */; };
+		FF71805520A1C5E70048B19D /* is_irmulti.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FA820A1C5DA0048B19D /* is_irmulti.h */; };
+		FF71805620A1C5E70048B19D /* func.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FA920A1C5DA0048B19D /* func.c */; };
+		FF71805720A1C5E70048B19D /* zeig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FAA20A1C5DA0048B19D /* zeig.c */; };
+		FF71805820A1C5E70048B19D /* func_cmp.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FAB20A1C5DA0048B19D /* func_cmp.c */; };
+		FF71805920A1C5E70048B19D /* is_ceig_hqr.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FAC20A1C5DA0048B19D /* is_ceig_hqr.h */; };
+		FF71805A20A1C5E70048B19D /* chshldr.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FAD20A1C5DA0048B19D /* chshldr.c */; };
+		FF71805B20A1C5E70048B19D /* is_rhsnbrg.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FAE20A1C5DB0048B19D /* is_rhsnbrg.h */; };
+		FF71805C20A1C5E70048B19D /* reig_ii.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FAF20A1C5DB0048B19D /* reig_ii.c */; };
+		FF71805D20A1C5E70048B19D /* ceig_ii.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB020A1C5DB0048B19D /* ceig_ii.c */; };
+		FF71805E20A1C5E70048B19D /* func_gb.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB120A1C5DB0048B19D /* func_gb.c */; };
+		FF71805F20A1C5E70048B19D /* func_builtin.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB220A1C5DB0048B19D /* func_builtin.c */; };
+		FF71806020A1C5E70048B19D /* func_rvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB320A1C5DB0048B19D /* func_rvec.c */; };
+		FF71806120A1C5E70048B19D /* func_number.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB420A1C5DB0048B19D /* func_number.c */; };
+		FF71806220A1C5E70048B19D /* func_bigint.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB520A1C5DC0048B19D /* func_bigint.c */; };
+		FF71806320A1C5E70048B19D /* func_mono.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB620A1C5DC0048B19D /* func_mono.c */; };
+		FF71806420A1C5E70048B19D /* is_array.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FB720A1C5DC0048B19D /* is_array.h */; };
+		FF71806520A1C5E70048B19D /* is_ceig_ii.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FB820A1C5DC0048B19D /* is_ceig_ii.h */; };
+		FF71806620A1C5E70048B19D /* func_diff.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FB920A1C5DC0048B19D /* func_diff.c */; };
+		FF71806720A1C5E70048B19D /* ireig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FBA20A1C5DC0048B19D /* ireig.c */; };
+		FF71806820A1C5E70048B19D /* func_scope.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FBB20A1C5DD0048B19D /* func_scope.c */; };
+		FF71806920A1C5E70048B19D /* is_ivec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FBC20A1C5DD0048B19D /* is_ivec.h */; };
+		FF71806A20A1C5E70048B19D /* is_rvec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FBD20A1C5DD0048B19D /* is_rvec.h */; };
+		FF71806B20A1C5E70048B19D /* ivec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FBE20A1C5DE0048B19D /* ivec.c */; };
+		FF71806C20A1C5E70048B19D /* rsolve_newton.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FBF20A1C5DE0048B19D /* rsolve_newton.c */; };
+		FF71806D20A1C5E70048B19D /* iceig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FC020A1C5DF0048B19D /* iceig.c */; };
+		FF71806E20A1C5E70048B19D /* irsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FC120A1C5DF0048B19D /* irsolve.c */; };
+		FF71806F20A1C5E70048B19D /* is_cvec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FC220A1C5DF0048B19D /* is_cvec.h */; };
+		FF71807020A1C5E70048B19D /* func_real.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FC320A1C5DF0048B19D /* func_real.c */; };
+		FF71807120A1C5E70048B19D /* is_rhpeig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FC420A1C5DF0048B19D /* is_rhpeig.h */; };
+		FF71807220A1C5E70048B19D /* func_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FC520A1C5E00048B19D /* func_complex.c */; };
+		FF71807320A1C5E70048B19D /* dsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FC620A1C5E00048B19D /* dsolve.c */; };
+		FF71807420A1C5E70048B19D /* is_ctestmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FC720A1C5E00048B19D /* is_ctestmat.h */; };
+		FF71807520A1C5E70048B19D /* is_pvec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FC820A1C5E00048B19D /* is_pvec.h */; };
+		FF71807620A1C5E70048B19D /* rdtsc.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FC920A1C5E00048B19D /* rdtsc.h */; };
+		FF71807720A1C5E70048B19D /* icmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FCA20A1C5E00048B19D /* icmat.c */; };
+		FF71807820A1C5E70048B19D /* is_func.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FCB20A1C5E10048B19D /* is_func.h */; };
+		FF71807920A1C5E70048B19D /* rmulti.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FCC20A1C5E10048B19D /* rmulti.c */; };
+		FF71807A20A1C5E70048B19D /* func_cvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FCD20A1C5E10048B19D /* func_cvec.c */; };
+		FF71807B20A1C5E70048B19D /* func_script.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FCE20A1C5E10048B19D /* func_script.c */; };
+		FF71807C20A1C5E70048B19D /* is_strings.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FCF20A1C5E20048B19D /* is_strings.h */; };
+		FF71807D20A1C5E70048B19D /* rmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD020A1C5E20048B19D /* rmat.c */; };
+		FF71807E20A1C5E70048B19D /* GeneralHashFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD120A1C5E20048B19D /* GeneralHashFunctions.c */; };
+		FF71807F20A1C5E70048B19D /* zhshldr.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD220A1C5E20048B19D /* zhshldr.c */; };
+		FF71808020A1C5E70048B19D /* icmulti.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD320A1C5E20048B19D /* icmulti.c */; };
+		FF71808120A1C5E70048B19D /* cmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD420A1C5E30048B19D /* cmat.c */; };
+		FF71808220A1C5E70048B19D /* func_mul.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD520A1C5E30048B19D /* func_mul.c */; };
+		FF71808320A1C5E70048B19D /* irvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD620A1C5E30048B19D /* irvec.c */; };
+		FF71808420A1C5E70048B19D /* is_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FD720A1C5E30048B19D /* is_macros.h */; };
+		FF71808520A1C5E70048B19D /* irmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FD820A1C5E40048B19D /* irmat.c */; };
+		FF71808620A1C5E70048B19D /* is_dmat.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FD920A1C5E40048B19D /* is_dmat.h */; };
+		FF71808720A1C5E70048B19D /* is_print.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FDA20A1C5E50048B19D /* is_print.h */; };
+		FF71808820A1C5E70048B19D /* is_zvec.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FDB20A1C5E50048B19D /* is_zvec.h */; };
+		FF71808920A1C5E70048B19D /* rhshldr.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FDC20A1C5E50048B19D /* rhshldr.c */; };
+		FF71808A20A1C5E70048B19D /* rsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FDD20A1C5E50048B19D /* rsolve.c */; };
+		FF71808B20A1C5E70048B19D /* icmat3.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FDE20A1C5E50048B19D /* icmat3.c */; };
+		FF71808C20A1C5E70048B19D /* is_csolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FDF20A1C5E60048B19D /* is_csolve.h */; };
+		FF71808D20A1C5E70048B19D /* dmat.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FE020A1C5E60048B19D /* dmat.c */; };
+		FF71808E20A1C5E70048B19D /* is_ceig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FE120A1C5E60048B19D /* is_ceig.h */; };
+		FF71808F20A1C5E70048B19D /* GeneralHashFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FE220A1C5E60048B19D /* GeneralHashFunctions.h */; };
+		FF71809020A1C5E70048B19D /* is_cmulti.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FE320A1C5E60048B19D /* is_cmulti.h */; };
+		FF71809120A1C5E70048B19D /* irmat3.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FE420A1C5E60048B19D /* irmat3.c */; };
+		FF71809220A1C5E70048B19D /* is_irmat3.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717FE520A1C5E70048B19D /* is_irmat3.h */; };
+		FF71809320A1C5E70048B19D /* icsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF717FE620A1C5E70048B19D /* icsolve.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF717F3820A1C5CA0048B19D /* is_rsolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rsolve.h; path = src/is_rsolve.h; sourceTree = SOURCE_ROOT; };
+		FF717F3920A1C5CB0048B19D /* is_zhpeig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zhpeig.h; path = src/is_zhpeig.h; sourceTree = SOURCE_ROOT; };
+		FF717F3A20A1C5CB0048B19D /* is_dcomplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dcomplex.h; path = src/is_dcomplex.h; sourceTree = SOURCE_ROOT; };
+		FF717F3B20A1C5CB0048B19D /* ceig_hqr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ceig_hqr.c; path = src/ceig_hqr.c; sourceTree = SOURCE_ROOT; };
+		FF717F3C20A1C5CB0048B19D /* is_dhpeig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dhpeig.h; path = src/is_dhpeig.h; sourceTree = SOURCE_ROOT; };
+		FF717F3D20A1C5CB0048B19D /* is_riep_dht.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_riep_dht.h; path = src/is_riep_dht.h; sourceTree = SOURCE_ROOT; };
+		FF717F3E20A1C5CB0048B19D /* ctestmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ctestmat.c; path = src/ctestmat.c; sourceTree = SOURCE_ROOT; };
+		FF717F3F20A1C5CB0048B19D /* rtestmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rtestmat.c; path = src/rtestmat.c; sourceTree = SOURCE_ROOT; };
+		FF717F4020A1C5CB0048B19D /* dcomplex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dcomplex.c; path = src/dcomplex.c; sourceTree = SOURCE_ROOT; };
+		FF717F4220A1C5CB0048B19D /* is_icmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_icmat.h; path = src/is_icmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F4320A1C5CB0048B19D /* reig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = reig.c; path = src/reig.c; sourceTree = SOURCE_ROOT; };
+		FF717F4420A1C5CB0048B19D /* is_zsolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zsolve.h; path = src/is_zsolve.h; sourceTree = SOURCE_ROOT; };
+		FF717F4520A1C5CB0048B19D /* func_print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_print.c; path = src/func_print.c; sourceTree = SOURCE_ROOT; };
+		FF717F4620A1C5CC0048B19D /* func_table.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_table.c; path = src/func_table.c; sourceTree = SOURCE_ROOT; };
+		FF717F4720A1C5CC0048B19D /* chpeig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = chpeig.c; path = src/chpeig.c; sourceTree = SOURCE_ROOT; };
+		FF717F4820A1C5CC0048B19D /* cmulti.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cmulti.c; path = src/cmulti.c; sourceTree = SOURCE_ROOT; };
+		FF717F4920A1C5CC0048B19D /* ceig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ceig.c; path = src/ceig.c; sourceTree = SOURCE_ROOT; };
+		FF717F4A20A1C5CC0048B19D /* is_rhshldr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rhshldr.h; path = src/is_rhshldr.h; sourceTree = SOURCE_ROOT; };
+		FF717F4B20A1C5CC0048B19D /* bigint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bigint.c; path = src/bigint.c; sourceTree = SOURCE_ROOT; };
+		FF717F4C20A1C5CC0048B19D /* is_chpeig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_chpeig.h; path = src/is_chpeig.h; sourceTree = SOURCE_ROOT; };
+		FF717F4D20A1C5CC0048B19D /* is_iceig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_iceig.h; path = src/is_iceig.h; sourceTree = SOURCE_ROOT; };
+		FF717F4E20A1C5CC0048B19D /* is_imat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_imat.h; path = src/is_imat.h; sourceTree = SOURCE_ROOT; };
+		FF717F4F20A1C5CC0048B19D /* deig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = deig.c; path = src/deig.c; sourceTree = SOURCE_ROOT; };
+		FF717F5020A1C5CD0048B19D /* is_zmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zmat.h; path = src/is_zmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F5120A1C5CD0048B19D /* func_rmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_rmat.c; path = src/func_rmat.c; sourceTree = SOURCE_ROOT; };
+		FF717F5220A1C5CD0048B19D /* chsnbrg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = chsnbrg.c; path = src/chsnbrg.c; sourceTree = SOURCE_ROOT; };
+		FF717F5320A1C5CD0048B19D /* is_bigint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_bigint.h; path = src/is_bigint.h; sourceTree = SOURCE_ROOT; };
+		FF717F5420A1C5CD0048B19D /* is_reig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_reig.h; path = src/is_reig.h; sourceTree = SOURCE_ROOT; };
+		FF717F5520A1C5CD0048B19D /* csolve_newton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = csolve_newton.c; path = src/csolve_newton.c; sourceTree = SOURCE_ROOT; };
+		FF717F5620A1C5CD0048B19D /* dsvd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dsvd.c; path = src/dsvd.c; sourceTree = SOURCE_ROOT; };
+		FF717F5720A1C5CD0048B19D /* is_reig_ii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_reig_ii.h; path = src/is_reig_ii.h; sourceTree = SOURCE_ROOT; };
+		FF717F5820A1C5CE0048B19D /* is_rmulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rmulti.h; path = src/is_rmulti.h; sourceTree = SOURCE_ROOT; };
+		FF717F5920A1C5CE0048B19D /* func_cmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_cmat.c; path = src/func_cmat.c; sourceTree = SOURCE_ROOT; };
+		FF717F5A20A1C5CE0048B19D /* is_csolve_newton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_csolve_newton.h; path = src/is_csolve_newton.h; sourceTree = SOURCE_ROOT; };
+		FF717F5B20A1C5CE0048B19D /* is_icmat3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_icmat3.h; path = src/is_icmat3.h; sourceTree = SOURCE_ROOT; };
+		FF717F5C20A1C5CE0048B19D /* is_icmulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_icmulti.h; path = src/is_icmulti.h; sourceTree = SOURCE_ROOT; };
+		FF717F5D20A1C5CE0048B19D /* is_reig_hqr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_reig_hqr.h; path = src/is_reig_hqr.h; sourceTree = SOURCE_ROOT; };
+		FF717F5E20A1C5CF0048B19D /* is_zhshldr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zhshldr.h; path = src/is_zhshldr.h; sourceTree = SOURCE_ROOT; };
+		FF717F5F20A1C5CF0048B19D /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = print.c; path = src/print.c; sourceTree = SOURCE_ROOT; };
+		FF717F6020A1C5CF0048B19D /* func_add.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_add.c; path = src/func_add.c; sourceTree = SOURCE_ROOT; };
+		FF717F6120A1C5CF0048B19D /* func_solve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_solve.c; path = src/func_solve.c; sourceTree = SOURCE_ROOT; };
+		FF717F6220A1C5CF0048B19D /* is_dsolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dsolve.h; path = src/is_dsolve.h; sourceTree = SOURCE_ROOT; };
+		FF717F6320A1C5CF0048B19D /* svec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = svec.c; path = src/svec.c; sourceTree = SOURCE_ROOT; };
+		FF717F6420A1C5D00048B19D /* zmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zmat.c; path = src/zmat.c; sourceTree = SOURCE_ROOT; };
+		FF717F6520A1C5D00048B19D /* func_var.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_var.c; path = src/func_var.c; sourceTree = SOURCE_ROOT; };
+		FF717F6620A1C5D00048B19D /* is_chshldr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_chshldr.h; path = src/is_chshldr.h; sourceTree = SOURCE_ROOT; };
+		FF717F6720A1C5D00048B19D /* dvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dvec.c; path = src/dvec.c; sourceTree = SOURCE_ROOT; };
+		FF717F6820A1C5D00048B19D /* func_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_list.c; path = src/func_list.c; sourceTree = SOURCE_ROOT; };
+		FF717F6920A1C5D00048B19D /* isys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = isys.h; path = src/isys.h; sourceTree = SOURCE_ROOT; };
+		FF717F6A20A1C5D00048B19D /* zsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zsolve.c; path = src/zsolve.c; sourceTree = SOURCE_ROOT; };
+		FF717F6B20A1C5D10048B19D /* is_ireig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_ireig.h; path = src/is_ireig.h; sourceTree = SOURCE_ROOT; };
+		FF717F6C20A1C5D10048B19D /* is_rtestmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rtestmat.h; path = src/is_rtestmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F6D20A1C5D10048B19D /* dhpeig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dhpeig.c; path = src/dhpeig.c; sourceTree = SOURCE_ROOT; };
+		FF717F6E20A1C5D10048B19D /* dhpsvd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dhpsvd.c; path = src/dhpsvd.c; sourceTree = SOURCE_ROOT; };
+		FF717F6F20A1C5D10048B19D /* dtestmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dtestmat.c; path = src/dtestmat.c; sourceTree = SOURCE_ROOT; };
+		FF717F7020A1C5D10048B19D /* is_rounding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rounding.h; path = src/is_rounding.h; sourceTree = SOURCE_ROOT; };
+		FF717F7120A1C5D10048B19D /* imat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = imat.c; path = src/imat.c; sourceTree = SOURCE_ROOT; };
+		FF717F7220A1C5D20048B19D /* is_cmat3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_cmat3.h; path = src/is_cmat3.h; sourceTree = SOURCE_ROOT; };
+		FF717F7320A1C5D20048B19D /* zvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zvec.c; path = src/zvec.c; sourceTree = SOURCE_ROOT; };
+		FF717F7420A1C5D20048B19D /* is_rmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rmat.h; path = src/is_rmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F7520A1C5D20048B19D /* func_expand.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_expand.c; path = src/func_expand.c; sourceTree = SOURCE_ROOT; };
+		FF717F7620A1C5D20048B19D /* is_zeig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zeig.h; path = src/is_zeig.h; sourceTree = SOURCE_ROOT; };
+		FF717F7720A1C5D20048B19D /* rmat3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rmat3.c; path = src/rmat3.c; sourceTree = SOURCE_ROOT; };
+		FF717F7820A1C5D30048B19D /* csolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = csolve.c; path = src/csolve.c; sourceTree = SOURCE_ROOT; };
+		FF717F7920A1C5D30048B19D /* func_ivec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_ivec.c; path = src/func_ivec.c; sourceTree = SOURCE_ROOT; };
+		FF717F7A20A1C5D30048B19D /* zhpeig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zhpeig.c; path = src/zhpeig.c; sourceTree = SOURCE_ROOT; };
+		FF717F7B20A1C5D30048B19D /* is_cmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_cmat.h; path = src/is_cmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F7C20A1C5D30048B19D /* mt19937ar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mt19937ar.c; path = src/mt19937ar.c; sourceTree = SOURCE_ROOT; };
+		FF717F7D20A1C5D30048B19D /* irmulti.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = irmulti.c; path = src/irmulti.c; sourceTree = SOURCE_ROOT; };
+		FF717F7E20A1C5D30048B19D /* is_irsolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_irsolve.h; path = src/is_irsolve.h; sourceTree = SOURCE_ROOT; };
+		FF717F7F20A1C5D40048B19D /* func_def.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_def.c; path = src/func_def.c; sourceTree = SOURCE_ROOT; };
+		FF717F8020A1C5D40048B19D /* ztestmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ztestmat.c; path = src/ztestmat.c; sourceTree = SOURCE_ROOT; };
+		FF717F8120A1C5D40048B19D /* rhpeig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rhpeig.c; path = src/rhpeig.c; sourceTree = SOURCE_ROOT; };
+		FF717F8220A1C5D40048B19D /* func_import.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_import.c; path = src/func_import.c; sourceTree = SOURCE_ROOT; };
+		FF717F8320A1C5D40048B19D /* func_vec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_vec.c; path = src/func_vec.c; sourceTree = SOURCE_ROOT; };
+		FF717F8420A1C5D40048B19D /* func_math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_math.c; path = src/func_math.c; sourceTree = SOURCE_ROOT; };
+		FF717F8520A1C5D40048B19D /* is_irmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_irmat.h; path = src/is_irmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F8620A1C5D50048B19D /* is_dhshldr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dhshldr.h; path = src/is_dhshldr.h; sourceTree = SOURCE_ROOT; };
+		FF717F8720A1C5D50048B19D /* is_dhpsvd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dhpsvd.h; path = src/is_dhpsvd.h; sourceTree = SOURCE_ROOT; };
+		FF717F8820A1C5D50048B19D /* dhshldr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dhshldr.c; path = src/dhshldr.c; sourceTree = SOURCE_ROOT; };
+		FF717F8920A1C5D50048B19D /* mt19937ar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mt19937ar.h; path = src/mt19937ar.h; sourceTree = SOURCE_ROOT; };
+		FF717F8A20A1C5D50048B19D /* func_strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_strings.c; path = src/func_strings.c; sourceTree = SOURCE_ROOT; };
+		FF717F8B20A1C5D50048B19D /* is_deig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_deig.h; path = src/is_deig.h; sourceTree = SOURCE_ROOT; };
+		FF717F8C20A1C5D50048B19D /* is_svec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_svec.h; path = src/is_svec.h; sourceTree = SOURCE_ROOT; };
+		FF717F8D20A1C5D60048B19D /* func_power.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_power.c; path = src/func_power.c; sourceTree = SOURCE_ROOT; };
+		FF717F8E20A1C5D60048B19D /* riep_dht.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = riep_dht.c; path = src/riep_dht.c; sourceTree = SOURCE_ROOT; };
+		FF717F8F20A1C5D60048B19D /* is_dsvd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dsvd.h; path = src/is_dsvd.h; sourceTree = SOURCE_ROOT; };
+		FF717F9020A1C5D60048B19D /* is_rsolve_newton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rsolve_newton.h; path = src/is_rsolve_newton.h; sourceTree = SOURCE_ROOT; };
+		FF717F9120A1C5D60048B19D /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = array.c; path = src/array.c; sourceTree = SOURCE_ROOT; };
+		FF717F9220A1C5D60048B19D /* cmat3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cmat3.c; path = src/cmat3.c; sourceTree = SOURCE_ROOT; };
+		FF717F9320A1C5D70048B19D /* func_args.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_args.c; path = src/func_args.c; sourceTree = SOURCE_ROOT; };
+		FF717F9420A1C5D70048B19D /* func_maps.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_maps.c; path = src/func_maps.c; sourceTree = SOURCE_ROOT; };
+		FF717F9520A1C5D70048B19D /* is_icsolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_icsolve.h; path = src/is_icsolve.h; sourceTree = SOURCE_ROOT; };
+		FF717F9620A1C5D70048B19D /* is_irvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_irvec.h; path = src/is_irvec.h; sourceTree = SOURCE_ROOT; };
+		FF717F9720A1C5D70048B19D /* reig_hqr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = reig_hqr.c; path = src/reig_hqr.c; sourceTree = SOURCE_ROOT; };
+		FF717F9820A1C5D70048B19D /* is_dtestmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dtestmat.h; path = src/is_dtestmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F9920A1C5D70048B19D /* rhsnbrg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rhsnbrg.c; path = src/rhsnbrg.c; sourceTree = SOURCE_ROOT; };
+		FF717F9B20A1C5D80048B19D /* is_pmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_pmat.h; path = src/is_pmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F9C20A1C5D80048B19D /* cvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cvec.c; path = src/cvec.c; sourceTree = SOURCE_ROOT; };
+		FF717F9D20A1C5D80048B19D /* is_ztestmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_ztestmat.h; path = src/is_ztestmat.h; sourceTree = SOURCE_ROOT; };
+		FF717F9E20A1C5D80048B19D /* rvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rvec.c; path = src/rvec.c; sourceTree = SOURCE_ROOT; };
+		FF717F9F20A1C5D80048B19D /* is_icvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_icvec.h; path = src/is_icvec.h; sourceTree = SOURCE_ROOT; };
+		FF717FA020A1C5D80048B19D /* func_poly.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_poly.c; path = src/func_poly.c; sourceTree = SOURCE_ROOT; };
+		FF717FA120A1C5D90048B19D /* is_chsnbrg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_chsnbrg.h; path = src/is_chsnbrg.h; sourceTree = SOURCE_ROOT; };
+		FF717FA220A1C5D90048B19D /* is_rmat3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rmat3.h; path = src/is_rmat3.h; sourceTree = SOURCE_ROOT; };
+		FF717FA320A1C5D90048B19D /* is_dvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dvec.h; path = src/is_dvec.h; sourceTree = SOURCE_ROOT; };
+		FF717FA420A1C5D90048B19D /* func_find.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_find.c; path = src/func_find.c; sourceTree = SOURCE_ROOT; };
+		FF717FA520A1C5D90048B19D /* icvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = icvec.c; path = src/icvec.c; sourceTree = SOURCE_ROOT; };
+		FF717FA620A1C5D90048B19D /* func_op.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_op.c; path = src/func_op.c; sourceTree = SOURCE_ROOT; };
+		FF717FA720A1C5DA0048B19D /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = strings.c; path = src/strings.c; sourceTree = SOURCE_ROOT; };
+		FF717FA820A1C5DA0048B19D /* is_irmulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_irmulti.h; path = src/is_irmulti.h; sourceTree = SOURCE_ROOT; };
+		FF717FA920A1C5DA0048B19D /* func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func.c; path = src/func.c; sourceTree = SOURCE_ROOT; };
+		FF717FAA20A1C5DA0048B19D /* zeig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zeig.c; path = src/zeig.c; sourceTree = SOURCE_ROOT; };
+		FF717FAB20A1C5DA0048B19D /* func_cmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_cmp.c; path = src/func_cmp.c; sourceTree = SOURCE_ROOT; };
+		FF717FAC20A1C5DA0048B19D /* is_ceig_hqr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_ceig_hqr.h; path = src/is_ceig_hqr.h; sourceTree = SOURCE_ROOT; };
+		FF717FAD20A1C5DA0048B19D /* chshldr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = chshldr.c; path = src/chshldr.c; sourceTree = SOURCE_ROOT; };
+		FF717FAE20A1C5DB0048B19D /* is_rhsnbrg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rhsnbrg.h; path = src/is_rhsnbrg.h; sourceTree = SOURCE_ROOT; };
+		FF717FAF20A1C5DB0048B19D /* reig_ii.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = reig_ii.c; path = src/reig_ii.c; sourceTree = SOURCE_ROOT; };
+		FF717FB020A1C5DB0048B19D /* ceig_ii.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ceig_ii.c; path = src/ceig_ii.c; sourceTree = SOURCE_ROOT; };
+		FF717FB120A1C5DB0048B19D /* func_gb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_gb.c; path = src/func_gb.c; sourceTree = SOURCE_ROOT; };
+		FF717FB220A1C5DB0048B19D /* func_builtin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_builtin.c; path = src/func_builtin.c; sourceTree = SOURCE_ROOT; };
+		FF717FB320A1C5DB0048B19D /* func_rvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_rvec.c; path = src/func_rvec.c; sourceTree = SOURCE_ROOT; };
+		FF717FB420A1C5DB0048B19D /* func_number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_number.c; path = src/func_number.c; sourceTree = SOURCE_ROOT; };
+		FF717FB520A1C5DC0048B19D /* func_bigint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_bigint.c; path = src/func_bigint.c; sourceTree = SOURCE_ROOT; };
+		FF717FB620A1C5DC0048B19D /* func_mono.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_mono.c; path = src/func_mono.c; sourceTree = SOURCE_ROOT; };
+		FF717FB720A1C5DC0048B19D /* is_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_array.h; path = src/is_array.h; sourceTree = SOURCE_ROOT; };
+		FF717FB820A1C5DC0048B19D /* is_ceig_ii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_ceig_ii.h; path = src/is_ceig_ii.h; sourceTree = SOURCE_ROOT; };
+		FF717FB920A1C5DC0048B19D /* func_diff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_diff.c; path = src/func_diff.c; sourceTree = SOURCE_ROOT; };
+		FF717FBA20A1C5DC0048B19D /* ireig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ireig.c; path = src/ireig.c; sourceTree = SOURCE_ROOT; };
+		FF717FBB20A1C5DD0048B19D /* func_scope.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_scope.c; path = src/func_scope.c; sourceTree = SOURCE_ROOT; };
+		FF717FBC20A1C5DD0048B19D /* is_ivec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_ivec.h; path = src/is_ivec.h; sourceTree = SOURCE_ROOT; };
+		FF717FBD20A1C5DD0048B19D /* is_rvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rvec.h; path = src/is_rvec.h; sourceTree = SOURCE_ROOT; };
+		FF717FBE20A1C5DE0048B19D /* ivec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ivec.c; path = src/ivec.c; sourceTree = SOURCE_ROOT; };
+		FF717FBF20A1C5DE0048B19D /* rsolve_newton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rsolve_newton.c; path = src/rsolve_newton.c; sourceTree = SOURCE_ROOT; };
+		FF717FC020A1C5DF0048B19D /* iceig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = iceig.c; path = src/iceig.c; sourceTree = SOURCE_ROOT; };
+		FF717FC120A1C5DF0048B19D /* irsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = irsolve.c; path = src/irsolve.c; sourceTree = SOURCE_ROOT; };
+		FF717FC220A1C5DF0048B19D /* is_cvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_cvec.h; path = src/is_cvec.h; sourceTree = SOURCE_ROOT; };
+		FF717FC320A1C5DF0048B19D /* func_real.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_real.c; path = src/func_real.c; sourceTree = SOURCE_ROOT; };
+		FF717FC420A1C5DF0048B19D /* is_rhpeig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rhpeig.h; path = src/is_rhpeig.h; sourceTree = SOURCE_ROOT; };
+		FF717FC520A1C5E00048B19D /* func_complex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_complex.c; path = src/func_complex.c; sourceTree = SOURCE_ROOT; };
+		FF717FC620A1C5E00048B19D /* dsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dsolve.c; path = src/dsolve.c; sourceTree = SOURCE_ROOT; };
+		FF717FC720A1C5E00048B19D /* is_ctestmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_ctestmat.h; path = src/is_ctestmat.h; sourceTree = SOURCE_ROOT; };
+		FF717FC820A1C5E00048B19D /* is_pvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_pvec.h; path = src/is_pvec.h; sourceTree = SOURCE_ROOT; };
+		FF717FC920A1C5E00048B19D /* rdtsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdtsc.h; path = src/rdtsc.h; sourceTree = SOURCE_ROOT; };
+		FF717FCA20A1C5E00048B19D /* icmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = icmat.c; path = src/icmat.c; sourceTree = SOURCE_ROOT; };
+		FF717FCB20A1C5E10048B19D /* is_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_func.h; path = src/is_func.h; sourceTree = SOURCE_ROOT; };
+		FF717FCC20A1C5E10048B19D /* rmulti.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rmulti.c; path = src/rmulti.c; sourceTree = SOURCE_ROOT; };
+		FF717FCD20A1C5E10048B19D /* func_cvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_cvec.c; path = src/func_cvec.c; sourceTree = SOURCE_ROOT; };
+		FF717FCE20A1C5E10048B19D /* func_script.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_script.c; path = src/func_script.c; sourceTree = SOURCE_ROOT; };
+		FF717FCF20A1C5E20048B19D /* is_strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_strings.h; path = src/is_strings.h; sourceTree = SOURCE_ROOT; };
+		FF717FD020A1C5E20048B19D /* rmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rmat.c; path = src/rmat.c; sourceTree = SOURCE_ROOT; };
+		FF717FD120A1C5E20048B19D /* GeneralHashFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = GeneralHashFunctions.c; path = src/GeneralHashFunctions.c; sourceTree = SOURCE_ROOT; };
+		FF717FD220A1C5E20048B19D /* zhshldr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zhshldr.c; path = src/zhshldr.c; sourceTree = SOURCE_ROOT; };
+		FF717FD320A1C5E20048B19D /* icmulti.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = icmulti.c; path = src/icmulti.c; sourceTree = SOURCE_ROOT; };
+		FF717FD420A1C5E30048B19D /* cmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cmat.c; path = src/cmat.c; sourceTree = SOURCE_ROOT; };
+		FF717FD520A1C5E30048B19D /* func_mul.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = func_mul.c; path = src/func_mul.c; sourceTree = SOURCE_ROOT; };
+		FF717FD620A1C5E30048B19D /* irvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = irvec.c; path = src/irvec.c; sourceTree = SOURCE_ROOT; };
+		FF717FD720A1C5E30048B19D /* is_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_macros.h; path = src/is_macros.h; sourceTree = SOURCE_ROOT; };
+		FF717FD820A1C5E40048B19D /* irmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = irmat.c; path = src/irmat.c; sourceTree = SOURCE_ROOT; };
+		FF717FD920A1C5E40048B19D /* is_dmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dmat.h; path = src/is_dmat.h; sourceTree = SOURCE_ROOT; };
+		FF717FDA20A1C5E50048B19D /* is_print.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_print.h; path = src/is_print.h; sourceTree = SOURCE_ROOT; };
+		FF717FDB20A1C5E50048B19D /* is_zvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zvec.h; path = src/is_zvec.h; sourceTree = SOURCE_ROOT; };
+		FF717FDC20A1C5E50048B19D /* rhshldr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rhshldr.c; path = src/rhshldr.c; sourceTree = SOURCE_ROOT; };
+		FF717FDD20A1C5E50048B19D /* rsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rsolve.c; path = src/rsolve.c; sourceTree = SOURCE_ROOT; };
+		FF717FDE20A1C5E50048B19D /* icmat3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = icmat3.c; path = src/icmat3.c; sourceTree = SOURCE_ROOT; };
+		FF717FDF20A1C5E60048B19D /* is_csolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_csolve.h; path = src/is_csolve.h; sourceTree = SOURCE_ROOT; };
+		FF717FE020A1C5E60048B19D /* dmat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmat.c; path = src/dmat.c; sourceTree = SOURCE_ROOT; };
+		FF717FE120A1C5E60048B19D /* is_ceig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_ceig.h; path = src/is_ceig.h; sourceTree = SOURCE_ROOT; };
+		FF717FE220A1C5E60048B19D /* GeneralHashFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneralHashFunctions.h; path = src/GeneralHashFunctions.h; sourceTree = SOURCE_ROOT; };
+		FF717FE320A1C5E60048B19D /* is_cmulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_cmulti.h; path = src/is_cmulti.h; sourceTree = SOURCE_ROOT; };
+		FF717FE420A1C5E60048B19D /* irmat3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = irmat3.c; path = src/irmat3.c; sourceTree = SOURCE_ROOT; };
+		FF717FE520A1C5E70048B19D /* is_irmat3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_irmat3.h; path = src/is_irmat3.h; sourceTree = SOURCE_ROOT; };
+		FF717FE620A1C5E70048B19D /* icsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = icsolve.c; path = src/icsolve.c; sourceTree = SOURCE_ROOT; };
+		FFD584F620A1804800303A46 /* libis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libis.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFD584F320A1804800303A46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFD584ED20A1804800303A46 = {
+			isa = PBXGroup;
+			children = (
+				FF717F9120A1C5D60048B19D /* array.c */,
+				FF717F4B20A1C5CC0048B19D /* bigint.c */,
+				FF717F3B20A1C5CB0048B19D /* ceig_hqr.c */,
+				FF717FB020A1C5DB0048B19D /* ceig_ii.c */,
+				FF717F4920A1C5CC0048B19D /* ceig.c */,
+				FF717F4720A1C5CC0048B19D /* chpeig.c */,
+				FF717FAD20A1C5DA0048B19D /* chshldr.c */,
+				FF717F5220A1C5CD0048B19D /* chsnbrg.c */,
+				FF717FD420A1C5E30048B19D /* cmat.c */,
+				FF717F9220A1C5D60048B19D /* cmat3.c */,
+				FF717F4820A1C5CC0048B19D /* cmulti.c */,
+				FF717F5520A1C5CD0048B19D /* csolve_newton.c */,
+				FF717F7820A1C5D30048B19D /* csolve.c */,
+				FF717F3E20A1C5CB0048B19D /* ctestmat.c */,
+				FF717F9C20A1C5D80048B19D /* cvec.c */,
+				FF717F4020A1C5CB0048B19D /* dcomplex.c */,
+				FF717F4F20A1C5CC0048B19D /* deig.c */,
+				FF717F6D20A1C5D10048B19D /* dhpeig.c */,
+				FF717F6E20A1C5D10048B19D /* dhpsvd.c */,
+				FF717F8820A1C5D50048B19D /* dhshldr.c */,
+				FF717FE020A1C5E60048B19D /* dmat.c */,
+				FF717FC620A1C5E00048B19D /* dsolve.c */,
+				FF717F5620A1C5CD0048B19D /* dsvd.c */,
+				FF717F6F20A1C5D10048B19D /* dtestmat.c */,
+				FF717F6720A1C5D00048B19D /* dvec.c */,
+				FF717F6020A1C5CF0048B19D /* func_add.c */,
+				FF717F9320A1C5D70048B19D /* func_args.c */,
+				FF717FB520A1C5DC0048B19D /* func_bigint.c */,
+				FF717FB220A1C5DB0048B19D /* func_builtin.c */,
+				FF717F5920A1C5CE0048B19D /* func_cmat.c */,
+				FF717FAB20A1C5DA0048B19D /* func_cmp.c */,
+				FF717FC520A1C5E00048B19D /* func_complex.c */,
+				FF717FCD20A1C5E10048B19D /* func_cvec.c */,
+				FF717F7F20A1C5D40048B19D /* func_def.c */,
+				FF717FB920A1C5DC0048B19D /* func_diff.c */,
+				FF717F7520A1C5D20048B19D /* func_expand.c */,
+				FF717FA420A1C5D90048B19D /* func_find.c */,
+				FF717FB120A1C5DB0048B19D /* func_gb.c */,
+				FF717F8220A1C5D40048B19D /* func_import.c */,
+				FF717F7920A1C5D30048B19D /* func_ivec.c */,
+				FF717F6820A1C5D00048B19D /* func_list.c */,
+				FF717F9420A1C5D70048B19D /* func_maps.c */,
+				FF717F8420A1C5D40048B19D /* func_math.c */,
+				FF717FB620A1C5DC0048B19D /* func_mono.c */,
+				FF717FD520A1C5E30048B19D /* func_mul.c */,
+				FF717FB420A1C5DB0048B19D /* func_number.c */,
+				FF717FA620A1C5D90048B19D /* func_op.c */,
+				FF717FA020A1C5D80048B19D /* func_poly.c */,
+				FF717F8D20A1C5D60048B19D /* func_power.c */,
+				FF717F4520A1C5CB0048B19D /* func_print.c */,
+				FF717FC320A1C5DF0048B19D /* func_real.c */,
+				FF717F5120A1C5CD0048B19D /* func_rmat.c */,
+				FF717FB320A1C5DB0048B19D /* func_rvec.c */,
+				FF717FBB20A1C5DD0048B19D /* func_scope.c */,
+				FF717FCE20A1C5E10048B19D /* func_script.c */,
+				FF717F6120A1C5CF0048B19D /* func_solve.c */,
+				FF717F8A20A1C5D50048B19D /* func_strings.c */,
+				FF717F4620A1C5CC0048B19D /* func_table.c */,
+				FF717F6520A1C5D00048B19D /* func_var.c */,
+				FF717F8320A1C5D40048B19D /* func_vec.c */,
+				FF717FA920A1C5DA0048B19D /* func.c */,
+				FF717FD120A1C5E20048B19D /* GeneralHashFunctions.c */,
+				FF717FE220A1C5E60048B19D /* GeneralHashFunctions.h */,
+				FF717FC020A1C5DF0048B19D /* iceig.c */,
+				FF717FCA20A1C5E00048B19D /* icmat.c */,
+				FF717FDE20A1C5E50048B19D /* icmat3.c */,
+				FF717FD320A1C5E20048B19D /* icmulti.c */,
+				FF717FE620A1C5E70048B19D /* icsolve.c */,
+				FF717FA520A1C5D90048B19D /* icvec.c */,
+				FF717F7120A1C5D10048B19D /* imat.c */,
+				FF717FBA20A1C5DC0048B19D /* ireig.c */,
+				FF717FD820A1C5E40048B19D /* irmat.c */,
+				FF717FE420A1C5E60048B19D /* irmat3.c */,
+				FF717F7D20A1C5D30048B19D /* irmulti.c */,
+				FF717FC120A1C5DF0048B19D /* irsolve.c */,
+				FF717FD620A1C5E30048B19D /* irvec.c */,
+				FF717FB720A1C5DC0048B19D /* is_array.h */,
+				FF717F5320A1C5CD0048B19D /* is_bigint.h */,
+				FF717FAC20A1C5DA0048B19D /* is_ceig_hqr.h */,
+				FF717FB820A1C5DC0048B19D /* is_ceig_ii.h */,
+				FF717FE120A1C5E60048B19D /* is_ceig.h */,
+				FF717F4C20A1C5CC0048B19D /* is_chpeig.h */,
+				FF717F6620A1C5D00048B19D /* is_chshldr.h */,
+				FF717FA120A1C5D90048B19D /* is_chsnbrg.h */,
+				FF717F7B20A1C5D30048B19D /* is_cmat.h */,
+				FF717F7220A1C5D20048B19D /* is_cmat3.h */,
+				FF717FE320A1C5E60048B19D /* is_cmulti.h */,
+				FF717F5A20A1C5CE0048B19D /* is_csolve_newton.h */,
+				FF717FDF20A1C5E60048B19D /* is_csolve.h */,
+				FF717FC720A1C5E00048B19D /* is_ctestmat.h */,
+				FF717FC220A1C5DF0048B19D /* is_cvec.h */,
+				FF717F3A20A1C5CB0048B19D /* is_dcomplex.h */,
+				FF717F8B20A1C5D50048B19D /* is_deig.h */,
+				FF717F3C20A1C5CB0048B19D /* is_dhpeig.h */,
+				FF717F8720A1C5D50048B19D /* is_dhpsvd.h */,
+				FF717F8620A1C5D50048B19D /* is_dhshldr.h */,
+				FF717FD920A1C5E40048B19D /* is_dmat.h */,
+				FF717F6220A1C5CF0048B19D /* is_dsolve.h */,
+				FF717F8F20A1C5D60048B19D /* is_dsvd.h */,
+				FF717F9820A1C5D70048B19D /* is_dtestmat.h */,
+				FF717FA320A1C5D90048B19D /* is_dvec.h */,
+				FF717FCB20A1C5E10048B19D /* is_func.h */,
+				FF717F4D20A1C5CC0048B19D /* is_iceig.h */,
+				FF717F4220A1C5CB0048B19D /* is_icmat.h */,
+				FF717F5B20A1C5CE0048B19D /* is_icmat3.h */,
+				FF717F5C20A1C5CE0048B19D /* is_icmulti.h */,
+				FF717F9520A1C5D70048B19D /* is_icsolve.h */,
+				FF717F9F20A1C5D80048B19D /* is_icvec.h */,
+				FF717F4E20A1C5CC0048B19D /* is_imat.h */,
+				FF717F6B20A1C5D10048B19D /* is_ireig.h */,
+				FF717F8520A1C5D40048B19D /* is_irmat.h */,
+				FF717FE520A1C5E70048B19D /* is_irmat3.h */,
+				FF717FA820A1C5DA0048B19D /* is_irmulti.h */,
+				FF717F7E20A1C5D30048B19D /* is_irsolve.h */,
+				FF717F9620A1C5D70048B19D /* is_irvec.h */,
+				FF717FBC20A1C5DD0048B19D /* is_ivec.h */,
+				FF717FD720A1C5E30048B19D /* is_macros.h */,
+				FF717F9B20A1C5D80048B19D /* is_pmat.h */,
+				FF717FDA20A1C5E50048B19D /* is_print.h */,
+				FF717FC820A1C5E00048B19D /* is_pvec.h */,
+				FF717F5D20A1C5CE0048B19D /* is_reig_hqr.h */,
+				FF717F5720A1C5CD0048B19D /* is_reig_ii.h */,
+				FF717F5420A1C5CD0048B19D /* is_reig.h */,
+				FF717FC420A1C5DF0048B19D /* is_rhpeig.h */,
+				FF717F4A20A1C5CC0048B19D /* is_rhshldr.h */,
+				FF717FAE20A1C5DB0048B19D /* is_rhsnbrg.h */,
+				FF717F3D20A1C5CB0048B19D /* is_riep_dht.h */,
+				FF717F7420A1C5D20048B19D /* is_rmat.h */,
+				FF717FA220A1C5D90048B19D /* is_rmat3.h */,
+				FF717F5820A1C5CE0048B19D /* is_rmulti.h */,
+				FF717F7020A1C5D10048B19D /* is_rounding.h */,
+				FF717F9020A1C5D60048B19D /* is_rsolve_newton.h */,
+				FF717F3820A1C5CA0048B19D /* is_rsolve.h */,
+				FF717F6C20A1C5D10048B19D /* is_rtestmat.h */,
+				FF717FBD20A1C5DD0048B19D /* is_rvec.h */,
+				FF717FCF20A1C5E20048B19D /* is_strings.h */,
+				FF717F8C20A1C5D50048B19D /* is_svec.h */,
+				FF717F7620A1C5D20048B19D /* is_zeig.h */,
+				FF717F3920A1C5CB0048B19D /* is_zhpeig.h */,
+				FF717F5E20A1C5CF0048B19D /* is_zhshldr.h */,
+				FF717F5020A1C5CD0048B19D /* is_zmat.h */,
+				FF717F4420A1C5CB0048B19D /* is_zsolve.h */,
+				FF717F9D20A1C5D80048B19D /* is_ztestmat.h */,
+				FF717FDB20A1C5E50048B19D /* is_zvec.h */,
+				FF717F6920A1C5D00048B19D /* isys.h */,
+				FF717FBE20A1C5DE0048B19D /* ivec.c */,
+				FF717F7C20A1C5D30048B19D /* mt19937ar.c */,
+				FF717F8920A1C5D50048B19D /* mt19937ar.h */,
+				FF717F5F20A1C5CF0048B19D /* print.c */,
+				FF717FC920A1C5E00048B19D /* rdtsc.h */,
+				FF717F9720A1C5D70048B19D /* reig_hqr.c */,
+				FF717FAF20A1C5DB0048B19D /* reig_ii.c */,
+				FF717F4320A1C5CB0048B19D /* reig.c */,
+				FF717F8120A1C5D40048B19D /* rhpeig.c */,
+				FF717FDC20A1C5E50048B19D /* rhshldr.c */,
+				FF717F9920A1C5D70048B19D /* rhsnbrg.c */,
+				FF717F8E20A1C5D60048B19D /* riep_dht.c */,
+				FF717FD020A1C5E20048B19D /* rmat.c */,
+				FF717F7720A1C5D20048B19D /* rmat3.c */,
+				FF717FCC20A1C5E10048B19D /* rmulti.c */,
+				FF717FBF20A1C5DE0048B19D /* rsolve_newton.c */,
+				FF717FDD20A1C5E50048B19D /* rsolve.c */,
+				FF717F3F20A1C5CB0048B19D /* rtestmat.c */,
+				FF717F9E20A1C5D80048B19D /* rvec.c */,
+				FF717FA720A1C5DA0048B19D /* strings.c */,
+				FF717F6320A1C5CF0048B19D /* svec.c */,
+				FF717FAA20A1C5DA0048B19D /* zeig.c */,
+				FF717F7A20A1C5D30048B19D /* zhpeig.c */,
+				FF717FD220A1C5E20048B19D /* zhshldr.c */,
+				FF717F6420A1C5D00048B19D /* zmat.c */,
+				FF717F6A20A1C5D00048B19D /* zsolve.c */,
+				FF717F8020A1C5D40048B19D /* ztestmat.c */,
+				FF717F7320A1C5D20048B19D /* zvec.c */,
+				FFD584F720A1804800303A46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFD584F720A1804800303A46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFD584F620A1804800303A46 /* libis.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FFD584F420A1804800303A46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF71804820A1C5E70048B19D /* is_pmat.h in Headers */,
+				FF71804320A1C5E70048B19D /* is_icsolve.h in Headers */,
+				FF71801A20A1C5E70048B19D /* is_rtestmat.h in Headers */,
+				FF71802C20A1C5E70048B19D /* is_irsolve.h in Headers */,
+				FF71807820A1C5E70048B19D /* is_func.h in Headers */,
+				FF71801E20A1C5E70048B19D /* is_rounding.h in Headers */,
+				FF71804E20A1C5E70048B19D /* is_chsnbrg.h in Headers */,
+				FF717FEC20A1C5E70048B19D /* is_riep_dht.h in Headers */,
+				FF71803520A1C5E70048B19D /* is_dhpsvd.h in Headers */,
+				FF71807520A1C5E70048B19D /* is_pvec.h in Headers */,
+				FF717FE720A1C5E70048B19D /* is_rsolve.h in Headers */,
+				FF71803720A1C5E70048B19D /* mt19937ar.h in Headers */,
+				FF71808820A1C5E70048B19D /* is_zvec.h in Headers */,
+				FF717FFE20A1C5E70048B19D /* is_zmat.h in Headers */,
+				FF717FEB20A1C5E70048B19D /* is_dhpeig.h in Headers */,
+				FF71801720A1C5E70048B19D /* isys.h in Headers */,
+				FF717FE820A1C5E70048B19D /* is_zhpeig.h in Headers */,
+				FF71800820A1C5E70048B19D /* is_csolve_newton.h in Headers */,
+				FF71800C20A1C5E70048B19D /* is_zhshldr.h in Headers */,
+				FF71803A20A1C5E70048B19D /* is_svec.h in Headers */,
+				FF717FF820A1C5E70048B19D /* is_rhshldr.h in Headers */,
+				FF71804F20A1C5E70048B19D /* is_rmat3.h in Headers */,
+				FF71802420A1C5E70048B19D /* is_zeig.h in Headers */,
+				FF717FE920A1C5E70048B19D /* is_dcomplex.h in Headers */,
+				FF71803D20A1C5E70048B19D /* is_dsvd.h in Headers */,
+				FF71801420A1C5E70048B19D /* is_chshldr.h in Headers */,
+				FF71801020A1C5E70048B19D /* is_dsolve.h in Headers */,
+				FF717FF220A1C5E70048B19D /* is_zsolve.h in Headers */,
+				FF71809220A1C5E70048B19D /* is_irmat3.h in Headers */,
+				FF71800520A1C5E70048B19D /* is_reig_ii.h in Headers */,
+				FF71802920A1C5E70048B19D /* is_cmat.h in Headers */,
+				FF71800620A1C5E70048B19D /* is_rmulti.h in Headers */,
+				FF71803E20A1C5E70048B19D /* is_rsolve_newton.h in Headers */,
+				FF717FF020A1C5E70048B19D /* is_icmat.h in Headers */,
+				FF717FFB20A1C5E70048B19D /* is_iceig.h in Headers */,
+				FF71808420A1C5E70048B19D /* is_macros.h in Headers */,
+				FF717FFC20A1C5E70048B19D /* is_imat.h in Headers */,
+				FF71806F20A1C5E70048B19D /* is_cvec.h in Headers */,
+				FF71806520A1C5E70048B19D /* is_ceig_ii.h in Headers */,
+				FF71800120A1C5E70048B19D /* is_bigint.h in Headers */,
+				FF71804C20A1C5E70048B19D /* is_icvec.h in Headers */,
+				FF71804620A1C5E70048B19D /* is_dtestmat.h in Headers */,
+				FF71808720A1C5E70048B19D /* is_print.h in Headers */,
+				FF71805B20A1C5E70048B19D /* is_rhsnbrg.h in Headers */,
+				FF71803920A1C5E70048B19D /* is_deig.h in Headers */,
+				FF71807120A1C5E70048B19D /* is_rhpeig.h in Headers */,
+				FF71805020A1C5E70048B19D /* is_dvec.h in Headers */,
+				FF71800B20A1C5E70048B19D /* is_reig_hqr.h in Headers */,
+				FF71808F20A1C5E70048B19D /* GeneralHashFunctions.h in Headers */,
+				FF717FFA20A1C5E70048B19D /* is_chpeig.h in Headers */,
+				FF71807C20A1C5E70048B19D /* is_strings.h in Headers */,
+				FF71807420A1C5E70048B19D /* is_ctestmat.h in Headers */,
+				FF71805920A1C5E70048B19D /* is_ceig_hqr.h in Headers */,
+				FF71800220A1C5E70048B19D /* is_reig.h in Headers */,
+				FF71802220A1C5E70048B19D /* is_rmat.h in Headers */,
+				FF71800A20A1C5E70048B19D /* is_icmulti.h in Headers */,
+				FF71801920A1C5E70048B19D /* is_ireig.h in Headers */,
+				FF71806420A1C5E70048B19D /* is_array.h in Headers */,
+				FF71808C20A1C5E70048B19D /* is_csolve.h in Headers */,
+				FF71808620A1C5E70048B19D /* is_dmat.h in Headers */,
+				FF71807620A1C5E70048B19D /* rdtsc.h in Headers */,
+				FF71808E20A1C5E70048B19D /* is_ceig.h in Headers */,
+				FF71804A20A1C5E70048B19D /* is_ztestmat.h in Headers */,
+				FF71800920A1C5E70048B19D /* is_icmat3.h in Headers */,
+				FF71805520A1C5E70048B19D /* is_irmulti.h in Headers */,
+				FF71809020A1C5E70048B19D /* is_cmulti.h in Headers */,
+				FF71806A20A1C5E70048B19D /* is_rvec.h in Headers */,
+				FF71804420A1C5E70048B19D /* is_irvec.h in Headers */,
+				FF71802020A1C5E70048B19D /* is_cmat3.h in Headers */,
+				FF71803420A1C5E70048B19D /* is_dhshldr.h in Headers */,
+				FF71806920A1C5E70048B19D /* is_ivec.h in Headers */,
+				FF71803320A1C5E70048B19D /* is_irmat.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FFD584F520A1804800303A46 /* libis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFD584FA20A1804800303A46 /* Build configuration list for PBXNativeTarget "libis" */;
+			buildPhases = (
+				FFD584F220A1804800303A46 /* Sources */,
+				FFD584F320A1804800303A46 /* Frameworks */,
+				FFD584F420A1804800303A46 /* Headers */,
+				FFAF941F20A18A0A006E061D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libis;
+			productName = libis;
+			productReference = FFD584F620A1804800303A46 /* libis.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFD584EE20A1804800303A46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "近藤 弘一";
+				TargetAttributes = {
+					FFD584F520A1804800303A46 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = FFD584F120A1804800303A46 /* Build configuration list for PBXProject "libis" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FFD584ED20A1804800303A46;
+			productRefGroup = FFD584F720A1804800303A46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFD584F520A1804800303A46 /* libis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FFAF941F20A18A0A006E061D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "#env > xcode-build-log.txt\nmkdir -p ${SRCROOT}/MACOSX\nmkdir -p ${SRCROOT}/include\ncp -f ${BUILT_PRODUCTS_DIR}/libis.a ${SRCROOT}/MACOSX/libis.a\ncp -f ${SRCROOT}/src/*.h ${SRCROOT}/include/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFD584F220A1804800303A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF71802D20A1C5E70048B19D /* func_def.c in Sources */,
+				FF71807E20A1C5E70048B19D /* GeneralHashFunctions.c in Sources */,
+				FF71807920A1C5E70048B19D /* rmulti.c in Sources */,
+				FF717FF120A1C5E70048B19D /* reig.c in Sources */,
+				FF71805E20A1C5E70048B19D /* func_gb.c in Sources */,
+				FF71806720A1C5E70048B19D /* ireig.c in Sources */,
+				FF71801220A1C5E70048B19D /* zmat.c in Sources */,
+				FF71805A20A1C5E70048B19D /* chshldr.c in Sources */,
+				FF71806820A1C5E70048B19D /* func_scope.c in Sources */,
+				FF71809120A1C5E70048B19D /* irmat3.c in Sources */,
+				FF71806B20A1C5E70048B19D /* ivec.c in Sources */,
+				FF71801820A1C5E70048B19D /* zsolve.c in Sources */,
+				FF71806220A1C5E70048B19D /* func_bigint.c in Sources */,
+				FF71808D20A1C5E70048B19D /* dmat.c in Sources */,
+				FF71802520A1C5E70048B19D /* rmat3.c in Sources */,
+				FF71808020A1C5E70048B19D /* icmulti.c in Sources */,
+				FF71806620A1C5E70048B19D /* func_diff.c in Sources */,
+				FF71802820A1C5E70048B19D /* zhpeig.c in Sources */,
+				FF71801320A1C5E70048B19D /* func_var.c in Sources */,
+				FF71802E20A1C5E70048B19D /* ztestmat.c in Sources */,
+				FF71805220A1C5E70048B19D /* icvec.c in Sources */,
+				FF71805720A1C5E70048B19D /* zeig.c in Sources */,
+				FF71802120A1C5E70048B19D /* zvec.c in Sources */,
+				FF71807220A1C5E70048B19D /* func_complex.c in Sources */,
+				FF71800F20A1C5E70048B19D /* func_solve.c in Sources */,
+				FF71805120A1C5E70048B19D /* func_find.c in Sources */,
+				FF717FF620A1C5E70048B19D /* cmulti.c in Sources */,
+				FF717FF920A1C5E70048B19D /* bigint.c in Sources */,
+				FF71807F20A1C5E70048B19D /* zhshldr.c in Sources */,
+				FF71807A20A1C5E70048B19D /* func_cvec.c in Sources */,
+				FF71806020A1C5E70048B19D /* func_rvec.c in Sources */,
+				FF71808320A1C5E70048B19D /* irvec.c in Sources */,
+				FF71803F20A1C5E70048B19D /* array.c in Sources */,
+				FF71803020A1C5E70048B19D /* func_import.c in Sources */,
+				FF71809320A1C5E70048B19D /* icsolve.c in Sources */,
+				FF71800020A1C5E70048B19D /* chsnbrg.c in Sources */,
+				FF71802320A1C5E70048B19D /* func_expand.c in Sources */,
+				FF717FF520A1C5E70048B19D /* chpeig.c in Sources */,
+				FF717FF320A1C5E70048B19D /* func_print.c in Sources */,
+				FF71803220A1C5E70048B19D /* func_math.c in Sources */,
+				FF71806E20A1C5E70048B19D /* irsolve.c in Sources */,
+				FF71801D20A1C5E70048B19D /* dtestmat.c in Sources */,
+				FF71801520A1C5E70048B19D /* dvec.c in Sources */,
+				FF71806120A1C5E70048B19D /* func_number.c in Sources */,
+				FF71805620A1C5E70048B19D /* func.c in Sources */,
+				FF71802720A1C5E70048B19D /* func_ivec.c in Sources */,
+				FF71800E20A1C5E70048B19D /* func_add.c in Sources */,
+				FF71802F20A1C5E70048B19D /* rhpeig.c in Sources */,
+				FF71805F20A1C5E70048B19D /* func_builtin.c in Sources */,
+				FF717FF420A1C5E70048B19D /* func_table.c in Sources */,
+				FF71804D20A1C5E70048B19D /* func_poly.c in Sources */,
+				FF71807720A1C5E70048B19D /* icmat.c in Sources */,
+				FF71801620A1C5E70048B19D /* func_list.c in Sources */,
+				FF71803620A1C5E70048B19D /* dhshldr.c in Sources */,
+				FF71801C20A1C5E70048B19D /* dhpsvd.c in Sources */,
+				FF71806C20A1C5E70048B19D /* rsolve_newton.c in Sources */,
+				FF71807B20A1C5E70048B19D /* func_script.c in Sources */,
+				FF71804120A1C5E70048B19D /* func_args.c in Sources */,
+				FF71803120A1C5E70048B19D /* func_vec.c in Sources */,
+				FF71808220A1C5E70048B19D /* func_mul.c in Sources */,
+				FF71805D20A1C5E70048B19D /* ceig_ii.c in Sources */,
+				FF71804720A1C5E70048B19D /* rhsnbrg.c in Sources */,
+				FF71803B20A1C5E70048B19D /* func_power.c in Sources */,
+				FF71803820A1C5E70048B19D /* func_strings.c in Sources */,
+				FF71805820A1C5E70048B19D /* func_cmp.c in Sources */,
+				FF71806320A1C5E70048B19D /* func_mono.c in Sources */,
+				FF71804520A1C5E70048B19D /* reig_hqr.c in Sources */,
+				FF717FF720A1C5E70048B19D /* ceig.c in Sources */,
+				FF71806D20A1C5E70048B19D /* iceig.c in Sources */,
+				FF71804920A1C5E70048B19D /* cvec.c in Sources */,
+				FF71800420A1C5E70048B19D /* dsvd.c in Sources */,
+				FF71807020A1C5E70048B19D /* func_real.c in Sources */,
+				FF71800D20A1C5E70048B19D /* print.c in Sources */,
+				FF717FED20A1C5E70048B19D /* ctestmat.c in Sources */,
+				FF71802A20A1C5E70048B19D /* mt19937ar.c in Sources */,
+				FF71808B20A1C5E70048B19D /* icmat3.c in Sources */,
+				FF71801F20A1C5E70048B19D /* imat.c in Sources */,
+				FF71805320A1C5E70048B19D /* func_op.c in Sources */,
+				FF71808120A1C5E70048B19D /* cmat.c in Sources */,
+				FF717FFD20A1C5E70048B19D /* deig.c in Sources */,
+				FF71808A20A1C5E70048B19D /* rsolve.c in Sources */,
+				FF71807320A1C5E70048B19D /* dsolve.c in Sources */,
+				FF71802620A1C5E70048B19D /* csolve.c in Sources */,
+				FF717FEA20A1C5E70048B19D /* ceig_hqr.c in Sources */,
+				FF71800320A1C5E70048B19D /* csolve_newton.c in Sources */,
+				FF717FEE20A1C5E70048B19D /* rtestmat.c in Sources */,
+				FF71808920A1C5E70048B19D /* rhshldr.c in Sources */,
+				FF71807D20A1C5E70048B19D /* rmat.c in Sources */,
+				FF71808520A1C5E70048B19D /* irmat.c in Sources */,
+				FF71802B20A1C5E70048B19D /* irmulti.c in Sources */,
+				FF71804B20A1C5E70048B19D /* rvec.c in Sources */,
+				FF71803C20A1C5E70048B19D /* riep_dht.c in Sources */,
+				FF71801B20A1C5E70048B19D /* dhpeig.c in Sources */,
+				FF717FEF20A1C5E70048B19D /* dcomplex.c in Sources */,
+				FF71804020A1C5E70048B19D /* cmat3.c in Sources */,
+				FF71805420A1C5E70048B19D /* strings.c in Sources */,
+				FF71804220A1C5E70048B19D /* func_maps.c in Sources */,
+				FF71801120A1C5E70048B19D /* svec.c in Sources */,
+				FF71800720A1C5E70048B19D /* func_cmat.c in Sources */,
+				FF71805C20A1C5E70048B19D /* reig_ii.c in Sources */,
+				FF717FFF20A1C5E70048B19D /* func_rmat.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FFD584F820A1804800303A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FFD584F920A1804800303A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FFD584FB20A1804800303A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = "";
+				HEADER_SEARCH_PATHS = "\"/usr/local/include\"";
+				INSTALL_PATH = ./;
+				LIBRARY_SEARCH_PATHS = "\"/usr/local/lib\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FFD584FC20A1804800303A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = "";
+				HEADER_SEARCH_PATHS = "\"/usr/local/include\"";
+				INSTALL_PATH = ./;
+				LIBRARY_SEARCH_PATHS = "\"/usr/local/lib\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFD584F120A1804800303A46 /* Build configuration list for PBXProject "libis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD584F820A1804800303A46 /* Debug */,
+				FFD584F920A1804800303A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFD584FA20A1804800303A46 /* Build configuration list for PBXNativeTarget "libis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD584FB20A1804800303A46 /* Debug */,
+				FFD584FC20A1804800303A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFD584EE20A1804800303A46 /* Project object */;
+}

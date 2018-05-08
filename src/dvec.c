@@ -500,7 +500,7 @@ double pow_si(double x, int n)
 void dvec_pow_si(int n, double *z, double *x, long y)
 {
   int i;
-  for(i=0; i<n; i++){ z[i]=pow_si(x[i],y); }
+  for(i=0; i<n; i++){ z[i]=pow_si(x[i],(int)y); }
 }
 
 /**

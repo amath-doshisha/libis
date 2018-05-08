@@ -175,14 +175,13 @@ $(document).ready(function(){initNavTree('is__icsolve_8h.html','');});
 <p>線形方程式A*X=Bの解法. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>サイズ(n,NRHS)の行列B. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">B</td><td>サイズ(n,NRHS)の解の行列X. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>サイズnの正方行列で係数行列A. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">B0</td><td>B1 [in]サイズ(n,NRHS)の行列B.[out]サイズ(n,NRHS)の解の行列X. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A0</td><td>A1 サイズnの正方行列で係数行列A. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="icsolve_8c_source.html">icsolve.c</a> の <a class="el" href="icsolve_8c_source.html#l00040">40</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icsolve_8c_source.html">icsolve.c</a> の <a class="el" href="icsolve_8c_source.html#l00039">39</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -315,15 +314,13 @@ $(document).ready(function(){initNavTree('is__icsolve_8h.html','');});
 <p>線形方程式A*X=Bのガウスの消去法による解法. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>行列B.サイズは(n,NRHS). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>解の行列X.サイズは(n,NRHS). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>係数行列A.サイズは(n,n). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>破壊される. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">B0</td><td>B1 [in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS). </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">A0</td><td>A1 [in]係数行列A.サイズは(n,n).[out]破壊される. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="icsolve_8c_source.html">icsolve.c</a> の <a class="el" href="icsolve_8c_source.html#l00068">68</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icsolve_8c_source.html">icsolve.c</a> の <a class="el" href="icsolve_8c_source.html#l00065">65</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -387,7 +384,7 @@ $(document).ready(function(){initNavTree('is__icsolve_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__icsolve_8h.html">is_icsolve.h</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分29秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分08秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

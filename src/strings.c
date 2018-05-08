@@ -20,7 +20,7 @@ char *char_new(char *str, char *skip)
     p=NULL;
   }else{
     while(char_match_any(*str,skip,NULL)){ str++; }
-    len=strlen(str);
+    len=(int)strlen(str);
     while(len>0 && char_match_any(*(str+len-1),skip,NULL)){ len--; }
     p=(char*)malloc(sizeof(char)*(len+1));
     strncpy(p,str,len);
@@ -130,7 +130,7 @@ char *str_create_mask(char *s, char *mask_begin, char *mask_end)
 {
   int n,count,i,k;
   char *mask=NULL,*m=NULL;
-  n=strlen(s);
+  n=(int)strlen(s);
   mask=(char*)malloc(sizeof(char)*(n+1));
   m=(char*)malloc(sizeof(char)*(2*(n+1)+1));
   for(count=0, i=0; i<n; i++){
@@ -507,7 +507,7 @@ strings* strings_split(char *str, char *sep, char *mask_begin, char *mask_end, c
   char *s,*t,*m=NULL;
   strings *list;
   // copy
-  len=strlen(str);
+  len=(int)strlen(str);
   s=char_new(str,skip);
   m=str_create_mask(str,mask_begin,mask_end);
   // count tokens
@@ -538,7 +538,7 @@ strings* strings_split_mask(char *str, char *mask_begin, char *mask_end, char *s
   char *s,*t,*m=NULL;
   strings *list;
   // copy
-  len=strlen(str);
+  len=(int)strlen(str);
   s=char_new(str,skip);
   m=str_create_mask(str,mask_begin,mask_end);
   // count tokens
@@ -572,7 +572,7 @@ strings* strings_split_number(char *s)
   char *t;
   // check mode
   // メモリの長さ
-  n=strlen(s)+1;
+  n=(int)strlen(s)+1;
   // モードの保存用
   p=ivec_allocate(n);
   // 浮動小数点数=[+-][数字][.][数字][e][+-][数字]

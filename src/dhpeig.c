@@ -34,7 +34,7 @@ int dhpeig_1pair(int n, const double *A, int LDA, const double *z, double *x, do
   char fname[]="zhpeig_1pair";
   int status=DHPEIG_STATUS_PRE,step=0,step_max=0,info=-1,done=0,LDJM;
   double *w=NULL,*F=NULL,*JM=NULL,C;
-  double eps,eps_half,eta=0,eta0,mu=0;
+  double eps,eps_half,eta=0,eta0=0,mu=0;
   // allocation
   w=dvec_allocate(n);
   F=dvec_allocate(n);

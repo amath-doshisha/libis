@@ -162,6 +162,12 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 <tr class="separator:a52c1195816baf346bbc8df68b1d7aafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82b80a897c819372c60e8a426ddfcd07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8c.html#a82b80a897c819372c60e8a426ddfcd07">array_get_complex2</a> (<a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *xr, <a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *xi)</td></tr>
 <tr class="separator:a82b80a897c819372c60e8a426ddfcd07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">array型の１入力演算に関する関数</div></td></tr>
+<tr class="memitem:ae72d583191130a45170c0d521df3f6ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8c.html#ae72d583191130a45170c0d521df3f6ac">array_conj</a> (<a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *x)</td></tr>
+<tr class="separator:ae72d583191130a45170c0d521df3f6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">array型の２入力演算に関する関数</div></td></tr>
+<tr class="memitem:a437b621f9af3e71f1a503b2a122d04fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8c.html#a437b621f9af3e71f1a503b2a122d04fc">array_add</a> (<a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *x, <a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *y)</td></tr>
+<tr class="separator:a437b621f9af3e71f1a503b2a122d04fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>配列型arrayに関する関数の定義  type='s':文字列 ← (get_char/get_*) → 'i','d','z','r','c','R','C' </p>
@@ -170,6 +176,93 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 
 <p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
+<a id="a437b621f9af3e71f1a503b2a122d04fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a437b621f9af3e71f1a503b2a122d04fc">&#9670;&nbsp;</a></span>array_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a>* array_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>z=x+y </p>
+
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00794">794</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="array_8c_a437b621f9af3e71f1a503b2a122d04fc_cgraph.png" border="0" usemap="#array_8c_a437b621f9af3e71f1a503b2a122d04fc_cgraph" alt=""/></div>
+<map name="array_8c_a437b621f9af3e71f1a503b2a122d04fc_cgraph" id="array_8c_a437b621f9af3e71f1a503b2a122d04fc_cgraph">
+<area shape="rect" id="node2" href="array_8c.html#aa181ce7fd9452b18ca6d0a148bf0aa0c" title="array_same_dim_check" alt="" coords="120,132,248,159"/>
+<area shape="rect" id="node4" href="array_8c.html#a075bf54e3da7df513db0c4f8e06c8787" title="array_allocate" alt="" coords="141,309,227,336"/>
+<area shape="rect" id="node19" href="dvec_8c.html#a4a97f136422912039642af781a3b8566" title="dvec_add" alt="" coords="151,455,217,481"/>
+<area shape="rect" id="node20" href="is__zvec_8h.html#af6474ba5f75c0a61ffa09e82d3c8c2b8" title="zvec_add_dz" alt="" coords="143,505,225,532"/>
+<area shape="rect" id="node22" href="is__zvec_8h.html#a8d52a6ed60cbbb3c67eea179f6610d73" title="zvec_add_zd" alt="" coords="143,556,225,583"/>
+<area shape="rect" id="node23" href="is__zvec_8h.html#ab91ec12c2a3ac2b916c0a5a9cc627a2d" title="zvec_add" alt="" coords="151,607,217,633"/>
+<area shape="rect" id="node24" href="is__rvec_8h.html#a8e5bd3e58c4f34e5d09c627ecf052df8" title="rmulti型のベクトルの足し算 z=x+y " alt="" coords="312,1113,389,1140"/>
+<area shape="rect" id="node27" href="cvec_8c.html#a36f1953eccd1db83f0b5d1ba038fca4c" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="145,1012,223,1039"/>
+<area shape="rect" id="node30" href="is__rvec_8h.html#aae948e6340412f1e87165ddc29d62073" title="rmulti型のベクトルの足し算 z=x+y " alt="" coords="145,1063,223,1089"/>
+<area shape="rect" id="node31" href="cvec_8c.html#a990b08fb738d231b1c41c636f78ca4d8" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="145,961,223,988"/>
+<area shape="rect" id="node33" href="is__rvec_8h.html#ae449cfa5d83d5911cf79baceeac5a2b8" title="rmulti型のベクトルの足し算 z=x+y " alt="" coords="153,708,215,735"/>
+<area shape="rect" id="node35" href="cvec_8c.html#afcfb5f2e3ec3b1595bf84250865d4585" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="143,860,225,887"/>
+<area shape="rect" id="node38" href="cvec_8c.html#ac609bccdb76ba902233772c7bec377f5" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="144,1215,224,1241"/>
+<area shape="rect" id="node40" href="cvec_8c.html#a943ddfc26bdde7ae6c3e1a979049738f" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="145,809,223,836"/>
+<area shape="rect" id="node42" href="cvec_8c.html#a7749fdef2330304f5655248803b5631b" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="143,911,225,937"/>
+<area shape="rect" id="node43" href="cvec_8c.html#a48383be90bf95c2f978562d2bbf14831" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="144,1164,224,1191"/>
+<area shape="rect" id="node44" href="cvec_8c.html#ad40a48a1a99c2e2f604b9f557321c246" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="145,759,223,785"/>
+<area shape="rect" id="node45" href="cvec_8c.html#a1a6af5f288666aba2f5f42e1c927da80" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="151,657,217,684"/>
+<area shape="rect" id="node47" href="irvec_8c.html#a2c48aa53139c6067118f16e74fabf1d6" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="151,1265,217,1292"/>
+<area shape="rect" id="node49" href="icvec_8c.html#aaff3323471d17611b351c7d1b08916de" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="151,1316,217,1343"/>
+<area shape="rect" id="node3" href="is__ivec_8h.html#a98ddcac35c7e663c288c4fbd8f00c344" title="ivec_eq" alt="" coords="323,5,379,32"/>
+<area shape="rect" id="node5" href="array_8c.html#af0794d7238e2086b6217f5011ecc848a" title="array_type_check" alt="" coords="300,157,401,184"/>
+<area shape="rect" id="node6" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="311,208,391,235"/>
+<area shape="rect" id="node7" href="is__ivec_8h.html#a7454ba93b6f4b4d74787cf45b5242c11" title="ivec_set_zeros" alt="" coords="306,259,395,285"/>
+<area shape="rect" id="node8" href="is__ivec_8h.html#a487daa8f72c0e79730e0d0a56c763819" title="ivec_allocate_clone" alt="" coords="296,309,405,336"/>
+<area shape="rect" id="node11" href="array_8c.html#a779836d83556c2e5060b756eef253ee4" title="avec_allocate" alt="" coords="309,360,392,387"/>
+<area shape="rect" id="node12" href="is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="309,411,392,437"/>
+<area shape="rect" id="node13" href="dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="309,461,392,488"/>
+<area shape="rect" id="node14" href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3" title="zvec_allocate" alt="" coords="309,512,392,539"/>
+<area shape="rect" id="node15" href="is__rvec_8h.html#a0c4c754fa6332bf34ef67b2c38aa7505" title="rmulti型のベクトルの新規生成. " alt="" coords="453,56,535,83"/>
+<area shape="rect" id="node17" href="cvec_8c.html#afdc4a88d6334c4518f88ea029020a587" title="cmulti型のベクトルの新規生成. " alt="" coords="309,107,392,133"/>
+<area shape="rect" id="node9" href="ivec_8c.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="454,284,534,311"/>
+<area shape="rect" id="node10" href="ivec_8c.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="461,335,527,361"/>
+<area shape="rect" id="node16" href="is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="601,81,661,108"/>
+<area shape="rect" id="node18" href="cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="463,107,525,133"/>
+<area shape="rect" id="node21" href="zvec_8c.html#a7d960c102745ffe849e366e0cba3fe9a" title="zvec_add_d" alt="" coords="313,563,389,589"/>
+<area shape="rect" id="node25" href="is__rmulti_8h.html#ab573b7b2250f4751b5a96e4a760a5348" title="rmulti型の足し算 z=x+y " alt="" coords="467,1012,521,1039"/>
+<area shape="rect" id="node26" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="583,936,680,963"/>
+<area shape="rect" id="node28" href="cmulti_8c.html#aa3e42af83236c315279393ee6b23f406" title="cmulti型の足し算 z=x+y " alt="" coords="322,1012,379,1039"/>
+<area shape="rect" id="node29" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="469,961,519,988"/>
+<area shape="rect" id="node32" href="cmulti_8c.html#a9ab7e380aa0155d2c3d8e26949018448" title="cmulti型の足し算 z=x+y " alt="" coords="322,961,379,988"/>
+<area shape="rect" id="node34" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="473,765,515,792"/>
+<area shape="rect" id="node36" href="cmulti_8c.html#afcedf823a504843c4adf26db7157bf4b" title="cmulti型の足し算 z=x+y " alt="" coords="323,911,378,937"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="471,911,517,937"/>
+<area shape="rect" id="node39" href="cmulti_8c.html#a90a6b4d1af1fcf9b518975ca0d376818" title="cmulti型の足し算 z=x+y " alt="" coords="323,1164,378,1191"/>
+<area shape="rect" id="node41" href="cmulti_8c.html#aa18f5b4fde710a1bf76e03b7f9fdd9d6" title="cmulti型の足し算 z=x+y " alt="" coords="325,803,377,829"/>
+<area shape="rect" id="node46" href="cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="329,664,373,691"/>
+<area shape="rect" id="node48" href="irmulti_8c.html#a2a3a18d72fa9e737ac67d95ccb3e8ca9" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="472,1291,516,1317"/>
+<area shape="rect" id="node50" href="icmulti_8c.html#a1a18078d2a7c25e6225ceb5f2b6f561b" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="328,1316,373,1343"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a075bf54e3da7df513db0c4f8e06c8787"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a075bf54e3da7df513db0c4f8e06c8787">&#9670;&nbsp;</a></span>array_allocate()</h2>
 
@@ -245,7 +338,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型のコピー y=x </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00166">166</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00165">165</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -284,6 +377,63 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 
 </div>
 </div>
+<a id="ae72d583191130a45170c0d521df3f6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72d583191130a45170c0d521df3f6ac">&#9670;&nbsp;</a></span>array_conj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a>* array_conj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__array_8h.html#acb74d544a96e3aa80a360d610f6127c3">array</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>y=conj(x) </p>
+
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00769">769</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="array_8c_ae72d583191130a45170c0d521df3f6ac_cgraph.png" border="0" usemap="#array_8c_ae72d583191130a45170c0d521df3f6ac_cgraph" alt=""/></div>
+<map name="array_8c_ae72d583191130a45170c0d521df3f6ac_cgraph" id="array_8c_ae72d583191130a45170c0d521df3f6ac_cgraph">
+<area shape="rect" id="node2" href="array_8c.html#a075bf54e3da7df513db0c4f8e06c8787" title="array_allocate" alt="" coords="123,259,208,285"/>
+<area shape="rect" id="node17" href="dvec_8c.html#ac95eb2c331e9c8f9f4522a587664c6f3" title="dvec_copy" alt="" coords="131,411,200,437"/>
+<area shape="rect" id="node18" href="is__zvec_8h.html#a4176abdf16df9255ba5cdcb165004e9e" title="zvec_conj" alt="" coords="132,461,199,488"/>
+<area shape="rect" id="node19" href="is__rvec_8h.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="131,512,199,539"/>
+<area shape="rect" id="node22" href="cvec_8c.html#a159a73703c82ee410ae789625916ebc1" title="cmulti型の複素共役のコピー y=imag(x) " alt="" coords="132,563,199,589"/>
+<area shape="rect" id="node25" href="irvec_8c.html#aaa02168ea740050a912e22a101da3cf2" title="irmulti型のベクトルのコピー [y0,y1]=[x0,x1] " alt="" coords="131,613,200,640"/>
+<area shape="rect" id="node27" href="icvec_8c.html#a3b42dd313805435a9f097028a071ab2d" title="[y0,y1]=conj([x0,x1]) " alt="" coords="131,664,200,691"/>
+<area shape="rect" id="node3" href="array_8c.html#af0794d7238e2086b6217f5011ecc848a" title="array_type_check" alt="" coords="260,5,361,32"/>
+<area shape="rect" id="node4" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="271,56,351,83"/>
+<area shape="rect" id="node5" href="is__ivec_8h.html#a7454ba93b6f4b4d74787cf45b5242c11" title="ivec_set_zeros" alt="" coords="266,107,355,133"/>
+<area shape="rect" id="node6" href="is__ivec_8h.html#a487daa8f72c0e79730e0d0a56c763819" title="ivec_allocate_clone" alt="" coords="256,157,365,184"/>
+<area shape="rect" id="node9" href="array_8c.html#a779836d83556c2e5060b756eef253ee4" title="avec_allocate" alt="" coords="269,208,352,235"/>
+<area shape="rect" id="node10" href="is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="269,259,352,285"/>
+<area shape="rect" id="node11" href="dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="269,309,352,336"/>
+<area shape="rect" id="node12" href="is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3" title="zvec_allocate" alt="" coords="269,360,352,387"/>
+<area shape="rect" id="node13" href="is__rvec_8h.html#a0c4c754fa6332bf34ef67b2c38aa7505" title="rmulti型のベクトルの新規生成. " alt="" coords="413,411,495,437"/>
+<area shape="rect" id="node15" href="cvec_8c.html#afdc4a88d6334c4518f88ea029020a587" title="cmulti型のベクトルの新規生成. " alt="" coords="269,461,352,488"/>
+<area shape="rect" id="node7" href="ivec_8c.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="414,132,494,159"/>
+<area shape="rect" id="node8" href="ivec_8c.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="421,183,487,209"/>
+<area shape="rect" id="node14" href="is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="561,449,621,476"/>
+<area shape="rect" id="node16" href="cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="423,461,485,488"/>
+<area shape="rect" id="node20" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="431,512,477,539"/>
+<area shape="rect" id="node21" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="543,525,640,552"/>
+<area shape="rect" id="node23" href="cmulti_8c.html#aeb3ffb3f4b2ba8bec98f2eb47ff681e3" title="cmulti型の複素共役 y=conj(x). " alt="" coords="288,563,333,589"/>
+<area shape="rect" id="node24" href="is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="433,563,475,589"/>
+<area shape="rect" id="node26" href="irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="567,664,616,691"/>
+<area shape="rect" id="node28" href="icmulti_8c.html#aeda1293ecab82c2ca6e146b9a5bc4eb8" title="複素共役 [y0,y1]=conj([x0,x1]) " alt="" coords="287,664,335,691"/>
+<area shape="rect" id="node29" href="irmulti_8c.html#aab8b9f471b47e8054152264de875f9ae" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="432,715,476,741"/>
+<area shape="rect" id="node30" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="559,715,623,741"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a4e2afcfac05c0a528aeaa408dbf2fd49"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e2afcfac05c0a528aeaa408dbf2fd49">&#9670;&nbsp;</a></span>array_copy()</h2>
 
@@ -301,7 +451,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型のコピー y=x </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00147">147</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00146">146</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -355,7 +505,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型のメモリの解放 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00098">98</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00097">97</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -403,7 +553,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=cast(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00500">500</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00499">499</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -518,7 +668,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=char(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00558">558</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00557">557</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -576,7 +726,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=complex(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00615">615</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00614">614</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -649,7 +799,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=complex2(xr,xi) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00739">739</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00738">738</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -702,7 +852,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=double(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00633">633</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00632">632</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -780,7 +930,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=imulti(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00675">675</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00674">674</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -881,7 +1031,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=imulti2(x0,x1) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00696">696</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00695">695</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -961,7 +1111,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 
 <p>array型の配列の取得 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00475">475</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00474">474</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -982,7 +1132,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=int(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00578">578</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00577">577</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1037,7 +1187,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=multi(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00654">654</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00653">653</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1137,7 +1287,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の型変換 y=real(x) </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00596">596</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00595">595</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1193,7 +1343,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型は空か？ </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00343">343</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00342">342</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1236,7 +1386,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の出力 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00409">409</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00408">408</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1310,7 +1460,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型のメンバの内容を出力 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00369">369</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00368">368</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1348,7 +1498,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00351">351</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00350">350</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1387,7 +1537,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の値をすべて同じ値に設定 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00192">192</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00191">191</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1429,7 +1579,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の値を0,1,2,..に設定 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00305">305</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00304">304</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1473,7 +1623,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の値をすべてinfに設定 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00264">264</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00263">263</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1513,7 +1663,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の値をすべてnanに設定 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00246">246</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00245">245</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1553,7 +1703,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の値をすべて1に設定 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00228">228</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00227">227</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1612,7 +1762,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の値を乱数値[a0,a1]に設定 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00282">282</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00281">281</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1667,7 +1817,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の値をすべて0に設定 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00210">210</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00209">209</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1710,7 +1860,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の内部型の確認 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00335">335</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00334">334</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1731,7 +1881,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の配列のメモリ割当 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00120">120</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00119">119</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1762,7 +1912,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 </div><div class="memdoc">
 <p>array型の配列のメモリ解放 </p>
 
-<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00132">132</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="array_8c_source.html">array.c</a> の <a class="el" href="array_8c_source.html#l00131">131</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1789,7 +1939,7 @@ $(document).ready(function(){initNavTree('array_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="array_8c.html">array.c</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分23秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分04秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

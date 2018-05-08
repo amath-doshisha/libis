@@ -414,7 +414,7 @@ var is__func_8h =
     [ "func_nan_print", "is__func_8h.html#a3facf89b94d33dfa8fef422311455508", null ],
     [ "func_nan_script", "is__func_8h.html#aac62af03daa533fbe9e684f5d97abf7b", null ],
     [ "func_new", "is__func_8h.html#abdd09c60d3291cc48be66d07bf251963", null ],
-    [ "func_new_del_check_sum", "is__func_8h.html#ab24fe222125516694cf43200fcf3540a", null ],
+    [ "func_new_del_check_sum", "is__func_8h.html#a60ee1572bff0739583604cfec2509621", null ],
     [ "func_null_script", "is__func_8h.html#a7a21805cf097270065fc5504b3f512ac", null ],
     [ "func_number_cmp", "is__func_8h.html#a54b5e67abace299eb9ba4eaf99effe35", null ],
     [ "func_number_pull", "is__func_8h.html#aa688bc6a1ce03ab54dee422d5dc0530d", null ],

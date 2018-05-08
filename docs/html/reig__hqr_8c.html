@@ -438,7 +438,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>p=(r*s-w)/A[m+1,m] + A[m,m+1] (ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00302">302</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00300">300</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -500,7 +500,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>q=A[m+1,m+1]-z-r-s (ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00313">313</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00311">311</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -553,7 +553,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>s=SIGN(sqrt(p*p+q*q+r*r),p) (ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00323">323</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00321">321</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -612,7 +612,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>u=abs(A(m,m-1))*(abs(q)+abs(r)) (ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00345">345</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00343">343</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -680,7 +680,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>v=abs(p)*(abs(A(m-1,m-1))+abs(z)+abs(A(m+1,m+1))) (ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00363">363</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00361">361</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -742,7 +742,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>下副対角要素を探すためのノルム計算(ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00288">288</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00286">286</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -806,14 +806,12 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 <p>A はhessenberg前提 </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>行列サイズ </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>行列 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>QR法後の行列 </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>[in]行列．[out]QR法後の行列 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00102">102</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00100">100</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1095,7 +1093,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>オーバーフローやアンダーフローを避けるためのスケール動作(ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00418">418</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00416">416</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1136,7 +1134,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>u+v==vの判定(ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00381">381</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00379">379</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1181,7 +1179,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 
 <p>(abs(a)+s==s)の判定(ユーザーは直接使用してはならない) </p>
 
-<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00399">399</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="reig__hqr_8c_source.html">reig_hqr.c</a> の <a class="el" href="reig__hqr_8c_source.html#l00397">397</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1205,7 +1203,7 @@ $(document).ready(function(){initNavTree('reig__hqr_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="reig__hqr_8c.html">reig_hqr.c</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分30秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分08秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

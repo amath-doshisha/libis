@@ -1,7 +1,0 @@
-<map id="irmat3_sub_cmat3" name="irmat3_sub_cmat3">
-<area shape="rect" id="node2" href="$icmulti_8c.html#a46bab91a9c875ab88e1b31e8ba620b86" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="157,31,212,57"/>
-<area shape="rect" id="node3" href="$irmulti_8c.html#aee308e9a81bc742a5f6a4d3792470e46" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="260,5,304,32"/>
-<area shape="rect" id="node6" href="$irmulti_8c.html#afa386bc5a2e6b1ed3102a23286241dd3" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="260,56,304,83"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="352,5,416,32"/>
-<area shape="rect" id="node5" href="$irmulti_8c.html#a75127c83ea5216e67755d6d959b630c8" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="359,56,409,83"/>
-</map>

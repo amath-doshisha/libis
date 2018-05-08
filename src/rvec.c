@@ -849,7 +849,25 @@ void rvec_add(int n, rmulti **z, rmulti **x, rmulti **y)
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
 */
-void rvec_add_r(int n, rmulti **z, rmulti **x, rmulti *y)
+void rvec_add_dr(int n, rmulti **z, double *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ radd_d(z[i],y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの足し算 z=x+y
+*/
+void rvec_add_rd(int n, rmulti **z, rmulti **x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ radd_d(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの足し算 z=x+y
+*/
+void rvec_add_scalar_r(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
   for(i=0; i<n; i++){ radd(z[i],x[i],y); }
@@ -858,7 +876,7 @@ void rvec_add_r(int n, rmulti **z, rmulti **x, rmulti *y)
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
 */
-void rvec_add_d(int n, rmulti **z, rmulti **x, double y)
+void rvec_add_scalar_d(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
   for(i=0; i<n; i++){ radd_d(z[i],x[i],y); }
@@ -1006,15 +1024,13 @@ void rvec_pow_ui(int n, rmulti **z, rmulti **x, ulong y)
 
 /**
  @brief rmulti型のベクトルxに関する行列Aによる1次変換 y=A*x
- @param[in]  m   ベクトルyのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルxのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズmのベクトル.
- @param[out] y   y=A*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズnのベクトル.
- @return         丸めの発生回数.
-*/
+ @param[in]      m   ベクトルyのサイズ.行列Aの行のサイズ.
+ @param[in]      n   ベクトルxのサイズ.行列Aの列のサイズ.
+ @param[in,out]  y   [in]初期化済みのサイズmのベクトル.[out]y=A*xの計算結果.
+ @param[in]      A   サイズ(m,n)の行列.
+ @param[in]      LDA 行列Aの第1次元.
+ @param[in]      x   サイズnのベクトル.
+ */
 void rvec_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
 {
   int i,j;
@@ -1032,14 +1048,12 @@ void rvec_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
 
 /**
  @brief rmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x
- @param[in]  m   ベクトルyのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルxのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズmのベクトル.
- @param[out] y   y+=A*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズnのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルyのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルxのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズmのベクトル.[out]y+=A*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズnのベクトル.
 */
 void rvec_add_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
 {

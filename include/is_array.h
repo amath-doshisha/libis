@@ -29,12 +29,12 @@ typedef array_struct array;
 #define ARRAY_TYPE(A)   (A)->type
 #define ARRAY_NDIM(A)   (A)->ndim
 #define ARRAY_DIM_P(A)  (A)->dim
-#define ARRAY_DIM(A,I)  (A)->dim[I]
+#define ARRAY_DIM(A,I)  ((I)<0?0:(((I)>=(A)->ndim)?1:(A)->dim[I]))
 #define ARRAY_M(A)      (A)->dim[0]
 #define ARRAY_N(A)      (A)->dim[1]
 #define ARRAY_L(A)      (A)->dim[2]
 #define ARRAY_LD_P(A)   (A)->LD
-#define ARRAY_LD(A,I)   (A)->LD[I]
+#define ARRAY_LD(A,I)   ((I)<0?0:(((I)<(A)->ndim)?(A)->LD[I]:(A)->LD[((A)->ndim)-1]))
 #define ARRAY_LD0(A)    (A)->LD[0]
 #define ARRAY_LD1(A)    (A)->LD[1]
 #define ARRAY_LD2(A)    (A)->LD[2]
@@ -134,10 +134,13 @@ array *array_get_complex2(array *xr, array *xi); // y=complex2(xr,xi)
 /*
  * operatior for one argumentr
  */
+array *array_conj(array *x); // y=conj(x)
 
 /*
  * operatior for two arguments
  */
+array *array_add(array *x, array *y); // z=x+y
+
 
 /*
  * operatior for tree arguments

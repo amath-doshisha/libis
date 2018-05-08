@@ -94,10 +94,8 @@ void reig_hqr_mt(int m, int n, rmulti **B, int LDB, cmulti **lambda, rmulti **A,
 /**
  @brief    多倍長QR法
  @details A はhessenberg前提
- @param[in]  n   行列サイズ
- @param[in]  A   行列
- @param[in]  LDA 
- @param[out] A   QR法後の行列
+ @param[in]      n   行列サイズ
+ @param[in,out]  A   [in]行列．[out]QR法後の行列
  */
 void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 {

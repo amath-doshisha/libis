@@ -33,9 +33,8 @@
 
 /**
  @brief 線形方程式A*X=Bの解法.
- @param[in]  B サイズ(n,NRHS)の行列B.
- @param[out] B サイズ(n,NRHS)の解の行列X.
- @param[in]  A サイズnの正方行列で係数行列A.
+ @param[in,out]  B0 B1   [in]サイズ(n,NRHS)の行列B.[out]サイズ(n,NRHS)の解の行列X.
+ @param[in]      A0 A1   サイズnの正方行列で係数行列A.
  */
 void irsolve(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A1, int LDA, int *info)
 {
@@ -63,10 +62,8 @@ void irsolve(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rm
  
 /**
  @brief 線形方程式A*X=BのLU分解による解法.
- @param[in]  B 行列B.サイズは(n,NRHS).
- @param[out] B 解の行列X.サイズは(n,NRHS).
- @param[in]  A 係数行列A.サイズは(n,n).
- @param[out] A 破壊される.
+ @param[in,out]  B0 B1 LDB  [in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS).
+ @param[in,out]  A0 A1 LDA  [in]係数行列A.サイズは(n,n).[out]破壊される.
  */
  
 void irsolve_lu(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A1, int LDA, int *info)
@@ -87,10 +84,8 @@ void irsolve_lu(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmulti **A0,
 
 /**
  @brief 行列AのLU分解.
- @param[in]  A サイズnの正方行列A.
- @param[out] A LU分解の結果.
- @param[in]  p サイズがnの初期化済みの配列.
- @param[out] p ピボット選択の結果.
+ @param[in,out]  A0 A1  [in]サイズnの正方行列A.[out]LU分解の結果.
+ @param[in,out]  p0 p1  [in]サイズがnの初期化済みの配列.[out]ピボット選択の結果.
 */
 void irsolve_lu_decomp(int n, rmulti **A0, rmulti **A1, int LDA, int *p0, int *p1, int *info)
 {

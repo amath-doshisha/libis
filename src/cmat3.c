@@ -1735,7 +1735,7 @@ void cmat3_lt_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A,
 }
 
 /**
- @brief cmulti型の3次元配列の比較　C=(A<b).
+ @brief cmulti型の3次元配列の比較　C=(A < b).
 */
 void cmat3_lt_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, cmulti *b)
 {
@@ -1751,7 +1751,7 @@ void cmat3_lt_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
 }
 
 /**
- @brief cmulti型の3次元配列の比較　C=(A<b).
+ @brief cmulti型の3次元配列の比較　C=(A < b).
 */
 void cmat3_lt_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int LDA1, int LDA2, rmulti *b)
 {
@@ -1767,7 +1767,7 @@ void cmat3_lt_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
 }
 
 /**
- @brief cmulti型の3次元配列の比較　C=(A<b).
+ @brief cmulti型の3次元配列の比較　C=(A < b).
 */
 void rmat3_lt_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, cmulti *b)
 {

@@ -59,7 +59,7 @@ void set_default_prec(int prec)
  */
 int get_default_prec()
 {
-  return mpfr_get_default_prec();
+  return (int)mpfr_get_default_prec();
 }
 
 /** @} */
@@ -206,9 +206,7 @@ void rround(rmulti *x, int prec)
           そのため，丸めは発生せず完全に同じ値がコピーされる.
           返値として丸めが発生したどうかの真偽値を返すが，この関数の場合は常に偽値を返す.
  @param[in]  x 初期化済みのrmulti型.
- @param[in]  y 初期化済みのrmulti型.
- @param[out] y 変数 x と同じ精度(ビット数)が変更され，x と同じ値が上書きされる.
- @return       なし．
+ @param[in,out]  y    [in]初期化済みのrmulti型.[out]変数 x と同じ精度(ビット数)が変更され，x と同じ値が上書きされる.
  */
 void rclone(rmulti *y, rmulti *x)
 {
@@ -239,10 +237,8 @@ void rcopy(rmulti *y, rmulti *x)
  @brief   rmulti型の値の交換.
  @details rmulti型の変数 x とrmulti型の変数 y の値を交換する.
           その際に，丸めは発生しない.
- @param[in]  x 初期化済みのrmulti型.
- @param[in]  y 初期化済みのrmulti型.
- @param[out] x 値が変数 y の値に変更される.
- @param[out] y 値が変数 x の値に変更される.
+ @param[in,out]  x   [in]初期化済みのrmulti型.[out]値が変数 y の値に変更される.
+ @param[in,out]  y   [in]初期化済みのrmulti型.[out]値が変数 x の値に変更される.
  */
 void rswap(rmulti *x, rmulti *y)
 {
@@ -277,7 +273,7 @@ rmulti *rmepsilon(int prec)
 int rget_prec(rmulti *x)
 {
   NULL_EXC1(x);
-  return mpfr_get_prec(x);
+  return (int)mpfr_get_prec(x);
 }
 
 /**
@@ -287,7 +283,7 @@ int rget_prec(rmulti *x)
 int rget_exp(rmulti *x)
 {
   NULL_EXC1(x);
-  return mpfr_get_exp(x);
+  return (int)mpfr_get_exp(x);
 }
 
 /**
@@ -321,7 +317,7 @@ int rget_size(rmulti *x)
 {
   int k=0;
   NULL_EXC1(x);
-  k=x->_mpfr_prec/GMP_NUMB_BITS;
+  k=(int)(x->_mpfr_prec/GMP_NUMB_BITS);
   if(x->_mpfr_prec % GMP_NUMB_BITS){ k++; }
   return k;
 }
@@ -472,7 +468,7 @@ void rput(rmulti *x)
 {
   int i,k;
   NULL_EXC1(x);
-  k=mpfr_custom_get_size(rget_prec(x))*8/mp_bits_per_limb;
+  k=(int)(mpfr_custom_get_size(rget_prec(x))*8/mp_bits_per_limb);
   printf("prec=%4d, sgn=%+d, exp=%4d, digits=",rget_prec(x),rget_sgn(x),rget_exp(x));
   for(i=k-1; i>=0; i--){ printf("%016lx ",x->_mpfr_d[i]); }
   printf("\n");
@@ -528,7 +524,7 @@ rmulti *rbin_load(FILE *fid)
   k=fread(&prec,sizeof(mpfr_prec_t),1,fid);
   if(k!=1){ ERROR_AT; printf("Can't read x->_mpfr_prec."); exit(0); }
   // allocate
-  x=rallocate_prec(prec);
+  x=rallocate_prec((int)prec);
   // read sign
   k=fread(&(x->_mpfr_sign),sizeof(mpfr_sign_t),1,fid);
   if(k!=1){ ERROR_AT; printf("Can't read x->_mpfr_sign."); exit(0); }
@@ -551,9 +547,8 @@ rmulti *rbin_load(FILE *fid)
 
 /**
  @brief rmulti型の浮動小数点数を文字列から設定.
- @param[in]  x     初期化済みのrmulti型.
- @param[in]  value 浮動小数点数に変換される値.
- @param[out] x     値が設定されたrmulti型.
+ @param[in,out]  x     [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
+ @param[in]      s     浮動小数点数に変換される文字列.
  */
 void rset_s(rmulti *x, char *s)
 {
@@ -579,10 +574,8 @@ void rset_s(rmulti *x, char *s)
 
 /**
  @brief rmulti型の浮動小数点数を倍精度浮動小数点数から設定.
- @param[in]  x     初期化済みのrmulti型.
- @param[in]  value 浮動小数点数に変換される値.
- @param[out] x     値が設定されたrmulti型.
- @return           丸めが発生した場合は真の値,発生しなければ偽の値が返される.
+ @param[in,out]  x     [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
+ @param[in]      value 浮動小数点数に変換される値.
  */
 void rset_d(rmulti *x, double value)
 {
@@ -592,10 +585,8 @@ void rset_d(rmulti *x, double value)
 
 /**
  @brief rmulti型の浮動小数点数を符号なし整数から設定.
- @param[in]  x     初期化済みのrmulti型.
- @param[in]  value 浮動小数点数に変換される値.
- @param[out] x     値が設定されたrmulti型.
- @return           丸めが発生した場合は真の値,発生しなければ偽の値が返される.
+ @param[in,out]  x     [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
+ @param[in]      value 浮動小数点数に変換される値.
  */
 void rset_ui(rmulti *x, ulong value)
 {
@@ -605,10 +596,8 @@ void rset_ui(rmulti *x, ulong value)
 
 /**
  @brief rmulti型の浮動小数点数を符号あり整数から設定.
- @param[in]  x     初期化済みのrmulti型.
- @param[in]  value 浮動小数点数に変換される値.
- @param[out] x     値が設定されたrmulti型.
- @return           丸めが発生した場合は真の値,発生しなければ偽の値が返される.
+ @param[in,out]  x     [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
+ @param[in]      value 浮動小数点数に変換される値.
  */
 void rset_si(rmulti *x, long value)
 {
@@ -618,9 +607,8 @@ void rset_si(rmulti *x, long value)
 
 /**
  @brief rmulti型の値をInfに設定.
- @param[in]  x   初期化済みのrmulti型.
- @param[in]  sgn +Infの場合はsgn=1,-Infの場合はsgn=-1,Infの場合はsgn=0を指定.
- @param[out] x   値が設定されたrmulti型.
+ @param[in,out]  x   [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
+ @param[in]      sgn +Infの場合はsgn=1,-Infの場合はsgn=-1,Infの場合はsgn=0を指定.
  */
 void rset_inf(rmulti *x, int sgn)
 {
@@ -630,8 +618,7 @@ void rset_inf(rmulti *x, int sgn)
 
 /**
  @brief rmulti型の値をNaNに設定.
- @param[in]  x 初期化済みのrmulti型.
- @param[out] x 値が設定されたrmulti型.
+ @param[in,out]  x   [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
  */
 void rset_nan(rmulti *x)
 {
@@ -641,9 +628,7 @@ void rset_nan(rmulti *x)
 
 /**
  @brief rmulti型の値を零に設定.
- @param[in]  x 初期化済みのrmulti型.
- @param[out] x 値が設定されたrmulti型.
- @return       丸めが発生した場合は真の値,発生しなければ偽の値が返される.
+ @param[in,out]  x   [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
  */
 void rset_zero(rmulti *x)
 {
@@ -653,9 +638,7 @@ void rset_zero(rmulti *x)
 
 /**
  @brief rmulti型の値を1に設定.
- @param[in]  x 初期化済みのrmulti型.
- @param[out] x 値が設定されたrmulti型.
- @return       丸めが発生した場合は真の値,発生しなければ偽の値が返される.
+ @param[in,out]  x   [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
  */
 void rset_one(rmulti *x)
 {
@@ -665,9 +648,7 @@ void rset_one(rmulti *x)
 
 /**
  @brief rmulti型の値を-1に設定.
- @param[in]  x 初期化済みのrmulti型.
- @param[out] x 値が設定されたrmulti型.
- @return       丸めが発生した場合は真の値,発生しなければ偽の値が返される.
+ @param[in,out]  x   [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
  */
 void rset_one_neg(rmulti *x)
 {
@@ -677,8 +658,7 @@ void rset_one_neg(rmulti *x)
 
 /**
  @brief rmulti型の値を区間(0,1)の疑似乱数値を設定.
- @param[in]  x 初期化済みのrmulti型.
- @param[out] x 値が設定されたrmulti型.
+ @param[in,out]  x   [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
  */
 void rset_rand(rmulti *x)
 {

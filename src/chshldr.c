@@ -19,11 +19,10 @@
 /**
  @brief ハウスホルダー・ベクトルへの変換.
  @details h[0]=0; ...; h[k-1]=0; h[k]=-s*xi; h[k+1]=x[k+1]; ...; h[n-1]=x[n-1];
- @param[in]  h 初期化済みのベクトル.サイズはn.
+ @param[in,out]  h [in] 初期化済みのベクトル.サイズはn. [out] ハウスホルダー・ベクトル.
  @param[in]  x 初期化済みのベクトル.サイズはn.
  @param[in]  n ベクトルのサイズ.
  @param[in]  k 第k要素が基準.
- @param[out] h ハウスホルダー・ベクトル.
  */
 void chouseholder_vec(int n, int k, cmulti **h, rmulti *alpha, cmulti **x)
 {
@@ -173,17 +172,12 @@ void chouseholder(int n, int k0, int nH, int k, cmulti **h, rmulti *alpha, cmult
 
 /**
  @brief   A=Q*R分解でRを生成.
- @details 
  @param[in]  n      Aの行列サイズ
  @param[in]  A      行列
- @param[in]  LDA 
- @param[in]  R      初期化済み行列、サイズ(n,n)
- @param[in]  m      Hの列数(m=n-1)
- @param[in]  H      初期化済み行列、サイズ(n,n-1)
- @param[in]  alpha  初期化済みベクトル、サイズ(m)
- @param[out] R      QR分解後の行列R
- @param[out] H      householderベクトル(行列の形)
- @param[out] alpha  householderベクトルの規格化定数
+ @param[in]  LDA    行列の第１次元．
+ @param[in,out]  R      [in]初期化済み行列、サイズ(n,n)．[out]QR分解後の行列R．
+ @param[in,out]  H      [out]初期化済み行列、サイズ(n,n-1)．[out]householderベクトル(行列の形)
+ @param[in,out]  alpha  [in]初期化済みベクトル、サイズ(m)．[out]householderベクトルの規格化定数．
  */
 void chouseholder_qr(int n, cmulti **R, int LDR, cmulti **H, rmulti **alpha, cmulti **A, int LDA)
 {
@@ -198,13 +192,11 @@ void chouseholder_qr(int n, cmulti **R, int LDR, cmulti **H, rmulti **alpha, cmu
 /**
  @brief   QR分解で相似変換 (A2=Q'A1 Q)
  @details Aは書き換え、nステップごとにストップ可能、householder変換後行列を確認できる
- @param[in]  n      Aの行列サイズ
- @param[in]  A      行列
- @param[in]  LDA    行列Aの第1次元.
- @param[in]  m      Hの列数(m=n-1)
- @param[in]  H      サイズ(n,step)の行列. Householderベクトル(行列の形)
- @param[in]  alpha  サイズがstepのベクトル. Householderベクトルの規格化定数
- @param[out] A      相似変換後の行列
+ @param[in]     n      Aの行列サイズ
+ @param[in,out] A      [in]行列．[out]相似変換後の行列．
+ @param[in,out] LDA    行列Aの第1次元.
+ @param[in]     H      サイズ(n,step)の行列. Householderベクトル(行列の形)
+ @param[in]     alpha  サイズがstepのベクトル. Householderベクトルの規格化定数
  */
 void chouseholder_qr_nstep(int n, cmulti **A, int LDA, cmulti **H, rmulti **alpha, int step)
 {

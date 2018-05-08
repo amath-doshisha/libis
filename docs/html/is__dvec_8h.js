@@ -2,7 +2,7 @@ var is__dvec_8h =
 [
     [ "dvec_abs_sub", "is__dvec_8h.html#a613937d56290dda75ae31c4431dca155", null ],
     [ "dvec_abs_sub_scalar", "is__dvec_8h.html#a7b64b97efabecfe2bd2f3b7091cc99e9", null ],
-    [ "dvec_add", "is__dvec_8h.html#a255ed1d81be30d84913f7f95a561dcb6", null ],
+    [ "dvec_add", "is__dvec_8h.html#a4a97f136422912039642af781a3b8566", null ],
     [ "dvec_add_d", "is__dvec_8h.html#a72099ba472c1d51e55da78b0480cec11", null ],
     [ "dvec_add_lintr", "is__dvec_8h.html#a93782d30ff6c211fa7eab97b9c010f34", null ],
     [ "dvec_add_lintr_t", "is__dvec_8h.html#a1fa0892504cc2c3e1e1054766b7843e4", null ],
@@ -71,7 +71,7 @@ var is__dvec_8h =
     [ "dvec_set_zeros", "is__dvec_8h.html#a25786788ae9c4c5522373e909ecc4fdd", null ],
     [ "dvec_sort", "is__dvec_8h.html#a508746b74605e40157cba5eb89c0e007", null ],
     [ "dvec_sort_index", "is__dvec_8h.html#ac5e07dd7a69b69c1c4b3219e627ed227", null ],
-    [ "dvec_sub", "is__dvec_8h.html#a68a2974b7057a31d4c45d29df4093fb6", null ],
+    [ "dvec_sub", "is__dvec_8h.html#a26e988cb008ecd03cec406d550e5b347", null ],
     [ "dvec_sub_lintr", "is__dvec_8h.html#ae8dc3dc3d34157fd684e92cc1975196a", null ],
     [ "dvec_sub_lintr_t", "is__dvec_8h.html#a7066491177c7484ac06a4f358e8f77bf", null ],
     [ "dvec_sub_scalar", "is__dvec_8h.html#a2207fb54331d6061a98411d23cb00090", null ],

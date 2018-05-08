@@ -162,10 +162,10 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
 <tr class="separator:adfc5fc534eee39d71cf5b6b85d8aea95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2207fb54331d6061a98411d23cb00090"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a2207fb54331d6061a98411d23cb00090">dvec_sub_scalar</a> (int n, double *x, double a)</td></tr>
 <tr class="separator:a2207fb54331d6061a98411d23cb00090"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a255ed1d81be30d84913f7f95a561dcb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a255ed1d81be30d84913f7f95a561dcb6">dvec_add</a> (int n, double *y, const double *x)</td></tr>
-<tr class="separator:a255ed1d81be30d84913f7f95a561dcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68a2974b7057a31d4c45d29df4093fb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a68a2974b7057a31d4c45d29df4093fb6">dvec_sub</a> (int n, double *y, const double *x)</td></tr>
-<tr class="separator:a68a2974b7057a31d4c45d29df4093fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a97f136422912039642af781a3b8566"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a4a97f136422912039642af781a3b8566">dvec_add</a> (int n, double *z, double *x, double *y)</td></tr>
+<tr class="separator:a4a97f136422912039642af781a3b8566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e988cb008ecd03cec406d550e5b347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a26e988cb008ecd03cec406d550e5b347">dvec_sub</a> (int n, double *z, double *x, double *y)</td></tr>
+<tr class="separator:a26e988cb008ecd03cec406d550e5b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9074cf7b5936b5f7fa558f814d81a67f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a9074cf7b5936b5f7fa558f814d81a67f">dvec_add_scaled</a> (int n, double *y, double a, const double *x)</td></tr>
 <tr class="separator:a9074cf7b5936b5f7fa558f814d81a67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13c11a78b66e6a68b7f375db9199b34d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dvec_8h.html#a13c11a78b66e6a68b7f375db9199b34d">dvec_sub_scaled</a> (int n, double *y, double a, const double *x)</td></tr>
@@ -304,7 +304,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00622">622</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00618">618</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -346,12 +346,12 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00629">629</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00625">625</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a255ed1d81be30d84913f7f95a561dcb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a255ed1d81be30d84913f7f95a561dcb6">&#9670;&nbsp;</a></span>dvec_add()</h2>
+<a id="a4a97f136422912039642af781a3b8566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a97f136422912039642af781a3b8566">&#9670;&nbsp;</a></span>dvec_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,13 +366,19 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramname"><em>z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -478,7 +484,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00379">379</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00375">375</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -532,7 +538,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00410">410</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00406">406</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -610,7 +616,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00348">348</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00344">344</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -723,7 +729,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00581">581</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00577">577</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -769,7 +775,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00591">591</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00587">587</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -810,7 +816,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00681">681</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00677">677</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -854,7 +860,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00884">884</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00880">880</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -904,7 +910,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00871">871</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00867">867</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1018,7 +1024,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00571">571</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00567">567</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1063,7 +1069,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00597">597</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00593">593</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1099,7 +1105,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00607">607</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00603">603</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1177,7 +1183,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00546">546</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00542">542</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1347,7 +1353,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00368">368</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00364">364</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1401,7 +1407,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00399">399</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00395">395</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1445,7 +1451,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
 
 <p>double型のベクトルの読み込み. </p>
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00808">808</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00804">804</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1481,7 +1487,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00527">527</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00523">523</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1511,7 +1517,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00765">765</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00761">761</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1541,7 +1547,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00700">700</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00696">696</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1577,7 +1583,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00730">730</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00726">726</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1607,7 +1613,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00777">777</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00773">773</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1637,7 +1643,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00714">714</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00710">710</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1673,7 +1679,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00747">747</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00743">743</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1703,7 +1709,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00430">430</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00426">426</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1733,7 +1739,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00638">638</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00634">634</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1763,7 +1769,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00649">649</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00645">645</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1793,7 +1799,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00661">661</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00657">657</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1823,7 +1829,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00448">448</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00444">444</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1862,7 +1868,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00456">456</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00452">452</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1908,7 +1914,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00468">468</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00464">464</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1961,7 +1967,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
 
 <p>double型のべき乗 z=x.^y </p>
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00478">478</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00474">474</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1997,7 +2003,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00521">521</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00517">517</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2041,7 +2047,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
 
 <p>double型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00513">513</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00509">509</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2085,7 +2091,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
 
 <p>double型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00504">504</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00500">500</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2141,7 +2147,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00787">787</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00783">783</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2295,7 +2301,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00825">825</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00821">821</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2343,7 +2349,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00837">837</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00833">833</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2391,7 +2397,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00849">849</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00845">845</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2436,7 +2442,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00439">439</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00435">435</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3161,8 +3167,8 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
 
 </div>
 </div>
-<a id="a68a2974b7057a31d4c45d29df4093fb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68a2974b7057a31d4c45d29df4093fb6">&#9670;&nbsp;</a></span>dvec_sub()</h2>
+<a id="a26e988cb008ecd03cec406d550e5b347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26e988cb008ecd03cec406d550e5b347">&#9670;&nbsp;</a></span>dvec_sub()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3177,13 +3183,19 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramname"><em>z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3193,7 +3205,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00337">337</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00335">335</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3247,7 +3259,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00389">389</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00385">385</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3301,7 +3313,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00420">420</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00416">416</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3379,7 +3391,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00357">357</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00353">353</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3409,7 +3421,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00672">672</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00668">668</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3439,7 +3451,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00687">687</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00683">683</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3475,7 +3487,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00534">534</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00530">530</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3588,7 +3600,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00484">484</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dvec_8c_source.html">dvec.c</a> の <a class="el" href="dvec_8c_source.html#l00480">480</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -3598,7 +3610,7 @@ $(document).ready(function(){initNavTree('is__dvec_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__dvec_8h.html">is_dvec.h</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分27秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分07秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

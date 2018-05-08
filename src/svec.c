@@ -68,7 +68,7 @@ int svec_max_length(int n, char **x)
   int value=0,a,i;
   for(i=0; i<n; i++){
     if(x[i]==NULL){ a=0; }
-    else          { a=strlen(x[i]); }
+    else          { a=(int)strlen(x[i]); }
     if(a>value){ value=a; }
   }
   return value;
@@ -80,7 +80,7 @@ int smat_max_length_row(int n, char **A, int LDA, int k)
   int value=0,a,j;
   for(j=0; j<n; j++){
     if(MAT(A,k,j,LDA)==NULL){ a=0; }
-    else                    { a=strlen(MAT(A,k,j,LDA)); }
+    else                    { a=(int)strlen(MAT(A,k,j,LDA)); }
     if(a>value){ value=a; }
   }
   return value;
@@ -92,7 +92,7 @@ int smat_max_length_column(int m, char **A, int LDA, int k)
   int value=0,a,i;
   for(i=0; i<m; i++){
     if(MAT(A,i,k,LDA)==NULL){ a=0; }
-    else                    { a=strlen(MAT(A,i,k,LDA)); }
+    else                    { a=(int)strlen(MAT(A,i,k,LDA)); }
     if(a>value){ value=a; }
   }
   return value;
@@ -133,7 +133,7 @@ void svec_print(int n, char **x, const char *name)
   if(name!=NULL){ printf("%s=\n",name); }
   l=svec_max_length(n,x);
   for(i=0; i<n; i++){
-    a=strlen(x[i]);
+    a=(int)strlen(x[i]);
     for(k=0; k<l-a; k++){ printf(" "); }
     if(x[i]==NULL){ printf("NULL\n"); }
     else          { printf("%s\n",x[i]); }
@@ -154,7 +154,7 @@ void smat_print(int m, int n, char **A, int LDA, const char *name)
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
       if(j>0){ printf(" "); }
-      a=strlen(MAT(A,i,j,LDA));
+      a=(int)strlen(MAT(A,i,j,LDA));
       for(k=0; k<l[j]-a; k++){ printf(" "); }
       if(MAT(A,i,j,LDA)==NULL){ printf("NULL"); }
       else                    { printf("%s",MAT(A,i,j,LDA)); }

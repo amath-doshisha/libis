@@ -8,10 +8,10 @@
 <area shape="rect" id="node17" href="$is__rmulti_8h.html#a8153c7e83727dfeb077041872ce4f431" title="rmulti型の掛け算 z=x*y " alt="" coords="255,120,310,147"/>
 <area shape="rect" id="node18" href="$is__rmat_8h.html#a62eb776b2b959a617d8de152edf3c26b" title="rmulti型の行列の対角行列との足し算 B=A+diag(a). " alt="" coords="396,157,493,184"/>
 <area shape="rect" id="node20" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="585,816,627,843"/>
-<area shape="rect" id="node21" href="$is__rsolve_8h.html#a35126f1ad4704531e6554ea1084a8b8f" title="行列AのLU分解. " alt="" coords="393,664,496,691"/>
+<area shape="rect" id="node21" href="$is__rsolve_8h.html#a561e3b60e23e840f1b4280ffcb5c954e" title="行列AのLU分解. " alt="" coords="393,664,496,691"/>
 <area shape="rect" id="node33" href="$is__rvec_8h.html#a04cb680d9e5e283dd2b73626cd95fd48" title="rmulti型のベクトルの値を区間(b,a+b)の疑似乱数値を設定. " alt="" coords="563,917,649,944"/>
 <area shape="rect" id="node40" href="$is__rvec_8h.html#aa63ed3491ab22d3fd5d7b3045c80b40e" title="rmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) " alt="" coords="227,1095,339,1121"/>
-<area shape="rect" id="node55" href="$is__rsolve_8h.html#a2f851d7ca1da0dd1774362528e8b9b82" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="390,512,499,539"/>
+<area shape="rect" id="node55" href="$is__rsolve_8h.html#aa066d7ddf017b085b8e548c5b77f2b27" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="390,512,499,539"/>
 <area shape="rect" id="node58" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="251,1145,314,1172"/>
 <area shape="rect" id="node59" href="$is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="250,733,315,760"/>
 <area shape="rect" id="node5" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="720,360,784,387"/>

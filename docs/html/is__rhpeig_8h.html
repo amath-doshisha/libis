@@ -229,16 +229,15 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
     <tr><td class="paramdir">[in]</td><td class="paramname">debug</td><td>デバグ用. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>(n,n)型行列. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>Aの第1次元. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>(n,n)型行列. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">X</td><td>[in](n,n)型行列.[out]計算された固有ベクトル. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">LDX</td><td>Xの第1次元. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">X</td><td>計算された固有ベクトル. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">Lambda</td><td>計算された固有値. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>計算された固有対の個数. </dd></dl>
 
-<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00139">139</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00137">137</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -311,7 +310,7 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
 <area shape="rect" id="node64" href="is__rvec_8h.html#ab9f21a1efd6c5370fc7dc5f9cdf82be1" title="rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) " alt="" coords="416,755,503,781"/>
 <area shape="rect" id="node65" href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="592,1348,649,1375"/>
 <area shape="rect" id="node66" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335" title="固有値問題 F=A*x&#45;lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A&#45;lambda*I&#45;x*w&#39;/Cの計算. " alt="" coords="245,2729,349,2756"/>
-<area shape="rect" id="node72" href="is__rsolve_8h.html#a2e166c07524feb41b136822c093a1916" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="266,1500,329,1527"/>
+<area shape="rect" id="node72" href="is__rsolve_8h.html#a610cfb239ddf4e9f7a006943d4d1fe21" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="266,1500,329,1527"/>
 <area shape="rect" id="node78" href="is__rvec_8h.html#a9e0214cfca5ab614c128804e2f0a932d" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="266,1652,329,1679"/>
 <area shape="rect" id="node79" href="is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="601,588,640,615"/>
 <area shape="rect" id="node80" href="is__rmulti_8h.html#afe3a3c416a4e8ada0e8cb689ba5834ec" title="rmulti型の値の比較 x&gt;y " alt="" coords="272,607,323,633"/>
@@ -328,8 +327,8 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
 <area shape="rect" id="node68" href="is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="600,1956,641,1983"/>
 <area shape="rect" id="node70" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="599,2260,642,2287"/>
 <area shape="rect" id="node73" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="419,1348,499,1375"/>
-<area shape="rect" id="node74" href="rsolve_8c.html#a35126f1ad4704531e6554ea1084a8b8f" title="行列AのLU分解. " alt="" coords="408,1247,511,1273"/>
-<area shape="rect" id="node76" href="rsolve_8c.html#a2f851d7ca1da0dd1774362528e8b9b82" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="405,1652,514,1679"/>
+<area shape="rect" id="node74" href="rsolve_8c.html#a561e3b60e23e840f1b4280ffcb5c954e" title="行列AのLU分解. " alt="" coords="408,1247,511,1273"/>
+<area shape="rect" id="node76" href="rsolve_8c.html#aa066d7ddf017b085b8e548c5b77f2b27" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="405,1652,514,1679"/>
 <area shape="rect" id="node77" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="428,1399,491,1425"/>
 <area shape="rect" id="node75" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="589,1449,652,1476"/>
 <area shape="rect" id="node81" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="431,607,487,633"/>
@@ -416,7 +415,7 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00046">46</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00045">45</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -440,7 +439,7 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
 <area shape="rect" id="node45" href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="481,1192,539,1219"/>
 <area shape="rect" id="node46" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335" title="固有値問題 F=A*x&#45;lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A&#45;lambda*I&#45;x*w&#39;/Cの計算. " alt="" coords="135,1040,239,1067"/>
 <area shape="rect" id="node53" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="489,1141,531,1168"/>
-<area shape="rect" id="node54" href="is__rsolve_8h.html#a2e166c07524feb41b136822c093a1916" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="155,1547,218,1573"/>
+<area shape="rect" id="node54" href="is__rsolve_8h.html#a610cfb239ddf4e9f7a006943d4d1fe21" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="155,1547,218,1573"/>
 <area shape="rect" id="node64" href="is__rvec_8h.html#a9e0214cfca5ab614c128804e2f0a932d" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="155,2104,218,2131"/>
 <area shape="rect" id="node65" href="is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="753,2129,805,2156"/>
 <area shape="rect" id="node66" href="is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="491,1952,529,1979"/>
@@ -483,8 +482,8 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
 <area shape="rect" id="node51" href="rmat_8c.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="455,331,565,357"/>
 <area shape="rect" id="node52" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="635,1040,677,1067"/>
 <area shape="rect" id="node55" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="309,1699,389,1725"/>
-<area shape="rect" id="node56" href="rsolve_8c.html#a35126f1ad4704531e6554ea1084a8b8f" title="行列AのLU分解. " alt="" coords="297,1496,400,1523"/>
-<area shape="rect" id="node60" href="rsolve_8c.html#a2f851d7ca1da0dd1774362528e8b9b82" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="294,1547,403,1573"/>
+<area shape="rect" id="node56" href="rsolve_8c.html#a561e3b60e23e840f1b4280ffcb5c954e" title="行列AのLU分解. " alt="" coords="297,1496,400,1523"/>
+<area shape="rect" id="node60" href="rsolve_8c.html#aa066d7ddf017b085b8e548c5b77f2b27" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="294,1547,403,1573"/>
 <area shape="rect" id="node63" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="317,1749,380,1776"/>
 <area shape="rect" id="node57" href="is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da" title="rmulti型の値の交換. " alt="" coords="631,1508,681,1535"/>
 <area shape="rect" id="node58" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="479,1445,541,1472"/>
@@ -576,13 +575,12 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
     <tr><td class="paramdir">[in]</td><td class="paramname">lambda</td><td>固有値. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>定数. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">LDJM</td><td>行列JMの第1次元. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">JM</td><td>サイズ(n,n)の初期化済み行列. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">JM</td><td>ヤコビ行列. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">JM</td><td>[in]サイズ(n,n)の初期化済み行列.[out]ヤコビ行列. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00032">32</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00031">31</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -614,7 +612,7 @@ $(document).ready(function(){initNavTree('is__rhpeig_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__rhpeig_8h.html">is_rhpeig.h</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分29秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分08秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

@@ -683,13 +683,12 @@ void rmat_copy(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA)
 
 /**
  @brief rmulti型の行列を転置をとり値のコピー B=A'.
- @param[in]  m   行列Aの行の個数.行列Bの列の個数.
- @param[in]  n   行列Aの列の個数.行列Bの行の個数.
- @param[in]  A   初期化済みのrmulti型の行列.サイズは(m,n).
- @param[in]  LDA Aの第1次元.
- @param[in]  B   初期化済みの行列.サイズは(n,m).
- @param[out] B   コピーされた結果.
- @param[in]  LDB Bの第1次元.
+ @param[in]      m    行列Aの行の個数.行列Bの列の個数.
+ @param[in]      n    行列Aの列の個数.行列Bの行の個数.
+ @param[in]      A    初期化済みのrmulti型の行列.サイズは(m,n).
+ @param[in]      LDA  Aの第1次元.
+ @param[in,out]  B    [in]初期化済みの行列.サイズは(n,m).[out]コピーされた結果.
+ @param[in]      LDB  Bの第1次元.
 */
 void rmat_copy_t(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA)
 {

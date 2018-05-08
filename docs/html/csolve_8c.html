@@ -286,14 +286,13 @@ $(document).ready(function(){initNavTree('csolve_8c.html','');});
 <p>線形方程式A*X=Bの解法. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>サイズ(n,NRHS)の行列B. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>サイズ(n,NRHS)の解の行列X. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">B</td><td>[in]サイズ(n,NRHS)の行列B.[out]サイズ(n,NRHS)の解の行列X. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>サイズnの正方行列で係数行列A. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00034">34</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -406,15 +405,13 @@ $(document).ready(function(){initNavTree('csolve_8c.html','');});
 <p>線形方程式A*X=Bのガウスの消去法による解法. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>行列B.サイズは(n,NRHS). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>解の行列X.サイズは(n,NRHS). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>係数行列A.サイズは(n,n). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>破壊される. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">B</td><td>[in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS). </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>[in]係数行列A.サイズは(n,n).[out]破壊される. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00195">195</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00187">187</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -523,15 +520,13 @@ $(document).ready(function(){initNavTree('csolve_8c.html','');});
 <p>線形方程式A*X=BのLU分解による解法. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>行列B.サイズは(n,NRHS). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">B</td><td>解の行列X.サイズは(n,NRHS). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>係数行列A.サイズは(n,n). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>破壊される. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">B</td><td>[in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS). </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>[in]係数行列A.サイズは(n,n).[out]破壊される. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00072">72</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00069">69</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -644,15 +639,14 @@ $(document).ready(function(){initNavTree('csolve_8c.html','');});
 <p>線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>サイズは(n,NRHS)の行列B. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">B</td><td>解の行列X. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">B</td><td>[in]サイズは(n,NRHS)の行列B.[out]解の行列X. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>サイズがnの正方行列でLU分解済みの係数行列A. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>ピボット選択の要素の並び. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00146">146</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00140">140</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -743,15 +737,13 @@ $(document).ready(function(){initNavTree('csolve_8c.html','');});
 <p>行列AのLU分解. </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>サイズnの正方行列A. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>LU分解の結果. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>サイズがnの初期化済みの配列. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">p</td><td>ピボット選択の結果. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>[in]サイズnの正方行列A.[out]LU分解の結果. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">p</td><td>[in]サイズがnの初期化済みの配列.[out]ピボット選択の結果. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00094">94</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00089">89</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -880,7 +872,7 @@ $(document).ready(function(){initNavTree('csolve_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00052">52</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="csolve_8c_source.html">csolve.c</a> の <a class="el" href="csolve_8c_source.html#l00051">51</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -921,7 +913,7 @@ $(document).ready(function(){initNavTree('csolve_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="csolve_8c.html">csolve.c</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分24秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分04秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

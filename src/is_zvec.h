@@ -89,8 +89,8 @@ void zvec_sub_scalar(int n, dcomplex *x, dcomplex a);
 // z=x+y
 void zvec_add(int n, dcomplex *z, dcomplex *x, dcomplex *y);
 void zvec_add_d(int n, dcomplex *z, dcomplex *x, double *y);
-void zvec_add_d1(int n, dcomplex *z, double *x, dcomplex *y);
-void zvec_add_d2(int n, dcomplex *z, dcomplex *x, double *y);
+void zvec_add_dz(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_add_zd(int n, dcomplex *z, dcomplex *x, double *y);
 // z=x-y
 void zvec_sub(int n, dcomplex *z, dcomplex *x, dcomplex *y);
 // y=y+a*x

@@ -361,7 +361,7 @@ int bigint_sgn(bigint *x)
 int bigint_get_si(bigint *x)
 {
   if(bigint_is_integer(x)){
-    return rget_si(BIGINT_NUM(x));
+    return (int)rget_si(BIGINT_NUM(x));
   }else{
     return 0;
   }

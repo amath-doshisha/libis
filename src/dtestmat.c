@@ -17,13 +17,12 @@
 
 /**
  @brief  倍精度のToeplitz型行列の新規生成.
- @param[in]  m      行列Aの行の個数.
- @param[in]  n      行列Aの列の個数.
- @param[in]  A      初期化済みのrmulti型の行列.サイズは(m,n).
- @param[in]  LDA    Aの第1次元.
- @param[in]  k      配列aのサイズ.
- @param[in]  offset 配置場所.
- @param[out] A      Toeplitz型行列.
+ @param[in]      m      行列Aの行の個数.
+ @param[in]      n      行列Aの列の個数.
+ @param[in,out]  A      [in]初期化済みのrmulti型の行列.サイズは(m,n).[out]Toeplitz型行列.
+ @param[in]      LDA    Aの第1次元.
+ @param[in]      k      配列aのサイズ.
+ @param[in]      offset 配置場所.
 */
 void dmat_toeplitz(int m, int n, double *A, int LDA, int k, double *a, int offset)
 {
@@ -37,12 +36,11 @@ void dmat_toeplitz(int m, int n, double *A, int LDA, int k, double *a, int offse
 
 /**
  @brief  倍精度のFrank行列の新規生成.
- @param[in]  m      行列Aの行の個数.
- @param[in]  n      行列Aの列の個数.
- @param[in]  A      初期化済みのrmulti型の行列.サイズは(m,n).
- @param[in]  LDA    Aの第1次元.
- @param[in]  param  パラメータ.
- @param[out] A      Frank型行列.
+ @param[in]      m      行列Aの行の個数.
+ @param[in]      n      行列Aの列の個数.
+ @param[in,out]  A      [in]初期化済みのrmulti型の行列.サイズは(m,n).[out]Frank型行列.
+ @param[in]      LDA    Aの第1次元.
+ @param[in]      param  パラメータ.
 */
 void dmat_frank(int m, int n, double *A, int LDA, int param)
 {
@@ -70,12 +68,11 @@ double dfact(double x)
 
 /**
  @brief  倍精度のipjfact行列の新規生成.
- @param[in]  m      行列Aの行の個数.
- @param[in]  n      行列Aの列の個数.
- @param[in]  A      初期化済みのrmulti型の行列.サイズは(m,n).
- @param[in]  LDA    Aの第1次元.
- @param[in]  param  パラメータ.
- @param[out] A      ipjfact型行列.
+ @param[in]      m      行列Aの行の個数.
+ @param[in]      n      行列Aの列の個数.
+ @param[in,out]  A      [in]初期化済みのrmulti型の行列.サイズは(m,n).[out]ipjfact型行列.
+ @param[in]      LDA    Aの第1次元.
+ @param[in]      param  パラメータ.
 */
 void dmat_ipjfact(int m, int n, double *A, int LDA, int param)
 {

@@ -152,6 +152,8 @@ void cadd_r(cmulti *z, cmulti *x, rmulti *y);         // z=x+y
 void cadd_d(cmulti *z, cmulti *x, double y);          // z=x+y
 void cadd_ui(cmulti *z, cmulti *x, ulong y);          // z=x+y
 void cadd_si(cmulti *z, cmulti *x, long y);           // z=x+y
+void cadd_rz(cmulti *z, rmulti *x, dcomplex y);       // z=x+y
+void cadd_zr(cmulti *z, dcomplex x, rmulti *y);       // z=x+y
 void csub(cmulti *z, cmulti *x, cmulti *y);           // z=x-y
 void csub_z1(cmulti *z, dcomplex x, cmulti *y);       // z=x-y
 void csub_z2(cmulti *z, cmulti *x, dcomplex y);       // z=x-y
@@ -218,9 +220,9 @@ void cset_polar(cmulti *z, rmulti *r, rmulti *theta); // z=r*exp(i*theta)
 /*
  * comparisions
  */
-void ccmp_set_real_imag();
-void ccmp_set_abs_arg();
-int ccmp_get_type();
+void ccmp_set_real_imag(void);
+void ccmp_set_abs_arg(void);
+int ccmp_get_type(void);
 int ccmp(cmulti *x, cmulti *y);       // x<=>y
 int ccmp_z(cmulti *x, dcomplex y);    // x<=>y
 int ccmp_r1(rmulti *x, cmulti *y);    // x<=>y

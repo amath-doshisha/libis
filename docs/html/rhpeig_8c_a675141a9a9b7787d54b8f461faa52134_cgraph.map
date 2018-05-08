@@ -17,7 +17,7 @@
 <area shape="rect" id="node45" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="481,1192,539,1219"/>
 <area shape="rect" id="node46" href="$rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335" title="固有値問題 F=A*x&#45;lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A&#45;lambda*I&#45;x*w&#39;/Cの計算. " alt="" coords="135,1040,239,1067"/>
 <area shape="rect" id="node53" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="489,1141,531,1168"/>
-<area shape="rect" id="node54" href="$is__rsolve_8h.html#a2e166c07524feb41b136822c093a1916" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="155,1547,218,1573"/>
+<area shape="rect" id="node54" href="$is__rsolve_8h.html#a610cfb239ddf4e9f7a006943d4d1fe21" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="155,1547,218,1573"/>
 <area shape="rect" id="node64" href="$is__rvec_8h.html#a9e0214cfca5ab614c128804e2f0a932d" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="155,2104,218,2131"/>
 <area shape="rect" id="node65" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="753,2129,805,2156"/>
 <area shape="rect" id="node66" href="$is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="491,1952,529,1979"/>
@@ -60,8 +60,8 @@
 <area shape="rect" id="node51" href="$rmat_8c.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="455,331,565,357"/>
 <area shape="rect" id="node52" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="635,1040,677,1067"/>
 <area shape="rect" id="node55" href="$is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="309,1699,389,1725"/>
-<area shape="rect" id="node56" href="$rsolve_8c.html#a35126f1ad4704531e6554ea1084a8b8f" title="行列AのLU分解. " alt="" coords="297,1496,400,1523"/>
-<area shape="rect" id="node60" href="$rsolve_8c.html#a2f851d7ca1da0dd1774362528e8b9b82" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="294,1547,403,1573"/>
+<area shape="rect" id="node56" href="$rsolve_8c.html#a561e3b60e23e840f1b4280ffcb5c954e" title="行列AのLU分解. " alt="" coords="297,1496,400,1523"/>
+<area shape="rect" id="node60" href="$rsolve_8c.html#aa066d7ddf017b085b8e548c5b77f2b27" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="294,1547,403,1573"/>
 <area shape="rect" id="node63" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="317,1749,380,1776"/>
 <area shape="rect" id="node57" href="$is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da" title="rmulti型の値の交換. " alt="" coords="631,1508,681,1535"/>
 <area shape="rect" id="node58" href="$is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="479,1445,541,1472"/>

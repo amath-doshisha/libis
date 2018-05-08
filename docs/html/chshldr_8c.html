@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('chshldr_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00142">142</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00141">141</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -362,7 +362,7 @@ $(document).ready(function(){initNavTree('chshldr_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00112">112</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00111">111</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -467,19 +467,15 @@ $(document).ready(function(){initNavTree('chshldr_8c.html','');});
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Aの行列サイズ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>行列 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">R</td><td>初期化済み行列、サイズ(n,n) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>Hの列数(m=n-1) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">H</td><td>初期化済み行列、サイズ(n,n-1) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>初期化済みベクトル、サイズ(m) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">R</td><td>QR分解後の行列R </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">H</td><td>householderベクトル(行列の形) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">alpha</td><td>householderベクトルの規格化定数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>行列の第１次元． </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">R</td><td>[in]初期化済み行列、サイズ(n,n)．[out]QR分解後の行列R． </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">H</td><td>[out]初期化済み行列、サイズ(n,n-1)．[out]householderベクトル(行列の形) </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">alpha</td><td>[in]初期化済みベクトル、サイズ(m)．[out]householderベクトルの規格化定数． </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00188">188</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00182">182</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -600,17 +596,15 @@ $(document).ready(function(){initNavTree('chshldr_8c.html','');});
 <p>Aは書き換え、nステップごとにストップ可能、householder変換後行列を確認できる </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Aの行列サイズ </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>行列 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>行列Aの第1次元. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>Hの列数(m=n-1) </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>[in]行列．[out]相似変換後の行列． </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LDA</td><td>行列Aの第1次元. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">H</td><td>サイズ(n,step)の行列. Householderベクトル(行列の形) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>サイズがstepのベクトル. Householderベクトルの規格化定数 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>相似変換後の行列 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00209">209</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00201">201</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -739,7 +733,7 @@ $(document).ready(function(){initNavTree('chshldr_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00084">84</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00083">83</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -830,16 +824,15 @@ $(document).ready(function(){initNavTree('chshldr_8c.html','');});
 <p>ハウスホルダー・ベクトルへの変換. </p>
 <p>h[0]=0; ...; h[k-1]=0; h[k]=-s*xi; h[k+1]=x[k+1]; ...; h[n-1]=x[n-1]; </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>初期化済みのベクトル.サイズはn. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">h</td><td>[in] 初期化済みのベクトル.サイズはn. [out] ハウスホルダー・ベクトル. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>初期化済みのベクトル.サイズはn. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>ベクトルのサイズ. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">k</td><td>第k要素が基準. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>ハウスホルダー・ベクトル. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="chshldr_8c_source.html">chshldr.c</a> の <a class="el" href="chshldr_8c_source.html#l00027">27</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -895,7 +888,7 @@ $(document).ready(function(){initNavTree('chshldr_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="chshldr_8c.html">chshldr.c</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分23秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分04秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

@@ -291,23 +291,19 @@ $(document).ready(function(){initNavTree('riep__dht_8c.html','');});
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>行列のサイズ， </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">M</td><td>M&gt;=1の整数．帯幅は min(M+2,m)． </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>サイズが(m,m)の行列．出力結果の格納用に初期化済みのA，またはA=NULLのときは出力はされない． </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>[in]サイズが(m,m)の行列．出力結果の格納用に初期化済みのA，またはA=NULLのときは出力はされない．[out]計算結果． </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>Aの第1次元． </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Q</td><td>サイズが(m,M)の行列．出力結果の格納用に初期化済みのQ，またはQ=NULLのときは出力はされない． </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">Q</td><td>サイズが(m,M)の行列．出力結果の格納用に初期化済みのQ，またはQ=NULLのときは出力はされない．[out]計算結果． </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">LDQ</td><td>Qの第1次元． </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">E</td><td>サイズがmのベクトル．出力結果の格納用に初期化済みのE，またはE=NULLのときは出力はされない． </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">E</td><td>サイズがmのベクトル．出力結果の格納用に初期化済みのE，またはE=NULLのときは出力はされない．[out]計算結果． </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lambda</td><td>サイズが(m,m)の行列． </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>サイズが(m,m)の行列． </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">debug</td><td>デバグレベル． </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>計算結果． </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">Q</td><td>計算結果． </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">E</td><td>計算結果． </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>戻り値</dt><dd>なし． </dd></dl>
 
-<p class="definition"> <a class="el" href="riep__dht_8c_source.html">riep_dht.c</a> の <a class="el" href="riep__dht_8c_source.html#l00075">75</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="riep__dht_8c_source.html">riep_dht.c</a> の <a class="el" href="riep__dht_8c_source.html#l00071">71</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -430,7 +426,7 @@ $(document).ready(function(){initNavTree('riep__dht_8c.html','');});
 
 <p>QEより行列Aを生成 </p>
 
-<p class="definition"> <a class="el" href="riep__dht_8c_source.html">riep_dht.c</a> の <a class="el" href="riep__dht_8c_source.html#l00173">173</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="riep__dht_8c_source.html">riep_dht.c</a> の <a class="el" href="riep__dht_8c_source.html#l00169">169</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -569,7 +565,7 @@ $(document).ready(function(){initNavTree('riep__dht_8c.html','');});
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>なし． </dd></dl>
 
-<p class="definition"> <a class="el" href="riep__dht_8c_source.html">riep_dht.c</a> の <a class="el" href="riep__dht_8c_source.html#l00233">233</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="riep__dht_8c_source.html">riep_dht.c</a> の <a class="el" href="riep__dht_8c_source.html#l00229">229</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -623,7 +619,7 @@ $(document).ready(function(){initNavTree('riep__dht_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="riep__dht_8c.html">riep_dht.c</a></li>
-    <li class="footer">2018年05月06日(日) 23時07分30秒作成 - libis / 構成: 
+    <li class="footer">2018年05月08日(火) 23時55分08秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

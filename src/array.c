@@ -44,13 +44,11 @@ array *array_allocate(int type, int ndim, int *dim)
   array *x=NULL;
   // allocate struct
   x=malloc(sizeof(array));
-  if(!array_type_check(type)){ ERROR_EXIT("Error in type=%c\n",type); }
+  if(!array_type_check(type)){ ERROR_EXIT("Error at type=%c\n",type); }
   // set type
   ARRAY_TYPE(x)=type;
-  // check dimensions
-  for(i=ndim-1; i>=0; i--){ if(dim==NULL || dim[i]<=0){ ndim=i; }} // multi_mex.cの移行中において一時的な措置
   // set number of dimensions
-  if(ndim<0){ ERROR_EXIT("Error in ndim=%d\n",ndim); }
+  if(ndim<0){ ERROR_EXIT("Error at ndim=%d\n",ndim); }
   ARRAY_NDIM(x)=ndim;
   // set dimensions
   if(ARRAY_NDIM(x)<=0){
@@ -58,14 +56,15 @@ array *array_allocate(int type, int ndim, int *dim)
   }else{
     if(dim==NULL){ ARRAY_DIM_P(x)=ivec_allocate(ARRAY_NDIM(x)); ivec_set_zeros(ARRAY_NDIM(x),ARRAY_DIM_P(x)); }
     else         { ARRAY_DIM_P(x)=ivec_allocate_clone(ARRAY_NDIM(x),dim); }
+    for(i=0; i<ARRAY_NDIM(x); i++){ if(ARRAY_DIM_P(x)[i]<0){ ARRAY_DIM_P(x)[i]=0; } }
   }  
   // set LD
   if(ARRAY_NDIM(x)<=0){
     ARRAY_LD_P(x)=NULL;
   }else{
     ARRAY_LD_P(x)=ivec_allocate(ARRAY_NDIM(x));
-    ARRAY_LD(x,0)=ARRAY_DIM(x,0);    
-    for(i=1; i<ARRAY_NDIM(x); i++){ ARRAY_LD(x,i)=ARRAY_LD(x,i-1)*ARRAY_DIM(x,i); }
+    ARRAY_LD_P(x)[0]=ARRAY_DIM(x,0);    
+    for(i=1; i<ARRAY_NDIM(x); i++){ ARRAY_LD_P(x)[i]=ARRAY_LD(x,i-1)*ARRAY_DIM(x,i); }
   }
   // set size
   if(ARRAY_NDIM(x)<=0){ ARRAY_SIZE(x)=0; }else{ ARRAY_SIZE(x)=ARRAY_LD_END(x); }
@@ -653,7 +652,7 @@ array *array_get_double(array *x)
  */ 
 array *array_get_multi(array *x)
 {
-  int flag;
+  int flag=0;
   array *y=NULL;
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ flag=svec_has(ARRAY_SIZE(x),ARRAY_P0_S(x),"iIjJ"); }
@@ -674,7 +673,7 @@ array *array_get_multi(array *x)
  */ 
 array *array_get_imulti(array *x)
 {
-  int flag;
+  int flag=0;
   array *y=NULL;
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ flag=svec_has(ARRAY_SIZE(x),ARRAY_P0_S(x),"iIjJ"); }
@@ -798,11 +797,29 @@ array *array_add(array *x, array *y)
   if(x==NULL || y==NULL){ return z; }
   if(array_same_dim_check(x,y)){
     if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='d'){ z=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_add   (ARRAY_SIZE(z),ARRAY_P0_D(z),ARRAY_P0_D(x),ARRAY_P0_D(y)); }
-    if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ z=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_add_d1(ARRAY_SIZE(z),ARRAY_P0_Z(z),ARRAY_P0_D(x),ARRAY_P0_Z(y)); }
-    if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ z=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_add_d2(ARRAY_SIZE(z),ARRAY_P0_Z(z),ARRAY_P0_Z(x),ARRAY_P0_D(y)); }
+    if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ z=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_add_dz(ARRAY_SIZE(z),ARRAY_P0_Z(z),ARRAY_P0_D(x),ARRAY_P0_Z(y)); }
+    if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ z=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_add_zd(ARRAY_SIZE(z),ARRAY_P0_Z(z),ARRAY_P0_Z(x),ARRAY_P0_D(y)); }
     if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ z=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_add   (ARRAY_SIZE(z),ARRAY_P0_Z(z),ARRAY_P0_Z(x),ARRAY_P0_Z(y)); }
-    if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){ z=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_add(ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P0_R(x),ARRAY_P0_R(y)); }
-    if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_C(x),ARRAY_P0_C(y)); }
+    if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){ z=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_add_dr(ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P0_D(x),ARRAY_P0_R(y)); }
+    if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_zr(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_Z(x),ARRAY_P0_R(y)); }
+    if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){ z=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_add_rd(ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P0_R(x),ARRAY_P0_D(y)); }
+    if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_rz(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_R(x),ARRAY_P0_Z(y)); }
+    if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){ z=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_add   (ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P0_R(x),ARRAY_P0_R(y)); }    
+    if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_dc(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_D(x),ARRAY_P0_C(y)); }
+    if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_zc(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_Z(x),ARRAY_P0_C(y)); }
+    if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_rc(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_R(x),ARRAY_P0_C(y)); }
+    if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_cd(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_C(x),ARRAY_P0_D(y)); }
+    if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_cz(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_C(x),ARRAY_P0_Z(y)); }
+    if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add_cr(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_C(x),ARRAY_P0_R(y)); }
+    if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){ z=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_add   (ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P0_C(x),ARRAY_P0_C(y)); }
+    //    if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ z=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_add_dR(ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P1_R(z),ARRAY_P0_D(x),              ARRAY_P0_R(y),ARRAY_P1_R(y)); }
+    //    if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ z=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_add_Rd(ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P1_R(z),ARRAY_P0_R(x),ARRAY_P1_R(x),ARRAY_P0_D(y)              ); }
+    if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ z=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_add   (ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P1_R(z),ARRAY_P0_R(x),ARRAY_P0_R(x),ARRAY_P0_R(y),ARRAY_P1_R(y)); }
+    if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ z=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_add   (ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P1_R(z),ARRAY_P0_R(x),ARRAY_P1_R(x),ARRAY_P0_R(y),ARRAY_P0_R(y)); }
+    //    if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ z=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_add_zR(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P1_C(z),ARRAY_P0_R(x),ARRAY_P1_R(x),ARRAY_P0_R(y),ARRAY_P1_R(y)); }
+    //    if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ z=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_add_Rz(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P1_C(z),ARRAY_P0_R(x),ARRAY_P1_R(x),ARRAY_P0_R(y),ARRAY_P1_R(y)); }
+    //    if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ z=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_add_cR(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P1_C(z),ARRAY_P0_R(x),ARRAY_P1_R(x),ARRAY_P0_R(y),ARRAY_P1_R(y)); }
+    //    if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ z=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_add_Rc(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P1_C(z),ARRAY_P0_R(x),ARRAY_P1_R(x),ARRAY_P0_R(y),ARRAY_P1_R(y)); }
     if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ z=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_add(ARRAY_SIZE(z),ARRAY_P0_R(z),ARRAY_P1_R(z),ARRAY_P0_R(x),ARRAY_P1_R(x),ARRAY_P0_R(y),ARRAY_P1_R(y)); }
     if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ z=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_add(ARRAY_SIZE(z),ARRAY_P0_C(z),ARRAY_P1_C(z),ARRAY_P0_C(x),ARRAY_P1_C(x),ARRAY_P0_C(y),ARRAY_P1_C(y)); }
   }

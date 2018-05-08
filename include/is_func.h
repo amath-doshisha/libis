@@ -221,7 +221,7 @@ void func_set_mono_order(int order);
 int func_get_mono_order(void);
 
 // allocation
-int func_new_del_check_sum();
+int func_new_del_check_sum(void);
 func_t *func_new(char *op);
 func_t *func_retain(func_t *f);
 func_t *func_del(func_t *f);

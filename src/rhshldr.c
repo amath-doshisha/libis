@@ -19,11 +19,10 @@
 /**
  @brief ハウスホルダー・ベクトルへの変換.
  @details h[0]=0; ...; h[k-1]=0; h[k]=-s*xi; h[k+1]=x[k+1]; ...; h[n-1]=x[n-1];
- @param[in]  h 初期化済みのベクトル.サイズはn.
- @param[in]  x 初期化済みのベクトル.サイズはn.
- @param[in]  n ベクトルのサイズ.
- @param[in]  k 第k要素が基準.
- @param[out] h ハウスホルダー・ベクトル.
+ @param[in,out]  h   [in]初期化済みのベクトル.サイズはn.[out]ハウスホルダー・ベクトル.
+ @param[in]      x   初期化済みのベクトル.サイズはn.
+ @param[in]      n   ベクトルのサイズ.
+ @param[in]      k   第k要素が基準.
  */
 void rhouseholder_vec(int n, int k, rmulti **h, rmulti *alpha, rmulti **x)
 {

@@ -1087,7 +1087,7 @@ void rmat3_lt(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int L
 }
 
 /**
- @brief rmulti型の3次元配列の比較 C=(A<b).
+ @brief rmulti型の3次元配列の比較 C=(A < b).
 */
 void rmat3_lt_r(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2, rmulti *b)
 {

@@ -9,6 +9,7 @@ var is__icvec_8h =
     [ "icvec_add_lintr_t", "is__icvec_8h.html#acae0aded57bc7ac61bd337bd71cc3ca4", null ],
     [ "icvec_add_pm", "is__icvec_8h.html#a4d414340df6c8be2f9b6c4020267a7f0", null ],
     [ "icvec_center_radius", "is__icvec_8h.html#a3cb8c62672a2bef3fecdca0348870e29", null ],
+    [ "icvec_conj", "is__icvec_8h.html#a3b42dd313805435a9f097028a071ab2d", null ],
     [ "icvec_copy", "is__icvec_8h.html#a1417e5d49968225fc2d64c250ead9841", null ],
     [ "icvec_copy_cr", "is__icvec_8h.html#af2b1b243d4e44bdcbead99ec9858d2ae", null ],
     [ "icvec_copy_rc", "is__icvec_8h.html#a2cc64b23c9f12ff3eff3551f93085a93", null ],

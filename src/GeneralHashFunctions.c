@@ -9,7 +9,7 @@ unsigned int RSHash(const char *str)
    unsigned int hash = 0;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -27,7 +27,7 @@ unsigned int JSHash(const char *str)
    unsigned int hash = 1315423911;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -49,7 +49,7 @@ unsigned int PJWHash(const char *str)
    unsigned int test              = 0;
    unsigned int i                 = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -72,7 +72,7 @@ unsigned int ELFHash(const char *str)
    unsigned int x    = 0;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -95,7 +95,7 @@ unsigned int BKDRHash(const char *str)
    unsigned int hash = 0;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -112,7 +112,7 @@ unsigned int SDBMHash(const char *str)
    unsigned int hash = 0;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -129,7 +129,7 @@ unsigned int DJBHash(const char *str)
    unsigned int hash = 5381;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -146,7 +146,7 @@ unsigned int DEKHash(const char *str)
    unsigned int hash;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
    hash = len;
 
    for(i = 0; i < len; str++, i++)
@@ -163,7 +163,7 @@ unsigned int BPHash(const char *str)
    unsigned int hash = 0;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -181,7 +181,7 @@ unsigned int FNVHash(const char *str)
    unsigned int hash      = 0;
    unsigned int i         = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {
@@ -199,7 +199,7 @@ unsigned int APHash(const char *str)
    unsigned int hash = 0xAAAAAAAA;
    unsigned int i    = 0;
    unsigned int len;
-   len=strlen(str);
+   len=(unsigned int)strlen(str);
 
    for(i = 0; i < len; str++, i++)
    {

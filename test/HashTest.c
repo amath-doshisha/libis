@@ -25,7 +25,6 @@
 
 int main()
 {
-
    char* key = "abcdefghijklmnopqrstuvwxyz1234567890";
 
    printf("General Purpose Hash Function Algorithms Test\n");

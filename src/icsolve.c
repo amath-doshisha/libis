@@ -33,9 +33,8 @@
 
 /**
  @brief 線形方程式A*X=Bの解法.
- @param[in]  B サイズ(n,NRHS)の行列B.
- @param[out] B サイズ(n,NRHS)の解の行列X.
- @param[in]  A サイズnの正方行列で係数行列A.
+ @param[in,out] B0 B1  [in]サイズ(n,NRHS)の行列B.[out]サイズ(n,NRHS)の解の行列X.
+ @param[in]     A0 A1   サイズnの正方行列で係数行列A.
  */
 void icsolve(int n, int NRHS, cmulti **B0, cmulti **B1, int LDB, cmulti **A0, cmulti **A1, int LDA, int *info)
 {
@@ -60,10 +59,8 @@ void icsolve(int n, int NRHS, cmulti **B0, cmulti **B1, int LDB, cmulti **A0, cm
    
 /**
  @brief 線形方程式A*X=Bのガウスの消去法による解法.
- @param[in]  B 行列B.サイズは(n,NRHS).
- @param[in]  B 解の行列X.サイズは(n,NRHS).
- @param[in]  A 係数行列A.サイズは(n,n).
- @param[out] A 破壊される.
+ @param[in,out] B0 B1   [in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS).
+ @param[in,out] A0 A1   [in]係数行列A.サイズは(n,n).[out]破壊される.
  */
 void icsolve_gauss_sweeper(int n, int NRHS, cmulti **B0, cmulti **B1, int LDB, cmulti **A0, cmulti **A1, int LDA, int *info)
 {

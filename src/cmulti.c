@@ -1047,6 +1047,24 @@ void cadd_r(cmulti *z, cmulti *x, rmulti *y)
 
 /**
  @brief cmulti型の足し算 z=x+y
+ */
+void cadd_rz(cmulti *z, rmulti *x, dcomplex y)
+{
+  radd_d(C_R(z),x,Z_R(y)); // z.r=x+y.r
+  rset_d(C_I(z),Z_I(y));   // z.i=y.i
+}
+
+/**
+ @brief cmulti型の足し算 z=x+y
+ */
+void cadd_zr(cmulti *z, dcomplex x, rmulti *y)
+{
+  radd_d(C_R(z),y,Z_R(x)); // z.r=x.r+y
+  rset_d(C_I(z),Z_I(x));   // z.i=x.i
+}
+
+/**
+ @brief cmulti型の足し算 z=x+y
 */
 void cadd_d(cmulti *z, cmulti *x, double y)
 {

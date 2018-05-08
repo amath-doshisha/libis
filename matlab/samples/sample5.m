@@ -1,17 +1,17 @@
 clear all
 close all
-A = [1 2 3; 4 5 6]
-b = [10; 100]
-B=zeros(2,3,2,2);
-size(B)
-C=zeros(2,3,2,2,2);
-size(C)
-% A+b
-% b+b'
-% B+A
-% B+b
-D=B+C;
-size(D)
+% A = [1 2 3; 4 5 6]
+% b = [10; 100]
+% B=zeros(2,3,2,2);
+% size(B)
+% C=zeros(2,3,2,2,2);
+% size(C)
+% % A+b
+% % b+b'
+% % B+A
+% % B+b
+% D=B+C;
+% size(D)
 
 % A=multi([1 2 3; 4 5 6])
 % b=multi([10; 100])
@@ -21,31 +21,57 @@ size(D)
 % B+A
 % B+b
 
-% A=zeros(4,3);A(:)=1:12
-% B=zeros(1,3,3);B(:)=1:9
-% A+B
+A=zeros(4,3);A(:)=1:12
+B=zeros(1,3,3);B(:)=1:9
+A+B
 
-% Ad=rand(3,3)
-% Ar=multi(Ad)
-% AR=imulti(Ad)
-% Az=Ad+i*rand(3,3)
-% Ac=multi(Az)
-% AC=imulti(Az)
-% 
-% B=Ar;
-% B(:,2)=Ar(:,3)
-% B(:,2)=Ad(:,3)
-% B(:,2)=Az(:,3)
-% 
-% 
-% disp('----------------');
-% B=Ad
-% Bd=multi_cast(B,'d')
-% Bz=multi_cast(B,'z')
-% Br=multi_cast(B,'r')
-% Bc=multi_cast(B,'c')
-% BR=multi_cast(B,'R')
-% BC=multi_cast(B,'C')
+Ad=rand(3,3)
+Ar=multi(Ad)
+AR=imulti(Ad)
+Az=Ad+i*rand(3,3)
+Ac=multi(Az)
+AC=imulti(Az)
+
+B=Ar;
+B(:,2)=Ar(:,3)
+B(:,2)=Ad(:,3)
+B(:,2)=Az(:,3)
+
+
+disp('----------------');
+B=Az
+Bd=multi_cast(B,'d')
+Bz=multi_cast(B,'z')
+Br=multi_cast(B,'r')
+Bc=multi_cast(B,'c')
+BR=multi_cast(B,'R')
+BC=multi_cast(B,'C')
+
+disp('----------------');
+Ad+Bd
+Ad+Bz
+Ad+Br
+Ad+Bc
+disp('----------------');
+Az+Bd
+Az+Bz
+Az+Br
+Az+Bc
+disp('----------------');
+Ar+Bd
+Ar+Bz
+Ar+Br
+Ar+Bc
+disp('----------------');
+Ac+Bd
+Ac+Bz
+Ac+Br
+Ac+Bc
+disp('----------------');
+
+
+
+
 % 
 % 
 % disp('----------------');

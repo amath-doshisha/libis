@@ -18,16 +18,15 @@ const char *rhpeig_str[]={ "    ", "conv", "divr", "sing", NULL };
 
 /**
  @brief 固有値問題 F=A*x-lambda*x, lambda=w'*x/Cのヤコビ行列M=A-lambda*I-x*w'/Cの計算.
- @param[in]  n      サイズ.
- @param[in]  A      サイズ(n,n)の行列.
- @param[in]  LDA    行列Aの第1次元.
- @param[in]  x      サイズnのベクトル.
- @param[in]  w      サイズnのベクトル.
- @param[in]  lambda 固有値.
- @param[in]  C      定数.
- @param[in]  LDJM   行列JMの第1次元.
- @param[in]  JM     サイズ(n,n)の初期化済み行列.
- @param[out] JM     ヤコビ行列.
+ @param[in]      n      サイズ.
+ @param[in]      A      サイズ(n,n)の行列.
+ @param[in]      LDA    行列Aの第1次元.
+ @param[in]      x      サイズnのベクトル.
+ @param[in]      w      サイズnのベクトル.
+ @param[in]      lambda 固有値.
+ @param[in]      C      定数.
+ @param[in]      LDJM   行列JMの第1次元.
+ @param[in,out]  JM     [in]サイズ(n,n)の初期化済み行列.[out]ヤコビ行列.
 */
 void rhpeig_jacobi_mat(int n, rmulti **JM, int LDJM, rmulti **A, int LDA, rmulti **x, rmulti **w, rmulti *lambda, rmulti *C)
 {
@@ -127,14 +126,13 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
 
 /**
  @brief 超平面制約法による固有値分解.
- @param[in] debug   デバグ用.
- @param[in] A       (n,n)型行列.
- @param[in] LDA     Aの第1次元.
- @param[in] X       (n,n)型行列.
- @param[in] LDX     Xの第1次元.
- @param[out] X      計算された固有ベクトル.
- @param[out] Lambda 計算された固有値.
- @return            計算された固有対の個数.
+ @param[in]     debug   デバグ用.
+ @param[in]     A       (n,n)型行列.
+ @param[in]     LDA     Aの第1次元.
+ @param[in,out] X       [in](n,n)型行列.[out]計算された固有ベクトル.
+ @param[in]     LDX     Xの第1次元.
+ @param[out]    Lambda  計算された固有値.
+ @return                計算された固有対の個数.
  */
 int rhpeig(int n, rmulti **X, int LDX, rmulti **Lambda, rmulti **A, int LDA, int debug)
 {

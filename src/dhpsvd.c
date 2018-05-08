@@ -24,7 +24,7 @@ void dhpsvd_jacobi_mat(int m, int n, double *JM, int LDJM, const double *A, int 
 int dhpsvd_1pair(int m, int n, const double *A, int LDA, const double *z, double *u, double *v, double *Sigma, double *E, int *Step, int debug)
 {
   int step,step_max,done,info=-1,ret=DHPSVD_NONE,LDJM;
-  double *w=NULL,*H=NULL,*JM=NULL,h,e,C,eps_e,eps_r,sigma;
+  double *w=NULL,*H=NULL,*JM=NULL,h,e,C=1,eps_e,eps_r,sigma;
   // allocation
   w=dvec_allocate(n);
   H=dvec_allocate(m+n);

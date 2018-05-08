@@ -19,14 +19,13 @@
 
 /**
  @brief      逆反復法で行列Aの固有ベクトルXをすべて計算.
- @param[in]  n      行列サイズ.
- @param[in]  A      固有値計算をする(n,n)型行列.
- @param[in]  LDA    Aの第1次元.
- @param[in]  lambda 計算済みの固有値.
- @param[in]  X      初期化済みの(n,n)型行列.
- @param[in]  LDX    Xの第1次元.
- @param[out] X      計算されたすべての固有ベクトル.
- @param[in]  debug  デバッグ.
+ @param[in]      n      行列サイズ.
+ @param[in]      A      固有値計算をする(n,n)型行列.
+ @param[in]      LDA    Aの第1次元.
+ @param[in]      lambda 計算済みの固有値.
+ @param[in,out]  X      [in]初期化済みの(n,n)型行列.[out]計算されたすべての固有ベクトル.
+ @param[in]      LDX    Xの第1次元.
+ @param[in]      debug  デバッグ.
  */
 void reig_ii(int n, rmulti **X, int LDX, rmulti **A, int LDA, rmulti **lambda, int debug)
 {
@@ -40,13 +39,12 @@ void reig_ii(int n, rmulti **X, int LDX, rmulti **A, int LDA, rmulti **lambda, i
 
 /**
  @brief      逆反復法で行列Aの固有ベクトルXを1個のみ計算.
- @param[in]  n      行列サイズ.
- @param[in]  A      固有値計算をする(n,n)型行列.
- @param[in]  LDA    Aの第1次元.
- @param[in]  lambda 計算済みの固有値.
- @param[in]  x      初期化済みのn次ベクトル.
- @param[out] x      計算された固有ベクトル.
- @param[in]  debug  デバッグ.
+ @param[in]      n      行列サイズ.
+ @param[in]      A      固有値計算をする(n,n)型行列.
+ @param[in]      LDA    Aの第1次元.
+ @param[in]      lambda 計算済みの固有値.
+ @param[in,out]  x      [in]初期化済みのn次ベクトル.[out]計算された固有ベクトル.
+ @param[in]      debug  デバッグ.
  */
 void reig_ii_1pair(int n, rmulti **x, rmulti **A, int LDA, rmulti *lambda, int debug)
 {

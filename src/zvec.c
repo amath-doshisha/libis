@@ -367,13 +367,13 @@ void zvec_add_d(int n, dcomplex *z, dcomplex *x, double *y)
 }
 
 // z=x+y
-void zvec_add_d1(int n, dcomplex *z, double *x, dcomplex *y)
+void zvec_add_dz(int n, dcomplex *z, double *x, dcomplex *y)
 {
   return zvec_add_d(n,z,y,x);
 }
 
 // z=x+y
-void zvec_add_d2(int n, dcomplex *z, dcomplex *x, double *y)
+void zvec_add_zd(int n, dcomplex *z, dcomplex *x, double *y)
 {
   return zvec_add_d(n,z,x,y);
 }

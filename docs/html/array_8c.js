@@ -1,7 +1,9 @@
 var array_8c =
 [
+    [ "array_add", "array_8c.html#a437b621f9af3e71f1a503b2a122d04fc", null ],
     [ "array_allocate", "array_8c.html#a075bf54e3da7df513db0c4f8e06c8787", null ],
     [ "array_clone", "array_8c.html#ac6bd13ec4aa5db693307936c6d45c085", null ],
+    [ "array_conj", "array_8c.html#ae72d583191130a45170c0d521df3f6ac", null ],
     [ "array_copy", "array_8c.html#a4e2afcfac05c0a528aeaa408dbf2fd49", null ],
     [ "array_free", "array_8c.html#ab8db2f82d2dc062b1bea33a8f6a6ab6f", null ],
     [ "array_get", "array_8c.html#a3fd5cf620ebff0eb070924df96e842f9", null ],

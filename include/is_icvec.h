@@ -49,6 +49,8 @@ void icvec_get_c(int n, cmulti **y, cmulti **x0, cmulti **x1);
  */
 // [y0,y1]=real([x0,x1])
 void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1);
+// [y0,y1]=conj([x0,x1])
+void icvec_conj(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);
 // xc=(x1+x0)/2, xr=x1-x0
 void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **x1);
 void icvec_neg(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);                           // [y0,y1]=-[x0,x1]

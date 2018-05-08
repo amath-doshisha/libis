@@ -119,7 +119,7 @@ void imat_rand(int m, int n, int *A, int LDA, int a, int b)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      MAT(A,i,j,LDA)=genrand_int31()*a+b;
+      MAT(A,i,j,LDA)=(int)genrand_int31()*a+b;
     }
   }
 }
