@@ -10,7 +10,7 @@
 
 
 // F=A*X-lambda*X
-void deig_residual(int n, double *F, const double *A, int LDA, const double *X, double lambda)
+void deig_residual(int n, double *F, double *A, int LDA, double *X, double lambda)
 {
   dvec_copy(n,F,X);                    // F=X
   dvec_scale(n,F,(-lambda));           // F=-lambda*X
@@ -18,7 +18,7 @@ void deig_residual(int n, double *F, const double *A, int LDA, const double *X, 
 }
 
 // E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))), k=1,2,..,n
-void deig_residual_norm_max(int n, double *E, const double *A, int LDA, const double *X, int LDX, const double *lambda)
+void deig_residual_norm_max(int n, double *E, double *A, int LDA, double *X, int LDX, double *lambda)
 {
   int j;
   double *F=NULL;
@@ -52,7 +52,7 @@ void deig_sort(int n, int k, double *lambda, double *X, int LDX)
 
 /////////////////////////////////////////////////////////////////////////
 
-void deig_sort_index(int n, int k, double *lambda, double *X, int LDX, const int *index)
+void deig_sort_index(int n, int k, double *lambda, double *X, int LDX, int *index)
 {
   dvec_swap_index(k,lambda,index);
   dmat_swap_index(n,k,X,LDX,index);

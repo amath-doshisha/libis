@@ -108,7 +108,7 @@ void dvec_set_rand(int n, double *x, double a, double b){
 
 
 // y=x
-void dvec_set_d(int n, double *y, double *x) 
+void dvec_set(int n, double *y, double *x) 
 {
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]; }
@@ -216,7 +216,7 @@ void dvec_swap_at(double *x, int i, int j)
 }
 
 // x[i] <=> x[I[i]]
-void dvec_swap_index(int n, double *x, const int *I)
+void dvec_swap_index(int n, double *x, int *I)
 {
   double *y=NULL;
   y=dvec_allocate(n);
@@ -273,14 +273,14 @@ void dvec_sort_index(int *I, int n, double *X)
 //////////////////////////////////////////////////////
 
 // y=x
-void dvec_copy(int n, double *y, const double *x)
+void dvec_copy(int n, double *y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]; }
 }
 
 // Y[i]=X[I[i]], 0<=i<n
-void dvec_copy_index(int n, double *Y, const double *X, const int *I)
+void dvec_copy_index(int n, double *Y, double *X, int *I)
 {
   int i;
   for(i=0; i<n; i++){ Y[i]=X[I[i]]; }
@@ -289,59 +289,47 @@ void dvec_copy_index(int n, double *Y, const double *X, const int *I)
 //////////////////////////////////////////////////////
 
 // z=x+y
-void dvec_add_d(int n, double *z, const double *x, double y)
+void dvec_add(int n, double *z, double *x, double *y)
+{
+    int i;
+    for(i=0; i<n; i++){ z[i]=x[i]+y[i]; }
+}
+
+// z=x+y
+void dvec_add_scalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]+y; }
 }
 
-// z=x/y
-void dvec_div_d2(int n, double *z, const double *x, double y)
-{
-  int i;
-  for(i=0; i<n; i++){ z[i]=x[i]/y; }
-}
-
 //////////////////////////////////////////////////////
-
-// x=x+a
-void dvec_add_scalar(int n, double *x, double a)
-{
-  int i;
-  for(i=0; i<n; i++){
-    x[i]+=a;
-  }
-}
-
-// x=x-a
-void dvec_sub_scalar(int n, double *x, double a)
-{
-  int i;
-  for(i=0; i<n; i++){
-    x[i]-=a;
-  }
-}
-
-//////////////////////////////////////////////////////
-
-// z=x+y
-void dvec_add(int n, double *z, double *x, double *y)
-{
-  int i;
-  for(i=0; i<n; i++){ z[i]=x[i]+y[i]; }
-}
 
 // z=x-y
 void dvec_sub(int n, double *z, double *x, double *y)
 {
-  int i;
-  for(i=0; i<n; i++){ z[i]=x[i]-y[i]; }
+    int i;
+    for(i=0; i<n; i++){ z[i]=x[i]-y[i]; }
+}
+
+// z=x-y
+void dvec_sub_scalar(int n, double *z, double *x, double y)
+{
+    int i;
+    for(i=0; i<n; i++){ z[i]=x[i]-y; }
 }
 
 //////////////////////////////////////////////////////
 
+// z=x/y
+void dvec_div_d2(int n, double *z, double *x, double y)
+{
+    int i;
+    for(i=0; i<n; i++){ z[i]=x[i]/y; }
+}
+
+
 // y=y+a*x
-void dvec_add_scaled(int n, double *y, double a, const double *x)
+void dvec_add_scaled(int n, double *y, double a, double *x)
 {
   int i;
   for(i=0; i<n; i++){
@@ -350,7 +338,7 @@ void dvec_add_scaled(int n, double *y, double a, const double *x)
 }
 
 // y=y-a*x
-void dvec_sub_scaled(int n, double *y, double a, const double *x)
+void dvec_sub_scaled(int n, double *y, double a, double *x)
 {
   int i;
   for(i=0; i<n; i++){
@@ -361,7 +349,7 @@ void dvec_sub_scaled(int n, double *y, double a, const double *x)
 //////////////////////////////////////////////////////
 
 // y=A*x
-void dvec_lintr(int m, int n, double *y, const double *A, int LDA, const double *x){
+void dvec_lintr(int m, int n, double *y, double *A, int LDA, double *x){
   int i,j;
   for(i=0; i<m; i++){
     y[i]=0;
@@ -372,7 +360,7 @@ void dvec_lintr(int m, int n, double *y, const double *A, int LDA, const double 
 }
 
 // y=y+A*x
-void dvec_add_lintr(int m, int n, double *y, const double *A, int LDA, const double *x){
+void dvec_add_lintr(int m, int n, double *y, double *A, int LDA, double *x){
   int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
@@ -382,7 +370,7 @@ void dvec_add_lintr(int m, int n, double *y, const double *A, int LDA, const dou
 }
 
 // y=y-A*x
-void dvec_sub_lintr(int m, int n, double *y, const double *A, int LDA, const double *x){
+void dvec_sub_lintr(int m, int n, double *y, double *A, int LDA, double *x){
   int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
@@ -392,7 +380,7 @@ void dvec_sub_lintr(int m, int n, double *y, const double *A, int LDA, const dou
 }
 
 // y=A'*x
-void dvec_lintr_t(int m, int n, double *y, const double *A, int LDA, const double *x){
+void dvec_lintr_t(int m, int n, double *y, double *A, int LDA, double *x){
   int i,j;
   for(j=0; j<n; j++){
     y[j]=0;
@@ -403,7 +391,7 @@ void dvec_lintr_t(int m, int n, double *y, const double *A, int LDA, const doubl
 }
 
 // y=y+A'*x
-void dvec_add_lintr_t(int m, int n, double *y, const double *A, int LDA, const double *x){
+void dvec_add_lintr_t(int m, int n, double *y, double *A, int LDA, double *x){
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
@@ -413,7 +401,7 @@ void dvec_add_lintr_t(int m, int n, double *y, const double *A, int LDA, const d
 }
 
 // y=y-A'*x
-void dvec_sub_lintr_t(int m, int n, double *y, const double *A, int LDA, const double *x){
+void dvec_sub_lintr_t(int m, int n, double *y, double *A, int LDA, double *x){
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
@@ -461,7 +449,7 @@ void dvec_normalize_sgn(int n, double *x)
 }
 
 // y=y-(x'*y)*x where x'*x=1
-void dvec_orthogonalize(int n, double *y, const double *x)
+void dvec_orthogonalize(int n, double *y, double *x)
 {
   double dot;
   dot=dvec_dot(n,x,y);
@@ -514,13 +502,13 @@ void dvec_pow_d(int n, double *z, double *x, double y)
 
 
 // y=x.^2
-void dvec_pow2(int n, double *y, const double *x){
+void dvec_pow2(int n, double *y, double *x){
   int i;
   for(i=0; i<n; i++) y[i]=x[i]*x[i];
 }
 
 // y=log2(abs(x))
-void dvec_log2_abs(int n, double *y, const double *x)
+void dvec_log2_abs(int n, double *y, double *x)
 {
   int i;
   for(i=0; i<n; i++) y[i]=log(fabs(x[i]))/log(2);
@@ -539,7 +527,7 @@ void dvec_swap(int n, double *x, double *y)
 }
 
 // x'*y
-double dvec_dot(int n, const double *x, const double *y)
+double dvec_dot(int n, double *x, double *y)
 {
   int i;
   double value=0;
@@ -564,7 +552,7 @@ double dvec_dot(int n, const double *x, const double *y)
 }
 
 // abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
-double dvec_dcos_abs(int n, const double *x, const double *y){
+double dvec_dcos_abs(int n, double *x, double *y){
   double norm_x,norm_y,dcos,dot;
   norm_x=dvec_norm2(n,x);
   norm_y=dvec_norm2(n,y);
@@ -574,7 +562,7 @@ double dvec_dcos_abs(int n, const double *x, const double *y){
 }
 
 // acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-double dvec_angle(int n, const double *x, const double *y)
+double dvec_angle(int n, double *x, double *y)
 {
   double theta;
   theta=dvec_dcos_abs(n,x,y);
@@ -584,13 +572,13 @@ double dvec_angle(int n, const double *x, const double *y)
 }
 
 // (180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-double dvec_angle_deg(int n, const double *x, const double *y)
+double dvec_angle_deg(int n, double *x, double *y)
 {
   return dvec_angle(n,x,y)*(180.0/M_PI);
 }
 
 // value=sum(abs(x-y))
-double dvec_dist_norm1(int n, const double *x, const double *y)
+double dvec_dist_norm1(int n, double *x, double *y)
 {
   int i;
   double value;
@@ -600,7 +588,7 @@ double dvec_dist_norm1(int n, const double *x, const double *y)
 }
 
 // value=max(abs(x-y))
-double dvec_dist_norm_max(int n, const double *x, const double *y)
+double dvec_dist_norm_max(int n, double *x, double *y)
 {
   int i;
   double value,a;
@@ -615,14 +603,14 @@ double dvec_dist_norm_max(int n, const double *x, const double *y)
 //////////////////////////////////////////////////////////////////////////
 
 // z=abs(x-y)
-void dvec_abs_sub(int n, double *z, const double *x, const double *y)
+void dvec_abs_sub(int n, double *z, double *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=fabs(x[i]-y[i]); }
 }
 
 // z=abs(x-y)
-void dvec_abs_sub_scalar(int n, double *z, const double *x, double y)
+void dvec_abs_sub_scalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=fabs(x[i]-y); }
@@ -631,7 +619,7 @@ void dvec_abs_sub_scalar(int n, double *z, const double *x, double y)
 //////////////////////////////////////////////////////////////////////////
 
 // sum(abs(x))
-double dvec_norm1(int n, const double *x)
+double dvec_norm1(int n, double *x)
 {
   int i;
   double value=0;
@@ -642,7 +630,7 @@ double dvec_norm1(int n, const double *x)
 }
 
 // sqrt(sum(x.^2))
-double dvec_norm2(int n, const double *x)
+double dvec_norm2(int n, double *x)
 {
   int i;
   double value=0;
@@ -654,7 +642,7 @@ double dvec_norm2(int n, const double *x)
 }
 
 // max(abs(x))
-double dvec_norm_max(int n, const double *x)
+double dvec_norm_max(int n, double *x)
 {
   int i;
   double value=0;
@@ -665,7 +653,7 @@ double dvec_norm_max(int n, const double *x)
 }
 
 // sum(x)
-double dvec_sum(int n, const double *x)
+double dvec_sum(int n, double *x)
 {
   double value=0;
   int i;
@@ -674,13 +662,13 @@ double dvec_sum(int n, const double *x)
 }
 
 // sum(x)/n
-double dvec_average(int n, const double *x)
+double dvec_average(int n, double *x)
 {
   return dvec_sum(n,x)/n;
 }
 
 // sum(x.^2)
-double dvec_sum_pow2(int n, const double *x)
+double dvec_sum_pow2(int n, double *x)
 {
   double value=0;
   int i;
@@ -693,7 +681,7 @@ double dvec_sum_pow2(int n, const double *x)
 ///////////////////////////////////////////////////////////////
 
 // max(abs(x))
-double dvec_max_abs(int n, const double *x)
+double dvec_max_abs(int n, double *x)
 {
   int i;
   double value=0;
@@ -707,7 +695,7 @@ double dvec_max_abs(int n, const double *x)
 }
 
 // min(abs(x))
-double dvec_min_abs(int n, const double *x)
+double dvec_min_abs(int n, double *x)
 {
   int i;
   double value;
@@ -723,7 +711,7 @@ double dvec_min_abs(int n, const double *x)
 
 ///////////////////////////////////////////////////////////////
 
-double dvec_max_abs_index(int n, const double *x, int *I)
+double dvec_max_abs_index(int n, double *x, int *I)
 {
   int i;
   double value=0;
@@ -740,7 +728,7 @@ double dvec_max_abs_index(int n, const double *x, int *I)
 
 // min(abs(x))
 // (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
-double dvec_min_abs_index(int n, const double *x, int *I)
+double dvec_min_abs_index(int n, double *x, int *I)
 {
   int i;
   double value;
@@ -758,7 +746,7 @@ double dvec_min_abs_index(int n, const double *x, int *I)
 ///////////////////////////////////////////////////////////////
 
 // max(x)
-double dvec_max(int n, const double *x)
+double dvec_max(int n, double *x)
 {
   int i;
   double value;
@@ -770,7 +758,7 @@ double dvec_max(int n, const double *x)
 }
 
 // min(x)
-double dvec_min(int n, const double *x)
+double dvec_min(int n, double *x)
 {
   int i;
   double value=x[0];

@@ -28,30 +28,48 @@
 /** @{ */
 
 /**
- @brief 倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi].
+ @brief コピー [y0,y1]=[x0,x1].
  */
-void icset_z(cmulti *y0, cmulti *y1, dcomplex x)
+void icset(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
 {
-  irset_d(C_R(y0),C_R(y1),Z_R(x));
-  irset_d(C_I(y0),C_I(y1),Z_I(x));
+  ircopy(C_R(y0),C_R(y1),C_R(x0),C_R(x1));
+  ircopy(C_I(y0),C_I(y1),C_I(x0),C_I(x1));
+}
+
+/**
+ @brief 倍精度実数の設定 [y0,y1]=[x,x].
+ */
+void icset_d(cmulti *y0, cmulti *y1, double x0, double x1)
+{
+  irset_d(C_R(y0),C_R(y1),x0,x1);
+  irset_d(C_I(y0),C_I(y1),0, 0);
 }
 
 /**
  @brief 倍精度複素数の設定 [y0,y1]=[x0,x1].
  */
-void icset_zz(cmulti *y0, cmulti *y1, dcomplex x0, dcomplex x1)
+void icset_z(cmulti *y0, cmulti *y1, dcomplex x0, dcomplex x1)
 {
-  irset_dd(C_R(y0),C_R(y1),Z_R(x0),Z_R(x1));
-  irset_dd(C_I(y0),C_I(y1),Z_I(x0),Z_I(x1));
+  irset_d(C_R(y0),C_R(y1),Z_R(x0),Z_R(x1));
+  irset_d(C_I(y0),C_I(y1),Z_I(x0),Z_I(x1));
 }
 
 /**
- @brief 倍精度複素数の設定 [y0,y1]=[xr+i*xi,xr*i*xi].
+ @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
  */
-void icset_dd(cmulti *y0, cmulti *y1, double xr, double xi)
+void icset_r(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1)
 {
-  irset_d(C_R(y0),C_R(y1),xr);
-  irset_d(C_I(y0),C_I(y1),xi);
+  irset  (C_R(y0),C_R(y1),x0,x1);
+  irset_d(C_I(y0),C_I(y1),0, 0);
+}
+
+/**
+ @brief 倍精度複素数の設定 [y0,y1]=[x0_r+i*x0_i,xr1_*i*x1_i].
+ */
+void icset_Z(cmulti *y0, cmulti *y1, double x0_r, double x0_i, double x1_r, double x1_i)
+{
+  irset_d(C_R(y0),C_R(y1),x0_r,x1_r);
+  irset_d(C_I(y0),C_I(y1),x0_i,x1_i);
 }
 
 /**
@@ -59,8 +77,8 @@ void icset_dd(cmulti *y0, cmulti *y1, double xr, double xi)
  */
 void icset_zd(cmulti *y0, cmulti *y1, dcomplex x0, double x1)
 {
-  irset_dd(C_R(y0),C_R(y1),Z_R(x0),x1);
-  irset_dd(C_I(y0),C_I(y1),Z_I(x0),0);
+  irset_d(C_R(y0),C_R(y1),Z_R(x0),x1);
+  irset_d(C_I(y0),C_I(y1),Z_I(x0),0);
 }
 
 /**
@@ -68,18 +86,28 @@ void icset_zd(cmulti *y0, cmulti *y1, dcomplex x0, double x1)
  */
 void icset_dz(cmulti *y0, cmulti *y1, double x0, dcomplex x1)
 {
-  irset_dd(C_R(y0),C_R(y1),x0,Z_R(x1));
-  irset_dd(C_I(y0),C_I(y1),0, Z_I(x1));
+  irset_d(C_R(y0),C_R(y1),x0,Z_R(x1));
+  irset_d(C_I(y0),C_I(y1),0, Z_I(x1));
 }
 
 /**
- @brief 倍精度実数の設定 [y0,y1]=[x,x].
+ @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
  */
-void icset_d(cmulti *y0, cmulti *y1, double x)
+void icset_rc(cmulti *y0, cmulti *y1, rmulti *x0, cmulti *x1)
 {
-  irset_d(C_R(y0),C_R(y1),x);
-  irset_d(C_I(y0),C_I(y1),0);
+  ircopy  (C_R(y0),C_R(y1),x0,C_R(x1));
+  irset_dr(C_I(y0),C_I(y1),.0,C_I(x1));
 }
+
+/**
+ @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
+ */
+void icset_cr(cmulti *y0, cmulti *y1, cmulti *x0, rmulti *x1)
+{
+  ircopy  (C_R(y0),C_R(y1),C_R(x0),x1);
+  irset_rd(C_I(y0),C_I(y1),C_I(x0),.0);
+}
+
 
 void icset_s(cmulti *x0, cmulti *x1, char *s)
 {
@@ -108,19 +136,19 @@ void iccopy(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
 /**
  @brief コピー [y0,y1]=[x0,x1]. rmultiをcmultiにキャスト
  */
-void iccopy_rr(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1)
+void iccopy_r(cmulti *y0, cmulti *y1, rmulti *x0, rmulti *x1)
 {
-  ircopy(C_R(y0),C_R(y1),x0,x1);
-  irset_d(C_I(y0),C_I(y1),0);
+  ircopy (C_R(y0),C_R(y1),x0,x1);
+  irset_d(C_I(y0),C_I(y1),0, 0);
 }
 
 /**
- @brief コピー [c0,c1]=[a0r,a1r]+[a0i,b0i]i. rmultiをcmultiにキャスト
+ @brief コピー [y0,y1]=[x0_r,x1_r]+i*[x0_i,x1_i]
  */
-void iccopy_rrrr(cmulti *c0, cmulti *c1, rmulti *a0r, rmulti *a0i, rmulti *a1r, rmulti *a1i)
+void iccopy_C(cmulti *y0, cmulti *y1, rmulti *x0_r, rmulti *x0_i, rmulti *x1_r, rmulti *x1_i)
 {
-  ircopy(C_R(c0),C_R(c1),a0r,a1r);
-  ircopy(C_I(c0),C_I(c1),a0i,a1i);
+  ircopy(C_R(y0),C_R(y1),x0_r,x1_r);
+  ircopy(C_I(y0),C_I(y1),x0_i,x1_i);
 }
 
 /**
@@ -129,7 +157,7 @@ void iccopy_rrrr(cmulti *c0, cmulti *c1, rmulti *a0r, rmulti *a0i, rmulti *a1r, 
 void iccopy_rc(cmulti *y0, cmulti *y1, rmulti *x0, cmulti *x1)
 {
   ircopy  (C_R(y0),C_R(y1),x0,C_R(x1));
-  irset_d1(C_I(y0),C_I(y1),.0,C_I(x1));
+  irset_dr(C_I(y0),C_I(y1),.0,C_I(x1));
 }
 
 /**
@@ -138,9 +166,8 @@ void iccopy_rc(cmulti *y0, cmulti *y1, rmulti *x0, cmulti *x1)
 void iccopy_cr(cmulti *y0, cmulti *y1, cmulti *x0, rmulti *x1)
 {
   ircopy  (C_R(y0),C_R(y1),C_R(x0),x1);
-  irset_d2(C_I(y0),C_I(y1),C_I(x0),.0);
+  irset_rd(C_I(y0),C_I(y1),C_I(x0),.0);
 }
-
 
 /** @} */
 
@@ -155,7 +182,7 @@ void iccopy_cr(cmulti *y0, cmulti *y1, cmulti *x0, rmulti *x1)
 void icset_bigint(cmulti *z0, cmulti *z1, bigint *x)
 {
   irset_bigint(C_R(z0),C_R(z1),x);
-  irset_d(C_I(z0),C_I(z1),0);
+  irset_d(C_I(z0),C_I(z1),0,0);
 }
 
 /** @} */
@@ -386,14 +413,14 @@ void icasin(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
   prec=MAX2(cget_prec(y0),cget_prec(y1));
   CA(a0,prec); CA(a1,prec); CA(b0,prec); CA(b1,prec);
   icmul(a0,a1,x0,x1,x0,x1); // a=x^2 
-  icset_dd(b0,b1,1,0);      // b=1
+  icset_d(b0,b1,1,1);       // b=1
   icsub(a0,a1,b0,b1,a0,a1); // a=1-x^2
   icsqrt(a0,a1,a0,a1);      // a=sqrt(1-x^2)
-  icset_dd(b0,b1,0,1);      // b=I
+  icset_Z(b0,b1,0,1,0,1);   // b=I
   icmul(b0,b1,b0,b1,x0,x1); // b=I*x
   icadd(a0,a1,a0,a1,b0,b1); // a=I*x+sqrt(1-x^2)
   iclog(a0,a1,a0,a1);       // a=log(I*x+sqrt(1-x^2))
-  icset_dd(b0,b1,0,-1);     // b=-I
+  icset_Z(b0,b1,0,-1,0,01); // b=-I
   icmul(a0,a1,a0,a1,b0,b1); // a=-I*log(I*x+sqrt(1-x^2))
   iccopy(y0,y1,a0,a1);      // y=-I*log(I*x+sqrt(1-x^2))
   CF(a0); CF(a1); CF(b0); CF(b1);
@@ -409,12 +436,12 @@ void icacos(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
   prec=MAX2(cget_prec(y0),cget_prec(y1));
   CA(a0,prec); CA(a1,prec); CA(b0,prec); CA(b1,prec);
   icmul(a0,a1,x0,x1,x0,x1);  // a=x^2 
-  icset_dd(b0,b1,-1,0);      // b=-1
+  icset_d(b0,b1,-1,-1);      // b=-1
   icadd(a0,a1,a0,a1,b0,b1);  // a=x^2-1
   icsqrt(a0,a1,a0,a1);       // a=sqrt(x^2-1)
   icadd(a0,a1,a0,a1,x0,x1);  // a=x+sqrt(x^2-1)
   iclog(a0,a1,a0,a1);        // a=log(x+sqrt(x^2-1))
-  icset_dd(b0,b1,0,-1);      // b=-I
+  icset_Z(b0,b1,0,-1,0,-1);  // b=-I
   icmul(a0,a1,a0,a1,b0,b1);  // a=-I*log(I*x+sqrt(1-x^2))
   iccopy(y0,y1,a0,a1);       // y=-I*log(I*x+sqrt(1-x^2))
   CF(a0); CF(a1); CF(b0); CF(b1);
@@ -429,12 +456,12 @@ void icatan(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
   cmulti *a0=NULL,*a1=NULL,*b0=NULL,*b1=NULL;
   prec=MAX2(cget_prec(y0),cget_prec(y1));
   CA(a0,prec); CA(a1,prec); CA(b0,prec); CA(b1,prec);
-  icset_dd(b0,b1,1,0);      // b=1
+  icset_d(b0,b1,1,1);       // b=1
   icadd(a0,a1,x0,x1,b0,b1); // a=1+x
   icsub(b0,b1,b0,b1,x0,x1); // b=1-x
   icdiv(a0,a1,a0,a1,b0,b1); // a=(1+x)/(1-x)
   iclog(a0,a1,a0,a1);       // a=log((1+x)/(1-x))
-  icset_dd(b0,b1,0,-0.5);   // b=-I/2
+  icset_Z(b0,b1,0,-0.5,0,-0.5); // b=-I/2
   icmul(a0,a1,a0,a1,b0,b1); // a=(-I/2)*log((1+x)/(1-x))
   iccopy(y0,y1,a0,a1);      // y=(-I/2)*log((1+x)/(1-x))
   CF(a0); CF(a1); CF(b0); CF(b1);
@@ -492,7 +519,7 @@ void icasinh(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
   cmulti *a0=NULL,*a1=NULL,*b0=NULL,*b1=NULL;
   prec=MAX2(cget_prec(y0),cget_prec(y1));
   CA(a0,prec); CA(a1,prec); CA(b0,prec); CA(b1,prec);
-  icset_dd(b0,b1,1,0);       // b=1
+  icset_d(b0,b1,1,1);        // b=1
   icmul(a0,a1,x0,x1,x0,x1);  // a=x^2
   icadd(a0,a1,a0,a1,b0,b1);  // a=x^2+1
   icsqrt(a0,a1,a0,a1);       // a=sqrt(x^2+1)
@@ -511,7 +538,7 @@ void icacosh(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
   cmulti *a0=NULL,*a1=NULL,*b0=NULL,*b1=NULL;
   prec=MAX2(cget_prec(y0),cget_prec(y1));
   CA(a0,prec); CA(a1,prec); CA(b0,prec); CA(b1,prec);
-  icset_dd(b0,b1,-1,0);      // b=-1
+  icset_d(b0,b1,-1,-1);      // b=-1
   icmul(a0,a1,x0,x1,x0,x1);  // a=x^2
   icadd(a0,a1,a0,a1,b0,b1);  // a=x^2-1
   icsqrt(a0,a1,a0,a1);       // a=sqrt(x^2-1)
@@ -530,12 +557,12 @@ void icatanh(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
   cmulti *a0=NULL,*a1=NULL,*b0=NULL,*b1=NULL;
   prec=MAX2(cget_prec(y0),cget_prec(y1));
   CA(a0,prec); CA(a1,prec); CA(b0,prec); CA(b1,prec);
-  icset_dd(b0,b1,1,0);      // b=1
+  icset_d(b0,b1,1,1) ;      // b=1
   icadd(a0,a1,x0,x1,b0,b1); // a=1+x
   icsub(b0,b1,b0,b1,x0,x1); // b=1-x
   icdiv(a0,a1,a0,a1,b0,b1); // a=(1+x)/(1-x)
   iclog(a0,a1,a0,a1);       // a=log((1+x)/(1-x))
-  icset_dd(b0,b1,0.5,0);    // b=0.5
+  icset_d(b0,b1,0.5,0.5);   // b=0.5
   icmul(a0,a1,a0,a1,b0,b1); // a=(1/2)*log((1+x)/(1-x))
   iccopy(y0,y1,a0,a1);      // y=(1/2)*log((1+x)/(1-x))
   CF(a0); CF(a1); CF(b0); CF(b1);
@@ -560,10 +587,73 @@ void icadd(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
+void icadd_d(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y0, double y1)
+{
+  iradd_d(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r+y.r
+  irset   (C_I(z0),C_I(z1),C_I(x0),C_I(x1));       // z.i=x.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void idadd_c(cmulti *z0, cmulti *z1, double x0, double x1, cmulti *y0, cmulti *y1)
+{
+    idadd_r(C_R(z0),C_R(z1),x0,x1,C_R(y0),C_R(y1)); // z.r=x.r+y.r
+    irset   (C_I(z0),C_I(z1),      C_I(y0),C_I(y1)); // z.i=    y.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void iradd_z(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, dcomplex y0, dcomplex y1)
+{
+  iradd_d(C_R(z0),C_R(z1),x0,x1,Z_R(y0),Z_R(y1)); // z.r=x+y.r
+  irset_d (C_I(z0),C_I(z1),      Z_I(y0),Z_I(y1)); // z.i=  y.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void izadd_r(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, rmulti *y0, rmulti *y1)
+{
+  idadd_r(C_R(z0),C_R(z1),Z_R(x0),Z_R(x1),y0,y1); // z.r=x.r+y
+  irset_d (C_I(z0),C_I(z1),Z_I(x0),Z_I(x1));       // z.i=x.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void icadd_z(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, dcomplex y0, dcomplex y1)
+{
+  iradd_d(C_R(z0),C_R(z1),C_R(x0),C_R(x1),Z_R(y0),Z_R(y1)); // z.r=x.r+y.r
+  iradd_d(C_I(z0),C_I(z1),C_I(x0),C_I(x1),Z_I(y0),Z_I(y1)); // z.i=x.i+y.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void izadd_c(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, cmulti *y0, cmulti *y1)
+{
+  idadd_r(C_R(z0),C_R(z1),Z_R(x0),Z_R(x1),C_R(y0),C_R(y1)); // z.r=x.r+y.r
+  idadd_r(C_I(z0),C_I(z1),Z_I(x0),Z_I(x1),C_I(y0),C_I(y1)); // z.i=x.i+y.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
 void icadd_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1)
 {
-  iradd (C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r+y.r
-  ircopy(C_I(z0),C_I(z1),C_I(x0),C_I(x1));       // z.i=x.i
+  iradd(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r+y.r
+  irset(C_I(z0),C_I(z1),C_I(x0),C_I(x1));       // z.i=x.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void iradd_c(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1)
+{
+  iradd(C_R(z0),C_R(z1),x0,x1,C_R(y0),C_R(y1)); // z.r=x.r+y.r
+  irset(C_I(z0),C_I(z1),      C_I(y0),C_I(y1)); // z.i=    y.i
 }
 
 /**
@@ -870,7 +960,7 @@ void icpow_si(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1, long n)
   long i;
   prec=MAX2(cget_prec(y0),cget_prec(y1));
   CA(a0,prec); CA(a1,prec);
-  if(n==0){ icset_d(a0,a1,1); }
+  if(n==0){ icset_d(a0,a1,1,1); }
   else if(n>0){
     iccopy(a0,a1,x0,x1);
     for(i=1; i<n; i++){ icmul(a0,a1,a0,a1,x0,x1); }

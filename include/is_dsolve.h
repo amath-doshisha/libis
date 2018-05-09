@@ -7,7 +7,7 @@
 int dsolve(int n, int NRHS, double *B, int LDB, double *A, int LDA);
 
 // R=B-A*X
-void dsolve_residual(int n, int NRHS, double *R, int LDR, const double *A, int LDA, const double *X, int LDX, const double *B, int LDB);
+void dsolve_residual(int n, int NRHS, double *R, int LDR, double *A, int LDA, double *X, int LDX, double *B, int LDB);
 
 // Sove A*X=B by LU decomposition
 // X: input=B, output=X

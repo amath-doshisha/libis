@@ -1,9 +1,0 @@
-<map id="rmat3_exp2_floor_log2_abs_sub" name="rmat3_exp2_floor_log2_abs_sub">
-<area shape="rect" id="node2" href="$is__rmulti_8h.html#aa843b76038edfb2e2f9a9b998aa1a29b" title="rmulti型の指数部で評価 z=2^(floor(log2(abs(x))&#45;y)) " alt="" coords="177,107,317,133"/>
-<area shape="rect" id="node3" href="$rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="374,5,415,32"/>
-<area shape="rect" id="node5" href="$rmulti_8c.html#ac4ba685e4142a85733f8b9f2d2377397" title="rmulti型の計算 y=log_2(x) " alt="" coords="373,56,417,83"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#a5e51ce3244395f8cafc096695fafa0fe" title="rmulti型の引き算 z=x&#45;y " alt="" coords="365,107,424,133"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#a2c9487cb29f8b4beb633ad6e981dd958" title="rmulti型の整数への丸め y=floor(x) " alt="" coords="372,157,417,184"/>
-<area shape="rect" id="node8" href="$rmulti_8c.html#a7887a667eaedbe69e814e4cd67ac6c4c" title="rmulti型の計算 y=2^x " alt="" coords="371,208,418,235"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="472,81,569,108"/>
-</map>

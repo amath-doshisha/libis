@@ -8,7 +8,7 @@
 #include"is_dsvd.h"
 
 // H=[ A*v-sigma*u;  A'*u-sigma*v ]
-void dsvd_residual(int m, int n, double *H, const double *A, int LDA, const double *u, const double *v, double sigma)
+void dsvd_residual(int m, int n, double *H, double *A, int LDA, double *u, double *v, double sigma)
 {
   dvec_copy(m,&H[0],u);                // H(1:m)=u
   dvec_copy(n,&H[m],v);                // H(m+1:m+n)=u

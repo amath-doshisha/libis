@@ -14,24 +14,25 @@
 /*
  * setting
  */
-// [y0,y1]=[x,x]
-void irset_d(rmulti *y0, rmulti *y1, double x);
 // [y0,y1]=[x0,x1]
-void irset_d1(rmulti *y0, rmulti *y1, double x0, rmulti *x1);
-void irset_d2(rmulti *y0, rmulti *y1, rmulti *x0, double x1);
-void irset_dd(rmulti *y0, rmulti *y1, double x0, double x1);
+void irset(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);
+void irset_d(rmulti *y0, rmulti *y1, double x0, double x1);
+void irset_dr(rmulti *y0, rmulti *y1, double x0, rmulti *x1);
+void irset_rd(rmulti *y0, rmulti *y1, rmulti *x0, double x1);
 // [y0,y1]='[x0,x1]'
 void irset_s(rmulti *x0, rmulti *x1, char *str);
 // [z0,z1]=x.num/x.den
 void irset_bigint(rmulti *z0, rmulti *z1, bigint *x);
-// [y0,y1]=[x0,x1]
-void ircopy(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);
 
 /*
  * operatior of one argument
  */
-void irneg(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                           // [y0,y1]=-[x0,x1]
-void irpm(rmulti *y0, rmulti *y1, rmulti *x);                                         // [y0,y1]=[-abs(x),abs(x)]
+// [y0,y1]=[x0,x1]
+void ircopy(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);
+// [y0,y1]=-[x0,x1]
+void irneg(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);
+// [y0,y1]=[-abs(x),abs(x)]
+void irpm(rmulti *y0, rmulti *y1, rmulti *x);
 void irmid(rmulti *mid, rmulti *x0, rmulti *x1);                                      // [m-r,m+r]=[x0,x1]
 void irrad(rmulti *rad, rmulti *x0, rmulti *x1);                                      // [m-r,m+r]=[x0,x1]
 void irmr(rmulti *mid, rmulti *rad, rmulti *x0, rmulti *x1);                          // [m-r,m+r]=[x0,x1]
@@ -57,7 +58,10 @@ void iratanh(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                   
 /*
  * operatior of two arguments
  */
-void iradd(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]+[y0,y1]
+// [z0,z1]=[x0,x1]+[y0,y1]
+void iradd(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);
+void idadd_r(rmulti *z0, rmulti *z1, double x0, double x1, rmulti *y0, rmulti *y1);
+void iradd_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y0, double y1);
 void iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y);               // [z0,z1]=[x0,x1]+[-y,y]
 void irsub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]-[y0,y1]
 void irsub_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int n_rws, rmulti **rws); // n_rws>=2

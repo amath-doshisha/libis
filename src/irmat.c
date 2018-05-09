@@ -26,7 +26,7 @@ void irmat_set_d(int m, int n, rmulti **B0, rmulti **B1, int LDB, const double *
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      irset_d(MAT(B0,i,j,LDB),MAT(B1,i,j,LDB),MAT(A,i,j,LDA));
+      irset_d(MAT(B0,i,j,LDB),MAT(B1,i,j,LDB),MAT(A,i,j,LDA),MAT(A,i,j,LDA));
     }
   }
 }
@@ -177,7 +177,7 @@ void irmat_set_all_d(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1,
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      irset_d(MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),a);
+      irset_d(MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),a,a);
     }
   }
 }
@@ -211,7 +211,7 @@ void irmat_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int LDC
   rws_size=6; rws=rvec_allocate_prec(rws_size,prec);
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      irset_d(MAT(Z0,i,j,l),MAT(Z1,i,j,l),0);
+      irset_d(MAT(Z0,i,j,l),MAT(Z1,i,j,l),0,0);
       for(k=0; k<m; k++){
 	iradd_mul_ws(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1),rws_size,rws);
       }

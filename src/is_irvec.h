@@ -13,18 +13,13 @@
 /*
  * setting
  */
-// [y0,y1]=[x0,x1]
-void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);
-void irvec_set_dd(int n, rmulti **y0, rmulti **y1, double *x0, double *x1);
-// [y0,y1]=x
-void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x);
-void irvec_set_z(int n, rmulti **y0, rmulti **y1, dcomplex *x);
-void irvec_set_r(int n, rmulti **y0, rmulti **y1, rmulti **x);
-void irvec_set_c(int n, rmulti **y0, rmulti **y1, cmulti **x);
-void irvec_set_ir(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);
-void irvec_set_ic(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1);
+// [y0,y1]=xbb
 void irvec_set_si(int n, rmulti **y0, rmulti **y1, int *x);
 void irvec_set_s(int n, rmulti **y0, rmulti **y1, char **x);
+void irvec_set(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);
+void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x0, double *x1);
+void irvec_set_z(int n, rmulti **y0, rmulti **y1, dcomplex *x0, dcomplex *x1);
+void irvec_set_c(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1);
 
 /*
  * I/O
@@ -34,16 +29,19 @@ void irvec_print(int n, rmulti **x0, rmulti **x1, char *name, char format, int d
 /*
  * casting
  */
-void irvec_get_si(int n, int *y, rmulti **x0, rmulti **x);
 void irvec_get_d(int n, double *y, rmulti **x0, rmulti **x1);
-void irvec_get_s(int n, char **y, rmulti **x0, rmulti **x1, char format, int digits);
 void irvec_get_r(int n, rmulti **y, rmulti **x0, rmulti **x1);
 void irvec_get_c(int n, cmulti **y, rmulti **x0, rmulti **x1);
+void irvec_get_si(int n, int *y, rmulti **x0, rmulti **x);
+void irvec_get_s(int n, char **y, rmulti **x0, rmulti **x1, char format, int digits);
 
 /*
  * operations
  */
-void icvec_real_d(int n, double *y, cmulti **x0, cmulti **x1);                                           // y=real(x)
+// [y0,y1]=[x0,x1]
+void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);
+// y=real(x)
+void icvec_real_d(int n, double *y, cmulti **x0, cmulti **x1);
 void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **x1);                     // xc=(x1+x0)/2, xr=x1-x0
 void irvec_neg(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);                               // [y0,y1]=-[x0,x1]
 void irvec_pm(int n, rmulti **y0, rmulti **y1, rmulti **x);                                              // [y0,y1]=[-x,x]
@@ -51,8 +49,17 @@ void irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmu
 void irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1);                                           // [m-r,m+r]=[x0,x1]
 void irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1);                                           // [m-r,m+r]=[x0,x1]
 void irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1);                              // [m-r,m+r]=[x0,x1]
-void irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1);     // [z0,z1]=[x0,z1]+[y0,y1]
-void irvec_add_r(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,z1]+[y0,y1]
+// [z0,z1]=[x0,z1]+[y0,y1]
+void irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1);
+void idvec_add_r(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1);
+void irvec_add_d(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1);
+void irvec_add_scalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1);
+void irvec_add_scalar_d(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1);
+void irvec_add_scalar_z(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1);
+void irvec_add_scalar_c(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1);
+void idvec_add_scalar_r(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1);
+// [z0,z1]=[x0,z1]+[y0,y1]
+void irvec_add_scalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1);
 void irvec_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1);     // [z0,z1]=[x0,z1]-[y0,y1]
 void irvec_mul_r(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,z1]*[y0,y1]
 void irvec_div(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1);       // [z0,z1]=[x0,x1]/[y0,y1]

@@ -35,18 +35,18 @@ void ircopy(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
 }
 
 /**
- @brief 倍精度実数の設定 [y0,y1]=[x,x].
+ @brief コピー [y0,y1]=[x0,x1].
  */
-void irset_d(rmulti *y0, rmulti *y1, double x)
+void irset(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
 {
-  mpfr_set_d(y0,x,MPFR_RNDD); // lower bound
-  mpfr_set_d(y1,x,MPFR_RNDU); // uppper bound
+  mpfr_set(y0,x0,MPFR_RNDD); // lower bound
+  mpfr_set(y1,x1,MPFR_RNDU); // upper bound
 }
 
 /**
  @brief 倍精度実数の設定 [y0,y1]=[x,x].
  */
-void irset_d1(rmulti *y0, rmulti *y1, double x0, rmulti *x1)
+void irset_dr(rmulti *y0, rmulti *y1, double x0, rmulti *x1)
 {
   mpfr_set_d(y0,x0,MPFR_RNDD); // lower bound
   mpfr_set  (y1,x1,MPFR_RNDU); // upper bound
@@ -55,7 +55,7 @@ void irset_d1(rmulti *y0, rmulti *y1, double x0, rmulti *x1)
 /**
  @brief 倍精度実数の設定 [y0,y1]=[x,x].
  */
-void irset_d2(rmulti *y0, rmulti *y1, rmulti *x0, double x1)
+void irset_rd(rmulti *y0, rmulti *y1, rmulti *x0, double x1)
 {
   mpfr_set  (y0,x0,MPFR_RNDD); // lower bound
   mpfr_set_d(y1,x1,MPFR_RNDU); // uppper bound
@@ -64,7 +64,7 @@ void irset_d2(rmulti *y0, rmulti *y1, rmulti *x0, double x1)
 /**
  @brief 倍精度実数の設定 [y0,y1]=[x0,x1].
  */
-void irset_dd(rmulti *y0, rmulti *y1, double x0, double x1)
+void irset_d(rmulti *y0, rmulti *y1, double x0, double x1)
 {
   mpfr_set_d(y0,x0,MPFR_RNDD); // lower bound
   mpfr_set_d(y1,x1,MPFR_RNDU); // upper bound
@@ -456,6 +456,23 @@ void iradd(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y
 }
 
 /**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void idadd_r(rmulti *z0, rmulti *z1, double x0, double x1, rmulti *y0, rmulti *y1)
+{
+    mpfr_add_d(z0,y0,x0,MPFR_RNDD); // lower bound
+    mpfr_add_d(z1,y1,x1,MPFR_RNDU); // upper bound
+}
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void iradd_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y0, double y1)
+{
+    mpfr_add_d(z0,x0,y0,MPFR_RNDD); // lower bound
+    mpfr_add_d(z1,x1,y1,MPFR_RNDU); // upper bound
+}
+
+/**
  @brief 区間の拡張 [z0,z1]=[x0,x1]+[-y,y]
  */
 void iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y)
@@ -499,7 +516,7 @@ void irsub_d2(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y)
   rmulti *a0=NULL,*a1=NULL;
   p0=rget_prec(z0); p1=rget_prec(z1); prec=MAX2(p0,p1);
   RA(a0,prec); RA(a1,prec);
-  irset_d(a0,a1,y);
+  irset_d(a0,a1,y,y);
   irsub(z0,z1,x0,x1,a0,a1);
   RF(a0); RF(a1);
 }
@@ -575,7 +592,7 @@ void irmul_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y)
   rmulti *a0=NULL,*a1=NULL;
   p0=rget_prec(z0); p1=rget_prec(z1); prec=MAX2(p0,p1);
   RA(a0,prec); RA(a1,prec);
-  irset_d(a0,a1,y);
+  irset_d(a0,a1,y,y);
   irmul(z0,z1,x0,x1,a0,a1);
   RF(a0); RF(a1);
 }

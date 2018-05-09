@@ -99,6 +99,7 @@ void array_get_index(int *index, array *x, int t);
 int array_type_check(int type);
 int array_is_empty(array *x);
 int array_same_dim_check(array *x, array *y);
+int array_is_scalar(array *x);
 
 /*
  * I/O
@@ -140,6 +141,7 @@ array *array_conj(array *x); // y=conj(x)
  * operatior for two arguments
  */
 array *array_add(array *x, array *y); // z=x+y
+array *array_sub(array *x, array *y); // z=x-y
 
 
 /*

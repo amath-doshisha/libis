@@ -651,6 +651,7 @@
 				FFD584F320A1804800303A46 /* Frameworks */,
 				FFD584F420A1804800303A46 /* Headers */,
 				FFAF941F20A18A0A006E061D /* ShellScript */,
+				FF7A3FBF20A292A300D73E9B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -693,6 +694,19 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FF7A3FBF20A292A300D73E9B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/bash;
+			shellScript = "cd ${SRCROOT}/matlab\nmake";
+		};
 		FFAF941F20A18A0A006E061D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

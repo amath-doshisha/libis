@@ -145,7 +145,7 @@ void zmat_swap_rows(int m, int n, dcomplex *A, int LDA, int k, int l)
 ////////////////////////////////////////////////////////////////
 
 // B=A
-void zmat_copy(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
+void zmat_copy(int m, int n, dcomplex *B, int LDB, dcomplex *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -156,7 +156,7 @@ void zmat_copy(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
 }
 
 // B=A
-void zmat_copy_d(int m, int n, dcomplex *B, int LDB, const double *A, int LDA)
+void zmat_copy_d(int m, int n, dcomplex *B, int LDB, double *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -167,7 +167,7 @@ void zmat_copy_d(int m, int n, dcomplex *B, int LDB, const double *A, int LDA)
 }
 
 // B=A^T
-void zmat_copy_t(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
+void zmat_copy_t(int m, int n, dcomplex *B, int LDB, dcomplex *A, int LDA)
 {
   int i,j;
   for(i=0; i<m; i++){
@@ -178,7 +178,7 @@ void zmat_copy_t(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
 }
 
 // B=A'
-void zmat_copy_ct(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
+void zmat_copy_ct(int m, int n, dcomplex *B, int LDB, dcomplex *A, int LDA)
 {
   int i,j;
   for(i=0; i<m; i++){
@@ -191,7 +191,7 @@ void zmat_copy_ct(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA
 ////////////////////////////////////////////////////////////////
 
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void zmat_copy_col_index(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA, const int *I)
+void zmat_copy_col_index(int m, int n, dcomplex *B, int LDB, dcomplex *A, int LDA, int *I)
 {
   int j;
   for(j=0; j<n; j++){
@@ -202,7 +202,7 @@ void zmat_copy_col_index(int m, int n, dcomplex *B, int LDB, const dcomplex *A, 
 ////////////////////////////////////////////////////////////////
 
 // A(:,j) <-> A(:,I[j]) for 0<=j<n
-void zmat_swap_index(int m, int n, dcomplex *A, int LDA, const int *I)
+void zmat_swap_index(int m, int n, dcomplex *A, int LDA, int *I)
 {
   int LDB;
   dcomplex *B=NULL;
@@ -258,7 +258,7 @@ void zmat_diag_sub_scalar(int n, dcomplex *A, int LDA, dcomplex a)
 }
 
 // B=B+A
-void zmat_add(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
+void zmat_add(int m, int n, dcomplex *B, int LDB, dcomplex *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -269,7 +269,7 @@ void zmat_add(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
 }
 
 // B=B-A
-void zmat_sub(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
+void zmat_sub(int m, int n, dcomplex *B, int LDB, dcomplex *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -280,7 +280,7 @@ void zmat_sub(int m, int n, dcomplex *B, int LDB, const dcomplex *A, int LDA)
 }
 
 // C=A*B
-void zmat_prod(int l, int m, int n, dcomplex *C, int LDC, const dcomplex *A, int LDA, const dcomplex *B, int LDB)
+void zmat_prod(int l, int m, int n, dcomplex *C, int LDC, dcomplex *A, int LDA, dcomplex *B, int LDB)
 {
   int i,j,k;
   for(i=0; i<l; i++){
@@ -294,7 +294,7 @@ void zmat_prod(int l, int m, int n, dcomplex *C, int LDC, const dcomplex *A, int
 }
 
 // C=C+A*B
-void zmat_add_prod(int l, int m, int n, dcomplex *C, int LDC, const dcomplex *A, int LDA, const dcomplex *B, int LDB)
+void zmat_add_prod(int l, int m, int n, dcomplex *C, int LDC, dcomplex *A, int LDA, dcomplex *B, int LDB)
 {
   int i,j,k;
   for(i=0; i<l; i++){
@@ -307,7 +307,7 @@ void zmat_add_prod(int l, int m, int n, dcomplex *C, int LDC, const dcomplex *A,
 }
 
 // C=C-A*B
-void zmat_sub_prod(int l, int m, int n, dcomplex *C, int LDC, const dcomplex *A, int LDA, const dcomplex *B, int LDB)
+void zmat_sub_prod(int l, int m, int n, dcomplex *C, int LDC, dcomplex *A, int LDA, dcomplex *B, int LDB)
 {
   int i,j,k;
   for(i=0; i<l; i++){
@@ -320,7 +320,7 @@ void zmat_sub_prod(int l, int m, int n, dcomplex *C, int LDC, const dcomplex *A,
 }
 
 // A=A+a*x*y'
-void zmat_rank1op(int m, int n, dcomplex *A, int LDA, dcomplex a, const dcomplex *x, const dcomplex *y)
+void zmat_rank1op(int m, int n, dcomplex *A, int LDA, dcomplex a, dcomplex *x, dcomplex *y)
 {
   int i,j;
   dcomplex value;
@@ -354,7 +354,7 @@ void zmat_normalize_sgn(int m, int n, dcomplex *A, int LDA)
 /////////////////////////////////////////
 
 // x(j)=max(abs(A(:,j)-B(:,j))) for j=1,2,..,n
-void zmat_sub_norm_max(double *x, int m, int n, const dcomplex *A, int LDA, const dcomplex *B, int LDB)
+void zmat_sub_norm_max(double *x, int m, int n, dcomplex *A, int LDA, dcomplex *B, int LDB)
 {
   int j;
   for(j=0; j<n; j++){
@@ -366,7 +366,7 @@ void zmat_sub_norm_max(double *x, int m, int n, const dcomplex *A, int LDA, cons
 
 
 // y(j)=max(abs(A(:,j)-x)) for j=1,2,..,n
-void zmat_dist_norm_max(double *y, int m, int n, const dcomplex *A, int LDA, const dcomplex *x)
+void zmat_dist_norm_max(double *y, int m, int n, dcomplex *A, int LDA, dcomplex *x)
 {
   int j;
   for(j=0; j<n; j++){

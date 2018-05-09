@@ -2,7 +2,7 @@
  * @brief z=plus(x,y)
  */
 
-/*
+
 void multi_plus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   array *x=NULL,*y=NULL,*z=NULL;
@@ -24,9 +24,9 @@ void multi_plus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   z=array_free(z);
   return;
 }
-*/
 
 
+/*
 void multi_plus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   array *x=NULL,*y=NULL,*z=NULL;
@@ -100,6 +100,7 @@ void multi_plus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   z=array_free(z);
   return;
 }
+*/
 
 
 //EOF

@@ -210,20 +210,16 @@ void riep_EXTdhToda_QE_to_A(int m, int N, int M, rmulti **A, int LDA, rmulti **Q
 
 /**
  @brief 指定固有値よりdhTodaによりTN行列を生成．漸化式は方程式．
- @param[in]  m      行列のサイズ，
- @param[in]  M      M>=1の整数．帯幅は min(M+2,m)．
- @param[in]  A      サイズが(m,m)の行列．出力結果の格納用に初期化済みのA，またはA=NULLのときは出力はされない．
- @param[in]  LDA    Aの第1次元．
- @param[in]  Q      サイズが(m,M)の行列．出力結果の格納用に初期化済みのQ，またはQ=NULLのときは出力はされない．
- @param[in]  LDQ    Qの第1次元．
- @param[in]  E      サイズがmのベクトル．出力結果の格納用に初期化済みのE，またはE=NULLのときは出力はされない．
- @param[in]  lambda サイズが(m,m)の行列．
- @param[in]  c      サイズが(m,m)の行列．
- @param[in]  debug  デバグレベル．
- @param[out] A      計算結果．
- @param[out] Q      計算結果．
- @param[out] E      計算結果．
- @return            なし．
+ @param[in]      m      行列のサイズ，
+ @param[in]      M      M>=1の整数．帯幅は min(M+2,m)．
+ @param[in,out]  A      [in]サイズが(m,m)の行列．出力結果の格納用に初期化済みのA，またはA=NULLのときは出力はされない．[out]計算結果．
+ @param[in]      LDA    Aの第1次元．
+ @param[in,out]  Q      サイズが(m,M)の行列．出力結果の格納用に初期化済みのQ，またはQ=NULLのときは出力はされない．[out]計算結果．
+ @param[in]      LDQ    Qの第1次元．
+ @param[in,out]  E      サイズがmのベクトル．出力結果の格納用に初期化済みのE，またはE=NULLのときは出力はされない．[out]計算結果．
+ @param[in]      lambda サイズが(m,m)の行列．
+ @param[in]      c      サイズが(m,m)の行列．
+ @param[in]      debug  デバグレベル．
 */
 
 void riep_EXTdhToda_TN(int m, int N, int M, rmulti **A, int LDA, rmulti **Q, int LDQ, rmulti **E, int LDE, rmulti **lambda, rmulti **c, int debug)

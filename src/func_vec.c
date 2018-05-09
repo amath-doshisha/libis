@@ -67,8 +67,8 @@ func_t *func_vec_sub(func_t *f1, func_t *f2)
 {
   func_t *f=NULL;
   if     (func_is(f1,"rvec") && func_is(f2,"rvec") && FRS(f1)==FRS(f2)){ f=func_rvec(FRS(f1)); rvec_sub   (FRS(f),FRV(f),FRV(f1),FRV(f2)); }
-  else if(func_is(f1,"rvec") && func_is(f2,"cvec") && FRS(f1)==FCS(f2)){ f=func_cvec(FRS(f1)); cvec_sub_rvec1(FCS(f),FCV(f),FRV(f1),FCV(f2)); }
-  else if(func_is(f1,"cvec") && func_is(f2,"rvec") && FCS(f1)==FRS(f2)){ f=func_cvec(FCS(f1)); cvec_sub_rvec2(FCS(f),FCV(f),FCV(f1),FRV(f2)); }
+  else if(func_is(f1,"rvec") && func_is(f2,"cvec") && FRS(f1)==FCS(f2)){ f=func_cvec(FRS(f1)); rvec_sub_c(FCS(f),FCV(f),FRV(f1),FCV(f2)); }
+  else if(func_is(f1,"cvec") && func_is(f2,"rvec") && FCS(f1)==FRS(f2)){ f=func_cvec(FCS(f1)); cvec_sub_r(FCS(f),FCV(f),FCV(f1),FRV(f2)); }
   else if(func_is(f1,"cvec") && func_is(f2,"cvec") && FCS(f1)==FCS(f2)){ f=func_cvec(FCS(f1)); cvec_sub   (FCS(f),FCV(f),FCV(f1),FCV(f2)); }
   else { FUNC_ERROR_ARG2("func_vec_sub",f1,f2); }
   f1=func_del(f1);

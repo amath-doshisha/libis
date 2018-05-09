@@ -11,7 +11,7 @@
 
 
 // F=A*X-lambda*X
-void zeig_residual(int n, dcomplex *F, const dcomplex *A, int LDA, const dcomplex *X, dcomplex lambda)
+void zeig_residual(int n, dcomplex *F, dcomplex *A, int LDA, dcomplex *X, dcomplex lambda)
 {
   zvec_copy(n,F,X);                   // F=X
   zvec_scale_neg(n,F,lambda);         // F=-lambda*X
@@ -19,7 +19,7 @@ void zeig_residual(int n, dcomplex *F, const dcomplex *A, int LDA, const dcomple
 }
 
 // E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))), k=1,2,..,n
-void zeig_residual_norm_max(int n, double *E, const dcomplex *A, int LDA, const dcomplex *X, int LDX, const dcomplex *lambda)
+void zeig_residual_norm_max(int n, double *E, dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *lambda)
 {
   int j;
   dcomplex *F=NULL;
@@ -53,7 +53,7 @@ void zeig_sort(int n, int k, dcomplex *lambda, dcomplex *X, int LDX)
 
 /////////////////////////////////////////////////////////////////////////
 
-void zeig_sort_index(int n, int k, dcomplex *lambda, dcomplex *X, int LDX, const int *index)
+void zeig_sort_index(int n, int k, dcomplex *lambda, dcomplex *X, int LDX, int *index)
 {
   zvec_swap_index(k,lambda,index);
   zmat_swap_index(n,k,X,LDX,index);

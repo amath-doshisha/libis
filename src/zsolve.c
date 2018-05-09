@@ -143,7 +143,7 @@ int zsolve_gauss_sweeper(int n, int NRHS, dcomplex *B, int LDB, dcomplex *A, int
 
 
 // R=B-A*X
-void zsolve_residual(int n, int NRHS, dcomplex *R, int LDR, const dcomplex *A, int LDA, const dcomplex *X, int LDX, const dcomplex *B, int LDB)
+void zsolve_residual(int n, int NRHS, dcomplex *R, int LDR, dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *B, int LDB)
 {
   zmat_copy(n,NRHS,R,LDR,B,LDB);              // R=B
   zmat_sub_prod(n,n,NRHS,R,LDR,A,LDA,X,LDX);  // R=R-A*X

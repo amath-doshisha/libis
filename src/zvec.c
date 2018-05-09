@@ -166,7 +166,7 @@ void zvec_swap_at(dcomplex *x, int i, int j)
 }
 
 // x[i] <=> x[I[i]]
-void zvec_swap_index(int n, dcomplex *x, const int *I)
+void zvec_swap_index(int n, dcomplex *x, int *I)
 {
   dcomplex *y=NULL;
   y=zvec_allocate(n);
@@ -223,14 +223,14 @@ void zvec_sort_index(int *I, int n, dcomplex *X)
 /////////////////////////////////////////////////////////////////////////////////////
 
 // y=x
-void zvec_set_z(int n, dcomplex *y, const dcomplex *x)
+void zvec_set(int n, dcomplex *y, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]; }
 }
 
 // y=x
-void zvec_set_d(int n, dcomplex *y, const double *x)
+void zvec_set_d(int n, dcomplex *y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(y[i],x[i],0); }
@@ -284,34 +284,30 @@ void zvec_set_ic(int n, dcomplex *y, cmulti **x0, cmulti **x1)
 
 
 // y=x
-void zvec_copy(int n, dcomplex *y, const dcomplex *x)
+void zvec_copy(int n, dcomplex *y, dcomplex *x)
 {
   int i;
-  for(i=0; i<n; i++) y[i]=x[i];
+  for(i=0; i<n; i++){ y[i]=x[i]; }
 }
 
 // y=x
-void zvec_copy_d(int n, dcomplex *y, const double *x)
+void zvec_copy_d(int n, dcomplex *y, double *x)
 {
   int i;
-  for(i=0; i<n; i++){
-    Z_SET(y[i],x[i],0);
-  }
+  for(i=0; i<n; i++){ Z_SET(y[i],x[i],0); }
 }
 
 // y=x
-void zvec_copy_dd(int n, dcomplex *y, const double *x_r, const double *x_i)
+void zvec_copy_Z(int n, dcomplex *y, double *x_r, double *x_i)
 {
   int i;
-  for(i=0; i<n; i++){
-    Z_SET(y[i],x_r[i],x_i[i]);
-  }
+  for(i=0; i<n; i++){ Z_SET(y[i],x_r[i],x_i[i]); }
 }
 
 
 
 // Y[i]=X[I[i]], 0<=i<n
-void zvec_copy_index(int n, dcomplex *Y, const dcomplex *X, const int *I)
+void zvec_copy_index(int n, dcomplex *Y, dcomplex *X, int *I)
 {
   int i;
   for(i=0; i<n; i++) Y[i]=X[I[i]];
@@ -320,7 +316,7 @@ void zvec_copy_index(int n, dcomplex *Y, const dcomplex *X, const int *I)
 /////////////////////////////////////////////////////////////////////////////////////
 
 // y=conj(x)
-void zvec_conj(int n, dcomplex *y, const dcomplex *x)
+void zvec_conj(int n, dcomplex *y, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET_CONJ(y[i],x[i]); }
@@ -328,67 +324,139 @@ void zvec_conj(int n, dcomplex *y, const dcomplex *x)
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-
-// x=x+a
-void zvec_add_scalar(int n, dcomplex *x, dcomplex a)
-{
-  int i;
-  for(i=0; i<n; i++){
-    Z_ADD(x[i],a);
-  }
-}
-
-// x=x-a
-void zvec_sub_scalar(int n, dcomplex *x, dcomplex a)
-{
-  int i;
-  for(i=0; i<n; i++){
-    Z_SUB(x[i],a);
-  }
-}
-
 // z=x+y
 void zvec_add(int n, dcomplex *z, dcomplex *x, dcomplex *y)
 {
-  int i;
-  for(i=0; i<n; i++){
-    Z_SET_PLUS(z[i],x[i],y[i]);
-  }
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=Z_R(x[i])+Z_R(y[i]);
+        Z_I(z[i])=Z_I(x[i])+Z_I(y[i]);
+    }
 }
 
 // z=x+y
 void zvec_add_d(int n, dcomplex *z, dcomplex *x, double *y)
 {
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=Z_R(x[i])+y[i];
+        Z_I(z[i])=Z_I(x[i]);
+    }
+}
+
+// z=x+y
+void dvec_add_z(int n, dcomplex *z, double *x, dcomplex *y)
+{
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=x[i]+Z_R(y[i]);
+        Z_I(z[i])=     Z_I(y[i]);
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+// z=x+y
+void zvec_add_scalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
+{
   int i;
   for(i=0; i<n; i++){
-    Z_R(z[i])=Z_R(x[i])+y[i];
+      Z_R(z[i])=Z_R(x[i])+Z_R(y);
+      Z_I(z[i])=Z_I(x[i])+Z_I(y);
+  }
+}
+
+// z=x+y
+void zvec_add_scalar_d(int n, dcomplex *z, dcomplex *x, double y)
+{
+  int i;
+  for(i=0; i<n; i++){
+    Z_R(z[i])=Z_R(x[i])+y;
     Z_I(z[i])=Z_I(x[i]);
   }
 }
 
 // z=x+y
-void zvec_add_dz(int n, dcomplex *z, double *x, dcomplex *y)
+void dvec_add_scalar_z(int n, dcomplex *z, double *x, dcomplex y)
 {
-  return zvec_add_d(n,z,y,x);
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=x[i]+Z_R(y);
+        Z_I(z[i])=     Z_I(y);
+    }
 }
 
-// z=x+y
-void zvec_add_zd(int n, dcomplex *z, dcomplex *x, double *y)
-{
-  return zvec_add_d(n,z,x,y);
-}
+///////////////////////////////////////////////////////////////////////////
+
 
 // z=x-y
 void zvec_sub(int n, dcomplex *z, dcomplex *x, dcomplex *y)
 {
-  int i;
-  for(i=0; i<n; i++){
-    Z_SET_MINUS(z[i],x[i],y[i]);
-  }
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=Z_R(x[i])-Z_R(y[i]);
+        Z_I(z[i])=Z_I(x[i])-Z_I(y[i]);
+    }
 }
 
+// z=x-y
+void zvec_sub_d(int n, dcomplex *z, dcomplex *x, double *y)
+{
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=Z_R(x[i])-y[i];
+        Z_I(z[i])=Z_I(x[i]);
+    }
+}
+
+// z=x-y
+void dvec_sub_z(int n, dcomplex *z, double *x, dcomplex *y)
+{
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=x[i]-Z_R(y[i]);
+        Z_I(z[i])=    -Z_I(y[i]);
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+// z=x-y
+void zvec_sub_scalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
+{
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=Z_R(x[i])-Z_R(y);
+        Z_I(z[i])=Z_I(x[i])-Z_I(y);
+    }
+}
+
+// z=x-y
+void zvec_sub_scalar_d(int n, dcomplex *z, dcomplex *x, double y)
+{
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=Z_R(x[i])-y;
+        Z_I(z[i])=Z_I(x[i]);
+    }
+}
+
+// z=x-y
+void dvec_sub_scalar_z(int n, dcomplex *z, double *x, dcomplex y)
+{
+    int i;
+    for(i=0; i<n; i++){
+        Z_R(z[i])=x[i]-Z_R(y);
+        Z_I(z[i])=    -Z_I(y);
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
 // y=y+a*x
-void zvec_add_scaled(int n, dcomplex *y, dcomplex a, const dcomplex *x)
+void zvec_add_scaled(int n, dcomplex *y, dcomplex a, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){
@@ -397,7 +465,7 @@ void zvec_add_scaled(int n, dcomplex *y, dcomplex a, const dcomplex *x)
 }
 
 // y=y-a*x
-void zvec_sub_scaled(int n, dcomplex *y, dcomplex a, const dcomplex *x)
+void zvec_sub_scaled(int n, dcomplex *y, dcomplex a, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){
@@ -406,7 +474,7 @@ void zvec_sub_scaled(int n, dcomplex *y, dcomplex a, const dcomplex *x)
 }
 
 // y=A*x
-void zvec_lintr(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_lintr(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(i=0; i<m; i++){
@@ -418,7 +486,7 @@ void zvec_lintr(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dco
 }
 
 // y=y+A*x
-void zvec_add_lintr(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_add_lintr(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(i=0; i<m; i++){
@@ -429,7 +497,7 @@ void zvec_add_lintr(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const
 }
 
 // y=y-A*x
-void zvec_sub_lintr(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_sub_lintr(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(i=0; i<m; i++){
@@ -440,7 +508,7 @@ void zvec_sub_lintr(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const
 }
 
 // y=A^T*x
-void zvec_lintr_t(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_lintr_t(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -452,7 +520,7 @@ void zvec_lintr_t(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const d
 }
 
 // y=y+A^T*x
-void zvec_add_lintr_t(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_add_lintr_t(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -463,7 +531,7 @@ void zvec_add_lintr_t(int m, int n, dcomplex *y, const dcomplex *A, int LDA, con
 }
 
 // y=y-A^T*x
-void zvec_sub_lintr_t(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_sub_lintr_t(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -474,7 +542,7 @@ void zvec_sub_lintr_t(int m, int n, dcomplex *y, const dcomplex *A, int LDA, con
 }
 
 // y=A'*x
-void zvec_lintr_ct(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_lintr_ct(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -487,7 +555,7 @@ void zvec_lintr_ct(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const 
 
 
 // y=y+A'*x
-void zvec_add_lintr_ct(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_add_lintr_ct(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -498,7 +566,7 @@ void zvec_add_lintr_ct(int m, int n, dcomplex *y, const dcomplex *A, int LDA, co
 }
 
 // y=y-A'*x
-void zvec_sub_lintr_ct(int m, int n, dcomplex *y, const dcomplex *A, int LDA, const dcomplex *x)
+void zvec_sub_lintr_ct(int m, int n, dcomplex *y, dcomplex *A, int LDA, dcomplex *x)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -580,7 +648,7 @@ void zvec_normalize_sgn(int n, dcomplex *x)
 }
 
 // y=y-(x'*y)*x where x'*x=1
-void zvec_orthogonalize(int n, dcomplex *y, const dcomplex *x)
+void zvec_orthogonalize(int n, dcomplex *y, dcomplex *x)
 {
   dcomplex dot;
   dot=zvec_dot(n,x,y);
@@ -602,7 +670,7 @@ void zvec_swap(int n, dcomplex *x, dcomplex *y)
 }
 
 // x'*y
-dcomplex zvec_dot(int n, const dcomplex *x, const dcomplex *y)
+dcomplex zvec_dot(int n, dcomplex *x, dcomplex *y)
 {
   int i;
   dcomplex value;
@@ -615,7 +683,7 @@ dcomplex zvec_dot(int n, const dcomplex *x, const dcomplex *y)
 
 
 // abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
-double zvec_dcos_abs(int n, const dcomplex *x, const dcomplex *y)
+double zvec_dcos_abs(int n, dcomplex *x, dcomplex *y)
 {
   double norm_x,norm_y,dcos;
   dcomplex dot;
@@ -628,7 +696,7 @@ double zvec_dcos_abs(int n, const dcomplex *x, const dcomplex *y)
 }
 
 // acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-double zvec_angle(int n, const dcomplex *x, const dcomplex *y)
+double zvec_angle(int n, dcomplex *x, dcomplex *y)
 {
   double theta;
   theta=zvec_dcos_abs(n,x,y);
@@ -638,13 +706,13 @@ double zvec_angle(int n, const dcomplex *x, const dcomplex *y)
 }
 
 // (180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-double zvec_angle_deg(int n, const dcomplex *x, const dcomplex *y)
+double zvec_angle_deg(int n, dcomplex *x, dcomplex *y)
 {
   return zvec_angle(n,x,y)*(180.0/M_PI);
 }
 
 // value+=|x[i]-y[i]| (0<=i<n)
-double zvec_dist_norm1(int n, const dcomplex *x, const dcomplex *y)
+double zvec_dist_norm1(int n, dcomplex *x, dcomplex *y)
 {
   int i;
   double value;
@@ -654,7 +722,7 @@ double zvec_dist_norm1(int n, const dcomplex *x, const dcomplex *y)
 }
 
 // max(|x-y|)
-double zvec_dist_norm_max(int n, const dcomplex *x, const dcomplex *y)
+double zvec_dist_norm_max(int n, dcomplex *x, dcomplex *y)
 {
   int i;
   double value,a;
@@ -670,14 +738,14 @@ double zvec_dist_norm_max(int n, const dcomplex *x, const dcomplex *y)
 //////////////////////////////////////////////////////////////////////////
 
 // z=abs(x-y)
-void zvec_abs_sub(int n, double *z, const dcomplex *x, const dcomplex *y)
+void zvec_abs_sub(int n, double *z, dcomplex *x, dcomplex *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=Z_DIST(x[i],y[i]); }
 }
 
 // z=abs(x-y)
-void zvec_abs_sub_scalar(int n, double *z, const dcomplex *x, dcomplex y)
+void zvec_abs_sub_scalar(int n, double *z, dcomplex *x, dcomplex y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=Z_DIST(x[i],y); }
@@ -687,7 +755,7 @@ void zvec_abs_sub_scalar(int n, double *z, const dcomplex *x, dcomplex y)
 //////////////////////////////////////////////////////////////////////
 
 // sum(abs(x))
-double zvec_norm1(int n, const dcomplex *x)
+double zvec_norm1(int n, dcomplex *x)
 {
   int i;
   double value=0;
@@ -698,7 +766,7 @@ double zvec_norm1(int n, const dcomplex *x)
 }
 
 // sqrt(sum(abs(x).^2))
-double zvec_norm2(int n, const dcomplex *x)
+double zvec_norm2(int n, dcomplex *x)
 {
   int i;
   double value=0;
@@ -710,7 +778,7 @@ double zvec_norm2(int n, const dcomplex *x)
 }
 
 // max(abs(x))
-double zvec_norm_max(int n, const dcomplex *x)
+double zvec_norm_max(int n, dcomplex *x)
 {
   int i;
   double value=0,foo;
@@ -725,7 +793,7 @@ double zvec_norm_max(int n, const dcomplex *x)
 //////////////////////////////////////////////////
 
 // sum(abs(x).^2)
-double zvec_sum_pow2_abs(int n, const dcomplex *x)
+double zvec_sum_pow2_abs(int n, dcomplex *x)
 {
   double value=0;
   int i;
@@ -739,7 +807,7 @@ double zvec_sum_pow2_abs(int n, const dcomplex *x)
 //////////////////////////////////////////////////////////////
 
 // max(abs(x))
-double zvec_max_abs(int n, const dcomplex *x)
+double zvec_max_abs(int n, dcomplex *x)
 {
   int i;
   double value=0,foo;
@@ -754,7 +822,7 @@ double zvec_max_abs(int n, const dcomplex *x)
 }
 
 // min(abs(x))
-double zvec_min_abs(int n, const dcomplex *x)
+double zvec_min_abs(int n, dcomplex *x)
 {
   int i;
   double value,foo;
@@ -773,7 +841,7 @@ double zvec_min_abs(int n, const dcomplex *x)
 
 // max(abs(x))
 // (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL
-double zvec_max_abs_index(int n, const dcomplex *x, int *I)
+double zvec_max_abs_index(int n, dcomplex *x, int *I)
 {
   int i;
   double value=0,foo;
@@ -792,7 +860,7 @@ double zvec_max_abs_index(int n, const dcomplex *x, int *I)
 
 // min(abs(x))
 // (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
-double zvec_min_abs_index(int n, const dcomplex *x, int *I)
+double zvec_min_abs_index(int n, dcomplex *x, int *I)
 {
   int i;
   double value,foo;
@@ -813,7 +881,7 @@ double zvec_min_abs_index(int n, const dcomplex *x, int *I)
 
 
 // max(x)
-dcomplex zvec_max(int n, const dcomplex *x)
+dcomplex zvec_max(int n, dcomplex *x)
 {
   int i;
   dcomplex value;
@@ -825,7 +893,7 @@ dcomplex zvec_max(int n, const dcomplex *x)
 }
 
 // min(x)
-dcomplex zvec_min(int n, const dcomplex *x)
+dcomplex zvec_min(int n, dcomplex *x)
 {
   int i;
   dcomplex value=x[0];
@@ -838,7 +906,7 @@ dcomplex zvec_min(int n, const dcomplex *x)
 ///////////////////////////////////////////////////////////////////
 
 // sum(x)
-dcomplex zvec_sum(int n, const dcomplex *x)
+dcomplex zvec_sum(int n, dcomplex *x)
 {
   dcomplex value;
   int i;
@@ -850,7 +918,7 @@ dcomplex zvec_sum(int n, const dcomplex *x)
 }
 
 // sum(x)/n
-dcomplex zvec_avarage(int n, const dcomplex *x)
+dcomplex zvec_avarage(int n, dcomplex *x)
 {
   dcomplex value;
   value=zvec_sum(n,x);

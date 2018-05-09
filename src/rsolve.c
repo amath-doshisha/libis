@@ -27,9 +27,8 @@
 
 /**
  @brief 線形方程式A*X=Bの解法.
- @param[in]  B サイズ(n,NRHS)の行列B.
- @param[out] B サイズ(n,NRHS)の解の行列X.
- @param[in]  A サイズnの正方行列で係数行列A.
+ @param[in,out]  B  [in]サイズ(n,NRHS)の行列B.[out]サイズ(n,NRHS)の解の行列X.
+ @param[in]      A  サイズnの正方行列で係数行列A.
  */
 void rsolve(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info)
 {
@@ -131,10 +130,9 @@ void rsolve_lu_decomp(int n, rmulti **A, int LDA, int *p, int *info)
 
 /**
  @brief 線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く.
- @param[in]  B サイズは(n,NRHS)の行列B.
- @param[out] B 解の行列X.
- @param[in]  A サイズがnの正方行列でLU分解済みの係数行列A.
- @param[in]  p ピボット選択の要素の並び.
+ @param[in,out]  B  [in]サイズは(n,NRHS)の行列B.[out]解の行列X.
+ @param[in]      A  サイズがnの正方行列でLU分解済みの係数行列A.
+ @param[in]      p  ピボット選択の要素の並び.
  */
 void rsolve_lu_backsubs(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *p)
 {
@@ -180,10 +178,8 @@ void rsolve_lu_backsubs(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LD
 
 /**
  @brief 線形方程式A*X=Bのガウスの消去法による解法.
- @param[in]  B 行列B.サイズは(n,NRHS).
- @param[in]  B 解の行列X.サイズは(n,NRHS).
- @param[in]  A 係数行列A.サイズは(n,n).
- @param[out] A 破壊される.
+ @param[in,out]  B   [in]行列B.サイズは(n,NRHS).[out]解の行列X.サイズは(n,NRHS).
+ @param[in,out]  A   [in]係数行列A.サイズは(n,n).[out]破壊される.
  */
 void rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LDA, int *info)
 {

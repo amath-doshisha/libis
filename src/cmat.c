@@ -545,7 +545,7 @@ void cmat_set_dd(int m, int n, cmulti **B, int LDB, const double *Ar, int LDAr, 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cset_dd(MAT(B,i,j,LDB),MAT(Ar,i,j,LDAr),MAT(Ai,i,j,LDAi));
+      cset_Z(MAT(B,i,j,LDB),MAT(Ar,i,j,LDAr),MAT(Ai,i,j,LDAi));
     }
   }
 }
@@ -571,7 +571,7 @@ void cmat_set_all_dd(int m, int n, cmulti **A, int LDA, double a_r, double a_i)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cset_dd(MAT(A,i,j,LDA),a_r,a_i);
+      cset_Z(MAT(A,i,j,LDA),a_r,a_i);
     }
   }
 }
@@ -1068,7 +1068,7 @@ void cmat_sub_rmat1(int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmul
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      csub_r1(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      rsub_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1081,7 +1081,7 @@ void cmat_sub_rmat2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmul
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      csub_r2(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      csub_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1462,7 +1462,7 @@ void cmat_diag_sub_rvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ csub_r2(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      if(i==j){ csub_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
       else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
@@ -1476,7 +1476,7 @@ void cmat_diag_sub_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmu
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ csub_r2(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      if(i==j){ csub_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
       else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }

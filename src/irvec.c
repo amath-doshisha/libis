@@ -2,6 +2,9 @@
 #include"is_rmulti.h"
 #include"is_rmat.h"
 #include"is_irmulti.h"
+#include"is_icmulti.h"
+#include"is_irvec.h"
+#include"is_icvec.h"
 #include"is_func.h"
 
 /**
@@ -25,93 +28,56 @@
 
 /**
  @brief irmulti型のベクトルの値の設定
-*/
-void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x)
-{
-  int i;
-  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],x[i]); }
-}
-
-/**
- @brief irmulti型のベクトルの値の設定
-*/
-void irvec_set_dd(int n, rmulti **y0, rmulti **y1, double *x0, double *x1)
-{
-  int i;
-  for(i=0; i<n; i++){ irset_dd(y0[i],y1[i],x0[i],x1[i]); }
-}
-
-/**
- @brief irmulti型のベクトルの値の設定
-*/
-void irvec_set_si(int n, rmulti **y0, rmulti **y1, int *x)
-{
-  int i;
-  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],x[i]); }
-}
-
-/**
- @brief irmulti型のベクトルの値の設定
-*/
+ */
 void irvec_set_s(int n, rmulti **y0, rmulti **y1, char **x)
 {
   int i;
   for(i=0; i<n; i++){ irset_s(y0[i],y1[i],x[i]); }
 }
 
+/**
+ @brief irmulti型のベクトルの値の設定
+ */
+void irvec_set_si(int n, rmulti **y0, rmulti **y1, int *x)
+{
+  int i;
+  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],x[i],x[i]); }
+}
 
 /**
  @brief irmulti型のベクトルの値の設定
-*/
-void irvec_set_z(int n, rmulti **y0, rmulti **y1, dcomplex *x)
+ */
+void irvec_set(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 {
   int i;
-  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],Z_R(x[i])); }
+  for(i=0; i<n; i++){ irset(y0[i],y1[i],x0[i],x1[i]); }
 }
 
 /**
  @brief irmulti型のベクトルの値の設定
 */
-void irvec_set_r(int n, rmulti **y0, rmulti **y1, rmulti **x)
+void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x0, double *x1)
 {
   int i;
-  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x[i],x[i]); }
+  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],x0[i],x1[i]); }
 }
 
 /**
  @brief irmulti型のベクトルの値の設定
 */
-void irvec_set_c(int n, rmulti **y0, rmulti **y1, cmulti **x)
+void irvec_set_z(int n, rmulti **y0, rmulti **y1, dcomplex *x0, dcomplex *x1)
 {
   int i;
-  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],C_R(x[i]),C_R(x[i])); }
+  for(i=0; i<n; i++){ irset_d(y0[i],y1[i],Z_R(x0[i]),Z_R(x1[i])); }
 }
 
 /**
  @brief irmulti型のベクトルの値の設定
 */
-void irvec_set_ir(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+void irvec_set_c(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
 {
   int i;
-  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
-}
-
-/**
- @brief irmulti型のベクトルの値の設定
-*/
-void irvec_set_ic(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
-{
-  int i;
-  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],C_R(x0[i]),C_I(x1[i])); }
-}
-
-/**
- @brief irmulti型のベクトルのコピー [y0,y1]=[x0,x1]
-*/
-void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
-{
-  int i;
-  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
+  for(i=0; i<n; i++){ irset(y0[i],y1[i],C_R(x0[i]),C_R(x1[i])); }
 }
 
 /** @* */
@@ -180,6 +146,16 @@ void irvec_print(int n, rmulti **x0, rmulti **x1, char *name, char format, int d
 /** @} */
 /** @name irmulti型ベクトルに関する関数子 */
 /** @{ */
+
+/**
+ @brief irmulti型のベクトルのコピー [y0,y1]=[x0,x1]
+ */
+void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ ircopy(y0[i],y1[i],x0[i],x1[i]); }
+}
+
 
 /**
  @brief irmulti型のベクトルの区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0
@@ -279,11 +255,65 @@ void irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti
 
 /**
  @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void idvec_add_r(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
+{
+    int i;
+    for(i=0; i<n; i++){ idadd_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_add_d(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
+{
+    int i;
+    for(i=0; i<n; i++){ iradd_d(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
 */
-void irvec_add_r(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
+void irvec_add_scalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_add_scalar_d(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
+{
+  int i;
+  for(i=0; i<n; i++){ iradd_d(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_add_scalar_z(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
+{
+  int i;
+  for(i=0; i<n; i++){ iradd_z(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_add_scalar_c(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ iradd_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void idvec_add_scalar_r(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idadd_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
 }
 
 /**
@@ -319,7 +349,7 @@ void irvec_div(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti
 void irvec_sum_pow2(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
-  irset_d(y0,y1,0);
+  irset_d(y0,y1,0,0);
   for(i=0; i<n; i++){ iradd_mul(y0,y1,x0[i],x1[i],x0[i],x1[i]); }
 }
 
@@ -467,7 +497,7 @@ void irvec_dmin_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 void irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
-  irset_d(y0,y1,0);
+  irset_d(y0,y1,0,0);
   for(i=0; i<n; i++){ iradd(y0,y1,y0,y1,x0[i],x1[i]); }
 }
 
@@ -480,7 +510,7 @@ void irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, 
   rmulti **z0=NULL,**z1=NULL;
   RVA(z0,y0,m); RVA(z1,y1,m);
   for(i=0; i<m; i++){
-    irset_d(z0[i],z1[i],0);
+    irset_d(z0[i],z1[i],0,0);
     for(j=0; j<n; j++){
       iradd_mul(z0[i],z1[i],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[j],x1[j]);
     }
@@ -534,7 +564,7 @@ void irvec_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0
   rmulti **z0=NULL,**z1=NULL;
   RVA(z0,y0,n); RVA(z1,y1,n);
   for(j=0; j<n; j++){
-    irset_d(z0[j],z1[j],0);
+    irset_d(z0[j],z1[j],0,0);
     for(i=0; i<m; i++){
       iradd_mul(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
@@ -590,12 +620,12 @@ void irvec_func(rmulti *y0, rmulti *y1, func_t *f, int n, rmulti **x0, rmulti **
   rset_nan(z0); rset_nan(z1);  
   if(f==NULL)                { FUNC_ERROR_ARG1("irvec_func",f); }
   else if(func_is(f,"inf"))  { rset_inf(z0,1); rset_inf(z1,1); }
-  else if(func_is_zero(f))   { irset_d(z0,z1,0); }
-  else if(func_is_one(f))    { irset_d(z0,z1,1); }
+  else if(func_is_zero(f))   { irset_d(z0,z1,0,0); }
+  else if(func_is_one(f))    { irset_d(z0,z1,1,1); }
   else if(func_is_bigint(f)) { irset_bigint(z0,z1,func_bigint_p(f)); }
   else if(func_is_real(f))   { ircopy(z0,z1,func_real_p(f),func_real_p(f)); }
   else if(func_is_var(f))    {
-    irset_d(z0,z1,1);
+    irset_d(z0,z1,1,1);
     for(i=0; i<func_var_size(f); i++){
       if(func_var_pow(f,i)!=0){
 	if(0<=func_var_num(f,i) && func_var_num(f,i)<n){
@@ -606,14 +636,14 @@ void irvec_func(rmulti *y0, rmulti *y1, func_t *f, int n, rmulti **x0, rmulti **
     }
   }
   else if(func_is_add(f))    {
-    irset_d(z0,z1,0);
+    irset_d(z0,z1,0,0);
     for(i=0; i<func_asize(f); i++){
       irvec_func(a0,a1,func_aget(f,i),n,x0,x1);
       iradd(z0,z1,z0,z1,a0,a1);
     }
   }
   else if(func_is_mul(f))    {
-    irset_d(z0,z1,1);
+    irset_d(z0,z1,1,1);
     for(i=0; i<func_asize(f); i++){
       irvec_func(a0,a1,func_aget(f,i),n,x0,x1);
       irmul(z0,z1,z0,z1,a0,a1);

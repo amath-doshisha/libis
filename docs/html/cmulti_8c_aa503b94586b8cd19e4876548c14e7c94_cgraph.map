@@ -1,9 +1,0 @@
-<map id="cabsv_ws" name="cabsv_ws">
-<area shape="rect" id="node2" href="$cmulti_8c.html#a4ed0518732a31c249a0d16203e6b2f2b" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="119,63,185,89"/>
-<area shape="rect" id="node8" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="131,125,173,152"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="253,5,295,32"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#a9cc10a12f00689827d56b40e78ed464e" title="rmulti型の掛け算の加算 z+=x*y（作業領域モード） " alt="" coords="233,63,315,89"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="453,75,551,101"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="363,49,405,76"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="363,100,405,127"/>
-</map>

@@ -55,9 +55,10 @@ void rvec_set_nan(int n, rmulti **x);
 void rvec_set_inf(int n, rmulti **x, int sgn);
 void rvec_set_s(int n, rmulti **x, char **str);
 void rvec_set_si(int n, rmulti **y, int *x);
+void rvec_set(int n, rmulti **y, rmulti **x);
 void rvec_set_d(int n, rmulti **y, double *x);
 void rvec_set_z(int n, rmulti **y, dcomplex *x);
-void rvec_set_r(int n, rmulti **y, rmulti **x);
+void rvec_set(int n, rmulti **y, rmulti **x);
 void rvec_set_c(int n, rmulti **y, cmulti **x);
 void rvec_set_ir(int n, rmulti **y, rmulti **x0, rmulti **x1);
 void rvec_set_ic(int n, rmulti **y, cmulti **x0, cmulti **x1);
@@ -96,15 +97,20 @@ void rvec_mul_2exp(int n, rmulti **y, rmulti **x, int p);            // y=x*2^p
 void rvec_div_2exp(int n, rmulti **y, rmulti **x, int p);            // y=x/2^p
 void rvec_neg(int n, rmulti **y, rmulti **x);                        // y=-x
 void rvec_abs(int n, rmulti **y, rmulti **x);                        // y=abs(x)
-void rvec_add(int n, rmulti **z, rmulti **x, rmulti **y);            // z=x+y
-void rvec_add_rd(int n, rmulti **z, rmulti **x, double *y);          // z=x+y
-void rvec_add_dr(int n, rmulti **z, double *x, rmulti **y);          // z=x+y
-void rvec_add_scalar_r(int n, rmulti **z, rmulti **x, rmulti *y);    // z=x+y
-void rvec_add_scalar_d(int n, rmulti **z, rmulti **x, double y);     // z=x+y
-void rvec_sub(int n, rmulti **z, rmulti **x, rmulti **y);            // z=x-y
-void rvec_sub_r1(int n, rmulti **z, rmulti *x, rmulti **y);          // z=x-y
-void rvec_sub_r2(int n, rmulti **z, rmulti **x, rmulti *y);          // z=x-y
-void rvec_mul(int n, rmulti **z, rmulti **x, rmulti **y);            // z=x*y
+// z=x+y
+void rvec_add(int n, rmulti **z, rmulti **x, rmulti **y);
+void rvec_add_d(int n, rmulti **z, rmulti **x, double *y);
+void dvec_add_r(int n, rmulti **z, double *x, rmulti **y);
+void rvec_add_scalar(int n, rmulti **z, rmulti **x, rmulti *y);
+void rvec_add_scalar_d(int n, rmulti **z, rmulti **x, double y);
+void dvec_add_scalar_r(int n, rmulti **z, double *x, rmulti *y);
+// z=x-y
+void rvec_sub(int n, rmulti **z, rmulti **x, rmulti **y);
+void rvec_sub_r1(int n, rmulti **z, rmulti *x, rmulti **y);
+void rvec_sub_r2(int n, rmulti **z, rmulti **x, rmulti *y);
+void dvec_sub_scalar_r(int n, rmulti **z, double *x, rmulti *y);
+// z=x*y
+void rvec_mul(int n, rmulti **z, rmulti **x, rmulti **y);
 void rvec_mul_r(int n, rmulti **z, rmulti **x, rmulti *y);           // z=x*y
 void rvec_mul_d(int n, rmulti **z, rmulti **x, double y);            // z=x*y
 void rvec_add_mul(int n, rmulti **z, rmulti **x, rmulti **y);        // z+=x*y

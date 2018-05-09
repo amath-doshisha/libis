@@ -15,10 +15,10 @@
 #include"is_zhpeig.h"
 
 // enum { ZHPEIG_NONE=0, ZHPEIG_CONVERGENT, ZHPEIG_DIVERGENT, ZHPEIG_SINGULAR, ZHPEIG_NUM };
-const char *zhpeig_str[]={ "    ", "conv", "divr", "sing", NULL };
+char *zhpeig_str[]={ "    ", "conv", "divr", "sing", NULL };
 
 // JM=A-lambda*I-x*w'/C
-void zhpeig_jacobi_mat(int n, dcomplex *JM, int LDJM, const dcomplex *A, int LDA, const dcomplex *X, const dcomplex *W, dcomplex lambda, dcomplex C)
+void zhpeig_jacobi_mat(int n, dcomplex *JM, int LDJM, dcomplex *A, int LDA, dcomplex *X, dcomplex *W, dcomplex lambda, dcomplex C)
 {
   dcomplex a;
   zmat_copy(n,n,JM,LDJM,A,LDA);            // JM=A
@@ -28,10 +28,10 @@ void zhpeig_jacobi_mat(int n, dcomplex *JM, int LDJM, const dcomplex *A, int LDA
 }
 
 enum { ZHPEIG_STATUS_PRE=0, ZHPEIG_STATUS_CONV, ZHPEIG_STATUS_END };
-const char *zhpeig_status[]={" ", "o", "." };
+char *zhpeig_status[]={" ", "o", "." };
 
 // hyperplane constrained method for a pair
-int zhpeig_1pair(int n, const dcomplex *A, int LDA, const dcomplex *z, dcomplex *x, dcomplex *lambda, double *E, int *Step, int debug)
+int zhpeig_1pair(int n, dcomplex *A, int LDA, dcomplex *z, dcomplex *x, dcomplex *lambda, double *E, int *Step, int debug)
 {
 #define PUT_1PAIR { printf("[%s] status=%s done=%s step=%03d lambda=%+.16e %+.16e  E=2^%+04d eta=2^%+04d=%.0e mu=%.0e\n",fname,zhpeig_status[status],zhpeig_str[done],step,Z_R(*lambda),Z_I(*lambda),(int)(log(fabs(*E))/log(2)),(int)(log(fabs(eta))/log(2)),eta,mu); }
   char fname[]="zhpeig_1pair";
@@ -97,7 +97,7 @@ int zhpeig_1pair(int n, const dcomplex *A, int LDA, const dcomplex *z, dcomplex 
   return done;
 }
 
-int zhpeig(int n, const dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *Lambda, int debug)
+int zhpeig(int n, dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *Lambda, int debug)
 {
 #define Qk COL(Q,k,LDQ)
 #define Xk COL(X,k,LDX)

@@ -88,7 +88,7 @@ func_t *func_complex_i(void)
 {
   func_t *f=NULL;
   f=func_complex();
-  cset_dd(func_complex_p(f),0,1);
+  cset_Z(func_complex_p(f),0,1);
   return f;
 }
 

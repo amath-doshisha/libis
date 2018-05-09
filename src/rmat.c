@@ -1215,7 +1215,6 @@ void rmat_inv(int n, rmulti **B, int LDB, rmulti **A, int LDA)
 /**
  @brief rmulti型の行列の累乗 B=A^p.
  @param[in]  A 初期化済みのサイズが(n,n)の行列.
- @param[in]  x スカラー
  @param[out] B 初期化済みのサイズが(n,n)の行列.
 */
 void rmat_power(int n, rmulti **B, int LDB, rmulti **A, int LDA, int p)

@@ -10,7 +10,7 @@
 #define Vk  (COL(V,k,LDV))
 
 
-void dhpsvd_jacobi_mat(int m, int n, double *JM, int LDJM, const double *A, int LDA, const double *u, const double *v, const double *w, double sigma, double C)
+void dhpsvd_jacobi_mat(int m, int n, double *JM, int LDJM, double *A, int LDA, double *u, double *v, double *w, double sigma, double C)
 {
   dmat_set_zeros(m+n,m+n,JM,LDJM);           // JM=zeros(m+n,m+n)
   dmat_diag_sub_scalar(m,&J00,LDJM,sigma);   // JM(1:m,1:m)=-sigma*Im;
@@ -21,7 +21,7 @@ void dhpsvd_jacobi_mat(int m, int n, double *JM, int LDJM, const double *A, int 
   dmat_rank1op(n,n,&J11,LDJM,(-1.0/C),v,w);  // JM((m+1):end,(m+1):end)=-sigma_u*In-(v*wu')/Cu;
 }
 
-int dhpsvd_1pair(int m, int n, const double *A, int LDA, const double *z, double *u, double *v, double *Sigma, double *E, int *Step, int debug)
+int dhpsvd_1pair(int m, int n, double *A, int LDA, double *z, double *u, double *v, double *Sigma, double *E, int *Step, int debug)
 {
   int step,step_max,done,info=-1,ret=DHPSVD_NONE,LDJM;
   double *w=NULL,*H=NULL,*JM=NULL,h,e,C=1,eps_e,eps_r,sigma;
@@ -84,7 +84,7 @@ int dhpsvd_1pair(int m, int n, const double *A, int LDA, const double *z, double
 }
 
 /*
-int dhpsvd(int m, int n, const double *A, int LDA, double *U, int LDU, double *V, int LDV, double *Sigma, int debug)
+int dhpsvd(int m, int n, double *A, int LDA, double *U, int LDU, double *V, int LDV, double *Sigma, int debug)
 {
   char msg;
   int t,k,itr,step,LDH,fail,flag,fail_max,info,ret=0;

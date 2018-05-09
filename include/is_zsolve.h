@@ -7,7 +7,7 @@
 int zsolve(int n, int NRHS, dcomplex *B, int LDB, dcomplex *A, int LDA);
 
 // R=B-A*X
-void zsolve_residual(int n, int NRHS, dcomplex *R, int LDR, const dcomplex *A, int LDA, const dcomplex *X, int LDX, const dcomplex *B, int LDB);
+void zsolve_residual(int n, int NRHS, dcomplex *R, int LDR, dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *B, int LDB);
 
 // Sove A*X=B by LU decomposition
 // X: input=B, output=X

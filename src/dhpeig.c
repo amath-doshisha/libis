@@ -14,10 +14,10 @@
 #include"is_dhpeig.h"
 
 // enum { DHPEIG_NONE=0, DHPEIG_CONVERGENT, DHPEIG_DIVERGENT, DHPEIG_SINGULAR, DHPEIG_NUM };
-const char *dhpeig_str[]={ "    ", "conv", "divr", "sing", NULL };
+char *dhpeig_str[]={ "    ", "conv", "divr", "sing", NULL };
 
 // JM=A-lambda*I-x*w'/C
-void dhpeig_jacobi_mat(int n, double *JM, int LDJM, const double *A, int LDA, const double *X, const double *W, double lambda, double C)
+void dhpeig_jacobi_mat(int n, double *JM, int LDJM, double *A, int LDA, double *X, double *W, double lambda, double C)
 {
   dmat_copy(n,n,JM,LDJM,A,LDA);
   dmat_diag_sub_scalar(n,JM,LDJM,lambda);
@@ -25,10 +25,10 @@ void dhpeig_jacobi_mat(int n, double *JM, int LDJM, const double *A, int LDA, co
 }
 
 enum { DHPEIG_STATUS_PRE=0, DHPEIG_STATUS_CONV, DHPEIG_STATUS_END };
-const char *dhpeig_status[]={" ", "o", "." };
+char *dhpeig_status[]={" ", "o", "." };
 
 // hyperplane constrained method for a pair
-int dhpeig_1pair(int n, const double *A, int LDA, const double *z, double *x, double *lambda, double *E, int *Step, int debug)
+int dhpeig_1pair(int n, double *A, int LDA, double *z, double *x, double *lambda, double *E, int *Step, int debug)
 {
 #define PUT_1PAIR { printf("[%s] status=%s done=%s step=%03d lambda=%+.16e  E=2^%+04d eta=2^%+04d=%.0e mu=%.0e\n",fname,dhpeig_status[status],dhpeig_str[done],step,(*lambda),(int)(log(fabs(*E))/log(2)),(int)(log(fabs(eta))/log(2)),eta,mu); }
   char fname[]="zhpeig_1pair";
@@ -91,7 +91,7 @@ int dhpeig_1pair(int n, const double *A, int LDA, const double *z, double *x, do
   return done;
 }
 
-int dhpeig(int n, const double *A, int LDA, double *X, int LDX, double *Lambda, int debug)
+int dhpeig(int n, double *A, int LDA, double *X, int LDX, double *Lambda, int debug)
 {
 #define Qk COL(Q,k,LDQ)
 #define Xk COL(X,k,LDX)

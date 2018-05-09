@@ -572,6 +572,15 @@ void rset_s(rmulti *x, char *s)
   */
 }
 
+// y=x
+void rset(rmulti *y, rmulti *x)
+{
+  NULL_EXC2(x,y);
+  if(y==x){ return; }
+  mpfr_set(y,x,get_round_mode());
+}
+
+
 /**
  @brief rmulti型の浮動小数点数を倍精度浮動小数点数から設定.
  @param[in,out]  x     [in]初期化済みのrmulti型.[out]値が設定されたrmulti型.
@@ -976,6 +985,15 @@ void radd_d(rmulti *z, rmulti *x, double y)
 
 /**
  @brief rmulti型の足し算 z=x+y
+ */
+void dadd_r(rmulti *z, double x, rmulti *y)
+{
+    NULL_EXC2(z,y);
+    mpfr_add_d(z,y,x,get_round_mode());
+}
+
+/**
+ @brief rmulti型の足し算 z=x+y
 */
 void radd_ui(rmulti *z, rmulti *x, ulong y)
 {
@@ -1024,7 +1042,7 @@ int rsub_exact(rmulti *z, rmulti *x, rmulti *y)
 /**
  @brief rmulti型の引き算 z=x-y
 */
-void rsub_d1(rmulti *z, double x, rmulti *y)
+void dsub_r(rmulti *z, double x, rmulti *y)
 {
   NULL_EXC2(z,y);
   mpfr_d_sub(z,x,y,get_round_mode());
@@ -1033,7 +1051,7 @@ void rsub_d1(rmulti *z, double x, rmulti *y)
 /**
  @brief rmulti型の引き算 z=x-y
 */
-void rsub_d2(rmulti *z, rmulti *x, double y)
+void rsub_d(rmulti *z, rmulti *x, double y)
 {
   NULL_EXC2(z,x);
   mpfr_sub_d(z,x,y,get_round_mode());
@@ -1317,7 +1335,7 @@ void rabs_sub(rmulti *z, rmulti *x, rmulti *y)
 void rabs_sub_d(rmulti *z, rmulti *x, double y)
 {
   NULL_EXC2(z,x);
-  rsub_d2(z,x,y);
+  rsub_d(z,x,y);
   rabs(z,z);
 }
 
@@ -1425,7 +1443,7 @@ void rexp10_floor_log10_abs_sub(rmulti *z, rmulti *x, double y)
   RAp(a,z);
   rabs(a,x);      // a=abs(x)
   rlog10(a,a);    // a=log10(abs(x))
-  rsub_d2(a,a,y); // a=log10(abs(x))-y
+  rsub_d(a,a,y); // a=log10(abs(x))-y
   rfloor(a,a);    // a=floor(log10(abs(x))-y)
   rexp10(z,a);    // z=10^floor(log10(abs(x))-y)
   RF(a);
@@ -1441,7 +1459,7 @@ void rexp2_floor_log2_abs_sub(rmulti *z, rmulti *x, double y)
   RAp(a,z);
   rabs(a,x);      // a=abs(x)
   rlog2(a,a);     // a=log2(abs(x))
-  rsub_d2(a,a,y); // a=log2(abs(x))-y
+  rsub_d(a,a,y); // a=log2(abs(x))-y
   rfloor(a,a);    // a=floor(log2(abs(x))-y)
   rexp2(z,a);     // z=10^floor(log2(abs(x))-y)
   RF(a);

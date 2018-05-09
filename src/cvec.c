@@ -505,6 +505,15 @@ void cvec_set_ss(int n, cmulti **x, char **str)
 }
 
 /**
+ @brief cmulti型のベクトルの値のコピー y=x.
+ */
+void cvec_set(int n, cmulti **y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ cset(y[i],x[i]); }
+}
+
+/**
  @brief cmulti型のベクトルの値を倍精度複素数から設定.
 */
 void cvec_set_z(int n, cmulti **y, dcomplex *x)
@@ -528,16 +537,7 @@ void cvec_set_d(int n, cmulti **y, double *x)
 void cvec_set_r(int n, cmulti **y, rmulti **x)
 {
   int i;
-  for(i=0; i<n; i++){ ccopy_r(y[i],x[i]); }
-}
-
-/**
- @brief cmulti型のベクトルの値を設定.
- */
-void cvec_set_c(int n, cmulti **y, cmulti **x)
-{
-  int i;
-  for(i=0; i<n; i++){ ccopy(y[i],x[i]); }
+  for(i=0; i<n; i++){ cset_r(y[i],x[i]); }
 }
 
 /**
@@ -561,10 +561,10 @@ void cvec_set_ic(int n, cmulti **y, cmulti **x0, cmulti **x1)
 /**
  @brief cmulti型のベクトルの値を倍精度浮実数から設定.
 */
-void cvec_set_dd(int n, cmulti **y, double *x_r, double *x_i)
+void cvec_set_Z(int n, cmulti **y, double *x_r, double *x_i)
 {
   int i;
-  for(i=0; i<n; i++){ cset_dd(y[i],x_r[i],x_i[i]); }
+  for(i=0; i<n; i++){ cset_Z(y[i],x_r[i],x_i[i]); }
 }
 
 /**
@@ -591,7 +591,7 @@ void cvec_set_all_d(int n, cmulti **x, double a)
 void cvec_set_all_dd(int n, cmulti **x, double a_r, double a_i)
 {
   int i;
-  for(i=0; i<n; i++){ cset_dd(x[i],a_r,a_i); }
+  for(i=0; i<n; i++){ cset_Z(x[i],a_r,a_i); }
 }
 
 /**
@@ -734,11 +734,9 @@ void cvec_swap_index(int n, cmulti **x, const int *I)
  @brief cmulti型のベクトルの要素を小さい順に入れ替える.
  @details 要素x[i]の値の小さい順に並べ替え，要素番号を配列Iに保存する.
           ただし，I==NULLの場合は保存は行われない.
- @param[in]  n ベクトルのサイズ.
- @param[in]  x 初期化済みのrmulti型のベクトル.
- @param[out] x ソートされたrmulti型のベクトル.
- @param[in]  I 入れ替えられた要素の要素番号の保存先.
- @param[out] I 保存された要素番号.
+ @param[in]      n ベクトルのサイズ.
+ @param[in,out]  x   [in]初期化済みのrmulti型のベクトル.[out]ソートされたrmulti型のベクトル.
+ @param[in,out]  I   [in]入れ替えられた要素の要素番号の保存先.[out]保存された要素番号.
 */
 void cvec_sort(int n, cmulti **x, int *I)
 {
@@ -810,10 +808,10 @@ void cvec_copy_r(int n, cmulti **y, rmulti **x)
 /**
  @brief cmulti型のベクトルの値のrmulti型からのコピー y=x.
 */
-void cvec_copy_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
+void cvec_copy_C(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
 {
   int i;
-  for(i=0; i<n; i++){ ccopy_rr(y[i],x_r[i],x_i[i]); }
+  for(i=0; i<n; i++){ ccopy_C(y[i],x_r[i],x_i[i]); }
 }
 
 /**
@@ -956,25 +954,25 @@ void cvec_add_r(int n, cmulti **z, cmulti **x, rmulti **y)
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_rz(int n, cmulti **z, rmulti **x, dcomplex *y)
+void rvec_add_z(int n, cmulti **z, rmulti **x, dcomplex *y)
 {
   int i;
-  for(i=0; i<n; i++){ cadd_rz(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ radd_z(z[i],x[i],y[i]); }
 }
 
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_zr(int n, cmulti **z, dcomplex *x, rmulti **y)
+void zvec_add_r(int n, cmulti **z, dcomplex *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cadd_zr(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ zadd_r(z[i],x[i],y[i]); }
 }
 
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_dc(int n, cmulti **z, double *x, cmulti **y)
+void dvec_add_c(int n, cmulti **z, double *x, cmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ cadd_d(z[i],y[i],x[i]); }
@@ -983,7 +981,7 @@ void cvec_add_dc(int n, cmulti **z, double *x, cmulti **y)
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_zc(int n, cmulti **z, dcomplex *x, cmulti **y)
+void zvec_add_c(int n, cmulti **z, dcomplex *x, cmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ cadd_z(z[i],y[i],x[i]); }
@@ -992,7 +990,7 @@ void cvec_add_zc(int n, cmulti **z, dcomplex *x, cmulti **y)
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_rc(int n, cmulti **z, rmulti **x, cmulti **y)
+void rvec_add_c(int n, cmulti **z, rmulti **x, cmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ cadd_r(z[i],y[i],x[i]); }
@@ -1001,7 +999,7 @@ void cvec_add_rc(int n, cmulti **z, rmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_cd(int n, cmulti **z, cmulti **x, double *y)
+void cvec_add_d(int n, cmulti **z, cmulti **x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ cadd_d(z[i],x[i],y[i]); }
@@ -1010,19 +1008,21 @@ void cvec_add_cd(int n, cmulti **z, cmulti **x, double *y)
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_cz(int n, cmulti **z, cmulti **x, dcomplex *y)
+void cvec_add_z(int n, cmulti **z, cmulti **x, dcomplex *y)
 {
   int i;
   for(i=0; i<n; i++){ cadd_z(z[i],x[i],y[i]); }
 }
 
+///////////////////////////////////////////////////////
+
 /**
  @brief cmulti型のベクトルの足し算 z=x+y
  */
-void cvec_add_cr(int n, cmulti **z, cmulti **x, rmulti **y)
+void cvec_add_scalar(int n, cmulti **z, cmulti **x, cmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ cadd_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ cadd(z[i],x[i],y); }
 }
 
 /**
@@ -1052,32 +1052,83 @@ void cvec_add_scalar_d(int n, cmulti **z, cmulti **x, double y)
   for(i=0; i<n; i++){ cadd_d(z[i],x[i],y); }
 }
 
+// z=x+y
+void dvec_add_scalar_c(int n, cmulti **z, double *x, cmulti *y)
+{
+    int i;
+    for(i=0; i<n; i++){ cadd_d(z[i],y,x[i]); }
+}
+
+// z=x+y
+void zvec_add_scalar_r(int n, cmulti **z, dcomplex *x, rmulti *y)
+{
+    int i;
+    for(i=0; i<n; i++){ zadd_r(z[i],x[i],y); }
+}
+
+// z=x+y
+void zvec_add_scalar_c(int n, cmulti **z, dcomplex *x, cmulti *y)
+{
+    int i;
+    for(i=0; i<n; i++){ cadd_z(z[i],y,x[i]); }
+}
+
+///////////////////////////////////////////////////////
+
 /**
  @brief cmulti型のベクトルの引き算 z=x-y
-*/
+ */
 void cvec_sub(int n, cmulti **z, cmulti **x, cmulti **y)
 {
-  int i;
-  for(i=0; i<n; i++){ csub(z[i],x[i],y[i]); }
+    int i;
+    for(i=0; i<n; i++){ csub(z[i],x[i],y[i]); }
 }
 
 /**
  @brief cmulti型のベクトルの引き算 z=x-y
-*/
-void cvec_sub_rvec1(int n, cmulti **z, rmulti **x, cmulti **y)
+ */
+void cvec_sub_r(int n, cmulti **z, cmulti **x, rmulti **y)
 {
-  int i;
-  for(i=0; i<n; i++){ csub_r1(z[i],x[i],y[i]); }
+    int i;
+    for(i=0; i<n; i++){ csub_r(z[i],x[i],y[i]); }
 }
 
 /**
  @brief cmulti型のベクトルの引き算 z=x-y
-*/
-void cvec_sub_rvec2(int n, cmulti **z, cmulti **x, rmulti **y)
+ */
+void rvec_sub_c(int n, cmulti **z, rmulti **x, cmulti **y)
 {
-  int i;
-  for(i=0; i<n; i++){ csub_r2(z[i],x[i],y[i]); }
+    int i;
+    for(i=0; i<n; i++){ rsub_c(z[i],x[i],y[i]); }
 }
+
+///////////////////////////////////////////////////////
+
+// z=x-y
+void dvec_sub_scalar_c(int n, cmulti **z, double *x, cmulti *y)
+{
+    int i;
+    for(i=0; i<n; i++){ dsub_c(z[i],x[i],y); }
+}
+
+// z=x-y
+void zvec_sub_scalar_r(int n, cmulti **z, dcomplex *x, rmulti *y)
+{
+    int i;
+    for(i=0; i<n; i++){ zsub_r(z[i],x[i],y); }
+}
+
+// z=x-y
+void zvec_sub_scalar_c(int n, cmulti **z, dcomplex *x, cmulti *y)
+{
+    int i;
+    for(i=0; i<n; i++){ zsub_c(z[i],x[i],y); }
+}
+
+
+///////////////////////////////////////////////////////
+
+
 
 /**
  @brief cmulti型のベクトルの引き算 z=x-y
@@ -1103,7 +1154,7 @@ void cvec_sub_c2(int n, cmulti **z, cmulti **x, cmulti *y)
 void cvec_sub_r1(int n, cmulti **z, rmulti *x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ csub_r1(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rsub_c(z[i],x,y[i]); }
 }
 
 /**
@@ -1112,7 +1163,7 @@ void cvec_sub_r1(int n, cmulti **z, rmulti *x, cmulti **y)
 void cvec_sub_r2(int n, cmulti **z, cmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ csub_r2(z[i],x[i],y); }
+  for(i=0; i<n; i++){ csub_r(z[i],x[i],y); }
 }
 
 /**
@@ -1121,7 +1172,7 @@ void cvec_sub_r2(int n, cmulti **z, cmulti **x, rmulti *y)
 void cvec_sub_z1(int n, cmulti **z, dcomplex x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ csub_z1(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ zsub_c(z[i],x,y[i]); }
 }
 
 /**
@@ -1130,7 +1181,7 @@ void cvec_sub_z1(int n, cmulti **z, dcomplex x, cmulti **y)
 void cvec_sub_z2(int n, cmulti **z, cmulti **x, dcomplex y)
 {
   int i;
-  for(i=0; i<n; i++){ csub_z2(z[i],x[i],y); }
+  for(i=0; i<n; i++){ csub_z(z[i],x[i],y); }
 }
 
 /**
@@ -1139,7 +1190,7 @@ void cvec_sub_z2(int n, cmulti **z, cmulti **x, dcomplex y)
 void cvec_sub_d1(int n, cmulti **z, double x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ csub_d1(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ dsub_c(z[i],x,y[i]); }
 }
 
 /**
@@ -1148,7 +1199,7 @@ void cvec_sub_d1(int n, cmulti **z, double x, cmulti **y)
 void cvec_sub_d2(int n, cmulti **z, cmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ csub_d2(z[i],x[i],y); }
+  for(i=0; i<n; i++){ csub_d(z[i],x[i],y); }
 }
 
 /**
@@ -1432,14 +1483,12 @@ void cvec_pow_ui(int n, cmulti **z, cmulti **x, ulong y)
 
 /**
  @brief cmulti型のベクトルxに関する行列Aによる1次変換 y=A*x
- @param[in]  m   ベクトルyのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルxのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズmのベクトル.
- @param[out] y   y=A*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズnのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルyのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルxのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズmのベクトル.[out]y=A*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズnのベクトル.
 */
 void cvec_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1458,14 +1507,12 @@ void cvec_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 
 /**
  @brief cmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x
- @param[in]  m   ベクトルyのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルxのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズmのベクトル.
- @param[out] y   y+=A*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズnのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルyのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルxのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズmのベクトル.[out]y+=A*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズnのベクトル.
 */
 void cvec_add_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1484,14 +1531,12 @@ void cvec_add_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 
 /**
  @brief cmulti型のベクトルxに関する行列Aによる1次変換の減算 y-=A*x
- @param[in]  m   ベクトルyのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルxのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズmのベクトル.
- @param[out] y   y-=A*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズnのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルyのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルxのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズmのベクトル.[out]y-=A*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズnのベクトル.
 */
 void cvec_sub_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1510,14 +1555,12 @@ void cvec_sub_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 
 /**
  @brief cmulti型のベクトルxに関する転置行列Aによる1次変換 y=A^T*x
- @param[in]  m   ベクトルxのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルyのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズnのベクトル.
- @param[out] y   y=A^T*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズmのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルxのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルyのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズnのベクトル.[out]y=A^T*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズmのベクトル.
 */
 void cvec_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1536,14 +1579,12 @@ void cvec_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 
 /**
  @brief cmulti型のベクトルxに関する転置行列Aによる1次変換の加算 y+=A^T*x
- @param[in]  m   ベクトルxのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルyのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズnのベクトル.
- @param[out] y   y+=A^T*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズmのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルxのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルyのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズnのベクトル.[out]y+=A^T*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズmのベクトル.
 */
 void cvec_add_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1562,14 +1603,12 @@ void cvec_add_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 
 /**
  @brief cmulti型のベクトルxに関する転置行列Aによる1次変換の減算 y-=A^T*x
- @param[in]  m   ベクトルxのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルyのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズnのベクトル.
- @param[out] y   y-=A^T*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズmのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルxのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルyのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズnのベクトル.[out]y-=A^T*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズmのベクトル.
 */
 void cvec_sub_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1588,14 +1627,12 @@ void cvec_sub_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 
 /**
  @brief cmulti型のベクトルxに関する共役転置行列Aによる1次変換 y=A'*x
- @param[in]  m   ベクトルxのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルyのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズnのベクトル.
- @param[out] y   y=A'*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズmのベクトル.
- @return         丸めの発生回数.
+ @param[in]     m   ベクトルxのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルyのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズnのベクトル.[out]y=A'*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズmのベクトル.
 */
 void cvec_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1614,13 +1651,12 @@ void cvec_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 
 /**
  @brief cmulti型のベクトルxに関する共役転置行列Aによる1次変換の加算 y+=A'*x
- @param[in]  m   ベクトルxのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルyのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズnのベクトル.
- @param[out] y   y+=A'*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズmのベクトル.
+ @param[in]     m   ベクトルxのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルyのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズnのベクトル.[out]y+=A'*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズmのベクトル.
 */
 void cvec_add_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -1639,13 +1675,12 @@ void cvec_add_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x
 
 /**
  @brief cmulti型のベクトルxに関する共役転置行列Aによる1次変換の減算 y-=A'*x
- @param[in]  m   ベクトルxのサイズ.行列Aの行のサイズ.
- @param[in]  n   ベクトルyのサイズ.行列Aの列のサイズ.
- @param[int] y   初期化済みのサイズnのベクトル.
- @param[out] y   y-=A'*xの計算結果.
- @param[in]  A   サイズ(m,n)の行列.
- @param[in]  LDA 行列Aの第1次元.
- @param[in]  x   サイズmのベクトル.
+ @param[in]     m   ベクトルxのサイズ.行列Aの行のサイズ.
+ @param[in]     n   ベクトルyのサイズ.行列Aの列のサイズ.
+ @param[in,out] y   [in]初期化済みのサイズnのベクトル.[out]y-=A'*xの計算結果.
+ @param[in]     A   サイズ(m,n)の行列.
+ @param[in]     LDA 行列Aの第1次元.
+ @param[in]     x   サイズmのベクトル.
 */
 void cvec_sub_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
@@ -2337,10 +2372,10 @@ void cvec_func(cmulti *y, func_t *f, int n, cmulti **x)
     cset_d(z,1);
     for(i=0; i<func_var_size(f); i++){
       if(func_var_pow(f,i)!=0){
-	if(0<=func_var_num(f,i) && func_var_num(f,i)<n){
-	  cpow_si(a,x[func_var_num(f,i)],func_var_pow(f,i));
-	}else{ cset_nan(a); }
-	cmul(z,z,a);
+        if(0<=func_var_num(f,i) && func_var_num(f,i)<n){
+          cpow_si(a,x[func_var_num(f,i)],func_var_pow(f,i));
+        }else{ cset_nan(a); }
+        cmul(z,z,a);
       }
     }
   }

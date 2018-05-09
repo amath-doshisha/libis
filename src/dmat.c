@@ -113,7 +113,7 @@ void dmat_swap_rows(int m, int n, double *A, int LDA, int k, int l)
 //////////////////////////////////////////////////////////////////////////
 
 // B=A
-void dmat_copy(int m, int n, double *B, int LDB, const double *A, int LDA)
+void dmat_copy(int m, int n, double *B, int LDB, double *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -124,7 +124,7 @@ void dmat_copy(int m, int n, double *B, int LDB, const double *A, int LDA)
 }
 
 // B=A'
-void dmat_copy_t(int m, int n, double *B, int LDB, const double *A, int LDA)
+void dmat_copy_t(int m, int n, double *B, int LDB, double *A, int LDA)
 {
   int i,j;
   for(i=0; i<m; i++){
@@ -137,7 +137,7 @@ void dmat_copy_t(int m, int n, double *B, int LDB, const double *A, int LDA)
 //////////////////////////////////////////////////////////////////////////
 
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void dmat_copy_col_index(int m, int n, double *B, int LDB, const double *A, int LDA, const int *I)
+void dmat_copy_col_index(int m, int n, double *B, int LDB, double *A, int LDA, int *I)
 {
   int j;
   for(j=0; j<n; j++){
@@ -148,7 +148,7 @@ void dmat_copy_col_index(int m, int n, double *B, int LDB, const double *A, int 
 //////////////////////////////////////////////////////////////////////////
 
 // A(:,j) <-> A(:,I[j]) for 0<=j<n
-void dmat_swap_index(int m, int n, double *A, int LDA, const int *I)
+void dmat_swap_index(int m, int n, double *A, int LDA, int *I)
 {
   int LDB;
   double *B=NULL;
@@ -192,7 +192,7 @@ void dmat_diag_sub_scalar(int n, double *A, int LDA, double a)
 }
 
 // B=B+A
-void dmat_add(int m, int n, double *B, int LDB, const double *A, int LDA)
+void dmat_add(int m, int n, double *B, int LDB, double *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -203,7 +203,7 @@ void dmat_add(int m, int n, double *B, int LDB, const double *A, int LDA)
 }
 
 // B=B-A
-void dmat_sub(int m, int n, double *B, int LDB, const double *A, int LDA)
+void dmat_sub(int m, int n, double *B, int LDB, double *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -214,7 +214,7 @@ void dmat_sub(int m, int n, double *B, int LDB, const double *A, int LDA)
 }
 
 // C=A*B
-void dmat_prod(int l, int m, int n, double *C, int LDC, const double *A, int LDA, const double *B, int LDB)
+void dmat_prod(int l, int m, int n, double *C, int LDC, double *A, int LDA, double *B, int LDB)
 {
   int i,j,k;
   for(i=0; i<l; i++){
@@ -228,7 +228,7 @@ void dmat_prod(int l, int m, int n, double *C, int LDC, const double *A, int LDA
 }
 
 // C=C+A*B
-void dmat_add_prod(int l, int m, int n, double *C, int LDC, const double *A, int LDA, const double *B, int LDB)
+void dmat_add_prod(int l, int m, int n, double *C, int LDC, double *A, int LDA, double *B, int LDB)
 {
   int i,j,k;
   for(i=0; i<l; i++){
@@ -241,7 +241,7 @@ void dmat_add_prod(int l, int m, int n, double *C, int LDC, const double *A, int
 }
 
 // C=C-A*B
-void dmat_sub_prod(int l, int m, int n, double *C, int LDC, const double *A, int LDA, const double *B, int LDB)
+void dmat_sub_prod(int l, int m, int n, double *C, int LDC, double *A, int LDA, double *B, int LDB)
 {
   int i,j,k;
   for(i=0; i<l; i++){
@@ -254,7 +254,7 @@ void dmat_sub_prod(int l, int m, int n, double *C, int LDC, const double *A, int
 }
 
 // A=A+a*x*y'
-void dmat_rank1op(int m, int n, double *A, int LDA, double a, const double *x, const double *y)
+void dmat_rank1op(int m, int n, double *A, int LDA, double a, double *x, double *y)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -285,7 +285,7 @@ void dmat_normalize_sgn(int m, int n, double *A, int LDA)
 //////////////////////////////////////
 
 // x(j)=max(abs(A(:,j)-B(:,j))) for j=1,2,..,n
-void dmat_sub_norm_max(double *x, int m, int n, const double *A, int LDA, const double *B, int LDB)
+void dmat_sub_norm_max(double *x, int m, int n, double *A, int LDA, double *B, int LDB)
 {
   int j;
   for(j=0; j<n; j++){
@@ -296,7 +296,7 @@ void dmat_sub_norm_max(double *x, int m, int n, const double *A, int LDA, const 
 //////////////////////////////////////
 
 // y(j)=max(abs(A(:,j)-x)) for j=1,2,..,n
-void dmat_dist_norm_max(double *y, int m, int n, const double *A, int LDA, const double *x)
+void dmat_dist_norm_max(double *y, int m, int n, double *A, int LDA, double *x)
 {
   int j;
   for(j=0; j<n; j++){

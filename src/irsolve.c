@@ -133,10 +133,9 @@ void irsolve_lu_decomp(int n, rmulti **A0, rmulti **A1, int LDA, int *p0, int *p
   
 /**
  @brief 線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く.
- @param[in]  B サイズは(n,NRHS)の行列B.
- @param[out] B 解の行列X.
- @param[in]  A サイズがnの正方行列でLU分解済みの係数行列A.
- @param[in]  p ピボット選択の要素の並び.
+ @param[in,out]  B0 B1 [in]サイズは(n,NRHS)の行列B.[out]解の行列X.
+ @param[in]      A0 A1 サイズがnの正方行列でLU分解済みの係数行列A.
+ @param[in]      p0 p1 ピボット選択の要素の並び.
 */
 void irsolve_lu_backsubs(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A1, int LDA, int *p0, int *p1)
 {
@@ -161,7 +160,7 @@ void irsolve_lu_backsubs(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmu
   // x=inv(U)*y
   for(k=n-1; k>=0; k--){
     for(j=0; j<NRHS; j++){
-      irset_d(a0,a1,0);
+      irset_d(a0,a1,0,0);
       for(i=k+1; i<n; i++){
 	iradd_mul(a0,a1,MA0(k,i),MA1(k,i),MB0(i,j),MB1(i,j));
       }
@@ -184,10 +183,8 @@ void irsolve_lu_backsubs(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmu
    
 /**
  @brief 線形方程式A*X=Bのガウスの消去法による解法.
- @param[in]  B 行列B.サイズは(n,NRHS).
- @param[in]  A 係数行列A.サイズは(n,n).
- @param[out] A 破壊される.
- @param[out] B 解の行列X.サイズは(n,NRHS).
+ @param[in,out]  B0 B1   [in]行列B.サイズは(n,NRHS).[out]破壊される.
+ @param[in,out]  A0 A1   [in]係数行列A.サイズは(n,n).[out]解の行列X.サイズは(n,NRHS).
  */
 void irsolve_gauss_sweeper(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A1, int LDA, int *info)
 {

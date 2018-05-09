@@ -585,7 +585,7 @@ void rmat3_sub_d2(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	rsub_d2(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
+	rsub_d(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
