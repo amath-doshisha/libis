@@ -78,11 +78,12 @@ void dvec_copy(int n, double *y, double *x);
 // Y[i]=X[I[i]], 0<=i<n
 void dvec_copy_index(int n, double *Y, double *X, int *I);
 // z=x+y
-void dvec_add(int n, double *z, double *x, double *y);
-void dvec_add_scalar(int n, double *y, double *x, double a);
+void dvec_add_dvec(int n, double *z, double *x, double *y);
+void dvec_add_dscalar(int n, double *y, double *x, double a);
 // z=x-y
-void dvec_sub(int n, double *z, double *x, double *y);
-void dvec_sub_scalar(int n, double *z, double *x, double y);
+void dvec_sub_dvec(int n, double *z, double *x, double *y);
+void dvec_sub_dscalar(int n, double *z, double *x, double y);
+void dscalar_sub_dvec(int n, double *z, double x, double *y);
 // z=x/y
 void dvec_div_d2(int n, double *z, double *x, double y);
 // y=y+a*x

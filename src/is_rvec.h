@@ -98,17 +98,22 @@ void rvec_div_2exp(int n, rmulti **y, rmulti **x, int p);            // y=x/2^p
 void rvec_neg(int n, rmulti **y, rmulti **x);                        // y=-x
 void rvec_abs(int n, rmulti **y, rmulti **x);                        // y=abs(x)
 // z=x+y
-void rvec_add(int n, rmulti **z, rmulti **x, rmulti **y);
-void rvec_add_d(int n, rmulti **z, rmulti **x, double *y);
-void dvec_add_r(int n, rmulti **z, double *x, rmulti **y);
-void rvec_add_scalar(int n, rmulti **z, rmulti **x, rmulti *y);
-void rvec_add_scalar_d(int n, rmulti **z, rmulti **x, double y);
-void dvec_add_scalar_r(int n, rmulti **z, double *x, rmulti *y);
+void rvec_add_rvec(int n, rmulti **z, rmulti **x, rmulti **y);
+void rvec_add_dvec(int n, rmulti **z, rmulti **x, double *y);
+void dvec_add_rvec(int n, rmulti **z, double *x, rmulti **y);
+void rvec_add_rscalar(int n, rmulti **z, rmulti **x, rmulti *y);
+void rvec_add_dscalar(int n, rmulti **z, rmulti **x, double y);
+void dvec_add_rscalar(int n, rmulti **z, double *x, rmulti *y);
 // z=x-y
-void rvec_sub(int n, rmulti **z, rmulti **x, rmulti **y);
-void rvec_sub_r1(int n, rmulti **z, rmulti *x, rmulti **y);
-void rvec_sub_r2(int n, rmulti **z, rmulti **x, rmulti *y);
-void dvec_sub_scalar_r(int n, rmulti **z, double *x, rmulti *y);
+void rvec_sub_rvec(int n, rmulti **z, rmulti **x, rmulti **y);
+void rvec_sub_dvec(int n, rmulti **z, rmulti **x, double *y);
+void dvec_sub_rvec(int n, rmulti **z, double *x, rmulti **y);
+void rvec_sub_rscalar(int n, rmulti **z, rmulti **x, rmulti *y);
+void rvec_sub_dscalar(int n, rmulti **z, rmulti **x, double y);
+void dvec_sub_rscalar(int n, rmulti **z, double *x, rmulti *y);
+void rscalar_sub_rvec(int n, rmulti **z, rmulti *x, rmulti **y);
+void rscalar_sub_dvec(int n, rmulti **z, rmulti *x, double *y);
+void dscalar_sub_rvec(int n, rmulti **z, double x, rmulti **y);
 // z=x*y
 void rvec_mul(int n, rmulti **z, rmulti **x, rmulti **y);
 void rvec_mul_r(int n, rmulti **z, rmulti **x, rmulti *y);           // z=x*y

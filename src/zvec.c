@@ -325,7 +325,7 @@ void zvec_conj(int n, dcomplex *y, dcomplex *x)
 /////////////////////////////////////////////////////////////////////////////////////
 
 // z=x+y
-void zvec_add(int n, dcomplex *z, dcomplex *x, dcomplex *y)
+void zvec_add_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -335,7 +335,7 @@ void zvec_add(int n, dcomplex *z, dcomplex *x, dcomplex *y)
 }
 
 // z=x+y
-void zvec_add_d(int n, dcomplex *z, dcomplex *x, double *y)
+void zvec_add_dvec(int n, dcomplex *z, dcomplex *x, double *y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -345,7 +345,7 @@ void zvec_add_d(int n, dcomplex *z, dcomplex *x, double *y)
 }
 
 // z=x+y
-void dvec_add_z(int n, dcomplex *z, double *x, dcomplex *y)
+void dvec_add_zvec(int n, dcomplex *z, double *x, dcomplex *y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -357,7 +357,7 @@ void dvec_add_z(int n, dcomplex *z, double *x, dcomplex *y)
 /////////////////////////////////////////////////////////////////////////////////////
 
 // z=x+y
-void zvec_add_scalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
+void zvec_add_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
 {
   int i;
   for(i=0; i<n; i++){
@@ -367,7 +367,7 @@ void zvec_add_scalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
 }
 
 // z=x+y
-void zvec_add_scalar_d(int n, dcomplex *z, dcomplex *x, double y)
+void zvec_add_dscalar(int n, dcomplex *z, dcomplex *x, double y)
 {
   int i;
   for(i=0; i<n; i++){
@@ -377,7 +377,7 @@ void zvec_add_scalar_d(int n, dcomplex *z, dcomplex *x, double y)
 }
 
 // z=x+y
-void dvec_add_scalar_z(int n, dcomplex *z, double *x, dcomplex y)
+void dvec_add_zscalar(int n, dcomplex *z, double *x, dcomplex y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -390,7 +390,7 @@ void dvec_add_scalar_z(int n, dcomplex *z, double *x, dcomplex y)
 
 
 // z=x-y
-void zvec_sub(int n, dcomplex *z, dcomplex *x, dcomplex *y)
+void zvec_sub_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -400,7 +400,7 @@ void zvec_sub(int n, dcomplex *z, dcomplex *x, dcomplex *y)
 }
 
 // z=x-y
-void zvec_sub_d(int n, dcomplex *z, dcomplex *x, double *y)
+void zvec_sub_dvec(int n, dcomplex *z, dcomplex *x, double *y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -410,7 +410,7 @@ void zvec_sub_d(int n, dcomplex *z, dcomplex *x, double *y)
 }
 
 // z=x-y
-void dvec_sub_z(int n, dcomplex *z, double *x, dcomplex *y)
+void dvec_sub_zvec(int n, dcomplex *z, double *x, dcomplex *y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -422,7 +422,7 @@ void dvec_sub_z(int n, dcomplex *z, double *x, dcomplex *y)
 /////////////////////////////////////////////////////////////////////////////////////
 
 // z=x-y
-void zvec_sub_scalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
+void zvec_sub_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -432,7 +432,17 @@ void zvec_sub_scalar(int n, dcomplex *z, dcomplex *x, dcomplex y)
 }
 
 // z=x-y
-void zvec_sub_scalar_d(int n, dcomplex *z, dcomplex *x, double y)
+void zscalar_sub_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y)
+{
+  int i;
+  for(i=0; i<n; i++){
+    Z_R(z[i])=Z_R(x)-Z_R(y[i]);
+    Z_I(z[i])=Z_I(x)-Z_I(y[i]);
+  }
+}
+
+// z=x-y
+void zvec_sub_dscalar(int n, dcomplex *z, dcomplex *x, double y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -442,7 +452,17 @@ void zvec_sub_scalar_d(int n, dcomplex *z, dcomplex *x, double y)
 }
 
 // z=x-y
-void dvec_sub_scalar_z(int n, dcomplex *z, double *x, dcomplex y)
+void zscalar_sub_dvec(int n, dcomplex *z, dcomplex x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){
+    Z_R(z[i])=Z_R(x)-y[i];
+    Z_I(z[i])=Z_I(x);
+  }
+}
+
+// z=x-y
+void dvec_sub_zscalar(int n, dcomplex *z, double *x, dcomplex y)
 {
     int i;
     for(i=0; i<n; i++){
@@ -451,6 +471,15 @@ void dvec_sub_scalar_z(int n, dcomplex *z, double *x, dcomplex y)
     }
 }
 
+// z=x-y
+void dscalar_sub_zvec(int n, dcomplex *z, double x, dcomplex *y)
+{
+  int i;
+  for(i=0; i<n; i++){
+    Z_R(z[i])=x-Z_R(y[i]);
+    Z_I(z[i])= -Z_I(y[i]);
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////
 

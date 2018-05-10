@@ -460,26 +460,19 @@ void iradd(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y
  */
 void idadd_r(rmulti *z0, rmulti *z1, double x0, double x1, rmulti *y0, rmulti *y1)
 {
-    mpfr_add_d(z0,y0,x0,MPFR_RNDD); // lower bound
-    mpfr_add_d(z1,y1,x1,MPFR_RNDU); // upper bound
+  mpfr_add_d(z0,y0,x0,MPFR_RNDD); // lower bound
+  mpfr_add_d(z1,y1,x1,MPFR_RNDU); // upper bound
 }
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
 void iradd_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y0, double y1)
 {
-    mpfr_add_d(z0,x0,y0,MPFR_RNDD); // lower bound
-    mpfr_add_d(z1,x1,y1,MPFR_RNDU); // upper bound
+  mpfr_add_d(z0,x0,y0,MPFR_RNDD); // lower bound
+  mpfr_add_d(z1,x1,y1,MPFR_RNDU); // upper bound
 }
 
-/**
- @brief 区間の拡張 [z0,z1]=[x0,x1]+[-y,y]
- */
-void iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y)
-{
-  mpfr_sub(z0,x0,y,MPFR_RNDD); // lower bound
-  mpfr_add(z1,x1,y,MPFR_RNDU); // upper bound
-}
+///////////////////////////////////
 
 /**
  @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
@@ -491,7 +484,7 @@ void irsub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y
   p0=rget_prec(z0); p1=rget_prec(z1); prec=MAX2(p0,p1);
   RA(a0,prec); RA(a1,prec);
   mpfr_sub(a0,x0,y1,MPFR_RNDD); // lower bound
-  mpfr_sub(a1,x1,y0,MPFR_RNDU); // upper bound
+  mpfr_sub(a1,x1,y0,MPFR_RNDU); // upper bound  
   ircopy(z0,z1,a0,a1);
   RF(a0); RF(a1);
 }
@@ -508,18 +501,45 @@ void irsub_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti
 }
 
 /**
- @brief 引き算 [z0,z1]=[x0,x1]-[y,y]
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irsub_d2(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y)
+void irsub_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y0, double y1)
 {
   int p0,p1,prec;
   rmulti *a0=NULL,*a1=NULL;
   p0=rget_prec(z0); p1=rget_prec(z1); prec=MAX2(p0,p1);
   RA(a0,prec); RA(a1,prec);
-  irset_d(a0,a1,y,y);
+  irset_d(a0,a1,y0,y1);
   irsub(z0,z1,x0,x1,a0,a1);
   RF(a0); RF(a1);
 }
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y,y]
+ */
+void idsub_r(rmulti *z0, rmulti *z1, double x0, double x1, rmulti *y0, rmulti *y1)
+{
+  int p0,p1,prec;
+  rmulti *a0=NULL,*a1=NULL;
+  p0=rget_prec(z0); p1=rget_prec(z1); prec=MAX2(p0,p1);
+  RA(a0,prec); RA(a1,prec);
+  irset_d(a0,a1,x0,x1);
+  irsub(z0,z1,a0,a1,y0,y1);
+  RF(a0); RF(a1);
+}
+
+///////////////////////////////////
+
+
+/**
+ @brief 区間の拡張 [z0,z1]=[x0,x1]+[-y,y]
+ */
+void iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y)
+{
+  mpfr_sub(z0,x0,y,MPFR_RNDD); // lower bound
+  mpfr_add(z1,x1,y,MPFR_RNDU); // upper bound
+}
+
 
 /**
  @brief 掛け算 [z0,z1]=[x0,x1]*[y0,y1]

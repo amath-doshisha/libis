@@ -92,7 +92,7 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
     else if(info>0) { done=RHPEIG_SINGULAR; }
     else{
       rvec_max_abs(eta,n,F);              // eta=max(abs(F))
-      rvec_sub(n,x,x,F);                  // x=x-F
+      rvec_sub_rvec(n,x,x,F);                  // x=x-F
       rvec_normalize_sgn(n,x,x);          // x=x/sqrt(x'*x)
       rvec_sum_mul(C,n,z,x);              // C=z'*x
       rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x

@@ -587,6 +587,42 @@ void icadd(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
+void icadd_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1)
+{
+  iradd(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r+y.r
+  irset(C_I(z0),C_I(z1),C_I(x0),C_I(x1));       // z.i=x.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void iradd_c(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1)
+{
+  iradd(C_R(z0),C_R(z1),x0,x1,C_R(y0),C_R(y1)); // z.r=x.r+y.r
+  irset(C_I(z0),C_I(z1),      C_I(y0),C_I(y1)); // z.i=    y.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void icadd_z(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, dcomplex y0, dcomplex y1)
+{
+  iradd_d(C_R(z0),C_R(z1),C_R(x0),C_R(x1),Z_R(y0),Z_R(y1)); // z.r=x.r+y.r
+  iradd_d(C_I(z0),C_I(z1),C_I(x0),C_I(x1),Z_I(y0),Z_I(y1)); // z.i=x.i+y.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void izadd_c(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, cmulti *y0, cmulti *y1)
+{
+  idadd_r(C_R(z0),C_R(z1),Z_R(x0),Z_R(x1),C_R(y0),C_R(y1)); // z.r=x.r+y.r
+  idadd_r(C_I(z0),C_I(z1),Z_I(x0),Z_I(x1),C_I(y0),C_I(y1)); // z.i=x.i+y.i
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
 void icadd_d(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y0, double y1)
 {
   iradd_d(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r+y.r
@@ -620,59 +656,7 @@ void izadd_r(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, rmulti *y0, rmult
   irset_d (C_I(z0),C_I(z1),Z_I(x0),Z_I(x1));       // z.i=x.i
 }
 
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void icadd_z(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, dcomplex y0, dcomplex y1)
-{
-  iradd_d(C_R(z0),C_R(z1),C_R(x0),C_R(x1),Z_R(y0),Z_R(y1)); // z.r=x.r+y.r
-  iradd_d(C_I(z0),C_I(z1),C_I(x0),C_I(x1),Z_I(y0),Z_I(y1)); // z.i=x.i+y.i
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void izadd_c(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, cmulti *y0, cmulti *y1)
-{
-  idadd_r(C_R(z0),C_R(z1),Z_R(x0),Z_R(x1),C_R(y0),C_R(y1)); // z.r=x.r+y.r
-  idadd_r(C_I(z0),C_I(z1),Z_I(x0),Z_I(x1),C_I(y0),C_I(y1)); // z.i=x.i+y.i
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void icadd_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1)
-{
-  iradd(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r+y.r
-  irset(C_I(z0),C_I(z1),C_I(x0),C_I(x1));       // z.i=x.i
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void iradd_c(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1)
-{
-  iradd(C_R(z0),C_R(z1),x0,x1,C_R(y0),C_R(y1)); // z.r=x.r+y.r
-  irset(C_I(z0),C_I(z1),      C_I(y0),C_I(y1)); // z.i=    y.i
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[-y,y]
- */
-void icadd_pm(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y)
-{
-  iradd_pm(C_R(z0),C_R(z1),C_R(x0),C_R(x1),C_R(y)); // z.r=x.r+y.r
-  iradd_pm(C_I(z0),C_I(z1),C_I(x0),C_I(x1),C_I(y)); // z.i=x.i+y.i
-}
-
-/**
- @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
- */
-void icsub(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1)
-{
-  irsub(C_R(z0),C_R(z1),C_R(x0),C_R(x1),C_R(y0),C_R(y1)); // z.r=x.r-y.r
-  irsub(C_I(z0),C_I(z1),C_I(x0),C_I(x1),C_I(y0),C_I(y1)); // z.i=x.i-y.i
-}
+////////////////////////////////////////////////////////////
 
 /**
  @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
@@ -684,13 +668,25 @@ void icsub_ws(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti
   irsub_ws(C_I(z0),C_I(z1),C_I(x0),C_I(x1),C_I(y0),C_I(y1),n_rws,rws); // z.i=x.i-y.i
 }
 
+////////////////////////////////////////////////////////////
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icsub(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1)
+{
+  irsub(C_R(z0),C_R(z1),C_R(x0),C_R(x1),C_R(y0),C_R(y1)); // z.r=x.r-y.r
+  irsub(C_I(z0),C_I(z1),C_I(x0),C_I(x1),C_I(y0),C_I(y1)); // z.i=x.i-y.i
+}
+
+
 /**
  @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
  */
 void icsub_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1)
 {
-  irsub(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r-y.r
-  ircopy(C_I(z0),C_I(z1),C_I(x0),C_I(x1));      // z.i=x.i
+  irsub (C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r-y.r
+  ircopy(C_I(z0),C_I(z1),C_I(x0),C_I(x1));       // z.i=x.i
 }
 
 /**
@@ -699,16 +695,72 @@ void icsub_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti 
 void irsub_c(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1)
 {
   irsub(C_R(z0),C_R(z1),x0,x1,C_R(y0),C_R(y1)); // z.r=x.r-y.r
-  irneg(C_I(z0),C_I(z1),C_I(y0),C_I(y1));       //z.i=-(y.i)
+  irneg(C_I(z0),C_I(z1),      C_I(y0),C_I(y1)); // z.i=   -y.i
 }
 
 /**
- @brief 引き算 [z0,z1]=[x0,x1]-[y,y]
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icsub_d2(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y)
+void icsub_z(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, dcomplex y0, dcomplex y1)
 {
-  irsub_d2(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y); // z.r=x.r-y
-  ircopy(C_I(z0),C_I(z1),C_I(x0),C_I(x1));     // z.i=x.i
+  irsub_d(C_R(z0),C_R(z1),C_R(x0),C_R(x1),Z_R(y0),Z_R(y1)); // z.r=x.r-y.r
+  irsub_d(C_I(z0),C_I(z1),C_I(x0),C_I(x1),Z_I(y0),Z_I(y1)); // z.i=x.i-y.i
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izsub_c(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, cmulti *y0, cmulti *y1)
+{
+  idsub_r(C_R(z0),C_R(z1),Z_R(x0),Z_R(x1),C_R(y0),C_R(y1)); // z.r=x.r-y.r
+  idsub_r(C_I(z0),C_I(z1),Z_I(x0),Z_I(x1),C_I(y0),C_I(y1)); // z.i=x.i-y.i
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icsub_d(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y0, double y1)
+{
+  irsub_d(C_R(z0),C_R(z1),C_R(x0),C_R(x1),y0,y1); // z.r=x.r-y
+  irset  (C_I(z0),C_I(z1),C_I(x0),C_I(x1));       // z.i=x.i
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void idsub_c(cmulti *z0, cmulti *z1, double x0, double x1, cmulti *y0, cmulti *y1)
+{
+  idsub_r(C_R(z0),C_R(z1),x0,x1,C_R(y0),C_R(y1)); // z.r=x.r-y.r
+  irneg  (C_I(z0),C_I(z1),      C_I(y0),C_I(y1)); // z.i=   -y.i
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void irsub_z(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, dcomplex y0, dcomplex y1)
+{
+  irsub_d(C_R(z0),C_R(z1),x0,x1, Z_R(y0), Z_R(y1)); // z.r=x-y.r
+  irset_d(C_I(z0),C_I(z1),      -Z_I(y0),-Z_I(y1)); // z.i= -y.i
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izsub_r(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, rmulti *y0, rmulti *y1)
+{
+  idsub_r(C_R(z0),C_R(z1),Z_R(x0),Z_R(x1),y0,y1); // z.r=x.r-y
+  irset_d(C_I(z0),C_I(z1),Z_I(x0),Z_I(x1));       // z.i=x.i
+}
+
+////////////////////////////////////////////////////////////
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[-y,y]
+ */
+void icadd_pm(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y)
+{
+  iradd_pm(C_R(z0),C_R(z1),C_R(x0),C_R(x1),C_R(y)); // z.r=x.r+y.r
+  iradd_pm(C_I(z0),C_I(z1),C_I(x0),C_I(x1),C_I(y)); // z.i=x.i+y.i
 }
 
 /**

@@ -67,22 +67,27 @@ void icatanh(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1); // [y0,y1]=atanh([
  */
 // [z0,z1]=[x0,x1]+[y0,y1]
 void icadd(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1);
-void icadd_d(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y0, double y1);
-void iradd_z(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, dcomplex y0, dcomplex y1);
-void icadd_z(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, dcomplex y0, dcomplex y1);
 void icadd_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1);
-void idadd_c(cmulti *z0, cmulti *z1, double x0, double x1, cmulti *y0, cmulti *y1);
-void izadd_r(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, rmulti *y0, rmulti *y1);
-void izadd_c(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, cmulti *y0, cmulti *y1);
 void iradd_c(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1);
-// [z0,z1]=[x0,x1]+[y0,y1]
-void icadd_scalar_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1);
-void icadd_pm(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y);               // [z0,z1]=[x0,x1]+[-y,y]
-void icsub(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1);     // [z0,z1]=[x0,x1]-[y0,y1]
+void icadd_z(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, dcomplex y0, dcomplex y1);
+void izadd_c(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, cmulti *y0, cmulti *y1);
+void icadd_d(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y0, double y1);
+void idadd_c(cmulti *z0, cmulti *z1, double x0, double x1, cmulti *y0, cmulti *y1);
+void iradd_z(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, dcomplex y0, dcomplex y1);
+void izadd_r(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, rmulti *y0, rmulti *y1);
+// [z0,z1]=[x0,x1]-[y0,y1]
 void icsub_ws(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1, int n_rws, rmulti **rws); // n_rws>=2
-void icsub_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1);   // [z0,z1]=[x0,x1]-[y0,y1]
-void irsub_c(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1);   // [z0,z1]=[x0,x1]-[y0,y1]
-void icsub_d2(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y);                // [z0,z1]=[x0,x1]-[y,y]
+void icsub(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1);
+void icsub_r(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, rmulti *y0, rmulti *y1);
+void irsub_c(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1);
+void icsub_z(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, dcomplex y0, dcomplex y1);
+void izsub_c(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, cmulti *y0, cmulti *y1);
+void icsub_d(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, double y0, double y1);
+void idsub_c(cmulti *z0, cmulti *z1, double x0, double x1, cmulti *y0, cmulti *y1);
+void irsub_z(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, dcomplex y0, dcomplex y1);
+void izsub_r(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, rmulti *y0, rmulti *y1);
+// [z0,z1]=[x0,x1]+[-y,y]
+void icadd_pm(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y);
 void icmul(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1);     // [z0,z1]=[x0,x1]*[y0,y1]
 void icmul_ws(cmulti *z0, cmulti *z1, cmulti *x0, cmulti *x1, cmulti *y0, cmulti *y1, int n_rws, rmulti **rws, int n_cws, cmulti **cws); // n_rws>=8,n_cws>=2
 void icmul_r1(cmulti *z0, cmulti *z1, rmulti *x0, rmulti *x1, cmulti *y0, cmulti *y1);  // [z0,z1]=[x0,x1]*[y0,y1]

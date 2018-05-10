@@ -1,0 +1,8 @@
+<map id="rvec_sum_pow2" name="rvec_sum_pow2">
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="148,5,212,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="148,56,212,83"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="260,5,312,32"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="360,56,457,83"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="265,56,307,83"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="265,107,307,133"/>
+</map>

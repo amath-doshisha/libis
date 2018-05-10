@@ -260,10 +260,10 @@ void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **
   mpfr_rnd_t mode;
   mode=get_round_mode();
   set_round_mode(MPFR_RNDU);  // up
-  cvec_sub(n,xc,x1,x0);    // xc=x1-x0
+  cvec_sub_cvec(n,xc,x1,x0);    // xc=x1-x0
   cvec_mul_d(n,xc,xc,0.5); // xc=(x1-x0)/2
-  cvec_add(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
-  cvec_sub(n,xr,xc,x0);    // xr=xc-x0
+  cvec_add_cvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
+  cvec_sub_cvec(n,xr,xc,x0);    // xr=xc-x0
   set_round_mode(mode);       // back
 }
 
@@ -340,10 +340,12 @@ void icvec_mr(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1)
   for(i=0; i<n; i++){ icmr(mid[i],rad[i],x0[i],x1[i]); }
 }
 
+////////////////////////////////////////////////
+
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
 */
-void icvec_add(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_add_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -352,34 +354,16 @@ void icvec_add(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
-void idvec_add_c(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
+void icvec_add_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
-  for(i=0; i<n; i++){ idadd_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+  for(i=0; i<n; i++){ icadd_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
 }
 
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
-void izvec_add_r(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
-{
-  int i;
-  for(i=0; i<n; i++){ izadd_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void izvec_add_c(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
-{
-  int i;
-  for(i=0; i<n; i++){ izadd_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void irvec_add_c(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
+void irvec_add_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -388,24 +372,7 @@ void irvec_add_c(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmul
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_d(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
-{
-  int i;
-  for(i=0; i<n; i++){ icadd_d(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void irvec_add_z(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
-{
-  int i;
-  for(i=0; i<n; i++){ iradd_z(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
-}
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void icvec_add_z(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_add_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_z(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -414,16 +381,54 @@ void icvec_add_z(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcom
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_r(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
+void izvec_add_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
 {
   int i;
-  for(i=0; i<n; i++){ icadd_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+  for(i=0; i<n; i++){ izadd_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
 }
 
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void icvec_add_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icadd_d(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void idvec_add_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idadd_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void irvec_add_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ iradd_z(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void izvec_add_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izadd_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/////////////////////////////////////////////////////////////////
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
 */
-void icvec_add_scalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_add_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -432,16 +437,25 @@ void icvec_add_scalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1,
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_scalar_d(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
+void icvec_add_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
-  for(i=0; i<n; i++){ icadd_d(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+  for(i=0; i<n; i++){ icadd_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_add_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ iradd_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
 }
 
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_scalar_z(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_add_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_z(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -450,48 +464,298 @@ void icvec_add_scalar_z(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x
 /**
  @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_scalar_r(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
-{
-  int i;
-  for(i=0; i<n; i++){ icadd_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void izvec_add_scalar_r(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
-{
-  int i;
-  for(i=0; i<n; i++){ izadd_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
-}
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void idvec_add_scalar_c(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
-{
-  int i;
-  for(i=0; i<n; i++){ idadd_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
-}
-
-
-/**
- @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
- */
-void izvec_add_scalar_c(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
+void izvec_add_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ izadd_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
 }
 
 /**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void icvec_add_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icadd_d(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void idvec_add_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idadd_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_add_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
+{
+  int i;
+  for(i=0; i<n; i++){ iradd_z(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 足し算 [z0,z1]=[x0,x1]+[y0,y1]
+ */
+void izvec_add_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izadd_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+///////////////////////////////////////////////////
+
+/**
  @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
-*/
-void icvec_sub(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
+ */
+void icvec_sub_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
 }
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icvec_sub_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void irvec_sub_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icvec_sub_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_z(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izvec_sub_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izsub_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icvec_sub_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_d(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void idvec_sub_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idsub_c(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void irvec_sub_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_z(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izvec_sub_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izsub_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+///////////////////////////////////////////////////
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icvec_sub_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void irvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icvec_sub_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_z(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izsub_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icvec_sub_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_d(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void idvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idsub_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void irvec_sub_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_z(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izvec_sub_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izsub_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+///////////////////////////////////////////////////
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icscalar_sub_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_r(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void irscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_c(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icscalar_sub_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_z(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izsub_c(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void icscalar_sub_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ icsub_d(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void idscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idsub_c(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void irscalar_sub_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_z(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief 引き算 [z0,z1]=[x0,x1]-[y0,y1]
+ */
+void izscalar_sub_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ izsub_r(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+///////////////////////////////////////////////////
 
 /**
  @brief 掛け算 [z0,z1]=[x0,x1]*[y0,y1]

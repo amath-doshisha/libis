@@ -99,6 +99,8 @@ void array_get_index(int *index, array *x, int t);
 int array_type_check(int type);
 int array_is_empty(array *x);
 int array_same_dim_check(array *x, array *y);
+int array_get_ndim(array *x);
+int array_get_subdim(array *x, array *y);
 int array_is_scalar(array *x);
 
 /*

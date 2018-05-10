@@ -1,5 +1,14 @@
 clear all
 close all
+
+A=zeros(3,1);
+A(:)=1:length(A)
+B=zeros(3,3,3)
+A=multi(A);
+B=multi(B);
+A+B
+B+A
+
 % A = [1 2 3; 4 5 6]
 % b = [10; 100]
 % B=zeros(2,3,2,2);
@@ -21,158 +30,151 @@ close all
 % B+A
 % B+b
 
-
-
-Az=rand(3,3);
-Az(:)=(1:9)-i*(9:-1:1)
-Ad=real(Az)
-Ar=multi(Ad)
-AR=imulti(Ad)
-Ac=multi(Az)
-AC=imulti(Az)
-
-disp('----------------');
-% Bd=multi_cast(Ad,'d')
-% Bz=multi_cast(Ad,'z')
-% Br=multi_cast(Ad,'r')
-% Bc=multi_cast(Ad,'c')
-% BR=multi_cast(Ad,'R')
-% BC=multi_cast(Ad,'C')
-% disp('----------------');
-% Bd=multi_cast(Ar,'d')
-% Bz=multi_cast(Ar,'z')
-% Br=multi_cast(Ar,'r')
-% Bc=multi_cast(Ar,'c')
-% BR=multi_cast(Ar,'R')
-% BC=multi_cast(Ar,'C')
-% disp('----------------');
-% Bd=multi_cast(AR,'d')
-% Bz=multi_cast(AR,'z')
-% Br=multi_cast(AR,'r')
-% Bc=multi_cast(AR,'c')
-% BR=multi_cast(AR,'R')
-% BC=multi_cast(AR,'C')
-% disp('----------------');
-% Bd=multi_cast(Az,'d')
-% Bz=multi_cast(Az,'z')
-% Br=multi_cast(Az,'r')
-% Bc=multi_cast(Az,'c')
-% BR=multi_cast(Az,'R')
-% BC=multi_cast(Az,'C')
-% disp('----------------');
-% Bd=multi_cast(Ac,'d')
-% Bz=multi_cast(Ac,'z')
-% Br=multi_cast(Ac,'r')
-% Bc=multi_cast(Ac,'c')
-% BR=multi_cast(Ac,'R')
-% BC=multi_cast(Ac,'C')
-disp('----------------');
-Bd=multi_cast(AC,'d')
-Bz=multi_cast(AC,'z')
-Br=multi_cast(AC,'r')
-Bc=multi_cast(AC,'c')
-BR=multi_cast(AC,'R')
-BC=multi_cast(AC,'C')
+% Az=rand(3,3);
+% Az(:)=(1:9)-i*(9:-1:1)
+% Ad=real(Az)
+% Ar=multi(Ad)
+% AR=imulti(Ad)
+% Ac=multi(Az)
+% AC=imulti(Az)
 % 
 % disp('----------------');
-% double(Ad+Bd)-2*Ad
-% double(Ad+Bz)-(Ad+Bz)
-% double(Ad+Br)-2*Ad
-% double(Ad+Bc)-(Ad+Bz)
-% double(Ad+BR)-2*Ad
-% double(Ad+BC)-(Ad+Bz)
+% % Bd=multi_cast(Ad,'d')
+% % Bz=multi_cast(Ad,'z')
+% % Br=multi_cast(Ad,'r')
+% % Bc=multi_cast(Ad,'c')
+% % BR=multi_cast(Ad,'R')
+% % BC=multi_cast(Ad,'C')
+% % disp('----------------');
+% % Bd=multi_cast(Ar,'d')
+% % Bz=multi_cast(Ar,'z')
+% % Br=multi_cast(Ar,'r')
+% % Bc=multi_cast(Ar,'c')
+% % BR=multi_cast(Ar,'R')
+% % BC=multi_cast(Ar,'C')
+% % disp('----------------');
+% % Bd=multi_cast(AR,'d')
+% % Bz=multi_cast(AR,'z')
+% % Br=multi_cast(AR,'r')
+% % Bc=multi_cast(AR,'c')
+% % BR=multi_cast(AR,'R')
+% % BC=multi_cast(AR,'C')
+% % disp('----------------');
+% % Bd=multi_cast(Az,'d')
+% % Bz=multi_cast(Az,'z')
+% % Br=multi_cast(Az,'r')
+% % Bc=multi_cast(Az,'c')
+% % BR=multi_cast(Az,'R')
+% % BC=multi_cast(Az,'C')
+% % disp('----------------');
+% % Bd=multi_cast(Ac,'d')
+% % Bz=multi_cast(Ac,'z')
+% % Br=multi_cast(Ac,'r')
+% % Bc=multi_cast(Ac,'c')
+% % BR=multi_cast(Ac,'R')
+% % BC=multi_cast(Ac,'C')
 % disp('----------------');
-% double(Az+Bd)-(Az+Bd)
-% double(Az+Bz)-(Az+Bz)
-% double(Az+Br)-(Az+Bd)
-% double(Az+Bc)-(Az+Bz)
-% double(Az+BR)-(Az+Bd)
-% double(Az+BC)-(Az+Bz)
+% Bd=multi_cast(AC,'d')
+% Bz=multi_cast(AC,'z')
+% Br=multi_cast(AC,'r')
+% Bc=multi_cast(AC,'c')
+% BR=multi_cast(AC,'R')
+% BC=multi_cast(AC,'C')
+% % 
+% % disp('----------------');
+% % double(Ad+Bd)-2*Ad
+% % double(Ad+Bz)-(Ad+Bz)
+% % double(Ad+Br)-2*Ad
+% % double(Ad+Bc)-(Ad+Bz)
+% % double(Ad+BR)-2*Ad
+% % double(Ad+BC)-(Ad+Bz)
+% % disp('----------------');
+% % double(Az+Bd)-(Az+Bd)
+% % double(Az+Bz)-(Az+Bz)
+% % double(Az+Br)-(Az+Bd)
+% % double(Az+Bc)-(Az+Bz)
+% % double(Az+BR)-(Az+Bd)
+% % double(Az+BC)-(Az+Bz)
+% % disp('----------------');
+% % double(Ar+Bd)-(Ad+Bd)
+% % double(Ar+Bz)-(Ad+Bz)
+% % double(Ar+Br)-(Ad+Bd)
+% % double(Ar+Bc)-(Ad+Bz)
+% % double(Ar+BR)-(Ad+Bd)
+% % double(Ar+BC)-(Ad+Bz)
+% % disp('----------------');
+% % double(Ac+Bd)-(Az+Bd)
+% % double(Ac+Bz)-(Az+Bz)
+% % double(Ac+Br)-(Az+Bd)
+% % double(Ac+Bc)-(Az+Bz)
+% % double(Ac+BR)-(Az+Bd)
+% % double(Ac+BC)-(Az+Bz)
+% % disp('----------------');
+% % double(AR+Bd)-(Ad+Bd)
+% % double(AR+Bz)-(Ad+Bz)
+% % double(AR+Br)-(Ad+Bd)
+% % double(AR+Bc)-(Ad+Bz)
+% % double(AR+BR)-(Ad+Bd)
+% % double(AR+BC)-(Ad+Bz)
+% % disp('----------------');
+% % double(AC+Bd)-(Az+Bd)
+% % double(AC+Bz)-(Az+Bz)
+% % double(AC+Br)-(Az+Bd)
+% % double(AC+Bc)-(Az+Bz)
+% % double(AC+BR)-(Az+Bd)
+% % double(AC+BC)-(Az+Bz)
+% % disp('----------------');
+% 
+% ad=1
+% ar=multi(ad)
+% aR=imulti(1,1.01)
+% az=1+i
+% ac=multi(az)
+% aC=imulti(1+i,1.01+1.01*i)
+% 
 % disp('----------------');
-% double(Ar+Bd)-(Ad+Bd)
-% double(Ar+Bz)-(Ad+Bz)
-% double(Ar+Br)-(Ad+Bd)
-% double(Ar+Bc)-(Ad+Bz)
-% double(Ar+BR)-(Ad+Bd)
-% double(Ar+BC)-(Ad+Bz)
+% (Ad-ad)+(ad-Ad)
+% (Ad-ar)+(ar-Ad)
+% (Ad-aR)+(aR-Ad)
+% (Ad-az)+(az-Ad)
+% (Ad-ac)+(ac-Ad)
+% (Ad-aC)+(aC-Ad)
 % disp('----------------');
-% double(Ac+Bd)-(Az+Bd)
-% double(Ac+Bz)-(Az+Bz)
-% double(Ac+Br)-(Az+Bd)
-% double(Ac+Bc)-(Az+Bz)
-% double(Ac+BR)-(Az+Bd)
-% double(Ac+BC)-(Az+Bz)
+% (Az-ad)+(ad-Az)
+% (Az-ar)+(ar-Az)
+% (Az-aR)+(aR-Az)
+% (Az-az)+(az-Az)
+% (Az-ac)+(ac-Az)
+% (Az-aC)+(aC-Az)
 % disp('----------------');
-% double(AR+Bd)-(Ad+Bd)
-% double(AR+Bz)-(Ad+Bz)
-% double(AR+Br)-(Ad+Bd)
-% double(AR+Bc)-(Ad+Bz)
-% double(AR+BR)-(Ad+Bd)
-% double(AR+BC)-(Ad+Bz)
+% (Ar-ad)+(ad-Ar)
+% (Ar-ar)+(ar-Ar)
+% (Ar-aR)+(aR-Ar)
+% (Ar-az)+(az-Ar)
+% (Ar-ac)+(ac-Ar)
+% (Ar-aC)+(aC-Ar)
 % disp('----------------');
-% double(AC+Bd)-(Az+Bd)
-% double(AC+Bz)-(Az+Bz)
-% double(AC+Br)-(Az+Bd)
-% double(AC+Bc)-(Az+Bz)
-% double(AC+BR)-(Az+Bd)
-% double(AC+BC)-(Az+Bz)
+% (Ac-ad)+(ad-Ac)
+% (Ac-ar)+(ar-Ac)
+% (Ac-aR)+(aR-Ac)
+% (Ac-az)+(az-Ac)
+% (Ac-ac)+(ac-Ac)
+% (Ac-aC)+(aC-Ac)
 % disp('----------------');
-
-ad=1
-ar=multi(ad)
-aR=imulti(1,2)
-az=1+i
-ac=multi(az)
-aC=imulti(1+i,2+2*i)
-
-disp('----------------');
-double(Ad+ad)-double(ad+Ad)
-double(Ad+ar)-double(ar+Ad)
-double(Ad+aR)-double(aR+Ad)
-double(Ad+az)-double(az+Ad)
-double(Ad+ac)-double(ac+Ad)
-double(Ad+aC)-double(aC+Ad)
-disp('----------------');
-double(Az+ad)-double(ad+Az)
-double(Az+ar)-double(ar+Az)
-double(Az+aR)-double(aR+Az)
-double(Az+az)-double(az+Az)
-double(Az+ac)-double(ac+Az)
-double(Az+aC)-double(aC+Az)
-disp('----------------');
-double(Ar+ad)-double(ad+Ar)
-double(Ar+ar)-double(ar+Ar)
-double(Ar+aR)-double(aR+Ar)
-double(Ar+az)-double(az+Ar)
-double(Ar+ac)-double(ac+Ar)
-double(Ar+aC)-double(aC+Ar)
-disp('----------------');
-double(Ac+ad)-double(ad+Ac)
-double(Ac+ar)-double(ar+Ac)
-double(Ac+aR)-double(aR+Ac)
-double(Ac+az)-double(az+Ac)
-double(Ac+ac)-double(ac+Ac)
-double(Ac+aC)-double(aC+Ac)
-disp('----------------');
-double(AR+ad)-double(ad+AR)
-double(AR+ar)-double(ar+AR)
-double(AR+aR)-double(aR+AR)
-double(AR+az)-double(az+AR)
-double(AR+ac)-double(ac+AR)
-double(AR+aC)-double(aC+AR)
-disp('----------------');
-double(AC+ad)-double(ad+AC)
-double(AC+ar)-double(ar+AC)
-double(AC+aR)-double(aR+AC)
-double(AC+az)-double(az+AC)
-double(AC+ac)-double(ac+AC)
-double(AC+aC)-double(aC+AC)
-disp('----------------');
-
-Ad+Bd(:,1)
-Bd(:,1)+Ad
-
-
+% (AR-ad)+(ad-AR)
+% (AR-ar)+(ar-AR)
+% (AR-aR)+(aR-AR)
+% (AR-az)+(az-AR)
+% (AR-ac)+(ac-AR)
+% (AR-aC)+(aC-AR)
+% disp('----------------');
+% (AC-ad)+(ad-AC)
+% (AC-ar)+(ar-AC)
+% (AC-aR)+(aR-AC)
+% (AC-az)+(az-AC)
+% (AC-ac)+(ac-AC)
+% (AC-aC)+(aC-AC)
+% disp('----------------');
 
 % 
 % 

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/is_zhshldr.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('is__zhshldr_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">is_zhshldr.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="is__zhshldr_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IS_ZHSHLDR_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IS_ZHSHLDR_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// size(x)=n</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// h[0]=0; ...; h[k-1]=0; h[k]=-s*xi; h[k+1]=x[k+1]; ...; h[n-1]=x[n-1];</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__zhshldr_8h.html#a7e0332c1cac700397cfde006b7c7ee51">zhouseholder_vec</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> *alpha, <a class="code" href="structdcomplex.html">dcomplex</a> *x);</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__zhshldr_8h.html#a3c47509ef596cbdf47a401e059c877c5">zhouseholder</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k0, <span class="keywordtype">int</span> nH, <span class="keywordtype">int</span> k, <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> *alpha, <a class="code" href="structdcomplex.html">dcomplex</a> *H, <span class="keywordtype">int</span> LDH, <span class="keywordtype">double</span> *Alpha, <a class="code" href="structdcomplex.html">dcomplex</a> *x);</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// B=A*H, H=I-alpha*h*h&#39;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__zhshldr_8h.html#a4c9c9f8765552c5b06b1483451280afd">zhouseholder_right</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n, <a class="code" href="structdcomplex.html">dcomplex</a> *A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> k, <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> alpha);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// B=H*A, H=I-alpha*h*h&#39;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__zhshldr_8h.html#af8b229fed4e9cfc513ee44377ac253c3">zhouseholder_left</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n, <a class="code" href="structdcomplex.html">dcomplex</a> *A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> k, <a class="code" href="structdcomplex.html">dcomplex</a> *h, <span class="keywordtype">double</span> alpha);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="is__zhshldr_8h_html_a3c47509ef596cbdf47a401e059c877c5"><div class="ttname"><a href="is__zhshldr_8h.html#a3c47509ef596cbdf47a401e059c877c5">zhouseholder</a></div><div class="ttdeci">void zhouseholder(int n, int k0, int nH, int k, dcomplex *h, double *alpha, dcomplex *H, int LDH, double *Alpha, dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00049">zhshldr.c:49</a></div></div>
+<div class="ttc" id="is__zhshldr_8h_html_a7e0332c1cac700397cfde006b7c7ee51"><div class="ttname"><a href="is__zhshldr_8h.html#a7e0332c1cac700397cfde006b7c7ee51">zhouseholder_vec</a></div><div class="ttdeci">void zhouseholder_vec(int n, int k, dcomplex *h, double *alpha, dcomplex *x)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00013">zhshldr.c:13</a></div></div>
+<div class="ttc" id="is__zhshldr_8h_html_a4c9c9f8765552c5b06b1483451280afd"><div class="ttname"><a href="is__zhshldr_8h.html#a4c9c9f8765552c5b06b1483451280afd">zhouseholder_right</a></div><div class="ttdeci">void zhouseholder_right(int m, int n, dcomplex *A, int LDA, int k, dcomplex *h, double alpha)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00069">zhshldr.c:69</a></div></div>
+<div class="ttc" id="is__zhshldr_8h_html_af8b229fed4e9cfc513ee44377ac253c3"><div class="ttname"><a href="is__zhshldr_8h.html#af8b229fed4e9cfc513ee44377ac253c3">zhouseholder_left</a></div><div class="ttdeci">void zhouseholder_left(int m, int n, dcomplex *A, int LDA, int k, dcomplex *h, double alpha)</div><div class="ttdef"><b>Definition:</b> <a href="zhshldr_8c_source.html#l00083">zhshldr.c:83</a></div></div>
+<div class="ttc" id="structdcomplex_html"><div class="ttname"><a href="structdcomplex.html">dcomplex</a></div><div class="ttdoc">倍精度複素数構造体 </div><div class="ttdef"><b>Definition:</b> <a href="is__dcomplex_8h_source.html#l00012">is_dcomplex.h:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__zhshldr_8h.html">is_zhshldr.h</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分27秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

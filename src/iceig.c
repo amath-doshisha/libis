@@ -125,7 +125,7 @@ int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmu
   iceig_residual(n,F0,F1,A,LDA,A,LDA,x,x,lambda,lambda); // F(1:n)=A*x-lambda*x
   icset_d(F0[n],F1[n],0,0);                              // F(m)=0
   icvec_sum_abs2(C_R(F0[n]),C_R(F1[n]),n,x,x);           // F(m).r=sum(x.^2)
-  icsub_d2(F0[n],F1[n],F0[n],F1[n],1);                   // F(m)=sum(x.^2)-1
+  icsub_d(F0[n],F1[n],F0[n],F1[n],1,1);                  // F(m)=sum(x.^2)-1
   // e=abs(R*F)
   cvec_lintr(m,m,e,R,m,F);
   cvec_absc(m,e,e);

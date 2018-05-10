@@ -165,10 +165,10 @@ void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **
   mpfr_rnd_t mode;
   mode=get_round_mode();
   set_round_mode(MPFR_RNDU);  // up
-  rvec_sub(n,xc,x1,x0);    // xc=x1-x0
+  rvec_sub_rvec(n,xc,x1,x0);    // xc=x1-x0
   rvec_mul_d(n,xc,xc,0.5); // xc=(x1-x0)/2
-  rvec_add(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
-  rvec_sub(n,xr,xc,x0);    // xr=xc-x0
+  rvec_add_rvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
+  rvec_sub_rvec(n,xr,xc,x0);    // xr=xc-x0
   set_round_mode(mode);       // back
 }
 
@@ -244,10 +244,12 @@ void irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1)
   for(i=0; i<n; i++){ irmr(mid[i],rad[i],x0[i],x1[i]); }
 }
 
+///////////////////////////////////////////////////////
+
 /**
  @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
 */
-void irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
+void irvec_add_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -256,25 +258,27 @@ void irvec_add(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti
 /**
  @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
  */
-void idvec_add_r(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
+void irvec_add_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
 {
-    int i;
-    for(i=0; i<n; i++){ idadd_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+  int i;
+  for(i=0; i<n; i++){ iradd_d(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
 }
 
 /**
  @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irvec_add_d(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
+void idvec_add_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
 {
     int i;
-    for(i=0; i<n; i++){ iradd_d(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+    for(i=0; i<n; i++){ idadd_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
 }
+
+/////////////////////////////////////////////////
 
 /**
  @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
 */
-void irvec_add_scalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
+void irvec_add_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -283,7 +287,7 @@ void irvec_add_scalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1,
 /**
  @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irvec_add_scalar_d(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
+void irvec_add_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_d(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -292,38 +296,101 @@ void irvec_add_scalar_d(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x
 /**
  @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irvec_add_scalar_z(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
-{
-  int i;
-  for(i=0; i<n; i++){ iradd_z(z0[i],z1[i],x0[i],x1[i],y0,y1); }
-}
-
-/**
- @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
- */
-void irvec_add_scalar_c(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
-{
-  int i;
-  for(i=0; i<n; i++){ iradd_c(z0[i],z1[i],x0[i],x1[i],y0,y1); }
-}
-
-/**
- @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
- */
-void idvec_add_scalar_r(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
+void idvec_add_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ idadd_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
 }
 
+/////////////////////////////////////////////////////////////////////////////
+
 /**
- @brief irmulti型のベクトルの引き算 [z0,z1]=[x0,z1]-[y0,y1]
-*/
-void irvec_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
+ @brief [z0,z1]=[x0,z1]-[y0,y1]
+ */
+void irvec_sub_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
 }
+
+/**
+ @brief [z0,z1]=[x0,z1]-[y0,y1]
+ */
+void irvec_sub_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_d(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+/**
+ @brief [z0,z1]=[x0,z1]-[y0,y1]
+ */
+void idvec_sub_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idsub_r(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
+}
+
+//////////////////////////////////////////////////
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_sub_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irvec_sub_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_d(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void idvec_sub_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idsub_r(z0[i],z1[i],x0[i],x1[i],y0,y1); }
+}
+
+////////////////////////////////////////////////
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irscalar_sub_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void irscalar_sub_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsub_d(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/**
+ @brief irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1]
+ */
+void idscalar_sub_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
+{
+  int i;
+  for(i=0; i<n; i++){ idsub_r(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
 
 /**
  @brief irmulti型のベクトルの掛け算 [z0,z1]=[x0,x1]*[y0,y1]

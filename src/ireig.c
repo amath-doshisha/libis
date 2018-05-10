@@ -120,7 +120,7 @@ int ireig_1pair_krawczyk(int n, rmulti **e, rmulti **A, int LDA, rmulti **x, rmu
   // [F0,F1]=[A*x-lambda*x; (sum(x.^2)-1)/2]
   ireig_residual(n,F0,F1,A,LDA,A,LDA,x,x,lambda,lambda); // F(1:n)=A*x-lambda*x
   irvec_sum_pow2(F0[n],F1[n],n,x,x);                     // F(m)=(sum(x.^2)-1)/2
-  irsub_d2(F0[n],F1[n],F0[n],F1[n],1);
+  irsub_d(F0[n],F1[n],F0[n],F1[n],1,1);
   irmul_d(F0[n],F1[n],F0[n],F1[n],0.5);
   // e=abs(R*F)
   rvec_lintr(m,m,e,R,m,F);

@@ -1,0 +1,1418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/is_print.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('is__print_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_print.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="is__print_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a385c44f6fb256e5716a2302a5b940388"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388ad13773bfc025b73195743c977be7c6a6">COLOR_RESET</a> =0, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a2a9daf215a30f1c539ead18c66380fc1">COLOR_BLACK</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a6169b55206330296e2c0ca1282b51cda">COLOR_DARK_GRAY</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388abae5e681ac33700b80427c741e83d11f">COLOR_LIGHT_GRAY</a>, 
+<br />
+&#160;&#160;<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388ad47b4c240a0109970bb2a7fe3a07d3ec">COLOR_WHITE</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a592503b9434c1e751a92f3fc536d7950">COLOR_RED</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a726df597a3d842789899ff84f7ff3721">COLOR_LIGHT_RED</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388acfa9d8bbffc418447ed826f286abca02">COLOR_GREEN</a>, 
+<br />
+&#160;&#160;<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a35ff3a3ccb655f1e72e7c0c74588e41b">COLOR_LIGHT_GREEN</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a70b424bcf0a4a80c0a6f810d1cff20fe">COLOR_BROWN</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a1340428efccb140dcbdb71aa6176f696">COLOR_BLUE</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a97e4b144ec0f5f6a6d19eccd00a1cba8">COLOR_LIGHT_BLUE</a>, 
+<br />
+&#160;&#160;<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a278276a8155620ed5e155c80d35316cc">COLOR_PURPLE</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388aeff44008d5350323fcfe347a0704cb0c">COLOR_LIGHT_PURPLE</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388a7896ff2cc707b5873da0b97d38bf852e">COLOR_CYAN</a>, 
+<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388aceba56a8aca3ee9dfc0383c5a35cbabe">COLOR_LIGHT_CYAN</a>, 
+<br />
+&#160;&#160;<a class="el" href="is__print_8h.html#a385c44f6fb256e5716a2302a5b940388ab03862907066c68204ee9df1ee04aa29">COLOR_YELLOW</a>
+<br />
+ }</td></tr>
+<tr class="separator:a385c44f6fb256e5716a2302a5b940388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:aa4f6858ed3ecdad5501013ac4001c9ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca">print_reset</a> (void)</td></tr>
+<tr class="separator:aa4f6858ed3ecdad5501013ac4001c9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5f039bc275112682baa4e869bfe4aad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#af5f039bc275112682baa4e869bfe4aad">print_black</a> (void)</td></tr>
+<tr class="separator:af5f039bc275112682baa4e869bfe4aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e707b248168b71cd3ca77f0a24422e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a56e707b248168b71cd3ca77f0a24422e">print_red</a> (void)</td></tr>
+<tr class="separator:a56e707b248168b71cd3ca77f0a24422e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a983ca8a8ba6530d8de25633e0944ef35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a983ca8a8ba6530d8de25633e0944ef35">print_green</a> (void)</td></tr>
+<tr class="separator:a983ca8a8ba6530d8de25633e0944ef35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ea5691f6fe5d43549c280df5e591c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a18ea5691f6fe5d43549c280df5e591c4">print_brown</a> (void)</td></tr>
+<tr class="separator:a18ea5691f6fe5d43549c280df5e591c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a757c47197a51d1e67b43d1afae5c7c9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a757c47197a51d1e67b43d1afae5c7c9f">print_blue</a> (void)</td></tr>
+<tr class="separator:a757c47197a51d1e67b43d1afae5c7c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b9c06d35aa9c65e2dc8f2958eb684a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#aa3b9c06d35aa9c65e2dc8f2958eb684a">print_purple</a> (void)</td></tr>
+<tr class="separator:aa3b9c06d35aa9c65e2dc8f2958eb684a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83dad9942463b885f9187935e78ba676"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a83dad9942463b885f9187935e78ba676">print_cyan</a> (void)</td></tr>
+<tr class="separator:a83dad9942463b885f9187935e78ba676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3830a114edadf3c4bf41dd56661367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a7d3830a114edadf3c4bf41dd56661367">print_light_gray</a> (void)</td></tr>
+<tr class="separator:a7d3830a114edadf3c4bf41dd56661367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3700112e40486fc7abbb1b206518b13c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c">print_dark_gray</a> (void)</td></tr>
+<tr class="separator:a3700112e40486fc7abbb1b206518b13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ad5c068b7ddf65b2401849ee5964a26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a6ad5c068b7ddf65b2401849ee5964a26">print_light_red</a> (void)</td></tr>
+<tr class="separator:a6ad5c068b7ddf65b2401849ee5964a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c5ffc5db5013259221fdbbdcca4b83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a08c5ffc5db5013259221fdbbdcca4b83">print_light_green</a> (void)</td></tr>
+<tr class="separator:a08c5ffc5db5013259221fdbbdcca4b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197267070fe71d5836349da951f38961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a197267070fe71d5836349da951f38961">print_yellow</a> (void)</td></tr>
+<tr class="separator:a197267070fe71d5836349da951f38961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7a2c0d4e665a906c4b315e73044606"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a1d7a2c0d4e665a906c4b315e73044606">print_light_blue</a> (void)</td></tr>
+<tr class="separator:a1d7a2c0d4e665a906c4b315e73044606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94018801389f57c58eebb7706949ec75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a94018801389f57c58eebb7706949ec75">print_light_purple</a> (void)</td></tr>
+<tr class="separator:a94018801389f57c58eebb7706949ec75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3b4afa3e353ee33394411e6ed61fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a4b3b4afa3e353ee33394411e6ed61fdd">print_light_cyan</a> (void)</td></tr>
+<tr class="separator:a4b3b4afa3e353ee33394411e6ed61fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a711a4bdb2f1311812e4498647e922e8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a711a4bdb2f1311812e4498647e922e8d">print_white</a> (void)</td></tr>
+<tr class="separator:a711a4bdb2f1311812e4498647e922e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa628fb380e030ac593cd5019236eb94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#afa628fb380e030ac593cd5019236eb94">print_color</a> (int color)</td></tr>
+<tr class="separator:afa628fb380e030ac593cd5019236eb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a4069f383bd0bfb15b656ff1635b67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a42a4069f383bd0bfb15b656ff1635b67">fprint_ansi</a> (FILE *fp, int d)</td></tr>
+<tr class="separator:a42a4069f383bd0bfb15b656ff1635b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5688cdeb8533803bd7da721423fcf891"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a5688cdeb8533803bd7da721423fcf891">fprint_ansi2</a> (FILE *fp, int d)</td></tr>
+<tr class="separator:a5688cdeb8533803bd7da721423fcf891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48a49bce67fdecda4b66937717e8964"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#ab48a49bce67fdecda4b66937717e8964">fprint_reset</a> (FILE *fp)</td></tr>
+<tr class="separator:ab48a49bce67fdecda4b66937717e8964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14633ebfd4f53de5db999224eb992ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#ad14633ebfd4f53de5db999224eb992ad">fprint_black</a> (FILE *fp)</td></tr>
+<tr class="separator:ad14633ebfd4f53de5db999224eb992ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea61fc81ee8fe5ee6232c04b54fcdb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a6ea61fc81ee8fe5ee6232c04b54fcdb1">fprint_red</a> (FILE *fp)</td></tr>
+<tr class="separator:a6ea61fc81ee8fe5ee6232c04b54fcdb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd86dcfa7f2d5bf7fd26ce93848c50b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#afd86dcfa7f2d5bf7fd26ce93848c50b1">fprint_green</a> (FILE *fp)</td></tr>
+<tr class="separator:afd86dcfa7f2d5bf7fd26ce93848c50b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122719c834532b610eb54ed71f62aa34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a122719c834532b610eb54ed71f62aa34">fprint_brown</a> (FILE *fp)</td></tr>
+<tr class="separator:a122719c834532b610eb54ed71f62aa34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd96c4b75a03de57b0d14ac44cac9db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a2fd96c4b75a03de57b0d14ac44cac9db">fprint_blue</a> (FILE *fp)</td></tr>
+<tr class="separator:a2fd96c4b75a03de57b0d14ac44cac9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb0e0f8ed65966bfb0958a50a1ea4e33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#abb0e0f8ed65966bfb0958a50a1ea4e33">fprint_purple</a> (FILE *fp)</td></tr>
+<tr class="separator:abb0e0f8ed65966bfb0958a50a1ea4e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ab120e11e62fe0c68daf1681d994c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#ac9ab120e11e62fe0c68daf1681d994c0">fprint_cyan</a> (FILE *fp)</td></tr>
+<tr class="separator:ac9ab120e11e62fe0c68daf1681d994c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3c2291c5a2a366864d856f108b5c46a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#af3c2291c5a2a366864d856f108b5c46a">fprint_light_gray</a> (FILE *fp)</td></tr>
+<tr class="separator:af3c2291c5a2a366864d856f108b5c46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a86eb0be7114b0a55c61f3282da1200"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a1a86eb0be7114b0a55c61f3282da1200">fprint_dark_gray</a> (FILE *fp)</td></tr>
+<tr class="separator:a1a86eb0be7114b0a55c61f3282da1200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc82fdad927bb7a4ee1728a3a9b4eb2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#afc82fdad927bb7a4ee1728a3a9b4eb2c">fprint_light_red</a> (FILE *fp)</td></tr>
+<tr class="separator:afc82fdad927bb7a4ee1728a3a9b4eb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa801d0778b6607344bd789a8bdb9704b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#aa801d0778b6607344bd789a8bdb9704b">fprint_light_green</a> (FILE *fp)</td></tr>
+<tr class="separator:aa801d0778b6607344bd789a8bdb9704b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626c648aa6ddaf0a242ca54af057e896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a626c648aa6ddaf0a242ca54af057e896">fprint_yellow</a> (FILE *fp)</td></tr>
+<tr class="separator:a626c648aa6ddaf0a242ca54af057e896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d8b6a159472240dddc736bab46cf74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a38d8b6a159472240dddc736bab46cf74">fprint_light_blue</a> (FILE *fp)</td></tr>
+<tr class="separator:a38d8b6a159472240dddc736bab46cf74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52a26953725c334892db380ad9d9c54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#aa52a26953725c334892db380ad9d9c54">fprint_light_purple</a> (FILE *fp)</td></tr>
+<tr class="separator:aa52a26953725c334892db380ad9d9c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2f40e9313b1be0878dd531dde602df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a1a2f40e9313b1be0878dd531dde602df">fprint_light_cyan</a> (FILE *fp)</td></tr>
+<tr class="separator:a1a2f40e9313b1be0878dd531dde602df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac6bf1bd8be47c632d4cbd30f42839c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#a6ac6bf1bd8be47c632d4cbd30f42839c">fprint_white</a> (FILE *fp)</td></tr>
+<tr class="separator:a6ac6bf1bd8be47c632d4cbd30f42839c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc98b00a03988b4692b76748b713db28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#acc98b00a03988b4692b76748b713db28">fprint_color</a> (FILE *fp, int color)</td></tr>
+<tr class="separator:acc98b00a03988b4692b76748b713db28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e7718508963bce666e710f1a68099d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__print_8h.html#ab0e7718508963bce666e710f1a68099d">file_can_read</a> (char *fmt,...)</td></tr>
+<tr class="separator:ab0e7718508963bce666e710f1a68099d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">列挙型詳解</h2>
+<a id="a385c44f6fb256e5716a2302a5b940388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385c44f6fb256e5716a2302a5b940388">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388ad13773bfc025b73195743c977be7c6a6"></a>COLOR_RESET&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a2a9daf215a30f1c539ead18c66380fc1"></a>COLOR_BLACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a6169b55206330296e2c0ca1282b51cda"></a>COLOR_DARK_GRAY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388abae5e681ac33700b80427c741e83d11f"></a>COLOR_LIGHT_GRAY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388ad47b4c240a0109970bb2a7fe3a07d3ec"></a>COLOR_WHITE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a592503b9434c1e751a92f3fc536d7950"></a>COLOR_RED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a726df597a3d842789899ff84f7ff3721"></a>COLOR_LIGHT_RED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388acfa9d8bbffc418447ed826f286abca02"></a>COLOR_GREEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a35ff3a3ccb655f1e72e7c0c74588e41b"></a>COLOR_LIGHT_GREEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a70b424bcf0a4a80c0a6f810d1cff20fe"></a>COLOR_BROWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a1340428efccb140dcbdb71aa6176f696"></a>COLOR_BLUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a97e4b144ec0f5f6a6d19eccd00a1cba8"></a>COLOR_LIGHT_BLUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a278276a8155620ed5e155c80d35316cc"></a>COLOR_PURPLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388aeff44008d5350323fcfe347a0704cb0c"></a>COLOR_LIGHT_PURPLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388a7896ff2cc707b5873da0b97d38bf852e"></a>COLOR_CYAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388aceba56a8aca3ee9dfc0383c5a35cbabe"></a>COLOR_LIGHT_CYAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a385c44f6fb256e5716a2302a5b940388ab03862907066c68204ee9df1ee04aa29"></a>COLOR_YELLOW&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="is__print_8h_source.html">is_print.h</a> の <a class="el" href="is__print_8h_source.html#l00004">4</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ab0e7718508963bce666e710f1a68099d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e7718508963bce666e710f1a68099d">&#9670;&nbsp;</a></span>file_can_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int file_can_read </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00071">71</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a42a4069f383bd0bfb15b656ff1635b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a4069f383bd0bfb15b656ff1635b67">&#9670;&nbsp;</a></span>fprint_ansi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_ansi </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5688cdeb8533803bd7da721423fcf891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5688cdeb8533803bd7da721423fcf891">&#9670;&nbsp;</a></span>fprint_ansi2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_ansi2 </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad14633ebfd4f53de5db999224eb992ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad14633ebfd4f53de5db999224eb992ad">&#9670;&nbsp;</a></span>fprint_black()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_black </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_ad14633ebfd4f53de5db999224eb992ad_cgraph.png" border="0" usemap="#is__print_8h_ad14633ebfd4f53de5db999224eb992ad_cgraph" alt=""/></div>
+<map name="is__print_8h_ad14633ebfd4f53de5db999224eb992ad_cgraph" id="is__print_8h_ad14633ebfd4f53de5db999224eb992ad_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="127,5,195,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2fd96c4b75a03de57b0d14ac44cac9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd96c4b75a03de57b0d14ac44cac9db">&#9670;&nbsp;</a></span>fprint_blue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_blue </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a2fd96c4b75a03de57b0d14ac44cac9db_cgraph.png" border="0" usemap="#is__print_8h_a2fd96c4b75a03de57b0d14ac44cac9db_cgraph" alt=""/></div>
+<map name="is__print_8h_a2fd96c4b75a03de57b0d14ac44cac9db_cgraph" id="is__print_8h_a2fd96c4b75a03de57b0d14ac44cac9db_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="123,5,191,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a122719c834532b610eb54ed71f62aa34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122719c834532b610eb54ed71f62aa34">&#9670;&nbsp;</a></span>fprint_brown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_brown </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a122719c834532b610eb54ed71f62aa34_cgraph.png" border="0" usemap="#is__print_8h_a122719c834532b610eb54ed71f62aa34_cgraph" alt=""/></div>
+<map name="is__print_8h_a122719c834532b610eb54ed71f62aa34_cgraph" id="is__print_8h_a122719c834532b610eb54ed71f62aa34_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="131,5,199,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acc98b00a03988b4692b76748b713db28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc98b00a03988b4692b76748b713db28">&#9670;&nbsp;</a></span>fprint_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_color </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_acc98b00a03988b4692b76748b713db28_cgraph.png" border="0" usemap="#is__print_8h_acc98b00a03988b4692b76748b713db28_cgraph" alt=""/></div>
+<map name="is__print_8h_acc98b00a03988b4692b76748b713db28_cgraph" id="is__print_8h_acc98b00a03988b4692b76748b713db28_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="140,5,212,32"/>
+<area shape="rect" id="node4" href="print_8c.html#ad14633ebfd4f53de5db999224eb992ad" title="fprint_black" alt="" coords="139,56,213,83"/>
+<area shape="rect" id="node5" href="print_8c.html#a6ea61fc81ee8fe5ee6232c04b54fcdb1" title="fprint_red" alt="" coords="144,107,208,133"/>
+<area shape="rect" id="node6" href="print_8c.html#afd86dcfa7f2d5bf7fd26ce93848c50b1" title="fprint_green" alt="" coords="138,157,214,184"/>
+<area shape="rect" id="node7" href="print_8c.html#a122719c834532b610eb54ed71f62aa34" title="fprint_brown" alt="" coords="137,208,215,235"/>
+<area shape="rect" id="node8" href="print_8c.html#a2fd96c4b75a03de57b0d14ac44cac9db" title="fprint_blue" alt="" coords="141,259,211,285"/>
+<area shape="rect" id="node9" href="print_8c.html#abb0e0f8ed65966bfb0958a50a1ea4e33" title="fprint_purple" alt="" coords="137,309,215,336"/>
+<area shape="rect" id="node10" href="print_8c.html#ac9ab120e11e62fe0c68daf1681d994c0" title="fprint_cyan" alt="" coords="141,360,211,387"/>
+<area shape="rect" id="node11" href="print_8c.html#af3c2291c5a2a366864d856f108b5c46a" title="fprint_light_gray" alt="" coords="129,411,223,437"/>
+<area shape="rect" id="node12" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="129,461,223,488"/>
+<area shape="rect" id="node14" href="print_8c.html#afc82fdad927bb7a4ee1728a3a9b4eb2c" title="fprint_light_red" alt="" coords="132,512,220,539"/>
+<area shape="rect" id="node15" href="print_8c.html#aa801d0778b6607344bd789a8bdb9704b" title="fprint_light_green" alt="" coords="127,563,225,589"/>
+<area shape="rect" id="node16" href="print_8c.html#a626c648aa6ddaf0a242ca54af057e896" title="fprint_yellow" alt="" coords="137,613,215,640"/>
+<area shape="rect" id="node17" href="print_8c.html#a38d8b6a159472240dddc736bab46cf74" title="fprint_light_blue" alt="" coords="130,664,222,691"/>
+<area shape="rect" id="node18" href="print_8c.html#aa52a26953725c334892db380ad9d9c54" title="fprint_light_purple" alt="" coords="125,715,227,741"/>
+<area shape="rect" id="node19" href="print_8c.html#a1a2f40e9313b1be0878dd531dde602df" title="fprint_light_cyan" alt="" coords="129,765,223,792"/>
+<area shape="rect" id="node20" href="print_8c.html#a6ac6bf1bd8be47c632d4cbd30f42839c" title="fprint_white" alt="" coords="139,816,213,843"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="277,208,345,235"/>
+<area shape="rect" id="node13" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="275,639,348,665"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac9ab120e11e62fe0c68daf1681d994c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ab120e11e62fe0c68daf1681d994c0">&#9670;&nbsp;</a></span>fprint_cyan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_cyan </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_ac9ab120e11e62fe0c68daf1681d994c0_cgraph.png" border="0" usemap="#is__print_8h_ac9ab120e11e62fe0c68daf1681d994c0_cgraph" alt=""/></div>
+<map name="is__print_8h_ac9ab120e11e62fe0c68daf1681d994c0_cgraph" id="is__print_8h_ac9ab120e11e62fe0c68daf1681d994c0_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="124,5,192,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1a86eb0be7114b0a55c61f3282da1200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a86eb0be7114b0a55c61f3282da1200">&#9670;&nbsp;</a></span>fprint_dark_gray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_dark_gray </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a1a86eb0be7114b0a55c61f3282da1200_cgraph.png" border="0" usemap="#is__print_8h_a1a86eb0be7114b0a55c61f3282da1200_cgraph" alt=""/></div>
+<map name="is__print_8h_a1a86eb0be7114b0a55c61f3282da1200_cgraph" id="is__print_8h_a1a86eb0be7114b0a55c61f3282da1200_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="148,5,221,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd86dcfa7f2d5bf7fd26ce93848c50b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd86dcfa7f2d5bf7fd26ce93848c50b1">&#9670;&nbsp;</a></span>fprint_green()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_green </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_afd86dcfa7f2d5bf7fd26ce93848c50b1_cgraph.png" border="0" usemap="#is__print_8h_afd86dcfa7f2d5bf7fd26ce93848c50b1_cgraph" alt=""/></div>
+<map name="is__print_8h_afd86dcfa7f2d5bf7fd26ce93848c50b1_cgraph" id="is__print_8h_afd86dcfa7f2d5bf7fd26ce93848c50b1_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="129,5,197,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a38d8b6a159472240dddc736bab46cf74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38d8b6a159472240dddc736bab46cf74">&#9670;&nbsp;</a></span>fprint_light_blue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_light_blue </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a38d8b6a159472240dddc736bab46cf74_cgraph.png" border="0" usemap="#is__print_8h_a38d8b6a159472240dddc736bab46cf74_cgraph" alt=""/></div>
+<map name="is__print_8h_a38d8b6a159472240dddc736bab46cf74_cgraph" id="is__print_8h_a38d8b6a159472240dddc736bab46cf74_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="145,5,219,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1a2f40e9313b1be0878dd531dde602df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2f40e9313b1be0878dd531dde602df">&#9670;&nbsp;</a></span>fprint_light_cyan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_light_cyan </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a1a2f40e9313b1be0878dd531dde602df_cgraph.png" border="0" usemap="#is__print_8h_a1a2f40e9313b1be0878dd531dde602df_cgraph" alt=""/></div>
+<map name="is__print_8h_a1a2f40e9313b1be0878dd531dde602df_cgraph" id="is__print_8h_a1a2f40e9313b1be0878dd531dde602df_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="148,5,221,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af3c2291c5a2a366864d856f108b5c46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3c2291c5a2a366864d856f108b5c46a">&#9670;&nbsp;</a></span>fprint_light_gray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_light_gray </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_af3c2291c5a2a366864d856f108b5c46a_cgraph.png" border="0" usemap="#is__print_8h_af3c2291c5a2a366864d856f108b5c46a_cgraph" alt=""/></div>
+<map name="is__print_8h_af3c2291c5a2a366864d856f108b5c46a_cgraph" id="is__print_8h_af3c2291c5a2a366864d856f108b5c46a_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="147,5,215,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa801d0778b6607344bd789a8bdb9704b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa801d0778b6607344bd789a8bdb9704b">&#9670;&nbsp;</a></span>fprint_light_green()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_light_green </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00038">38</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_aa801d0778b6607344bd789a8bdb9704b_cgraph.png" border="0" usemap="#is__print_8h_aa801d0778b6607344bd789a8bdb9704b_cgraph" alt=""/></div>
+<map name="is__print_8h_aa801d0778b6607344bd789a8bdb9704b_cgraph" id="is__print_8h_aa801d0778b6607344bd789a8bdb9704b_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="152,5,225,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa52a26953725c334892db380ad9d9c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52a26953725c334892db380ad9d9c54">&#9670;&nbsp;</a></span>fprint_light_purple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_light_purple </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_aa52a26953725c334892db380ad9d9c54_cgraph.png" border="0" usemap="#is__print_8h_aa52a26953725c334892db380ad9d9c54_cgraph" alt=""/></div>
+<map name="is__print_8h_aa52a26953725c334892db380ad9d9c54_cgraph" id="is__print_8h_aa52a26953725c334892db380ad9d9c54_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="155,5,228,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc82fdad927bb7a4ee1728a3a9b4eb2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc82fdad927bb7a4ee1728a3a9b4eb2c">&#9670;&nbsp;</a></span>fprint_light_red()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_light_red </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_afc82fdad927bb7a4ee1728a3a9b4eb2c_cgraph.png" border="0" usemap="#is__print_8h_afc82fdad927bb7a4ee1728a3a9b4eb2c_cgraph" alt=""/></div>
+<map name="is__print_8h_afc82fdad927bb7a4ee1728a3a9b4eb2c_cgraph" id="is__print_8h_afc82fdad927bb7a4ee1728a3a9b4eb2c_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="141,5,215,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abb0e0f8ed65966bfb0958a50a1ea4e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb0e0f8ed65966bfb0958a50a1ea4e33">&#9670;&nbsp;</a></span>fprint_purple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_purple </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00033">33</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_abb0e0f8ed65966bfb0958a50a1ea4e33_cgraph.png" border="0" usemap="#is__print_8h_abb0e0f8ed65966bfb0958a50a1ea4e33_cgraph" alt=""/></div>
+<map name="is__print_8h_abb0e0f8ed65966bfb0958a50a1ea4e33_cgraph" id="is__print_8h_abb0e0f8ed65966bfb0958a50a1ea4e33_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="131,5,199,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ea61fc81ee8fe5ee6232c04b54fcdb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea61fc81ee8fe5ee6232c04b54fcdb1">&#9670;&nbsp;</a></span>fprint_red()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_red </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a6ea61fc81ee8fe5ee6232c04b54fcdb1_cgraph.png" border="0" usemap="#is__print_8h_a6ea61fc81ee8fe5ee6232c04b54fcdb1_cgraph" alt=""/></div>
+<map name="is__print_8h_a6ea61fc81ee8fe5ee6232c04b54fcdb1_cgraph" id="is__print_8h_a6ea61fc81ee8fe5ee6232c04b54fcdb1_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="117,5,185,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab48a49bce67fdecda4b66937717e8964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48a49bce67fdecda4b66937717e8964">&#9670;&nbsp;</a></span>fprint_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_reset </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_ab48a49bce67fdecda4b66937717e8964_cgraph.png" border="0" usemap="#is__print_8h_ab48a49bce67fdecda4b66937717e8964_cgraph" alt=""/></div>
+<map name="is__print_8h_ab48a49bce67fdecda4b66937717e8964_cgraph" id="is__print_8h_ab48a49bce67fdecda4b66937717e8964_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="125,5,193,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ac6bf1bd8be47c632d4cbd30f42839c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac6bf1bd8be47c632d4cbd30f42839c">&#9670;&nbsp;</a></span>fprint_white()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_white </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a6ac6bf1bd8be47c632d4cbd30f42839c_cgraph.png" border="0" usemap="#is__print_8h_a6ac6bf1bd8be47c632d4cbd30f42839c_cgraph" alt=""/></div>
+<map name="is__print_8h_a6ac6bf1bd8be47c632d4cbd30f42839c_cgraph" id="is__print_8h_a6ac6bf1bd8be47c632d4cbd30f42839c_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="127,5,200,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a626c648aa6ddaf0a242ca54af057e896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626c648aa6ddaf0a242ca54af057e896">&#9670;&nbsp;</a></span>fprint_yellow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fprint_yellow </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a626c648aa6ddaf0a242ca54af057e896_cgraph.png" border="0" usemap="#is__print_8h_a626c648aa6ddaf0a242ca54af057e896_cgraph" alt=""/></div>
+<map name="is__print_8h_a626c648aa6ddaf0a242ca54af057e896_cgraph" id="is__print_8h_a626c648aa6ddaf0a242ca54af057e896_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="131,5,204,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af5f039bc275112682baa4e869bfe4aad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5f039bc275112682baa4e869bfe4aad">&#9670;&nbsp;</a></span>print_black()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_black </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00007">7</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_af5f039bc275112682baa4e869bfe4aad_cgraph.png" border="0" usemap="#is__print_8h_af5f039bc275112682baa4e869bfe4aad_cgraph" alt=""/></div>
+<map name="is__print_8h_af5f039bc275112682baa4e869bfe4aad_cgraph" id="is__print_8h_af5f039bc275112682baa4e869bfe4aad_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#ad14633ebfd4f53de5db999224eb992ad" title="fprint_black" alt="" coords="124,5,197,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="245,5,313,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a757c47197a51d1e67b43d1afae5c7c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757c47197a51d1e67b43d1afae5c7c9f">&#9670;&nbsp;</a></span>print_blue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_blue </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00011">11</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a757c47197a51d1e67b43d1afae5c7c9f_cgraph.png" border="0" usemap="#is__print_8h_a757c47197a51d1e67b43d1afae5c7c9f_cgraph" alt=""/></div>
+<map name="is__print_8h_a757c47197a51d1e67b43d1afae5c7c9f_cgraph" id="is__print_8h_a757c47197a51d1e67b43d1afae5c7c9f_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a2fd96c4b75a03de57b0d14ac44cac9db" title="fprint_blue" alt="" coords="119,5,188,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="236,5,304,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a18ea5691f6fe5d43549c280df5e591c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ea5691f6fe5d43549c280df5e591c4">&#9670;&nbsp;</a></span>print_brown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_brown </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00010">10</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a18ea5691f6fe5d43549c280df5e591c4_cgraph.png" border="0" usemap="#is__print_8h_a18ea5691f6fe5d43549c280df5e591c4_cgraph" alt=""/></div>
+<map name="is__print_8h_a18ea5691f6fe5d43549c280df5e591c4_cgraph" id="is__print_8h_a18ea5691f6fe5d43549c280df5e591c4_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a122719c834532b610eb54ed71f62aa34" title="fprint_brown" alt="" coords="128,5,205,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="253,5,321,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afa628fb380e030ac593cd5019236eb94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa628fb380e030ac593cd5019236eb94">&#9670;&nbsp;</a></span>print_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_color </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_afa628fb380e030ac593cd5019236eb94_cgraph.png" border="0" usemap="#is__print_8h_afa628fb380e030ac593cd5019236eb94_cgraph" alt=""/></div>
+<map name="is__print_8h_afa628fb380e030ac593cd5019236eb94_cgraph" id="is__print_8h_afa628fb380e030ac593cd5019236eb94_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#acc98b00a03988b4692b76748b713db28" title="fprint_color" alt="" coords="123,411,195,437"/>
+<area shape="rect" id="node3" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="257,5,329,32"/>
+<area shape="rect" id="node5" href="print_8c.html#ad14633ebfd4f53de5db999224eb992ad" title="fprint_black" alt="" coords="257,56,330,83"/>
+<area shape="rect" id="node6" href="print_8c.html#a6ea61fc81ee8fe5ee6232c04b54fcdb1" title="fprint_red" alt="" coords="261,107,325,133"/>
+<area shape="rect" id="node7" href="print_8c.html#afd86dcfa7f2d5bf7fd26ce93848c50b1" title="fprint_green" alt="" coords="255,157,331,184"/>
+<area shape="rect" id="node8" href="print_8c.html#a122719c834532b610eb54ed71f62aa34" title="fprint_brown" alt="" coords="255,208,332,235"/>
+<area shape="rect" id="node9" href="print_8c.html#a2fd96c4b75a03de57b0d14ac44cac9db" title="fprint_blue" alt="" coords="259,259,328,285"/>
+<area shape="rect" id="node10" href="print_8c.html#abb0e0f8ed65966bfb0958a50a1ea4e33" title="fprint_purple" alt="" coords="255,309,332,336"/>
+<area shape="rect" id="node11" href="print_8c.html#ac9ab120e11e62fe0c68daf1681d994c0" title="fprint_cyan" alt="" coords="258,360,329,387"/>
+<area shape="rect" id="node12" href="print_8c.html#af3c2291c5a2a366864d856f108b5c46a" title="fprint_light_gray" alt="" coords="247,411,340,437"/>
+<area shape="rect" id="node13" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="246,461,341,488"/>
+<area shape="rect" id="node15" href="print_8c.html#afc82fdad927bb7a4ee1728a3a9b4eb2c" title="fprint_light_red" alt="" coords="249,512,337,539"/>
+<area shape="rect" id="node16" href="print_8c.html#aa801d0778b6607344bd789a8bdb9704b" title="fprint_light_green" alt="" coords="244,563,343,589"/>
+<area shape="rect" id="node17" href="print_8c.html#a626c648aa6ddaf0a242ca54af057e896" title="fprint_yellow" alt="" coords="255,613,332,640"/>
+<area shape="rect" id="node18" href="print_8c.html#a38d8b6a159472240dddc736bab46cf74" title="fprint_light_blue" alt="" coords="247,664,339,691"/>
+<area shape="rect" id="node19" href="print_8c.html#aa52a26953725c334892db380ad9d9c54" title="fprint_light_purple" alt="" coords="243,715,344,741"/>
+<area shape="rect" id="node20" href="print_8c.html#a1a2f40e9313b1be0878dd531dde602df" title="fprint_light_cyan" alt="" coords="246,765,341,792"/>
+<area shape="rect" id="node21" href="print_8c.html#a6ac6bf1bd8be47c632d4cbd30f42839c" title="fprint_white" alt="" coords="257,816,330,843"/>
+<area shape="rect" id="node4" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="395,208,463,235"/>
+<area shape="rect" id="node14" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="392,639,465,665"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a83dad9942463b885f9187935e78ba676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83dad9942463b885f9187935e78ba676">&#9670;&nbsp;</a></span>print_cyan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_cyan </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a83dad9942463b885f9187935e78ba676_cgraph.png" border="0" usemap="#is__print_8h_a83dad9942463b885f9187935e78ba676_cgraph" alt=""/></div>
+<map name="is__print_8h_a83dad9942463b885f9187935e78ba676_cgraph" id="is__print_8h_a83dad9942463b885f9187935e78ba676_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#ac9ab120e11e62fe0c68daf1681d994c0" title="fprint_cyan" alt="" coords="121,5,192,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="240,5,308,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3700112e40486fc7abbb1b206518b13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3700112e40486fc7abbb1b206518b13c">&#9670;&nbsp;</a></span>print_dark_gray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_dark_gray </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00015">15</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a3700112e40486fc7abbb1b206518b13c_cgraph.png" border="0" usemap="#is__print_8h_a3700112e40486fc7abbb1b206518b13c_cgraph" alt=""/></div>
+<map name="is__print_8h_a3700112e40486fc7abbb1b206518b13c_cgraph" id="is__print_8h_a3700112e40486fc7abbb1b206518b13c_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="145,5,240,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="288,5,361,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a983ca8a8ba6530d8de25633e0944ef35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a983ca8a8ba6530d8de25633e0944ef35">&#9670;&nbsp;</a></span>print_green()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_green </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00009">9</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a983ca8a8ba6530d8de25633e0944ef35_cgraph.png" border="0" usemap="#is__print_8h_a983ca8a8ba6530d8de25633e0944ef35_cgraph" alt=""/></div>
+<map name="is__print_8h_a983ca8a8ba6530d8de25633e0944ef35_cgraph" id="is__print_8h_a983ca8a8ba6530d8de25633e0944ef35_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#afd86dcfa7f2d5bf7fd26ce93848c50b1" title="fprint_green" alt="" coords="125,5,201,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="249,5,317,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1d7a2c0d4e665a906c4b315e73044606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d7a2c0d4e665a906c4b315e73044606">&#9670;&nbsp;</a></span>print_light_blue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_light_blue </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a1d7a2c0d4e665a906c4b315e73044606_cgraph.png" border="0" usemap="#is__print_8h_a1d7a2c0d4e665a906c4b315e73044606_cgraph" alt=""/></div>
+<map name="is__print_8h_a1d7a2c0d4e665a906c4b315e73044606_cgraph" id="is__print_8h_a1d7a2c0d4e665a906c4b315e73044606_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a38d8b6a159472240dddc736bab46cf74" title="fprint_light_blue" alt="" coords="143,5,235,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="283,5,356,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b3b4afa3e353ee33394411e6ed61fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3b4afa3e353ee33394411e6ed61fdd">&#9670;&nbsp;</a></span>print_light_cyan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_light_cyan </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a4b3b4afa3e353ee33394411e6ed61fdd_cgraph.png" border="0" usemap="#is__print_8h_a4b3b4afa3e353ee33394411e6ed61fdd_cgraph" alt=""/></div>
+<map name="is__print_8h_a4b3b4afa3e353ee33394411e6ed61fdd_cgraph" id="is__print_8h_a4b3b4afa3e353ee33394411e6ed61fdd_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a1a2f40e9313b1be0878dd531dde602df" title="fprint_light_cyan" alt="" coords="145,5,240,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="288,5,361,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7d3830a114edadf3c4bf41dd56661367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3830a114edadf3c4bf41dd56661367">&#9670;&nbsp;</a></span>print_light_gray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_light_gray </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00014">14</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a7d3830a114edadf3c4bf41dd56661367_cgraph.png" border="0" usemap="#is__print_8h_a7d3830a114edadf3c4bf41dd56661367_cgraph" alt=""/></div>
+<map name="is__print_8h_a7d3830a114edadf3c4bf41dd56661367_cgraph" id="is__print_8h_a7d3830a114edadf3c4bf41dd56661367_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#af3c2291c5a2a366864d856f108b5c46a" title="fprint_light_gray" alt="" coords="144,5,237,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="285,5,353,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08c5ffc5db5013259221fdbbdcca4b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c5ffc5db5013259221fdbbdcca4b83">&#9670;&nbsp;</a></span>print_light_green()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_light_green </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a08c5ffc5db5013259221fdbbdcca4b83_cgraph.png" border="0" usemap="#is__print_8h_a08c5ffc5db5013259221fdbbdcca4b83_cgraph" alt=""/></div>
+<map name="is__print_8h_a08c5ffc5db5013259221fdbbdcca4b83_cgraph" id="is__print_8h_a08c5ffc5db5013259221fdbbdcca4b83_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#aa801d0778b6607344bd789a8bdb9704b" title="fprint_light_green" alt="" coords="149,5,248,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="296,5,369,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a94018801389f57c58eebb7706949ec75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94018801389f57c58eebb7706949ec75">&#9670;&nbsp;</a></span>print_light_purple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_light_purple </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a94018801389f57c58eebb7706949ec75_cgraph.png" border="0" usemap="#is__print_8h_a94018801389f57c58eebb7706949ec75_cgraph" alt=""/></div>
+<map name="is__print_8h_a94018801389f57c58eebb7706949ec75_cgraph" id="is__print_8h_a94018801389f57c58eebb7706949ec75_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#aa52a26953725c334892db380ad9d9c54" title="fprint_light_purple" alt="" coords="152,5,253,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="301,5,375,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ad5c068b7ddf65b2401849ee5964a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad5c068b7ddf65b2401849ee5964a26">&#9670;&nbsp;</a></span>print_light_red()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_light_red </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a6ad5c068b7ddf65b2401849ee5964a26_cgraph.png" border="0" usemap="#is__print_8h_a6ad5c068b7ddf65b2401849ee5964a26_cgraph" alt=""/></div>
+<map name="is__print_8h_a6ad5c068b7ddf65b2401849ee5964a26_cgraph" id="is__print_8h_a6ad5c068b7ddf65b2401849ee5964a26_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#afc82fdad927bb7a4ee1728a3a9b4eb2c" title="fprint_light_red" alt="" coords="139,5,227,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="275,5,348,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa3b9c06d35aa9c65e2dc8f2958eb684a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b9c06d35aa9c65e2dc8f2958eb684a">&#9670;&nbsp;</a></span>print_purple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_purple </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00012">12</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_aa3b9c06d35aa9c65e2dc8f2958eb684a_cgraph.png" border="0" usemap="#is__print_8h_aa3b9c06d35aa9c65e2dc8f2958eb684a_cgraph" alt=""/></div>
+<map name="is__print_8h_aa3b9c06d35aa9c65e2dc8f2958eb684a_cgraph" id="is__print_8h_aa3b9c06d35aa9c65e2dc8f2958eb684a_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#abb0e0f8ed65966bfb0958a50a1ea4e33" title="fprint_purple" alt="" coords="128,5,205,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="253,5,321,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a56e707b248168b71cd3ca77f0a24422e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e707b248168b71cd3ca77f0a24422e">&#9670;&nbsp;</a></span>print_red()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_red </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00008">8</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a56e707b248168b71cd3ca77f0a24422e_cgraph.png" border="0" usemap="#is__print_8h_a56e707b248168b71cd3ca77f0a24422e_cgraph" alt=""/></div>
+<map name="is__print_8h_a56e707b248168b71cd3ca77f0a24422e_cgraph" id="is__print_8h_a56e707b248168b71cd3ca77f0a24422e_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a6ea61fc81ee8fe5ee6232c04b54fcdb1" title="fprint_red" alt="" coords="115,5,179,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="227,5,295,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa4f6858ed3ecdad5501013ac4001c9ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f6858ed3ecdad5501013ac4001c9ca">&#9670;&nbsp;</a></span>print_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_reset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00006">6</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_aa4f6858ed3ecdad5501013ac4001c9ca_cgraph.png" border="0" usemap="#is__print_8h_aa4f6858ed3ecdad5501013ac4001c9ca_cgraph" alt=""/></div>
+<map name="is__print_8h_aa4f6858ed3ecdad5501013ac4001c9ca_cgraph" id="is__print_8h_aa4f6858ed3ecdad5501013ac4001c9ca_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="123,5,195,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="243,5,311,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a711a4bdb2f1311812e4498647e922e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a711a4bdb2f1311812e4498647e922e8d">&#9670;&nbsp;</a></span>print_white()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_white </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a711a4bdb2f1311812e4498647e922e8d_cgraph.png" border="0" usemap="#is__print_8h_a711a4bdb2f1311812e4498647e922e8d_cgraph" alt=""/></div>
+<map name="is__print_8h_a711a4bdb2f1311812e4498647e922e8d_cgraph" id="is__print_8h_a711a4bdb2f1311812e4498647e922e8d_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a6ac6bf1bd8be47c632d4cbd30f42839c" title="fprint_white" alt="" coords="124,5,197,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="245,5,319,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a197267070fe71d5836349da951f38961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197267070fe71d5836349da951f38961">&#9670;&nbsp;</a></span>print_yellow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_yellow </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="print_8c_source.html">print.c</a> の <a class="el" href="print_8c_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__print_8h_a197267070fe71d5836349da951f38961_cgraph.png" border="0" usemap="#is__print_8h_a197267070fe71d5836349da951f38961_cgraph" alt=""/></div>
+<map name="is__print_8h_a197267070fe71d5836349da951f38961_cgraph" id="is__print_8h_a197267070fe71d5836349da951f38961_cgraph">
+<area shape="rect" id="node2" href="print_8c.html#a626c648aa6ddaf0a242ca54af057e896" title="fprint_yellow" alt="" coords="128,5,205,32"/>
+<area shape="rect" id="node3" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="253,5,327,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__print_8h.html">is_print.h</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分36秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

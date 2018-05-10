@@ -1,0 +1,1618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/strings.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('strings_8c.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">strings.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="strings_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a4f535b505763d4561e3c6bd07d556e2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a4f535b505763d4561e3c6bd07d556e2f">CHAR_RENEW_SPRINTF_BUF</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="separator:a4f535b505763d4561e3c6bd07d556e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b32d4deba75a600f67861434d45e0a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a2b32d4deba75a600f67861434d45e0a8">STR_DIGITS</a>&#160;&#160;&#160;&quot;0123456789&quot;</td></tr>
+<tr class="separator:a2b32d4deba75a600f67861434d45e0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839fbb4426e322eed9dd2b54a90201e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a839fbb4426e322eed9dd2b54a90201e0">STR_ALPHA</a>&#160;&#160;&#160;&quot;abcdefghijklmnopqrstuvwxyz&quot;</td></tr>
+<tr class="separator:a839fbb4426e322eed9dd2b54a90201e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ab1b983539ce62e1c644bb681812e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#ae0ab1b983539ce62e1c644bb681812e9">STR_ALPHA_ALL</a>&#160;&#160;&#160;&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</td></tr>
+<tr class="separator:ae0ab1b983539ce62e1c644bb681812e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8108f5f119b246f714faa776dbf0d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a8f8108f5f119b246f714faa776dbf0d1">STR_IDENT</a>&#160;&#160;&#160;&quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_&quot;</td></tr>
+<tr class="separator:a8f8108f5f119b246f714faa776dbf0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bfdd55894db8f85d19c6d1f2d0e7def"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a4bfdd55894db8f85d19c6d1f2d0e7def">STR_SIGN</a>&#160;&#160;&#160;&quot;+-&quot;</td></tr>
+<tr class="separator:a4bfdd55894db8f85d19c6d1f2d0e7def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa97ab19fd4ce3dfbdd82e7c61c078222"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#aa97ab19fd4ce3dfbdd82e7c61c078222">STR_POINT</a>&#160;&#160;&#160;&quot;.&quot;</td></tr>
+<tr class="separator:aa97ab19fd4ce3dfbdd82e7c61c078222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7c18688884bd3e0b8352f6a68a2dc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a6c7c18688884bd3e0b8352f6a68a2dc4">STR_EXP</a>&#160;&#160;&#160;&quot;eE&quot;</td></tr>
+<tr class="separator:a6c7c18688884bd3e0b8352f6a68a2dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a65934258057b6113c133b243b0674c09"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a65934258057b6113c133b243b0674c09">char_new</a> (char *str, char *skip)</td></tr>
+<tr class="separator:a65934258057b6113c133b243b0674c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1635e97bfc1c5214f659fe601139fcc5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5">char_del</a> (char *p)</td></tr>
+<tr class="separator:a1635e97bfc1c5214f659fe601139fcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d5fb22634ddb001ce74366918064d8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#ab4d5fb22634ddb001ce74366918064d8">char_clone</a> (char *str)</td></tr>
+<tr class="separator:ab4d5fb22634ddb001ce74366918064d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b93394d8cb2bbba63fa9ac46393ca9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a18b93394d8cb2bbba63fa9ac46393ca9">char_renew</a> (char *old_str, char *str, char *skip)</td></tr>
+<tr class="separator:a18b93394d8cb2bbba63fa9ac46393ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b6aec8d1d6c0a503d73474b6e9bbf4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a78b6aec8d1d6c0a503d73474b6e9bbf4">char_renew_sprintf</a> (char *old, char *skip, char *fmt,...)</td></tr>
+<tr class="separator:a78b6aec8d1d6c0a503d73474b6e9bbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8caa00fa21faeb516b834e0956e79388"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a8caa00fa21faeb516b834e0956e79388">char_cat</a> (char *str_old, char *str_append)</td></tr>
+<tr class="separator:a8caa00fa21faeb516b834e0956e79388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8977cc057b41ba8c42b775e19ad5f8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f">char_cmp</a> (char *a, char *b)</td></tr>
+<tr class="separator:ad8977cc057b41ba8c42b775e19ad5f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f914569f2c603e37bfa9bf623e36838"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a6f914569f2c603e37bfa9bf623e36838">char_eq</a> (char *a, char *b)</td></tr>
+<tr class="separator:a6f914569f2c603e37bfa9bf623e36838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433b1975ec561892d77a331e21684a03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a433b1975ec561892d77a331e21684a03">char_match_any</a> (char c, char *str, int *pos)</td></tr>
+<tr class="separator:a433b1975ec561892d77a331e21684a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835961f47b2bc8e0d8d5ab9c3e874270"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270">str_has_any_char</a> (char *s, char *c)</td></tr>
+<tr class="separator:a835961f47b2bc8e0d8d5ab9c3e874270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d9b565e4f3d39e7ebf2f69fde042d8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8">str_create_mask</a> (char *s, char *mask_begin, char *mask_end)</td></tr>
+<tr class="separator:a15d9b565e4f3d39e7ebf2f69fde042d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9026a346ce8c90fef7e9eec0f966467c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a9026a346ce8c90fef7e9eec0f966467c">str_match</a> (char *s, char *p0, char *mask_begin, char *mask_end)</td></tr>
+<tr class="separator:a9026a346ce8c90fef7e9eec0f966467c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a8287a06fce10299b4346be44c94bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf">strings_new</a> (int n)</td></tr>
+<tr class="separator:ac8a8287a06fce10299b4346be44c94bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db84d57549c18cc6944a71fe981f6a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a2db84d57549c18cc6944a71fe981f6a0">strings_new_str</a> (char *str[], char *skip)</td></tr>
+<tr class="separator:a2db84d57549c18cc6944a71fe981f6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58e42392a9ba81af5bf1c65e47376adf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a58e42392a9ba81af5bf1c65e47376adf">strings_new_clone</a> (<a class="el" href="structstrings.html">strings</a> *src)</td></tr>
+<tr class="separator:a58e42392a9ba81af5bf1c65e47376adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754be11345fe72b1e5cc69bab7ccf55e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e">strings_size</a> (<a class="el" href="structstrings.html">strings</a> *str)</td></tr>
+<tr class="separator:a754be11345fe72b1e5cc69bab7ccf55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa137b865116b8931f3ca7322f8b23569"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#aa137b865116b8931f3ca7322f8b23569">strings_at</a> (<a class="el" href="structstrings.html">strings</a> *str, int i)</td></tr>
+<tr class="separator:aa137b865116b8931f3ca7322f8b23569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e78f50bff082b5d7a6499b3f94f675"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675">strings_del_str</a> (<a class="el" href="structstrings.html">strings</a> *list)</td></tr>
+<tr class="separator:a97e78f50bff082b5d7a6499b3f94f675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b9c1e8ab533413d2d85446aefe0f8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a">strings_del</a> (<a class="el" href="structstrings.html">strings</a> *list)</td></tr>
+<tr class="separator:a81b9c1e8ab533413d2d85446aefe0f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d475301ff7ea70dc0d70b60f1fd1ea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3">strings_reset</a> (<a class="el" href="structstrings.html">strings</a> *list, int n, char **str)</td></tr>
+<tr class="separator:a2d475301ff7ea70dc0d70b60f1fd1ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c884a81b9d4dfe02f70c0c3010d5ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae">strings_resize</a> (<a class="el" href="structstrings.html">strings</a> *list, int n)</td></tr>
+<tr class="separator:a06c884a81b9d4dfe02f70c0c3010d5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbdcb9ce9b1b217e54a718a536ddf78d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#acbdcb9ce9b1b217e54a718a536ddf78d">strings_index</a> (<a class="el" href="structstrings.html">strings</a> *list, char *str)</td></tr>
+<tr class="separator:acbdcb9ce9b1b217e54a718a536ddf78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff5b56b2a62c965f9d8b68a65559448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a6ff5b56b2a62c965f9d8b68a65559448">strings_print</a> (<a class="el" href="structstrings.html">strings</a> *list)</td></tr>
+<tr class="separator:a6ff5b56b2a62c965f9d8b68a65559448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa240cf5b98e824052d08ea04454fcec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#aa240cf5b98e824052d08ea04454fcec5">strings_put</a> (<a class="el" href="structstrings.html">strings</a> *list, char *name)</td></tr>
+<tr class="separator:aa240cf5b98e824052d08ea04454fcec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3ea7187a0f25400d71258d4dff5332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332">strings_item_del</a> (<a class="el" href="structstrings.html">strings</a> *list, int n)</td></tr>
+<tr class="separator:a4a3ea7187a0f25400d71258d4dff5332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e0e761ed1abdd39d19ba4989189a87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87">strings_item_set</a> (<a class="el" href="structstrings.html">strings</a> *list, int n, char *str, char *skip)</td></tr>
+<tr class="separator:a44e0e761ed1abdd39d19ba4989189a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a5ef5631668ec8fc59b339b6859ec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#ac8a5ef5631668ec8fc59b339b6859ec9">strings_item_replace</a> (<a class="el" href="structstrings.html">strings</a> *list, int k, <a class="el" href="structstrings.html">strings</a> *list2)</td></tr>
+<tr class="separator:ac8a5ef5631668ec8fc59b339b6859ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef3fce28a7d2e73b10d7d13c6d8e21c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a2ef3fce28a7d2e73b10d7d13c6d8e21c">strings_split_path</a> (char *str, char *suffix)</td></tr>
+<tr class="separator:a2ef3fce28a7d2e73b10d7d13c6d8e21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13e7148e338a2dcdfb2f05fdf9e3903"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903">strings_split</a> (char *str, char *sep, char *mask_begin, char *mask_end, char *skip)</td></tr>
+<tr class="separator:ac13e7148e338a2dcdfb2f05fdf9e3903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57cb88507e092d14b31f4e6a40dbc04f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a57cb88507e092d14b31f4e6a40dbc04f">strings_split_mask</a> (char *str, char *mask_begin, char *mask_end, char *skip)</td></tr>
+<tr class="separator:a57cb88507e092d14b31f4e6a40dbc04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6589520d40398687afb1987bce711ecc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#a6589520d40398687afb1987bce711ecc">strings_split_number</a> (char *s)</td></tr>
+<tr class="separator:a6589520d40398687afb1987bce711ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac280a4e5410c1cd244fd0acb87608623"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#ac280a4e5410c1cd244fd0acb87608623">strings_cmp</a> (<a class="el" href="structstrings.html">strings</a> *f, <a class="el" href="structstrings.html">strings</a> *g)</td></tr>
+<tr class="separator:ac280a4e5410c1cd244fd0acb87608623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72cb3072042b74edc36b7a75afea01f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstrings.html">strings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8c.html#aa72cb3072042b74edc36b7a75afea01f">strings_split_str_to_irmulti</a> (char *str)</td></tr>
+<tr class="separator:aa72cb3072042b74edc36b7a75afea01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a4f535b505763d4561e3c6bd07d556e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f535b505763d4561e3c6bd07d556e2f">&#9670;&nbsp;</a></span>CHAR_RENEW_SPRINTF_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHAR_RENEW_SPRINTF_BUF&#160;&#160;&#160;10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a839fbb4426e322eed9dd2b54a90201e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839fbb4426e322eed9dd2b54a90201e0">&#9670;&nbsp;</a></span>STR_ALPHA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_ALPHA&#160;&#160;&#160;&quot;abcdefghijklmnopqrstuvwxyz&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00156">156</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae0ab1b983539ce62e1c644bb681812e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ab1b983539ce62e1c644bb681812e9">&#9670;&nbsp;</a></span>STR_ALPHA_ALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_ALPHA_ALL&#160;&#160;&#160;&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00157">157</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2b32d4deba75a600f67861434d45e0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b32d4deba75a600f67861434d45e0a8">&#9670;&nbsp;</a></span>STR_DIGITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_DIGITS&#160;&#160;&#160;&quot;0123456789&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00155">155</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6c7c18688884bd3e0b8352f6a68a2dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c7c18688884bd3e0b8352f6a68a2dc4">&#9670;&nbsp;</a></span>STR_EXP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_EXP&#160;&#160;&#160;&quot;eE&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00161">161</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8f8108f5f119b246f714faa776dbf0d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f8108f5f119b246f714faa776dbf0d1">&#9670;&nbsp;</a></span>STR_IDENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_IDENT&#160;&#160;&#160;&quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00158">158</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa97ab19fd4ce3dfbdd82e7c61c078222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97ab19fd4ce3dfbdd82e7c61c078222">&#9670;&nbsp;</a></span>STR_POINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_POINT&#160;&#160;&#160;&quot;.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00160">160</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4bfdd55894db8f85d19c6d1f2d0e7def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bfdd55894db8f85d19c6d1f2d0e7def">&#9670;&nbsp;</a></span>STR_SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_SIGN&#160;&#160;&#160;&quot;+-&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00159">159</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a8caa00fa21faeb516b834e0956e79388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8caa00fa21faeb516b834e0956e79388">&#9670;&nbsp;</a></span>char_cat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* char_cat </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str_append</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00072">72</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a8caa00fa21faeb516b834e0956e79388_cgraph.png" border="0" usemap="#strings_8c_a8caa00fa21faeb516b834e0956e79388_cgraph" alt=""/></div>
+<map name="strings_8c_a8caa00fa21faeb516b834e0956e79388_cgraph" id="strings_8c_a8caa00fa21faeb516b834e0956e79388_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="113,5,173,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab4d5fb22634ddb001ce74366918064d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d5fb22634ddb001ce74366918064d8">&#9670;&nbsp;</a></span>char_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* char_clone </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad8977cc057b41ba8c42b775e19ad5f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8977cc057b41ba8c42b775e19ad5f8f">&#9670;&nbsp;</a></span>char_cmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int char_cmp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00085">85</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1635e97bfc1c5214f659fe601139fcc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1635e97bfc1c5214f659fe601139fcc5">&#9670;&nbsp;</a></span>char_del()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* char_del </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6f914569f2c603e37bfa9bf623e36838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f914569f2c603e37bfa9bf623e36838">&#9670;&nbsp;</a></span>char_eq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int char_eq </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00093">93</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a6f914569f2c603e37bfa9bf623e36838_cgraph.png" border="0" usemap="#strings_8c_a6f914569f2c603e37bfa9bf623e36838_cgraph" alt=""/></div>
+<map name="strings_8c_a6f914569f2c603e37bfa9bf623e36838_cgraph" id="strings_8c_a6f914569f2c603e37bfa9bf623e36838_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="112,5,177,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a433b1975ec561892d77a331e21684a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433b1975ec561892d77a331e21684a03">&#9670;&nbsp;</a></span>char_match_any()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int char_match_any </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00101">101</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a65934258057b6113c133b243b0674c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65934258057b6113c133b243b0674c09">&#9670;&nbsp;</a></span>char_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* char_new </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00015">15</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a65934258057b6113c133b243b0674c09_cgraph.png" border="0" usemap="#strings_8c_a65934258057b6113c133b243b0674c09_cgraph" alt=""/></div>
+<map name="strings_8c_a65934258057b6113c133b243b0674c09_cgraph" id="strings_8c_a65934258057b6113c133b243b0674c09_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="119,5,215,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a18b93394d8cb2bbba63fa9ac46393ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b93394d8cb2bbba63fa9ac46393ca9">&#9670;&nbsp;</a></span>char_renew()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* char_renew </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>old_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a18b93394d8cb2bbba63fa9ac46393ca9_cgraph.png" border="0" usemap="#strings_8c_a18b93394d8cb2bbba63fa9ac46393ca9_cgraph" alt=""/></div>
+<map name="strings_8c_a18b93394d8cb2bbba63fa9ac46393ca9_cgraph" id="strings_8c_a18b93394d8cb2bbba63fa9ac46393ca9_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="131,5,191,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="128,56,193,83"/>
+<area shape="rect" id="node4" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="241,56,337,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a78b6aec8d1d6c0a503d73474b6e9bbf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b6aec8d1d6c0a503d73474b6e9bbf4">&#9670;&nbsp;</a></span>char_renew_sprintf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* char_renew_sprintf </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>skip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a78b6aec8d1d6c0a503d73474b6e9bbf4_cgraph.png" border="0" usemap="#strings_8c_a78b6aec8d1d6c0a503d73474b6e9bbf4_cgraph" alt=""/></div>
+<map name="strings_8c_a78b6aec8d1d6c0a503d73474b6e9bbf4_cgraph" id="strings_8c_a78b6aec8d1d6c0a503d73474b6e9bbf4_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="285,5,345,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="160,56,235,83"/>
+<area shape="rect" id="node4" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="283,56,348,83"/>
+<area shape="rect" id="node5" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="396,56,492,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a15d9b565e4f3d39e7ebf2f69fde042d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d9b565e4f3d39e7ebf2f69fde042d8">&#9670;&nbsp;</a></span>str_create_mask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* str_create_mask </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00129">129</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a15d9b565e4f3d39e7ebf2f69fde042d8_cgraph.png" border="0" usemap="#strings_8c_a15d9b565e4f3d39e7ebf2f69fde042d8_cgraph" alt=""/></div>
+<map name="strings_8c_a15d9b565e4f3d39e7ebf2f69fde042d8_cgraph" id="strings_8c_a15d9b565e4f3d39e7ebf2f69fde042d8_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="149,5,245,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="167,56,227,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a835961f47b2bc8e0d8d5ab9c3e874270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a835961f47b2bc8e0d8d5ab9c3e874270">&#9670;&nbsp;</a></span>str_has_any_char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int str_has_any_char </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00116">116</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a835961f47b2bc8e0d8d5ab9c3e874270_cgraph.png" border="0" usemap="#strings_8c_a835961f47b2bc8e0d8d5ab9c3e874270_cgraph" alt=""/></div>
+<map name="strings_8c_a835961f47b2bc8e0d8d5ab9c3e874270_cgraph" id="strings_8c_a835961f47b2bc8e0d8d5ab9c3e874270_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="155,5,251,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9026a346ce8c90fef7e9eec0f966467c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9026a346ce8c90fef7e9eec0f966467c">&#9670;&nbsp;</a></span>str_match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int str_match </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>p0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00163">163</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a9026a346ce8c90fef7e9eec0f966467c_cgraph.png" border="0" usemap="#strings_8c_a9026a346ce8c90fef7e9eec0f966467c_cgraph" alt=""/></div>
+<map name="strings_8c_a9026a346ce8c90fef7e9eec0f966467c_cgraph" id="strings_8c_a9026a346ce8c90fef7e9eec0f966467c_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="119,31,215,57"/>
+<area shape="rect" id="node3" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="263,5,359,32"/>
+<area shape="rect" id="node4" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="281,68,341,95"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa137b865116b8931f3ca7322f8b23569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa137b865116b8931f3ca7322f8b23569">&#9670;&nbsp;</a></span>strings_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strings_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00286">286</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac280a4e5410c1cd244fd0acb87608623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac280a4e5410c1cd244fd0acb87608623">&#9670;&nbsp;</a></span>strings_cmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strings_cmp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00652">652</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_ac280a4e5410c1cd244fd0acb87608623_cgraph.png" border="0" usemap="#strings_8c_ac280a4e5410c1cd244fd0acb87608623_cgraph" alt=""/></div>
+<map name="strings_8c_ac280a4e5410c1cd244fd0acb87608623_cgraph" id="strings_8c_ac280a4e5410c1cd244fd0acb87608623_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="129,5,195,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a81b9c1e8ab533413d2d85446aefe0f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b9c1e8ab533413d2d85446aefe0f8a">&#9670;&nbsp;</a></span>strings_del()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_del </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00307">307</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a81b9c1e8ab533413d2d85446aefe0f8a_cgraph.png" border="0" usemap="#strings_8c_a81b9c1e8ab533413d2d85446aefe0f8a_cgraph" alt=""/></div>
+<map name="strings_8c_a81b9c1e8ab533413d2d85446aefe0f8a_cgraph" id="strings_8c_a81b9c1e8ab533413d2d85446aefe0f8a_cgraph">
+<area shape="rect" id="node2" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="124,5,216,32"/>
+<area shape="rect" id="node5" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="135,56,205,83"/>
+<area shape="rect" id="node8" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="127,107,213,133"/>
+<area shape="rect" id="node3" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="264,5,359,32"/>
+<area shape="rect" id="node4" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="407,5,480,32"/>
+<area shape="rect" id="node6" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="275,56,347,83"/>
+<area shape="rect" id="node7" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="409,56,477,83"/>
+<area shape="rect" id="node9" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="274,107,349,133"/>
+<area shape="rect" id="node10" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="281,157,341,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97e78f50bff082b5d7a6499b3f94f675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e78f50bff082b5d7a6499b3f94f675">&#9670;&nbsp;</a></span>strings_del_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_del_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00295">295</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a97e78f50bff082b5d7a6499b3f94f675_cgraph.png" border="0" usemap="#strings_8c_a97e78f50bff082b5d7a6499b3f94f675_cgraph" alt=""/></div>
+<map name="strings_8c_a97e78f50bff082b5d7a6499b3f94f675_cgraph" id="strings_8c_a97e78f50bff082b5d7a6499b3f94f675_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="140,5,215,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="147,56,207,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acbdcb9ce9b1b217e54a718a536ddf78d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbdcb9ce9b1b217e54a718a536ddf78d">&#9670;&nbsp;</a></span>strings_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strings_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00354">354</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4a3ea7187a0f25400d71258d4dff5332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3ea7187a0f25400d71258d4dff5332">&#9670;&nbsp;</a></span>strings_item_del()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_item_del </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00405">405</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a4a3ea7187a0f25400d71258d4dff5332_cgraph.png" border="0" usemap="#strings_8c_a4a3ea7187a0f25400d71258d4dff5332_cgraph" alt=""/></div>
+<map name="strings_8c_a4a3ea7187a0f25400d71258d4dff5332_cgraph" id="strings_8c_a4a3ea7187a0f25400d71258d4dff5332_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="148,5,208,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8a5ef5631668ec8fc59b339b6859ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a5ef5631668ec8fc59b339b6859ec9">&#9670;&nbsp;</a></span>strings_item_replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_item_replace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00426">426</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_ac8a5ef5631668ec8fc59b339b6859ec9_cgraph.png" border="0" usemap="#strings_8c_ac8a5ef5631668ec8fc59b339b6859ec9_cgraph" alt=""/></div>
+<map name="strings_8c_ac8a5ef5631668ec8fc59b339b6859ec9_cgraph" id="strings_8c_ac8a5ef5631668ec8fc59b339b6859ec9_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="168,5,263,32"/>
+<area shape="rect" id="node4" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="176,56,255,83"/>
+<area shape="rect" id="node7" href="strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="180,107,251,133"/>
+<area shape="rect" id="node3" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="468,5,528,32"/>
+<area shape="rect" id="node5" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="313,56,400,83"/>
+<area shape="rect" id="node6" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="461,56,535,83"/>
+<area shape="rect" id="node8" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="311,107,403,133"/>
+<area shape="rect" id="node11" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="322,157,391,184"/>
+<area shape="rect" id="node9" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="451,107,545,133"/>
+<area shape="rect" id="node10" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="593,107,667,133"/>
+<area shape="rect" id="node12" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="462,157,534,184"/>
+<area shape="rect" id="node13" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="596,157,664,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a44e0e761ed1abdd39d19ba4989189a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e0e761ed1abdd39d19ba4989189a87">&#9670;&nbsp;</a></span>strings_item_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_item_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00414">414</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a44e0e761ed1abdd39d19ba4989189a87_cgraph.png" border="0" usemap="#strings_8c_a44e0e761ed1abdd39d19ba4989189a87_cgraph" alt=""/></div>
+<map name="strings_8c_a44e0e761ed1abdd39d19ba4989189a87_cgraph" id="strings_8c_a44e0e761ed1abdd39d19ba4989189a87_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="424,5,519,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="574,81,634,108"/>
+<area shape="rect" id="node4" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="148,107,232,133"/>
+<area shape="rect" id="node8" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="157,183,223,209"/>
+<area shape="rect" id="node5" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="289,157,367,184"/>
+<area shape="rect" id="node6" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="428,157,515,184"/>
+<area shape="rect" id="node7" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="567,157,641,184"/>
+<area shape="rect" id="node9" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="280,208,376,235"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8a8287a06fce10299b4346be44c94bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a8287a06fce10299b4346be44c94bf">&#9670;&nbsp;</a></span>strings_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_new </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00235">235</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a58e42392a9ba81af5bf1c65e47376adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58e42392a9ba81af5bf1c65e47376adf">&#9670;&nbsp;</a></span>strings_new_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_new_clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00268">268</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a58e42392a9ba81af5bf1c65e47376adf_cgraph.png" border="0" usemap="#strings_8c_a58e42392a9ba81af5bf1c65e47376adf_cgraph" alt=""/></div>
+<map name="strings_8c_a58e42392a9ba81af5bf1c65e47376adf_cgraph" id="strings_8c_a58e42392a9ba81af5bf1c65e47376adf_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="168,5,244,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="720,145,795,172"/>
+<area shape="rect" id="node4" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="159,132,253,159"/>
+<area shape="rect" id="node12" href="strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="173,183,239,209"/>
+<area shape="rect" id="node5" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="577,259,672,285"/>
+<area shape="rect" id="node6" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="727,221,787,248"/>
+<area shape="rect" id="node7" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="301,157,385,184"/>
+<area shape="rect" id="node10" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="311,107,376,133"/>
+<area shape="rect" id="node8" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="442,157,521,184"/>
+<area shape="rect" id="node9" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="581,157,668,184"/>
+<area shape="rect" id="node11" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="433,107,529,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2db84d57549c18cc6944a71fe981f6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db84d57549c18cc6944a71fe981f6a0">&#9670;&nbsp;</a></span>strings_new_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_new_str </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00258">258</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a2db84d57549c18cc6944a71fe981f6a0_cgraph.png" border="0" usemap="#strings_8c_a2db84d57549c18cc6944a71fe981f6a0_cgraph" alt=""/></div>
+<map name="strings_8c_a2db84d57549c18cc6944a71fe981f6a0_cgraph" id="strings_8c_a2db84d57549c18cc6944a71fe981f6a0_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="155,5,231,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="707,145,781,172"/>
+<area shape="rect" id="node4" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="145,183,240,209"/>
+<area shape="rect" id="node5" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="564,259,659,285"/>
+<area shape="rect" id="node6" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="714,221,774,248"/>
+<area shape="rect" id="node7" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="288,183,372,209"/>
+<area shape="rect" id="node10" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="297,107,363,133"/>
+<area shape="rect" id="node8" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="429,157,507,184"/>
+<area shape="rect" id="node9" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="568,157,655,184"/>
+<area shape="rect" id="node11" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="420,107,516,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ff5b56b2a62c965f9d8b68a65559448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff5b56b2a62c965f9d8b68a65559448">&#9670;&nbsp;</a></span>strings_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00368">368</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa240cf5b98e824052d08ea04454fcec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa240cf5b98e824052d08ea04454fcec5">&#9670;&nbsp;</a></span>strings_put()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_put </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00384">384</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2d475301ff7ea70dc0d70b60f1fd1ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d475301ff7ea70dc0d70b60f1fd1ea3">&#9670;&nbsp;</a></span>strings_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00323">323</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a2d475301ff7ea70dc0d70b60f1fd1ea3_cgraph.png" border="0" usemap="#strings_8c_a2d475301ff7ea70dc0d70b60f1fd1ea3_cgraph" alt=""/></div>
+<map name="strings_8c_a2d475301ff7ea70dc0d70b60f1fd1ea3_cgraph" id="strings_8c_a2d475301ff7ea70dc0d70b60f1fd1ea3_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="132,31,219,57"/>
+<area shape="rect" id="node3" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="267,5,341,32"/>
+<area shape="rect" id="node4" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="274,56,334,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06c884a81b9d4dfe02f70c0c3010d5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c884a81b9d4dfe02f70c0c3010d5ae">&#9670;&nbsp;</a></span>strings_resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strings_resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00331">331</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a06c884a81b9d4dfe02f70c0c3010d5ae_cgraph.png" border="0" usemap="#strings_8c_a06c884a81b9d4dfe02f70c0c3010d5ae_cgraph" alt=""/></div>
+<map name="strings_8c_a06c884a81b9d4dfe02f70c0c3010d5ae_cgraph" id="strings_8c_a06c884a81b9d4dfe02f70c0c3010d5ae_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="406,5,466,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="137,56,216,83"/>
+<area shape="rect" id="node4" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="264,56,351,83"/>
+<area shape="rect" id="node5" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="399,56,473,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a754be11345fe72b1e5cc69bab7ccf55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754be11345fe72b1e5cc69bab7ccf55e">&#9670;&nbsp;</a></span>strings_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strings_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstrings.html">strings</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00280">280</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac13e7148e338a2dcdfb2f05fdf9e3903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13e7148e338a2dcdfb2f05fdf9e3903">&#9670;&nbsp;</a></span>strings_split()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_split </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>sep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00504">504</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_ac13e7148e338a2dcdfb2f05fdf9e3903_cgraph.png" border="0" usemap="#strings_8c_ac13e7148e338a2dcdfb2f05fdf9e3903_cgraph" alt=""/></div>
+<map name="strings_8c_ac13e7148e338a2dcdfb2f05fdf9e3903_cgraph" id="strings_8c_ac13e7148e338a2dcdfb2f05fdf9e3903_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="286,107,351,133"/>
+<area shape="rect" id="node3" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="415,56,511,83"/>
+<area shape="rect" id="node4" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="271,5,367,32"/>
+<area shape="rect" id="node5" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="709,233,769,260"/>
+<area shape="rect" id="node6" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="137,259,213,285"/>
+<area shape="rect" id="node7" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="128,208,223,235"/>
+<area shape="rect" id="node8" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="559,208,653,235"/>
+<area shape="rect" id="node9" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="277,309,361,336"/>
+<area shape="rect" id="node10" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="423,360,502,387"/>
+<area shape="rect" id="node11" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="563,360,649,387"/>
+<area shape="rect" id="node12" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="701,360,776,387"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a57cb88507e092d14b31f4e6a40dbc04f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57cb88507e092d14b31f4e6a40dbc04f">&#9670;&nbsp;</a></span>strings_split_mask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_split_mask </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mask_end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00535">535</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a57cb88507e092d14b31f4e6a40dbc04f_cgraph.png" border="0" usemap="#strings_8c_a57cb88507e092d14b31f4e6a40dbc04f_cgraph" alt=""/></div>
+<map name="strings_8c_a57cb88507e092d14b31f4e6a40dbc04f_cgraph" id="strings_8c_a57cb88507e092d14b31f4e6a40dbc04f_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="315,56,381,83"/>
+<area shape="rect" id="node4" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="300,5,396,32"/>
+<area shape="rect" id="node5" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="738,183,798,209"/>
+<area shape="rect" id="node6" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="167,208,243,235"/>
+<area shape="rect" id="node7" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="157,157,252,184"/>
+<area shape="rect" id="node3" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="444,56,540,83"/>
+<area shape="rect" id="node8" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="588,157,683,184"/>
+<area shape="rect" id="node9" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="306,259,390,285"/>
+<area shape="rect" id="node10" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="453,309,531,336"/>
+<area shape="rect" id="node11" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="592,309,679,336"/>
+<area shape="rect" id="node12" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="731,309,805,336"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6589520d40398687afb1987bce711ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6589520d40398687afb1987bce711ecc">&#9670;&nbsp;</a></span>strings_split_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_split_number </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00568">568</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a6589520d40398687afb1987bce711ecc_cgraph.png" border="0" usemap="#strings_8c_a6589520d40398687afb1987bce711ecc_cgraph" alt=""/></div>
+<map name="strings_8c_a6589520d40398687afb1987bce711ecc_cgraph" id="strings_8c_a6589520d40398687afb1987bce711ecc_cgraph">
+<area shape="rect" id="node2" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="175,5,255,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="443,81,539,108"/>
+<area shape="rect" id="node4" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="177,107,253,133"/>
+<area shape="rect" id="node5" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="168,157,263,184"/>
+<area shape="rect" id="node13" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="184,208,247,235"/>
+<area shape="rect" id="node6" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="587,157,681,184"/>
+<area shape="rect" id="node7" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="737,233,797,260"/>
+<area shape="rect" id="node8" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="311,259,395,285"/>
+<area shape="rect" id="node12" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="320,107,385,133"/>
+<area shape="rect" id="node9" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="451,309,530,336"/>
+<area shape="rect" id="node10" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="591,309,677,336"/>
+<area shape="rect" id="node11" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="729,309,804,336"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2ef3fce28a7d2e73b10d7d13c6d8e21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef3fce28a7d2e73b10d7d13c6d8e21c">&#9670;&nbsp;</a></span>strings_split_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_split_path </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>suffix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00459">459</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_a2ef3fce28a7d2e73b10d7d13c6d8e21c_cgraph.png" border="0" usemap="#strings_8c_a2ef3fce28a7d2e73b10d7d13c6d8e21c_cgraph" alt=""/></div>
+<map name="strings_8c_a2ef3fce28a7d2e73b10d7d13c6d8e21c_cgraph" id="strings_8c_a2ef3fce28a7d2e73b10d7d13c6d8e21c_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="153,5,229,32"/>
+<area shape="rect" id="node3" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="277,132,343,159"/>
+<area shape="rect" id="node5" href="strings_8c.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="162,56,221,83"/>
+<area shape="rect" id="node7" href="strings_8c.html#a8caa00fa21faeb516b834e0956e79388" title="char_cat" alt="" coords="161,208,221,235"/>
+<area shape="rect" id="node8" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="280,208,340,235"/>
+<area shape="rect" id="node9" href="strings_8c.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="154,157,229,184"/>
+<area shape="rect" id="node4" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="391,132,487,159"/>
+<area shape="rect" id="node6" href="strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="277,56,343,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa72cb3072042b74edc36b7a75afea01f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72cb3072042b74edc36b7a75afea01f">&#9670;&nbsp;</a></span>strings_split_str_to_irmulti()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstrings.html">strings</a>* strings_split_str_to_irmulti </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="strings_8c_source.html">strings.c</a> の <a class="el" href="strings_8c_source.html#l00666">666</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="strings_8c_aa72cb3072042b74edc36b7a75afea01f_cgraph.png" border="0" usemap="#strings_8c_aa72cb3072042b74edc36b7a75afea01f_cgraph" alt=""/></div>
+<map name="strings_8c_aa72cb3072042b74edc36b7a75afea01f_cgraph" id="strings_8c_aa72cb3072042b74edc36b7a75afea01f_cgraph">
+<area shape="rect" id="node2" href="strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="331,259,407,285"/>
+<area shape="rect" id="node3" href="strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903" title="strings_split" alt="" coords="179,208,253,235"/>
+<area shape="rect" id="node8" href="strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="321,360,416,387"/>
+<area shape="rect" id="node9" href="strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="465,475,559,501"/>
+<area shape="rect" id="node13" href="strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="887,613,961,640"/>
+<area shape="rect" id="node14" href="strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="183,765,249,792"/>
+<area shape="rect" id="node15" href="strings_8c.html#a6589520d40398687afb1987bce711ecc" title="strings_split_number" alt="" coords="159,360,273,387"/>
+<area shape="rect" id="node18" href="strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="181,588,251,615"/>
+<area shape="rect" id="node25" href="strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="165,107,267,133"/>
+<area shape="rect" id="node4" href="strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="479,157,545,184"/>
+<area shape="rect" id="node5" href="strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="608,107,704,133"/>
+<area shape="rect" id="node6" href="strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="464,5,560,32"/>
+<area shape="rect" id="node7" href="strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="894,348,954,375"/>
+<area shape="rect" id="node10" href="strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="470,373,554,400"/>
+<area shape="rect" id="node11" href="strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="617,424,695,451"/>
+<area shape="rect" id="node12" href="strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="752,537,839,564"/>
+<area shape="rect" id="node16" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="329,461,409,488"/>
+<area shape="rect" id="node17" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="337,411,400,437"/>
+<area shape="rect" id="node19" href="is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="323,664,415,691"/>
+<area shape="rect" id="node22" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="334,613,403,640"/>
+<area shape="rect" id="node20" href="print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="465,664,559,691"/>
+<area shape="rect" id="node21" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="619,664,693,691"/>
+<area shape="rect" id="node23" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="476,613,548,640"/>
+<area shape="rect" id="node24" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="622,613,690,640"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="strings_8c.html">strings.c</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分38秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

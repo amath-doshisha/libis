@@ -42,7 +42,7 @@ int rsolve_krawczyk(int m, rmulti **e, rmulti **x, func_t *fF, int debug)
   // [X0,X1]=[-e,e]
   irvec_pm(m,X0,X1,e); if(debug>0){ irvec_print(m,X0,X1,"[X]=",'e',1); }
   // [T0,T1]=[x-e,x+e]
-  irvec_add(m,T0,T1,X0,X1,x,x); if(debug>1){ irvec_print(m,T0,T1,"[T]=",'f',20); }
+  irvec_add_rvec(m,T0,T1,X0,X1,x,x); if(debug>1){ irvec_print(m,T0,T1,"[T]=",'f',20); }
   // [L0,L1]=F'([T0,T1])
   irmat_func_list2(m,m,L0,L1,m,fJ,m,T0,T1);
   // [M0,M1]=I-R*[L0,L1]
@@ -153,7 +153,7 @@ int rsolve_newton(int m, rmulti **x, func_t *fF, int step_max, int debug)
     // update x
     if(status==' ' || status=='o'){
       // x=x-J\F
-      rvec_sub(m,x,x,F);
+      rvec_sub_rvec(m,x,x,F);
       // next
       n++;
       rswap(eta,eta_pre);

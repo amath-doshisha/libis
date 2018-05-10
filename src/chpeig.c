@@ -104,7 +104,7 @@ int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti
     else if(info>0) { done=CHPEIG_SINGULAR; }
     else{
       cvec_max_abs(eta,n,F);             // eta=max(abs(F))
-      cvec_sub(n,x,x,F);                 // x=x-F
+      cvec_sub_cvec(n,x,x,F);                 // x=x-F
       cvec_normalize_sgn(n,x,x);         // x=x/sqrt(x'*x)
       cvec_sum_dot(C,n,z,x);             // C=z'*x
       cvec_sum_dot(lambda,n,w,x);        // lambda=w'*x

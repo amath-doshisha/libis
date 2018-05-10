@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
     printf("||r||=%.2e\n",rget_d(E));
     printf("[デフォルト精度の誤差を評価]\n");
     rvec_round(n,r,prec);
-    rvec_sub(n,r,x,y);
+    rvec_sub_rvec(n,r,x,y);
     rvec_div_2exp(n,r,r,rvec_get_prec_max(n,x));
     rvec_print_prec(n,r,"r=(x-y)/log2(x)=","e",2);
     rvec_max_abs(E,n,r);

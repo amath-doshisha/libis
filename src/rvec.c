@@ -831,10 +831,12 @@ void rvec_abs(int n, rmulti **y, rmulti **x)
   for(i=0; i<n; i++){ rabs(y[i],x[i]); }
 }
 
+/////////////////////////////////////////////////////////////
+
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
 */
-void rvec_add(int n, rmulti **z, rmulti **x, rmulti **y)
+void rvec_add_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ radd(z[i],x[i],y[i]); }
@@ -843,7 +845,7 @@ void rvec_add(int n, rmulti **z, rmulti **x, rmulti **y)
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
 */
-void dvec_add_r(int n, rmulti **z, double *x, rmulti **y)
+void dvec_add_rvec(int n, rmulti **z, double *x, rmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ radd_d(z[i],y[i],x[i]); }
@@ -852,16 +854,18 @@ void dvec_add_r(int n, rmulti **z, double *x, rmulti **y)
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
 */
-void rvec_add_d(int n, rmulti **z, rmulti **x, double *y)
+void rvec_add_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ radd_d(z[i],x[i],y[i]); }
 }
 
+/////////////////////////////////////////////////////////////
+
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
 */
-void rvec_add_scalar(int n, rmulti **z, rmulti **x, rmulti *y)
+void rvec_add_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
   for(i=0; i<n; i++){ radd(z[i],x[i],y); }
@@ -870,7 +874,7 @@ void rvec_add_scalar(int n, rmulti **z, rmulti **x, rmulti *y)
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
 */
-void rvec_add_scalar_d(int n, rmulti **z, rmulti **x, double y)
+void rvec_add_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
   for(i=0; i<n; i++){ radd_d(z[i],x[i],y); }
@@ -879,14 +883,14 @@ void rvec_add_scalar_d(int n, rmulti **z, rmulti **x, double y)
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
  */
-void rvec_add_scalar_z(int n, cmulti **z, rmulti **x, dcomplex y)
+void rvec_add_zscalar(int n, cmulti **z, rmulti **x, dcomplex y)
 {
   int i;
   for(i=0; i<n; i++){ radd_z(z[i],x[i],y); }
 }
 
 // z=x+y
-void dvec_add_scalar_r(int n, rmulti **z, double *x, rmulti *y)
+void dvec_add_rscalar(int n, rmulti **z, double *x, rmulti *y)
 {
     int i;
     for(i=0; i<n; i++){ radd_d(z[i],y,x[i]); }
@@ -895,7 +899,7 @@ void dvec_add_scalar_r(int n, rmulti **z, double *x, rmulti *y)
 /**
  @brief rmulti型のベクトルの足し算 z=x+y
  */
-void rvec_add_scalar_c(int n, cmulti **z, rmulti **x, cmulti *y)
+void rvec_add_cscalar(int n, cmulti **z, rmulti **x, cmulti *y)
 {
   int i;
   for(i=0; i<n; i++){ cadd_r(z[i],y,x[i]); }
@@ -906,35 +910,76 @@ void rvec_add_scalar_c(int n, cmulti **z, rmulti **x, cmulti *y)
 /**
  @brief rmulti型のベクトルの引き算 z=x-y
 */
-void rvec_sub(int n, rmulti **z, rmulti **x, rmulti **y)
+void rvec_sub_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ rsub(z[i],x[i],y[i]); }
 }
 
-// z=x-y
-void dvec_sub_scalar_r(int n, rmulti **z, double *x, rmulti *y)
+/**
+ @brief rmulti型のベクトルの引き算 z=x-y
+ */
+void rvec_sub_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
-    int i;
-    for(i=0; i<n; i++){ dsub_r(z[i],x[i],y); }
+  int i;
+  for(i=0; i<n; i++){ rsub_d(z[i],x[i],y[i]); }
 }
 
 /**
  @brief rmulti型のベクトルの引き算 z=x-y
-*/
-void rvec_sub_r1(int n, rmulti **z, rmulti *x, rmulti **y)
+ */
+void dvec_sub_rvec(int n, rmulti **z, double *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ dsub_r(z[i],x[i],y[i]); }
+}
+
+/////////////////////////////////////////////////////////////
+
+/**
+ @brief rmulti型のベクトルの引き算 z=x-y
+ */
+void rvec_sub_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ rsub(z[i],x[i],y); }
+}
+
+/**
+ @brief rmulti型のベクトルの引き算 z=x-y
+ */
+void rscalar_sub_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ rsub(z[i],x,y[i]); }
 }
 
-/**
- @brief rmulti型のベクトルの引き算 z=x-y
-*/
-void rvec_sub_r2(int n, rmulti **z, rmulti **x, rmulti *y)
+// z=x-y
+void dvec_sub_rscalar(int n, rmulti **z, double *x, rmulti *y)
+{
+    int i;
+    for(i=0; i<n; i++){ dsub_r(z[i],x[i],y); }
+}
+
+// z=x-y
+void dscalar_sub_rvec(int n, rmulti **z, double x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub(z[i],x[i],y); }
+  for(i=0; i<n; i++){ dsub_r(z[i],x,y[i]); }
+}
+
+// z=x-y
+void rvec_sub_dscalar(int n, rmulti **z, rmulti **x, double y)
+{
+  int i;
+  for(i=0; i<n; i++){ rsub_d(z[i],x[i],y); }
+}
+
+// z=x-y
+void rscalar_sub_dvec(int n, rmulti **z, rmulti *x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ rsub_d(z[i],x,y[i]); }
 }
 
 //////////////////////////////////////////////////////////

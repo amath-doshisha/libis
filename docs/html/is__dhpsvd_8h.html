@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/is_dhpsvd.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('is__dhpsvd_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_dhpsvd.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="is__dhpsvd_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a4eb3230965fee6eebf2579e06653877d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dhpsvd_8h.html#a4eb3230965fee6eebf2579e06653877d">DHPSVD_STEP_MAX</a>&#160;&#160;&#160;35</td></tr>
+<tr class="separator:a4eb3230965fee6eebf2579e06653877d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad177c5b3079519654155d8e0b53e3446"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dhpsvd_8h.html#ad177c5b3079519654155d8e0b53e3446">DHPSVD_EPS_1ERROR</a>&#160;&#160;&#160;(pow(2,-53));</td></tr>
+<tr class="separator:ad177c5b3079519654155d8e0b53e3446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811631385c444266a14aef9d488b2ded"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dhpsvd_8h.html#a811631385c444266a14aef9d488b2ded">DHPSVD_EPS_RESIDUAL</a>&#160;&#160;&#160;(pow(2,-53));</td></tr>
+<tr class="separator:a811631385c444266a14aef9d488b2ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af11b446c8cf650789a238380c8937df4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dhpsvd_8h.html#af11b446c8cf650789a238380c8937df4">DHPSVD_EPS_REJECT</a>&#160;&#160;&#160;(pow(2,-50));</td></tr>
+<tr class="separator:af11b446c8cf650789a238380c8937df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:adc29c2ff13d900c2f185ee95427fb06c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="is__dhpsvd_8h.html#adc29c2ff13d900c2f185ee95427fb06ca7e8342ba2979db863b292250deda3084">DHPSVD_NONE</a> =0, 
+<a class="el" href="is__dhpsvd_8h.html#adc29c2ff13d900c2f185ee95427fb06ca5734620766d5685de667218af68e8ac4">DHPSVD_CONVERGENT</a>, 
+<a class="el" href="is__dhpsvd_8h.html#adc29c2ff13d900c2f185ee95427fb06ca8bb7f0f6d7087084012a9629321cf135">DHPSVD_DIVERGENT</a>, 
+<a class="el" href="is__dhpsvd_8h.html#adc29c2ff13d900c2f185ee95427fb06caccb30a2ee544518ff3d4f0e04515eddd">DHPSVD_SINGULAR</a>, 
+<br />
+&#160;&#160;<a class="el" href="is__dhpsvd_8h.html#adc29c2ff13d900c2f185ee95427fb06ca11c671b19672f9eb3df9f5c05ee06da8">DHPSVD_NAN</a>
+<br />
+ }</td></tr>
+<tr class="separator:adc29c2ff13d900c2f185ee95427fb06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ab1594dff66a80d8d6c9d0772315d46b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dhpsvd_8h.html#ab1594dff66a80d8d6c9d0772315d46b4">dhpsvd_jacobi_mat</a> (int m, int n, double *JM, int LDJM, double *A, int LDA, double *u, double *v, double *w, double sigma, double C)</td></tr>
+<tr class="separator:ab1594dff66a80d8d6c9d0772315d46b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5a326a72fca9a5144d2828e6c03a370"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__dhpsvd_8h.html#ab5a326a72fca9a5144d2828e6c03a370">dhpsvd_1pair</a> (int m, int n, double *A, int LDA, double *z, double *u, double *v, double *Sigma, double *E, int *Step, int debug)</td></tr>
+<tr class="separator:ab5a326a72fca9a5144d2828e6c03a370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ad177c5b3079519654155d8e0b53e3446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad177c5b3079519654155d8e0b53e3446">&#9670;&nbsp;</a></span>DHPSVD_EPS_1ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHPSVD_EPS_1ERROR&#160;&#160;&#160;(pow(2,-53));</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="is__dhpsvd_8h_source.html">is_dhpsvd.h</a> の <a class="el" href="is__dhpsvd_8h_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af11b446c8cf650789a238380c8937df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af11b446c8cf650789a238380c8937df4">&#9670;&nbsp;</a></span>DHPSVD_EPS_REJECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHPSVD_EPS_REJECT&#160;&#160;&#160;(pow(2,-50));</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="is__dhpsvd_8h_source.html">is_dhpsvd.h</a> の <a class="el" href="is__dhpsvd_8h_source.html#l00009">9</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a811631385c444266a14aef9d488b2ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811631385c444266a14aef9d488b2ded">&#9670;&nbsp;</a></span>DHPSVD_EPS_RESIDUAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHPSVD_EPS_RESIDUAL&#160;&#160;&#160;(pow(2,-53));</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="is__dhpsvd_8h_source.html">is_dhpsvd.h</a> の <a class="el" href="is__dhpsvd_8h_source.html#l00008">8</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4eb3230965fee6eebf2579e06653877d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb3230965fee6eebf2579e06653877d">&#9670;&nbsp;</a></span>DHPSVD_STEP_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHPSVD_STEP_MAX&#160;&#160;&#160;35</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="is__dhpsvd_8h_source.html">is_dhpsvd.h</a> の <a class="el" href="is__dhpsvd_8h_source.html#l00005">5</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">列挙型詳解</h2>
+<a id="adc29c2ff13d900c2f185ee95427fb06c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc29c2ff13d900c2f185ee95427fb06c">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="adc29c2ff13d900c2f185ee95427fb06ca7e8342ba2979db863b292250deda3084"></a>DHPSVD_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="adc29c2ff13d900c2f185ee95427fb06ca5734620766d5685de667218af68e8ac4"></a>DHPSVD_CONVERGENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="adc29c2ff13d900c2f185ee95427fb06ca8bb7f0f6d7087084012a9629321cf135"></a>DHPSVD_DIVERGENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="adc29c2ff13d900c2f185ee95427fb06caccb30a2ee544518ff3d4f0e04515eddd"></a>DHPSVD_SINGULAR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="adc29c2ff13d900c2f185ee95427fb06ca11c671b19672f9eb3df9f5c05ee06da8"></a>DHPSVD_NAN&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="is__dhpsvd_8h_source.html">is_dhpsvd.h</a> の <a class="el" href="is__dhpsvd_8h_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ab5a326a72fca9a5144d2828e6c03a370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5a326a72fca9a5144d2828e6c03a370">&#9670;&nbsp;</a></span>dhpsvd_1pair()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dhpsvd_1pair </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>Sigma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>Step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="dhpsvd_8c_source.html">dhpsvd.c</a> の <a class="el" href="dhpsvd_8c_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__dhpsvd_8h_ab5a326a72fca9a5144d2828e6c03a370_cgraph.png" border="0" usemap="#is__dhpsvd_8h_ab5a326a72fca9a5144d2828e6c03a370_cgraph" alt=""/></div>
+<map name="is__dhpsvd_8h_ab5a326a72fca9a5144d2828e6c03a370_cgraph" id="is__dhpsvd_8h_ab5a326a72fca9a5144d2828e6c03a370_cgraph">
+<area shape="rect" id="node2" href="dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="151,5,234,32"/>
+<area shape="rect" id="node3" href="dmat_8c.html#af11c6f806b1ea2917fc36cc7a07a0f73" title="dmat_allocate" alt="" coords="151,56,235,83"/>
+<area shape="rect" id="node4" href="dvec_8c.html#af02be004b4a8428c43fc68b6592c759b" title="dvec_lintr_t" alt="" coords="156,107,229,133"/>
+<area shape="rect" id="node5" href="dvec_8c.html#a47f7aeff5f7c7f246bf96f2a937bcaba" title="dvec_normalize" alt="" coords="147,208,239,235"/>
+<area shape="rect" id="node7" href="dvec_8c.html#a07940a0907492d6d6dc9aaa760a36d4d" title="dvec_scale" alt="" coords="323,208,395,235"/>
+<area shape="rect" id="node8" href="dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="dvec_dot" alt="" coords="161,360,224,387"/>
+<area shape="rect" id="node9" href="dsvd_8c.html#a66b49a58652a57b86c748cc3f4f16f17" title="dsvd_residual" alt="" coords="151,309,235,336"/>
+<area shape="rect" id="node13" href="dvec_8c.html#ae39bc59f70d2e21e57bfe39c9c27cc37" title="dvec_norm_max" alt="" coords="145,411,241,437"/>
+<area shape="rect" id="node14" href="dhpsvd_8c.html#ab1594dff66a80d8d6c9d0772315d46b4" title="dhpsvd_jacobi_mat" alt="" coords="139,461,247,488"/>
+<area shape="rect" id="node20" href="dsolve_8c.html#a1769dc5fe448073a6f51ac6dd59b0c4c" title="dsolve" alt="" coords="167,512,218,539"/>
+<area shape="rect" id="node25" href="dvec_8c.html#a7c77c56ad9fa3224a083c0b0c30cf523" title="dvec_sub_dvec" alt="" coords="147,563,239,589"/>
+<area shape="rect" id="node26" href="dvec_8c.html#a21cb01284e34371b44d92288fab4758b" title="dvec_normalize_sgn" alt="" coords="136,157,249,184"/>
+<area shape="rect" id="node28" href="dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="dvec_free" alt="" coords="160,613,225,640"/>
+<area shape="rect" id="node29" href="dmat_8c.html#a119e62380bbfc4367662c0554e563a79" title="dmat_free" alt="" coords="159,664,226,691"/>
+<area shape="rect" id="node6" href="dvec_8c.html#aa37706135a435dba7d7018c51df4f6ae" title="dvec_norm2" alt="" coords="320,157,397,184"/>
+<area shape="rect" id="node10" href="dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="dvec_copy" alt="" coords="324,259,393,285"/>
+<area shape="rect" id="node11" href="dvec_8c.html#a9880a8dadf3a853a8c3b965e890fe083" title="dvec_add_lintr" alt="" coords="315,309,402,336"/>
+<area shape="rect" id="node12" href="dvec_8c.html#a1c6b3004eef650b8894d7e275b036795" title="dvec_add_lintr_t" alt="" coords="311,360,407,387"/>
+<area shape="rect" id="node15" href="dmat_8c.html#ad915fe0ba4cee96a95a7ecfa2f484c4c" title="dmat_set_zeros" alt="" coords="312,461,405,488"/>
+<area shape="rect" id="node16" href="dmat_8c.html#a801de72062cf33154b989ee3c37e2005" title="dmat_diag_sub_scalar" alt="" coords="297,512,420,539"/>
+<area shape="rect" id="node17" href="dmat_8c.html#a4832ecfd00cde3f7dbc0a7acc096fa09" title="dmat_copy" alt="" coords="323,563,394,589"/>
+<area shape="rect" id="node18" href="dmat_8c.html#aa0ab45fbde07f4c260d3bc796c534899" title="dmat_rank1op" alt="" coords="316,613,401,640"/>
+<area shape="rect" id="node19" href="dmat_8c.html#a319a32157112e70b641707d49ef181ef" title="dmat_copy_t" alt="" coords="319,411,398,437"/>
+<area shape="rect" id="node21" href="dsolve_8c.html#ae75aba316755881b38afd123343ad1f4" title="dsolve_gauss_LU" alt="" coords="308,664,409,691"/>
+<area shape="rect" id="node22" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="478,613,558,640"/>
+<area shape="rect" id="node23" href="dmat_8c.html#ad637b2a3ab4439602da8db44a2ee8eba" title="dmat_swap_rows" alt="" coords="468,664,568,691"/>
+<area shape="rect" id="node24" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="487,715,549,741"/>
+<area shape="rect" id="node27" href="dvec_8c.html#a564584af65d4a4d426a9596958260cb7" title="dvec_max_abs_index" alt="" coords="299,107,418,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab1594dff66a80d8d6c9d0772315d46b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1594dff66a80d8d6c9d0772315d46b4">&#9670;&nbsp;</a></span>dhpsvd_jacobi_mat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dhpsvd_jacobi_mat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>JM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDJM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sigma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="dhpsvd_8c_source.html">dhpsvd.c</a> の <a class="el" href="dhpsvd_8c_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__dhpsvd_8h_ab1594dff66a80d8d6c9d0772315d46b4_cgraph.png" border="0" usemap="#is__dhpsvd_8h_ab1594dff66a80d8d6c9d0772315d46b4_cgraph" alt=""/></div>
+<map name="is__dhpsvd_8h_ab1594dff66a80d8d6c9d0772315d46b4_cgraph" id="is__dhpsvd_8h_ab1594dff66a80d8d6c9d0772315d46b4_cgraph">
+<area shape="rect" id="node2" href="dmat_8c.html#ad915fe0ba4cee96a95a7ecfa2f484c4c" title="dmat_set_zeros" alt="" coords="176,5,269,32"/>
+<area shape="rect" id="node3" href="dmat_8c.html#a801de72062cf33154b989ee3c37e2005" title="dmat_diag_sub_scalar" alt="" coords="161,56,284,83"/>
+<area shape="rect" id="node4" href="dmat_8c.html#a4832ecfd00cde3f7dbc0a7acc096fa09" title="dmat_copy" alt="" coords="187,107,258,133"/>
+<area shape="rect" id="node5" href="dmat_8c.html#aa0ab45fbde07f4c260d3bc796c534899" title="dmat_rank1op" alt="" coords="180,157,265,184"/>
+<area shape="rect" id="node6" href="dmat_8c.html#a319a32157112e70b641707d49ef181ef" title="dmat_copy_t" alt="" coords="183,208,262,235"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__dhpsvd_8h.html">is_dhpsvd.h</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分32秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

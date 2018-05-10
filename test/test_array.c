@@ -1,9 +1,59 @@
 #include<math.h>
 #include<isys.h>
 
-
 int main(int argc, const char *argv[])
 {
+  int i;
+  int x_dim[]={3,4,1,1,1};
+  int y_dim[]={3,4,2,1,1};
+  array *x=NULL,*y=NULL,*z=NULL;
+
+  for(i=0; i<argc; i++){
+    if(STR_EQ(argv[i],"-h")){ exit(0); }
+  }
+
+  x=array_allocate('r',2,x_dim);
+  y=array_allocate('c',3,y_dim);
+  
+  //  init_genrand(0);
+  //  array_set_rand(x,-1000,1000);
+  //  array_set_rand(y,-1000,1000);
+  
+  array_set_grid(x);
+  array_set_grid(y);
+  array_print(x,"x",'g',3);
+  array_print(y,"y",'g',3);
+
+  printf("size(x)="); ivec_put(ARRAY_NDIM(x),ARRAY_DIM_P(x),"x"); printf("\n");
+  printf("size(y)="); ivec_put(ARRAY_NDIM(y),ARRAY_DIM_P(y),"x"); printf("\n");
+
+  if(array_same_dim_check(x,y)){ printf("dim(x)=dim(y)\n"); }else{ printf("dim(x)!=dim(y)\n"); }
+
+  /*
+  k=array_get_subdim(x,y);
+  printf("k=%d\n",k);
+  if(k>0){
+    z=array_allocate('r',ARRAY_NDIM(y),ARRAY_DIM_P(y));
+    array_put(z);
+
+    for(i=0; i<ARRAY_LD_END(z)/ARRAY_LD(z,k-1); i++){
+      rvec_add_rvec(ARRAY_LD(z,k-1),ARRAY_P0_R(z)+i*ARRAY_LD(z,k-1),ARRAY_P0_R(y)+i*ARRAY_LD(y,k-1),ARRAY_P0_R(x));
+    }
+    
+
+  }
+  */
+  z=array_add(y,x);
+  printf("size(z)="); ivec_put(ARRAY_NDIM(y),ARRAY_DIM_P(y),"x"); printf("\n");
+  array_print(z,"z",'g',3);    
+
+  
+  x=array_free(x);
+  y=array_free(y);
+  z=array_free(z);
+
+
+  /*
   int s_digits=3,digits=6,i,x_type='d',y_type='m',z_type='s',ndim=2,dim[]={5,3,2,2,3},adim[]={3,3};
   char f='f',mode[]="          ";
   array *x=NULL,*y=NULL,*z=NULL,*a=NULL;
@@ -131,4 +181,5 @@ int main(int argc, const char *argv[])
   //  y=array_free(y);
   //  z=array_free(z);
   a=array_free(a);
+  */
 }

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/is_chpeig.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('is__chpeig_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">is_chpeig.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="is__chpeig_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IS_CHPEIG_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IS_CHPEIG_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&lt;<a class="code" href="is__cmulti_8h.html">is_cmulti.h</a>&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// $B%K%e!&lt;%H%s7?H?I|$N:GBgH?I|2s?t(B</span></div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="is__chpeig_8h.html#a26a083044620099e6ec705db89b1725b">    7</a></span>&#160;<span class="preprocessor">#define CHPEIG_STEP_MAX 100</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// info type</span></div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5af31e6724d5c79747d8484fbdd13ef0ab">   10</a></span>&#160;<span class="keyword">enum</span> { <a class="code" href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5ab607d59527292ede8614c711d26a14f1">CHPEIG_NONE</a>=0, <a class="code" href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5ae811ee15efcaab4d40a6a4710f2200cd">CHPEIG_CONVERGENT</a>, <a class="code" href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5ae4760334602d2c3b7479e207fe03e17f">CHPEIG_DIVERGENT</a>, <a class="code" href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5af31e6724d5c79747d8484fbdd13ef0ab">CHPEIG_SINGULAR</a>, <a class="code" href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5a17710a39ab5dac0e619f73eafd3d8ae1">CHPEIG_RECOMPUTE</a>, <a class="code" href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5a697629c72a400d2121f6cf50998cdaf1">CHPEIG_NUM</a> };</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__chpeig_8h.html#acb0480f5af3c5f9c04c2232c078e4992">get_next_prec</a>(<span class="keywordtype">int</span> prec);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// hyperplane constrained method</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__chpeig_8h.html#acfcaf4548ffcd02edda925f5dce61648">chpeig</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="structcmulti__struct.html">cmulti</a> **Lambda, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> debug);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__chpeig_8h.html#a34d6fbca229e2ba15ac9e098932b8f46">chpeig_verify</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="structcmulti__struct.html">cmulti</a> **Lambda, <a class="code" href="structcmulti__struct.html">cmulti</a> **E_vec, <span class="keywordtype">int</span> LDE, <a class="code" href="structcmulti__struct.html">cmulti</a> **E_val, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <span class="keywordtype">int</span> prec_verify, <span class="keywordtype">int</span> *prec, <span class="keywordtype">int</span> *kprec, <span class="keywordtype">int</span> debug);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// hyperplane constrained method for a pair</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__chpeig_8h.html#a706b6973125ed0782639f4df01055b4a">chpeig_1pair</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structcmulti__struct.html">cmulti</a> *lambda, <a class="code" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *E, <span class="keywordtype">int</span> *Step, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="structcmulti__struct.html">cmulti</a> **z, <span class="keywordtype">int</span> debug);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// JM=A-lambda*I-x*w&#39;/C</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__chpeig_8h.html#ae014d8d38a0b08d9012e4ce7755b7701">chpeig_jacobi_mat</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **JM, <span class="keywordtype">int</span> LDJM, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structcmulti__struct.html">cmulti</a> **w, <a class="code" href="structcmulti__struct.html">cmulti</a> *lambda, <a class="code" href="structcmulti__struct.html">cmulti</a> *C);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="is__chpeig_8h_html_a706b6973125ed0782639f4df01055b4a"><div class="ttname"><a href="is__chpeig_8h.html#a706b6973125ed0782639f4df01055b4a">chpeig_1pair</a></div><div class="ttdeci">int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti **A, int LDA, cmulti **z, int debug)</div><div class="ttdef"><b>Definition:</b> <a href="chpeig_8c_source.html#l00062">chpeig.c:62</a></div></div>
+<div class="ttc" id="is__cmulti_8h_html"><div class="ttname"><a href="is__cmulti_8h.html">is_cmulti.h</a></div><div class="ttdoc">多倍長精度複素数型cmultiに関する宣言 </div></div>
+<div class="ttc" id="is__chpeig_8h_html_a99fb83031ce9923c84392b4e92f956b5af31e6724d5c79747d8484fbdd13ef0ab"><div class="ttname"><a href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5af31e6724d5c79747d8484fbdd13ef0ab">CHPEIG_SINGULAR</a></div><div class="ttdef"><b>Definition:</b> <a href="is__chpeig_8h_source.html#l00010">is_chpeig.h:10</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_a99fb83031ce9923c84392b4e92f956b5a17710a39ab5dac0e619f73eafd3d8ae1"><div class="ttname"><a href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5a17710a39ab5dac0e619f73eafd3d8ae1">CHPEIG_RECOMPUTE</a></div><div class="ttdef"><b>Definition:</b> <a href="is__chpeig_8h_source.html#l00010">is_chpeig.h:10</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_acfcaf4548ffcd02edda925f5dce61648"><div class="ttname"><a href="is__chpeig_8h.html#acfcaf4548ffcd02edda925f5dce61648">chpeig</a></div><div class="ttdeci">int chpeig(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **A, int LDA, int debug)</div><div class="ttdoc">超平面制約法による固有値分解. </div><div class="ttdef"><b>Definition:</b> <a href="chpeig_8c_source.html#l00144">chpeig.c:144</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_a99fb83031ce9923c84392b4e92f956b5ae811ee15efcaab4d40a6a4710f2200cd"><div class="ttname"><a href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5ae811ee15efcaab4d40a6a4710f2200cd">CHPEIG_CONVERGENT</a></div><div class="ttdef"><b>Definition:</b> <a href="is__chpeig_8h_source.html#l00010">is_chpeig.h:10</a></div></div>
+<div class="ttc" id="structcmulti__struct_html"><div class="ttname"><a href="structcmulti__struct.html">cmulti_struct</a></div><div class="ttdoc">多倍長精度複素数構造体 </div><div class="ttdef"><b>Definition:</b> <a href="is__cmulti_8h_source.html#l00016">is_cmulti.h:16</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_a34d6fbca229e2ba15ac9e098932b8f46"><div class="ttname"><a href="is__chpeig_8h.html#a34d6fbca229e2ba15ac9e098932b8f46">chpeig_verify</a></div><div class="ttdeci">int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **E_vec, int LDE, cmulti **E_val, cmulti **A, int LDA, int prec_verify, int *prec, int *kprec, int debug)</div><div class="ttdoc">超平面制約法による固有値分解. </div><div class="ttdef"><b>Definition:</b> <a href="chpeig_8c_source.html#l00247">chpeig.c:247</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_a99fb83031ce9923c84392b4e92f956b5ae4760334602d2c3b7479e207fe03e17f"><div class="ttname"><a href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5ae4760334602d2c3b7479e207fe03e17f">CHPEIG_DIVERGENT</a></div><div class="ttdef"><b>Definition:</b> <a href="is__chpeig_8h_source.html#l00010">is_chpeig.h:10</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_acb0480f5af3c5f9c04c2232c078e4992"><div class="ttname"><a href="is__chpeig_8h.html#acb0480f5af3c5f9c04c2232c078e4992">get_next_prec</a></div><div class="ttdeci">int get_next_prec(int prec)</div><div class="ttdef"><b>Definition:</b> <a href="chpeig_8c_source.html#l00230">chpeig.c:230</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_ae014d8d38a0b08d9012e4ce7755b7701"><div class="ttname"><a href="is__chpeig_8h.html#ae014d8d38a0b08d9012e4ce7755b7701">chpeig_jacobi_mat</a></div><div class="ttdeci">void chpeig_jacobi_mat(int n, cmulti **JM, int LDJM, cmulti **A, int LDA, cmulti **x, cmulti **w, cmulti *lambda, cmulti *C)</div><div class="ttdoc">固有値問題 F=A*x-lambda*x, lambda=w&amp;#39;*x/Cのヤコビ行列M=A-lambda*I-x*w&amp;#39;/Cの計算. </div><div class="ttdef"><b>Definition:</b> <a href="chpeig_8c_source.html#l00048">chpeig.c:48</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_a99fb83031ce9923c84392b4e92f956b5a697629c72a400d2121f6cf50998cdaf1"><div class="ttname"><a href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5a697629c72a400d2121f6cf50998cdaf1">CHPEIG_NUM</a></div><div class="ttdef"><b>Definition:</b> <a href="is__chpeig_8h_source.html#l00010">is_chpeig.h:10</a></div></div>
+<div class="ttc" id="is__rmulti_8h_html_aba54dd3cab4536c79ad313a91eb71b66"><div class="ttname"><a href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a></div><div class="ttdeci">__mpfr_struct rmulti</div><div class="ttdoc">多倍長精度実数構造体の宣言． </div><div class="ttdef"><b>Definition:</b> <a href="is__rmulti_8h_source.html#l00016">is_rmulti.h:16</a></div></div>
+<div class="ttc" id="is__chpeig_8h_html_a99fb83031ce9923c84392b4e92f956b5ab607d59527292ede8614c711d26a14f1"><div class="ttname"><a href="is__chpeig_8h.html#a99fb83031ce9923c84392b4e92f956b5ab607d59527292ede8614c711d26a14f1">CHPEIG_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="is__chpeig_8h_source.html#l00010">is_chpeig.h:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__chpeig_8h.html">is_chpeig.h</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分27秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

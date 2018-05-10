@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/is_iceig.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('is__iceig_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">is_iceig.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="is__iceig_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ISYS_ICEIG_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ISYS_ICEIG_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// [F]=[A*X-lambda*X]</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">void</span> <a class="code" href="is__iceig_8h.html#a7a9296624ac02dfb159798f6ebbc1f91">iceig_residual</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **F0, <a class="code" href="structcmulti__struct.html">cmulti</a> **F1, <a class="code" href="structcmulti__struct.html">cmulti</a> **A0, <span class="keywordtype">int</span> LDA0, <a class="code" href="structcmulti__struct.html">cmulti</a> **A1, <span class="keywordtype">int</span> LDA1, <a class="code" href="structcmulti__struct.html">cmulti</a> **X0, <a class="code" href="structcmulti__struct.html">cmulti</a> **X1, <a class="code" href="structcmulti__struct.html">cmulti</a> *lambda0, <a class="code" href="structcmulti__struct.html">cmulti</a> *lambda1);</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Input: x,lambda,A,n</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Output: e</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// Return: 0 if success, 1 if fail</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__iceig_8h.html#af1a6ff7c4e94bc8f6c9e39e179962477">iceig_1pair_krawczyk</a>(<span class="keywordtype">int</span> n, <a class="code" href="structcmulti__struct.html">cmulti</a> **e, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="structcmulti__struct.html">cmulti</a> **x, <a class="code" href="structcmulti__struct.html">cmulti</a> *lambda, <span class="keywordtype">int</span> debug);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">int</span> <a class="code" href="is__iceig_8h.html#af1590e6ef994cc13ca974a5fa549ea83">iceig_krawczyk</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <a class="code" href="structcmulti__struct.html">cmulti</a> **E_vec, <span class="keywordtype">int</span> LDE, <a class="code" href="structcmulti__struct.html">cmulti</a> **E_val, <a class="code" href="structcmulti__struct.html">cmulti</a> **A, <span class="keywordtype">int</span> LDA, <a class="code" href="structcmulti__struct.html">cmulti</a> **X, <span class="keywordtype">int</span> LDX, <a class="code" href="structcmulti__struct.html">cmulti</a> **lambda, <span class="keywordtype">int</span> debug);</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="is__iceig_8h_html_af1590e6ef994cc13ca974a5fa549ea83"><div class="ttname"><a href="is__iceig_8h.html#af1590e6ef994cc13ca974a5fa549ea83">iceig_krawczyk</a></div><div class="ttdeci">int iceig_krawczyk(int n, int k, cmulti **E_vec, int LDE, cmulti **E_val, cmulti **A, int LDA, cmulti **X, int LDX, cmulti **lambda, int debug)</div><div class="ttdoc">クラフチック法による固有値分解の誤差評価 </div><div class="ttdef"><b>Definition:</b> <a href="iceig_8c_source.html#l00057">iceig.c:57</a></div></div>
+<div class="ttc" id="structcmulti__struct_html"><div class="ttname"><a href="structcmulti__struct.html">cmulti_struct</a></div><div class="ttdoc">多倍長精度複素数構造体 </div><div class="ttdef"><b>Definition:</b> <a href="is__cmulti_8h_source.html#l00016">is_cmulti.h:16</a></div></div>
+<div class="ttc" id="is__iceig_8h_html_a7a9296624ac02dfb159798f6ebbc1f91"><div class="ttname"><a href="is__iceig_8h.html#a7a9296624ac02dfb159798f6ebbc1f91">iceig_residual</a></div><div class="ttdeci">void iceig_residual(int n, cmulti **F0, cmulti **F1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **X0, cmulti **X1, cmulti *lambda0, cmulti *lambda1)</div><div class="ttdoc">固有値問題の残差 F=A*X-lambda*X </div><div class="ttdef"><b>Definition:</b> <a href="iceig_8c_source.html#l00038">iceig.c:38</a></div></div>
+<div class="ttc" id="is__iceig_8h_html_af1a6ff7c4e94bc8f6c9e39e179962477"><div class="ttname"><a href="is__iceig_8h.html#af1a6ff7c4e94bc8f6c9e39e179962477">iceig_1pair_krawczyk</a></div><div class="ttdeci">int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmulti *lambda, int debug)</div><div class="ttdoc">クラフチック法による固有値対の誤差評価 </div><div class="ttdef"><b>Definition:</b> <a href="iceig_8c_source.html#l00091">iceig.c:91</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__iceig_8h.html">is_iceig.h</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分27秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

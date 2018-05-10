@@ -1,0 +1,15 @@
+<map id="rvec_normalize" name="rvec_normalize">
+<area shape="rect" id="node2" href="$rvec_8c.html#a397a6d456362872213039db0835f5525" title="rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) " alt="" coords="143,157,217,184"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#ad476ae3065909e933fe8112705cf5b4e" title="rmulti型の逆数 y=1/x " alt="" coords="161,208,199,235"/>
+<area shape="rect" id="node13" href="$rvec_8c.html#add621f39467e929716cc2d01be83f190" title="rmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="144,259,216,285"/>
+<area shape="rect" id="node3" href="$rvec_8c.html#a48a98f536e91a362d32435706adbcc46" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="265,81,360,108"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="419,157,461,184"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="408,19,472,45"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="408,81,472,108"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="520,5,572,32"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="620,132,717,159"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="525,56,567,83"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="525,107,567,133"/>
+<area shape="rect" id="node12" href="$rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="285,208,340,235"/>
+<area shape="rect" id="node14" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="292,259,333,285"/>
+</map>

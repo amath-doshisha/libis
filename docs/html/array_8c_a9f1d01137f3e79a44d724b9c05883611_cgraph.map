@@ -1,0 +1,101 @@
+<map id="array_sub" name="array_sub">
+<area shape="rect" id="node2" href="$array_8c.html#aa181ce7fd9452b18ca6d0a148bf0aa0c" title="array_same_dim_check" alt="" coords="120,183,248,209"/>
+<area shape="rect" id="node3" href="$array_8c.html#a075bf54e3da7df513db0c4f8e06c8787" title="array_allocate" alt="" coords="141,233,227,260"/>
+<area shape="rect" id="node14" href="$dvec_8c.html#a7c77c56ad9fa3224a083c0b0c30cf523" title="dvec_sub_dvec" alt="" coords="138,284,230,311"/>
+<area shape="rect" id="node15" href="$is__zvec_8h.html#a08ff708f32fba4d4165835104bcc1407" title="dvec_sub_zvec" alt="" coords="139,335,229,361"/>
+<area shape="rect" id="node16" href="$is__zvec_8h.html#ae18cfb9e0e41d394c266f6c18441cf23" title="zvec_sub_dvec" alt="" coords="139,385,229,412"/>
+<area shape="rect" id="node17" href="$is__zvec_8h.html#a7b33f607c1c86399348081943e82fd70" title="zvec_sub_zvec" alt="" coords="139,436,229,463"/>
+<area shape="rect" id="node18" href="$is__rvec_8h.html#a8859c48ac955dc09b307c4d870a61455" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="306,1615,395,1641"/>
+<area shape="rect" id="node20" href="$cvec_8c.html#a1bc99edbd8f0f0ef36f1023fe137c38a" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,3375,229,3401"/>
+<area shape="rect" id="node22" href="$is__rvec_8h.html#a4d331914ee800f27bbc28fd545cc22a9" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,588,229,615"/>
+<area shape="rect" id="node23" href="$cvec_8c.html#ab2fb5cae154d875b6c2dc5ffd96dfb47" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,639,229,665"/>
+<area shape="rect" id="node24" href="$is__rvec_8h.html#ab37412e43ba698161f24d98c18fc7980" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="141,689,227,716"/>
+<area shape="rect" id="node25" href="$cvec_8c.html#a22e8fa8c66ee193296400844f48d9a97" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,740,229,767"/>
+<area shape="rect" id="node26" href="$cvec_8c.html#a0389507978fc9fe8e952ebc4007a33fa" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,791,229,817"/>
+<area shape="rect" id="node27" href="$cvec_8c.html#a3176e7460533ec9ba0c67ecf327a7e62" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,841,229,868"/>
+<area shape="rect" id="node28" href="$cvec_8c.html#afc2f97a6b0e5c8a0acf64a1ecb2784f0" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,892,229,919"/>
+<area shape="rect" id="node29" href="$cvec_8c.html#a064cfc0a910ec9399f7f3d59aa125b73" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,943,229,969"/>
+<area shape="rect" id="node30" href="$cvec_8c.html#aa3419777098b0dfce8fff54aa0159311" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,993,229,1020"/>
+<area shape="rect" id="node31" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="139,1044,229,1071"/>
+<area shape="rect" id="node32" href="$irvec_8c.html#ae102a6fef2f8d7f1b8eaa2c897700a68" title="[z0,z1]=[x0,z1]&#45;[y0,y1] " alt="" coords="138,1095,230,1121"/>
+<area shape="rect" id="node33" href="$icvec_8c.html#a61e45441e6ee1d6eb56d3eb71728dcb9" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="139,1145,229,1172"/>
+<area shape="rect" id="node34" href="$irvec_8c.html#aab272e638f7f4be83c6dcbcf42b9b2d7" title="[z0,z1]=[x0,z1]&#45;[y0,y1] " alt="" coords="139,1196,229,1223"/>
+<area shape="rect" id="node35" href="$icvec_8c.html#a7e6b8a96089b622fd92ff86830344284" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="139,1247,229,1273"/>
+<area shape="rect" id="node36" href="$irvec_8c.html#a9b07a09ddefb611366454db9376b041c" title="[z0,z1]=[x0,z1]&#45;[y0,y1] " alt="" coords="138,1297,230,1324"/>
+<area shape="rect" id="node37" href="$icvec_8c.html#a4cf4a0e5149535cfa8658d89c159a70a" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="139,1348,229,1375"/>
+<area shape="rect" id="node38" href="$icvec_8c.html#a8fdd52084d551af82affa5663deecd19" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="139,1399,229,1425"/>
+<area shape="rect" id="node39" href="$icvec_8c.html#a04d0e68b9fc9801fa3ee1271b799b36a" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="137,1449,231,1476"/>
+<area shape="rect" id="node40" href="$icvec_8c.html#ab5d45bddb64ec0c46429b5c1f5ed2530" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="138,1500,230,1527"/>
+<area shape="rect" id="node41" href="$icvec_8c.html#a78800488c0717d4449426336cbc746c9" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="138,1551,230,1577"/>
+<area shape="rect" id="node42" href="$icvec_8c.html#ab618590e554a23eb1d976f72b61f8154" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="137,1601,231,1628"/>
+<area shape="rect" id="node43" href="$icvec_8c.html#a6c9bcff05ab7d8b8e5aeac30bf88b104" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="138,1652,230,1679"/>
+<area shape="rect" id="node44" href="$array_8c.html#afe8127de9c092d0089e9176f9ef1c86f" title="array_is_scalar" alt="" coords="139,1703,229,1729"/>
+<area shape="rect" id="node45" href="$dvec_8c.html#a52ee092cbf42d7106c6c094ca0c8646c" title="dvec_sub_dscalar" alt="" coords="133,1753,235,1780"/>
+<area shape="rect" id="node46" href="$is__zvec_8h.html#a997bcd162f82ff2f28589d02f343d674" title="dvec_sub_zscalar" alt="" coords="133,1804,235,1831"/>
+<area shape="rect" id="node47" href="$is__zvec_8h.html#a9e3d19bc6f5837d5e284e3de961463b9" title="zvec_sub_dscalar" alt="" coords="133,1855,235,1881"/>
+<area shape="rect" id="node48" href="$is__zvec_8h.html#a853fb5faa9f453af95fa988e94953bb6" title="zvec_sub_zscalar" alt="" coords="133,1905,235,1932"/>
+<area shape="rect" id="node49" href="$is__rvec_8h.html#a9a9e72b0ff33c4532d71626d2f31ae1a" title="dvec_sub_rscalar" alt="" coords="301,597,401,624"/>
+<area shape="rect" id="node50" href="$cvec_8c.html#acff2d701e19cef763f2fd5c965cf599d" title="zvec_sub_rscalar" alt="" coords="134,3425,234,3452"/>
+<area shape="rect" id="node51" href="$is__rvec_8h.html#a468e8c4e623a0de07f070ad14f978164" title="rvec_sub_dscalar" alt="" coords="134,2057,234,2084"/>
+<area shape="rect" id="node52" href="$cvec_8c.html#a5465ee0a6754392cbf5e3f0f882183f5" title="rvec_sub_zscalar" alt="" coords="134,2108,234,2135"/>
+<area shape="rect" id="node53" href="$is__rvec_8h.html#af7d6d9362f2d417bd4d39242b1bb02df" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="135,2159,233,2185"/>
+<area shape="rect" id="node54" href="$cvec_8c.html#af509bac1b3928ea11c9888135a2b669f" title="dvec_sub_cscalar" alt="" coords="133,2209,235,2236"/>
+<area shape="rect" id="node55" href="$cvec_8c.html#ad2ff2d593a3144f19f732192e3570b72" title="zvec_sub_cscalar" alt="" coords="133,2260,235,2287"/>
+<area shape="rect" id="node56" href="$cvec_8c.html#a7318ff1c10ea77ef1b84b83078f8912d" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="134,2311,234,2337"/>
+<area shape="rect" id="node57" href="$cvec_8c.html#acef5d8384652ca4ce256acca852e8d8e" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,2361,235,2388"/>
+<area shape="rect" id="node58" href="$cvec_8c.html#a40cb7eefbf79483a23606172f8911970" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,2412,235,2439"/>
+<area shape="rect" id="node59" href="$cvec_8c.html#ab37e704fc566f0b0cddc8e88cd3fc33a" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="134,2463,234,2489"/>
+<area shape="rect" id="node60" href="$cvec_8c.html#a83b86e118059b9f588d23746e8596199" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,2513,235,2540"/>
+<area shape="rect" id="node61" href="$irvec_8c.html#aa73feb4c934fec7a3f487d8b8f42b945" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="133,2564,235,2591"/>
+<area shape="rect" id="node62" href="$icvec_8c.html#a5b979ab8df023e1afd1fb1475bdee5f2" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,2615,235,2641"/>
+<area shape="rect" id="node63" href="$irvec_8c.html#afb9e4037af558d3889b4bf6b36935fb4" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="134,2665,234,2692"/>
+<area shape="rect" id="node64" href="$icvec_8c.html#a076b2e1b2498fb72c6e8c96dbdfb0ee9" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,2716,235,2743"/>
+<area shape="rect" id="node65" href="$irvec_8c.html#aeeb5efea41b2cf26ed25c259c7b9bbb8" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="133,2767,235,2793"/>
+<area shape="rect" id="node66" href="$icvec_8c.html#a84e45433edb73c956661eab7d31d6f7d" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,2817,235,2844"/>
+<area shape="rect" id="node67" href="$icvec_8c.html#af6df48d04b97e62b5ef3f24a3c0c0609" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,2868,235,2895"/>
+<area shape="rect" id="node68" href="$icvec_8c.html#abdebea0265a4a54a9f238d0f99c8ac29" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,2919,236,2945"/>
+<area shape="rect" id="node69" href="$icvec_8c.html#a10efa2d16af4ea7d69f6efb9ee386b96" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,2969,236,2996"/>
+<area shape="rect" id="node70" href="$icvec_8c.html#a5de2fbbf6e143bb499cabe00193f3f6f" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,3020,236,3047"/>
+<area shape="rect" id="node71" href="$icvec_8c.html#a570629a10c747c9c23a73e1bf4452bd9" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,3071,236,3097"/>
+<area shape="rect" id="node72" href="$icvec_8c.html#a2fa64180036296acbf5e6b851b5bfc20" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,3121,236,3148"/>
+<area shape="rect" id="node73" href="$dvec_8c.html#a074d75a63a98e0808b77f3b247696dfe" title="dscalar_sub_dvec" alt="" coords="133,3172,235,3199"/>
+<area shape="rect" id="node74" href="$is__zvec_8h.html#aacdf8cd4d701bf5cb98e2c86e2a94e47" title="dscalar_sub_zvec" alt="" coords="133,3223,235,3249"/>
+<area shape="rect" id="node75" href="$is__zvec_8h.html#a8e2abcb02786e2de20a6c2541e91d204" title="zscalar_sub_dvec" alt="" coords="133,3273,235,3300"/>
+<area shape="rect" id="node76" href="$is__zvec_8h.html#afcddf3e933e086965f5f138bf7eb0556" title="zscalar_sub_zvec" alt="" coords="133,3324,235,3351"/>
+<area shape="rect" id="node77" href="$is__rvec_8h.html#ae59445f9a8b0cf7697afe92cce4204c7" title="dscalar_sub_rvec" alt="" coords="301,819,401,845"/>
+<area shape="rect" id="node78" href="$cvec_8c.html#a775bcb6ca0f897e1afb68798da997c95" title="zscalar_sub_rvec" alt="" coords="134,2007,234,2033"/>
+<area shape="rect" id="node79" href="$is__rvec_8h.html#ab553637313a9d1be3fd076b89a181a60" title="rscalar_sub_dvec" alt="" coords="134,3476,234,3503"/>
+<area shape="rect" id="node80" href="$cvec_8c.html#acb26325dbdefa1854c7537862bd2d34d" title="rscalar_sub_zvec" alt="" coords="134,3527,234,3553"/>
+<area shape="rect" id="node81" href="$is__rvec_8h.html#a8eb0dc666ae993079647b710f5c6f351" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="135,3577,233,3604"/>
+<area shape="rect" id="node82" href="$cvec_8c.html#a7d44d502235eba4d5ec0edbf2610a3c7" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,3628,235,3655"/>
+<area shape="rect" id="node83" href="$cvec_8c.html#ae4c710cfcd58670e960a0b6c7294dfb8" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,3679,235,3705"/>
+<area shape="rect" id="node84" href="$cvec_8c.html#a69dedef8bff6f7fd79e8cfb6bc43c291" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="134,3729,234,3756"/>
+<area shape="rect" id="node85" href="$cvec_8c.html#a2ac756da48e0b794f892310be261c8c6" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,3780,235,3807"/>
+<area shape="rect" id="node86" href="$cvec_8c.html#a9396b248a205d016621ff95eb393f9eb" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,3831,235,3857"/>
+<area shape="rect" id="node87" href="$cvec_8c.html#a6a22c421e49e411ff095e9c58b908383" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="134,3881,234,3908"/>
+<area shape="rect" id="node88" href="$cvec_8c.html#a574772c96af2a25fa36aed8f59d58735" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="133,3932,235,3959"/>
+<area shape="rect" id="node89" href="$irvec_8c.html#ab7d80006f7849d05ac8cd01ad8fba625" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="133,3983,235,4009"/>
+<area shape="rect" id="node90" href="$icvec_8c.html#a4948ea20a6e5a4e5662b3ac3ebcef42b" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,4033,235,4060"/>
+<area shape="rect" id="node91" href="$irvec_8c.html#a1e152aaf97f446a37c6f22f444a3f07d" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="134,4084,234,4111"/>
+<area shape="rect" id="node92" href="$icvec_8c.html#a295cc43e8176cb6891bf571264ac89d6" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,4135,235,4161"/>
+<area shape="rect" id="node93" href="$irvec_8c.html#a171eaeba61bec95c89f44bc743d78d93" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="133,4185,235,4212"/>
+<area shape="rect" id="node94" href="$icvec_8c.html#a1bdec33871b7133e09ecd5cc37192e8f" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,4236,235,4263"/>
+<area shape="rect" id="node95" href="$icvec_8c.html#aa39d882406d71f5918865e8edc3592fe" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="133,4287,235,4313"/>
+<area shape="rect" id="node96" href="$icvec_8c.html#aeedb2439d1f222ac8ea82aa87a5f4e63" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,4337,236,4364"/>
+<area shape="rect" id="node97" href="$icvec_8c.html#a901aebcbfaa2d395882580ba33d9655e" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,4388,236,4415"/>
+<area shape="rect" id="node98" href="$icvec_8c.html#a8f56e6856eba2568968ab8a74507c97e" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,4439,236,4465"/>
+<area shape="rect" id="node99" href="$icvec_8c.html#a91674b20ec4aaf5a393952259f42ab08" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,4489,236,4516"/>
+<area shape="rect" id="node100" href="$icvec_8c.html#a63029726f2d9274b14ceb9aa914e9a40" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="132,4540,236,4567"/>
+<area shape="rect" id="node4" href="$array_8c.html#af0794d7238e2086b6217f5011ecc848a" title="array_type_check" alt="" coords="300,208,401,235"/>
+<area shape="rect" id="node5" href="$is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="311,259,391,285"/>
+<area shape="rect" id="node6" href="$is__ivec_8h.html#a7454ba93b6f4b4d74787cf45b5242c11" title="ivec_set_zeros" alt="" coords="306,309,395,336"/>
+<area shape="rect" id="node7" href="$is__ivec_8h.html#a487daa8f72c0e79730e0d0a56c763819" title="ivec_allocate_clone" alt="" coords="296,360,405,387"/>
+<area shape="rect" id="node8" href="$array_8c.html#a779836d83556c2e5060b756eef253ee4" title="avec_allocate" alt="" coords="309,411,392,437"/>
+<area shape="rect" id="node9" href="$is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="309,461,392,488"/>
+<area shape="rect" id="node10" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="309,5,392,32"/>
+<area shape="rect" id="node11" href="$is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3" title="zvec_allocate" alt="" coords="309,56,392,83"/>
+<area shape="rect" id="node12" href="$is__rvec_8h.html#a0c4c754fa6332bf34ef67b2c38aa7505" title="rmulti型のベクトルの新規生成. " alt="" coords="310,107,391,133"/>
+<area shape="rect" id="node13" href="$cvec_8c.html#afdc4a88d6334c4518f88ea029020a587" title="cmulti型のベクトルの新規生成. " alt="" coords="309,157,392,184"/>
+<area shape="rect" id="node19" href="$is__rmulti_8h.html#a8f839b8bb29e7b412f3f0b1f312baeb3" title="rmulti型の引き算 z=x&#45;y " alt="" coords="453,931,505,957"/>
+<area shape="rect" id="node21" href="$cmulti_8c.html#a0e6de0a6f8775e7504aa04aa0f0e0f31" title="cmulti型の引き算 z=x&#45;y " alt="" coords="325,2691,377,2717"/>
+</map>

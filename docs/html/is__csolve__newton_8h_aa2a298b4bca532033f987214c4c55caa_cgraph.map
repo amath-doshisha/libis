@@ -1,0 +1,9 @@
+<map id="csolve_newton_gamma" name="csolve_newton_gamma">
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="195,5,234,32"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="189,56,241,83"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="193,107,236,133"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555" title="rmulti型の浮動小数点数の指数部の取得. " alt="" coords="184,157,245,184"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="190,208,239,235"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#aff2bda6fb7f98a1978128233d2fbcc46" title="rmulti型の指数部の足し算 y=x*2^n " alt="" coords="180,259,249,285"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="297,107,395,133"/>
+</map>

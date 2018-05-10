@@ -1,0 +1,15 @@
+<map id="imat_print" name="imat_print">
+<area shape="rect" id="node2" href="$is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="119,31,201,57"/>
+<area shape="rect" id="node3" href="$imat_8c.html#a1d3d8a1fd9f02167f3818f33401eb526" title="imat_get_s" alt="" coords="125,81,195,108"/>
+<area shape="rect" id="node9" href="$is__svec_8h.html#a25ac06242faf8480c698f29032e0a103" title="smat_print" alt="" coords="125,132,195,159"/>
+<area shape="rect" id="node13" href="$is__svec_8h.html#a2e19962ed7f4feac304f82c6368d8b72" title="svec_free" alt="" coords="127,208,193,235"/>
+<area shape="rect" id="node4" href="$is__strings_8h.html#a78b6aec8d1d6c0a503d73474b6e9bbf4" title="char_renew_sprintf" alt="" coords="265,31,372,57"/>
+<area shape="rect" id="node5" href="$strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="561,5,621,32"/>
+<area shape="rect" id="node6" href="$strings_8c.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="436,56,511,83"/>
+<area shape="rect" id="node7" href="$strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="559,56,624,83"/>
+<area shape="rect" id="node8" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="672,56,768,83"/>
+<area shape="rect" id="node10" href="$is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="279,81,359,108"/>
+<area shape="rect" id="node11" href="$svec_8c.html#a93aa94129fd6f4a52f96e5c8b7c14102" title="smat_max_length_column" alt="" coords="249,132,388,159"/>
+<area shape="rect" id="node12" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="287,183,350,209"/>
+<area shape="rect" id="node14" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="289,233,349,260"/>
+</map>

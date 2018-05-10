@@ -446,7 +446,7 @@ int func_weierstrass(int n, cmulti **z1, cmulti **z0, cmulti **a)
   }
   cvec_div(n,z1,z1,c);
   cvec_mul_d(n,z1,z1,-1.0);             //-f()/a_0()
-  cvec_add(n,z1,z1,z0);                 //z-f()/a_0()
+  cvec_add_cvec(n,z1,z1,z0);                 //z-f()/a_0()
   d=rfree(d);
   eps=rfree(eps);
   b=cfree(b);

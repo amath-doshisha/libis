@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/chsnbrg.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('chsnbrg_8c.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">chsnbrg.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>多倍長精度実数型cmultiによるヘッセンバーグ型行列に関する関数の定義.  
+<a href="#details">[詳解]</a></p>
+
+<p><a href="chsnbrg_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:aaff544444d72514bbd7661a831708304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chsnbrg_8c.html#aaff544444d72514bbd7661a831708304">chsnbrg_simtr</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **B, int LDB, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **A, int LDA)</td></tr>
+<tr class="memdesc:aaff544444d72514bbd7661a831708304"><td class="mdescLeft">&#160;</td><td class="mdescRight">密行列AをHessenberg型行列Bに相似変換する.  <a href="#aaff544444d72514bbd7661a831708304">[詳解]</a><br /></td></tr>
+<tr class="separator:aaff544444d72514bbd7661a831708304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb4c80003dbf784dcdd8d68de582dd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chsnbrg_8c.html#a9bb4c80003dbf784dcdd8d68de582dd8">chsnbrg_simtr_step</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **A, int LDA, int step)</td></tr>
+<tr class="memdesc:a9bb4c80003dbf784dcdd8d68de582dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">多倍長Hessenbergに相似変換する(mステップで終了)  <a href="#a9bb4c80003dbf784dcdd8d68de582dd8">[詳解]</a><br /></td></tr>
+<tr class="separator:a9bb4c80003dbf784dcdd8d68de582dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>多倍長精度実数型cmultiによるヘッセンバーグ型行列に関する関数の定義. </p>
+<p>cmulti型の関数に関する定義は<a class="el" href="cmulti_8c.html">cmulti.c</a>を参照のこと. cmulti型のベクトルの関数に関する定義は<a class="el" href="cvec_8c.html">cvec.c</a>を参照のこと. cmulti型の行列の関数に関する定義は<a class="el" href="cmat_8c.html">cmat.c</a>を参照のこと. </p>
+
+<p class="definition"> <a class="el" href="chsnbrg_8c_source.html">chsnbrg.c</a> に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="aaff544444d72514bbd7661a831708304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff544444d72514bbd7661a831708304">&#9670;&nbsp;</a></span>chsnbrg_simtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chsnbrg_simtr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>密行列AをHessenberg型行列Bに相似変換する. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>正方行列A,Bのサイズ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>行列 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>Aの第1次元 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">B</td><td>相似変換により得られたHessenberg型行列 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDB</td><td>Bの第1次元 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="chsnbrg_8c_source.html">chsnbrg.c</a> の <a class="el" href="chsnbrg_8c_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="chsnbrg_8c_aaff544444d72514bbd7661a831708304_cgraph.png" border="0" usemap="#chsnbrg_8c_aaff544444d72514bbd7661a831708304_cgraph" alt=""/></div>
+<map name="chsnbrg_8c_aaff544444d72514bbd7661a831708304_cgraph" id="chsnbrg_8c_aaff544444d72514bbd7661a831708304_cgraph">
+<area shape="rect" id="node2" href="cmat_8c.html#af158ba3988992435e2d0bf74519f03cf" title="cmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="436,803,548,829"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="731,169,816,196"/>
+<area shape="rect" id="node6" href="cvec_8c.html#ad1af5c539ed1b7dcee816e2378508e84" title="cmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="438,144,546,171"/>
+<area shape="rect" id="node8" href="cmat_8c.html#ab3a150132f4568d6cfb7090da9bd870c" title="cmulti型の行列の値のコピー B=A " alt="" coords="157,119,227,145"/>
+<area shape="rect" id="node12" href="chshldr_8c.html#a4eaed98550d260540a3e1dc227c61d79" title="ハウスホルダー・ベクトルへの変換. " alt="" coords="141,1436,243,1463"/>
+<area shape="rect" id="node30" href="cvec_8c.html#a88c8b643d2b9af9df4720b86bee9e9b2" title="cmulti型のベクトルの値を零に設定. " alt="" coords="295,2069,387,2096"/>
+<area shape="rect" id="node45" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="752,1715,795,1741"/>
+<area shape="rect" id="node46" href="chshldr_8c.html#a27ee02a88be0ed28e0853e7287355f20" title="ハウスホルダー変換を右から作用 B=A*H, H=I&#45;alpha*h*h&#39; " alt="" coords="139,600,245,627"/>
+<area shape="rect" id="node54" href="cvec_8c.html#a6791c96c35ff01e0aa9f3e0cfb63893b" title="cmulti型のベクトルの終了処理. " alt="" coords="459,853,525,880"/>
+<area shape="rect" id="node58" href="chshldr_8c.html#a84c388b620f91a029f9f794e87943ddc" title="ハウスホルダー変換を左から作用 B=H*A, H=I&#45;alpha*h*h&#39; " alt="" coords="141,752,243,779"/>
+<area shape="rect" id="node3" href="cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="607,803,672,829"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="741,1183,805,1209"/>
+<area shape="rect" id="node7" href="cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="596,169,683,196"/>
+<area shape="rect" id="node9" href="cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="749,701,797,728"/>
+<area shape="rect" id="node10" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="868,929,915,956"/>
+<area shape="rect" id="node11" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="967,1233,1064,1260"/>
+<area shape="rect" id="node13" href="cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3" title="cmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="436,752,548,779"/>
+<area shape="rect" id="node14" href="cvec_8c.html#a51a1da29a58b00fe54ad7a976cf6856a" title="cmulti型のベクトルの要素の絶対値の平方の総和 value=sum(abs(x).^2) " alt="" coords="293,1208,388,1235"/>
+<area shape="rect" id="node18" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="615,1157,664,1184"/>
+<area shape="rect" id="node19" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="753,1233,794,1260"/>
+<area shape="rect" id="node23" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="752,1132,795,1159"/>
+<area shape="rect" id="node24" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="870,1563,913,1589"/>
+<area shape="rect" id="node25" href="is__rmulti_8h.html#a20949c5341459b76268b91b57948f5e8" title="rmulti型の値の比較 x==y " alt="" coords="317,1411,365,1437"/>
+<area shape="rect" id="node28" href="is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="871,1816,912,1843"/>
+<area shape="rect" id="node29" href="is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="872,1867,911,1893"/>
+<area shape="rect" id="node33" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="749,1968,798,1995"/>
+<area shape="rect" id="node34" href="cvec_8c.html#a262e5f18706be868351a213ef4c89d1a" title="cmulti型のベクトルの値のコピー y=x. " alt="" coords="457,701,527,728"/>
+<area shape="rect" id="node35" href="cmulti_8c.html#ae0ae228fb9a1745bb48724269f3f3703" title="cmulti型が零であるかの判定. " alt="" coords="311,1512,370,1539"/>
+<area shape="rect" id="node39" href="cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="312,955,369,981"/>
+<area shape="rect" id="node40" href="cmulti_8c.html#afd1574f7e1e9df79121555022f41e5dc" title="cmulti型の符号反転 y=&#45;x " alt="" coords="319,1005,363,1032"/>
+<area shape="rect" id="node41" href="is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="471,1309,513,1336"/>
+<area shape="rect" id="node42" href="cmulti_8c.html#a3c6f1d26a04bd58e44c853da19cd758f" title="cmulti型の掛け算 z=x*y " alt="" coords="613,1588,665,1615"/>
+<area shape="rect" id="node43" href="is__rmulti_8h.html#ad476ae3065909e933fe8112705cf5b4e" title="rmulti型の逆数 y=1/x " alt="" coords="754,1917,793,1944"/>
+<area shape="rect" id="node15" href="is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="607,1056,671,1083"/>
+<area shape="rect" id="node17" href="cmulti_8c.html#ac5a9ab58420fbb070d80044c53772710" title="cmulti型の絶対値の平方の加算 y+=abs(x)^2 " alt="" coords="457,1157,527,1184"/>
+<area shape="rect" id="node16" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="865,1132,917,1159"/>
+<area shape="rect" id="node20" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="741,1031,805,1057"/>
+<area shape="rect" id="node21" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="871,1031,912,1057"/>
+<area shape="rect" id="node22" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="870,1081,913,1108"/>
+<area shape="rect" id="node26" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="456,1360,528,1387"/>
+<area shape="rect" id="node27" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="464,1411,520,1437"/>
+<area shape="rect" id="node31" href="cvec_8c.html#a9c3fe05db1ab80a6c6fcd88a5a7c66e4" title="cmulti型のベクトルの全ての値を倍精度実数から設定. " alt="" coords="448,2069,536,2096"/>
+<area shape="rect" id="node32" href="cmulti_8c.html#a2bb4d36f3ed668f47d70fbe88982f61b" title="cmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="613,2069,665,2096"/>
+<area shape="rect" id="node36" href="cmulti_8c.html#a0873a88220c125143451a70a83a712f6" title="cmulti型が数であるかの判定. " alt="" coords="455,1512,529,1539"/>
+<area shape="rect" id="node38" href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="463,1563,521,1589"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="603,1512,675,1539"/>
+<area shape="rect" id="node44" href="rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="864,1917,919,1944"/>
+<area shape="rect" id="node47" href="cvec_8c.html#ac3b637f3d7a4550caf7a81e83d3d55c9" title="cmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="309,549,373,576"/>
+<area shape="rect" id="node55" href="cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="617,853,661,880"/>
+<area shape="rect" id="node56" href="cmat_8c.html#ae51c514af5a6d6b7c164390c94129655" title="cmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="298,499,383,525"/>
+<area shape="rect" id="node48" href="cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="459,651,525,677"/>
+<area shape="rect" id="node49" href="cmulti_8c.html#a1896b1ce557151d6f8cb8d62c5097a3a" title="cmulti型の掛け算の加算 z+=x*y " alt="" coords="459,397,525,424"/>
+<area shape="rect" id="node50" href="cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="618,524,661,551"/>
+<area shape="rect" id="node53" href="cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="617,575,661,601"/>
+<area shape="rect" id="node51" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="742,828,805,855"/>
+<area shape="rect" id="node52" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="871,980,912,1007"/>
+<area shape="rect" id="node57" href="cmulti_8c.html#ada9707196acefff454458f252bdc888f" title="cmulti型の複素共役との掛け算 z=conj(x)*y " alt="" coords="619,752,660,779"/>
+<area shape="rect" id="node59" href="cvec_8c.html#a1908c92d891bcb07defcda89a2154a0b" title="cmulti型のベクトルxに関する共役転置行列Aによる1次変換 y=A&#39;*x " alt="" coords="302,600,379,627"/>
+<area shape="rect" id="node60" href="cmulti_8c.html#ad2163295c5121033938c0bafa91b8535" title="cmulti型の複素共役との掛け算の加算 z+=conj(x)*y " alt="" coords="461,499,523,525"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9bb4c80003dbf784dcdd8d68de582dd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb4c80003dbf784dcdd8d68de582dd8">&#9670;&nbsp;</a></span>chsnbrg_simtr_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chsnbrg_simtr_step </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>step</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>多倍長Hessenbergに相似変換する(mステップで終了) </p>
+<p>Aは書き換え,cmat型 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>行列サイズ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>行列 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>相似変換ステップ数(m-2が上限) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>hessenberg行列 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="chsnbrg_8c_source.html">chsnbrg.c</a> の <a class="el" href="chsnbrg_8c_source.html#l00057">57</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="chsnbrg_8c_a9bb4c80003dbf784dcdd8d68de582dd8_cgraph.png" border="0" usemap="#chsnbrg_8c_a9bb4c80003dbf784dcdd8d68de582dd8_cgraph" alt=""/></div>
+<map name="chsnbrg_8c_a9bb4c80003dbf784dcdd8d68de582dd8_cgraph" id="chsnbrg_8c_a9bb4c80003dbf784dcdd8d68de582dd8_cgraph">
+<area shape="rect" id="node2" href="cmat_8c.html#af158ba3988992435e2d0bf74519f03cf" title="cmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="460,651,572,677"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="755,169,840,196"/>
+<area shape="rect" id="node6" href="cvec_8c.html#ad1af5c539ed1b7dcee816e2378508e84" title="cmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="462,144,570,171"/>
+<area shape="rect" id="node8" href="chshldr_8c.html#a4eaed98550d260540a3e1dc227c61d79" title="ハウスホルダー・ベクトルへの変換. " alt="" coords="165,1436,267,1463"/>
+<area shape="rect" id="node44" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="776,1917,819,1944"/>
+<area shape="rect" id="node45" href="chshldr_8c.html#a27ee02a88be0ed28e0853e7287355f20" title="ハウスホルダー変換を右から作用 B=A*H, H=I&#45;alpha*h*h&#39; " alt="" coords="163,499,269,525"/>
+<area shape="rect" id="node53" href="cvec_8c.html#a6791c96c35ff01e0aa9f3e0cfb63893b" title="cmulti型のベクトルの終了処理. " alt="" coords="483,853,549,880"/>
+<area shape="rect" id="node57" href="chshldr_8c.html#a84c388b620f91a029f9f794e87943ddc" title="ハウスホルダー変換を左から作用 B=H*A, H=I&#45;alpha*h*h&#39; " alt="" coords="165,664,267,691"/>
+<area shape="rect" id="node3" href="cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="631,803,696,829"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="765,1233,829,1260"/>
+<area shape="rect" id="node7" href="cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="620,169,707,196"/>
+<area shape="rect" id="node9" href="cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3" title="cmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="460,803,572,829"/>
+<area shape="rect" id="node10" href="cvec_8c.html#a51a1da29a58b00fe54ad7a976cf6856a" title="cmulti型のベクトルの要素の絶対値の平方の総和 value=sum(abs(x).^2) " alt="" coords="317,1157,412,1184"/>
+<area shape="rect" id="node15" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="639,1157,688,1184"/>
+<area shape="rect" id="node16" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="777,1132,818,1159"/>
+<area shape="rect" id="node20" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="776,1183,819,1209"/>
+<area shape="rect" id="node21" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="894,1344,937,1371"/>
+<area shape="rect" id="node22" href="is__rmulti_8h.html#a20949c5341459b76268b91b57948f5e8" title="rmulti型の値の比較 x==y " alt="" coords="341,1968,389,1995"/>
+<area shape="rect" id="node25" href="is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="895,1413,936,1440"/>
+<area shape="rect" id="node26" href="is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="896,1501,935,1528"/>
+<area shape="rect" id="node27" href="cvec_8c.html#a88c8b643d2b9af9df4720b86bee9e9b2" title="cmulti型のベクトルの値を零に設定. " alt="" coords="319,1765,411,1792"/>
+<area shape="rect" id="node30" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="773,1765,822,1792"/>
+<area shape="rect" id="node31" href="cvec_8c.html#a262e5f18706be868351a213ef4c89d1a" title="cmulti型のベクトルの値のコピー y=x. " alt="" coords="481,752,551,779"/>
+<area shape="rect" id="node34" href="cmulti_8c.html#ae0ae228fb9a1745bb48724269f3f3703" title="cmulti型が零であるかの判定. " alt="" coords="335,1360,394,1387"/>
+<area shape="rect" id="node38" href="cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="336,955,393,981"/>
+<area shape="rect" id="node39" href="cmulti_8c.html#afd1574f7e1e9df79121555022f41e5dc" title="cmulti型の符号反転 y=&#45;x " alt="" coords="343,1005,387,1032"/>
+<area shape="rect" id="node40" href="is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="495,1259,537,1285"/>
+<area shape="rect" id="node41" href="cmulti_8c.html#a3c6f1d26a04bd58e44c853da19cd758f" title="cmulti型の掛け算 z=x*y " alt="" coords="637,1461,689,1488"/>
+<area shape="rect" id="node42" href="is__rmulti_8h.html#ad476ae3065909e933fe8112705cf5b4e" title="rmulti型の逆数 y=1/x " alt="" coords="778,1841,817,1868"/>
+<area shape="rect" id="node11" href="is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="631,1031,695,1057"/>
+<area shape="rect" id="node14" href="cmulti_8c.html#ac5a9ab58420fbb070d80044c53772710" title="cmulti型の絶対値の平方の加算 y+=abs(x)^2 " alt="" coords="481,1157,551,1184"/>
+<area shape="rect" id="node12" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="889,1069,941,1096"/>
+<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="991,1183,1088,1209"/>
+<area shape="rect" id="node17" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="765,701,829,728"/>
+<area shape="rect" id="node18" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="895,701,936,728"/>
+<area shape="rect" id="node19" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="894,828,937,855"/>
+<area shape="rect" id="node23" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="480,2019,552,2045"/>
+<area shape="rect" id="node24" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="488,1968,544,1995"/>
+<area shape="rect" id="node28" href="cvec_8c.html#a9c3fe05db1ab80a6c6fcd88a5a7c66e4" title="cmulti型のベクトルの全ての値を倍精度実数から設定. " alt="" coords="472,1765,560,1792"/>
+<area shape="rect" id="node29" href="cmulti_8c.html#a2bb4d36f3ed668f47d70fbe88982f61b" title="cmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="637,1765,689,1792"/>
+<area shape="rect" id="node32" href="cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="773,752,821,779"/>
+<area shape="rect" id="node33" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="892,955,939,981"/>
+<area shape="rect" id="node35" href="cmulti_8c.html#a0873a88220c125143451a70a83a712f6" title="cmulti型が数であるかの判定. " alt="" coords="479,1309,553,1336"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="487,1360,545,1387"/>
+<area shape="rect" id="node36" href="is__rmulti_8h.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="627,1335,699,1361"/>
+<area shape="rect" id="node43" href="rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="888,1831,943,1857"/>
+<area shape="rect" id="node46" href="cvec_8c.html#ac3b637f3d7a4550caf7a81e83d3d55c9" title="cmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="333,651,397,677"/>
+<area shape="rect" id="node54" href="cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="641,853,685,880"/>
+<area shape="rect" id="node55" href="cmat_8c.html#ae51c514af5a6d6b7c164390c94129655" title="cmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="322,397,407,424"/>
+<area shape="rect" id="node47" href="cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="483,701,549,728"/>
+<area shape="rect" id="node48" href="cmulti_8c.html#a1896b1ce557151d6f8cb8d62c5097a3a" title="cmulti型の掛け算の加算 z+=x*y " alt="" coords="483,397,549,424"/>
+<area shape="rect" id="node49" href="cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="642,600,685,627"/>
+<area shape="rect" id="node52" href="cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="641,701,685,728"/>
+<area shape="rect" id="node50" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="766,651,829,677"/>
+<area shape="rect" id="node51" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="895,651,936,677"/>
+<area shape="rect" id="node56" href="cmulti_8c.html#ada9707196acefff454458f252bdc888f" title="cmulti型の複素共役との掛け算 z=conj(x)*y " alt="" coords="643,651,684,677"/>
+<area shape="rect" id="node58" href="cvec_8c.html#a1908c92d891bcb07defcda89a2154a0b" title="cmulti型のベクトルxに関する共役転置行列Aによる1次変換 y=A&#39;*x " alt="" coords="326,701,403,728"/>
+<area shape="rect" id="node59" href="cmulti_8c.html#ad2163295c5121033938c0bafa91b8535" title="cmulti型の複素共役との掛け算の加算 z+=conj(x)*y " alt="" coords="485,448,547,475"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="chsnbrg_8c.html">chsnbrg.c</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分28秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

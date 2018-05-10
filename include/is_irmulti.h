@@ -62,10 +62,13 @@ void iratanh(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1);                   
 void iradd(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);
 void idadd_r(rmulti *z0, rmulti *z1, double x0, double x1, rmulti *y0, rmulti *y1);
 void iradd_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y0, double y1);
-void iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y);               // [z0,z1]=[x0,x1]+[-y,y]
-void irsub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]-[y0,y1]
+// [z0,z1]=[x0,x1]-[y0,y1]
+void irsub(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);
 void irsub_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int n_rws, rmulti **rws); // n_rws>=2
-void irsub_d2(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y);                // [z0,z1]=[x0,x1]-[y,y]
+void irsub_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y0, double y1);
+void idsub_r(rmulti *z0, rmulti *z1, double x0, double x1, rmulti *y0, rmulti *y1);
+// [z0,z1]=[x0,x1]+[-y,y]
+void iradd_pm(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y);
 void irmul(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1);     // [z0,z1]=[x0,x1]*[y0,y1]
 void irmul_ws(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, rmulti *y0, rmulti *y1, int n_rws, rmulti **rws); // n_rws>=4
 void irmul_d(rmulti *z0, rmulti *z1, rmulti *x0, rmulti *x1, double y);                 // [z0,z1]=[x0,x1]*y

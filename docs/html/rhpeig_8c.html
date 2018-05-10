@@ -1,0 +1,701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>libis: /Users/kon/Documents/GitHub/libis/src/rhpeig.c ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libis
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('rhpeig_8c.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle">
+<div class="title">rhpeig.c ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="rhpeig_8c_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a8b32cccaf8a24c49253a3612c61561c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#a8b32cccaf8a24c49253a3612c61561c5">PUT_1PAIR</a>&#160;&#160;&#160;{ mpfr_printf(&quot;[%s] status=%s done=%s step=%03d lambda=%+.16Re  E=%.0Re eta=%.0Re mu=%.0Re\n&quot;,fname,rhpeig_status[status],rhpeig_str[done],step,lambda,E,eta,mu); }</td></tr>
+<tr class="separator:a8b32cccaf8a24c49253a3612c61561c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324b9707cbef4182c0e960d146378c76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#a324b9707cbef4182c0e960d146378c76">Qk</a>&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(Q,k,LDQ)</td></tr>
+<tr class="separator:a324b9707cbef4182c0e960d146378c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfcc340fc4d9bfc4948489c71660199e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#adfcc340fc4d9bfc4948489c71660199e">Xk</a>&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,k,LDX)</td></tr>
+<tr class="separator:adfcc340fc4d9bfc4948489c71660199e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b1e1d5469af9300abe5b7ab7ae90d6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#a7b1e1d5469af9300abe5b7ab7ae90d6f">Hk</a>&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(H,k,LDH)</td></tr>
+<tr class="separator:a7b1e1d5469af9300abe5b7ab7ae90d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a16af7b253440dadd46a80a4b9fddba4d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2">RHPEIG_STATUS_PRE</a> =0, 
+<a class="el" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8">RHPEIG_STATUS_CONV</a>, 
+<a class="el" href="rhpeig_8c.html#a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73">RHPEIG_STATUS_END</a>
+ }</td></tr>
+<tr class="separator:a16af7b253440dadd46a80a4b9fddba4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ab38be48c91eafdd28f866b398c77c335"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335">rhpeig_jacobi_mat</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **JM, int LDJM, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **w, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *lambda, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *C)</td></tr>
+<tr class="memdesc:ab38be48c91eafdd28f866b398c77c335"><td class="mdescLeft">&#160;</td><td class="mdescRight">固有値問題 F=A*x-lambda*x, lambda=w'*x/Cのヤコビ行列M=A-lambda*I-x*w'/Cの計算.  <a href="#ab38be48c91eafdd28f866b398c77c335">[詳解]</a><br /></td></tr>
+<tr class="separator:ab38be48c91eafdd28f866b398c77c335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675141a9a9b7787d54b8f461faa52134"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#a675141a9a9b7787d54b8f461faa52134">rhpeig_1pair</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *lambda, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *E, int *Step, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **z, int debug)</td></tr>
+<tr class="separator:a675141a9a9b7787d54b8f461faa52134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d044b40d614c2fa8c5bde9e51edc07b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#a4d044b40d614c2fa8c5bde9e51edc07b">rhpeig</a> (int n, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **X, int LDX, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **Lambda, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **A, int LDA, int debug)</td></tr>
+<tr class="memdesc:a4d044b40d614c2fa8c5bde9e51edc07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">超平面制約法による固有値分解.  <a href="#a4d044b40d614c2fa8c5bde9e51edc07b">[詳解]</a><br /></td></tr>
+<tr class="separator:a4d044b40d614c2fa8c5bde9e51edc07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a41ccd39ed9f0eec595eefa3e06a187d2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#a41ccd39ed9f0eec595eefa3e06a187d2">rhpeig_str</a> [] ={ &quot; &quot;, &quot;conv&quot;, &quot;divr&quot;, &quot;sing&quot;, NULL }</td></tr>
+<tr class="separator:a41ccd39ed9f0eec595eefa3e06a187d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5920cdb1251e6be3878f640df5a1f9"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rhpeig_8c.html#a1b5920cdb1251e6be3878f640df5a1f9">rhpeig_status</a> [] ={&quot; &quot;, &quot;o&quot;, &quot;.&quot; }</td></tr>
+<tr class="separator:a1b5920cdb1251e6be3878f640df5a1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a7b1e1d5469af9300abe5b7ab7ae90d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1e1d5469af9300abe5b7ab7ae90d6f">&#9670;&nbsp;</a></span>Hk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Hk&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(H,k,LDH)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b32cccaf8a24c49253a3612c61561c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b32cccaf8a24c49253a3612c61561c5">&#9670;&nbsp;</a></span>PUT_1PAIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PUT_1PAIR&#160;&#160;&#160;{ mpfr_printf(&quot;[%s] status=%s done=%s step=%03d lambda=%+.16Re  E=%.0Re eta=%.0Re mu=%.0Re\n&quot;,fname,rhpeig_status[status],rhpeig_str[done],step,lambda,E,eta,mu); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a324b9707cbef4182c0e960d146378c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324b9707cbef4182c0e960d146378c76">&#9670;&nbsp;</a></span>Qk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Qk&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(Q,k,LDQ)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfcc340fc4d9bfc4948489c71660199e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfcc340fc4d9bfc4948489c71660199e">&#9670;&nbsp;</a></span>Xk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Xk&#160;&#160;&#160;<a class="el" href="is__macros_8h.html#a8137095c9ec22387b3dc5971e47ab31c">COL</a>(X,k,LDX)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">列挙型詳解</h2>
+<a id="a16af7b253440dadd46a80a4b9fddba4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16af7b253440dadd46a80a4b9fddba4d">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a16af7b253440dadd46a80a4b9fddba4da14420fe82a9fa35e0a4f7f8f34caa4b2"></a>RHPEIG_STATUS_PRE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a16af7b253440dadd46a80a4b9fddba4dab1a74551e8255e1f67d9dcca03d353a8"></a>RHPEIG_STATUS_CONV&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a16af7b253440dadd46a80a4b9fddba4da46d2f9ab97b6e63389f0f2034610ed73"></a>RHPEIG_STATUS_END&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a4d044b40d614c2fa8c5bde9e51edc07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d044b40d614c2fa8c5bde9e51edc07b">&#9670;&nbsp;</a></span>rhpeig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rhpeig </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>Lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>超平面制約法による固有値分解. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">debug</td><td>デバグ用. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>(n,n)型行列. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>Aの第1次元. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">X</td><td>[in](n,n)型行列.[out]計算された固有ベクトル. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDX</td><td>Xの第1次元. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Lambda</td><td>計算された固有値. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>計算された固有対の個数. </dd></dl>
+
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00137">137</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rhpeig_8c_a4d044b40d614c2fa8c5bde9e51edc07b_cgraph.png" border="0" usemap="#rhpeig_8c_a4d044b40d614c2fa8c5bde9e51edc07b_cgraph" alt=""/></div>
+<map name="rhpeig_8c_a4d044b40d614c2fa8c5bde9e51edc07b_cgraph" id="rhpeig_8c_a4d044b40d614c2fa8c5bde9e51edc07b_cgraph">
+<area shape="rect" id="node2" href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec" title="rmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="566,3223,675,3249"/>
+<area shape="rect" id="node4" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="565,3071,676,3097"/>
+<area shape="rect" id="node5" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="244,1917,351,1944"/>
+<area shape="rect" id="node6" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="578,2209,663,2236"/>
+<area shape="rect" id="node7" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="407,2209,512,2236"/>
+<area shape="rect" id="node8" href="is__rmat_8h.html#af049b555b1a1f612cb88143759b1af9f" title="rmulti型の行列がNaNを含むかの判定. " alt="" coords="105,136,191,163"/>
+<area shape="rect" id="node10" href="is__rmat_8h.html#a51f8560a72714434d6f9decc4d39f031" title="rmulti型の行列の値をNaNに設定. " alt="" coords="107,888,189,915"/>
+<area shape="rect" id="node12" href="is__rmat_8h.html#aa5f44de3cc135dd438ef7acfaddcc230" title="rmulti型の行列の値を零に設定. " alt="" coords="103,445,193,472"/>
+<area shape="rect" id="node16" href="is__rvec_8h.html#a6213921a6fb5e79cdc23755c22889c06" title="rmulti型のベクトルの値を零に設定. " alt="" coords="576,1095,665,1121"/>
+<area shape="rect" id="node18" href="is__rmat_8h.html#a3a7e33dc6de6eae69353f217b64f132e" title="rmulti型の行列の値を単位行列の設定. " alt="" coords="107,609,189,636"/>
+<area shape="rect" id="node19" href="mt19937ar_8c.html#a57af1d02a3fb56a949fb4c258f0bc066" title="init_genrand" alt="" coords="109,1753,187,1780"/>
+<area shape="rect" id="node20" href="is__rvec_8h.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="587,2007,655,2033"/>
+<area shape="rect" id="node22" href="is__rvec_8h.html#a7488da1331199e45ebb6a5d3ea89d155" title="rmulti型のベクトルがNaNを含むかの判定. " alt="" coords="105,193,191,220"/>
+<area shape="rect" id="node23" href="is__rvec_8h.html#a04cb680d9e5e283dd2b73626cd95fd48" title="rmulti型のベクトルの値を区間(b,a+b)の疑似乱数値を設定. " alt="" coords="578,81,663,108"/>
+<area shape="rect" id="node30" href="is__rvec_8h.html#aa63ed3491ab22d3fd5d7b3045c80b40e" title="rmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) " alt="" coords="241,1968,353,1995"/>
+<area shape="rect" id="node49" href="is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="117,337,179,364"/>
+<area shape="rect" id="node50" href="rhpeig_8c.html#a675141a9a9b7787d54b8f461faa52134" title="rhpeig_1pair" alt="" coords="109,1500,187,1527"/>
+<area shape="rect" id="node57" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="272,184,323,211"/>
+<area shape="rect" id="node71" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="599,2412,642,2439"/>
+<area shape="rect" id="node83" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="427,2463,491,2489"/>
+<area shape="rect" id="node84" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="265,2272,330,2299"/>
+<area shape="rect" id="node85" href="is__print_8h.html#a6ad5c068b7ddf65b2401849ee5964a26" title="print_light_red" alt="" coords="105,3432,191,3459"/>
+<area shape="rect" id="node88" href="is__print_8h.html#a56e707b248168b71cd3ca77f0a24422e" title="print_red" alt="" coords="117,3609,179,3636"/>
+<area shape="rect" id="node91" href="is__print_8h.html#a983ca8a8ba6530d8de25633e0944ef35" title="print_green" alt="" coords="112,3667,184,3693"/>
+<area shape="rect" id="node93" href="is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="113,3533,183,3560"/>
+<area shape="rect" id="node95" href="is__rhshldr_8h.html#a68e52e34fe939b97d2194156944a9c1d" title="ハウスホルダー変換によるQR分解の変則版. " alt="" coords="257,2221,337,2248"/>
+<area shape="rect" id="node99" href="is__rhshldr_8h.html#a8a710d3233426ce86ca7afb241f0967c" title="ハウスホルダー変換を右から作用 B=A*H, H=I&#45;alpha*h*h&#39; " alt="" coords="245,2513,350,2540"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="736,3071,800,3097"/>
+<area shape="rect" id="node9" href="is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="270,133,325,160"/>
+<area shape="rect" id="node11" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="267,436,328,463"/>
+<area shape="rect" id="node13" href="rmat_8c.html#ae79babeb2ae6d81f0e9d8f603b60f0d3" title="rmulti型の行列の値を倍精度浮動小数点数から設定. " alt="" coords="724,436,812,463"/>
+<area shape="rect" id="node14" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="878,943,927,969"/>
+<area shape="rect" id="node15" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="993,943,1091,969"/>
+<area shape="rect" id="node17" href="rvec_8c.html#a784fb6ea6bb48e1f1738efbfe1df2c8c" title="rmulti型のベクトルの全ての値を倍精度実数から設定. " alt="" coords="725,1044,811,1071"/>
+<area shape="rect" id="node21" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="745,1551,791,1577"/>
+<area shape="rect" id="node24" href="is__rmulti_8h.html#a18eee6dae76322905a0bcf05e83cbb79" title="rmulti型の値を区間(0,1)の疑似乱数値を設定. " alt="" coords="736,81,800,108"/>
+<area shape="rect" id="node28" href="is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="742,183,794,209"/>
+<area shape="rect" id="node29" href="is__rmulti_8h.html#ab573b7b2250f4751b5a96e4a760a5348" title="rmulti型の足し算 z=x+y " alt="" coords="876,5,929,32"/>
+<area shape="rect" id="node25" href="rmulti_8c.html#a99be0de1dc5dac124464db957e37b6ad" title="rmulti型の浮動小数点数を符号なし整数から設定. " alt="" coords="877,157,929,184"/>
+<area shape="rect" id="node26" href="mt19937ar_8c.html#a2b30ec504bc40c51320d14da9dfab43b" title="genrand_int32" alt="" coords="860,56,945,83"/>
+<area shape="rect" id="node27" href="rmulti_8c.html#a032720ada7cafd1b35ebdcd7c27fce27" title="rmulti型の割り算 z=x/y " alt="" coords="874,107,931,133"/>
+<area shape="rect" id="node31" href="rvec_8c.html#aa009efa8026f966eb636dd6a38eccaa8" title="rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) とその添え字 I " alt="" coords="401,881,517,908"/>
+<area shape="rect" id="node36" href="rvec_8c.html#a397a6d456362872213039db0835f5525" title="rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) " alt="" coords="422,1551,497,1577"/>
+<area shape="rect" id="node42" href="is__rmulti_8h.html#ad476ae3065909e933fe8112705cf5b4e" title="rmulti型の逆数 y=1/x " alt="" coords="601,2311,640,2337"/>
+<area shape="rect" id="node44" href="is__rmulti_8h.html#a3680ae953d68b37287b103ab03fd0741" title="rmulti型が負であるかの判定. " alt="" coords="421,487,497,513"/>
+<area shape="rect" id="node46" href="is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="599,2969,642,2996"/>
+<area shape="rect" id="node47" href="rvec_8c.html#add621f39467e929716cc2d01be83f190" title="rmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="423,2665,495,2692"/>
+<area shape="rect" id="node32" href="is__rmulti_8h.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="600,689,641,716"/>
+<area shape="rect" id="node33" href="is__rmulti_8h.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="601,639,640,665"/>
+<area shape="rect" id="node34" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="732,537,804,564"/>
+<area shape="rect" id="node35" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="746,613,790,640"/>
+<area shape="rect" id="node37" href="rvec_8c.html#a48a98f536e91a362d32435706adbcc46" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="573,892,668,919"/>
+<area shape="rect" id="node41" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="599,1905,642,1932"/>
+<area shape="rect" id="node38" href="is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="736,816,800,843"/>
+<area shape="rect" id="node40" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="736,1247,800,1273"/>
+<area shape="rect" id="node39" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="877,527,929,553"/>
+<area shape="rect" id="node43" href="rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="875,2285,930,2312"/>
+<area shape="rect" id="node45" href="rmulti_8c.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="590,436,651,463"/>
+<area shape="rect" id="node48" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="600,2552,641,2579"/>
+<area shape="rect" id="node51" href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848" title="rmulti型のマシンイプシロンの生成. " alt="" coords="588,284,653,311"/>
+<area shape="rect" id="node55" href="is__rvec_8h.html#a8d6d750a058dc41b4022b365a6ddfb77" title="rmulti型のベクトルxに関する転置行列Aによる1次変換 y=A&#39;*x " alt="" coords="424,1145,495,1172"/>
+<area shape="rect" id="node58" href="is__rvec_8h.html#ab01237aee1bf0e440efe031a701e234c" title="rmulti型のベクトルの内積 value=sum(x.*y) " alt="" coords="416,1044,503,1071"/>
+<area shape="rect" id="node59" href="is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="601,1652,640,1679"/>
+<area shape="rect" id="node60" href="is__reig_8h.html#ac371e6294165815131a15050a177371d" title="固有値問題の残差 F=A*x&#45;lambda*x. " alt="" coords="258,2640,337,2667"/>
+<area shape="rect" id="node64" href="is__rvec_8h.html#ab9f21a1efd6c5370fc7dc5f9cdf82be1" title="rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) " alt="" coords="416,755,503,781"/>
+<area shape="rect" id="node65" href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="592,1348,649,1375"/>
+<area shape="rect" id="node66" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335" title="固有値問題 F=A*x&#45;lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A&#45;lambda*I&#45;x*w&#39;/Cの計算. " alt="" coords="245,2729,349,2756"/>
+<area shape="rect" id="node72" href="is__rsolve_8h.html#a610cfb239ddf4e9f7a006943d4d1fe21" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="266,1500,329,1527"/>
+<area shape="rect" id="node78" href="is__rvec_8h.html#ab37412e43ba698161f24d98c18fc7980" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="254,1652,341,1679"/>
+<area shape="rect" id="node79" href="is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="601,588,640,615"/>
+<area shape="rect" id="node80" href="is__rmulti_8h.html#afe3a3c416a4e8ada0e8cb689ba5834ec" title="rmulti型の値の比較 x&gt;y " alt="" coords="272,607,323,633"/>
+<area shape="rect" id="node82" href="is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555" title="rmulti型の浮動小数点数の指数部の取得. " alt="" coords="267,1348,328,1375"/>
+<area shape="rect" id="node52" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="725,335,811,361"/>
+<area shape="rect" id="node53" href="rmulti_8c.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="737,284,799,311"/>
+<area shape="rect" id="node54" href="rmulti_8c.html#a60b1edadb1b7efd4eecedc43d3e65a6a" title="rmulti型の指数部の引き算 y=x/2^n " alt="" coords="870,640,935,667"/>
+<area shape="rect" id="node56" href="rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="587,1551,655,1577"/>
+<area shape="rect" id="node61" href="is__rvec_8h.html#add621f39467e929716cc2d01be83f190" title="rmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="423,3020,495,3047"/>
+<area shape="rect" id="node62" href="is__rvec_8h.html#acd07e34d873412d5957d5c9752694c26" title="rmulti型のベクトルの符号反転 y=&#45;x " alt="" coords="428,3121,491,3148"/>
+<area shape="rect" id="node63" href="is__rvec_8h.html#a9d868a6510cf27ba88a97e1426244a57" title="rmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x " alt="" coords="417,1601,502,1628"/>
+<area shape="rect" id="node67" href="is__rmat_8h.html#a30bdc9f9c19bd61d8c1626616981e174" title="rmulti型の行列の対角行列との引き算 B=A&#45;diag(a). " alt="" coords="411,1703,508,1729"/>
+<area shape="rect" id="node69" href="is__rmat_8h.html#ab8ace882b8999e6eca1d6a380e67640c" title="rmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="417,2615,501,2641"/>
+<area shape="rect" id="node68" href="is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="600,1956,641,1983"/>
+<area shape="rect" id="node70" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="599,2260,642,2287"/>
+<area shape="rect" id="node73" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="419,1348,499,1375"/>
+<area shape="rect" id="node74" href="rsolve_8c.html#a561e3b60e23e840f1b4280ffcb5c954e" title="行列AのLU分解. " alt="" coords="408,1247,511,1273"/>
+<area shape="rect" id="node76" href="rsolve_8c.html#aa066d7ddf017b085b8e548c5b77f2b27" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="405,1652,514,1679"/>
+<area shape="rect" id="node77" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="428,1399,491,1425"/>
+<area shape="rect" id="node75" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="589,1449,652,1476"/>
+<area shape="rect" id="node81" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="431,607,487,633"/>
+<area shape="rect" id="node86" href="print_8c.html#afc82fdad927bb7a4ee1728a3a9b4eb2c" title="fprint_light_red" alt="" coords="253,3527,341,3553"/>
+<area shape="rect" id="node87" href="print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="423,3527,496,3553"/>
+<area shape="rect" id="node89" href="print_8c.html#a6ea61fc81ee8fe5ee6232c04b54fcdb1" title="fprint_red" alt="" coords="265,3628,329,3655"/>
+<area shape="rect" id="node90" href="print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="425,3628,493,3655"/>
+<area shape="rect" id="node92" href="print_8c.html#afd86dcfa7f2d5bf7fd26ce93848c50b1" title="fprint_green" alt="" coords="259,3679,335,3705"/>
+<area shape="rect" id="node94" href="print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="261,3577,333,3604"/>
+<area shape="rect" id="node96" href="is__rvec_8h.html#ab692d07001e579c62974f1e89562076b" title="rmulti型のベクトルxとスカラーyの掛け算の減算 z&#45;=x*y " alt="" coords="413,1449,506,1476"/>
+<area shape="rect" id="node97" href="rhshldr_8c.html#a989f9cee5f2b06c5d09773318a43a44d" title="ハウスホルダー・ベクトルへの変換. " alt="" coords="409,1905,510,1932"/>
+<area shape="rect" id="node98" href="is__rvec_8h.html#a48a98f536e91a362d32435706adbcc46" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="573,1145,668,1172"/>
+<area shape="rect" id="node100" href="is__rvec_8h.html#a47ba7f7a1239163a05f389b82c2a8656" title="rmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="428,1500,491,1527"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a675141a9a9b7787d54b8f461faa52134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675141a9a9b7787d54b8f461faa52134">&#9670;&nbsp;</a></span>rhpeig_1pair()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rhpeig_1pair </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>Step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rhpeig_8c_a675141a9a9b7787d54b8f461faa52134_cgraph.png" border="0" usemap="#rhpeig_8c_a675141a9a9b7787d54b8f461faa52134_cgraph" alt=""/></div>
+<map name="rhpeig_8c_a675141a9a9b7787d54b8f461faa52134_cgraph" id="rhpeig_8c_a675141a9a9b7787d54b8f461faa52134_cgraph">
+<area shape="rect" id="node2" href="is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec" title="rmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="132,179,241,205"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="624,331,688,357"/>
+<area shape="rect" id="node4" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="134,1116,239,1143"/>
+<area shape="rect" id="node5" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="467,1091,553,1117"/>
+<area shape="rect" id="node6" href="is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="133,1243,240,1269"/>
+<area shape="rect" id="node7" href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848" title="rmulti型のマシンイプシロンの生成. " alt="" coords="477,40,543,67"/>
+<area shape="rect" id="node13" href="is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="156,584,217,611"/>
+<area shape="rect" id="node14" href="is__rvec_8h.html#a8d6d750a058dc41b4022b365a6ddfb77" title="rmulti型のベクトルxに関する転置行列Aによる1次変換 y=A&#39;*x " alt="" coords="313,432,384,459"/>
+<area shape="rect" id="node20" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="633,1293,679,1320"/>
+<area shape="rect" id="node21" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="754,515,805,541"/>
+<area shape="rect" id="node22" href="is__rvec_8h.html#aa63ed3491ab22d3fd5d7b3045c80b40e" title="rmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) " alt="" coords="131,787,243,813"/>
+<area shape="rect" id="node38" href="is__rvec_8h.html#ab01237aee1bf0e440efe031a701e234c" title="rmulti型のベクトルの内積 value=sum(x.*y) " alt="" coords="467,432,553,459"/>
+<area shape="rect" id="node39" href="is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="491,1648,529,1675"/>
+<area shape="rect" id="node40" href="is__reig_8h.html#ac371e6294165815131a15050a177371d" title="固有値問題の残差 F=A*x&#45;lambda*x. " alt="" coords="147,635,226,661"/>
+<area shape="rect" id="node44" href="is__rvec_8h.html#ab9f21a1efd6c5370fc7dc5f9cdf82be1" title="rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) " alt="" coords="305,1952,392,1979"/>
+<area shape="rect" id="node45" href="is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="481,1192,539,1219"/>
+<area shape="rect" id="node46" href="rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335" title="固有値問題 F=A*x&#45;lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A&#45;lambda*I&#45;x*w&#39;/Cの計算. " alt="" coords="135,1040,239,1067"/>
+<area shape="rect" id="node53" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="489,1141,531,1168"/>
+<area shape="rect" id="node54" href="is__rsolve_8h.html#a610cfb239ddf4e9f7a006943d4d1fe21" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="155,1547,218,1573"/>
+<area shape="rect" id="node64" href="is__rvec_8h.html#ab37412e43ba698161f24d98c18fc7980" title="rmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="143,2104,230,2131"/>
+<area shape="rect" id="node65" href="is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="753,2129,805,2156"/>
+<area shape="rect" id="node66" href="is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="491,1952,529,1979"/>
+<area shape="rect" id="node67" href="is__rmulti_8h.html#afe3a3c416a4e8ada0e8cb689ba5834ec" title="rmulti型の値の比較 x&gt;y " alt="" coords="161,1800,212,1827"/>
+<area shape="rect" id="node69" href="is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555" title="rmulti型の浮動小数点数の指数部の取得. " alt="" coords="156,2053,217,2080"/>
+<area shape="rect" id="node70" href="is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="155,1344,219,1371"/>
+<area shape="rect" id="node71" href="is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="154,1395,219,1421"/>
+<area shape="rect" id="node8" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="613,33,699,60"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="625,84,687,111"/>
+<area shape="rect" id="node12" href="rmulti_8c.html#a60b1edadb1b7efd4eecedc43d3e65a6a" title="rmulti型の指数部の引き算 y=x/2^n " alt="" coords="747,204,812,231"/>
+<area shape="rect" id="node10" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="753,432,805,459"/>
+<area shape="rect" id="node11" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="860,989,957,1016"/>
+<area shape="rect" id="node15" href="is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="624,432,688,459"/>
+<area shape="rect" id="node16" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="624,635,688,661"/>
+<area shape="rect" id="node19" href="rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="476,584,544,611"/>
+<area shape="rect" id="node17" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="759,989,800,1016"/>
+<area shape="rect" id="node18" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="758,711,801,737"/>
+<area shape="rect" id="node23" href="rvec_8c.html#aa009efa8026f966eb636dd6a38eccaa8" title="rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) とその添え字 I " alt="" coords="291,1597,407,1624"/>
+<area shape="rect" id="node28" href="rvec_8c.html#a397a6d456362872213039db0835f5525" title="rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) " alt="" coords="311,381,386,408"/>
+<area shape="rect" id="node31" href="is__rmulti_8h.html#ad476ae3065909e933fe8112705cf5b4e" title="rmulti型の逆数 y=1/x " alt="" coords="329,837,368,864"/>
+<area shape="rect" id="node33" href="is__rmulti_8h.html#a3680ae953d68b37287b103ab03fd0741" title="rmulti型が負であるかの判定. " alt="" coords="311,787,387,813"/>
+<area shape="rect" id="node35" href="is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="489,787,531,813"/>
+<area shape="rect" id="node36" href="rvec_8c.html#add621f39467e929716cc2d01be83f190" title="rmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="313,584,385,611"/>
+<area shape="rect" id="node24" href="is__rmulti_8h.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="489,1699,531,1725"/>
+<area shape="rect" id="node25" href="is__rmulti_8h.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="491,1901,529,1928"/>
+<area shape="rect" id="node26" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="620,1837,692,1864"/>
+<area shape="rect" id="node27" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="634,1927,678,1953"/>
+<area shape="rect" id="node29" href="rvec_8c.html#a48a98f536e91a362d32435706adbcc46" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="463,483,557,509"/>
+<area shape="rect" id="node30" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="758,628,801,655"/>
+<area shape="rect" id="node32" href="rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="752,939,807,965"/>
+<area shape="rect" id="node34" href="rmulti_8c.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="479,837,541,864"/>
+<area shape="rect" id="node37" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="489,736,531,763"/>
+<area shape="rect" id="node41" href="is__rvec_8h.html#add621f39467e929716cc2d01be83f190" title="rmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="313,533,385,560"/>
+<area shape="rect" id="node42" href="is__rvec_8h.html#acd07e34d873412d5957d5c9752694c26" title="rmulti型のベクトルの符号反転 y=&#45;x " alt="" coords="317,635,380,661"/>
+<area shape="rect" id="node43" href="is__rvec_8h.html#a9d868a6510cf27ba88a97e1426244a57" title="rmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x " alt="" coords="306,483,391,509"/>
+<area shape="rect" id="node47" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="455,1243,565,1269"/>
+<area shape="rect" id="node48" href="is__rmat_8h.html#a30bdc9f9c19bd61d8c1626616981e174" title="rmulti型の行列の対角行列との引き算 B=A&#45;diag(a). " alt="" coords="300,1648,397,1675"/>
+<area shape="rect" id="node50" href="is__rmat_8h.html#ab8ace882b8999e6eca1d6a380e67640c" title="rmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="307,939,391,965"/>
+<area shape="rect" id="node49" href="is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="489,2053,531,2080"/>
+<area shape="rect" id="node51" href="rmat_8c.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="455,331,565,357"/>
+<area shape="rect" id="node52" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="635,1040,677,1067"/>
+<area shape="rect" id="node55" href="is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="309,1699,389,1725"/>
+<area shape="rect" id="node56" href="rsolve_8c.html#a561e3b60e23e840f1b4280ffcb5c954e" title="行列AのLU分解. " alt="" coords="297,1496,400,1523"/>
+<area shape="rect" id="node60" href="rsolve_8c.html#aa066d7ddf017b085b8e548c5b77f2b27" title="線形方程式A*X=Bを後退代入 A=L*U,L*y=b,U*x=y で解く. " alt="" coords="294,1547,403,1573"/>
+<area shape="rect" id="node63" href="is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="317,1749,380,1776"/>
+<area shape="rect" id="node57" href="is__rmulti_8h.html#ad7af4d3f57a6d6d4a934cb3ad18537da" title="rmulti型の値の交換. " alt="" coords="631,1508,681,1535"/>
+<area shape="rect" id="node58" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="479,1445,541,1472"/>
+<area shape="rect" id="node59" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="759,1369,800,1396"/>
+<area shape="rect" id="node61" href="is__rmat_8h.html#a80a70b5f94234467401d80406a406aaf" title="rmulti型の行列の第addと第l行を入れ替える. " alt="" coords="461,1597,559,1624"/>
+<area shape="rect" id="node62" href="is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="755,1851,804,1877"/>
+<area shape="rect" id="node68" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="321,1851,377,1877"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab38be48c91eafdd28f866b398c77c335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38be48c91eafdd28f866b398c77c335">&#9670;&nbsp;</a></span>rhpeig_jacobi_mat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rhpeig_jacobi_mat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>JM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDJM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>LDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>固有値問題 F=A*x-lambda*x, lambda=w'*x/Cのヤコビ行列M=A-lambda*I-x*w'/Cの計算. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>サイズ. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>サイズ(n,n)の行列. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDA</td><td>行列Aの第1次元. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>サイズnのベクトル. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>サイズnのベクトル. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lambda</td><td>固有値. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>定数. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LDJM</td><td>行列JMの第1次元. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">JM</td><td>[in]サイズ(n,n)の初期化済み行列.[out]ヤコビ行列. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rhpeig_8c_ab38be48c91eafdd28f866b398c77c335_cgraph.png" border="0" usemap="#rhpeig_8c_ab38be48c91eafdd28f866b398c77c335_cgraph" alt=""/></div>
+<map name="rhpeig_8c_ab38be48c91eafdd28f866b398c77c335_cgraph" id="rhpeig_8c_ab38be48c91eafdd28f866b398c77c335_cgraph">
+<area shape="rect" id="node2" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="329,36,414,63"/>
+<area shape="rect" id="node3" href="is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="157,5,268,32"/>
+<area shape="rect" id="node5" href="is__rmat_8h.html#a30bdc9f9c19bd61d8c1626616981e174" title="rmulti型の行列の対角行列との引き算 B=A&#45;diag(a). " alt="" coords="164,289,261,316"/>
+<area shape="rect" id="node9" href="is__rmulti_8h.html#ad476ae3065909e933fe8112705cf5b4e" title="rmulti型の逆数 y=1/x " alt="" coords="193,429,232,456"/>
+<area shape="rect" id="node11" href="is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="191,353,234,380"/>
+<area shape="rect" id="node12" href="is__rmat_8h.html#ab8ace882b8999e6eca1d6a380e67640c" title="rmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="171,163,255,189"/>
+<area shape="rect" id="node16" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="350,239,393,265"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="491,36,555,63"/>
+<area shape="rect" id="node6" href="is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="351,289,392,316"/>
+<area shape="rect" id="node8" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="348,340,395,367"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="475,315,572,341"/>
+<area shape="rect" id="node10" href="rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="344,441,399,468"/>
+<area shape="rect" id="node13" href="rmat_8c.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="316,87,427,113"/>
+<area shape="rect" id="node14" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="351,137,392,164"/>
+<area shape="rect" id="node15" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="350,188,393,215"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="a1b5920cdb1251e6be3878f640df5a1f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b5920cdb1251e6be3878f640df5a1f9">&#9670;&nbsp;</a></span>rhpeig_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* rhpeig_status[] ={&quot; &quot;, &quot;o&quot;, &quot;.&quot; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a41ccd39ed9f0eec595eefa3e06a187d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ccd39ed9f0eec595eefa3e06a187d2">&#9670;&nbsp;</a></span>rhpeig_str</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* rhpeig_str[] ={ &quot; &quot;, &quot;conv&quot;, &quot;divr&quot;, &quot;sing&quot;, NULL }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rhpeig_8c_source.html">rhpeig.c</a> の <a class="el" href="rhpeig_8c_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="rhpeig_8c.html">rhpeig.c</a></li>
+    <li class="footer">2018年05月10日(木) 23時22分37秒作成 - libis / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>
