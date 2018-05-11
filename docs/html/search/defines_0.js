@@ -11,6 +11,7 @@ var searchData=
   ['array_5fdim_5fp',['ARRAY_DIM_P',['../is__array_8h.html#aac4ef7defd8d23063e2d80c73b13133e',1,'is_array.h']]],
   ['array_5fdmat',['ARRAY_DMAT',['../is__array_8h.html#a54309cccd8dc2554b18da32329fd7798',1,'is_array.h']]],
   ['array_5fdvec',['ARRAY_DVEC',['../is__array_8h.html#a20fb8324333ff6ab1ace108ba161773d',1,'is_array.h']]],
+  ['array_5fdvec0',['ARRAY_DVEC0',['../is__array_8h.html#a357f993efbfd806f82012736e6d61957',1,'is_array.h']]],
   ['array_5fimat',['ARRAY_IMAT',['../is__array_8h.html#a313188965c01a80cf2dabba08f1c4793',1,'is_array.h']]],
   ['array_5fivec',['ARRAY_IVEC',['../is__array_8h.html#a7395bde0daad077e70fb38e81225ecc7',1,'is_array.h']]],
   ['array_5fl',['ARRAY_L',['../is__array_8h.html#a52770769b4b954977001206b38fe4250',1,'is_array.h']]],
@@ -49,5 +50,6 @@ var searchData=
   ['array_5fsvec',['ARRAY_SVEC',['../is__array_8h.html#a2c6a989bd42e7013e773c783a29d4731',1,'is_array.h']]],
   ['array_5ftype',['ARRAY_TYPE',['../is__array_8h.html#a1afaa6d1e61611462912424aad4e025c',1,'is_array.h']]],
   ['array_5fzmat',['ARRAY_ZMAT',['../is__array_8h.html#aa15f195830bbb419dae86e60a58c4132',1,'is_array.h']]],
-  ['array_5fzvec',['ARRAY_ZVEC',['../is__array_8h.html#a3e42d542a85883252ef171f4b12218ed',1,'is_array.h']]]
+  ['array_5fzvec',['ARRAY_ZVEC',['../is__array_8h.html#a3e42d542a85883252ef171f4b12218ed',1,'is_array.h']]],
+  ['array_5fzvec0',['ARRAY_ZVEC0',['../is__array_8h.html#af3e359a4ac4308e922adc2117108057d',1,'is_array.h']]]
 ];

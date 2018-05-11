@@ -559,21 +559,10 @@ void rset_s(rmulti *x, char *s)
   a1=callocate_prec(prec);  
   icset_s(a0,a1,s);  
   irmid(x,C_R(a0),C_R(a1));
-  /*
-  strings *list=NULL;
-  int ret;
-  NULL_EXC2(x,value);
-  list=strings_split_number(value);
-  if(list!=NULL && strings_size(list)>=1 && strings_at(list,0)!=NULL){
-    ret=mpfr_set_str(x,strings_at(list,0),10,get_round_mode());
-    if(ret){ mpfr_set_nan(x); }
-  }else{ mpfr_set_nan(x); }  
-  list=strings_del(list);
-  */
 }
 
 // y=x
-void rset(rmulti *y, rmulti *x)
+void rset_r(rmulti *y, rmulti *x)
 {
   NULL_EXC2(x,y);
   if(y==x){ return; }
@@ -731,7 +720,7 @@ void rneg(rmulti *y, rmulti *x)
 /** @brief rmulti型の逆数 y=1/x */
 void rinv(rmulti *y, rmulti *x){
   NULL_EXC2(y,x);
-  rdiv_d1(y,1,x);
+  ddiv_r(y,1,x);
 }
 
 /** @brief rmulti型の逆数 y=1/x */
@@ -739,7 +728,7 @@ void rinv_d(rmulti *y, double x)
 {
   NULL_EXC1(y);
   rset_one(y);
-  rdiv_d2(y,y,x);
+  rdiv_d(y,y,x);
 }
 
 /** @brief rmulti型の整数への丸め y=floor(x) */
@@ -781,7 +770,7 @@ void radd_abs(rmulti *y, rmulti *x)
   NULL_EXC2(y,x);
   RAp(a,y);
   rabs(a,x);   // a=abs(x)
-  radd(y,y,a); // y=y+a
+  radd_r(y,y,a); // y=y+a
   RF(a);
 }
 
@@ -947,17 +936,17 @@ void ratanh(rmulti *y, rmulti *x)
 /** @{ */
 
 /**
- @brief rmulti型の足し算 z=x+y
-*/
-void radd(rmulti *z, rmulti *x, rmulti *y)
+ @brief z=x+y
+ */
+void radd_r(rmulti *z, rmulti *x, rmulti *y)
 {
   NULL_EXC3(z,x,y);
   mpfr_add(z,x,y,get_round_mode());
 }
 
 /**
- @brief rmulti型の足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 int radd_exact(rmulti *z, rmulti *x, rmulti *y)
 {
   int nx0,nx1,ny0,ny1,nz0,nz1,lz,e;
@@ -975,8 +964,8 @@ int radd_exact(rmulti *z, rmulti *x, rmulti *y)
 }
 
 /**
- @brief rmulti型の足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void radd_d(rmulti *z, rmulti *x, double y)
 {
   NULL_EXC2(z,x);
@@ -984,7 +973,7 @@ void radd_d(rmulti *z, rmulti *x, double y)
 }
 
 /**
- @brief rmulti型の足し算 z=x+y
+ @brief z=x+y
  */
 void dadd_r(rmulti *z, double x, rmulti *y)
 {
@@ -993,8 +982,8 @@ void dadd_r(rmulti *z, double x, rmulti *y)
 }
 
 /**
- @brief rmulti型の足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void radd_ui(rmulti *z, rmulti *x, ulong y)
 {
   NULL_EXC2(z,x);
@@ -1002,26 +991,28 @@ void radd_ui(rmulti *z, rmulti *x, ulong y)
 }
 
 /**
- @brief rmulti型の足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void radd_si(rmulti *z, rmulti *x, long y)
 {
   NULL_EXC2(z,x);
   mpfr_add_si(z,x,y,get_round_mode());
 }
 
+/////////////////////////////////////////////////////////////////////
+
 /**
- @brief rmulti型の引き算 z=x-y
-*/
-void rsub(rmulti *z, rmulti *x, rmulti *y)
+ @brief z=x-y
+ */
+void rsub_r(rmulti *z, rmulti *x, rmulti *y)
 {
   NULL_EXC3(z,x,y);
   mpfr_sub(z,x,y,get_round_mode());
 }
 
 /**
- @brief rmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 int rsub_exact(rmulti *z, rmulti *x, rmulti *y)
 {
   NULL_EXC3(z,x,y);
@@ -1040,8 +1031,8 @@ int rsub_exact(rmulti *z, rmulti *x, rmulti *y)
 }
 
 /**
- @brief rmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void dsub_r(rmulti *z, double x, rmulti *y)
 {
   NULL_EXC2(z,y);
@@ -1049,8 +1040,8 @@ void dsub_r(rmulti *z, double x, rmulti *y)
 }
 
 /**
- @brief rmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void rsub_d(rmulti *z, rmulti *x, double y)
 {
   NULL_EXC2(z,x);
@@ -1058,8 +1049,8 @@ void rsub_d(rmulti *z, rmulti *x, double y)
 }
 
 /**
- @brief rmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void rsub_ui1(rmulti *z, ulong x, rmulti *y)
 {
   NULL_EXC2(z,y);
@@ -1067,8 +1058,8 @@ void rsub_ui1(rmulti *z, ulong x, rmulti *y)
 }
 
 /**
- @brief rmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void rsub_ui2(rmulti *z, rmulti *x, ulong y)
 {
   NULL_EXC2(z,x);
@@ -1076,8 +1067,8 @@ void rsub_ui2(rmulti *z, rmulti *x, ulong y)
 }
 
 /**
- @brief rmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void rsub_si1(rmulti *z, long x, rmulti *y)
 {
   NULL_EXC2(z,y);
@@ -1085,26 +1076,28 @@ void rsub_si1(rmulti *z, long x, rmulti *y)
 }
 
 /**
- @brief rmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void rsub_si2(rmulti *z, rmulti *x, long y)
 {
   NULL_EXC2(z,x);
   mpfr_sub_si(z,x,y,get_round_mode());
 }
 
+/////////////////////////////////////////////////////////////////////////
+
 /**
- @brief rmulti型の掛け算 z=x*y
-*/
-void rmul(rmulti *z, rmulti *x, rmulti *y)
+ @brief z=x*y
+ */
+void rmul_r(rmulti *z, rmulti *x, rmulti *y)
 {
   NULL_EXC3(z,x,y);
   mpfr_mul(z,x,y,get_round_mode());
 }
 
 /**
- @brief rmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
 int rmul_exact(rmulti *z, rmulti *x, rmulti *y)
 {
   int lx,ly,lz,e=0;
@@ -1118,8 +1111,8 @@ int rmul_exact(rmulti *z, rmulti *x, rmulti *y)
 }
 
 /**
- @brief rmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
 void rmul_d(rmulti *z, rmulti *x, double y)
 {
   NULL_EXC2(z,x);
@@ -1127,8 +1120,17 @@ void rmul_d(rmulti *z, rmulti *x, double y)
 }
 
 /**
- @brief rmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
+void dmul_r(rmulti *z, double x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_mul_d(z,y,x,get_round_mode());
+}
+
+/**
+ @brief z=x*y
+ */
 void rmul_ui(rmulti *z, rmulti *x, ulong y)
 {
   NULL_EXC2(z,x);
@@ -1136,13 +1138,90 @@ void rmul_ui(rmulti *z, rmulti *x, ulong y)
 }
 
 /**
- @brief rmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
 void rmul_si(rmulti *z, rmulti *x, long y)
 {
   NULL_EXC2(z,x);
   mpfr_mul_si(z,x,y,get_round_mode());
 }
+
+/////////////////////////////////////////////////////////////////////////
+
+/**
+ @brief z=x/y
+ */
+void rdiv_r(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  mpfr_div(z,x,y,get_round_mode());
+}
+
+/**
+ @brief z=x/y
+ */
+int rdiv_rouding_check(rmulti *z, rmulti *x, rmulti *y)
+{
+  NULL_EXC3(z,x,y);
+  return abs(mpfr_div(z,x,y,get_round_mode()));
+}
+
+/**
+ @brief z=x/y
+ */
+void rdiv_d(rmulti *z, rmulti *x, double y)
+{
+  NULL_EXC2(z,x);
+  mpfr_div_d(z,x,y,get_round_mode());
+}
+
+/**
+ @brief z=x/y
+ */
+void ddiv_r(rmulti *z, double x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_d_div(z,x,y,get_round_mode());
+}
+
+/**
+ @brief z=x/y
+ */
+void rdiv_ui1(rmulti *z, ulong x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_ui_div(z,x,y,get_round_mode());
+}
+
+/**
+ @brief z=x/y
+ */
+void rdiv_ui2(rmulti *z, rmulti *x, ulong y)
+{
+  NULL_EXC2(z,x);
+  mpfr_div_ui(z,x,y,get_round_mode());
+}
+
+/**
+ @brief z=x/y
+ */
+void rdiv_si1(rmulti *z, long x, rmulti *y)
+{
+  NULL_EXC2(z,y);
+  mpfr_si_div(z,x,y,get_round_mode());
+}
+
+/**
+ @brief z=x/y
+ */
+void rdiv_si2(rmulti *z, rmulti *x, long y)
+{
+  NULL_EXC2(z,x);
+  mpfr_div_si(z,x,y,get_round_mode());
+}
+
+/////////////////////////////////////////////////////////////////////////
+
 
 /**
  @brief rmulti型の掛け算の加算 z+=x*y
@@ -1152,8 +1231,8 @@ void radd_mul(rmulti *z, rmulti *x, rmulti *y)
   rmulti *a=NULL;
   NULL_EXC3(z,x,y);
   RAp(a,z);
-  rmul(a,x,y); // a=x*y
-  radd(z,z,a); // z=z+x*y
+  rmul_r(a,x,y); // a=x*y
+  radd_r(z,z,a); // z=z+x*y
   RF(a);
 }
 
@@ -1179,8 +1258,8 @@ void radd_mul_ws(rmulti *z, rmulti *x, rmulti *y, int n_rws, rmulti **rws)
 {
   NULL_EXC3(z,x,y);
   if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in radd_mul_ws().\n",n_rws); }
-  rmul(rws[0],x,y); // rws[0]=x*y
-  radd(z,z,rws[0]); // z=z+x*y
+  rmul_r(rws[0],x,y); // rws[0]=x*y
+  radd_r(z,z,rws[0]); // z=z+x*y
 }
 
 /**
@@ -1192,7 +1271,7 @@ void radd_mul_d(rmulti *z, rmulti *x, double y)
   NULL_EXC2(z,x);
   RAp(a,z);
   rmul_d(a,x,y); // a=x*y
-  radd(z,z,a);   // z=z+x*y
+  radd_r(z,z,a);   // z=z+x*y
   RF(a);
 }
 
@@ -1204,8 +1283,8 @@ void rsub_mul(rmulti *z, rmulti *x, rmulti *y)
   rmulti *a=NULL;
   NULL_EXC3(z,x,y);
   RAp(a,z);
-  rmul(a,x,y); // a=x*y
-  rsub(z,z,a); // z=z-x*y
+  rmul_r(a,x,y); // a=x*y
+  rsub_r(z,z,a); // z=z-x*y
   RF(a);
 }
 
@@ -1231,8 +1310,8 @@ void rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int n_rws, rmulti **rws)
 {
   NULL_EXC3(z,x,y);
   if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in rsub_mul_ws().\n",n_rws); }
-  rmul(rws[0],x,y); // a=x*y
-  rsub(z,z,rws[0]); // z=z-x*y
+  rmul_r(rws[0],x,y); // a=x*y
+  rsub_r(z,z,rws[0]); // z=z-x*y
 }
 
 /**
@@ -1244,64 +1323,8 @@ void rsub_mul_d(rmulti *z, rmulti *x, double y)
   NULL_EXC2(z,x);
   RAp(a,z);
   rmul_d(a,x,y); // a=x*y
-  rsub(z,z,a);   // z=z-x*y
+  rsub_r(z,z,a);   // z=z-x*y
   RF(a);
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-void rdiv(rmulti *z, rmulti *x, rmulti *y)
-{
-  NULL_EXC3(z,x,y);
-  mpfr_div(z,x,y,get_round_mode());
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-int rdiv_rouding_check(rmulti *z, rmulti *x, rmulti *y)
-{
-  NULL_EXC3(z,x,y);
-  return abs(mpfr_div(z,x,y,get_round_mode()));
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-void rdiv_d1(rmulti *z, double x, rmulti *y)
-{
-  NULL_EXC2(z,y);
-  mpfr_d_div(z,x,y,get_round_mode());
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-void rdiv_d2(rmulti *z, rmulti *x, double y)
-{
-  NULL_EXC2(z,x);
-  mpfr_div_d(z,x,y,get_round_mode());
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-void rdiv_ui1(rmulti *z, ulong x, rmulti *y)
-{
-  NULL_EXC2(z,y);
-  mpfr_ui_div(z,x,y,get_round_mode());
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-void rdiv_ui2(rmulti *z, rmulti *x, ulong y)
-{
-  NULL_EXC2(z,x);
-  mpfr_div_ui(z,x,y,get_round_mode());
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-void rdiv_si1(rmulti *z, long x, rmulti *y)
-{
-  NULL_EXC2(z,y);
-  mpfr_si_div(z,x,y,get_round_mode());
-}
-
-/** @brief rmulti型の割り算 z=x/y */
-void rdiv_si2(rmulti *z, rmulti *x, long y)
-{
-  NULL_EXC2(z,x);
-  mpfr_div_si(z,x,y,get_round_mode());
 }
 
 /**
@@ -1325,7 +1348,7 @@ void radd_abs_abs(rmulti *z, rmulti *x, rmulti *y)
 void rabs_sub(rmulti *z, rmulti *x, rmulti *y)
 {
   NULL_EXC3(z,x,y);
-  rsub(z,x,y);
+  rsub_r(z,x,y);
   rabs(z,z);
 }
 
@@ -1348,7 +1371,7 @@ void rdiv_abs(rmulti *z, rmulti *x, rmulti *y)
   NULL_EXC3(z,x,y);
   RAp(a,z);
   rabs(a,y);   // a=abs(y)
-  rdiv(z,x,a); // z=x/abs(y)
+  rdiv_r(z,x,a); // z=x/abs(y)
   RF(a);
 }
 

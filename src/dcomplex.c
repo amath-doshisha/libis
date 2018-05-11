@@ -14,13 +14,158 @@
 dcomplex zneg(dcomplex x)
 {
   dcomplex z;
-  z.r=Z_NEG_R(x);
-  z.i=Z_NEG_I(x);
+  Z_R(z)=Z_NEG_R(x);
+  Z_I(z)=Z_NEG_I(x);
   return z;
 }
 
-// z=x/y
-dcomplex zdiv(dcomplex x, dcomplex y)
+/////////////////////////////////////////////
+
+/**
+ * @brief z=x+y
+ */
+dcomplex zadd_z(dcomplex x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)+Z_R(y);
+  Z_I(z)=Z_I(x)+Z_I(y);
+  return z;
+}
+
+/**
+ * @brief z=x+y
+ */
+dcomplex zadd_d(dcomplex x, double y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)+y;
+  Z_I(z)=Z_I(x);
+  return z;
+}
+
+/**
+ * @brief z=x+y
+ */
+dcomplex dadd_z(double x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=x+Z_R(y);
+  Z_I(z)=  Z_I(y);
+  return z;
+}
+
+/////////////////////////////////////////////
+
+/**
+ * @brief z=x-y
+ */
+dcomplex zsub_z(dcomplex x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)-Z_R(y);
+  Z_I(z)=Z_I(x)-Z_I(y);
+  return z;
+}
+
+/**
+ * @brief z=x-y
+ */
+dcomplex zsub_d(dcomplex x, double y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)-y;
+  Z_I(z)=Z_I(x);
+  return z;
+}
+
+/**
+ * @brief z=x-y
+ */
+dcomplex dsub_z(double x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=x-Z_R(y);
+  Z_I(z)= -Z_I(y);
+  return z;
+}
+
+/////////////////////////////////////////////
+
+/**
+ * @brief z=x*y
+ */
+dcomplex zmul_z(dcomplex x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)*Z_R(y)-Z_I(x)*Z_I(y);
+  Z_I(z)=Z_R(x)*Z_I(y)+Z_I(x)*Z_R(y);
+  return z;
+}
+
+/**
+ * @brief z=x*y
+ */
+dcomplex zmul_d(dcomplex x, double y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)*y;
+  Z_I(z)=Z_I(x)*y;
+  return z;
+}
+
+/**
+ * @brief z=x*y
+ */
+dcomplex dmul_z(double x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=x*Z_R(y);
+  Z_I(z)=x*Z_I(y);
+  return z;
+}
+
+/////////////////////////////////////////////
+
+/**
+ * @brief z=conj(x)*y
+ */
+dcomplex zdot_z(dcomplex x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)*Z_R(y)+Z_I(x)*Z_I(y);
+  Z_I(z)=Z_R(x)*Z_I(y)-Z_I(x)*Z_R(y);
+  return z;
+}
+
+/**
+ * @brief z=conj(x)*y
+ */
+dcomplex zdot_d(dcomplex x, double y)
+{
+  dcomplex z;
+  Z_R(z)= Z_R(x)*y;
+  Z_I(z)=-Z_I(x)*y;
+  return z;
+}
+
+/**
+ * @brief z=conj(x)*y
+ */
+dcomplex ddot_z(double x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=x*Z_R(y);
+  Z_I(z)=x*Z_I(y);
+  return z;
+}
+
+
+/////////////////////////////////////////////
+
+/*
+ * @brief z=x/y
+ */
+dcomplex zdiv_z(dcomplex x, dcomplex y)
 {
   dcomplex z;
   double den;
@@ -31,6 +176,30 @@ dcomplex zdiv(dcomplex x, dcomplex y)
   Z_I(z)/=den;
   return z;
 }
+
+/*
+ * @brief z=x/y
+ */
+dcomplex zdiv_d(dcomplex x, double y)
+{
+  dcomplex z;
+  Z_R(z)=Z_R(x)/y;
+  Z_I(z)=Z_I(x)/y;
+  return z;
+}
+
+/*
+ * @brief z=x/y
+ */
+dcomplex ddiv_z(double x, dcomplex y)
+{
+  dcomplex z;
+  Z_R(z)=x*Z_INV_R(y);
+  Z_I(z)=x*Z_INV_I(y);
+  return z;
+}
+
+/////////////////////////////////////////////////////////
 
 // y=1/x
 dcomplex zinv(dcomplex x)
@@ -86,5 +255,7 @@ int zlt(dcomplex x, dcomplex y)
   return 0;
   */
 }
+
+
 
 //EOF

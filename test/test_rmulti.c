@@ -49,7 +49,7 @@ int main(int argc, const char *argv[])
   rput(x);
   for(i=0; i<get_default_prec(); i++){
     rsub_d(x,x,1); // x=x-1
-    rdiv_d2(x,x,2); // x=x/2
+    rdiv_d(x,x,2); // x=x/2
     radd_d(x,x,1);  // x=x+1
     b=rget_length(x);
     mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);

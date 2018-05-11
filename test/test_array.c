@@ -3,17 +3,22 @@
 
 int main(int argc, const char *argv[])
 {
-  int i;
-  int x_dim[]={3,4,1,1,1};
-  int y_dim[]={3,4,2,1,1};
+  int i,k,l;
+  char x_type='r',y_type='r';
+  int x_ndim=5,x_dim[]={2,2,2,1,2};
+  int y_ndim=5,y_dim[]={1,2,1,2,1};
   array *x=NULL,*y=NULL,*z=NULL;
 
   for(i=0; i<argc; i++){
     if(STR_EQ(argv[i],"-h")){ exit(0); }
+    if(STR_EQ(argv[i],"-x-type") && i+1<argc){ x_type=argv[++i][0]; }
+    if(STR_EQ(argv[i],"-y-type") && i+1<argc){ y_type=argv[++i][0]; }
+    if(STR_EQ(argv[i],"-x-ndim") && i+1<argc){ x_ndim=atoi(argv[++i]); }
+    if(STR_EQ(argv[i],"-y-ndim") && i+1<argc){ y_ndim=atoi(argv[++i]); }
   }
 
-  x=array_allocate('r',2,x_dim);
-  y=array_allocate('c',3,y_dim);
+  x=array_allocate(x_type,x_ndim,x_dim);
+  y=array_allocate(y_type,y_ndim,y_dim);
   
   //  init_genrand(0);
   //  array_set_rand(x,-1000,1000);
@@ -21,33 +26,30 @@ int main(int argc, const char *argv[])
   
   array_set_grid(x);
   array_set_grid(y);
-  array_print(x,"x",'g',3);
-  array_print(y,"y",'g',3);
+  z=array_add(x,y);
+  //  z=array_add(y,x);
+//  z=array_sub(x,y);
+
+
+  printf("---\n");  array_print(x,"x",'g',3);
+  printf("---\n");  array_print(y,"y",'g',3);
+  printf("---\n");  array_print(z,"z",'g',3);
+  printf("---\n");
+
 
   printf("size(x)="); ivec_put(ARRAY_NDIM(x),ARRAY_DIM_P(x),"x"); printf("\n");
   printf("size(y)="); ivec_put(ARRAY_NDIM(y),ARRAY_DIM_P(y),"x"); printf("\n");
+  printf("size(z)="); ivec_put(ARRAY_NDIM(z),ARRAY_DIM_P(z),"x"); printf("\n");
 
   if(array_same_dim_check(x,y)){ printf("dim(x)=dim(y)\n"); }else{ printf("dim(x)!=dim(y)\n"); }
-
-  /*
   k=array_get_subdim(x,y);
-  printf("k=%d\n",k);
-  if(k>0){
-    z=array_allocate('r',ARRAY_NDIM(y),ARRAY_DIM_P(y));
-    array_put(z);
-
-    for(i=0; i<ARRAY_LD_END(z)/ARRAY_LD(z,k-1); i++){
-      rvec_add_rvec(ARRAY_LD(z,k-1),ARRAY_P0_R(z)+i*ARRAY_LD(z,k-1),ARRAY_P0_R(y)+i*ARRAY_LD(y,k-1),ARRAY_P0_R(x));
-    }
-    
-
-  }
-  */
-  z=array_add(y,x);
-  printf("size(z)="); ivec_put(ARRAY_NDIM(y),ARRAY_DIM_P(y),"x"); printf("\n");
-  array_print(z,"z",'g',3);    
-
+  l=array_get_subdim(y,x);
+       if(k>0){ printf("dim(x)<dim(y), k=%d\n",k); }
+  else if(l>0){ printf("dim(x)<dim(y), l=%d\n",l); }
+  else        { printf("dim(x)<>dim(y)\n"); }
+  printf("compatible(x,y)=%d\n",array_compatible_dim_check(x,y));
   
+
   x=array_free(x);
   y=array_free(y);
   z=array_free(z);

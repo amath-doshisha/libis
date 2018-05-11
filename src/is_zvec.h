@@ -2,8 +2,6 @@
 #define IS_ZVEC_H
 
 #include<is_dcomplex.h>
-#include<is_rmulti.h>
-#include<is_cmulti.h>
 
 /*
  * allocation
@@ -14,6 +12,9 @@ dcomplex* zvec_free(dcomplex *x);
 /*
  * initialization
  */
+// y=x
+void zvec_set_z(int n, dcomplex *y, dcomplex *x);
+void zvec_set_d(int n, dcomplex *y, double *x);
 // x=nan(n,1)
 void zvec_set_nan(int n, dcomplex *x);
 // x=inf(n,1)
@@ -35,23 +36,17 @@ void zvec_set_grid(int n, dcomplex *x);
 // x=rand(n,1)*a+b
 void zvec_set_rand(int n, dcomplex *x, double a, double b);
 
-// y=x
-void zvec_set(int n, dcomplex *y, dcomplex *x);
-void zvec_set_d(int n, dcomplex *y, double *x);
-void zvec_set_r(int n, dcomplex *y, rmulti **x);
-void zvec_set_c(int n, dcomplex *y, cmulti **x);
-void zvec_set_ir(int n, dcomplex *y, rmulti **x0, rmulti **x1);
-void zvec_set_ic(int n, dcomplex *y, cmulti **x0, cmulti **x1);
-void zvec_set_s(int n, dcomplex *y, char **x);
-
 /*
  * casting
  */
-// y=int(x)
+// dcomplex -> int
 void zvec_get_si(int n, int *y, dcomplex *x);
-// y=char(x)
+// dcomplex -> double
+void dvec_set_z(int n, double *y, dcomplex *x);
+// dcomplex -> char
 void zvec_get_s(int n, char **y, dcomplex *x, char format, int digits);
-
+// dcomplex <- char
+void zvec_set_s(int n, dcomplex *y, char **x);
 
 /*
  * convert its elements
@@ -72,7 +67,7 @@ void zvec_quick_sort(int n, dcomplex *x, int *I, int left, int right);
 void zvec_sort_index(int *I, int n, dcomplex *X);
 
 /*
- * convert itself to itself
+ * y=f(x)
  */
 // y=x
 void zvec_copy(int n, dcomplex *y, dcomplex *x);
@@ -82,6 +77,10 @@ void zvec_copy_Z(int n, dcomplex *y, double *x_r, double *x_i);
 void zvec_copy_index(int n, dcomplex *Y, dcomplex *X, int *I);
 // y=conj(x)
 void zvec_conj(int n, dcomplex *y, dcomplex *x);
+
+/*
+ * z=f(x,y)
+ */
 // z=x+y
 void zvec_add_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
 void zvec_add_dvec(int n, dcomplex *z, dcomplex *x, double *y);
@@ -89,6 +88,9 @@ void dvec_add_zvec(int n, dcomplex *z, double *x, dcomplex *y);
 void zvec_add_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
 void zvec_add_dscalar(int n, dcomplex *z, dcomplex *x, double y);
 void dvec_add_zscalar(int n, dcomplex *z, double *x, dcomplex y);
+void zscalar_add_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
+void zscalar_add_dvec(int n, dcomplex *z, dcomplex x, double *y);
+void dscalar_add_zvec(int n, dcomplex *z, double x, dcomplex *y);
 // z=x-y
 void zvec_sub_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
 void zvec_sub_dvec(int n, dcomplex *z, dcomplex *x, double *y);
@@ -99,6 +101,30 @@ void dvec_sub_zscalar(int n, dcomplex *z, double *x, dcomplex y);
 void zscalar_sub_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
 void zscalar_sub_dvec(int n, dcomplex *z, dcomplex x, double *y);
 void dscalar_sub_zvec(int n, dcomplex *z, double x, dcomplex *y);
+// z=x*y
+void zvec_mul_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_mul_dvec(int n, dcomplex *z, dcomplex *x, double *y);
+void dvec_mul_zvec(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_mul_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
+void zvec_mul_dscalar(int n, dcomplex *z, dcomplex *x, double y);
+void dvec_mul_zscalar(int n, dcomplex *z, double *x, dcomplex y);
+void zscalar_mul_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
+void zscalar_mul_dvec(int n, dcomplex *z, dcomplex x, double *y);
+void dscalar_mul_zvec(int n, dcomplex *z, double x, dcomplex *y);
+// z=x/y
+void zvec_div_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_div_dvec(int n, dcomplex *z, dcomplex *x, double *y);
+void dvec_div_zvec(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_div_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
+void zvec_div_dscalar(int n, dcomplex *z, dcomplex *x, double y);
+void dvec_div_zscalar(int n, dcomplex *z, double *x, dcomplex y);
+void zscalar_div_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
+void zscalar_div_dvec(int n, dcomplex *z, dcomplex x, double *y);
+void dscalar_div_zvec(int n, dcomplex *z, double x, dcomplex *y);
+
+/*
+ * others
+ */
 // y=y+a*x
 void zvec_add_scaled(int n, dcomplex *y, dcomplex a, dcomplex *x);
 // y=y-a*x

@@ -110,21 +110,21 @@ void riep_dhToda_TN(int m, int M, rmulti **A, int LDA, rmulti **Q, int LDQ, rmul
   }
   // Q[n][0]=f[n+1]/f[n]
   for(n=0; n<Q0_size[0]; n++){
-    if(n+1<f_size){ rdiv(Q0[0][n],f[n+1],f[n]); }
+    if(n+1<f_size){ rdiv_r(Q0[0][n],f[n+1],f[n]); }
     else          { rset_nan(Q0[0][n]); }
   }
   // E[0][n]=Q[0][n+M]-Q[0][n];
   k=0;
   for(n=0; n<E0_size[k]; n++){
-    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub(E0[k][n],Q0[k][n+M],Q0[k][n]); }
+    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub_r(E0[k][n],Q0[k][n+M],Q0[k][n]); }
     else                              { rset_nan(E0[k][n]); } 
   }  
   // loop for QE-table
   for(k=1; k<m; k++){
     // Q[k][n]=(E[k-1][n+1]*Q[k-1][n+M])/E[k-1][n];
-    for(n=0; n<Q0_size[k]; n++){ rdiv(a,E0[k-1][n+1],E0[k-1][n]); rmul(Q0[k][n],a,Q0[k-1][n+M]); }    
+    for(n=0; n<Q0_size[k]; n++){ rdiv_r(a,E0[k-1][n+1],E0[k-1][n]); rmul_r(Q0[k][n],a,Q0[k-1][n+M]); }    
     // E[k][n]=Q[k][n+M]-Q[k][n]+E[k-1][n+1]
-    for(n=0; n<E0_size[k]; n++){ rsub(a,Q0[k][n+M],Q0[k][n]); radd(E0[k][n],a,E0[k-1][n+1]); }
+    for(n=0; n<E0_size[k]; n++){ rsub_r(a,Q0[k][n+M],Q0[k][n]); radd_r(E0[k][n],a,E0[k-1][n+1]); }
   }
 
   // debug
@@ -262,21 +262,21 @@ void riep_EXTdhToda_TN(int m, int N, int M, rmulti **A, int LDA, rmulti **Q, int
   }
   // Q[n][0]=f[n+1]/f[n]
   for(n=0; n<Q0_size[0]; n++){
-    if(n+N<f_size){ rdiv(Q0[0][n],f[n+N],f[n]); }
+    if(n+N<f_size){ rdiv_r(Q0[0][n],f[n+N],f[n]); }
     else          { rset_nan(Q0[0][n]); }
   }
   // E[0][n]=Q[0][n+M]-Q[0][n];
   k=0;
   for(n=0; n<E0_size[k]; n++){
-    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub(E0[k][n],Q0[k][n+M],Q0[k][n]); }
+    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub_r(E0[k][n],Q0[k][n+M],Q0[k][n]); }
     else                              { rset_nan(E0[k][n]); } 
   }
   // loop for QE-table
   for(k=1; k<m; k++){
     // Q[k][n]=(E[k-1][n+N]*Q[k-1][n+M])/E[k-1][n];
-    for(n=0; n<Q0_size[k]; n++){ rdiv(a,E0[k-1][n+N],E0[k-1][n]); rmul(Q0[k][n],a,Q0[k-1][n+M]); }    
+    for(n=0; n<Q0_size[k]; n++){ rdiv_r(a,E0[k-1][n+N],E0[k-1][n]); rmul_r(Q0[k][n],a,Q0[k-1][n+M]); }    
     // E[k][n]=Q[k][n+M]-Q[k][n]+E[k-1][n+N]
-    for(n=0; n<E0_size[k]; n++){ rsub(a,Q0[k][n+M],Q0[k][n]); radd(E0[k][n],a,E0[k-1][n+N]); }
+    for(n=0; n<E0_size[k]; n++){ rsub_r(a,Q0[k][n+M],Q0[k][n]); radd_r(E0[k][n],a,E0[k-1][n+N]); }
   }
   // debug
   if(debug>0){

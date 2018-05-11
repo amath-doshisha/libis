@@ -48,7 +48,7 @@
 <area shape="rect" id="node31" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="1253,3388,1311,3414"/>
 <area shape="rect" id="node30" href="$func__scope_8c.html#a3d6dc851a096fe934d9d127014522073" title="func_init" alt="" coords="1392,3489,1451,3516"/>
 <area shape="rect" id="node35" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="819,298,879,325"/>
-<area shape="rect" id="node36" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="rmulti型の掛け算 z=x*y " alt="" coords="814,248,885,274"/>
+<area shape="rect" id="node36" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="814,248,885,274"/>
 <area shape="rect" id="node40" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="828,349,871,376"/>
 <area shape="rect" id="node37" href="$rmulti_8c.html#ab9cebc0e92c588ea846f83aadcd928bf" title="rmulti型の浮動小数点数の仮数部の0でない桁数の長さ[bits]の取得 " alt="" coords="954,248,1026,274"/>
 <area shape="rect" id="node38" href="$rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="965,301,1015,328"/>
@@ -61,7 +61,7 @@
 <area shape="rect" id="node53" href="$is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="819,602,880,629"/>
 <area shape="rect" id="node54" href="$bigint_8c.html#a4f0992bf040ee7788cd759ed3b606bdb" title="bigint_get_rmulti" alt="" coords="801,501,897,528"/>
 <area shape="rect" id="node52" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="964,552,1016,578"/>
-<area shape="rect" id="node55" href="$is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="971,497,1009,524"/>
+<area shape="rect" id="node55" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="967,497,1013,524"/>
 <area shape="rect" id="node59" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="461,1692,569,1718"/>
 <area shape="rect" id="node60" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="645,1717,729,1744"/>
 <area shape="rect" id="node61" href="$cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="656,1413,719,1440"/>

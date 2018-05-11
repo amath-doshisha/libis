@@ -58,7 +58,9 @@ void cvec_set_s(int n, cmulti **x, char **str);
 void cvec_set_ss(int n, cmulti **x, char **str);
 void cvec_set(int n, cmulti **y, cmulti **x);
 void cvec_set_d(int n, cmulti **y, double *x);
+void dvec_set_c(int n, double *y, cmulti **x);
 void cvec_set_z(int n, cmulti **y, dcomplex *x);
+void zvec_set_c(int n, dcomplex *y, cmulti **x);
 void cvec_set_r(int n, cmulti **y, rmulti **x);
 void cvec_set(int n, cmulti **y, cmulti **x);
 void cvec_set_ir(int n, cmulti **y, rmulti **x0, rmulti **x1);
@@ -96,7 +98,7 @@ void cvec_sort_index(int *I, int n, cmulti **X);
  */
 void cvec_copy(int n, cmulti **y, cmulti **x);                     // y=x
 void cvec_copy_r(int n, cmulti **y, rmulti **x);                   // y=x
-void cvec_copy_C(int n, cmulti **y, rmulti **x_r, rmulti **x_i);  // y=x
+void cvec_copy_C(int n, cmulti **y, rmulti **x_r, rmulti **x_i);   // y=x
 void cvec_copy_index(int n, cmulti **y, cmulti **x, const int *I); // y=x(I)
 void cvec_index_copy(int n, cmulti **y, cmulti **x, int *I);       // y(I)=x
 void cvec_index_copy_rvec(int n, cmulti **y, rmulti **x, int *I);  // y(I)=x
@@ -110,6 +112,11 @@ void cvec_mul_2exp(int n, cmulti **y, cmulti **x, int pr, int pi); // y=x*2^p
 void cvec_div_2exp(int n, cmulti **y, cmulti **x, int pr, int pi); // y=x/2^p
 void cvec_neg(int n, cmulti **y, cmulti **x);                      // y=-x
 void cvec_absc(int n, cmulti **y, cmulti **x);                     // y=abs(real(x)+i*imag(x))
+
+
+/*
+ * z=f(x,y)
+ */
 // z=x+y
 void cvec_add_cvec(int n, cmulti **z, cmulti **x, cmulti **y);
 void cvec_add_rvec(int n, cmulti **z, cmulti **x, rmulti **y);
@@ -129,6 +136,15 @@ void cvec_add_dscalar(int n, cmulti **z, cmulti **x, double y);
 void dvec_add_cscalar(int n, cmulti **z, double *x, cmulti *y);
 void rvec_add_zscalar(int n, cmulti **z, rmulti **x, dcomplex y);
 void zvec_add_rscalar(int n, cmulti **z, dcomplex *x, rmulti *y);
+void cscalar_add_cvec(int n, cmulti **z, cmulti *x, cmulti **y);
+void cscalar_add_rvec(int n, cmulti **z, cmulti *x, rmulti **y);
+void rscalar_add_cvec(int n, cmulti **z, rmulti *x, cmulti **y);
+void cscalar_add_zvec(int n, cmulti **z, cmulti *x, dcomplex *y);
+void zscalar_add_cvec(int n, cmulti **z, dcomplex x, cmulti **y);
+void cscalar_add_dvec(int n, cmulti **z, cmulti *x, double *y);
+void dscalar_add_cvec(int n, cmulti **z, double x, cmulti **y);
+void rscalar_add_zvec(int n, cmulti **z, rmulti *x, dcomplex *y);
+void zscalar_add_rvec(int n, cmulti **z, dcomplex x, rmulti **y);
 // z=x-y
 void cvec_sub_cvec(int n, cmulti **z, cmulti **x, cmulti **y);
 void cvec_sub_rvec(int n, cmulti **z, cmulti **x, rmulti **y);
@@ -158,11 +174,63 @@ void dscalar_sub_cvec(int n, cmulti **z, double x, cmulti **y);
 void rscalar_sub_zvec(int n, cmulti **z, rmulti *x, dcomplex *y);
 void zscalar_sub_rvec(int n, cmulti **z, dcomplex x, rmulti **y);
 // z=x.*y
-void cvec_mul(int n, cmulti **z, cmulti **x, cmulti **y);
-void cvec_mul_c(int n, cmulti **z, cmulti **x, cmulti *y);         // z=x*y
-void cvec_mul_z(int n, cmulti **z, cmulti **x, dcomplex y);        // z=x*y
-void cvec_mul_r(int n, cmulti **z, cmulti **x, rmulti *y);         // z=x*y
-void cvec_mul_d(int n, cmulti **z, cmulti **x, double y);          // z=x*y
+void cvec_mul_cvec(int n, cmulti **z, cmulti **x, cmulti **y);
+void cvec_mul_rvec(int n, cmulti **z, cmulti **x, rmulti **y);
+void rvec_mul_cvec(int n, cmulti **z, rmulti **x, cmulti **y);
+void cvec_mul_zvec(int n, cmulti **z, cmulti **x, dcomplex *y);
+void zvec_mul_cvec(int n, cmulti **z, dcomplex *x, cmulti **y);
+void cvec_mul_dvec(int n, cmulti **z, cmulti **x, double *y);
+void dvec_mul_cvec(int n, cmulti **z, double *x, cmulti **y);
+void rvec_mul_zvec(int n, cmulti **z, rmulti **x, dcomplex *y);
+void zvec_mul_rvec(int n, cmulti **z, dcomplex *x, rmulti **y);
+void cvec_mul_cscalar(int n, cmulti **z, cmulti **x, cmulti *y);
+void cvec_mul_rscalar(int n, cmulti **z, cmulti **x, rmulti *y);
+void rvec_mul_cscalar(int n, cmulti **z, rmulti **x, cmulti *y);
+void cvec_mul_zscalar(int n, cmulti **z, cmulti **x, dcomplex y);
+void zvec_mul_cscalar(int n, cmulti **z, dcomplex *x, cmulti *y);
+void cvec_mul_dscalar(int n, cmulti **z, cmulti **x, double y);
+void dvec_mul_cscalar(int n, cmulti **z, double *x, cmulti *y);
+void rvec_mul_zscalar(int n, cmulti **z, rmulti **x, dcomplex y);
+void zvec_mul_rscalar(int n, cmulti **z, dcomplex *x, rmulti *y);
+void cscalar_mul_cvec(int n, cmulti **z, cmulti *x, cmulti **y);
+void cscalar_mul_rvec(int n, cmulti **z, cmulti *x, rmulti **y);
+void rscalar_mul_cvec(int n, cmulti **z, rmulti *x, cmulti **y);
+void cscalar_mul_zvec(int n, cmulti **z, cmulti *x, dcomplex *y);
+void zscalar_mul_cvec(int n, cmulti **z, dcomplex x, cmulti **y);
+void cscalar_mul_dvec(int n, cmulti **z, cmulti *x, double *y);
+void dscalar_mul_cvec(int n, cmulti **z, double x, cmulti **y);
+void rscalar_mul_zvec(int n, cmulti **z, rmulti *x, dcomplex *y);
+void zscalar_mul_rvec(int n, cmulti **z, dcomplex x, rmulti **y);
+// z=x./y
+void cvec_div_cvec(int n, cmulti **z, cmulti **x, cmulti **y);
+void cvec_div_rvec(int n, cmulti **z, cmulti **x, rmulti **y);
+void rvec_div_cvec(int n, cmulti **z, rmulti **x, cmulti **y);
+void cvec_div_zvec(int n, cmulti **z, cmulti **x, dcomplex *y);
+void zvec_div_cvec(int n, cmulti **z, dcomplex *x, cmulti **y);
+void cvec_div_dvec(int n, cmulti **z, cmulti **x, double *y);
+void dvec_div_cvec(int n, cmulti **z, double *x, cmulti **y);
+void rvec_div_zvec(int n, cmulti **z, rmulti **x, dcomplex *y);
+void zvec_div_rvec(int n, cmulti **z, dcomplex *x, rmulti **y);
+void cvec_div_cscalar(int n, cmulti **z, cmulti **x, cmulti *y);
+void cvec_div_rscalar(int n, cmulti **z, cmulti **x, rmulti *y);
+void rvec_div_cscalar(int n, cmulti **z, rmulti **x, cmulti *y);
+void cvec_div_zscalar(int n, cmulti **z, cmulti **x, dcomplex y);
+void zvec_div_cscalar(int n, cmulti **z, dcomplex *x, cmulti *y);
+void cvec_div_dscalar(int n, cmulti **z, cmulti **x, double y);
+void dvec_div_cscalar(int n, cmulti **z, double *x, cmulti *y);
+void rvec_div_zscalar(int n, cmulti **z, rmulti **x, dcomplex y);
+void zvec_div_rscalar(int n, cmulti **z, dcomplex *x, rmulti *y);
+void cscalar_div_cvec(int n, cmulti **z, cmulti *x, cmulti **y);
+void cscalar_div_rvec(int n, cmulti **z, cmulti *x, rmulti **y);
+void rscalar_div_cvec(int n, cmulti **z, rmulti *x, cmulti **y);
+void cscalar_div_zvec(int n, cmulti **z, cmulti *x, dcomplex *y);
+void zscalar_div_cvec(int n, cmulti **z, dcomplex x, cmulti **y);
+void cscalar_div_dvec(int n, cmulti **z, cmulti *x, double *y);
+void dscalar_div_cvec(int n, cmulti **z, double x, cmulti **y);
+void rscalar_div_zvec(int n, cmulti **z, rmulti *x, dcomplex *y);
+void zscalar_div_rvec(int n, cmulti **z, dcomplex x, rmulti **y);
+
+
 void cvec_add_mul(int n, cmulti **z, cmulti **x, cmulti **y);      // z+=x.*y
 void cvec_add_mul_c(int n, cmulti **z, cmulti **x, cmulti *y);     // z+=x*y
 void cvec_add_mul_r(int n, cmulti **z, cmulti **x, rmulti *y);     // z+=x*y
@@ -187,15 +255,6 @@ void cvec_sub_dot_c1(int n, cmulti **z, cmulti *x, cmulti **y);    // z-=conj(x)
 void cvec_sub_dot_c2(int n, cmulti **z, cmulti **x, cmulti *y);    // z-=conj(x)*y
 void cvec_sub_dot_z1(int n, cmulti **z, dcomplex x, cmulti **y);   // z-=conj(x)*y
 void cvec_sub_dot_z2(int n, cmulti **z, cmulti **x, dcomplex y);   // z-=conj(x)*y
-void cvec_div(int n, cmulti **z, cmulti **x, cmulti **y);          // z=x./y
-void cvec_div_c1(int n, cmulti **z, cmulti *x, cmulti **y);        // z=x./y
-void cvec_div_r1(int n, cmulti **z, rmulti *x, cmulti **y);        // z=x./y
-void cvec_div_z1(int n, cmulti **z, dcomplex x, cmulti **y);       // z=x./y
-void cvec_div_d1(int n, cmulti **z, double x, cmulti **y);         // z=x./y
-void cvec_div_c2(int n, cmulti **z, cmulti **x, cmulti *y);        // z=x/y
-void cvec_div_r2(int n, cmulti **z, cmulti **x, rmulti *y);        // z=x/y
-void cvec_div_z2(int n, cmulti **z, cmulti **x, dcomplex y);       // z=x/y
-void cvec_div_d2(int n, cmulti **z, cmulti **x, double y);         // z=x/y
 void cvec_pow_ui(int n, cmulti **z, cmulti **x, ulong y);          // z=x^y
 void cvec_pow(int n, cmulti **z, cmulti **x, cmulti **y);          // z=x.^y
 void cvec_pow_si(int n, cmulti **z, cmulti **x, long y);           // z=x^y

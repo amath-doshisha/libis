@@ -146,7 +146,7 @@ func_t *func_real_add(func_t *f1, func_t *f2)
   b=func_real_cast(FR(f2));
   if(!func_is_real(a) || !func_is_real(b)){ FUNC_ERROR_ARG2("func_real_add",f1,f2); }
   f=func_real();
-  radd(func_real_p(f),func_real_p(a),func_real_p(b));
+  radd_r(func_real_p(f),func_real_p(a),func_real_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);
@@ -162,7 +162,7 @@ func_t *func_real_sub(func_t *f1, func_t *f2)
   b=func_real_cast(FR(f2));
   if(!func_is_real(a) || !func_is_real(b)){ FUNC_ERROR_ARG2("func_real_sub",f1,f2); }
   f=func_real();
-  rsub(func_real_p(f),func_real_p(a),func_real_p(b));
+  rsub_r(func_real_p(f),func_real_p(a),func_real_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);
@@ -178,7 +178,7 @@ func_t *func_real_mul(func_t *f1, func_t *f2)
   b=func_real_cast(FR(f2));
   if(!func_is_real(a) || !func_is_real(b)){ FUNC_ERROR_ARG2("func_real_mul",f1,f2); }
   f=func_real();
-  rmul(func_real_p(f),func_real_p(a),func_real_p(b));
+  rmul_r(func_real_p(f),func_real_p(a),func_real_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);
@@ -194,7 +194,7 @@ func_t *func_real_div(func_t *f1, func_t *f2)
   b=func_real_cast(FR(f2));
   if(!func_is_real(a) || !func_is_real(b)){ FUNC_ERROR_ARG2("func_real_div",f1,f2); }
   f=func_real();
-  rdiv(func_real_p(f),func_real_p(a),func_real_p(b));
+  rdiv_r(func_real_p(f),func_real_p(a),func_real_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);

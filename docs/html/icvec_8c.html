@@ -149,6 +149,10 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <tr class="memitem:a1a32622ef1bd364d3352c4a0faecb65f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a1a32622ef1bd364d3352c4a0faecb65f">icvec_set_rc</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **y1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
 <tr class="memdesc:a1a32622ef1bd364d3352c4a0faecb65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー [y0,y1]=[x0,x1]  <a href="#a1a32622ef1bd364d3352c4a0faecb65f">[詳解]</a><br /></td></tr>
 <tr class="separator:a1a32622ef1bd364d3352c4a0faecb65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5899cd76576f6b6544933a25f07748"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#aee5899cd76576f6b6544933a25f07748">dvec_set_ic</a> (int n, double *y, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
+<tr class="separator:aee5899cd76576f6b6544933a25f07748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa35a1e3fd63b408763da2559390405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#acaa35a1e3fd63b408763da2559390405">zvec_set_ic</a> (int n, <a class="el" href="structdcomplex.html">dcomplex</a> *y, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
+<tr class="separator:acaa35a1e3fd63b408763da2559390405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">icmulti型ベクトルの入出力に関する関数</div></td></tr>
 <tr class="memitem:ac23b076a303993718f5466dd34910478"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#ac23b076a303993718f5466dd34910478">icvec_print</a> (int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1, char *name, char format, int digits)</td></tr>
 <tr class="memdesc:ac23b076a303993718f5466dd34910478"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示  <a href="#ac23b076a303993718f5466dd34910478">[詳解]</a><br /></td></tr>
@@ -656,6 +660,58 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="aee5899cd76576f6b6544933a25f07748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee5899cd76576f6b6544933a25f07748">&#9670;&nbsp;</a></span>dvec_set_ic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dvec_set_ic </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00125">125</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="icvec_8c_aee5899cd76576f6b6544933a25f07748_cgraph.png" border="0" usemap="#icvec_8c_aee5899cd76576f6b6544933a25f07748_cgraph" alt=""/></div>
+<map name="icvec_8c_aee5899cd76576f6b6544933a25f07748_cgraph" id="icvec_8c_aee5899cd76576f6b6544933a25f07748_cgraph">
+<area shape="rect" id="node2" href="cmulti_8c.html#a8bb732af2004bda35f64b75638ddd0b7" title="cmulti型を倍精度複素数型に変換. " alt="" coords="128,5,180,32"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="228,5,279,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="327,5,424,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a8f56e6856eba2568968ab8a74507c97e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f56e6856eba2568968ab8a74507c97e">&#9670;&nbsp;</a></span>icscalar_sub_cvec()</h2>
 
@@ -714,7 +770,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00680">680</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00710">710</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -787,7 +843,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00725">725</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00755">755</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -863,7 +919,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00689">689</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00719">719</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -936,7 +992,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00707">707</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00737">737</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -999,7 +1055,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>絶対値 [y0,y1]=abs([x0,x1]) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00782">782</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00812">812</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1088,7 +1144,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1]) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00791">791</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00821">821</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1180,7 +1236,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00431">431</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00461">461</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1251,7 +1307,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00348">348</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00378">378</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1322,7 +1378,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00476">476</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00506">506</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1394,7 +1450,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00393">393</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00423">423</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1484,7 +1540,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00951">951</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00981">981</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1590,7 +1646,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>共役転置行列の線形変換の加算 [y0,y1]+=[A0,A1]'*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01065">1065</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01095">1095</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1696,7 +1752,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>転置行列の線形変換の加算 [y0,y1]+=[A0,A1]'*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01008">1008</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01038">1038</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1778,7 +1834,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>区間の拡張 [z0,z1]=[x0,x1]+[-y,y] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00310">310</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00340">340</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1849,7 +1905,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00440">440</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00470">470</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1921,7 +1977,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00357">357</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00387">387</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1993,7 +2049,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00458">458</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00488">488</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2064,7 +2120,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00375">375</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00405">405</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2123,24 +2179,24 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0 </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00258">258</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00288">288</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="icvec_8c_a3cb8c62672a2bef3fecdca0348870e29_cgraph.png" border="0" usemap="#icvec_8c_a3cb8c62672a2bef3fecdca0348870e29_cgraph" alt=""/></div>
 <map name="icvec_8c_a3cb8c62672a2bef3fecdca0348870e29_cgraph" id="icvec_8c_a3cb8c62672a2bef3fecdca0348870e29_cgraph">
-<area shape="rect" id="node2" href="is__rmulti_8h.html#a1799b934c2c301cc6e6aad7c0165f0f4" title="rmulti型の丸めモードの状態の取得. " alt="" coords="164,5,261,32"/>
-<area shape="rect" id="node3" href="is__rmulti_8h.html#a051976f29c7faa806d3dc021a3f9adb5" title="rmulti型の丸めモードの状態の設定. " alt="" coords="164,56,261,83"/>
-<area shape="rect" id="node4" href="cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="167,107,258,133"/>
-<area shape="rect" id="node8" href="cvec_8c.html#a8bbfdd0bfe2c6cec873f994fab4b67c9" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="175,157,251,184"/>
-<area shape="rect" id="node11" href="cvec_8c.html#a6c3baba682cb93b84be17f6fefb1475a" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="167,208,258,235"/>
-<area shape="rect" id="node5" href="cmulti_8c.html#a08f3005e6ebac999b9dddd4eff2e9a03" title="cmulti型の引き算 z=x&#45;y " alt="" coords="315,107,358,133"/>
-<area shape="rect" id="node6" href="is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="417,107,459,133"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="512,157,609,184"/>
-<area shape="rect" id="node9" href="cmulti_8c.html#adcac5110b6dc65a6fed2e430b15d5b75" title="cmulti型の掛け算 z=x*y " alt="" coords="309,157,364,184"/>
-<area shape="rect" id="node10" href="is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="412,157,464,184"/>
-<area shape="rect" id="node12" href="cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="315,208,359,235"/>
-<area shape="rect" id="node13" href="is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="417,208,459,235"/>
+<area shape="rect" id="node2" href="is__rmulti_8h.html#a1799b934c2c301cc6e6aad7c0165f0f4" title="rmulti型の丸めモードの状態の取得. " alt="" coords="167,5,264,32"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#a051976f29c7faa806d3dc021a3f9adb5" title="rmulti型の丸めモードの状態の設定. " alt="" coords="167,56,264,83"/>
+<area shape="rect" id="node4" href="cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="170,107,261,133"/>
+<area shape="rect" id="node8" href="cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="164,157,267,184"/>
+<area shape="rect" id="node11" href="cvec_8c.html#a6c3baba682cb93b84be17f6fefb1475a" title="z=x+y " alt="" coords="170,208,261,235"/>
+<area shape="rect" id="node5" href="cmulti_8c.html#aadb28679059a51462e8da3b5eeb55f92" title="z=x&#45;y " alt="" coords="315,107,369,133"/>
+<area shape="rect" id="node6" href="is__rmulti_8h.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="418,107,469,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="517,157,615,184"/>
+<area shape="rect" id="node9" href="cmulti_8c.html#adcac5110b6dc65a6fed2e430b15d5b75" title="z=x*y " alt="" coords="315,157,369,184"/>
+<area shape="rect" id="node10" href="is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="z=x*y " alt="" coords="417,157,469,184"/>
+<area shape="rect" id="node12" href="cmulti_8c.html#a96dd94583d43f5d1a56d2b5e307a8240" title="z=x+y " alt="" coords="315,208,369,235"/>
+<area shape="rect" id="node13" href="is__rmulti_8h.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="418,208,469,235"/>
 </map>
 </div>
 
@@ -2192,7 +2248,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>[y0,y1]=conj([x0,x1]) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00283">283</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00313">313</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2253,7 +2309,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>コピー [y0,y1]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00231">231</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00261">261</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2324,7 +2380,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>コピー [y0,y1]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00249">249</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00279">279</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2383,7 +2439,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>コピー [y0,y1]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00213">213</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00243">243</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2443,7 +2499,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>コピー [y0,y1]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00240">240</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00270">270</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2503,7 +2559,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>コピー [y0,y1]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00222">222</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00252">252</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2563,7 +2619,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>最大値 [y0,y1]=[max(x0),x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00831">831</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00861">861</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2582,11 +2638,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node18" href="is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="485,195,536,221"/>
 <area shape="rect" id="node11" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="584,68,633,95"/>
 <area shape="rect" id="node17" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="587,144,630,171"/>
-<area shape="rect" id="node12" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="693,5,734,32"/>
+<area shape="rect" id="node12" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="688,5,739,32"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="681,68,745,95"/>
-<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="884,93,981,120"/>
-<area shape="rect" id="node15" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="794,43,835,69"/>
-<area shape="rect" id="node16" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="793,93,836,120"/>
+<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="892,93,989,120"/>
+<area shape="rect" id="node15" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="793,43,844,69"/>
+<area shape="rect" id="node16" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="793,93,844,120"/>
 </map>
 </div>
 
@@ -2638,7 +2694,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>最小値 [y0,y1]=[min(x0),x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00878">878</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00908">908</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2657,11 +2713,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node18" href="is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="483,195,533,221"/>
 <area shape="rect" id="node11" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="581,68,631,95"/>
 <area shape="rect" id="node17" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="585,144,627,171"/>
-<area shape="rect" id="node12" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="690,5,731,32"/>
+<area shape="rect" id="node12" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="685,5,736,32"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="679,68,743,95"/>
-<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="881,93,979,120"/>
-<area shape="rect" id="node15" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="791,43,833,69"/>
-<area shape="rect" id="node16" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="791,93,833,120"/>
+<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="889,93,987,120"/>
+<area shape="rect" id="node15" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="791,43,841,69"/>
+<area shape="rect" id="node16" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="791,93,841,120"/>
 </map>
 </div>
 
@@ -2713,7 +2769,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00907">907</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00937">937</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2801,7 +2857,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>写像 [y0,y1]=f([x0,x1]) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01103">1103</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01133">1133</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2897,11 +2953,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node78" href="icmulti_8c.html#a5f8e70c609ebc9ec4217b512f0e4823b" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="292,1843,337,1870"/>
 <area shape="rect" id="node79" href="icmulti_8c.html#a496f041f29d6f31451b1d4fc1c261fe0" title="倍精度複素数の設定 [y0,y1]=[x0_r+i*x0_i,xr1_*i*x1_i]. " alt="" coords="287,2172,342,2199"/>
 <area shape="rect" id="node89" href="cmulti_8c.html#a8168c3ad5161e6500e5f2c628c1c56cf" title="cmulti型の計算 y=log(x) " alt="" coords="421,3262,471,3288"/>
-<area shape="rect" id="node92" href="cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="293,3515,336,3542"/>
+<area shape="rect" id="node92" href="cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="288,3515,341,3542"/>
 <area shape="rect" id="node96" href="cmulti_8c.html#a5db2a16616e6d3fc2d876499220f5265" title="cmulti型の計算 y=exp(x) " alt="" coords="288,3439,341,3466"/>
 <area shape="rect" id="node90" href="cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="529,3262,599,3288"/>
 <area shape="rect" id="node91" href="is__rmulti_8h.html#a3582139ef5d769709f033269ddc5d606" title="rmulti型の計算 y=log(x) " alt="" coords="545,3312,583,3339"/>
-<area shape="rect" id="node93" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="543,3464,585,3491"/>
+<area shape="rect" id="node93" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="539,3464,589,3491"/>
 <area shape="rect" id="node94" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="415,3616,477,3643"/>
 <area shape="rect" id="node95" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="414,3566,478,3592"/>
 <area shape="rect" id="node97" href="is__rmulti_8h.html#a802eb2853d2c2a66c1afac7076904666" title="rmulti型の計算 y=exp(x) " alt="" coords="543,3414,585,3440"/>
@@ -2969,7 +3025,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>ベクトル写像 [y0,y1]=f([x0,x1]) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01171">1171</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01201">1201</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3067,11 +3123,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node80" href="icmulti_8c.html#a5f8e70c609ebc9ec4217b512f0e4823b" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="429,2159,475,2185"/>
 <area shape="rect" id="node81" href="icmulti_8c.html#a496f041f29d6f31451b1d4fc1c261fe0" title="倍精度複素数の設定 [y0,y1]=[x0_r+i*x0_i,xr1_*i*x1_i]. " alt="" coords="425,2564,479,2591"/>
 <area shape="rect" id="node91" href="cmulti_8c.html#a8168c3ad5161e6500e5f2c628c1c56cf" title="cmulti型の計算 y=log(x) " alt="" coords="558,537,609,564"/>
-<area shape="rect" id="node94" href="cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="431,487,473,513"/>
+<area shape="rect" id="node94" href="cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="425,487,479,513"/>
 <area shape="rect" id="node98" href="cmulti_8c.html#a5db2a16616e6d3fc2d876499220f5265" title="cmulti型の計算 y=exp(x) " alt="" coords="557,157,610,184"/>
 <area shape="rect" id="node92" href="cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="667,183,736,209"/>
 <area shape="rect" id="node93" href="is__rmulti_8h.html#a3582139ef5d769709f033269ddc5d606" title="rmulti型の計算 y=log(x) " alt="" coords="682,233,721,260"/>
-<area shape="rect" id="node95" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="681,132,722,159"/>
+<area shape="rect" id="node95" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="676,132,727,159"/>
 <area shape="rect" id="node96" href="is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="552,335,615,361"/>
 <area shape="rect" id="node97" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="551,385,615,412"/>
 </map>
@@ -3119,7 +3175,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>区間の中心 y=mid([x0,x1]) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00199">199</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00229">229</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3185,7 +3241,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>icmulti型のベクトルを文字列型に変換 y=char(x) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00184">184</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00214">214</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3240,7 +3296,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>cmulti型のベクトルを整数型に変換. </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00152">152</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00182">182</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3294,7 +3350,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>cmulti型のベクトルを倍精度複素数型に変換. </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00168">168</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00198">198</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3384,7 +3440,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>線形変換 [y0,y1]=[A0,A1]*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00932">932</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00962">962</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3492,7 +3548,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>共役転置行列の線形変換 [y0,y1]=[A0,A1]'*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01046">1046</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01076">1076</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3600,7 +3656,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>転置行列の線形変換 [y0,y1]=[A0,A1]'*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00989">989</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01019">1019</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3678,7 +3734,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>最大値 [y0,y1]=[max(x0),max(x1)] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00800">800</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00830">830</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3698,11 +3754,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node18" href="is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="480,195,531,221"/>
 <area shape="rect" id="node11" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="579,68,628,95"/>
 <area shape="rect" id="node17" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="582,144,625,171"/>
-<area shape="rect" id="node12" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="687,5,729,32"/>
+<area shape="rect" id="node12" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="683,5,733,32"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="676,68,740,95"/>
-<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="879,119,976,145"/>
-<area shape="rect" id="node15" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="789,43,830,69"/>
-<area shape="rect" id="node16" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="788,93,831,120"/>
+<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="887,119,984,145"/>
+<area shape="rect" id="node15" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="788,43,839,69"/>
+<area shape="rect" id="node16" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="788,93,839,120"/>
 <area shape="rect" id="node21" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="482,245,529,272"/>
 </map>
 </div>
@@ -3749,7 +3805,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>区間の中心 [m-r,m+r]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00319">319</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00349">349</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3809,7 +3865,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>最小値 [y0,y1]=[min(x0),min(x1)] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00845">845</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00875">875</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3829,11 +3885,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node18" href="is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="477,195,528,221"/>
 <area shape="rect" id="node11" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="576,68,625,95"/>
 <area shape="rect" id="node17" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="579,144,622,171"/>
-<area shape="rect" id="node12" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="685,5,726,32"/>
+<area shape="rect" id="node12" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="680,5,731,32"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="673,68,737,95"/>
-<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="876,119,973,145"/>
-<area shape="rect" id="node15" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="786,43,827,69"/>
-<area shape="rect" id="node16" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="785,93,828,120"/>
+<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="884,119,981,145"/>
+<area shape="rect" id="node15" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="785,43,836,69"/>
+<area shape="rect" id="node16" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="785,93,836,120"/>
 <area shape="rect" id="node21" href="is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="479,245,526,272"/>
 </map>
 </div>
@@ -3886,7 +3942,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>区間の中心と半径 [m-r,m+r]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00337">337</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00367">367</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3959,7 +4015,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>掛け算 [z0,z1]=[x0,x1]*[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00763">763</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00793">793</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4031,7 +4087,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>符号の反転 [y0,y1]=-[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00292">292</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00322">322</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4086,7 +4142,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>符号の正負 [y0,y1]=[-abs(x),abs(x)] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00301">301</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00331">331</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4151,7 +4207,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>表示 </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00131">131</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00161">161</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4212,7 +4268,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>区間の半径 [m-r,m+r]=[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00328">328</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00358">358</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4272,7 +4328,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>icmulti型の実部のコピー y=real(x) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00274">274</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00304">304</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4953,7 +5009,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00597">597</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00627">627</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5026,7 +5082,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00514">514</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00544">544</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5099,7 +5155,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00642">642</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00672">672</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5175,7 +5231,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00559">559</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00589">589</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5269,7 +5325,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>線形変換の減算 [y0,y1]-=[A0,A1]*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00970">970</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01000">1000</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5375,7 +5431,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>共役転置行列の線形変換の減算 [y0,y1]-=[A0,A1]'*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01084">1084</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01114">1114</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5481,7 +5537,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>転置行列の線形変換の減算 [y0,y1]-=[A0,A1]'*[x0,x1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01027">1027</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l01057">1057</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5569,7 +5625,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00606">606</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00636">636</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5642,7 +5698,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00523">523</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00553">553</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5715,7 +5771,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00624">624</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00654">654</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5790,7 +5846,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00541">541</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00571">571</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5853,7 +5909,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>icmulti型のベクトルの要素の総和 value=sum(x) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00922">922</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00952">952</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5914,7 +5970,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>絶対値の平方の総和 [y0,y1]=sum(abs([x0,x1]).^2) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00772">772</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00802">802</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5984,7 +6040,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>最大値 [y0,y1]=[x0,max(x1)] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00817">817</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00847">847</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6003,11 +6059,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node18" href="is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="485,195,536,221"/>
 <area shape="rect" id="node11" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="584,68,633,95"/>
 <area shape="rect" id="node17" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="587,144,630,171"/>
-<area shape="rect" id="node12" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="693,5,734,32"/>
+<area shape="rect" id="node12" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="688,5,739,32"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="681,68,745,95"/>
-<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="884,93,981,120"/>
-<area shape="rect" id="node15" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="794,43,835,69"/>
-<area shape="rect" id="node16" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="793,93,836,120"/>
+<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="892,93,989,120"/>
+<area shape="rect" id="node15" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="793,43,844,69"/>
+<area shape="rect" id="node16" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="793,93,844,120"/>
 </map>
 </div>
 
@@ -6059,7 +6115,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00892">892</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00922">922</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6141,7 +6197,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>最小値 [y0,y1]=[x0,min(x1)] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00864">864</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00894">894</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6160,11 +6216,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <area shape="rect" id="node18" href="is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="483,195,533,221"/>
 <area shape="rect" id="node11" href="cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="581,68,631,95"/>
 <area shape="rect" id="node17" href="is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="585,144,627,171"/>
-<area shape="rect" id="node12" href="is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="690,5,731,32"/>
+<area shape="rect" id="node12" href="is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="685,5,736,32"/>
 <area shape="rect" id="node14" href="is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="679,68,743,95"/>
-<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="881,93,979,120"/>
-<area shape="rect" id="node15" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="791,43,833,69"/>
-<area shape="rect" id="node16" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="791,93,833,120"/>
+<area shape="rect" id="node13" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="889,93,987,120"/>
+<area shape="rect" id="node15" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="791,43,841,69"/>
+<area shape="rect" id="node16" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="791,93,841,120"/>
 </map>
 </div>
 
@@ -6228,7 +6284,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00734">734</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00764">764</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6304,7 +6360,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00485">485</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00515">515</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6376,7 +6432,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00402">402</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00432">432</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6448,7 +6504,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00651">651</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00681">681</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6524,7 +6580,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00568">568</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00598">598</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6600,7 +6656,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00698">698</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00728">728</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6674,7 +6730,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00743">743</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00773">773</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6749,7 +6805,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00449">449</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00479">479</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6821,7 +6877,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00366">366</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00396">396</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6893,7 +6949,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00494">494</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00524">524</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6965,7 +7021,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00411">411</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00441">441</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7037,7 +7093,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00615">615</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00645">645</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7111,7 +7167,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00532">532</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00562">562</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7185,7 +7241,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00660">660</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00690">690</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7260,7 +7316,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00577">577</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00607">607</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7335,7 +7391,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00716">716</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00746">746</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7410,7 +7466,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00752">752</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00782">782</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7485,7 +7541,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00467">467</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00497">497</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7556,7 +7612,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00384">384</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00414">414</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7627,7 +7683,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00503">503</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00533">533</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7699,7 +7755,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>足し算 [z0,z1]=[x0,x1]+[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00420">420</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00450">450</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7771,7 +7827,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00633">633</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00663">663</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7846,7 +7902,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00550">550</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00580">580</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7921,7 +7977,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00669">669</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00699">699</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7996,7 +8052,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 <p>引き算 [z0,z1]=[x0,x1]-[y0,y1] </p>
 
-<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00586">586</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00616">616</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -8013,13 +8069,65 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 </div>
 </div>
+<a id="acaa35a1e3fd63b408763da2559390405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa35a1e3fd63b408763da2559390405">&#9670;&nbsp;</a></span>zvec_set_ic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zvec_set_ic </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdcomplex.html">dcomplex</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="icvec_8c_source.html">icvec.c</a> の <a class="el" href="icvec_8c_source.html#l00139">139</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="icvec_8c_acaa35a1e3fd63b408763da2559390405_cgraph.png" border="0" usemap="#icvec_8c_acaa35a1e3fd63b408763da2559390405_cgraph" alt=""/></div>
+<map name="icvec_8c_acaa35a1e3fd63b408763da2559390405_cgraph" id="icvec_8c_acaa35a1e3fd63b408763da2559390405_cgraph">
+<area shape="rect" id="node2" href="cmulti_8c.html#a8bb732af2004bda35f64b75638ddd0b7" title="cmulti型を倍精度複素数型に変換. " alt="" coords="128,5,180,32"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="228,5,279,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="327,5,424,32"/>
+</map>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="icvec_8c.html">icvec.c</a></li>
-    <li class="footer">2018年05月10日(木) 23時22分31秒作成 - libis / 構成: 
+    <li class="footer">2018年05月11日(金) 23時26分52秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

@@ -6,7 +6,7 @@
 <area shape="rect" id="node60" href="$is__rvec_8h.html#a066b7ca0072fe710792d71468ed9443a" title="rmulti型のベクトルの値を整数 から設定. " alt="" coords="151,1272,223,1299"/>
 <area shape="rect" id="node63" href="$is__rvec_8h.html#ade4bc92dec733e67d1295a6a652a283c" title="rmulti型のベクトルの値を倍精度実数から設定. " alt="" coords="151,1373,222,1400"/>
 <area shape="rect" id="node65" href="$cvec_8c.html#a3019786195e9e5c266ab02424a09e757" title="cmulti型のベクトルの値を倍精度複素数から設定. " alt="" coords="151,1323,223,1349"/>
-<area shape="rect" id="node67" href="$is__rvec_8h.html#a15018b39d562bd233fbd8f7b8d6113f2" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="157,1171,217,1197"/>
+<area shape="rect" id="node67" href="$is__rvec_8h.html#a6a84d388cf0c407374e5e3492aeaf967" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="152,1171,221,1197"/>
 <area shape="rect" id="node69" href="$cvec_8c.html#ae0b33ea3167d1c8c74d038d49c154b5f" title="cmulti型のベクトルの値のコピー y=x. " alt="" coords="156,1221,217,1248"/>
 <area shape="rect" id="node71" href="$is__rvec_8h.html#a3dbbd225a71171914bb82f20c4229bfa" title="rmulti型のベクトルの値を設定. " alt="" coords="151,427,222,453"/>
 <area shape="rect" id="node72" href="$cvec_8c.html#ad47706b1e252aa361616e85a6e50f700" title="cmulti型のベクトルの値を設定. " alt="" coords="149,493,224,520"/>
@@ -68,7 +68,7 @@
 <area shape="rect" id="node62" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="573,1272,671,1299"/>
 <area shape="rect" id="node64" href="$is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="453,1323,503,1349"/>
 <area shape="rect" id="node66" href="$cmulti_8c.html#ae488527432e15e87e85a835159cdc8a4" title="cmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="307,1323,357,1349"/>
-<area shape="rect" id="node68" href="$is__rmulti_8h.html#a6fc424b7a73942016f9dc93dbff1edd8" title="rset" alt="" coords="459,1221,497,1248"/>
+<area shape="rect" id="node68" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="454,1221,502,1248"/>
 <area shape="rect" id="node70" href="$cmulti_8c.html#ae1c9f1a6c6bca9f081d566ec18e376e7" title="cmulti型の値のコピー y=x. " alt="" coords="312,1221,352,1248"/>
 <area shape="rect" id="node73" href="$icmulti_8c.html#a1577bd41d285d9e458d1ac570060ab1b" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="309,461,355,488"/>
 </map>

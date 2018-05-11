@@ -1,5 +1,6 @@
 var is__icvec_8h =
 [
+    [ "dvec_set_ic", "is__icvec_8h.html#aee5899cd76576f6b6544933a25f07748", null ],
     [ "icscalar_sub_cvec", "is__icvec_8h.html#a8f56e6856eba2568968ab8a74507c97e", null ],
     [ "icscalar_sub_dvec", "is__icvec_8h.html#a91674b20ec4aaf5a393952259f42ab08", null ],
     [ "icscalar_sub_rvec", "is__icvec_8h.html#a295cc43e8176cb6891bf571264ac89d6", null ],
@@ -97,5 +98,6 @@ var is__icvec_8h =
     [ "izvec_sub_cscalar", "is__icvec_8h.html#a10efa2d16af4ea7d69f6efb9ee386b96", null ],
     [ "izvec_sub_cvec", "is__icvec_8h.html#ab5d45bddb64ec0c46429b5c1f5ed2530", null ],
     [ "izvec_sub_rscalar", "is__icvec_8h.html#a5b979ab8df023e1afd1fb1475bdee5f2", null ],
-    [ "izvec_sub_rvec", "is__icvec_8h.html#a61e45441e6ee1d6eb56d3eb71728dcb9", null ]
+    [ "izvec_sub_rvec", "is__icvec_8h.html#a61e45441e6ee1d6eb56d3eb71728dcb9", null ],
+    [ "zvec_set_ic", "is__icvec_8h.html#acaa35a1e3fd63b408763da2559390405", null ]
 ];

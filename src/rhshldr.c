@@ -38,14 +38,14 @@ void rhouseholder_vec(int n, int k, rmulti **h, rmulti *alpha, rmulti **x)
   axk=rallocate_prec(prec);
   //----------- norm
   rvec_sum_pow2(xi,n-k-1,&x[k+1]);    // xi=sum(abs(x((k+1):end)).^2);
-  rmul(axk,x[k],x[k]);                // axk=|x[k]|^2
-  radd(eta,axk,xi);                   // eta=|x[k]|^2+...
+  rmul_r(axk,x[k],x[k]);                // axk=|x[k]|^2
+  radd_r(eta,axk,xi);                   // eta=|x[k]|^2+...
   rsqrt(axk,axk);                     // axk=|x[k]|
   rsqrt(eta,eta);                     // eta=sqrt(|x[k]|^2+...)
-  if(req_d(eta,0)){rsub(xi,eta,axk);} // xi=eta-|x(k)|
+  if(req_d(eta,0)){rsub_r(xi,eta,axk);} // xi=eta-|x(k)|
   else{                               // xi=xi/(|x(k)|+eta)
-    radd(zeta,axk,eta);
-    rdiv(xi,xi,zeta);
+    radd_r(zeta,axk,eta);
+    rdiv_r(xi,xi,zeta);
   }
   //----------- h
   rvec_set_zeros(k,h);
@@ -53,14 +53,14 @@ void rhouseholder_vec(int n, int k, rmulti **h, rmulti *alpha, rmulti **x)
   if(ris_zero(x[k])){
     rcopy(h[k],xi); rneg(h[k],h[k]);    // h[k]=-xi
   }else{
-    rdiv(zeta,xi,axk); rneg(zeta,zeta); // zeta=-xi/axk;
-    rmul(h[k],x[k],zeta);               // h[k]=zeta*x[k];
+    rdiv_r(zeta,xi,axk); rneg(zeta,zeta); // zeta=-xi/axk;
+    rmul_r(h[k],x[k],zeta);               // h[k]=zeta*x[k];
   }
   //----------- alpha
   if(req_d(xi,0) || req_d(eta,0)){
     rset_d(alpha,0);
   }else{
-    rmul(alpha,xi,eta);                 // alpha=1/(xi*eta)
+    rmul_r(alpha,xi,eta);                 // alpha=1/(xi*eta)
     rinv(alpha,alpha);
   }
   // free
@@ -154,7 +154,7 @@ void rhouseholder(int n, int k0, int nH, int k, rmulti **h, rmulti *alpha, rmult
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)
     l=k0+j;
     rvec_sum_mul(value,n-l,&MAT(H,l,j,LDH),&R[l]);
-    rmul(value,value,Alpha[j]);
+    rmul_r(value,value,Alpha[j]);
     rvec_sub_mul_r(n-l,&R[l],&MAT(H,l,j,LDH),value);
   }
   rhouseholder_vec(n,k,h,alpha,R);

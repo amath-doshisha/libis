@@ -22,7 +22,7 @@
  */
 void reig_residual(int n, rmulti **F, rmulti **A, int LDA, rmulti **x, rmulti *lambda)
 {
-  rvec_mul_r(n,F,x,lambda);      // F=x*lambda
+  rvec_mul_rscalar(n,F,x,lambda);      // F=x*lambda
   rvec_neg(n,F,F);               // F=-x*lambda
   rvec_add_lintr(n,n,F,A,LDA,x); // F=A*x-lambda*x
 }

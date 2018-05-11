@@ -8,9 +8,9 @@
 <area shape="rect" id="node15" href="$is__zvec_8h.html#a2b2e3713c0141333a159a44477accd0a" title="zvec_norm_max" alt="" coords="141,309,237,336"/>
 <area shape="rect" id="node16" href="$zhpeig_8c.html#a5c2a23f771f765fab1a48a23a2a12168" title="zhpeig_jacobi_mat" alt="" coords="136,360,241,387"/>
 <area shape="rect" id="node20" href="$is__zsolve_8h.html#ade839010819280a63acdc48f2fe846e7" title="zsolve" alt="" coords="163,411,214,437"/>
-<area shape="rect" id="node25" href="$is__zvec_8h.html#a7b33f607c1c86399348081943e82fd70" title="zvec_sub_zvec" alt="" coords="143,461,234,488"/>
-<area shape="rect" id="node26" href="$is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868" title="zvec_free" alt="" coords="156,512,221,539"/>
-<area shape="rect" id="node27" href="$is__zmat_8h.html#a818f3b03e8138566e0e1dc36bd294b62" title="zmat_free" alt="" coords="155,563,222,589"/>
+<area shape="rect" id="node25" href="$is__zvec_8h.html#a7b33f607c1c86399348081943e82fd70" title="z=x&#45;y " alt="" coords="143,461,234,488"/>
+<area shape="rect" id="node27" href="$is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868" title="zvec_free" alt="" coords="156,512,221,539"/>
+<area shape="rect" id="node28" href="$is__zmat_8h.html#a818f3b03e8138566e0e1dc36bd294b62" title="zmat_free" alt="" coords="155,563,222,589"/>
 <area shape="rect" id="node6" href="$zvec_8c.html#a85ba4f3fb769abb3477bccd1d7000626" title="zvec_norm2" alt="" coords="317,5,393,32"/>
 <area shape="rect" id="node7" href="$zvec_8c.html#ad268aabcd83fc2dd4d69442a455aad98" title="zvec_max_abs_index" alt="" coords="295,56,414,83"/>
 <area shape="rect" id="node8" href="$dcomplex_8c.html#ab3d18ba16c58d3352b79d65acf3bb740" title="znormalize" alt="" coords="319,107,390,133"/>
@@ -25,4 +25,5 @@
 <area shape="rect" id="node22" href="$is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="473,461,553,488"/>
 <area shape="rect" id="node23" href="$is__zmat_8h.html#ace2bcef84187dfc2d0ec158231bbee7e" title="zmat_swap_rows" alt="" coords="464,512,563,539"/>
 <area shape="rect" id="node24" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="482,563,545,589"/>
+<area shape="rect" id="node26" href="$dcomplex_8c.html#a289a691d0ebd66ddfb3c6433ba3ef348" title="z=x&#45;y " alt="" coords="328,563,381,589"/>
 </map>

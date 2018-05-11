@@ -91,11 +91,11 @@
 <area shape="rect" id="node80" href="$icmulti_8c.html#a5f8e70c609ebc9ec4217b512f0e4823b" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="436,2448,481,2475"/>
 <area shape="rect" id="node81" href="$icmulti_8c.html#a496f041f29d6f31451b1d4fc1c261fe0" title="倍精度複素数の設定 [y0,y1]=[x0_r+i*x0_i,xr1_*i*x1_i]. " alt="" coords="431,2651,486,2678"/>
 <area shape="rect" id="node91" href="$cmulti_8c.html#a8168c3ad5161e6500e5f2c628c1c56cf" title="cmulti型の計算 y=log(x) " alt="" coords="565,422,615,448"/>
-<area shape="rect" id="node94" href="$cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="437,270,480,296"/>
+<area shape="rect" id="node94" href="$cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="432,270,485,296"/>
 <area shape="rect" id="node98" href="$cmulti_8c.html#a5db2a16616e6d3fc2d876499220f5265" title="cmulti型の計算 y=exp(x) " alt="" coords="563,219,617,246"/>
 <area shape="rect" id="node92" href="$cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="673,422,743,448"/>
 <area shape="rect" id="node93" href="$is__rmulti_8h.html#a3582139ef5d769709f033269ddc5d606" title="rmulti型の計算 y=log(x) " alt="" coords="689,346,727,372"/>
-<area shape="rect" id="node95" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="687,270,729,296"/>
+<area shape="rect" id="node95" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="683,270,733,296"/>
 <area shape="rect" id="node96" href="$is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="559,320,621,347"/>
 <area shape="rect" id="node97" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="558,371,622,398"/>
 </map>

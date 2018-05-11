@@ -361,7 +361,7 @@ void func_ccopy_coeff(int n, cmulti **z, func_t *f)                  //係数
 	g=func_number_pull(FR(f));
 	func_change_cmulti(z[i-1],g);     
       }
-      cdiv(z[i-1],z[i-1],a_0);
+      cdiv_c(z[i-1],z[i-1],a_0);
       g=func_del(g); g=NULL; 
     }
   }
@@ -376,7 +376,7 @@ void func_ccopy_coeff(int n, cmulti **z, func_t *f)                  //係数
 void func_init_val_r_and_balance(rmulti *r, cmulti *g, int n, cmulti **a)  //半径r(小澤の初期値)と重心
 {
   double N;
-  cdiv_d2(g,a[0],(double)(n));       //重心
+  cdiv_d(g,a[0],(double)(n));       //重心
   cneg(g,g);
   N=1.0/(double)(n);
   cabsv(r,a[n-1]);                   //半径
@@ -400,7 +400,7 @@ void func_init_val(int n, cmulti **z, cmulti **a)                         //初�
     theta=(2.0*M_PI*(j-1))/n+3.0/(2.0*n);                      // (2π(j-1))/n + 3/2n;
     rset_d(b,theta);
     cset_polar(c,r,b);                                         //rexp(i*theta)
-    cadd(z[j-1],g,c);
+    cadd_c(z[j-1],g,c);
   }
   r=rfree(r);
   b=rfree(b);
@@ -424,11 +424,11 @@ int func_weierstrass(int n, cmulti **z1, cmulti **z0, cmulti **a)
   N=(double)(n);
   for(i=0; i<n; i++){                   // f(z)
     cpow_d2(z1[i],z0[i],N);               //z^n
-    cadd(z1[i],z1[i],a[n-1]);             //z^n+a_n
+    cadd_c(z1[i],z1[i],a[n-1]);             //z^n+a_n
     for(j=1; j<n; j++){
       cpow_d2(b,z0[i],N-(double)(j));     //a*z^n-1
-      cmul(b,b,a[j-1]);
-      cadd(z1[i],z1[i],b);
+      cmul_c(b,b,a[j-1]);
+      cadd_c(z1[i],z1[i],b);
     }
   }
   for(i=0; i<n; i++){                   //終了条件 |f(z)|<eps
@@ -438,14 +438,14 @@ int func_weierstrass(int n, cmulti **z1, cmulti **z0, cmulti **a)
   }
   for(i=0; i<n-1; i++){                 //(z[i]-z[j])*...
     for(j=i+1; j<n; j++){
-      csub(b,z0[i],z0[j]);
-      cmul(c[i],c[i],b);
+      csub_c(b,z0[i],z0[j]);
+      cmul_c(c[i],c[i],b);
       cneg(b,b);
-      cmul(c[j],c[j],b);
+      cmul_c(c[j],c[j],b);
     }
   }
-  cvec_div(n,z1,z1,c);
-  cvec_mul_d(n,z1,z1,-1.0);             //-f()/a_0()
+  cvec_div_cvec(n,z1,z1,c);
+  cvec_mul_dscalar(n,z1,z1,-1.0);             //-f()/a_0()
   cvec_add_cvec(n,z1,z1,z0);                 //z-f()/a_0()
   d=rfree(d);
   eps=rfree(eps);

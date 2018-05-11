@@ -63,7 +63,7 @@
 <area shape="rect" id="node57" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="998,2792,1062,2819"/>
 <area shape="rect" id="node58" href="$is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="999,2843,1061,2869"/>
 <area shape="rect" id="node59" href="$bigint_8c.html#a4f0992bf040ee7788cd759ed3b606bdb" title="bigint_get_rmulti" alt="" coords="841,3197,937,3224"/>
-<area shape="rect" id="node61" href="$rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="862,3704,917,3731"/>
+<area shape="rect" id="node61" href="$rmulti_8c.html#af33a9300a9fc7516a14f71cd26509c2f" title="z=x/y " alt="" coords="865,3704,914,3731"/>
 <area shape="rect" id="node65" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="529,3045,627,3072"/>
 <area shape="rect" id="node66" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="685,3197,793,3224"/>
 <area shape="rect" id="node67" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="847,1947,931,1973"/>
@@ -77,7 +77,7 @@
 <area shape="rect" id="node73" href="$cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="861,2741,918,2768"/>
 <area shape="rect" id="node75" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="715,968,764,995"/>
 <area shape="rect" id="node76" href="$cmulti_8c.html#aeb3ffb3f4b2ba8bec98f2eb47ff681e3" title="cmulti型の複素共役 y=conj(x). " alt="" coords="717,1019,762,1045"/>
-<area shape="rect" id="node77" href="$cmulti_8c.html#a752164747f6d8be2ec0ce097ab0aaf22" title="cmulti型の割り算 z=x/y " alt="" coords="712,1069,767,1096"/>
+<area shape="rect" id="node77" href="$cmulti_8c.html#af9f630b2f0f7ade7f10f859486765d66" title="z=x/y " alt="" coords="715,1069,764,1096"/>
 <area shape="rect" id="node78" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="715,1120,763,1147"/>
 <area shape="rect" id="node80" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="711,512,767,539"/>
 <area shape="rect" id="node81" href="$cmulti_8c.html#a56afc4644a4adb8b844673177a383716" title="cmulti型がInfであるかの判定. " alt="" coords="714,563,765,589"/>

@@ -1,20 +1,20 @@
 <map id="array_get" name="array_get">
 <area shape="rect" id="node2" href="$array_8c.html#a075bf54e3da7df513db0c4f8e06c8787" title="array_allocate" alt="" coords="117,255,203,281"/>
-<area shape="rect" id="node17" href="$dvec_8c.html#a040aae89a5624b44fe79345fbc6a3a89" title="dvec_set" alt="" coords="129,305,191,332"/>
-<area shape="rect" id="node18" href="$dvec_8c.html#ac23f32776a559463bf9a1196662a2e2f" title="dvec_set_z" alt="" coords="124,356,196,383"/>
-<area shape="rect" id="node19" href="$dvec_8c.html#a434ea98e3f9e96f8ada147cc3aaeb41e" title="dvec_set_r" alt="" coords="270,524,341,551"/>
-<area shape="rect" id="node22" href="$dvec_8c.html#a930d505cf451337c76081849a1f3f19c" title="dvec_set_c" alt="" coords="124,457,196,484"/>
-<area shape="rect" id="node23" href="$dvec_8c.html#ac496e6474b4144f56d15d8a13c74acce" title="dvec_set_ir" alt="" coords="123,508,197,535"/>
-<area shape="rect" id="node24" href="$dvec_8c.html#aee5899cd76576f6b6544933a25f07748" title="dvec_set_ic" alt="" coords="123,559,197,585"/>
+<area shape="rect" id="node17" href="$dvec_8c.html#a54b1a16a23bf409f8108ae1eedc7c4dc" title="dvec_set_d" alt="" coords="123,305,197,332"/>
+<area shape="rect" id="node18" href="$is__zvec_8h.html#ac23f32776a559463bf9a1196662a2e2f" title="dvec_set_z" alt="" coords="124,356,196,383"/>
+<area shape="rect" id="node19" href="$is__rvec_8h.html#a434ea98e3f9e96f8ada147cc3aaeb41e" title="dvec_set_r" alt="" coords="270,524,341,551"/>
+<area shape="rect" id="node22" href="$cvec_8c.html#a930d505cf451337c76081849a1f3f19c" title="dvec_set_c" alt="" coords="124,457,196,484"/>
+<area shape="rect" id="node23" href="$irvec_8c.html#ac496e6474b4144f56d15d8a13c74acce" title="dvec_set_ir" alt="" coords="123,508,197,535"/>
+<area shape="rect" id="node24" href="$icvec_8c.html#aee5899cd76576f6b6544933a25f07748" title="dvec_set_ic" alt="" coords="123,559,197,585"/>
 <area shape="rect" id="node26" href="$is__zvec_8h.html#ab6ca17337411b12300f1908c38f6cbc0" title="zvec_set_d" alt="" coords="124,609,196,636"/>
-<area shape="rect" id="node27" href="$is__zvec_8h.html#a45dacddb531546a5718f075607a3075b" title="zvec_set" alt="" coords="129,660,191,687"/>
-<area shape="rect" id="node28" href="$is__zvec_8h.html#a4593a99ac40768d84fa8a15c27f81532" title="zvec_set_r" alt="" coords="125,812,195,839"/>
-<area shape="rect" id="node29" href="$is__zvec_8h.html#a52a1dae5c96e4b32d95a2af3d4455513" title="zvec_set_c" alt="" coords="124,711,196,737"/>
-<area shape="rect" id="node30" href="$is__zvec_8h.html#a7cf909414752c5b2628d278829aa098d" title="zvec_set_ir" alt="" coords="124,863,196,889"/>
-<area shape="rect" id="node31" href="$is__zvec_8h.html#acaa35a1e3fd63b408763da2559390405" title="zvec_set_ic" alt="" coords="123,761,197,788"/>
+<area shape="rect" id="node27" href="$is__zvec_8h.html#ac174cd89dd0713988dacbc3b6497e190" title="zvec_set_z" alt="" coords="124,660,196,687"/>
+<area shape="rect" id="node28" href="$is__rvec_8h.html#a4593a99ac40768d84fa8a15c27f81532" title="zvec_set_r" alt="" coords="125,812,195,839"/>
+<area shape="rect" id="node29" href="$cvec_8c.html#a52a1dae5c96e4b32d95a2af3d4455513" title="zvec_set_c" alt="" coords="124,711,196,737"/>
+<area shape="rect" id="node30" href="$irvec_8c.html#a7cf909414752c5b2628d278829aa098d" title="zvec_set_ir" alt="" coords="124,863,196,889"/>
+<area shape="rect" id="node31" href="$icvec_8c.html#acaa35a1e3fd63b408763da2559390405" title="zvec_set_ic" alt="" coords="123,761,197,788"/>
 <area shape="rect" id="node32" href="$is__rvec_8h.html#ade4bc92dec733e67d1295a6a652a283c" title="rmulti型のベクトルの値を倍精度実数から設定. " alt="" coords="270,1116,341,1143"/>
 <area shape="rect" id="node34" href="$is__rvec_8h.html#a027b65cbe48cacbbc60ab7558fd239e1" title="rmulti型のベクトルの値を倍精度複素数から設定. " alt="" coords="270,964,341,991"/>
-<area shape="rect" id="node35" href="$is__rvec_8h.html#a15018b39d562bd233fbd8f7b8d6113f2" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="275,1319,335,1345"/>
+<area shape="rect" id="node35" href="$is__rvec_8h.html#a6a84d388cf0c407374e5e3492aeaf967" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="271,1319,340,1345"/>
 <area shape="rect" id="node37" href="$is__rvec_8h.html#ac6b9bf2dbdc769716c6ad1953db0cd5f" title="rmulti型のベクトルの値を設定. " alt="" coords="125,913,195,940"/>
 <area shape="rect" id="node39" href="$is__rvec_8h.html#a3dbbd225a71171914bb82f20c4229bfa" title="rmulti型のベクトルの値を設定. " alt="" coords="270,1420,341,1447"/>
 <area shape="rect" id="node42" href="$is__rvec_8h.html#a8e0e95d15ec9978706a2b9ae3a179ae3" title="rmulti型のベクトルの値を設定. " alt="" coords="269,1471,341,1497"/>
@@ -50,7 +50,7 @@
 <area shape="rect" id="node21" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="537,1015,635,1041"/>
 <area shape="rect" id="node25" href="$cmulti_8c.html#a8bb732af2004bda35f64b75638ddd0b7" title="cmulti型を倍精度複素数型に変換. " alt="" coords="279,711,331,737"/>
 <area shape="rect" id="node33" href="$is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="424,1065,473,1092"/>
-<area shape="rect" id="node36" href="$is__rmulti_8h.html#a6fc424b7a73942016f9dc93dbff1edd8" title="rset" alt="" coords="429,1217,468,1244"/>
+<area shape="rect" id="node36" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="425,1217,473,1244"/>
 <area shape="rect" id="node38" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="425,964,472,991"/>
 <area shape="rect" id="node40" href="$irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="427,1395,471,1421"/>
 <area shape="rect" id="node41" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="554,1395,618,1421"/>

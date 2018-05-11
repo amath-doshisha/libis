@@ -19,7 +19,9 @@ void irvec_set_s(int n, rmulti **y0, rmulti **y1, char **x);
 void irvec_set(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);
 void irvec_set_d(int n, rmulti **y0, rmulti **y1, double *x0, double *x1);
 void irvec_set_z(int n, rmulti **y0, rmulti **y1, dcomplex *x0, dcomplex *x1);
+void zvec_set_ir(int n, dcomplex *y, rmulti **x0, rmulti **x1);
 void irvec_set_c(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1);
+void dvec_set_ir(int n, double *y, rmulti **x0, rmulti **x1);
 
 /*
  * I/O

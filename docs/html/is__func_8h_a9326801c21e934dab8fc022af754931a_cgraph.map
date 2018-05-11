@@ -67,7 +67,7 @@
 <area shape="rect" id="node54" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="979,2373,1043,2400"/>
 <area shape="rect" id="node55" href="$is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="980,2424,1041,2451"/>
 <area shape="rect" id="node56" href="$bigint_8c.html#a4f0992bf040ee7788cd759ed3b606bdb" title="bigint_get_rmulti" alt="" coords="963,2323,1059,2349"/>
-<area shape="rect" id="node57" href="$is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="1132,2323,1171,2349"/>
+<area shape="rect" id="node57" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="1128,2323,1175,2349"/>
 <area shape="rect" id="node58" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="1244,1715,1341,1741"/>
 <area shape="rect" id="node64" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="645,3285,753,3312"/>
 <area shape="rect" id="node65" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="816,4451,900,4477"/>
@@ -85,9 +85,9 @@
 <area shape="rect" id="node77" href="$func__number_8c.html#ac1e519ec12441fe5c09231b31ae2bc42" title="func_is_number" alt="" coords="498,3211,591,3237"/>
 <area shape="rect" id="node78" href="$func__number_8c.html#abc45108e92164911a3a99619d59272ed" title="func_evalf" alt="" coords="511,3285,579,3312"/>
 <area shape="rect" id="node83" href="$bigint_8c.html#ac2e0501b736a8e8b5e94143a3b38e55e" title="bigint_div" alt="" coords="826,499,890,525"/>
-<area shape="rect" id="node84" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="rmulti型の掛け算 z=x*y " alt="" coords="1116,499,1187,525"/>
-<area shape="rect" id="node87" href="$cmulti_8c.html#a82d803c789c2adb00135099fcc9d17fa" title="cmulti型の割り算 z=x/y " alt="" coords="679,4552,719,4579"/>
-<area shape="rect" id="node88" href="$cmulti_8c.html#ada9707196acefff454458f252bdc888f" title="cmulti型の複素共役との掛け算 z=conj(x)*y " alt="" coords="837,4552,879,4579"/>
+<area shape="rect" id="node84" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="1116,499,1187,525"/>
+<area shape="rect" id="node87" href="$cmulti_8c.html#afe1b5d28ba328cbfe3ece23c0dcb98c8" title="z=x/y " alt="" coords="674,4552,725,4579"/>
+<area shape="rect" id="node88" href="$cmulti_8c.html#afcc0eb689837e491c0266e9c192c4842" title="z=conj(x)*y " alt="" coords="832,4552,884,4579"/>
 <area shape="rect" id="node90" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="969,5185,1053,5212"/>
 <area shape="rect" id="node91" href="$func__var_8c.html#ac36f3ccf2212fd3a7b493ac4b794b982" title="func_var" alt="" coords="828,5363,888,5389"/>
 <area shape="rect" id="node92" href="$is__ivec_8h.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="825,5413,891,5440"/>

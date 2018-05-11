@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF77A37D20A513AE00D0DAE2 /* libmpfr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF77A37C20A513AE00D0DAE2 /* libmpfr.a */; };
+		FF77A38120A513FC00D0DAE2 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF77A38020A513FC00D0DAE2 /* libgmp.a */; };
+		FFF86B8F20A511CA000CA7B0 /* test_array.c in Sources */ = {isa = PBXBuildFile; fileRef = FFF86B8E20A511CA000CA7B0 /* test_array.c */; };
+		FFF86B9320A512FD000CA7B0 /* libis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF86B9220A512FD000CA7B0 /* libis.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FF6C3CDC20A50D02005AF7F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		FF6C3CEA20A50F73005AF7F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		FFF86B8520A511A5000CA7B0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FF21AC8F20A5AD9E003A99B0 /* libis-test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "libis-test"; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/build/Debug/libis-test"; sourceTree = "<absolute>"; };
+		FF21AC9020A5AD9E003A99B0 /* libis-test2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "libis-test2"; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/build/Debug/libis-test2"; sourceTree = "<absolute>"; };
+		FF77A37C20A513AE00D0DAE2 /* libmpfr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmpfr.a; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/../../../../../../usr/local/lib/libmpfr.a"; sourceTree = "<absolute>"; };
+		FF77A38020A513FC00D0DAE2 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmp.a; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/../../../../../../usr/local/lib/libgmp.a"; sourceTree = "<absolute>"; };
+		FFF86B8E20A511CA000CA7B0 /* test_array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_array.c; path = test/test_array.c; sourceTree = SOURCE_ROOT; };
+		FFF86B9020A51239000CA7B0 /* test_array */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test_array; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF86B9220A512FD000CA7B0 /* libis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libis.a; path = MACOSX/libis.a; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF6C3CDB20A50D02005AF7F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF6C3CE920A50F73005AF7F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF86B8420A511A5000CA7B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF77A38120A513FC00D0DAE2 /* libgmp.a in Frameworks */,
+				FF77A37D20A513AE00D0DAE2 /* libmpfr.a in Frameworks */,
+				FFF86B9320A512FD000CA7B0 /* libis.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF6C3CD520A50D02005AF7F1 = {
+			isa = PBXGroup;
+			children = (
+				FFF86B8820A511A5000CA7B0 /* test_array */,
+				FFF86B9020A51239000CA7B0 /* test_array */,
+				FFF86B9120A512FC000CA7B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FFF86B8820A511A5000CA7B0 /* test_array */ = {
+			isa = PBXGroup;
+			children = (
+				FFF86B8E20A511CA000CA7B0 /* test_array.c */,
+			);
+			path = test_array;
+			sourceTree = "<group>";
+		};
+		FFF86B9120A512FC000CA7B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF77A38020A513FC00D0DAE2 /* libgmp.a */,
+				FF77A37C20A513AE00D0DAE2 /* libmpfr.a */,
+				FFF86B9220A512FD000CA7B0 /* libis.a */,
+			);
+			name = Frameworks;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF6C3CDD20A50D02005AF7F1 /* libis-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF6C3CE520A50D02005AF7F1 /* Build configuration list for PBXNativeTarget "libis-test" */;
+			buildPhases = (
+				FF6C3CDA20A50D02005AF7F1 /* Sources */,
+				FF6C3CDB20A50D02005AF7F1 /* Frameworks */,
+				FF6C3CDC20A50D02005AF7F1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "libis-test";
+			productName = "libis-test";
+			productReference = FF21AC8F20A5AD9E003A99B0 /* libis-test */;
+			productType = "com.apple.product-type.tool";
+		};
+		FF6C3CEB20A50F73005AF7F1 /* libis-test2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF6C3CF020A50F73005AF7F1 /* Build configuration list for PBXNativeTarget "libis-test2" */;
+			buildPhases = (
+				FF6C3CE820A50F73005AF7F1 /* Sources */,
+				FF6C3CE920A50F73005AF7F1 /* Frameworks */,
+				FF6C3CEA20A50F73005AF7F1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "libis-test2";
+			productName = "libis-test2";
+			productReference = FF21AC9020A5AD9E003A99B0 /* libis-test2 */;
+			productType = "com.apple.product-type.tool";
+		};
+		FFF86B8620A511A5000CA7B0 /* test_array */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFF86B8B20A511A5000CA7B0 /* Build configuration list for PBXNativeTarget "test_array" */;
+			buildPhases = (
+				FFF86B8320A511A5000CA7B0 /* Sources */,
+				FFF86B8420A511A5000CA7B0 /* Frameworks */,
+				FFF86B8520A511A5000CA7B0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test_array;
+			productName = test_array;
+			productReference = FFF86B9020A51239000CA7B0 /* test_array */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF6C3CD620A50D02005AF7F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "近藤 弘一";
+				TargetAttributes = {
+					FF6C3CDD20A50D02005AF7F1 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					FF6C3CEB20A50F73005AF7F1 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					FFF86B8620A511A5000CA7B0 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = FF6C3CD920A50D02005AF7F1 /* Build configuration list for PBXProject "libis-test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FF6C3CD520A50D02005AF7F1;
+			productRefGroup = FF6C3CD520A50D02005AF7F1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF6C3CDD20A50D02005AF7F1 /* libis-test */,
+				FF6C3CEB20A50F73005AF7F1 /* libis-test2 */,
+				FFF86B8620A511A5000CA7B0 /* test_array */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF6C3CDA20A50D02005AF7F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF6C3CE820A50F73005AF7F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF86B8320A511A5000CA7B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF86B8F20A511CA000CA7B0 /* test_array.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FF6C3CE320A50D02005AF7F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FF6C3CE420A50D02005AF7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FF6C3CE620A50D02005AF7F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF6C3CE720A50D02005AF7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FF6C3CF120A50F73005AF7F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF6C3CF220A50F73005AF7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FFF86B8C20A511A5000CA7B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"\"/usr/local/include\"",
+					"\"./include\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					./MACOSX,
+					"$(PROJECT_DIR)/MACOSX",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FFF86B8D20A511A5000CA7B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"\"/usr/local/include\"",
+					"\"./include\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					./MACOSX,
+					"$(PROJECT_DIR)/MACOSX",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF6C3CD920A50D02005AF7F1 /* Build configuration list for PBXProject "libis-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF6C3CE320A50D02005AF7F1 /* Debug */,
+				FF6C3CE420A50D02005AF7F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF6C3CE520A50D02005AF7F1 /* Build configuration list for PBXNativeTarget "libis-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF6C3CE620A50D02005AF7F1 /* Debug */,
+				FF6C3CE720A50D02005AF7F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF6C3CF020A50F73005AF7F1 /* Build configuration list for PBXNativeTarget "libis-test2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF6C3CF120A50F73005AF7F1 /* Debug */,
+				FF6C3CF220A50F73005AF7F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFF86B8B20A511A5000CA7B0 /* Build configuration list for PBXNativeTarget "test_array" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFF86B8C20A511A5000CA7B0 /* Debug */,
+				FFF86B8D20A511A5000CA7B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF6C3CD620A50D02005AF7F1 /* Project object */;
+}

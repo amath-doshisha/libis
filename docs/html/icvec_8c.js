@@ -8,6 +8,7 @@ var icvec_8c =
     [ "RF", "icvec_8c.html#aae506ec36706d66ea9abbcca974ce8d4", null ],
     [ "RVA", "icvec_8c.html#a3b7c724493e1a629ea715f466a16fffb", null ],
     [ "RVF", "icvec_8c.html#a321f01ab2978d42807630a6eeca32aaf", null ],
+    [ "dvec_set_ic", "icvec_8c.html#aee5899cd76576f6b6544933a25f07748", null ],
     [ "icscalar_sub_cvec", "icvec_8c.html#a8f56e6856eba2568968ab8a74507c97e", null ],
     [ "icscalar_sub_dvec", "icvec_8c.html#a91674b20ec4aaf5a393952259f42ab08", null ],
     [ "icscalar_sub_rvec", "icvec_8c.html#a295cc43e8176cb6891bf571264ac89d6", null ],
@@ -105,5 +106,6 @@ var icvec_8c =
     [ "izvec_sub_cscalar", "icvec_8c.html#a10efa2d16af4ea7d69f6efb9ee386b96", null ],
     [ "izvec_sub_cvec", "icvec_8c.html#ab5d45bddb64ec0c46429b5c1f5ed2530", null ],
     [ "izvec_sub_rscalar", "icvec_8c.html#a5b979ab8df023e1afd1fb1475bdee5f2", null ],
-    [ "izvec_sub_rvec", "icvec_8c.html#a61e45441e6ee1d6eb56d3eb71728dcb9", null ]
+    [ "izvec_sub_rvec", "icvec_8c.html#a61e45441e6ee1d6eb56d3eb71728dcb9", null ],
+    [ "zvec_set_ic", "icvec_8c.html#acaa35a1e3fd63b408763da2559390405", null ]
 ];

@@ -14,7 +14,7 @@
 <area shape="rect" id="node74" href="$irvec_8c.html#a438b186a7f1c336c35cd2e7adb5d6e3f" title="irmulti型のベクトルの表示 " alt="" coords="170,2613,238,2640"/>
 <area shape="rect" id="node76" href="$is__rvec_8h.html#a47ba7f7a1239163a05f389b82c2a8656" title="rmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="173,3172,235,3199"/>
 <area shape="rect" id="node80" href="$is__rvec_8h.html#a2edd21f52ee7e6891702d2d4fae97473" title="rmulti型のベクトルの要素の絶対値 y=abs(x) " alt="" coords="173,2816,235,2843"/>
-<area shape="rect" id="node81" href="$is__rvec_8h.html#af9d7f8753798fd05dfbb4ab664518592" title="rmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="167,3225,241,3252"/>
+<area shape="rect" id="node81" href="$is__rvec_8h.html#a520ad40f6c5093164c3991e11ba3b84e" title="z=x.*y " alt="" coords="154,3225,254,3252"/>
 <area shape="rect" id="node83" href="$irvec_8c.html#a39f686a623df20de241aa4bae71a48e1" title="irmulti型のベクトルの符号の正負 [y0,y1]=[&#45;abs(x),abs(x)] " alt="" coords="173,3327,235,3353"/>
 <area shape="rect" id="node85" href="$irvec_8c.html#a2b81c1aab49e6a90d73818fb9477e286" title="irmulti型のベクトルの足し算 [z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="159,2740,249,2767"/>
 <area shape="rect" id="node86" href="$irmat_8c.html#a46799a1283feea3eb11b9a3e936e7d6d" title="行列写像 [A0,A1]=F([x0,x1]) " alt="" coords="323,1525,415,1552"/>
@@ -88,7 +88,7 @@
 <area shape="rect" id="node77" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="337,3272,401,3299"/>
 <area shape="rect" id="node78" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="337,3171,401,3197"/>
 <area shape="rect" id="node79" href="$rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="335,3221,403,3248"/>
-<area shape="rect" id="node82" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="343,3323,395,3349"/>
+<area shape="rect" id="node82" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="z=x*y " alt="" coords="343,3323,395,3349"/>
 <area shape="rect" id="node84" href="$irmulti_8c.html#a2fb4aea3587b6786964811c9e47e7182" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)]. " alt="" coords="348,3373,389,3400"/>
 <area shape="rect" id="node88" href="$irmulti_8c.html#a718dadb4804a0eaddcf795adfd1a880d" title="積の減算 [z0,z1]&#45;=[x0,x1]*[y0,y1] " alt="" coords="501,3272,567,3299"/>
 <area shape="rect" id="node89" href="$irmat_8c.html#ac492cbe5249a4081eb1b915c03cc5394" title="コピー [B0,B1]=[A0,A1] " alt="" coords="499,3475,569,3501"/>

@@ -76,7 +76,7 @@ rmulti *rbin_load(FILE *fid);
 void rset_s(rmulti *x, char *value);
 void rset_ui(rmulti *x, ulong value);
 void rset_si(rmulti *x, long value);
-void rset(rmulti *y, rmulti *x);
+void rset_r(rmulti *y, rmulti *x);
 void rset_d(rmulti *x, double value);
 void rset_inf(rmulti *x, int sgn);
 void rset_nan(rmulti *x);
@@ -129,35 +129,41 @@ void ratanh(rmulti *y, rmulti *x);   // y=atanh(x)
 /*
  * operatior for two arguments
  */
-void radd(rmulti *z, rmulti *x, rmulti *y);        // z=x+y
-void radd_d(rmulti *z, rmulti *x, double y);       // z=x+y
-void dadd_r(rmulti *z, double x, rmulti *y);       // z=x+y
-void radd_ui(rmulti *z, rmulti *x, ulong y);       // z=x+y
-void radd_si(rmulti *z, rmulti *x, long int y);    // z=x+y
-void rsub(rmulti *z, rmulti *x, rmulti *y);        // z=x-y
-void dsub_r(rmulti *z, double x, rmulti *y);      // z=x-y
-void rsub_d(rmulti *z, rmulti *x, double y);      // z=x-y
-void rsub_ui1(rmulti *z, ulong x, rmulti *y);      // z=x-y
-void rsub_ui2(rmulti *z, rmulti *x, ulong y);      // z=x-y
-void rsub_si1(rmulti *z, long x, rmulti *y);       // z=x-y
-void rsub_si2(rmulti *z, rmulti *x, long y);       // z=x-y
-void rmul(rmulti *z, rmulti *x, rmulti *y);        // z=x*y
-void rmul_d(rmulti *z, rmulti *x, double y);       // z=x*y
-void rmul_ui(rmulti *z, rmulti *x, ulong y);       // z=x*y
-void rmul_si(rmulti *z, rmulti *x, long y);        // z=x*y
-void radd_mul(rmulti *z, rmulti *x, rmulti *y);    // z+=x*y
+// z=x+y
+void radd_r(rmulti *z, rmulti *x, rmulti *y);
+void radd_d(rmulti *z, rmulti *x, double y);
+void dadd_r(rmulti *z, double x, rmulti *y);
+void radd_ui(rmulti *z, rmulti *x, ulong y);
+void radd_si(rmulti *z, rmulti *x, long int y);
+// z=x-y
+void rsub_r(rmulti *z, rmulti *x, rmulti *y);
+void dsub_r(rmulti *z, double x, rmulti *y);
+void rsub_d(rmulti *z, rmulti *x, double y);
+void rsub_ui1(rmulti *z, ulong x, rmulti *y);
+void rsub_ui2(rmulti *z, rmulti *x, ulong y);
+void rsub_si1(rmulti *z, long x, rmulti *y);
+void rsub_si2(rmulti *z, rmulti *x, long y);
+// z=x*y
+void rmul_r(rmulti *z, rmulti *x, rmulti *y);
+void rmul_d(rmulti *z, rmulti *x, double y);
+void dmul_r(rmulti *z, double x, rmulti *y);
+void rmul_ui(rmulti *z, rmulti *x, ulong y);
+void rmul_si(rmulti *z, rmulti *x, long y);
+// z=x/y
+void rdiv_r(rmulti *z, rmulti *x, rmulti *y);
+void rdiv_d(rmulti *z, rmulti *x, double y);
+void ddiv_r(rmulti *z, double x, rmulti *y);
+void rdiv_ui2(rmulti *z, rmulti *x, ulong y);
+void rdiv_ui1(rmulti *z, ulong x, rmulti *y);
+void rdiv_si2(rmulti *z, rmulti *x, long y);
+void rdiv_si1(rmulti *z, long x, rmulti *y);
+// z+=x*y
+void radd_mul(rmulti *z, rmulti *x, rmulti *y);
 void radd_mul_ws(rmulti *z, rmulti *x, rmulti *y, int n_rws, rmulti **rws);  // n_rws>=1
 void radd_mul_d(rmulti *z, rmulti *x, double y);   // z+=x*y
 void rsub_mul(rmulti *z, rmulti *x, rmulti *y);    // z-=x*y
 void rsub_mul_ws(rmulti *z, rmulti *x, rmulti *y, int n_rws, rmulti **rws);  // n_rws>=1
 void rsub_mul_d(rmulti *z, rmulti *x, double y);   // z-=x*y
-void rdiv(rmulti *z, rmulti *x, rmulti *y);        // z=x/y
-void rdiv_d1(rmulti *z, double x, rmulti *y);      // z=x/y
-void rdiv_d2(rmulti *z, rmulti *x, double y);      // z=x/y
-void rdiv_ui2(rmulti *z, rmulti *x, ulong y);      // z=x/y
-void rdiv_ui1(rmulti *z, ulong x, rmulti *y);      // z=x/y
-void rdiv_si2(rmulti *z, rmulti *x, long y);       // z=x/y
-void rdiv_si1(rmulti *z, long x, rmulti *y);       // z=x/y
 void radd_abs_abs(rmulti *z, rmulti *x, rmulti *y); // z=abs(x)+abs(y)
 void rabs_sub(rmulti *z, rmulti *x, rmulti *y);    // z=abs(x-y)
 void rabs_sub_d(rmulti *z, rmulti *x, double y);   // z=abs(x-y)

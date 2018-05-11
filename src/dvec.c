@@ -7,6 +7,7 @@
 #include"is_dvec.h"
 #include"is_strings.h"
 #include"is_svec.h"
+#include"is_rmulti.h"
 #include"mt19937ar.h"
 
 #define FILE_NAME_LENGTH_MAX 100000
@@ -108,54 +109,11 @@ void dvec_set_rand(int n, double *x, double a, double b){
 
 
 // y=x
-void dvec_set(int n, double *y, double *x) 
+void dvec_set_d(int n, double *y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]; }
 }
-
-// y=x
-void dvec_set_z(int n, double *y, dcomplex *x)
-{
-  int i;
-  for(i=0; i<n; i++){ y[i]=Z_R(x[i]); }
-}
-
-// y=x
-void dvec_set_r(int n, double *y, rmulti **x)
-{
-  int i;
-  for(i=0; i<n; i++){ y[i]=rget_d(x[i]); }
-}
-
-// y=x
-void dvec_set_c(int n, double *y, cmulti **x)
-{
-  int i;
-  for(i=0; i<n; i++){ y[i]=rget_d(C_R(x[i])); }
-}
-
-// y=x
-void dvec_set_ir(int n, double *y, rmulti **x0, rmulti **x1)
-{
-  int i;
-  for(i=0; i<n; i++){ y[i]=0.5*(rget_d(x0[i])+rget_d(x1[i])); }
-}
-
-// y=x
-void dvec_set_ic(int n, double *y, cmulti **x0, cmulti **x1)
-{
-  dcomplex z0,z1;
-  int i;
-  for(i=0; i<n; i++){
-    z0=cget_z(x0[i]);
-    z1=cget_z(x1[i]);
-    Z_ADD(z0,z1);
-    Z_SCALE(z0,0.5);
-    y[i]=Z_R(z0);
-  }
-}
-
 
 // y=x
 void dvec_set_si(int n, double *y, int *x)
@@ -168,7 +126,13 @@ void dvec_set_si(int n, double *y, int *x)
 void dvec_set_s(int n, double *y, char **x)
 {
   int i;
-  for(i=0; i<n; i++){ y[i]=atof(x[i]); }
+  rmulti *a=NULL;
+  a=rallocate();
+  for(i=0; i<n; i++){
+    rset_s(a,x[i]);
+    y[i]=rget_d(a);    
+  }
+  a=rfree(a);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -288,52 +252,123 @@ void dvec_copy_index(int n, double *Y, double *X, int *I)
 
 //////////////////////////////////////////////////////
 
-// z=x+y
+/**
+ @brief z=x+y
+ */
 void dvec_add_dvec(int n, double *z, double *x, double *y)
 {
-    int i;
-    for(i=0; i<n; i++){ z[i]=x[i]+y[i]; }
+  int i;
+  for(i=0; i<n; i++){ z[i]=x[i]+y[i]; }
 }
 
-// z=x+y
+/**
+ @brief z=x+y
+ */
 void dvec_add_dscalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]+y; }
 }
 
+/**
+ @brief z=x+y
+ */
+void dscalar_add_dvec(int n, double *z, double x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ z[i]=x+y[i]; }
+}
+
 //////////////////////////////////////////////////////
 
-// z=x-y
+/**
+ @brief z=x-y
+ */
 void dvec_sub_dvec(int n, double *z, double *x, double *y)
 {
-    int i;
-    for(i=0; i<n; i++){ z[i]=x[i]-y[i]; }
+  int i;
+  for(i=0; i<n; i++){ z[i]=x[i]-y[i]; }
 }
 
-// z=x-y
+/**
+ @brief z=x-y
+ */
 void dvec_sub_dscalar(int n, double *z, double *x, double y)
 {
-    int i;
-    for(i=0; i<n; i++){ z[i]=x[i]-y; }
+  int i;
+  for(i=0; i<n; i++){ z[i]=x[i]-y; }
 }
 
-// z=x-y
+/**
+ @brief z=x-y
+ */
 void dscalar_sub_dvec(int n, double *z, double x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x-y[i]; }
 }
 
+//////////////////////////////////////////////////////
+
+/**
+ @brief z=x*y
+ */
+void dvec_mul_dvec(int n, double *z, double *x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ z[i]=x[i]*y[i]; }
+}
+
+/**
+ @brief z=x*y
+ */
+void dvec_mul_dscalar(int n, double *z, double *x, double y)
+{
+  int i;
+  for(i=0; i<n; i++){ z[i]=x[i]*y; }
+}
+
+/**
+ @brief z=x*y
+ */
+void dscalar_mul_dvec(int n, double *z, double x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ z[i]=x*y[i]; }
+}
+
 
 //////////////////////////////////////////////////////
 
-// z=x/y
-void dvec_div_d2(int n, double *z, double *x, double y)
+/**
+ @brief z=x/y
+ */
+void dvec_div_dvec(int n, double *z, double *x, double *y)
 {
-    int i;
-    for(i=0; i<n; i++){ z[i]=x[i]/y; }
+  int i;
+  for(i=0; i<n; i++){ z[i]=x[i]/y[i]; }
 }
+
+/**
+ @brief z=x/y
+ */
+void dvec_div_dscalar(int n, double *z, double *x, double y)
+{
+  int i;
+  for(i=0; i<n; i++){ z[i]=x[i]/y; }
+}
+
+/**
+ @brief z=x/y
+ */
+void dscalar_div_dvec(int n, double *z, double x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ z[i]=x/y[i]; }
+}
+
+//////////////////////////////////////////////////////
+
 
 
 // y=y+a*x

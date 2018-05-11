@@ -39,13 +39,13 @@ void chouseholder_vec(int n, int k, cmulti **h, rmulti *alpha, cmulti **x)
   //----------- norm
   cvec_sum_abs2(xi,n-k-1,&x[k+1]);     // xi=sum(abs(x((k+1):end)).^2);
   cabs2(axk,x[k]);                     // axk=|x[k]|^2
-  radd(eta,axk,xi);                    // eta=|x[k]|^2+...
+  radd_r(eta,axk,xi);                    // eta=|x[k]|^2+...
   rsqrt(axk,axk);                      // axk=|x[k]|
   rsqrt(eta,eta);                      // eta=sqrt(|x[k]|^2+...)
-  if(req_d(eta,0)){rsub(xi,eta,axk);}  // xi=eta-|x(k)|
+  if(req_d(eta,0)){rsub_r(xi,eta,axk);}  // xi=eta-|x(k)|
   else{                                // xi=xi/(|x(k)|+eta)
-    radd(zeta,axk,eta);
-    rdiv(xi,xi,zeta);
+    radd_r(zeta,axk,eta);
+    rdiv_r(xi,xi,zeta);
   }
   //----------- h
   cvec_set_zeros(k,h);
@@ -53,14 +53,14 @@ void chouseholder_vec(int n, int k, cmulti **h, rmulti *alpha, cmulti **x)
   if(cis_zero(x[k])){
     ccopy_r(h[k],xi); cneg(h[k],h[k]);        //h[k]=-xi
   }else{
-    rdiv(zeta,xi,axk); rneg(zeta,zeta);    // zeta=-xi/axk;
+    rdiv_r(zeta,xi,axk); rneg(zeta,zeta);    // zeta=-xi/axk;
     cmul_r(h[k],x[k],zeta);                // h[k]=zeta*x[k];
   }
   //----------- alpha
   if(req_d(xi,0) || req_d(eta,0)){
     rset_d(alpha,0);
   }else{
-    rmul(alpha,xi,eta);                  // alpha=1/(xi*eta)
+    rmul_r(alpha,xi,eta);                  // alpha=1/(xi*eta)
     rinv(alpha,alpha);
   }
   // free

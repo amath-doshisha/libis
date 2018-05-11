@@ -11,7 +11,7 @@
 // x=(bigint)value
 void rset_bi(rmulti *x, bigint *value)
 {
-  rdiv(x,BIGINT_NUM(value),BIGINT_DEN(value));
+  rdiv_r(x,BIGINT_NUM(value),BIGINT_DEN(value));
 }
 
 ////////////////////////////////////////
@@ -99,7 +99,7 @@ void bigint_gcd(rmulti *gcd, rmulti *m0, rmulti *n0)
   rclone(m,m0);                   // m:=m0
   rclone(n,n0);                   // n:=n0
   do{                             // repeat
-    rdiv(q,m,n); rfloor(q,q);     // q:=floor(m/n)
+    rdiv_r(q,m,n); rfloor(q,q);     // q:=floor(m/n)
     rclone(r,m); rsub_mul(r,q,n); // r:=m-q*n=m%n
     rclone(m,n);                  // m:=n
     rclone(n,r);                  // n:=r
@@ -369,13 +369,13 @@ int bigint_get_si(bigint *x)
 
 void bigint_get_rmulti(rmulti *z, bigint *x)
 {
-  rdiv(z,BIGINT_NUM(x),BIGINT_DEN(x));
+  rdiv_r(z,BIGINT_NUM(x),BIGINT_DEN(x));
 }
 
 void bigint_get_cmulti(cmulti *z, bigint *x)
 {
   ccopy_r(z,BIGINT_NUM(x));
-  cdiv_r2(z,z,BIGINT_DEN(x));
+  cdiv_r(z,z,BIGINT_DEN(x));
 }
 
 /////////////////////////////////

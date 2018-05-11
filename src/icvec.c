@@ -121,6 +121,36 @@ void icvec_set_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1)
   for(i=0; i<n; i++){ icset_rc(y0[i],y1[i],x0[i],x1[i]); }
 }
 
+// y=x
+void dvec_set_ic(int n, double *y, cmulti **x0, cmulti **x1)
+{
+  dcomplex z0,z1;
+  int i;
+  for(i=0; i<n; i++){
+    z0=cget_z(x0[i]);
+    z1=cget_z(x1[i]);
+    Z_ADD(z0,z1);
+    Z_SCALE(z0,0.5);
+    y[i]=Z_R(z0);
+  }
+}
+
+// y=x
+void zvec_set_ic(int n, dcomplex *y, cmulti **x0, cmulti **x1)
+{
+  dcomplex z0,z1;
+  int i;
+  for(i=0; i<n; i++){
+    z0=cget_z(x0[i]);
+    z1=cget_z(x1[i]);
+    Z_ADD(z0,z1);
+    Z_SCALE(z0,0.5);
+    y[i]=z0;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+
 /** @} */
 /** @name icmulti型ベクトルの入出力に関する関数 */
 /** @{ */
@@ -261,7 +291,7 @@ void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **
   mode=get_round_mode();
   set_round_mode(MPFR_RNDU);  // up
   cvec_sub_cvec(n,xc,x1,x0);    // xc=x1-x0
-  cvec_mul_d(n,xc,xc,0.5); // xc=(x1-x0)/2
+  cvec_mul_dscalar(n,xc,xc,0.5); // xc=(x1-x0)/2
   cvec_add_cvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
   cvec_sub_cvec(n,xr,xc,x0);    // xr=xc-x0
   set_round_mode(mode);       // back

@@ -5,7 +5,7 @@
 <area shape="rect" id="node12" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="290,892,353,918"/>
 <area shape="rect" id="node63" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="845,638,905,665"/>
 <area shape="rect" id="node66" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="284,942,359,969"/>
-<area shape="rect" id="node75" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="161,461,203,488"/>
+<area shape="rect" id="node75" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="157,461,207,488"/>
 <area shape="rect" id="node76" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="139,1145,225,1172"/>
 <area shape="rect" id="node7" href="$func__bigint_8c.html#ad39923e28c10109fb73a7218a834e6ac" title="func_in_bigint" alt="" coords="279,233,363,260"/>
 <area shape="rect" id="node4" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="1646,1194,1699,1221"/>
@@ -73,7 +73,7 @@
 <area shape="rect" id="node64" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="965,638,1055,665"/>
 <area shape="rect" id="node69" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="433,525,485,552"/>
 <area shape="rect" id="node70" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="548,525,645,552"/>
-<area shape="rect" id="node73" href="$is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="439,576,478,602"/>
+<area shape="rect" id="node73" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="435,576,482,602"/>
 <area shape="rect" id="node77" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="294,1449,349,1476"/>
 <area shape="rect" id="node78" href="$func__number_8c.html#a2e52e48c181d23886cb9872110e7a113" title="func_nan" alt="" coords="290,1145,353,1172"/>
 <area shape="rect" id="node79" href="$is__rmulti_8h.html#ade1f45af05531f2241bc00ed700dc820" title="rmulti型がInfであるかの判定. " alt="" coords="297,1196,346,1222"/>

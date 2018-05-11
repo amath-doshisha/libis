@@ -1,6 +1,6 @@
 <map id="dvec_add_cvec" name="dvec_add_cvec">
-<area shape="rect" id="node2" href="$cmulti_8c.html#afcedf823a504843c4adf26db7157bf4b" title="cmulti型の足し算 z=x+y " alt="" coords="145,31,200,57"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#ab573b7b2250f4751b5a96e4a760a5348" title="rmulti型の足し算 z=x+y " alt="" coords="248,5,301,32"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="251,56,298,83"/>
+<area shape="rect" id="node2" href="$cmulti_8c.html#afcedf823a504843c4adf26db7157bf4b" title="z=x+y " alt="" coords="145,31,200,57"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#ab573b7b2250f4751b5a96e4a760a5348" title="z=x+y " alt="" coords="248,5,301,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="251,56,299,83"/>
 <area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="349,31,447,57"/>
 </map>

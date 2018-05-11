@@ -133,7 +133,7 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
       if(l==nn){
 	// 実固有値に収束している場合
 	// lambda(n-1)=x+t
-	radd(C_R(lambda[nn-1]),x,t); rset_zero(C_I(lambda[nn-1]));
+	radd_r(C_R(lambda[nn-1]),x,t); rset_zero(C_I(lambda[nn-1]));
 	if(debug>=1){ mpfr_printf("[%s] lambda[%04d]=%+.15Re %+.15Re\n",NAME_HQR,nn-1,C_R(lambda[nn-1]),C_I(lambda[nn-1])); }
 	// サイズを1だけ減次
 	nn=nn-1;
@@ -142,40 +142,40 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	// y=A(n-2,n-2)
 	rcopy(y,MAT(A,nn-2,nn-2,LDA));
 	// w=A(n-1,n-2)*A(n-2,n-1)
-	rmul(w,MAT(A,nn-1,nn-2,LDA),MAT(A,nn-2,nn-1,LDA));
+	rmul_r(w,MAT(A,nn-1,nn-2,LDA),MAT(A,nn-2,nn-1,LDA));
 	//
 	if(l==(nn-1)){
 	  // p=(y-x)/2
-	  rsub(p,y,x); rmul_d(p,p,0.5);
+	  rsub_r(p,y,x); rmul_d(p,p,0.5);
 	  // q=(y-x)^2/4+w
-	  rmul(q,p,p); radd(q,q,w);
+	  rmul_r(q,p,p); radd_r(q,q,w);
 	  // z=sqrt(abs((y-x)^2/4+w))
 	  rabs(z,q); rsqrt(z,z);
 	  // x=x+t
-	  radd(x,x,t);
+	  radd_r(x,x,t);
 	  // if q>=0 then
 	  if(ris_positive(q) || ris_zero(q)){
 	    // 2つの実固有値に収束している場合
 	    // z=abs(z)*sgn(p)
 	    rabs(z,z); rmul_si(z,z,rget_sgn_not0(p));
 	    // z+=p
-	    radd(z,z,p);
+	    radd_r(z,z,p);
 	    // if z==0, then
 	    if(ris_zero(z)){
 	      // lambda(n-1)=x+z
-	      radd(C_R(lambda[nn-1]),x,z); rset_zero(C_I(lambda[nn-1]));
+	      radd_r(C_R(lambda[nn-1]),x,z); rset_zero(C_I(lambda[nn-1]));
 	    }else{
 	      // lambda(n-1)=x-w/z
-	      rdiv(C_R(lambda[nn-1]),w,z); rsub(C_R(lambda[nn-1]),x,C_R(lambda[nn-1])); rset_zero(C_I(lambda[nn-1]));
+	      rdiv_r(C_R(lambda[nn-1]),w,z); rsub_r(C_R(lambda[nn-1]),x,C_R(lambda[nn-1])); rset_zero(C_I(lambda[nn-1]));
 	    }
 	    // lambda(n-2)=x+z
-	    radd(C_R(lambda[nn-2]),x,z); rset_zero(C_I(lambda[nn-2]));
+	    radd_r(C_R(lambda[nn-2]),x,z); rset_zero(C_I(lambda[nn-2]));
 	  }else{
 	    // 複素固有値に収束している場合
 	    // lambda(n-1)=(x+p)+I*z
-	    radd(C_R(lambda[nn-1]),x,p); rcopy(C_I(lambda[nn-1]),z);
+	    radd_r(C_R(lambda[nn-1]),x,p); rcopy(C_I(lambda[nn-1]),z);
 	    // lambda(n-2)=(x+p)-I*z
-	    radd(C_R(lambda[nn-2]),x,p); rneg(C_I(lambda[nn-2]),z);
+	    radd_r(C_R(lambda[nn-2]),x,p); rneg(C_I(lambda[nn-2]),z);
 	  }
 	  if(debug>=1){
 	    mpfr_printf("[%s] lambda[%04d]=%+.15Re %+.15Re\n",NAME_HQR,nn-1,C_R(lambda[nn-1]),C_I(lambda[nn-1]));
@@ -188,9 +188,9 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	  if(its==100) { ERROR_AT; exit(0); }
 	  if((its%10)==0){
 	    // t+=x
-	    radd(t,t,x);
+	    radd_r(t,t,x);
 	    // 原点シフト
-	    for(i=0; i<nn; i++){ rsub(MAT(A,i,i,LDA),MAT(A,i,i,LDA),x); }
+	    for(i=0; i<nn; i++){ rsub_r(MAT(A,i,i,LDA),MAT(A,i,i,LDA),x); }
 	    // s=abs(A(n-1,n-2))+abs(A(n-2,n-3))
 	    radd_abs_abs(s,MAT(A,nn-1,nn-2,LDA),MAT(A,nn-2,nn-3,LDA));
 	    // y=s*0.75
@@ -198,7 +198,7 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	    // x=s*0.75
 	    rmul_d(x,s,0.750);
 	    // w=s^2
-	    rmul(w,s,s);
+	    rmul_r(w,s,s);
 	    // w=w*(-0.4375)
 	    rmul_d(w,w,-0.4375);
 	  }
@@ -206,8 +206,8 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	  ++its;
 	  for(m=(nn-2); m>=l; m--){
 	    rcopy(z,MAT(A,m-1,m-1,LDA));
-	    rsub(r,x,z);
-	    rsub(s,y,z);	    
+	    rsub_r(r,x,z);
+	    rsub_r(s,y,z);	    
 	    reig_hqr_calculate_formula_11_6_23_p(p,r,s,w,MAT(A,m,m-1,LDA),MAT(A,m-1,m,LDA));
 	    reig_hqr_calculate_formula_11_6_23_q(q,MAT(A,m,m,LDA),r,s,z);
 	    rcopy(r,MAT(A,m+1,m,LDA));
@@ -236,18 +236,18 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	      if(k==m){
 		if(l!=m) { rneg(MAT(A,k-1,k-2,LDA),MAT(A,k-1,k-2,LDA)); }
 	      }else{ 
-		rmul(MAT(A,k-1,k-2,LDA),s,x); 
+		rmul_r(MAT(A,k-1,k-2,LDA),s,x); 
 		rneg(MAT(A,k-1,k-2,LDA),MAT(A,k-1,k-2,LDA)); 
 	      }
-	      radd(p,p,s);
-	      rdiv(x,p,s);
-	      rdiv(y,q,s);
-	      rdiv(z,r,s);
-	      rdiv(q,q,p);
-	      rdiv(r,r,p);
+	      radd_r(p,p,s);
+	      rdiv_r(x,p,s);
+	      rdiv_r(y,q,s);
+	      rdiv_r(z,r,s);
+	      rdiv_r(q,q,p);
+	      rdiv_r(r,r,p);
 	      for(j=k;j<=nn;j++){
-		rmul(p,q,MAT(A,k,j-1,LDA));
-		radd(p,p,MAT(A,k-1,j-1,LDA));
+		rmul_r(p,q,MAT(A,k,j-1,LDA));
+		radd_r(p,p,MAT(A,k-1,j-1,LDA));
 		if(k!=(nn-1)){
 		  radd_mul(p,r,MAT(A,k+1,j-1,LDA));
 		  rsub_mul(MAT(A,k+1,j-1,LDA),p,z);
@@ -258,14 +258,14 @@ void reig_hqr_main(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 	      if(nn<(k+3)) { mmin=nn;  }
 	      else         { mmin=k+3; }
 	      for(i=l;i<=mmin;i++){
-		rmul(p,x,MAT(A,i-1,k-1,LDA));
+		rmul_r(p,x,MAT(A,i-1,k-1,LDA));
 		radd_mul(p,y,MAT(A,i-1,k,LDA));
 		if(k!=(nn-1)){
 		  radd_mul(p,z,MAT(A,i-1,k+1,LDA));
 		  rsub_mul(MAT(A,i-1,k+1,LDA),p,r);
 		}
 		rsub_mul(MAT(A,i-1,k,LDA),p,q);
-		rsub(MAT(A,i-1,k-1,LDA),MAT(A,i-1,k-1,LDA),p);
+		rsub_r(MAT(A,i-1,k-1,LDA),MAT(A,i-1,k-1,LDA),p);
 	      }
 	    }
 	  }
@@ -299,10 +299,10 @@ void reig_hqr_calculate_norm(rmulti *anorm, int n, rmulti **A, int LDA)
 */
 void reig_hqr_calculate_formula_11_6_23_p(rmulti *p, rmulti *r, rmulti *s, rmulti *w, rmulti *a1, rmulti *a2)
 {
-  rmul(p,r,s);  // p=r*s
-  rsub(p,p,w);  // p=r*s-w
-  rdiv(p,p,a1); // p=(r*s-w)/a1
-  radd(p,p,a2); // p=(r*s-w)/a1+a2
+  rmul_r(p,r,s);  // p=r*s
+  rsub_r(p,p,w);  // p=r*s-w
+  rdiv_r(p,p,a1); // p=(r*s-w)/a1
+  radd_r(p,p,a2); // p=(r*s-w)/a1+a2
 }
 
 /**
@@ -310,9 +310,9 @@ void reig_hqr_calculate_formula_11_6_23_p(rmulti *p, rmulti *r, rmulti *s, rmult
 */
 void reig_hqr_calculate_formula_11_6_23_q(rmulti *q, rmulti *a, rmulti *r, rmulti *s, rmulti *z)
 {
-  rsub(q,a,z); // q=a-z
-  rsub(q,q,r); // q=a-(z+r)
-  rsub(q,q,s); // q=a-(z+r+s)
+  rsub_r(q,a,z); // q=a-z
+  rsub_r(q,q,r); // q=a-(z+r)
+  rsub_r(q,q,s); // q=a-(z+r+s)
 }
 
 /**
@@ -326,11 +326,11 @@ void reig_hqr_calculate_formula_11_6_25(rmulti *s, rmulti *p, rmulti *q, rmulti 
   prec=rget_prec(s);
   RA(X,prec); RA(Y,prec);
   // compute
-  rmul(s,p,p); // s=p^2
-  rmul(X,q,q); // X=q^2
-  rmul(Y,r,r); // Y=r^2
-  radd(s,s,X); // s=p^2+q^2
-  radd(s,s,Y); // s=p^2+q^2+r-2
+  rmul_r(s,p,p); // s=p^2
+  rmul_r(X,q,q); // X=q^2
+  rmul_r(Y,r,r); // Y=r^2
+  radd_r(s,s,X); // s=p^2+q^2
+  radd_r(s,s,Y); // s=p^2+q^2+r-2
   rsqrt(s,s);  // s=sqrt(p^2+q^2+r-2)
   rmul_si(s,s,rget_sgn_not0(p)); // s=sqrt(p^2+q^2+r-2)*sgn(p)
   // done
@@ -350,7 +350,7 @@ void reig_hqr_calculate_formula_11_6_26_u(rmulti *u, rmulti *a, rmulti *q, rmult
   // compute
   radd_abs_abs(X,q,r); // X=abs(q)+abs(r)
   rabs(u,a);          // u=abs(a)
-  rmul(u,u,X);        // u=abs(a)*(abs(q)+abs(r))
+  rmul_r(u,u,X);        // u=abs(a)*(abs(q)+abs(r))
   // done
   RF(X);
 }
@@ -368,7 +368,7 @@ void reig_hqr_calculate_formula_11_6_26_v(rmulti *v, rmulti *a1, rmulti *a2, rmu
   // compute
   radd_abs_abs_abs(X,a1,z,a2); // X=abs(a1)+abs(z)+abs(a2)
   rabs(v,p);              // v=abs(p)
-  rmul(v,v,X);            // v=abs(p)*(abs(a1)+abs(z)+abs(a2))
+  rmul_r(v,v,X);            // v=abs(p)*(abs(a1)+abs(z)+abs(a2))
   // done
   RF(X);
 }
@@ -384,7 +384,7 @@ int reig_hqr_test_formula_11_6_26(rmulti *u, rmulti *v)
   prec=rget_prec(v);
   RA(X,prec);
   // compute
-  radd(X,u,v);  // X=u+v
+  radd_r(X,u,v);  // X=u+v
   k=req(X,v);   // u+v==v
   // done
   RF(X);
@@ -403,7 +403,7 @@ int reig_hqr_test_UDE(rmulti *s, rmulti *a)
   RA(X,prec);
   // compute
   rabs(X,a);        // X=abs(a)
-  radd(X,X,s);      // X=abs(a)+s
+  radd_r(X,X,s);      // X=abs(a)+s
   k=req(X,s);       // (abs(a)+s==s)
   // done
   RF(X);
@@ -415,9 +415,9 @@ int reig_hqr_test_UDE(rmulti *s, rmulti *a)
 */
 void reig_hqr_scale(rmulti *p, rmulti *q, rmulti *r, rmulti *s)
 {
-  rdiv(p,p,s); // p/=s
-  rdiv(q,q,s); // q/=s
-  rdiv(r,r,s); // r/=s
+  rdiv_r(p,p,s); // p/=s
+  rdiv_r(q,q,s); // q/=s
+  rdiv_r(r,r,s); // r/=s
 }
 
 /** @} */

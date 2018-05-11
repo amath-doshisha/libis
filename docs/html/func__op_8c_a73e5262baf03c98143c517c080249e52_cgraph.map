@@ -77,10 +77,10 @@
 <area shape="rect" id="node81" href="$is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="925,41,975,68"/>
 <area shape="rect" id="node75" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="925,143,975,169"/>
 <area shape="rect" id="node80" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="929,193,971,220"/>
-<area shape="rect" id="node76" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="1090,143,1131,169"/>
+<area shape="rect" id="node76" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="1085,143,1136,169"/>
 <area shape="rect" id="node77" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="1079,92,1143,119"/>
-<area shape="rect" id="node78" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="1265,41,1307,68"/>
-<area shape="rect" id="node79" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="1265,92,1307,119"/>
+<area shape="rect" id="node78" href="$rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="1261,41,1311,68"/>
+<area shape="rect" id="node79" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="1261,92,1311,119"/>
 <area shape="rect" id="node84" href="$func__cvec_8c.html#a6bc254669518226cb47306623d7abba6" title="func_cvec_size" alt="" coords="1241,1815,1331,1841"/>
 <area shape="rect" id="node85" href="$cmulti_8c.html#ad5f1e890ff473b1d8c05ba90df4d1f67" title="cmulti型が実数であるかの判定. " alt="" coords="1258,1865,1314,1892"/>
 <area shape="rect" id="node89" href="$func__cvec_8c.html#ab7e1584767b184944c657b7558bad430" title="func_cvec_at" alt="" coords="1245,1764,1327,1791"/>

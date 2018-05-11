@@ -115,7 +115,7 @@ void csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
     }
     // L行列とU行列の作成
     for(i=k+1; i<n; i++){
-      cdiv(a,MA(i,k),MA(k,k));
+      cdiv_c(a,MA(i,k),MA(k,k));
       // L行列 A(i,k)=a
       ccopy(MA(i,k),a);
       // U行列 A(i,k+1:end)+=(-a)*A(k,k+1:end)
@@ -162,8 +162,8 @@ void csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LD
       for(i=k+1; i<n; i++){
 	cadd_mul(a,MA(k,i),MB(i,j));
       }
-      csub(MB(k,j),MB(k,j),a);
-      cdiv(b,MB(k,j),MA(k,k));
+      csub_c(MB(k,j),MB(k,j),a);
+      cdiv_c(b,MB(k,j),MA(k,k));
       ccopy(MB(k,j),b);
     }
   }
@@ -216,8 +216,8 @@ void csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int 
     }
     //軸要素を1にする
     cinv_ws(a,MA(k,k),rws_size,rws,cws_size,cws);
-    for(j=k; j<n; j++)    { cmul_ws(MA(k,j),a,MA(k,j),rws_size,rws,cws_size,cws); }
-    for(j=0; j<NRHS; j++) { cmul_ws(MB(k,j),a,MB(k,j),rws_size,rws,cws_size,cws); }
+    for(j=k; j<n; j++)    { cmul_c_ws(MA(k,j),a,MA(k,j),rws_size,rws,cws_size,cws); }
+    for(j=0; j<NRHS; j++) { cmul_c_ws(MB(k,j),a,MB(k,j),rws_size,rws,cws_size,cws); }
     //軸要素以外が 0 になるように他の列から軸要素の列を引く
     for(i=k+1; i<n; i++){
       if(i!=k){

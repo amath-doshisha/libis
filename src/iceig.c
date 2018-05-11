@@ -129,7 +129,7 @@ int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmu
   // e=abs(R*F)
   cvec_lintr(m,m,e,R,m,F);
   cvec_absc(m,e,e);
-  cvec_mul_d(m,e,e,alpha);
+  cvec_mul_dscalar(m,e,e,alpha);
   // [X0,X1]=[-e,e]
   icvec_pm(m,X0,X1,e);
   // [M0,M1]=I-R*[J0,J1]

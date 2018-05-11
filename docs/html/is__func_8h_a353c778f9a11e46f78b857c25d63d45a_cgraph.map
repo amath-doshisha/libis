@@ -49,7 +49,7 @@
 <area shape="rect" id="node35" href="$bigint_8c.html#a6739b5136c32acb97995c5fecd323144" title="bigint_set_zero" alt="" coords="1001,1019,1091,1045"/>
 <area shape="rect" id="node36" href="$bigint_8c.html#a56f4d6d80da854ecffef33ff2f942725" title="bigint_set_one" alt="" coords="1003,867,1089,893"/>
 <area shape="rect" id="node38" href="$bigint_8c.html#a01fc090dc5a4cae38206634d49ceeb15" title="bigint_allocate" alt="" coords="859,56,944,83"/>
-<area shape="rect" id="node39" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="rmulti型の掛け算 z=x*y " alt="" coords="866,157,937,184"/>
+<area shape="rect" id="node39" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="866,157,937,184"/>
 <area shape="rect" id="node41" href="$bigint_8c.html#a653d622c421ca3ca8bc5ab33f23a5b77" title="bigint_check" alt="" coords="863,664,940,691"/>
 <area shape="rect" id="node45" href="$bigint_8c.html#ab1bcc4409fab4e341d3a70bc090b188f" title="bigint_clone" alt="" coords="863,107,939,133"/>
 <area shape="rect" id="node46" href="$bigint_8c.html#a21d7343d1c2f458c7b19e5e63b783689" title="bigint_free" alt="" coords="867,5,936,32"/>
@@ -68,7 +68,7 @@
 <area shape="rect" id="node60" href="$func__real_8c.html#a0ab64b68e336073a3e93a21cdf34087a" title="func_real_cast" alt="" coords="699,2488,786,2515"/>
 <area shape="rect" id="node61" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="870,1728,933,1755"/>
 <area shape="rect" id="node63" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="864,2083,939,2109"/>
-<area shape="rect" id="node68" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="722,715,763,741"/>
+<area shape="rect" id="node68" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="717,715,768,741"/>
 <area shape="rect" id="node69" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="699,867,786,893"/>
 <area shape="rect" id="node62" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="1015,2741,1077,2768"/>
 <area shape="rect" id="node64" href="$is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="1019,2323,1073,2349"/>
@@ -78,7 +78,7 @@
 <area shape="rect" id="node73" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="689,2437,797,2464"/>
 <area shape="rect" id="node74" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="859,1525,943,1552"/>
 <area shape="rect" id="node76" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="854,2032,949,2059"/>
-<area shape="rect" id="node81" href="$cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="554,936,597,963"/>
+<area shape="rect" id="node81" href="$cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="549,936,602,963"/>
 <area shape="rect" id="node82" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="521,1019,629,1045"/>
 <area shape="rect" id="node75" href="$cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="870,2539,933,2565"/>
 <area shape="rect" id="node77" href="$cmulti_8c.html#a725c8bc11d0ad592e21c34890f757ef4" title="cmulti型の値をInfに設定. " alt="" coords="873,2285,929,2312"/>

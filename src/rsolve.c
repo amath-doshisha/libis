@@ -113,7 +113,7 @@ void rsolve_lu_decomp(int n, rmulti **A, int LDA, int *p, int *info)
     }
     // L行列とU行列の作成
     for(i=k+1; i<n; i++){
-      rdiv(a,MA(i,k),MA(k,k));
+      rdiv_r(a,MA(i,k),MA(k,k));
       // L行列 A(i,k)=a
       rcopy(MA(i,k),a);
       // U行列 A(i,k+1:end)+=(-a)*A(k,k+1:end)
@@ -159,8 +159,8 @@ void rsolve_lu_backsubs(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LD
       for(i=k+1; i<n; i++){
 	radd_mul(a,MA(k,i),MB(i,j));
       }
-      rsub(MB(k,j),MB(k,j),a);
-      rdiv(b,MB(k,j),MA(k,k));
+      rsub_r(MB(k,j),MB(k,j),a);
+      rdiv_r(b,MB(k,j),MA(k,k));
       rcopy(MB(k,j),b);
     }
   }
@@ -209,8 +209,8 @@ void rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int 
     }
     //軸要素を1にする
     rinv(a,MA(k,k));
-    for(j=k; j<n; j++)    { rmul(MA(k,j),a,MA(k,j)); }
-    for(j=0; j<NRHS; j++) { rmul(MB(k,j),a,MB(k,j)); }
+    for(j=k; j<n; j++)    { rmul_r(MA(k,j),a,MA(k,j)); }
+    for(j=0; j<NRHS; j++) { rmul_r(MB(k,j),a,MB(k,j)); }
     //軸要素以外が 0 になるように他の列から軸要素の列を引く
     for(i=k+1; i<n; i++){
       if(i!=k){

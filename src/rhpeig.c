@@ -78,7 +78,7 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
   rvec_normalize_sgn(n,x,x);          // x=x/sqrt(x'*x)
   rvec_sum_mul(C,n,z,x);              // C=z'*x
   rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
-  rdiv(lambda,lambda,C);              // lambda=(w'*x)/C
+  rdiv_r(lambda,lambda,C);              // lambda=(w'*x)/C
   reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
   rvec_max_abs(E,n,F);                // E=max(abs(F))
   if(ris_zero(E)) { done=RHPEIG_CONVERGENT; } else { done=RHPEIG_NONE; } // convergent or not?
@@ -96,11 +96,11 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
       rvec_normalize_sgn(n,x,x);          // x=x/sqrt(x'*x)
       rvec_sum_mul(C,n,z,x);              // C=z'*x
       rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
-      rdiv(lambda,lambda,C);              // lambda=(w'*x)/C
+      rdiv_r(lambda,lambda,C);              // lambda=(w'*x)/C
       reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
       rvec_max_abs(E,n,F);                // E=max(abs(F))
     }
-    rdiv(mu,eta,eta0); rmul_d(mu,mu,2);   // mu=2*eta/eta0
+    rdiv_r(mu,eta,eta0); rmul_d(mu,mu,2);   // mu=2*eta/eta0
     if     (status==RHPEIG_STATUS_PRE && rlt(eta,eps_half)){ status=RHPEIG_STATUS_CONV; } // start to convergent
     else if(status==RHPEIG_STATUS_CONV && rgt_d2(mu,1.0))  { status=RHPEIG_STATUS_END; }  // end to convergent
     else if(status==RHPEIG_STATUS_CONV && rget_exp(E)-rget_exp(lambda)<prec){ status=RHPEIG_STATUS_END; }  // end to convergent

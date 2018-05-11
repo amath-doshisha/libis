@@ -1,10 +1,6 @@
 #ifndef IS_DVEC_H
 #define IS_DVEC_H
 
-#include<is_dcomplex.h>
-#include<is_rmulti.h>
-#include<is_cmulti.h>
-
 /*
  * allocation
  */
@@ -16,9 +12,7 @@ double *dvec_allocate_s(char *str, int *n);
  * initialization
  */
 // y=x
-void dvec_set_si(int n, double *y, int *x);
-// y=x
-void dvec_set_s(int n, double *y, char **x);
+void dvec_set_d(int n, double *y, double *x);
 // x=nan(n,1)
 void dvec_set_nan(int n, double *x);
 // x=inf(n,1)
@@ -35,21 +29,16 @@ void dvec_set_unit(int n, double *x, int k);
 void dvec_set_grid(int n, double *x);
 // x=rand(n,1)*a+b
 void dvec_set_rand(int n, double *x, double a, double b);
-// y=x
-void dvec_set(int n, double *y, double *x);
-void dvec_set_z(int n, double *y, dcomplex *x);
-void dvec_set_r(int n, double *y, rmulti **x);
-void dvec_set_c(int n, double *y, cmulti **x);
-void dvec_set_ir(int n, double *y, rmulti **x0, rmulti **x1);
-void dvec_set_ic(int n, double *y, cmulti **x0, cmulti **x1);
 
 /*
  * casting
  */
-// y=int(x)
+// int <-> double
 void dvec_get_si(int n, int *y, double *x);
-// y=char(x)
+void dvec_set_si(int n, double *y, int *x);
+// char <-> double
 void dvec_get_s(int n, char **y, double *x, char format, int digits);
+void dvec_set_s(int n, double *y, char **x);
 
 /*
  * convert its elements
@@ -70,22 +59,40 @@ void dvec_quick_sort(int n, double *x, int *I, int left, int right);
 void dvec_sort_index(int *I, int n, double *X);
 
 /*
- * convert itself to itself
+ * y=f(x)
  */
-
 // y=x
 void dvec_copy(int n, double *y, double *x);
 // Y[i]=X[I[i]], 0<=i<n
 void dvec_copy_index(int n, double *Y, double *X, int *I);
+
+
+/*
+ * z=f(x,y)
+ */
 // z=x+y
 void dvec_add_dvec(int n, double *z, double *x, double *y);
-void dvec_add_dscalar(int n, double *y, double *x, double a);
+void dvec_add_dscalar(int n, double *z, double *x, double y);
+void dscalar_add_dvec(int n, double *z, double x, double *y);
 // z=x-y
 void dvec_sub_dvec(int n, double *z, double *x, double *y);
 void dvec_sub_dscalar(int n, double *z, double *x, double y);
 void dscalar_sub_dvec(int n, double *z, double x, double *y);
+// z=x*y
+void dvec_mul_dvec(int n, double *z, double *x, double *y);
+void dvec_mul_dscalar(int n, double *z, double *x, double y);
+void dscalar_mul_dvec(int n, double *z, double x, double *y);
 // z=x/y
-void dvec_div_d2(int n, double *z, double *x, double y);
+void dvec_div_dvec(int n, double *z, double *x, double *y);
+void dvec_div_dscalar(int n, double *z, double *x, double y);
+void dscalar_div_dvec(int n, double *z, double x, double *y);
+
+
+/*
+ * others
+ */
+
+
 // y=y+a*x
 void dvec_add_scaled(int n, double *y, double a, double *x);
 // y=y-a*x
@@ -118,8 +125,6 @@ double pow_si(double x, int n);
 // z=x^y
 void dvec_pow_si(int n, double *z, double *x, long y);
 void dvec_pow_d(int n, double *z, double *x, double y);
-
-
 // y=x.^2
 void dvec_pow2(int n, double *y, double *x);
 // y=log2(abs(x))

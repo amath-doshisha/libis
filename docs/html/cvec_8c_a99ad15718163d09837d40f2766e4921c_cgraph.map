@@ -1,11 +1,11 @@
 <map id="cvec_average" name="cvec_average">
 <area shape="rect" id="node2" href="$cvec_8c.html#a168152b438f8db52cecef1e54b5d5065" title="cmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="137,56,204,83"/>
-<area shape="rect" id="node9" href="$cmulti_8c.html#a16602db623a954b5b23971bcd574ef01" title="cmulti型の割り算 z=x/y " alt="" coords="141,107,200,133"/>
+<area shape="rect" id="node9" href="$cmulti_8c.html#a16602db623a954b5b23971bcd574ef01" title="z=x/y " alt="" coords="141,107,200,133"/>
 <area shape="rect" id="node3" href="$cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="252,5,317,32"/>
-<area shape="rect" id="node7" href="$cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="375,56,419,83"/>
+<area shape="rect" id="node7" href="$cmulti_8c.html#a96dd94583d43f5d1a56d2b5e307a8240" title="z=x+y " alt="" coords="370,56,425,83"/>
 <area shape="rect" id="node4" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="365,5,429,32"/>
 <area shape="rect" id="node5" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="477,5,529,32"/>
 <area shape="rect" id="node6" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="577,56,675,83"/>
-<area shape="rect" id="node8" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="482,56,525,83"/>
-<area shape="rect" id="node10" href="$is__rmulti_8h.html#a54b95f5eb1695065055d4fffa7197b2f" title="rmulti型の割り算 z=x/y " alt="" coords="257,107,313,133"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="478,56,529,83"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a54b95f5eb1695065055d4fffa7197b2f" title="z=x/y " alt="" coords="257,107,313,133"/>
 </map>

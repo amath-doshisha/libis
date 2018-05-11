@@ -531,6 +531,20 @@ void cvec_set_d(int n, cmulti **y, double *x)
   for(i=0; i<n; i++){ cset_d(y[i],x[i]); }
 }
 
+// y=x
+void dvec_set_c(int n, double *y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=rget_d(C_R(x[i])); }
+}
+
+// y=x
+void zvec_set_c(int n, dcomplex *y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=cget_z(x[i]); }
+}
+
 /**
  @brief cmulti型のベクトルの値を設定.
  */
@@ -933,17 +947,19 @@ void cvec_absc(int n, cmulti **y, cmulti **x)
   for(i=0; i<n; i++){ cabsc(y[i],x[i]); }
 }
 
+/////////////////////////////////////////////////////
+
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
  */
 void cvec_add_cvec(int n, cmulti **z, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cadd(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ cadd_c(z[i],x[i],y[i]); }
 }
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
  */
 void cvec_add_rvec(int n, cmulti **z, cmulti **x, rmulti **y)
 {
@@ -952,43 +968,7 @@ void cvec_add_rvec(int n, cmulti **z, cmulti **x, rmulti **y)
 }
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
- */
-void rvec_add_zvec(int n, cmulti **z, rmulti **x, dcomplex *y)
-{
-  int i;
-  for(i=0; i<n; i++){ radd_z(z[i],x[i],y[i]); }
-}
-
-/**
- @brief cmulti型のベクトルの足し算 z=x+y
- */
-void zvec_add_rvec(int n, cmulti **z, dcomplex *x, rmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ zadd_r(z[i],x[i],y[i]); }
-}
-
-/**
- @brief cmulti型のベクトルの足し算 z=x+y
- */
-void dvec_add_cvec(int n, cmulti **z, double *x, cmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ cadd_d(z[i],y[i],x[i]); }
-}
-
-/**
- @brief cmulti型のベクトルの足し算 z=x+y
- */
-void zvec_add_cvec(int n, cmulti **z, dcomplex *x, cmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ cadd_z(z[i],y[i],x[i]); }
-}
-
-/**
- @brief cmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
  */
 void rvec_add_cvec(int n, cmulti **z, rmulti **x, cmulti **y)
 {
@@ -997,7 +977,25 @@ void rvec_add_cvec(int n, cmulti **z, rmulti **x, cmulti **y)
 }
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
+ */
+void cvec_add_zvec(int n, cmulti **z, cmulti **x, dcomplex *y)
+{
+  int i;
+  for(i=0; i<n; i++){ cadd_z(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
+void zvec_add_cvec(int n, cmulti **z, dcomplex *x, cmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ cadd_z(z[i],y[i],x[i]); }
+}
+
+/**
+ @brief z=x+y
  */
 void cvec_add_dvec(int n, cmulti **z, cmulti **x, double *y)
 {
@@ -1006,28 +1004,46 @@ void cvec_add_dvec(int n, cmulti **z, cmulti **x, double *y)
 }
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
  */
-void cvec_add_zvec(int n, cmulti **z, cmulti **x, dcomplex *y)
+void dvec_add_cvec(int n, cmulti **z, double *x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cadd_z(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ cadd_d(z[i],y[i],x[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
+void rvec_add_zvec(int n, cmulti **z, rmulti **x, dcomplex *y)
+{
+  int i;
+  for(i=0; i<n; i++){ radd_z(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
+void zvec_add_rvec(int n, cmulti **z, dcomplex *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ zadd_r(z[i],x[i],y[i]); }
 }
 
 ///////////////////////////////////////////////////////
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
  */
 void cvec_add_cscalar(int n, cmulti **z, cmulti **x, cmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ cadd(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cadd_c(z[i],x[i],y); }
 }
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void cvec_add_rscalar(int n, cmulti **z, cmulti **x, rmulti *y)
 {
   int i;
@@ -1035,8 +1051,17 @@ void cvec_add_rscalar(int n, cmulti **z, cmulti **x, rmulti *y)
 }
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
-*/
+ @brief z=x+y
+ */
+void rvec_add_cscalar(int n, cmulti **z, rmulti **x, cmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ cadd_r(z[i],y,x[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
 void cvec_add_zscalar(int n, cmulti **z, cmulti **x, dcomplex y)
 {
   int i;
@@ -1044,33 +1069,48 @@ void cvec_add_zscalar(int n, cmulti **z, cmulti **x, dcomplex y)
 }
 
 /**
- @brief cmulti型のベクトルの足し算 z=x+y
-*/
+ @brief z=x+y
+ */
+void zvec_add_cscalar(int n, cmulti **z, dcomplex *x, cmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ cadd_z(z[i],y,x[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
 void cvec_add_dscalar(int n, cmulti **z, cmulti **x, double y)
 {
   int i;
   for(i=0; i<n; i++){ cadd_d(z[i],x[i],y); }
 }
 
-// z=x+y
+/**
+ @brief z=x+y
+ */
 void dvec_add_cscalar(int n, cmulti **z, double *x, cmulti *y)
 {
-    int i;
-    for(i=0; i<n; i++){ cadd_d(z[i],y,x[i]); }
+  int i;
+  for(i=0; i<n; i++){ cadd_d(z[i],y,x[i]); }
 }
 
-// z=x+y
+/**
+ @brief z=x+y
+ */
+void rvec_add_zscalar(int n, cmulti **z, rmulti **x, dcomplex y)
+{
+  int i;
+  for(i=0; i<n; i++){ radd_z(z[i],x[i],y); }
+}
+
+/**
+ @brief z=x+y
+ */
 void zvec_add_rscalar(int n, cmulti **z, dcomplex *x, rmulti *y)
 {
-    int i;
-    for(i=0; i<n; i++){ zadd_r(z[i],x[i],y); }
-}
-
-// z=x+y
-void zvec_add_cscalar(int n, cmulti **z, dcomplex *x, cmulti *y)
-{
-    int i;
-    for(i=0; i<n; i++){ cadd_z(z[i],y,x[i]); }
+  int i;
+  for(i=0; i<n; i++){ zadd_r(z[i],x[i],y); }
 }
 
 ///////////////////////////////////////////////////////
@@ -1081,7 +1121,7 @@ void zvec_add_cscalar(int n, cmulti **z, dcomplex *x, cmulti *y)
 void cvec_sub_cvec(int n, cmulti **z, cmulti **x, cmulti **y)
 {
     int i;
-    for(i=0; i<n; i++){ csub(z[i],x[i],y[i]); }
+    for(i=0; i<n; i++){ csub_c(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1165,7 +1205,7 @@ void rvec_sub_zvec(int n, cmulti **z, rmulti **x, dcomplex *y)
 void cvec_sub_cscalar(int n, cmulti **z, cmulti **x, cmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ csub(z[i],x[i],y); }
+  for(i=0; i<n; i++){ csub_c(z[i],x[i],y); }
 }
 
 /**
@@ -1174,7 +1214,7 @@ void cvec_sub_cscalar(int n, cmulti **z, cmulti **x, cmulti *y)
 void cscalar_sub_cvec(int n, cmulti **z, cmulti *x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ csub(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ csub_c(z[i],x,y[i]); }
 }
 
 /**
@@ -1318,25 +1358,25 @@ void rscalar_sub_zvec(int n, cmulti **z, rmulti *x, dcomplex *y)
 /**
  @brief cmulti型のベクトルの要素ごとの掛け算 z=x.*y
 */
-void cvec_mul(int n, cmulti **z, cmulti **x, cmulti **y)
+void cvec_mul_cvec(int n, cmulti **z, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cmul(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ cmul_c(z[i],x[i],y[i]); }
 }
 
 /**
  @brief cmulti型のベクトルxとスカラーyの掛け算 z=x*y
 */
-void cvec_mul_c(int n, cmulti **z, cmulti **x, cmulti *y)
+void cvec_mul_cscalar(int n, cmulti **z, cmulti **x, cmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ cmul(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cmul_c(z[i],x[i],y); }
 }
 
 /**
  @brief cmulti型のベクトルxとスカラーyの掛け算 z=x*y
 */
-void cvec_mul_z(int n, cmulti **z, cmulti **x, dcomplex y)
+void cvec_mul_zscalar(int n, cmulti **z, cmulti **x, dcomplex y)
 {
   int i;
   for(i=0; i<n; i++){ cmul_z(z[i],x[i],y); }
@@ -1345,7 +1385,7 @@ void cvec_mul_z(int n, cmulti **z, cmulti **x, dcomplex y)
 /**
  @brief cmulti型のベクトルxとスカラーyの掛け算 z=x*y
 */
-void cvec_mul_r(int n, cmulti **z, cmulti **x, rmulti *y)
+void cvec_mul_rscalar(int n, cmulti **z, cmulti **x, rmulti *y)
 {
   int i;
   for(i=0; i<n; i++){ cmul_r(z[i],x[i],y); }
@@ -1354,7 +1394,7 @@ void cvec_mul_r(int n, cmulti **z, cmulti **x, rmulti *y)
 /**
  @brief cmulti型のベクトルxとスカラーyの掛け算 z=x*y
 */
-void cvec_mul_d(int n, cmulti **z, cmulti **x, double y)
+void cvec_mul_dscalar(int n, cmulti **z, cmulti **x, double y)
 {
   int i;
   for(i=0; i<n; i++){ cmul_d(z[i],x[i],y); }
@@ -1456,7 +1496,7 @@ void cvec_sub_mul_d(int n, cmulti **z, cmulti **x, double y)
 void cvec_dot(int n, cmulti **z, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdot(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ cdot_c(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1465,7 +1505,7 @@ void cvec_dot(int n, cmulti **z, cmulti **x, cmulti **y)
 void cvec_dot_c1(int n, cmulti **z, cmulti *x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdot(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ cdot_c(z[i],x,y[i]); }
 }
 
 /**
@@ -1474,7 +1514,7 @@ void cvec_dot_c1(int n, cmulti **z, cmulti *x, cmulti **y)
 void cvec_dot_c2(int n, cmulti **z, cmulti **x, cmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ cdot(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cdot_c(z[i],x[i],y); }
 }
 
 /**
@@ -1483,7 +1523,7 @@ void cvec_dot_c2(int n, cmulti **z, cmulti **x, cmulti *y)
 void cvec_dot_z1(int n, cmulti **z, dcomplex x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdot_z1(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ zdot_c(z[i],x,y[i]); }
 }
 
 /**
@@ -1492,7 +1532,7 @@ void cvec_dot_z1(int n, cmulti **z, dcomplex x, cmulti **y)
 void cvec_dot_z2(int n, cmulti **z, cmulti **x, dcomplex y)
 {
   int i;
-  for(i=0; i<n; i++){ cdot_z2(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cdot_z(z[i],x[i],y); }
 }
 
 /**
@@ -1817,7 +1857,7 @@ void cvec_sum(cmulti *value, int n, cmulti **x)
 {
   int i;
   cset_zero(value);
-  for(i=0; i<n; i++){ cadd(value,value,x[i]); }
+  for(i=0; i<n; i++){ cadd_c(value,value,x[i]); }
 }
 
 /**
@@ -1871,82 +1911,82 @@ void cvec_min(cmulti *value, int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの要素ごとの割り算 z=x./y
 */
-void cvec_div(int n, cmulti **z, cmulti **x, cmulti **y)
+void cvec_div_cvec(int n, cmulti **z, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ cdiv_c(z[i],x[i],y[i]); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x./y
 */
-void cvec_div_c1(int n, cmulti **z, cmulti *x, cmulti **y)
+void cscalar_div_cvec(int n, cmulti **z, cmulti *x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ cdiv_c(z[i],x,y[i]); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x/y
 */
-void cvec_div_c2(int n, cmulti **z, cmulti **x, cmulti *y)
+void cvec_div_cscalar(int n, cmulti **z, cmulti **x, cmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cdiv_c(z[i],x[i],y); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x./y
 */
-void cvec_div_r1(int n, cmulti **z, rmulti *x, cmulti **y)
+void rscalar_div_cvec(int n, cmulti **z, rmulti *x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv_r1(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rdiv_c(z[i],x,y[i]); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x/y
 */
-void cvec_div_r2(int n, cmulti **z, cmulti **x, rmulti *y)
+void cvec_div_rscalar(int n, cmulti **z, cmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv_r2(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cdiv_r(z[i],x[i],y); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x./y
 */
-void cvec_div_z1(int n, cmulti **z, dcomplex x, cmulti **y)
+void zscalar_div_cvec(int n, cmulti **z, dcomplex x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv_z1(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ zdiv_c(z[i],x,y[i]); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x/y
 */
-void cvec_div_z2(int n, cmulti **z, cmulti **x, dcomplex y)
+void cvec_div_zscalar(int n, cmulti **z, cmulti **x, dcomplex y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv_z2(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cdiv_z(z[i],x[i],y); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x./y
 */
-void cvec_div_d1(int n, cmulti **z, double x, cmulti **y)
+void dscalar_div_cvec(int n, cmulti **z, double x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv_d1(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ ddiv_c(z[i],x,y[i]); }
 }
 
 /**
  @brief cmulti型のスカラーとベクトルの要素との割り算 z=x/y
 */
-void cvec_div_d2(int n, cmulti **z, cmulti **x, double y)
+void cvec_div_dscalar(int n, cmulti **z, cmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ cdiv_d2(z[i],x[i],y); }
+  for(i=0; i<n; i++){ cdiv_d(z[i],x[i],y); }
 }
 
 /**
@@ -1997,7 +2037,7 @@ void cvec_normalize(int n, cmulti **y, cmulti **x)
   a=rallocate_prec(cvec_get_prec_max(n,y));
   cvec_norm2(a,n,x);   // a=sqrt(x'*x)
   rinv(a,a);           // a=1/sqrt(x'*x)
-  cvec_mul_r(n,y,x,a); // y=x/sqrt(x'*x)
+  cvec_mul_rscalar(n,y,x,a); // y=x/sqrt(x'*x)
   a=rfree(a);
 }
 
@@ -2018,8 +2058,8 @@ void cvec_normalize_sgn(int n, cmulti **y, cmulti **x)
   cnormalize(b,x[k]);     // b=sgn(x[k])
   cconj(b,b);             // b=conj(sgn(x[k]))
   cvec_norm2(a,n,x);      // a=sqrt(x'*x)
-  cdiv_r2(b,b,a);         // b=conj(sgn(x[k]))/sqrt(x'*x)
-  cvec_mul_c(n,y,x,b);    // y=x*(conj(sgn(x[k]))/sqrt(x'*x))
+  cdiv_r(b,b,a);         // b=conj(sgn(x[k]))/sqrt(x'*x)
+  cvec_mul_cscalar(n,y,x,b);    // y=x*(conj(sgn(x[k]))/sqrt(x'*x))
   // done
   a=rfree(a);
   b=cfree(b);
@@ -2065,10 +2105,10 @@ void cvec_max_abs2_sub(rmulti *value, int n, cmulti **x, cmulti **y)
   rmulti *b=NULL;
   a=callocate_prec(rget_prec(value));
   b=rallocate_prec(rget_prec(value));
-  csub(a,x[0],y[0]);  // value=x[0]-y[0]
+  csub_c(a,x[0],y[0]);  // value=x[0]-y[0]
   cabs2(value,a);     // value=(abs(x[0]-y[0]))^2
   for(i=1; i<n; i++){
-    csub(a,x[i],y[i]); // a=x[i]-y[i]
+    csub_c(a,x[i],y[i]); // a=x[i]-y[i]
     cabs2(b,a);        // b=(abs(x[i]-y[i]))^2
     if(rgt(b,value)){
       rcopy(value,b);     // value=b
@@ -2140,7 +2180,7 @@ void cvec_sum_abs_sub(rmulti *value, int n, cmulti **x, cmulti **y)
   a=callocate_prec(rget_prec(value));
   rset_zero(value); // value=0
   for(i=0; i<n; i++){
-    csub(a,x[i],y[i]); // a=x[i]-y[i]
+    csub_c(a,x[i],y[i]); // a=x[i]-y[i]
     cadd_abs(value,a); // value+=abs(x[i]-y[i])
   }
   a=cfree(a);
@@ -2217,10 +2257,10 @@ void cvec_max_abs_sub(rmulti *value, int n, cmulti **x, cmulti **y)
   rmulti *b=NULL;
   a=callocate_prec(rget_prec(value));
   b=rallocate_prec(rget_prec(value));
-  csub(a,x[0],y[0]);  // a=x[0]-y[0]
+  csub_c(a,x[0],y[0]);  // a=x[0]-y[0]
   cabs2(value,a);     // value=abs(x[0]-y[0])^2
   for(i=1; i<n; i++){
-    csub(a,x[i],y[i]); // a=x[i]-y[i]
+    csub_c(a,x[i],y[i]); // a=x[i]-y[i]
     cabs2(b,a);        // b=abs(x[i]-y[i])^2
     if(rgt(b,value)){
       rcopy(value,b);  // value=b
@@ -2292,9 +2332,9 @@ void cvec_dcos(cmulti *value, int n, cmulti **x, cmulti **y)
   a=rallocate_prec(cget_prec(value));
   cvec_sum_dot(value,n,x,y); // value=x'*y
   cvec_norm2(a,n,x);         // a=sqrt(x'*x)
-  cdiv_r2(value,value,a);    // value=x'*y/sqrt(x'*x)
+  cdiv_r(value,value,a);    // value=x'*y/sqrt(x'*x)
   cvec_norm2(a,n,y);         // a=sqrt(y'*y)
-  cdiv_r2(value,value,a);    // value=x'*y/sqrt(x'*x)/sqrt(y'*y)
+  cdiv_r(value,value,a);    // value=x'*y/sqrt(x'*x)/sqrt(y'*y)
   a=rfree(a);
 }
 
@@ -2488,12 +2528,12 @@ void cvec_func(cmulti *y, func_t *f, int n, cmulti **x)
         if(0<=func_var_num(f,i) && func_var_num(f,i)<n){
           cpow_si(a,x[func_var_num(f,i)],func_var_pow(f,i));
         }else{ cset_nan(a); }
-        cmul(z,z,a);
+        cmul_c(z,z,a);
       }
     }
   }
-  else if(func_is_add(f))    { cset_d(z,0); for(i=0; i<func_asize(f); i++){ cvec_func(a,func_aget(f,i),n,x); cadd(z,z,a); } }
-  else if(func_is_mul(f))    { cset_d(z,1); for(i=0; i<func_asize(f); i++){ cvec_func(a,func_aget(f,i),n,x); cmul(z,z,a); } }
+  else if(func_is_add(f))    { cset_d(z,0); for(i=0; i<func_asize(f); i++){ cvec_func(a,func_aget(f,i),n,x); cadd_c(z,z,a); } }
+  else if(func_is_mul(f))    { cset_d(z,1); for(i=0; i<func_asize(f); i++){ cvec_func(a,func_aget(f,i),n,x); cmul_c(z,z,a); } }
   else if(func_is(f,"sqrt")) { cvec_func(a,func_aget(f,0),n,x); csqrt_c(z,a); }
   else if(func_is(f,"exp"))  { cvec_func(a,func_aget(f,0),n,x); cexp_c(z,a); }
   else if(func_is(f,"log"))  { cvec_func(a,func_aget(f,0),n,x); clog_c(z,a); }

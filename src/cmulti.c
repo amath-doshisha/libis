@@ -357,8 +357,8 @@ void cset_si(cmulti *x, long real)
 void cset(cmulti *y, cmulti *x)
 {
   if(y==x){ return; }
-  rset(C_R(y),C_R(x));
-  rset(C_I(y),C_I(x));
+  rset_r(C_R(y),C_R(x));
+  rset_r(C_I(y),C_I(x));
 }
 
 /**
@@ -375,7 +375,7 @@ void cset_d(cmulti *x, double real)
  */
 void cset_r(cmulti *y, rmulti *x)
 {
-  rset  (C_R(y),x);
+  rset_r  (C_R(y),x);
   rset_d(C_I(y),0);
 }
 
@@ -522,7 +522,7 @@ void cinv(cmulti *z, cmulti *x)
   RAc(den,z); CAc(a,z);
   cabs2(den,x);     // den=|x|^2
   cconj(a,x);       // z=conj(x)
-  cdiv_r2(a,a,den); // z/=den
+  cdiv_r(a,a,den); // z/=den
   ccopy(z,a);       // z=a
   RF(den); CF(a);
 }
@@ -538,7 +538,7 @@ void cinv_ws(cmulti *z, cmulti *x, int n_rws, rmulti **rws, int n_cws, cmulti **
   if(n_cws<1){ ERROR_EXIT("Error `n_cws=%d<1' in cinv_ws().\n",n_cws); }
   cabs2_ws(rws[0],x,n_rws-1,rws+1); // rws[0]=|x|^2
   cconj(cws[0],x);                    // z=conj(x)
-  cdiv_r2(cws[0],cws[0],rws[0]);      // z/=rws[0]
+  cdiv_r(cws[0],cws[0],rws[0]);      // z/=rws[0]
   ccopy(z,cws[0]);                    // z=cws[0]
 }
 
@@ -587,7 +587,7 @@ void cadd_abs(rmulti *y, cmulti *x)
   rmulti *a=NULL;
   RAr(a,y);
   cabsv(a,x);  // a=abs(x)
-  radd(y,y,a); // y=y+a
+  radd_r(y,y,a); // y=y+a
   RF(a);
 }
 
@@ -596,7 +596,7 @@ void cadd_abs(rmulti *y, cmulti *x)
 */
 void cabs2(rmulti *y, cmulti *x)
 {
-  rmul(y,C_R(x),C_R(x));     // y=x.r*x.r
+  rmul_r(y,C_R(x),C_R(x));     // y=x.r*x.r
   radd_mul(y,C_I(x),C_I(x)); // y+=x.i*x.i
 }
 
@@ -605,7 +605,7 @@ void cabs2(rmulti *y, cmulti *x)
 */
 void cabs2_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws)
 {
-  rmul(y,C_R(x),C_R(x));                  // y=x.r*x.r
+  rmul_r(y,C_R(x),C_R(x));                  // y=x.r*x.r
   radd_mul_ws(y,C_I(x),C_I(x),n_rws,rws); // y+=x.i*x.i
 }
 
@@ -617,7 +617,7 @@ void cadd_abs2(rmulti *y, cmulti *x)
   rmulti *a=NULL;
   RAr(a,y);
   cabs2(a,x);  // a=abs(x)^2
-  radd(y,y,a); // y=y+a
+  radd_r(y,y,a); // y=y+a
   RF(a);
 }
 
@@ -651,7 +651,7 @@ void cnormalize(cmulti *y, cmulti *x)
   rmulti *a=NULL;
   RAc(a,y);
   cabsv(a,x);     // a=abs(x)
-  cdiv_r2(y,x,a); // y=x/a
+  cdiv_r(y,x,a); // y=x/a
   RF(a);
 }
 
@@ -738,8 +738,8 @@ void csin_c(cmulti *y, cmulti *x)
   rcos(c,C_R(x));
   rsinh(sh,C_I(x));
   rcosh(ch,C_I(x));
-  rmul(C_R(y),s,ch);
-  rmul(C_I(y),c,sh);
+  rmul_r(C_R(y),s,ch);
+  rmul_r(C_I(y),c,sh);
   RF(c); RF(ch); RF(s); RF(sh);
 }
 
@@ -756,8 +756,8 @@ void ccos_c(cmulti *y, cmulti *x)
   rcos(c,C_R(x));
   rsinh(sh,C_I(x));
   rcosh(ch,C_I(x));
-  rmul(C_R(y),c,ch);
-  rmul(C_I(y),s,sh);
+  rmul_r(C_R(y),c,ch);
+  rmul_r(C_I(y),s,sh);
   rneg(C_I(y),C_I(y));
   RF(c); RF(ch); RF(s); RF(sh);
 }
@@ -771,7 +771,7 @@ void ctan_c(cmulti *y, cmulti *x)
   CAc(c,y); CAc(s,y);
   csin_c(s,x);
   ccos_c(c,x);
-  cdiv(y,s,c); // y=sin(x)/cos(x)
+  cdiv_c(y,s,c); // y=sin(x)/cos(x)
   CF(c); CF(s);
 }
 
@@ -798,15 +798,15 @@ void casin_c(cmulti *y, cmulti *x)
     rset_zero(C_I(y));
   }else{
     CAc(a,y); CAc(b,y);
-    cmul(a,x,x);     // a=x^2
+    cmul_c(a,x,x);     // a=x^2
     csub_si1(a,1,a); // a=1-x^2
     csqrt_c(a,a);    // a=sqrt(1-x^2)
     cset_Z(b,0,1);  // b=I
-    cmul(b,b,x);     // b=I*x
-    cadd(a,a,b);     // a=I*x+sqrt(1-x^2)
+    cmul_c(b,b,x);     // b=I*x
+    cadd_c(a,a,b);     // a=I*x+sqrt(1-x^2)
     clog_c(a,a);     // a=log(I*x+sqrt(1-x^2))
     cset_Z(b,0,-1); // b=-I
-    cmul(a,a,b);     // a=-I*log(I*x+sqrt(1-x^2))
+    cmul_c(a,a,b);     // a=-I*log(I*x+sqrt(1-x^2))
     ccopy(y,a);      // y=-I*log(I*x+sqrt(1-x^2))
     CF(a); CF(b);
   }
@@ -835,13 +835,13 @@ void cacos_c(cmulti *y, cmulti *x)
     rset_zero(C_I(y));
   }else{
     CAc(a,y); CAc(b,y);
-    cmul(a,x,x);     // a=x^2
+    cmul_c(a,x,x);     // a=x^2
     csub_si2(a,a,1); // a=x^2-1
     csqrt_c(a,a);    // a=sqrt(x^2-1)
-    cadd(a,a,x);     // a=x+sqrt(x^2-1)
+    cadd_c(a,a,x);     // a=x+sqrt(x^2-1)
     clog_c(a,a);     // a=log(x+sqrt(x^2-1))
     cset_Z(b,0,-1); // b=-I
-    cmul(a,a,b);     // a=-I*log(I*x+sqrt(1-x^2))
+    cmul_c(a,a,b);     // a=-I*log(I*x+sqrt(1-x^2))
     ccopy(y,a);      // y=-I*log(I*x+sqrt(1-x^2))
     CF(a); CF(b);
   }
@@ -872,10 +872,10 @@ void catan_c(cmulti *y, cmulti *x)
     CAc(a,y); CAc(b,y);
     cadd_si(a,x,1);    // a=1+x
     csub_si1(b,1,x);   // b=1-x
-    cdiv(a,a,b);       // a=(1+x)/(1-x)
+    cdiv_c(a,a,b);       // a=(1+x)/(1-x)
     clog_c(a,a);       // a=log((1+x)/(1-x))
     cset_Z(b,0,-0.5); // b=-I/2
-    cmul(a,a,b);       // a=(-I/2)*log((1+x)/(1-x))
+    cmul_c(a,a,b);       // a=(-I/2)*log((1+x)/(1-x))
     ccopy(y,a);        // y=(-I/2)*log((1+x)/(1-x))
     CF(a); CF(b);
   }
@@ -894,8 +894,8 @@ void csinh_c(cmulti *y, cmulti *x)
   rcosh(ch,C_R(x));
   rsin(s,C_I(x));
   rcos(c,C_I(x));
-  rmul(C_R(y),sh,c);
-  rmul(C_I(y),ch,s);
+  rmul_r(C_R(y),sh,c);
+  rmul_r(C_I(y),ch,s);
   RF(c); RF(ch); RF(s); RF(sh);
 }
 
@@ -912,8 +912,8 @@ void ccosh_c(cmulti *y, cmulti *x)
   rcosh(ch,C_R(x));
   rsin(s,C_I(x));
   rcos(c,C_I(x));
-  rmul(C_R(y),ch,c);
-  rmul(C_I(y),sh,s);
+  rmul_r(C_R(y),ch,c);
+  rmul_r(C_I(y),sh,s);
   RF(c); RF(ch); RF(s); RF(sh);
 }
 
@@ -926,7 +926,7 @@ void ctanh_c(cmulti *y, cmulti *x)
   CAc(ch,y); CAc(sh,y);
   csinh_c(sh,x);
   ccosh_c(ch,x);
-  cdiv(y,sh,ch); // y=sinh(x)/cosh(x)
+  cdiv_c(y,sh,ch); // y=sinh(x)/cosh(x)
   CF(ch); CF(sh);
 }
 
@@ -953,10 +953,10 @@ void casinh_c(cmulti *y, cmulti *x)
     rset_zero(C_I(y));
   }else{
     CAc(a,y);
-    cmul(a,x,x);
+    cmul_c(a,x,x);
     cadd_si(a,a,1);
     csqrt_c(a,a);
-    cadd(a,a,x);
+    cadd_c(a,a,x);
     clog_c(a,a);
     ccopy(y,a);
     CF(a);
@@ -986,10 +986,10 @@ void cacosh_c(cmulti *y, cmulti *x)
     rset_zero(C_I(y));
   }else{
     CAc(a,y);
-    cmul(a,x,x);
+    cmul_c(a,x,x);
     csub_si2(a,a,1);
     csqrt_c(a,a);
-    cadd(a,a,x);
+    cadd_c(a,a,x);
     clog_c(a,a);
     ccopy(y,a);
     CF(a);
@@ -1021,7 +1021,7 @@ void catanh_c(cmulti *y, cmulti *x)
     CAc(a,y); CAc(b,y);
     cadd_si(a,x,1);  // a=1+x
     csub_si1(b,1,x); // b=1-x
-    cdiv(a,a,b);     // a=(1+x)/(1-x)
+    cdiv_c(a,a,b);     // a=(1+x)/(1-x)
     clog_c(a,a);     // a=log((1+x)/(1-x))
     cdiv_si2(a,a,2); // a=(1/2)*log((1+x)/(1-x))
     ccopy(y,a);      // y=(1/2)*log((1+x)/(1-x))
@@ -1036,18 +1036,17 @@ void catanh_c(cmulti *y, cmulti *x)
 /** @name cmulti型の２入力の数学演算子 */
 /** @{ */
 
-
 /**
- @brief cmulti型の足し算 z=x+y
-*/
-void cadd(cmulti *z, cmulti *x, cmulti *y)
+ @brief z=x+y
+ */
+void cadd_c(cmulti *z, cmulti *x, cmulti *y)
 {
-  radd(C_R(z),C_R(x),C_R(y)); // z.r=x.r+y.r
-  radd(C_I(z),C_I(x),C_I(y)); // z.i=x.i+y.i
+  radd_r(C_R(z),C_R(x),C_R(y)); // z.r=x.r+y.r
+  radd_r(C_I(z),C_I(x),C_I(y)); // z.i=x.i+y.i
 }
 
 /**
- @brief cmulti型の足し算 z=x+y
+ @brief z=x+y
 */
 void cadd_z(cmulti *z, cmulti *x, dcomplex y)
 {
@@ -1056,25 +1055,43 @@ void cadd_z(cmulti *z, cmulti *x, dcomplex y)
 }
 
 /**
- @brief cmulti型の足し算 z=x+y
-*/
-void cadd_r(cmulti *z, cmulti *x, rmulti *y)
+ @brief z=x+y
+ */
+void zadd_c(cmulti *z, dcomplex x, cmulti *y)
 {
-  radd(C_R(z),C_R(x),y); // z.r=x.r+y
-  rcopy(C_I(z),C_I(x));  // z.i=x.i
+  radd_d(C_R(z),C_R(y),Z_R(x)); // z.r=x.r+y.r
+  radd_d(C_I(z),C_I(y),Z_I(x)); // z.i=x.i+y.i
 }
 
 /**
- @brief cmulti型の足し算 z=x+y
+ @brief z=x+y
+ */
+void cadd_r(cmulti *z, cmulti *x, rmulti *y)
+{
+  radd_r(C_R(z),C_R(x),y); // z.r=x.r+y
+  rset_r(C_I(z),C_I(x));   // z.i=x.i
+}
+
+/**
+ @brief z=x+y
+ */
+void radd_c(cmulti *z, rmulti *x, cmulti *y)
+{
+  radd_r(C_R(z),x,C_R(y)); // z.r=x+y.r
+  rset_r(C_I(z),  C_I(y)); // z.i=  y.i
+}
+
+/**
+ @brief z=x+y
  */
 void radd_z(cmulti *z, rmulti *x, dcomplex y)
 {
   radd_d(C_R(z),x,Z_R(y)); // z.r=x+y.r
-  rset_d(C_I(z),Z_I(y));   // z.i=y.i
+  rset_d(C_I(z),Z_I(y));   // z.i=  y.i
 }
 
 /**
- @brief cmulti型の足し算 z=x+y
+ @brief z=x+y
  */
 void zadd_r(cmulti *z, dcomplex x, rmulti *y)
 {
@@ -1083,46 +1100,55 @@ void zadd_r(cmulti *z, dcomplex x, rmulti *y)
 }
 
 /**
- @brief cmulti型の足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void cadd_d(cmulti *z, cmulti *x, double y)
 {
   radd_d(C_R(z),C_R(x),y); // z.r=x.r+y
-  rcopy(C_I(z),C_I(x));    // z.i=x.i
+  rset_r(C_I(z),C_I(x));   // z.i=x.i
 }
 
 /**
- @brief cmulti型の足し算 z=x+y
-*/
+ @brief z=x+y
+ */
+void dadd_c(cmulti *z, double x, cmulti *y)
+{
+  radd_d(C_R(z),C_R(y),x); // z.r=x+y.r
+  rset_r(C_I(z),C_I(y));   // z.i=  y.i
+}
+
+/**
+ @brief z=x+y
+ */
 void cadd_ui(cmulti *z, cmulti *x, ulong y)
 {
   radd_ui(C_R(z),C_R(x),y); // z.r=x.r+y
-  rcopy(C_I(z),C_I(x));     // z.i=x.i
+  rset_r (C_I(z),C_I(x));   // z.i=x.i
 }
 
 /**
- @brief cmulti型の足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void cadd_si(cmulti *z, cmulti *x, long y)
 {
   radd_si(C_R(z),C_R(x),y); // z.r=x.r+y
-  rcopy(C_I(z),C_I(x));     // z.i=x.i
+  rset_r (C_I(z),C_I(x));   // z.i=x.i
 }
 
 //////////////////////////////////////////////////////////////
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
-void csub(cmulti *z, cmulti *x, cmulti *y)
+ @brief z=x-y
+ */
+void csub_c(cmulti *z, cmulti *x, cmulti *y)
 {
-  rsub(C_R(z),C_R(x),C_R(y)); // z.r=x.r-y.r
-  rsub(C_I(z),C_I(x),C_I(y)); // z.i=x.i-y.i
+  rsub_r(C_R(z),C_R(x),C_R(y)); // z.r=x.r-y.r
+  rsub_r(C_I(z),C_I(x),C_I(y)); // z.i=x.i-y.i
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void zsub_c(cmulti *z, dcomplex x, cmulti *y)
 {
   dsub_r(C_R(z),Z_R(x),C_R(y)); // z.r=x.r-y.r
@@ -1130,8 +1156,8 @@ void zsub_c(cmulti *z, dcomplex x, cmulti *y)
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void csub_z(cmulti *z, cmulti *x, dcomplex y)
 {
   rsub_d(C_R(z),C_R(x),Z_R(y)); // z.r=x.r-y.r
@@ -1139,60 +1165,58 @@ void csub_z(cmulti *z, cmulti *x, dcomplex y)
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void rsub_c(cmulti *z, rmulti *x, cmulti *y)
 {
-  rsub(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg(C_I(z),C_I(y));   // z.i= -y.i
+  rsub_r(C_R(z),x,C_R(y)); // z.r=x-y.r
+  rneg  (C_I(z),  C_I(y)); // z.i= -y.i
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void csub_r(cmulti *z, cmulti *x, rmulti *y)
 {
-  rsub(C_R(z),C_R(x),y); // z.r=x.r-y
-  rcopy(C_I(z),C_I(x));  // z.i=x.i
+  rsub_r(C_R(z),C_R(x),y); // z.r=x.r-y
+  rset_r(C_I(z),C_I(x));   // z.i=x.i
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void dsub_c(cmulti *z, double x, cmulti *y)
 {
   dsub_r(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg(C_I(z),C_I(y));      // z.i= -y.i
+  rneg  (C_I(z),C_I(y));   // z.i= -y.i
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void csub_d(cmulti *z, cmulti *x, double y)
 {
   rsub_d(C_R(z),C_R(x),y); // z.r=x.r-y
-  rcopy(C_I(z),C_I(x));     // z.i=x.i
+  rset_r(C_I(z),C_I(x));   // z.i=x.i
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
+ @brief z=x-y
  */
 void zsub_r(cmulti *z, dcomplex x, rmulti *y)
 {
-    dsub_r(C_R(z),Z_R(x),y); // z.r=x.r-y
-    rset_d (C_I(z),Z_I(x));   // z.i=x.i
+  dsub_r(C_R(z),Z_R(x),y); // z.r=x.r-y
+  rset_d(C_I(z),Z_I(x));   // z.i=x.i
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
+ @brief z=x-y
  */
 void rsub_z(cmulti *z, rmulti *x, dcomplex y)
 {
-    rsub_d(C_R(z),x,Z_R(y)); // z.r=x.r-y.r
-    rset_d(C_I(z),-Z_I(y));   // z.i=   -y.i
+  rsub_d(C_R(z),x, Z_R(y)); // z.r=x.r-y.r
+  rset_d(C_I(z),  -Z_I(y)); // z.i=   -y.i
 }
-
-//////////////////////////////////////////////////////////////////////////
 
 /**
  @brief cmulti型の引き算 z=x-y
@@ -1200,7 +1224,7 @@ void rsub_z(cmulti *z, rmulti *x, dcomplex y)
 void csub_ui1(cmulti *z, ulong x, cmulti *y)
 {
   rsub_ui1(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg(C_I(z),C_I(y));      // z.i= -y.i
+  rneg    (C_I(z),  C_I(y)); // z.i= -y.i
 }
 
 /**
@@ -1209,7 +1233,7 @@ void csub_ui1(cmulti *z, ulong x, cmulti *y)
 void csub_ui2(cmulti *z, cmulti *x, ulong y)
 {
   rsub_ui2(C_R(z),C_R(x),y); // z.r=x.r-y
-  rcopy(C_I(z),C_I(x));     // z.i=x.i
+  rset_r  (C_I(z),C_I(x));   // z.i=x.i
 }
 
 /**
@@ -1218,7 +1242,7 @@ void csub_ui2(cmulti *z, cmulti *x, ulong y)
 void csub_si1(cmulti *z, long x, cmulti *y)
 {
   rsub_si1(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg(C_I(z),C_I(y));       // z.i= -y.i
+  rneg    (C_I(z),  C_I(y)); // z.i= -y.i
 }
 
 /**
@@ -1227,122 +1251,376 @@ void csub_si1(cmulti *z, long x, cmulti *y)
 void csub_si2(cmulti *z, cmulti *x, long y)
 {
   rsub_si2(C_R(z),C_R(x),y); // z.r=x.r-y
-  rcopy(C_I(z),C_I(x));     // z.i=x.i
+  rset_r  (C_I(z),C_I(x));   // z.i=x.i
+}
+
+//////////////////////////////////////////////////////////////////////////
+
+/**
+ @brief z=x*y
+ */
+void cmul_c_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
+{
+  if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in cmul_ws().\n",n_rws); }
+  if(n_cws<1){ ERROR_EXIT("Error `n_cws=%d<1' in cmul_ws().\n",n_cws); }
+  rmul_r(C_R(cws[0]),C_R(x),C_R(y));                  // z.r =x.r*y.r
+  rsub_mul_ws(C_R(cws[0]),C_I(x),C_I(y),n_rws,rws); // z.r-=x.i*y.i
+  rmul_r(C_I(cws[0]),C_I(x),C_R(y));                  // z.i =x.i*y.r
+  radd_mul_ws(C_I(cws[0]),C_R(x),C_I(y),n_rws,rws); // z.i+=x.r*y.i
+  ccopy(z,cws[0]);                                  // z=cws[0]
 }
 
 /**
- @brief cmulti型の掛け算 z=x*y
-*/
-void cmul(cmulti *z, cmulti *x, cmulti *y)
+ @brief z=x*y
+ */
+void cmul_c(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-      rmul(C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
+  rmul_r  (C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
   rsub_mul(C_R(a),C_I(x),C_I(y)); // z.r-=x.i*y.i
-      rmul(C_I(a),C_I(x),C_R(y)); // z.i =x.i*y.r
+  rmul_r  (C_I(a),C_I(x),C_R(y)); // z.i =x.i*y.r
   radd_mul(C_I(a),C_R(x),C_I(y)); // z.i+=x.r*y.i
   ccopy(z,a);                     // z=a
   CF(a);
 }
 
 /**
- @brief cmulti型の掛け算 z=x*y
-*/
-void cmul_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
-{
-  if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in cmul_ws().\n",n_rws); }
-  if(n_cws<1){ ERROR_EXIT("Error `n_cws=%d<1' in cmul_ws().\n",n_cws); }
-  rmul(C_R(cws[0]),C_R(x),C_R(y));                  // z.r =x.r*y.r
-  rsub_mul_ws(C_R(cws[0]),C_I(x),C_I(y),n_rws,rws); // z.r-=x.i*y.i
-  rmul(C_I(cws[0]),C_I(x),C_R(y));                  // z.i =x.i*y.r
-  radd_mul_ws(C_I(cws[0]),C_R(x),C_I(y),n_rws,rws); // z.i+=x.r*y.i
-  ccopy(z,cws[0]);                                  // z=cws[0]
-}
-
-/**
- @brief cmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
 void cmul_z(cmulti *z, cmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
   CAc(a,z);
   cset_z(a,y); // a=y
-  cmul(z,x,a); // z=x*y
+  cmul_c(z,x,a); // z=x*y
   CF(a);
 }
 
 /**
- @brief cmulti型の掛け算 z=x*y
-*/
-void cmul_r(cmulti *z, cmulti *x, rmulti *y)
+ @brief z=x*y
+ */
+void zmul_c(cmulti *z, dcomplex x, cmulti *y)
 {
-  rmul(C_R(z),C_R(x),y); // z.r=x.r*y
-  rmul(C_I(z),C_I(x),y); // z.i=x.i*y
+  cmulti *a=NULL;
+  CAc(a,z);
+  cset_z(a,x);   // a=x
+  cmul_c(z,a,y); // z=x*y
+  CF(a);
 }
 
 /**
- @brief cmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
+void cmul_r(cmulti *z, cmulti *x, rmulti *y)
+{
+  rmul_r(C_R(z),C_R(x),y); // z.r=x.r*y
+  rmul_r(C_I(z),C_I(x),y); // z.i=x.i*y
+}
+
+/**
+ @brief z=x*y
+ */
+void rmul_c(cmulti *z, rmulti *x, cmulti *y)
+{
+  rmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
+  rmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+}
+
+/**
+ @brief z=x*y
+ */
 void cmul_d(cmulti *z, cmulti *x, double y){
   rmul_d(C_R(z),C_R(x),y); // z.r=x.r*y
   rmul_d(C_I(z),C_I(x),y); // z.i=x.i*y
 }
 
 /**
- @brief cmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
+void dmul_c(cmulti *z, double x, cmulti *y){
+  dmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
+  dmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+}
+
+/**
+ @brief z=x*y
+ */
+void rmul_z(cmulti *z, rmulti *x, dcomplex y){
+  rmul_d(C_R(z),x,Z_R(y)); // z.r=x*y.r
+  rmul_d(C_I(z),x,Z_I(y)); // z.i=x*y.i
+}
+
+/**
+ @brief z=x*y
+ */
+void zmul_r(cmulti *z, dcomplex x, rmulti *y){
+  dmul_r(C_R(z),Z_R(x),y); // z.r=x.r*y
+  dmul_r(C_I(z),Z_I(x),y); // z.i=x.i*y
+}
+
+/**
+ @brief z=x*y
+ */
 void cmul_ui(cmulti *z, cmulti *x, ulong y){
   rmul_ui(C_R(z),C_R(x),y); // z.r=x.r*y
   rmul_ui(C_I(z),C_I(x),y); // z.i=x.i*y
 }
 
 /**
- @brief cmulti型の掛け算 z=x*y
-*/
+ @brief z=x*y
+ */
 void cmul_si(cmulti *z, cmulti *x, long y){
   rmul_si(C_R(z),C_R(x),y); // z.r=x.r*y
   rmul_si(C_I(z),C_I(x),y); // z.i=x.i*y
 }
 
+/////////////////////////////////////////////////////////////////////
+
 /**
- @brief cmulti型の複素共役との掛け算 z=conj(x)*y
-*/
-void cdot(cmulti *z, cmulti *x, cmulti *y)
+ @brief z=conj(x)*y
+ */
+void cdot_c(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-      rmul(C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
+  rmul_r  (C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
   radd_mul(C_R(a),C_I(x),C_I(y)); // z.r+=x.i*y.i
-      rmul(C_I(a),C_R(x),C_I(y)); // z.i =x.r*y.i
+  rmul_r  (C_I(a),C_R(x),C_I(y)); // z.i =x.r*y.i
   rsub_mul(C_I(a),C_I(x),C_R(y)); // z.i-=x.i*y.r
   ccopy(z,a);                     // z=a
   CF(a);
 }
 
 /**
- @brief cmulti型の複素共役との掛け算 z=conj(x)*y
-*/
-void cdot_z1(cmulti *z, dcomplex x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cset_z(a,x); // a=x
-  cdot(z,a,y); // z=conj(x)*y  
-  CF(a);
-}
-
-/**
- @brief cmulti型の複素共役との掛け算 z=conj(x)*y
-*/
-void cdot_z2(cmulti *z, cmulti *x, dcomplex y)
+ @brief z=conj(x)*y
+ */
+void cdot_z(cmulti *z, cmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
   CAc(a,z);
   cset_z(a,y); // a=y
-  cdot(z,x,a); // z=conj(x)*y 
+  cdot_c(z,x,a); // z=conj(x)*y
   CF(a);
 }
 
+/**
+ @brief z=conj(x)*y
+ */
+void zdot_c(cmulti *z, dcomplex x, cmulti *y)
+{
+  cmulti *a=NULL;
+  CAc(a,z);
+  cset_z(a,x); // a=x
+  cdot_c(z,a,y); // z=conj(x)*y  
+  CF(a);
+}
+
+/**
+ @brief z=conj(x)*y
+ */
+void cdot_r(cmulti *z, cmulti *x, rmulti *y)
+{
+  rmul_r(C_R(z),C_R(x),y);                      // z.r= x.r*y
+  rmul_r(C_I(z),C_I(x),y); rneg(C_I(z),C_I(z)); // z.i=-x.i*y
+}
+
+/**
+ @brief z=conj(x)*y
+ */
+void rdot_c(cmulti *z, rmulti *x, cmulti *y)
+{
+  rmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
+  rmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+}
+
+/**
+ @brief z=conj(x)*y
+ */
+void cdot_d(cmulti *z, cmulti *x, double y){
+  rmul_d(C_R(z),C_R(x),y);                      // z.r= x.r*y
+  rmul_d(C_I(z),C_I(x),y); rneg(C_I(z),C_I(z)); // z.i=-x.i*y
+}
+
+/**
+ @brief z=conj(x)*y
+ */
+void ddot_c(cmulti *z, double x, cmulti *y){
+  dmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
+  dmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+}
+
+/**
+ @brief z=conj(x)*y
+ */
+void rdot_z(cmulti *z, rmulti *x, dcomplex y){
+  rmul_d(C_R(z),x,Z_R(y)); // z.r=x*y.r
+  rmul_d(C_I(z),x,Z_I(y)); // z.i=x*y.i
+}
+
+/**
+ @brief z=conj(x)*y
+ */
+void zdot_r(cmulti *z, dcomplex x, rmulti *y){
+  dmul_r(C_R(z), Z_R(x),y); // z.r= x.r*y
+  dmul_r(C_I(z),-Z_I(x),y); // z.i=-x.i*y
+}
+
+/////////////////////////////////////////////////////////////////////
+
+/**
+ @brief z=x/y
+ */
+void cdiv_c(cmulti *z, cmulti *x, cmulti *y)
+{
+  rmulti *den=NULL;
+  cmulti *a=NULL;
+  RAc(den,z); CAc(a,z);
+  cabs2(den,y);    // den=|y|^2
+  cdot_c(a,y,x);   // z=conj(y)*x
+  cdiv_r(a,a,den); // z/=den
+  ccopy(z,a);      // z=a
+  RF(den); CF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void zdiv_c(cmulti *z, dcomplex x, cmulti *y)
+{
+  cmulti *a=NULL;
+  CAc(a,z);
+  cset_z(a,x);   // a=x
+  cdiv_c(z,a,y); // z=x/y
+  CF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void cdiv_z(cmulti *z, cmulti *x, dcomplex y)
+{
+  cmulti *a=NULL;
+  CAc(a,z);
+  cset_z(a,y);   // a=y
+  cdiv_c(z,x,a); // z=x/y
+  CF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void rdiv_c(cmulti *z, rmulti *x, cmulti *y)
+{
+  rmulti *den=NULL;
+  cmulti *a=NULL;
+  RAc(den,z); CAc(a,z);
+  cabs2(den,y);      // den=|y|^2
+  cconj(a,y);        // z=conj(y)
+  cmul_r(a,a,x);     // z*=x
+  cdiv_r(a,a,den);   // z/=den
+  ccopy(z,a);        // z=a
+  RF(den); CF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void cdiv_r(cmulti *z, cmulti *x, rmulti *y)
+{
+  rdiv_r(C_R(z),C_R(x),y); // z.r=x.r/y
+  rdiv_r(C_I(z),C_I(x),y); // z.i=x.i/y
+}
+
+/**
+ @brief z=x/y
+ */
+void ddiv_c(cmulti *z, double x, cmulti *y)
+{
+  rmulti *a=NULL;
+  RAc(a,z);
+  rset_d(a,x);   // a=x
+  rdiv_c(z,a,y); // z=x/y
+  RF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void cdiv_d(cmulti *z, cmulti *x, double y)
+{
+  rdiv_d(C_R(z),C_R(x),y); // z.r=x.r/y
+  rdiv_d(C_I(z),C_I(x),y); // z.i=x.i/y
+}
+
+
+/**
+ @brief z=x/y
+ */
+void zdiv_r(cmulti *z, dcomplex x, rmulti *y)
+{
+  cmulti *a=NULL;
+  CAc(a,z);
+  cset_z(a,x);   // a=x
+  cdiv_r(z,a,y); // z=x/y
+  CF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void rdiv_z(cmulti *z, rmulti *x, dcomplex y)
+{
+  cmulti *a=NULL;
+  CAc(a,z);
+  cset_z(a,y);   // a=y
+  rdiv_c(z,x,a); // z=x/y
+  CF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void cdiv_ui1(cmulti *z, ulong x, cmulti *y)
+{
+  rmulti *a=NULL;
+  RAc(a,z);
+  rset_ui(a,x);   // a=x
+  rdiv_c(z,a,y); // z=x/y
+  RF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void cdiv_ui2(cmulti *z, cmulti *x, ulong y)
+{
+  rdiv_ui2(C_R(z),C_R(x),y); // z.r=x.r/y
+  rdiv_ui2(C_I(z),C_I(x),y); // z.i=x.i/y
+}
+
+/**
+ @brief z=x/y
+ */
+void cdiv_si1(cmulti *z, long x, cmulti *y)
+{
+  rmulti *a=NULL;
+  RAc(a,z);
+  rset_si(a,x);   // a=x
+  rdiv_c(z,a,y); // z=x/y
+  RF(a);
+}
+
+/**
+ @brief z=x/y
+ */
+void cdiv_si2(cmulti *z, cmulti *x, long y)
+{
+  rdiv_si2(C_R(z),C_R(x),y); // z.r=x.r/y
+  rdiv_si2(C_I(z),C_I(x),y); // z.i=x.i/y
+}
+
+/////////////////////////////////////////////////////////////////////
 
 /**
  @brief cmulti型の掛け算の加算 z+=x*y
@@ -1351,8 +1629,8 @@ void cadd_mul(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cmul(a,x,y);   // a=x*y
-  cadd(z,z,a);   // z=z+a
+  cmul_c(a,x,y);   // a=x*y
+  cadd_c(z,z,a);   // z=z+a
   CF(a);
 }
 
@@ -1364,7 +1642,7 @@ void cadd_mul_r(cmulti *z, cmulti *x, rmulti *y)
   cmulti *a=NULL;
   CAc(a,z);
   cmul_r(a,x,y); // a=x*y
-  cadd(z,z,a);   // z=z+a
+  cadd_c(z,z,a);   // z=z+a
   CF(a);
 }
 
@@ -1376,7 +1654,7 @@ void cadd_mul_z(cmulti *z, cmulti *x, dcomplex y)
   cmulti *a=NULL;
   CAc(a,z);
   cmul_z(a,x,y); // a=x*y
-  cadd(z,z,a);   // z=z+a
+  cadd_c(z,z,a);   // z=z+a
   CF(a);
 }
 
@@ -1388,7 +1666,7 @@ void cadd_mul_d(cmulti *z, cmulti *x, double y)
   cmulti *a=NULL;
   CAc(a,z);
   cmul_d(a,x,y); // a=x*y
-  cadd(z,z,a);   // z=z+a
+  cadd_c(z,z,a);   // z=z+a
   CF(a);
 }
 
@@ -1399,8 +1677,8 @@ void csub_mul(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cmul(a,x,y);   // a=x*y
-  csub(z,z,a);   // z=z-a
+  cmul_c(a,x,y);   // a=x*y
+  csub_c(z,z,a);   // z=z-a
   CF(a);
 }
 
@@ -1411,8 +1689,8 @@ void csub_mul_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n
 {
   if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in csub_mul_ws().\n",n_rws); }
   if(n_cws<2){ ERROR_EXIT("Error `n_cws=%d<2' in csub_mul_ws().\n",n_cws); }
-  cmul_ws(cws[0],x,y,n_rws,rws,n_cws-1,cws+1); // cws[0]=x*y
-  csub(z,z,cws[0]);                            // z=z-cws[0]
+  cmul_c_ws(cws[0],x,y,n_rws,rws,n_cws-1,cws+1); // cws[0]=x*y
+  csub_c(z,z,cws[0]);                            // z=z-cws[0]
 }
 
 /**
@@ -1423,7 +1701,7 @@ void csub_mul_r(cmulti *z, cmulti *x, rmulti *y)
   cmulti *a=NULL;
   CAc(a,z);
   cmul_r(a,x,y); // a=x*y
-  csub(z,z,a);   // z=z-a
+  csub_c(z,z,a);   // z=z-a
   CF(a);
 }
 
@@ -1435,7 +1713,7 @@ void csub_mul_z(cmulti *z, cmulti *x, dcomplex y)
   cmulti *a=NULL;
   CAc(a,z);
   cmul_z(a,x,y); // a=x*y
-  csub(z,z,a);   // z=z-a
+  csub_c(z,z,a);   // z=z-a
   CF(a);
 }
 
@@ -1447,7 +1725,7 @@ void csub_mul_d(cmulti *z, cmulti *x, double y)
   cmulti *a=NULL;
   CAc(a,z);
   cmul_d(a,x,y); // a=x*y
-  csub(z,z,a);   // z=z-a
+  csub_c(z,z,a);   // z=z-a
   CF(a);
 }
 
@@ -1458,8 +1736,8 @@ void cadd_dot(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cdot(a,x,y);   // a=conj(x)*y
-  cadd(z,z,a);   // z=z+a
+  cdot_c(a,x,y);   // a=conj(x)*y
+  cadd_c(z,z,a);   // z=z+a
   CF(a);
 }
 
@@ -1470,8 +1748,8 @@ void cadd_dot_z1(cmulti *z, dcomplex x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cdot_z1(a,x,y); // a=conj(x)*y
-  cadd(z,z,a);    // z=z+a
+  zdot_c(a,x,y); // a=conj(x)*y
+  cadd_c(z,z,a);    // z=z+a
   CF(a);
 }
 
@@ -1482,8 +1760,8 @@ void cadd_dot_z2(cmulti *z, cmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cdot_z2(a,x,y); // a=conj(x)*y
-  cadd(z,z,a);    // z=z+a
+  cdot_z(a,x,y); // a=conj(x)*y
+  cadd_c(z,z,a);    // z=z+a
   CF(a);
 }
 
@@ -1495,8 +1773,8 @@ void csub_dot(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cdot(a,x,y);   // a=conj(x)*y
-  csub(z,z,a);   // z=z-a
+  cdot_c(a,x,y);   // a=conj(x)*y
+  csub_c(z,z,a);   // z=z-a
   CF(a);
 }
 
@@ -1507,8 +1785,8 @@ void csub_dot_z1(cmulti *z, dcomplex x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cdot_z1(a,x,y);   // a=conj(x)*y
-  csub(z,z,a);   // z=z-a
+  zdot_c(a,x,y);   // a=conj(x)*y
+  csub_c(z,z,a);   // z=z-a
   CF(a);
 }
 
@@ -1519,136 +1797,9 @@ void csub_dot_z2(cmulti *z, cmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
   CAc(a,z);
-  cdot_z2(a,x,y);   // a=conj(x)*y
-  csub(z,z,a);   // z=z-a
+  cdot_z(a,x,y);   // a=conj(x)*y
+  csub_c(z,z,a);   // z=z-a
   CF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv(cmulti *z, cmulti *x, cmulti *y)
-{
-  rmulti *den=NULL;
-  cmulti *a=NULL;
-  RAc(den,z); CAc(a,z);
-  cabs2(den,y);     // den=|y|^2
-  cdot(a,y,x);      // z=conj(y)*x
-  cdiv_r2(a,a,den); // z/=den
-  ccopy(z,a);       // z=a
-  RF(den); CF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_z1(cmulti *z, dcomplex x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cset_z(a,x);   // a=x
-  cdiv(z,a,y);   // z=x/y
-  CF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_z2(cmulti *z, cmulti *x, dcomplex y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cset_z(a,y);   // a=y
-  cdiv(z,x,a);   // z=x/y
-  CF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_r1(cmulti *z, rmulti *x, cmulti *y)
-{
-  rmulti *den=NULL;
-  cmulti *a=NULL;
-  RAc(den,z); CAc(a,z);
-  cabs2(den,y);       // den=|y|^2
-  cconj(a,y);         // z=conj(y)
-  cmul_r(a,a,x);      // z*=x
-  cdiv_r2(a,a,den);   // z/=den
-  ccopy(z,a);         // z=a
-  RF(den); CF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_r2(cmulti *z, cmulti *x, rmulti *y)
-{
-  rdiv(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv(C_I(z),C_I(x),y); // z.i=x.i/y
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_d1(cmulti *z, double x, cmulti *y)
-{
-  rmulti *a=NULL;
-  RAc(a,z);
-  rset_d(a,x);    // a=x
-  cdiv_r1(z,a,y); // z=x/y
-  RF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_d2(cmulti *z, cmulti *x, double y)
-{
-  rdiv_d2(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv_d2(C_I(z),C_I(x),y); // z.i=x.i/y
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_ui1(cmulti *z, ulong x, cmulti *y)
-{
-  rmulti *a=NULL;
-  RAc(a,z);
-  rset_ui(a,x);   // a=x
-  cdiv_r1(z,a,y); // z=x/y
-  RF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_ui2(cmulti *z, cmulti *x, ulong y)
-{
-  rdiv_ui2(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv_ui2(C_I(z),C_I(x),y); // z.i=x.i/y
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_si1(cmulti *z, long x, cmulti *y)
-{
-  rmulti *a=NULL;
-  RAc(a,z);
-  rset_si(a,x);   // a=x
-  cdiv_r1(z,a,y); // z=x/y
-  RF(a);
-}
-
-/**
- @brief cmulti型の割り算 z=x/y
-*/
-void cdiv_si2(cmulti *z, cmulti *x, long y)
-{
-  rdiv_si2(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv_si2(C_I(z),C_I(x),y); // z.i=x.i/y
 }
 
 /**
@@ -1658,7 +1809,7 @@ void cabs_sub(rmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a;
   CAr(a,z);
-  csub(a,x,y); // a=x-y
+  csub_c(a,x,y); // a=x-y
   cabsv(z,a);  // z=abs(x-y)
   CF(a);
 }
@@ -1683,7 +1834,7 @@ void cdiv_abs(rmulti *z, rmulti *x, cmulti *y)
   rmulti *a;
   RAr(a,z);
   cabsv(a,y);  // z=abs(y)  
-  rdiv(z,x,a); // z=x/abs(y)
+  rdiv_r(z,x,a); // z=x/abs(y)
   RF(a);
 }
 
@@ -1695,7 +1846,7 @@ void cpow_c(cmulti *z, cmulti *x, cmulti *y)
   cmulti *a=NULL;
   CAc(a,z);
   clog_c(a,x); // a=log(x)
-  cmul(a,y,a); // a=y*log(x)
+  cmul_c(a,y,a); // a=y*log(x)
   cexp_c(z,a); // z=exp(y*log(x))
   CF(a);
 }
@@ -1723,7 +1874,7 @@ void cpow_r2(cmulti *z, cmulti *x, rmulti *y)
   RAc(r,z); RAc(theta,z);
   cget_polar(r,theta,x); // x=r*exp(i*theta)
   rpow(r,r,y);           // r=r^y
-  rmul(theta,theta,y);   // theta=theta*y
+  rmul_r(theta,theta,y);   // theta=theta*y
   cset_polar(z,r,theta); // z=r^y*cos(theta*y)+i*r^y*sin(theta*y)
   RF(r); RF(theta);
 }
@@ -1757,13 +1908,13 @@ void cpow_si(cmulti *y, cmulti *x, long n)
   }else if(n>0){
     CAc(a,y);
     ccopy(a,x);                        // a=x
-    for(i=1; i<n; i++){ cmul(a,a,x); } // a*=x
+    for(i=1; i<n; i++){ cmul_c(a,a,x); } // a*=x
     ccopy(y,a);                        // y=a
     CF(a);
   }else if(n<0){
     CAc(a,y);
     ccopy(a,x);                           // a=x
-    for(i=1; i<(-n); i++){ cmul(a,a,x); } // a*=x
+    for(i=1; i<(-n); i++){ cmul_c(a,a,x); } // a*=x
     cinv(a,a);                            // a=1/a
     ccopy(y,a);                           // y=a
     CF(a);
@@ -1785,7 +1936,7 @@ void cpow_ui(cmulti *y, cmulti *x, ulong n)
   }else{
     CAc(a,y);
     ccopy(a,x);                        // a=x
-    for(i=1; i<n; i++){ cmul(a,a,x); } // a*=x
+    for(i=1; i<n; i++){ cmul_c(a,a,x); } // a*=x
     ccopy(y,a);                        // y=a
     CF(a);
   }
@@ -1865,8 +2016,8 @@ void cset_polar(cmulti *z, rmulti *r, rmulti *theta)
 {
   rmulti *s=NULL,*c=NULL;
   RAc(s,z); RAc(c,z);
-  rcos(c,theta); rmul(C_R(z),r,c); // z.r=r*cos(theta)
-  rsin(s,theta); rmul(C_I(z),r,s); // z.i=r*sin(theta)
+  rcos(c,theta); rmul_r(C_R(z),r,c); // z.r=r*cos(theta)
+  rsin(s,theta); rmul_r(C_I(z),r,s); // z.i=r*sin(theta)
   RF(s); RF(c);
 }
 

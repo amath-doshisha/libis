@@ -102,7 +102,7 @@ func_t *func_complex_add(func_t *f1, func_t *f2)
   b=func_complex_cast(FR(f2));
   if(!func_is_complex(a) || !func_is_complex(b)){ FUNC_ERROR_ARG2("func_complex_add",f1,f2); }
   f=func_complex();
-  cadd(func_complex_p(f),func_complex_p(a),func_complex_p(b));
+  cadd_c(func_complex_p(f),func_complex_p(a),func_complex_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);
@@ -118,7 +118,7 @@ func_t *func_complex_sub(func_t *f1, func_t *f2)
   b=func_complex_cast(FR(f2));
   if(!func_is_complex(a) || !func_is_complex(b)){ FUNC_ERROR_ARG2("func_complex_sub",f1,f2); }
   f=func_complex();
-  csub(func_complex_p(f),func_complex_p(a),func_complex_p(b));
+  csub_c(func_complex_p(f),func_complex_p(a),func_complex_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);
@@ -134,7 +134,7 @@ func_t *func_complex_mul(func_t *f1, func_t *f2)
   b=func_complex_cast(FR(f2));
   if(!func_is_complex(a) || !func_is_complex(b)){ FUNC_ERROR_ARG2("func_complex_mul",f1,f2); }
   f=func_complex();
-  cmul(func_complex_p(f),func_complex_p(a),func_complex_p(b));
+  cmul_c(func_complex_p(f),func_complex_p(a),func_complex_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);
@@ -150,7 +150,7 @@ func_t *func_complex_div(func_t *f1, func_t *f2)
   b=func_complex_cast(FR(f2));
   if(!func_is_complex(a) || !func_is_complex(b)){ FUNC_ERROR_ARG2("func_complex_div",f1,f2); }
   f=func_complex();
-  cdiv(func_complex_p(f),func_complex_p(a),func_complex_p(b));
+  cdiv_c(func_complex_p(f),func_complex_p(a),func_complex_p(b));
   f1=func_del(f1);
   f2=func_del(f2);
   a=func_del(a);

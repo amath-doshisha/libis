@@ -62,9 +62,11 @@ typedef array_struct array;
 #define ARRAY_ZVEC(A,I) ((dcomplex*)((A)->p0))[I]
 #define ARRAY_RVEC(A,I) ((rmulti**)((A)->p0))[I]
 #define ARRAY_CVEC(A,I) ((cmulti**)((A)->p0))[I]
+#define ARRAY_DVEC0(A,I) ((double*)((A)->p0))[I]
+#define ARRAY_ZVEC0(A,I) ((dcomplex*)((A)->p0))[I]
 #define ARRAY_RVEC0(A,I) ((rmulti**)((A)->p0))[I]
-#define ARRAY_RVEC1(A,I) ((rmulti**)((A)->p1))[I]
 #define ARRAY_CVEC0(A,I) ((cmulti**)((A)->p0))[I]
+#define ARRAY_RVEC1(A,I) ((rmulti**)((A)->p1))[I]
 #define ARRAY_CVEC1(A,I) ((cmulti**)((A)->p1))[I]
 #define ARRAY_SMAT(A,I,J) ((char**)((A)->p0))[I+J*((A)->LD[0])]
 #define ARRAY_IMAT(A,I,J) ((int*)((A)->p0))[I+J*((A)->LD[0])]
@@ -92,6 +94,7 @@ array **avec_free(int n, array **x);
  * member variables
  */
 void array_get_index(int *index, array *x, int t);
+int array_get_position(int *index, array *x);
 
 /*
  * query
@@ -101,6 +104,9 @@ int array_is_empty(array *x);
 int array_same_dim_check(array *x, array *y);
 int array_get_ndim(array *x);
 int array_get_subdim(array *x, array *y);
+int array_compatible_dim_check(array * x, array *y);
+int *array_get_inclusion_dim(array * x, array *y);
+char array_get_inclusion_type(char x, char y);
 int array_is_scalar(array *x);
 
 /*

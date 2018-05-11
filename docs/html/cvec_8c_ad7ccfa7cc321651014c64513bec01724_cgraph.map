@@ -1,8 +1,8 @@
 <map id="cvec_add_mul_d" name="cvec_add_mul_d">
 <area shape="rect" id="node2" href="$cmulti_8c.html#add575d5c7e06641d6508e46755ac5b3f" title="cmulti型の掛け算の加算 z+=x*y " alt="" coords="151,31,227,57"/>
-<area shape="rect" id="node3" href="$cmulti_8c.html#adcac5110b6dc65a6fed2e430b15d5b75" title="cmulti型の掛け算 z=x*y " alt="" coords="275,5,329,32"/>
-<area shape="rect" id="node6" href="$cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="280,56,324,83"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="377,5,429,32"/>
+<area shape="rect" id="node3" href="$cmulti_8c.html#adcac5110b6dc65a6fed2e430b15d5b75" title="z=x*y " alt="" coords="275,5,329,32"/>
+<area shape="rect" id="node6" href="$cmulti_8c.html#a96dd94583d43f5d1a56d2b5e307a8240" title="z=x+y " alt="" coords="275,56,329,83"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="z=x*y " alt="" coords="377,5,429,32"/>
 <area shape="rect" id="node5" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="477,31,575,57"/>
-<area shape="rect" id="node7" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="382,56,425,83"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="378,56,429,83"/>
 </map>

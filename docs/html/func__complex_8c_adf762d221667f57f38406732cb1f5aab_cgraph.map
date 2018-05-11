@@ -5,7 +5,7 @@
 <area shape="rect" id="node14" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="477,902,561,928"/>
 <area shape="rect" id="node58" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1057,902,1117,928"/>
 <area shape="rect" id="node62" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="471,598,566,624"/>
-<area shape="rect" id="node77" href="$cmulti_8c.html#a08f3005e6ebac999b9dddd4eff2e9a03" title="cmulti型の引き算 z=x&#45;y " alt="" coords="191,231,234,258"/>
+<area shape="rect" id="node77" href="$cmulti_8c.html#aadb28679059a51462e8da3b5eeb55f92" title="z=x&#45;y " alt="" coords="186,231,239,258"/>
 <area shape="rect" id="node79" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="159,1231,267,1258"/>
 <area shape="rect" id="node7" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="331,699,407,726"/>
 <area shape="rect" id="node4" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="1861,648,1914,675"/>
@@ -74,9 +74,9 @@
 <area shape="rect" id="node67" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="780,142,832,168"/>
 <area shape="rect" id="node68" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="901,116,999,143"/>
 <area shape="rect" id="node70" href="$is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="632,192,693,219"/>
-<area shape="rect" id="node72" href="$is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="787,218,825,244"/>
+<area shape="rect" id="node72" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="783,218,829,244"/>
 <area shape="rect" id="node75" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="783,91,829,118"/>
-<area shape="rect" id="node78" href="$is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="785,15,827,42"/>
+<area shape="rect" id="node78" href="$is__rmulti_8h.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="781,15,831,42"/>
 <area shape="rect" id="node80" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="325,1307,412,1334"/>
 <area shape="rect" id="node82" href="$func__number_8c.html#a2e52e48c181d23886cb9872110e7a113" title="func_nan" alt="" coords="487,1206,550,1232"/>
 <area shape="rect" id="node84" href="$func__number_8c.html#ab2b75f75f172075368ea0f8ab2f08c37" title="func_inf" alt="" coords="490,1256,547,1283"/>

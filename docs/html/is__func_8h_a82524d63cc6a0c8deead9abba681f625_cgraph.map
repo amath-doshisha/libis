@@ -73,7 +73,7 @@
 <area shape="rect" id="node65" href="$is__rmulti_8h.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="581,397,633,424"/>
 <area shape="rect" id="node66" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="691,397,788,424"/>
 <area shape="rect" id="node69" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="445,144,505,171"/>
-<area shape="rect" id="node70" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="rmulti型の掛け算 z=x*y " alt="" coords="439,296,510,323"/>
+<area shape="rect" id="node70" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="439,296,510,323"/>
 <area shape="rect" id="node77" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="453,195,496,221"/>
 <area shape="rect" id="node71" href="$rmulti_8c.html#ab9cebc0e92c588ea846f83aadcd928bf" title="rmulti型の浮動小数点数の仮数部の0でない桁数の長さ[bits]の取得 " alt="" coords="571,195,643,221"/>
 <area shape="rect" id="node75" href="$rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="581,347,632,373"/>
@@ -87,5 +87,5 @@
 <area shape="rect" id="node88" href="$is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="444,701,505,728"/>
 <area shape="rect" id="node89" href="$bigint_8c.html#a4f0992bf040ee7788cd759ed3b606bdb" title="bigint_get_rmulti" alt="" coords="427,752,523,779"/>
 <area shape="rect" id="node87" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="581,651,633,677"/>
-<area shape="rect" id="node90" href="$is__rmulti_8h.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="587,715,626,741"/>
+<area shape="rect" id="node90" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="583,715,630,741"/>
 </map>

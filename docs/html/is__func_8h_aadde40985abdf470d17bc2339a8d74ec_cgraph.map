@@ -67,7 +67,7 @@
 <area shape="rect" id="node60" href="$func__rmat_8c.html#ae07474821b65e6f0b86fe529173b7d88" title="func_rmat_p_del" alt="" coords="1193,1686,1289,1712"/>
 <area shape="rect" id="node62" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="1546,1762,1589,1788"/>
 <area shape="rect" id="node64" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="1211,166,1271,192"/>
-<area shape="rect" id="node66" href="$is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="423,1660,464,1687"/>
+<area shape="rect" id="node66" href="$is__rmulti_8h.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="418,1660,469,1687"/>
 <area shape="rect" id="node67" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="539,1610,636,1636"/>
 <area shape="rect" id="node69" href="$func__cmat_8c.html#a7e55977ea77f5770b083e2fa1c58aeec" title="func_cmat_p_resize" alt="" coords="684,1458,796,1484"/>
 <area shape="rect" id="node70" href="$func__cmat_8c.html#a4fdfc725749b0e57fa35d26e684deccb" title="func_cmat_p_new" alt="" coords="847,1483,950,1510"/>
@@ -79,9 +79,9 @@
 <area shape="rect" id="node71" href="$func__cmat_8c.html#aad758acc76f56faa800ccd1b996309c8" title="func_cmat_p_del" alt="" coords="1016,1483,1115,1510"/>
 <area shape="rect" id="node73" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="1391,1787,1435,1814"/>
 <area shape="rect" id="node78" href="$cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="1035,191,1096,218"/>
-<area shape="rect" id="node80" href="$cmulti_8c.html#a3a8f78e85e75c7ed16952b4c4d3f0db3" title="cmulti型の引き算 z=x&#45;y " alt="" coords="289,1610,341,1636"/>
+<area shape="rect" id="node80" href="$cmulti_8c.html#a3a8f78e85e75c7ed16952b4c4d3f0db3" title="z=x&#45;y " alt="" coords="289,1610,341,1636"/>
 <area shape="rect" id="node81" href="$is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="422,1610,465,1636"/>
-<area shape="rect" id="node83" href="$cmulti_8c.html#a9d39eb2b3e2d0ffd4bb8a7e08cbf30c0" title="cmulti型の引き算 z=x&#45;y " alt="" coords="289,1559,341,1586"/>
-<area shape="rect" id="node84" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="420,1559,467,1586"/>
-<area shape="rect" id="node86" href="$cmulti_8c.html#a08f3005e6ebac999b9dddd4eff2e9a03" title="cmulti型の引き算 z=x&#45;y " alt="" coords="294,1711,337,1738"/>
+<area shape="rect" id="node83" href="$cmulti_8c.html#a9d39eb2b3e2d0ffd4bb8a7e08cbf30c0" title="z=x&#45;y " alt="" coords="289,1559,341,1586"/>
+<area shape="rect" id="node84" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="419,1559,467,1586"/>
+<area shape="rect" id="node86" href="$cmulti_8c.html#aadb28679059a51462e8da3b5eeb55f92" title="z=x&#45;y " alt="" coords="289,1711,342,1738"/>
 </map>

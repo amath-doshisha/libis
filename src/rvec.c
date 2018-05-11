@@ -513,10 +513,10 @@ void rvec_set_si(int n, rmulti **y, int *x)
 /**
  @brief rmulti型のベクトルの値のコピー y=x.
  */
-void rvec_set(int n, rmulti **y, rmulti **x)
+void rvec_set_r(int n, rmulti **y, rmulti **x)
 {
   int i;
-  for(i=0; i<n; i++){ rset(y[i],x[i]); }
+  for(i=0; i<n; i++){ rset_r(y[i],x[i]); }
 }
 
 /**
@@ -526,6 +526,24 @@ void rvec_set_d(int n, rmulti **y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ rset_d(y[i],x[i]); }
+}
+
+// y=x
+void dvec_set_r(int n, double *y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=rget_d(x[i]); }
+}
+
+// y=x
+void zvec_set_r(int n, dcomplex *y, rmulti **x)
+{
+  double a;
+  int i;
+  for(i=0; i<n; i++){
+    a=rget_d(x[i]);
+    Z_SET(y[i],a,0);
+  }
 }
 
 /**
@@ -834,17 +852,26 @@ void rvec_abs(int n, rmulti **y, rmulti **x)
 /////////////////////////////////////////////////////////////
 
 /**
- @brief rmulti型のベクトルの足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void rvec_add_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ radd(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ radd_r(z[i],x[i],y[i]); }
 }
 
 /**
- @brief rmulti型のベクトルの足し算 z=x+y
-*/
+ @brief z=x+y
+ */
+void rvec_add_dvec(int n, rmulti **z, rmulti **x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ radd_d(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
 void dvec_add_rvec(int n, rmulti **z, double *x, rmulti **y)
 {
   int i;
@@ -852,28 +879,17 @@ void dvec_add_rvec(int n, rmulti **z, double *x, rmulti **y)
 }
 
 /**
- @brief rmulti型のベクトルの足し算 z=x+y
-*/
-void rvec_add_dvec(int n, rmulti **z, rmulti **x, double *y)
-{
-  int i;
-  for(i=0; i<n; i++){ radd_d(z[i],x[i],y[i]); }
-}
-
-/////////////////////////////////////////////////////////////
-
-/**
- @brief rmulti型のベクトルの足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void rvec_add_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ radd(z[i],x[i],y); }
+  for(i=0; i<n; i++){ radd_r(z[i],x[i],y); }
 }
 
 /**
- @brief rmulti型のベクトルの足し算 z=x+y
-*/
+ @brief z=x+y
+ */
 void rvec_add_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
@@ -881,43 +897,54 @@ void rvec_add_dscalar(int n, rmulti **z, rmulti **x, double y)
 }
 
 /**
- @brief rmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
  */
-void rvec_add_zscalar(int n, cmulti **z, rmulti **x, dcomplex y)
-{
-  int i;
-  for(i=0; i<n; i++){ radd_z(z[i],x[i],y); }
-}
-
-// z=x+y
 void dvec_add_rscalar(int n, rmulti **z, double *x, rmulti *y)
 {
-    int i;
-    for(i=0; i<n; i++){ radd_d(z[i],y,x[i]); }
+  int i;
+  for(i=0; i<n; i++){ radd_d(z[i],y,x[i]); }
 }
 
 /**
- @brief rmulti型のベクトルの足し算 z=x+y
+ @brief z=x+y
  */
-void rvec_add_cscalar(int n, cmulti **z, rmulti **x, cmulti *y)
+void rscalar_add_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ cadd_r(z[i],y,x[i]); }
+  for(i=0; i<n; i++){ radd_r(z[i],x,y[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
+void rscalar_add_dvec(int n, rmulti **z, rmulti *x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ radd_d(z[i],x,y[i]); }
+}
+
+/**
+ @brief z=x+y
+ */
+void dscalar_add_rvec(int n, rmulti **z, double x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ dadd_r(z[i],x,y[i]); }
 }
 
 //////////////////////////////////////////////////////////
 
 /**
- @brief rmulti型のベクトルの引き算 z=x-y
-*/
+ @brief z=x-y
+ */
 void rvec_sub_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rsub_r(z[i],x[i],y[i]); }
 }
 
 /**
- @brief rmulti型のベクトルの引き算 z=x-y
+ @brief z=x-y
  */
 void rvec_sub_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
@@ -926,7 +953,7 @@ void rvec_sub_dvec(int n, rmulti **z, rmulti **x, double *y)
 }
 
 /**
- @brief rmulti型のベクトルの引き算 z=x-y
+ @brief z=x-y
  */
 void dvec_sub_rvec(int n, rmulti **z, double *x, rmulti **y)
 {
@@ -934,83 +961,229 @@ void dvec_sub_rvec(int n, rmulti **z, double *x, rmulti **y)
   for(i=0; i<n; i++){ dsub_r(z[i],x[i],y[i]); }
 }
 
-/////////////////////////////////////////////////////////////
-
 /**
- @brief rmulti型のベクトルの引き算 z=x-y
+ @brief z=x-y
  */
 void rvec_sub_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rsub_r(z[i],x[i],y); }
 }
 
 /**
- @brief rmulti型のベクトルの引き算 z=x-y
+ @brief z=x-y
  */
-void rscalar_sub_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ rsub(z[i],x,y[i]); }
-}
-
-// z=x-y
-void dvec_sub_rscalar(int n, rmulti **z, double *x, rmulti *y)
-{
-    int i;
-    for(i=0; i<n; i++){ dsub_r(z[i],x[i],y); }
-}
-
-// z=x-y
-void dscalar_sub_rvec(int n, rmulti **z, double x, rmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ dsub_r(z[i],x,y[i]); }
-}
-
-// z=x-y
 void rvec_sub_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
   for(i=0; i<n; i++){ rsub_d(z[i],x[i],y); }
 }
 
-// z=x-y
+/**
+ @brief z=x-y
+ */
+void dvec_sub_rscalar(int n, rmulti **z, double *x, rmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ dsub_r(z[i],x[i],y); }
+}
+
+/**
+ @brief z=x-y
+ */
+void rscalar_sub_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ rsub_r(z[i],x,y[i]); }
+}
+
+/**
+ @brief z=x-y
+ */
 void rscalar_sub_dvec(int n, rmulti **z, rmulti *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ rsub_d(z[i],x,y[i]); }
 }
 
+/**
+ @brief z=x-y
+ */
+void dscalar_sub_rvec(int n, rmulti **z, double x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ dsub_r(z[i],x,y[i]); }
+}
+
 //////////////////////////////////////////////////////////
 
-
 /**
- @brief rmulti型のベクトルの要素ごとの掛け算 z=x.*y
-*/
-void rvec_mul(int n, rmulti **z, rmulti **x, rmulti **y)
+ @brief z=x.*y
+ */
+void rvec_mul_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rmul_r(z[i],x[i],y[i]); }
 }
 
 /**
- @brief rmulti型のベクトルxとスカラーyの掛け算 z=x*y
-*/
-void rvec_mul_r(int n, rmulti **z, rmulti **x, rmulti *y)
+ @brief z=x.*y
+ */
+void rvec_mul_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rmul_d(z[i],x[i],y[i]); }
 }
 
 /**
- @brief rmulti型のベクトルxとスカラーyの掛け算 z=x*y
-*/
-void rvec_mul_d(int n, rmulti **z, rmulti **x, double y)
+ @brief z=x.*y
+ */
+void dvec_mul_rvec(int n, rmulti **z, double *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ dmul_r(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief z=x.*y
+ */
+void rvec_mul_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ rmul_r(z[i],x[i],y); }
+}
+
+/**
+ @brief z=x.*y
+ */
+void rvec_mul_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
   for(i=0; i<n; i++){ rmul_d(z[i],x[i],y); }
 }
+
+/**
+ @brief z=x.*y
+ */
+void dvec_mul_rscalar(int n, rmulti **z, double *x, rmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ dmul_r(z[i],x[i],y); }
+}
+
+/**
+ @brief z=x.*y
+ */
+void rscalar_mul_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ rmul_r(z[i],x,y[i]); }
+}
+
+/**
+ @brief z=x.*y
+ */
+void rscalar_mul_dvec(int n, rmulti **z, rmulti *x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ rmul_d(z[i],x,y[i]); }
+}
+
+/**
+ @brief z=x.*y
+ */
+void dscalar_mul_rvec(int n, rmulti **z, double x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ dmul_r(z[i],x,y[i]); }
+}
+
+
+//////////////////////////////////////////////////////////
+
+/**
+ @brief z=x./y
+ */
+void rvec_div_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ rdiv_r(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief z=x./y
+ */
+void rvec_div_dvec(int n, rmulti **z, rmulti **x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ rdiv_d(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief z=x./y
+ */
+void dvec_div_rvec(int n, rmulti **z, double *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ ddiv_r(z[i],x[i],y[i]); }
+}
+
+/**
+ @brief z=x./y
+ */
+void rvec_div_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ rdiv_r(z[i],x[i],y); }
+}
+
+/**
+ @brief z=x./y
+ */
+void rvec_div_dscalar(int n, rmulti **z, rmulti **x, double y)
+{
+  int i;
+  for(i=0; i<n; i++){ rdiv_d(z[i],x[i],y); }
+}
+
+/**
+ @brief z=x.*y
+ */
+void dvec_div_rscalar(int n, rmulti **z, double *x, rmulti *y)
+{
+  int i;
+  for(i=0; i<n; i++){ ddiv_r(z[i],x[i],y); }
+}
+
+/**
+ @brief z=x./y
+ */
+void rscalar_div_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ rdiv_r(z[i],x,y[i]); }
+}
+
+/**
+ @brief z=x.*y
+ */
+void rscalar_div_dvec(int n, rmulti **z, rmulti *x, double *y)
+{
+  int i;
+  for(i=0; i<n; i++){ rdiv_d(z[i],x,y[i]); }
+}
+
+/**
+ @brief z=x./y
+ */
+void dscalar_div_rvec(int n, rmulti **z, double x, rmulti **y)
+{
+  int i;
+  for(i=0; i<n; i++){ ddiv_r(z[i],x,y[i]); }
+}
+
+
+//////////////////////////////////////////////////////////
 
 /**
  @brief rmulti型のベクトルの要素ごとの掛け算の加算 z+=x.*y
@@ -1248,7 +1421,7 @@ void rvec_sum(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_zero(value);
-  for(i=0; i<n; i++){ radd(value,value,x[i]); }
+  for(i=0; i<n; i++){ radd_r(value,value,x[i]); }
 }
 
 /**
@@ -1291,7 +1464,7 @@ void rvec_sum_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
   RAp(a,value);
   rset_zero(value); // value=0
   for(i=0; i<n; i++){
-    rsub(a,x[i],y[i]); // a=x[i]-y[i]
+    rsub_r(a,x[i],y[i]); // a=x[i]-y[i]
     radd_abs(value,a); // value+=abs(x[i]-y[i])
   }
   RF(a);
@@ -1358,10 +1531,10 @@ void rvec_max_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
   int i;
   rmulti *a=NULL;
   RAp(a,value);
-  rsub(a,x[0],y[0]);   // a=x[0]-y[0]
+  rsub_r(a,x[0],y[0]);   // a=x[0]-y[0]
   rabs(value,a);       // value=abs(x[0]-y[0])
   for(i=1; i<n; i++){
-    rsub(a,x[i],y[i]); // a=x[i]-y[i]
+    rsub_r(a,x[i],y[i]); // a=x[i]-y[i]
     rabs(a,a);         // a=abs(x[i]-y[i])
     if(rgt(a,value)){
       rcopy(value,a);  // value=a
@@ -1422,50 +1595,6 @@ void rvec_min_abs_index(rmulti *value, int n, rmulti **x, int *I)
   RF(a);
 }
 
-/**
- @brief rmulti型のベクトルの要素ごとの割り算 z=x./y
-*/
-void rvec_div(int n, rmulti **z, rmulti **x, rmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ rdiv(z[i],x[i],y[i]); }
-}
-
-/**
- @brief rmulti型のスカラーとベクトルの要素との割り算 z=x./y
-*/
-void rvec_div_r1(int n, rmulti **z, rmulti *x, rmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ rdiv(z[i],x,y[i]); }
-}
-
-/**
- @brief rmulti型のベクトルの要素とスカラーの割り算 z=x/y
-*/
-void rvec_div_r2(int n, rmulti **z, rmulti **x, rmulti *y)
-{
-  int i;
-  for(i=0; i<n; i++){ rdiv(z[i],x[i],y); }
-}
-
-/**
- @brief rmulti型のスカラーとベクトルの要素との割り算 z=x/y
-*/
-void rvec_div_d1(int n, rmulti **z, double x, rmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ rdiv_d1(z[i],x,y[i]); }
-}
-
-/**
- @brief rmulti型のベクトルの要素とスカラーの割り算 z=x/y
-*/
-void rvec_div_d2(int n, rmulti **z, rmulti **x, double y)
-{
-  int i;
-  for(i=0; i<n; i++){ rdiv_d2(z[i],x[i],y); }
-}
 
 /**
  @brief rmulti型のべき乗 z=x.^y
@@ -1518,7 +1647,7 @@ void rvec_normalize(int n, rmulti **y, rmulti **x)
   RAP(a,y,n);
   rvec_norm2(a,n,x);   // a=sqrt(x'*x)
   rinv(a,a);           // a=1/sqrt(x'*x)
-  rvec_mul_r(n,y,x,a); // y=x/sqrt(x'*x)
+  rvec_mul_rscalar(n,y,x,a); // y=x/sqrt(x'*x)
   RF(a);
 }
 
@@ -1534,7 +1663,7 @@ void rvec_normalize_sgn(int n, rmulti **y, rmulti **x)
   rvec_norm2(a,n,x);                   // a=sqrt(x'*x)
   rinv(a,a);                           // a=1/a
   if(ris_negative(x[k])){ rneg(a,a); } // a=-a
-  rvec_mul_r(n,y,x,a);                 // y=x/sqrt(x'*x)
+  rvec_mul_rscalar(n,y,x,a);                 // y=x/sqrt(x'*x)
   RF(a);
 }
 
@@ -1576,10 +1705,10 @@ void rvec_max_div_abs(rmulti *value, int n, rmulti **x, rmulti **y)
   int i=0;
   rmulti *a=NULL;
   RAp(a,value);
-  rdiv(a,x[i],y[i]);   // value=x[0]/y[0]
+  rdiv_r(a,x[i],y[i]);   // value=x[0]/y[0]
   rabs(value,a);       // value=abs(x[0]/y[0])
   for(i=1; i<n; i++){
-    rdiv(a,x[i],y[i]); // a=x[i]/y[i]
+    rdiv_r(a,x[i],y[i]); // a=x[i]/y[i]
     rabs(a,a);         // a=abs(x[i]/y[i])
     if(rgt(a,value)){
       rcopy(value,a);     // value=a
@@ -1597,9 +1726,9 @@ void rvec_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
   RAp(a,value); RAp(b,value);
   rvec_norm2(a,n,x); // a=sqrt(x'*x)
   rvec_norm2(b,n,y); // b=sqrt(y'*y)
-  rmul(a,a,b);       // a=sqrt(x'*x)*sqrt(y'*y)
+  rmul_r(a,a,b);       // a=sqrt(x'*x)*sqrt(y'*y)
   rvec_sum_mul(b,n,x,y); // b=x'*y
-  rdiv(value,b,a);   // valu=(x'*y)/sqrt(x'*x)/sqrt(y'*y)
+  rdiv_r(value,b,a);   // valu=(x'*y)/sqrt(x'*x)/sqrt(y'*y)
   RF(a); RF(b);
 }
 
@@ -1780,7 +1909,7 @@ void rvec_func(rmulti *y, func_t *f, int n, rmulti **x)
   else if(func_is_one(f))    { rset_si(z,1); }
   else if(func_is_bigint(f)) { bigint_get_rmulti(z,func_bigint_p(f)); }
   else if(func_is_real(f))   { rcopy(z,func_real_p(f)); }
-  else if(func_is_complex(f)){ rset_si(a,0); rset_si(b,0); rdiv(z,a,b); }
+  else if(func_is_complex(f)){ rset_si(a,0); rset_si(b,0); rdiv_r(z,a,b); }
   else if(func_is_var(f))    {
     rset_d(z,1);
     for(i=0; i<func_var_size(f); i++){
@@ -1788,12 +1917,12 @@ void rvec_func(rmulti *y, func_t *f, int n, rmulti **x)
 	if(0<=func_var_num(f,i) && func_var_num(f,i)<n){
 	  rpow_si(a,x[func_var_num(f,i)],func_var_pow(f,i));
 	}else{ rset_nan(a); }
-	rmul(z,z,a);
+	rmul_r(z,z,a);
       }
     }
   }
-  else if(func_is_add(f))    { rset_d(z,0); for(i=0; i<func_asize(f); i++){ rvec_func(a,func_aget(f,i),n,x); radd(z,z,a); } }
-  else if(func_is_mul(f))    { rset_d(z,1); for(i=0; i<func_asize(f); i++){ rvec_func(a,func_aget(f,i),n,x); rmul(z,z,a); } }
+  else if(func_is_add(f))    { rset_d(z,0); for(i=0; i<func_asize(f); i++){ rvec_func(a,func_aget(f,i),n,x); radd_r(z,z,a); } }
+  else if(func_is_mul(f))    { rset_d(z,1); for(i=0; i<func_asize(f); i++){ rvec_func(a,func_aget(f,i),n,x); rmul_r(z,z,a); } }
   else if(func_is(f,"sqrt")) { rvec_func(a,func_aget(f,0),n,x); rsqrt(z,a); }
   else if(func_is(f,"exp"))  { rvec_func(a,func_aget(f,0),n,x); rexp(z,a); }
   else if(func_is(f,"log"))  { rvec_func(a,func_aget(f,0),n,x); rlog(z,a); }

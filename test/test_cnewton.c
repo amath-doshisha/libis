@@ -60,7 +60,7 @@ void eterm_show(int m, cmulti **x, func_t *fF, int bmax, int kappa)
     mpfr_printf("b-tau+log2(e)=%+6.2Rf ",p[k]);
 
 
-    rlog2(r[k],e[k]); dsub_r(r[k],tau,r[k]); rdiv_d2(r[k],r[k],b[k]); dsub_r(r[k],1,r[k]);
+    rlog2(r[k],e[k]); dsub_r(r[k],tau,r[k]); rdiv_d(r[k],r[k],b[k]); dsub_r(r[k],1,r[k]);
     mpfr_printf("κ=1-(tau-log2(e))/b=%+.10Rf ",r[k]);
     printf("\n");
   }

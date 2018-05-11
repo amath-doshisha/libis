@@ -210,8 +210,8 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <tr class="memitem:a499241897656b7b4393ae620f28e9df0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a499241897656b7b4393ae620f28e9df0">rset_s</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, char *s)</td></tr>
 <tr class="memdesc:a499241897656b7b4393ae620f28e9df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の浮動小数点数を文字列から設定.  <a href="#a499241897656b7b4393ae620f28e9df0">[詳解]</a><br /></td></tr>
 <tr class="separator:a499241897656b7b4393ae620f28e9df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fc424b7a73942016f9dc93dbff1edd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a6fc424b7a73942016f9dc93dbff1edd8">rset</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x)</td></tr>
-<tr class="separator:a6fc424b7a73942016f9dc93dbff1edd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484a24b0f72dddc71bbff6876ed9aae5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a484a24b0f72dddc71bbff6876ed9aae5">rset_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x)</td></tr>
+<tr class="separator:a484a24b0f72dddc71bbff6876ed9aae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22745fdb53814c5523bd38a4a1e30e32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a22745fdb53814c5523bd38a4a1e30e32">rset_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, double value)</td></tr>
 <tr class="memdesc:a22745fdb53814c5523bd38a4a1e30e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の浮動小数点数を倍精度浮動小数点数から設定.  <a href="#a22745fdb53814c5523bd38a4a1e30e32">[詳解]</a><br /></td></tr>
 <tr class="separator:a22745fdb53814c5523bd38a4a1e30e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,63 +341,90 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <tr class="memdesc:a32a97e9caf125dedecccec53557da7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の計算 y=arctanh(x)  <a href="#a32a97e9caf125dedecccec53557da7d8">[詳解]</a><br /></td></tr>
 <tr class="separator:a32a97e9caf125dedecccec53557da7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">rmulti型の２入力の数学演算子</div></td></tr>
-<tr class="memitem:a813e20e23a783bb1cf2e65a9f16ae34d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d">radd</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a813e20e23a783bb1cf2e65a9f16ae34d"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の足し算 z=x+y  <a href="#a813e20e23a783bb1cf2e65a9f16ae34d">[詳解]</a><br /></td></tr>
-<tr class="separator:a813e20e23a783bb1cf2e65a9f16ae34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357e8a4bc45c314b575f2e83892919ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea">radd_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a357e8a4bc45c314b575f2e83892919ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x+y  <a href="#a357e8a4bc45c314b575f2e83892919ea">[詳解]</a><br /></td></tr>
+<tr class="separator:a357e8a4bc45c314b575f2e83892919ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e1f6de9963debee1cf7946b34f36b9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a3e1f6de9963debee1cf7946b34f36b9b">radd_exact</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a3e1f6de9963debee1cf7946b34f36b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の足し算 z=x+y  <a href="#a3e1f6de9963debee1cf7946b34f36b9b">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a3e1f6de9963debee1cf7946b34f36b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x+y  <a href="#a3e1f6de9963debee1cf7946b34f36b9b">[詳解]</a><br /></td></tr>
 <tr class="separator:a3e1f6de9963debee1cf7946b34f36b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab573b7b2250f4751b5a96e4a760a5348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#ab573b7b2250f4751b5a96e4a760a5348">radd_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, double y)</td></tr>
-<tr class="memdesc:ab573b7b2250f4751b5a96e4a760a5348"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の足し算 z=x+y  <a href="#ab573b7b2250f4751b5a96e4a760a5348">[詳解]</a><br /></td></tr>
+<tr class="memdesc:ab573b7b2250f4751b5a96e4a760a5348"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x+y  <a href="#ab573b7b2250f4751b5a96e4a760a5348">[詳解]</a><br /></td></tr>
 <tr class="separator:ab573b7b2250f4751b5a96e4a760a5348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ac53114d2f78657475ff3a98a64128c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a2ac53114d2f78657475ff3a98a64128c">dadd_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, double x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a2ac53114d2f78657475ff3a98a64128c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の足し算 z=x+y  <a href="#a2ac53114d2f78657475ff3a98a64128c">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a2ac53114d2f78657475ff3a98a64128c"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x+y  <a href="#a2ac53114d2f78657475ff3a98a64128c">[詳解]</a><br /></td></tr>
 <tr class="separator:a2ac53114d2f78657475ff3a98a64128c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a745df933987aceaf48404219785ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a0a745df933987aceaf48404219785ac0">radd_ui</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> y)</td></tr>
-<tr class="memdesc:a0a745df933987aceaf48404219785ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の足し算 z=x+y  <a href="#a0a745df933987aceaf48404219785ac0">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a0a745df933987aceaf48404219785ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x+y  <a href="#a0a745df933987aceaf48404219785ac0">[詳解]</a><br /></td></tr>
 <tr class="separator:a0a745df933987aceaf48404219785ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a476444ef97114b70ee1aa94ff5c354a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a476444ef97114b70ee1aa94ff5c354a0">radd_si</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, long y)</td></tr>
-<tr class="memdesc:a476444ef97114b70ee1aa94ff5c354a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の足し算 z=x+y  <a href="#a476444ef97114b70ee1aa94ff5c354a0">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a476444ef97114b70ee1aa94ff5c354a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x+y  <a href="#a476444ef97114b70ee1aa94ff5c354a0">[詳解]</a><br /></td></tr>
 <tr class="separator:a476444ef97114b70ee1aa94ff5c354a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb36b81765be65f0434b357bfac4af1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d">rsub</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:abb36b81765be65f0434b357bfac4af1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#abb36b81765be65f0434b357bfac4af1d">[詳解]</a><br /></td></tr>
-<tr class="separator:abb36b81765be65f0434b357bfac4af1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be9df23cebdc01c10ec1a5ac639a62d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d">rsub_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a2be9df23cebdc01c10ec1a5ac639a62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a2be9df23cebdc01c10ec1a5ac639a62d">[詳解]</a><br /></td></tr>
+<tr class="separator:a2be9df23cebdc01c10ec1a5ac639a62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c6f672ec0fa3a65a677817e68aa5e47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a0c6f672ec0fa3a65a677817e68aa5e47">rsub_exact</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a0c6f672ec0fa3a65a677817e68aa5e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#a0c6f672ec0fa3a65a677817e68aa5e47">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a0c6f672ec0fa3a65a677817e68aa5e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a0c6f672ec0fa3a65a677817e68aa5e47">[詳解]</a><br /></td></tr>
 <tr class="separator:a0c6f672ec0fa3a65a677817e68aa5e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f839b8bb29e7b412f3f0b1f312baeb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a8f839b8bb29e7b412f3f0b1f312baeb3">dsub_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, double x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a8f839b8bb29e7b412f3f0b1f312baeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#a8f839b8bb29e7b412f3f0b1f312baeb3">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a8f839b8bb29e7b412f3f0b1f312baeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a8f839b8bb29e7b412f3f0b1f312baeb3">[詳解]</a><br /></td></tr>
 <tr class="separator:a8f839b8bb29e7b412f3f0b1f312baeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6632a464e14b230e408ebfb963256052"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052">rsub_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, double y)</td></tr>
-<tr class="memdesc:a6632a464e14b230e408ebfb963256052"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#a6632a464e14b230e408ebfb963256052">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a6632a464e14b230e408ebfb963256052"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a6632a464e14b230e408ebfb963256052">[詳解]</a><br /></td></tr>
 <tr class="separator:a6632a464e14b230e408ebfb963256052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dbde6f27900d54d7dcab57481c05128"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a6dbde6f27900d54d7dcab57481c05128">rsub_ui1</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a6dbde6f27900d54d7dcab57481c05128"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#a6dbde6f27900d54d7dcab57481c05128">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a6dbde6f27900d54d7dcab57481c05128"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a6dbde6f27900d54d7dcab57481c05128">[詳解]</a><br /></td></tr>
 <tr class="separator:a6dbde6f27900d54d7dcab57481c05128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b7d2121d4cc6c09daa8e392984ffef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a8b7d2121d4cc6c09daa8e392984ffef5">rsub_ui2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> y)</td></tr>
-<tr class="memdesc:a8b7d2121d4cc6c09daa8e392984ffef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#a8b7d2121d4cc6c09daa8e392984ffef5">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a8b7d2121d4cc6c09daa8e392984ffef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a8b7d2121d4cc6c09daa8e392984ffef5">[詳解]</a><br /></td></tr>
 <tr class="separator:a8b7d2121d4cc6c09daa8e392984ffef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89c6c5a487fae6f3267763205c7e4e52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a89c6c5a487fae6f3267763205c7e4e52">rsub_si1</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, long x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a89c6c5a487fae6f3267763205c7e4e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#a89c6c5a487fae6f3267763205c7e4e52">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a89c6c5a487fae6f3267763205c7e4e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a89c6c5a487fae6f3267763205c7e4e52">[詳解]</a><br /></td></tr>
 <tr class="separator:a89c6c5a487fae6f3267763205c7e4e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f7ec9b413e91e435e4233bf9fec03da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a5f7ec9b413e91e435e4233bf9fec03da">rsub_si2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, long y)</td></tr>
-<tr class="memdesc:a5f7ec9b413e91e435e4233bf9fec03da"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の引き算 z=x-y  <a href="#a5f7ec9b413e91e435e4233bf9fec03da">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a5f7ec9b413e91e435e4233bf9fec03da"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x-y  <a href="#a5f7ec9b413e91e435e4233bf9fec03da">[詳解]</a><br /></td></tr>
 <tr class="separator:a5f7ec9b413e91e435e4233bf9fec03da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a823702afaeee275caf7d0946679b3292"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292">rmul</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a823702afaeee275caf7d0946679b3292"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の掛け算 z=x*y  <a href="#a823702afaeee275caf7d0946679b3292">[詳解]</a><br /></td></tr>
-<tr class="separator:a823702afaeee275caf7d0946679b3292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3451eef31d904dc3c6d4d49880a38ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4">rmul_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a3451eef31d904dc3c6d4d49880a38ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x*y  <a href="#a3451eef31d904dc3c6d4d49880a38ad4">[詳解]</a><br /></td></tr>
+<tr class="separator:a3451eef31d904dc3c6d4d49880a38ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae948be5116862c9910a34cc3b7e71308"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#ae948be5116862c9910a34cc3b7e71308">rmul_exact</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:ae948be5116862c9910a34cc3b7e71308"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の掛け算 z=x*y  <a href="#ae948be5116862c9910a34cc3b7e71308">[詳解]</a><br /></td></tr>
+<tr class="memdesc:ae948be5116862c9910a34cc3b7e71308"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x*y  <a href="#ae948be5116862c9910a34cc3b7e71308">[詳解]</a><br /></td></tr>
 <tr class="separator:ae948be5116862c9910a34cc3b7e71308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac7f29deca6702de68310402cb41557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a5ac7f29deca6702de68310402cb41557">rmul_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, double y)</td></tr>
-<tr class="memdesc:a5ac7f29deca6702de68310402cb41557"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の掛け算 z=x*y  <a href="#a5ac7f29deca6702de68310402cb41557">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a5ac7f29deca6702de68310402cb41557"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x*y  <a href="#a5ac7f29deca6702de68310402cb41557">[詳解]</a><br /></td></tr>
 <tr class="separator:a5ac7f29deca6702de68310402cb41557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3683f7ba847b5c46e2e396df13ed8bbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a3683f7ba847b5c46e2e396df13ed8bbe">dmul_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, double x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a3683f7ba847b5c46e2e396df13ed8bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x*y  <a href="#a3683f7ba847b5c46e2e396df13ed8bbe">[詳解]</a><br /></td></tr>
+<tr class="separator:a3683f7ba847b5c46e2e396df13ed8bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa30af87e1c9ecc1a1178ec5c1ea9d895"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#aa30af87e1c9ecc1a1178ec5c1ea9d895">rmul_ui</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> y)</td></tr>
-<tr class="memdesc:aa30af87e1c9ecc1a1178ec5c1ea9d895"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の掛け算 z=x*y  <a href="#aa30af87e1c9ecc1a1178ec5c1ea9d895">[詳解]</a><br /></td></tr>
+<tr class="memdesc:aa30af87e1c9ecc1a1178ec5c1ea9d895"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x*y  <a href="#aa30af87e1c9ecc1a1178ec5c1ea9d895">[詳解]</a><br /></td></tr>
 <tr class="separator:aa30af87e1c9ecc1a1178ec5c1ea9d895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8153c7e83727dfeb077041872ce4f431"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a8153c7e83727dfeb077041872ce4f431">rmul_si</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, long y)</td></tr>
-<tr class="memdesc:a8153c7e83727dfeb077041872ce4f431"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の掛け算 z=x*y  <a href="#a8153c7e83727dfeb077041872ce4f431">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a8153c7e83727dfeb077041872ce4f431"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x*y  <a href="#a8153c7e83727dfeb077041872ce4f431">[詳解]</a><br /></td></tr>
 <tr class="separator:a8153c7e83727dfeb077041872ce4f431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcc10adb3c74cf729501723fdce2be2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a9dcc10adb3c74cf729501723fdce2be2">rdiv_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a9dcc10adb3c74cf729501723fdce2be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#a9dcc10adb3c74cf729501723fdce2be2">[詳解]</a><br /></td></tr>
+<tr class="separator:a9dcc10adb3c74cf729501723fdce2be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78413532ab50c63205fa64f36599977f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a78413532ab50c63205fa64f36599977f">rdiv_rouding_check</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a78413532ab50c63205fa64f36599977f"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#a78413532ab50c63205fa64f36599977f">[詳解]</a><br /></td></tr>
+<tr class="separator:a78413532ab50c63205fa64f36599977f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2a5b36261af9d945c81312ec7febe9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a1a2a5b36261af9d945c81312ec7febe9">rdiv_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, double y)</td></tr>
+<tr class="memdesc:a1a2a5b36261af9d945c81312ec7febe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#a1a2a5b36261af9d945c81312ec7febe9">[詳解]</a><br /></td></tr>
+<tr class="separator:a1a2a5b36261af9d945c81312ec7febe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33a9300a9fc7516a14f71cd26509c2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#af33a9300a9fc7516a14f71cd26509c2f">ddiv_r</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, double x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:af33a9300a9fc7516a14f71cd26509c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#af33a9300a9fc7516a14f71cd26509c2f">[詳解]</a><br /></td></tr>
+<tr class="separator:af33a9300a9fc7516a14f71cd26509c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ec653680b5c3fb56eccdc76cc6ab93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a12ec653680b5c3fb56eccdc76cc6ab93">rdiv_ui1</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a12ec653680b5c3fb56eccdc76cc6ab93"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#a12ec653680b5c3fb56eccdc76cc6ab93">[詳解]</a><br /></td></tr>
+<tr class="separator:a12ec653680b5c3fb56eccdc76cc6ab93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a032720ada7cafd1b35ebdcd7c27fce27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a032720ada7cafd1b35ebdcd7c27fce27">rdiv_ui2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> y)</td></tr>
+<tr class="memdesc:a032720ada7cafd1b35ebdcd7c27fce27"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#a032720ada7cafd1b35ebdcd7c27fce27">[詳解]</a><br /></td></tr>
+<tr class="separator:a032720ada7cafd1b35ebdcd7c27fce27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119261f3a0e5e0d19b8b55272f36bda4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a119261f3a0e5e0d19b8b55272f36bda4">rdiv_si1</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, long x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
+<tr class="memdesc:a119261f3a0e5e0d19b8b55272f36bda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#a119261f3a0e5e0d19b8b55272f36bda4">[詳解]</a><br /></td></tr>
+<tr class="separator:a119261f3a0e5e0d19b8b55272f36bda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b95f5eb1695065055d4fffa7197b2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a54b95f5eb1695065055d4fffa7197b2f">rdiv_si2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, long y)</td></tr>
+<tr class="memdesc:a54b95f5eb1695065055d4fffa7197b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">z=x/y  <a href="#a54b95f5eb1695065055d4fffa7197b2f">[詳解]</a><br /></td></tr>
+<tr class="separator:a54b95f5eb1695065055d4fffa7197b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f48c1dd7a3fde008998c2533c5909c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a05f48c1dd7a3fde008998c2533c5909c">radd_mul</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
 <tr class="memdesc:a05f48c1dd7a3fde008998c2533c5909c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の掛け算の加算 z+=x*y  <a href="#a05f48c1dd7a3fde008998c2533c5909c">[詳解]</a><br /></td></tr>
 <tr class="separator:a05f48c1dd7a3fde008998c2533c5909c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -422,30 +449,6 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <tr class="memitem:a1e9de1f8bac3b6ff24f33ccda015f2fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a1e9de1f8bac3b6ff24f33ccda015f2fb">rsub_mul_d</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, double y)</td></tr>
 <tr class="memdesc:a1e9de1f8bac3b6ff24f33ccda015f2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の掛け算の減算 z-=x*y  <a href="#a1e9de1f8bac3b6ff24f33ccda015f2fb">[詳解]</a><br /></td></tr>
 <tr class="separator:a1e9de1f8bac3b6ff24f33ccda015f2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad72e82c70e0eb4d5484653dc7ddcf279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#ad72e82c70e0eb4d5484653dc7ddcf279">rdiv</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:ad72e82c70e0eb4d5484653dc7ddcf279"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#ad72e82c70e0eb4d5484653dc7ddcf279">[詳解]</a><br /></td></tr>
-<tr class="separator:ad72e82c70e0eb4d5484653dc7ddcf279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78413532ab50c63205fa64f36599977f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a78413532ab50c63205fa64f36599977f">rdiv_rouding_check</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a78413532ab50c63205fa64f36599977f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#a78413532ab50c63205fa64f36599977f">[詳解]</a><br /></td></tr>
-<tr class="separator:a78413532ab50c63205fa64f36599977f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18333003c3d17b697b50e211181cfecf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a18333003c3d17b697b50e211181cfecf">rdiv_d1</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, double x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a18333003c3d17b697b50e211181cfecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#a18333003c3d17b697b50e211181cfecf">[詳解]</a><br /></td></tr>
-<tr class="separator:a18333003c3d17b697b50e211181cfecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a712d1c92e6d08cced4f9c5365cdcf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a0a712d1c92e6d08cced4f9c5365cdcf6">rdiv_d2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, double y)</td></tr>
-<tr class="memdesc:a0a712d1c92e6d08cced4f9c5365cdcf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#a0a712d1c92e6d08cced4f9c5365cdcf6">[詳解]</a><br /></td></tr>
-<tr class="separator:a0a712d1c92e6d08cced4f9c5365cdcf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12ec653680b5c3fb56eccdc76cc6ab93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a12ec653680b5c3fb56eccdc76cc6ab93">rdiv_ui1</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a12ec653680b5c3fb56eccdc76cc6ab93"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#a12ec653680b5c3fb56eccdc76cc6ab93">[詳解]</a><br /></td></tr>
-<tr class="separator:a12ec653680b5c3fb56eccdc76cc6ab93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a032720ada7cafd1b35ebdcd7c27fce27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a032720ada7cafd1b35ebdcd7c27fce27">rdiv_ui2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__macros_8h.html#a9c34ac44da309b004570530c8cec8a0e">ulong</a> y)</td></tr>
-<tr class="memdesc:a032720ada7cafd1b35ebdcd7c27fce27"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#a032720ada7cafd1b35ebdcd7c27fce27">[詳解]</a><br /></td></tr>
-<tr class="separator:a032720ada7cafd1b35ebdcd7c27fce27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a119261f3a0e5e0d19b8b55272f36bda4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a119261f3a0e5e0d19b8b55272f36bda4">rdiv_si1</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, long x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
-<tr class="memdesc:a119261f3a0e5e0d19b8b55272f36bda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#a119261f3a0e5e0d19b8b55272f36bda4">[詳解]</a><br /></td></tr>
-<tr class="separator:a119261f3a0e5e0d19b8b55272f36bda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b95f5eb1695065055d4fffa7197b2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a54b95f5eb1695065055d4fffa7197b2f">rdiv_si2</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, long y)</td></tr>
-<tr class="memdesc:a54b95f5eb1695065055d4fffa7197b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の割り算 z=x/y  <a href="#a54b95f5eb1695065055d4fffa7197b2f">[詳解]</a><br /></td></tr>
-<tr class="separator:a54b95f5eb1695065055d4fffa7197b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a701285a118fac5b46a36e46412ea3fcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rmulti_8c.html#a701285a118fac5b46a36e46412ea3fcd">radd_abs_abs</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *z, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
 <tr class="memdesc:a701285a118fac5b46a36e46412ea3fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の2値の絶対値の和 z=abs(x)+abs(y)  <a href="#a701285a118fac5b46a36e46412ea3fcd">[詳解]</a><br /></td></tr>
 <tr class="separator:a701285a118fac5b46a36e46412ea3fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -765,15 +768,107 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の足し算 z=x+y </p>
+<p>z=x+y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00989">989</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00978">978</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a2ac53114d2f78657475ff3a98a64128c_cgraph.png" border="0" usemap="#rmulti_8c_a2ac53114d2f78657475ff3a98a64128c_cgraph" alt=""/></div>
 <map name="rmulti_8c_a2ac53114d2f78657475ff3a98a64128c_cgraph" id="rmulti_8c_a2ac53114d2f78657475ff3a98a64128c_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="107,5,204,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af33a9300a9fc7516a14f71cd26509c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33a9300a9fc7516a14f71cd26509c2f">&#9670;&nbsp;</a></span>ddiv_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ddiv_r </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>z=x/y </p>
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01181">1181</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rmulti_8c_af33a9300a9fc7516a14f71cd26509c2f_cgraph.png" border="0" usemap="#rmulti_8c_af33a9300a9fc7516a14f71cd26509c2f_cgraph" alt=""/></div>
+<map name="rmulti_8c_af33a9300a9fc7516a14f71cd26509c2f_cgraph" id="rmulti_8c_af33a9300a9fc7516a14f71cd26509c2f_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="103,5,200,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3683f7ba847b5c46e2e396df13ed8bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3683f7ba847b5c46e2e396df13ed8bbe">&#9670;&nbsp;</a></span>dmul_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dmul_r </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>z=x*y </p>
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01125">1125</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rmulti_8c_a3683f7ba847b5c46e2e396df13ed8bbe_cgraph.png" border="0" usemap="#rmulti_8c_a3683f7ba847b5c46e2e396df13ed8bbe_cgraph" alt=""/></div>
+<map name="rmulti_8c_a3683f7ba847b5c46e2e396df13ed8bbe_cgraph" id="rmulti_8c_a3683f7ba847b5c46e2e396df13ed8bbe_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="105,5,203,32"/>
 </map>
 </div>
 
@@ -811,9 +906,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の引き算 z=x-y </p>
+<p>z=x-y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01045">1045</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01036">1036</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -899,7 +994,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の絶対値 y=abs(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00769">769</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00758">758</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -939,7 +1034,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x)&lt;=&gt;abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01580">1580</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01603">1603</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -981,7 +1076,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x)==abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01593">1593</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01616">1616</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1025,7 +1120,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x)&gt;=abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01597">1597</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01620">1620</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1069,7 +1164,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x)&gt;abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01595">1595</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01618">1618</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1113,7 +1208,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x)&lt;=abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01601">1601</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01624">1624</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1157,7 +1252,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x)&lt;abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01599">1599</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01622">1622</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1207,15 +1302,15 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の差の絶対値 z=abs(x-y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01325">1325</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01348">1348</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_aeff8a3e98b9ccaac9f294c9a646e6726_cgraph.png" border="0" usemap="#rmulti_8c_aeff8a3e98b9ccaac9f294c9a646e6726_cgraph" alt=""/></div>
 <map name="rmulti_8c_aeff8a3e98b9ccaac9f294c9a646e6726_cgraph" id="rmulti_8c_aeff8a3e98b9ccaac9f294c9a646e6726_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="116,5,157,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="116,56,157,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="205,31,303,57"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="116,5,167,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="121,56,162,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="215,31,312,57"/>
 </map>
 </div>
 
@@ -1255,13 +1350,13 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の差の絶対値 z=abs(x-y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01335">1335</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01358">1358</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_acaeaa8cd8c3619532844917d7c8fa979_cgraph.png" border="0" usemap="#rmulti_8c_acaeaa8cd8c3619532844917d7c8fa979_cgraph" alt=""/></div>
 <map name="rmulti_8c_acaeaa8cd8c3619532844917d7c8fa979_cgraph" id="rmulti_8c_acaeaa8cd8c3619532844917d7c8fa979_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="128,5,180,32"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="128,5,180,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="133,56,175,83"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="228,31,325,57"/>
 </map>
@@ -1297,7 +1392,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=arccos(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00887">887</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00876">876</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1337,59 +1432,13 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=arccosh(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00929">929</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00918">918</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a54fcc534f2e20584ef1c34f46b2677ba_cgraph.png" border="0" usemap="#rmulti_8c_a54fcc534f2e20584ef1c34f46b2677ba_cgraph" alt=""/></div>
 <map name="rmulti_8c_a54fcc534f2e20584ef1c34f46b2677ba_cgraph" id="rmulti_8c_a54fcc534f2e20584ef1c34f46b2677ba_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="105,5,203,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a813e20e23a783bb1cf2e65a9f16ae34d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a813e20e23a783bb1cf2e65a9f16ae34d">&#9670;&nbsp;</a></span>radd()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void radd </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rmulti型の足し算 z=x+y </p>
-
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00952">952</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="rmulti_8c_a813e20e23a783bb1cf2e65a9f16ae34d_cgraph.png" border="0" usemap="#rmulti_8c_a813e20e23a783bb1cf2e65a9f16ae34d_cgraph" alt=""/></div>
-<map name="rmulti_8c_a813e20e23a783bb1cf2e65a9f16ae34d_cgraph" id="rmulti_8c_a813e20e23a783bb1cf2e65a9f16ae34d_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="96,5,193,32"/>
 </map>
 </div>
 
@@ -1423,15 +1472,15 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の絶対値の加算 y+=abs(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00778">778</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00767">767</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a9dcfcf66ece4f4db515453b9c432f282_cgraph.png" border="0" usemap="#rmulti_8c_a9dcfcf66ece4f4db515453b9c432f282_cgraph" alt=""/></div>
 <map name="rmulti_8c_a9dcfcf66ece4f4db515453b9c432f282_cgraph" id="rmulti_8c_a9dcfcf66ece4f4db515453b9c432f282_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="118,5,159,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="117,56,160,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="208,31,305,57"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="122,5,163,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="117,56,168,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="216,31,313,57"/>
 </map>
 </div>
 
@@ -1471,7 +1520,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の2値の絶対値の和 z=abs(x)+abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01310">1310</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01333">1333</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1483,7 +1532,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="251,5,303,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="351,81,448,108"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="256,56,297,83"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="255,107,298,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="251,107,302,133"/>
 </map>
 </div>
 
@@ -1529,7 +1578,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の3値の絶対値の和 z=abs(x0)+abs(x1)+abs(x2) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01478">1478</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01501">1501</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1541,7 +1590,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="272,5,324,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="372,81,469,108"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="277,56,319,83"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="277,107,319,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="273,107,323,133"/>
 </map>
 </div>
 
@@ -1579,9 +1628,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の足し算 z=x+y </p>
+<p>z=x+y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00980">980</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00969">969</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1625,9 +1674,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の足し算 z=x+y </p>
+<p>z=x+y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00961">961</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00950">950</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1679,15 +1728,15 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の加算 z+=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01150">1150</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01229">1229</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a05f48c1dd7a3fde008998c2533c5909c_cgraph.png" border="0" usemap="#rmulti_8c_a05f48c1dd7a3fde008998c2533c5909c_cgraph" alt=""/></div>
 <map name="rmulti_8c_a05f48c1dd7a3fde008998c2533c5909c_cgraph" id="rmulti_8c_a05f48c1dd7a3fde008998c2533c5909c_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="118,5,159,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="117,56,160,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="208,31,305,57"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="117,5,168,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="117,56,168,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="216,31,313,57"/>
 </map>
 </div>
 
@@ -1727,14 +1776,14 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の加算 z+=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01189">1189</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01268">1268</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a1a97cc1c8bc773651371937404398afa_cgraph.png" border="0" usemap="#rmulti_8c_a1a97cc1c8bc773651371937404398afa_cgraph" alt=""/></div>
 <map name="rmulti_8c_a1a97cc1c8bc773651371937404398afa_cgraph" id="rmulti_8c_a1a97cc1c8bc773651371937404398afa_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="128,5,180,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="133,56,175,83"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a5ac7f29deca6702de68310402cb41557" title="z=x*y " alt="" coords="128,5,180,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="129,56,179,83"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="228,31,325,57"/>
 </map>
 </div>
@@ -1775,14 +1824,14 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の加算 z+=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01163">1163</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01242">1242</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a65e5271d4be28b4ea9a10c62ba2272ff_cgraph.png" border="0" usemap="#rmulti_8c_a65e5271d4be28b4ea9a10c62ba2272ff_cgraph" alt=""/></div>
 <map name="rmulti_8c_a65e5271d4be28b4ea9a10c62ba2272ff_cgraph" id="rmulti_8c_a65e5271d4be28b4ea9a10c62ba2272ff_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#ae948be5116862c9910a34cc3b7e71308" title="rmulti型の掛け算 z=x*y " alt="" coords="147,107,218,133"/>
-<area shape="rect" id="node9" href="rmulti_8c.html#a3e1f6de9963debee1cf7946b34f36b9b" title="rmulti型の足し算 z=x+y " alt="" coords="147,157,219,184"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="147,107,218,133"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#a3e1f6de9963debee1cf7946b34f36b9b" title="z=x+y " alt="" coords="147,157,219,184"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#ab9cebc0e92c588ea846f83aadcd928bf" title="rmulti型の浮動小数点数の仮数部の0でない桁数の長さ[bits]の取得 " alt="" coords="267,56,339,83"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="277,157,328,184"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="387,157,484,184"/>
@@ -1841,15 +1890,61 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の加算 z+=x*y（作業領域モード） </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01178">1178</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01257">1257</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a9cc10a12f00689827d56b40e78ed464e_cgraph.png" border="0" usemap="#rmulti_8c_a9cc10a12f00689827d56b40e78ed464e_cgraph" alt=""/></div>
 <map name="rmulti_8c_a9cc10a12f00689827d56b40e78ed464e_cgraph" id="rmulti_8c_a9cc10a12f00689827d56b40e78ed464e_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="135,5,177,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="135,56,177,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="225,31,323,57"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="135,5,185,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="135,56,185,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="233,31,331,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a357e8a4bc45c314b575f2e83892919ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a357e8a4bc45c314b575f2e83892919ea">&#9670;&nbsp;</a></span>radd_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void radd_r </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>z=x+y </p>
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00941">941</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rmulti_8c_a357e8a4bc45c314b575f2e83892919ea_cgraph.png" border="0" usemap="#rmulti_8c_a357e8a4bc45c314b575f2e83892919ea_cgraph" alt=""/></div>
+<map name="rmulti_8c_a357e8a4bc45c314b575f2e83892919ea_cgraph" id="rmulti_8c_a357e8a4bc45c314b575f2e83892919ea_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="104,5,201,32"/>
 </map>
 </div>
 
@@ -1887,9 +1982,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の足し算 z=x+y </p>
+<p>z=x+y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01007">1007</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00996">996</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1933,9 +2028,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の足し算 z=x+y </p>
+<p>z=x+y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00998">998</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00987">987</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2064,7 +2159,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=arcsin(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00880">880</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00869">869</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2104,7 +2199,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=arcsinh(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00922">922</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00911">911</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2144,7 +2239,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=arctan(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00894">894</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00883">883</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2190,7 +2285,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=arctan(x/y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01412">1412</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01435">1435</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2230,7 +2325,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=arctanh(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00936">936</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00925">925</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2355,7 +2450,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の整数への丸め y=ceil(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00753">753</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00742">742</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2436,7 +2531,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01499">1499</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01522">1522</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2468,7 +2563,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01505">1505</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01528">1528</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2500,7 +2595,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01503">1503</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01526">1526</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2532,7 +2627,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01501">1501</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01524">1524</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2613,7 +2708,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=cos(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00845">845</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00834">834</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2653,7 +2748,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=cosh(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00908">908</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00897">897</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2693,7 +2788,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=cot(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00873">873</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00862">862</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2733,7 +2828,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=cosec(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00866">866</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00855">855</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2779,7 +2874,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&lt;=&gt;z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01604">1604</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01627">1627</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2789,9 +2884,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="129,56,193,83"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#aeff8a3e98b9ccaac9f294c9a646e6726" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="130,107,193,133"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="139,157,183,184"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="252,81,293,108"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="252,132,293,159"/>
-<area shape="rect" id="node6" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="341,107,439,133"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="252,81,303,108"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="257,132,298,159"/>
+<area shape="rect" id="node6" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="351,107,448,133"/>
 </map>
 </div>
 
@@ -2831,7 +2926,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&lt;=&gt;z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01628">1628</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01651">1651</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2839,7 +2934,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <map name="rmulti_8c_ac27100444efef9b32c6bc218e4ec0788_cgraph" id="rmulti_8c_ac27100444efef9b32c6bc218e4ec0788_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#acaeaa8cd8c3619532844917d7c8fa979" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="129,31,204,57"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="139,81,195,108"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="252,5,304,32"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="252,5,304,32"/>
 <area shape="rect" id="node5" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="257,56,299,83"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="352,31,449,57"/>
 </map>
@@ -2881,7 +2976,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)==z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01617">1617</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01640">1640</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2893,9 +2988,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node5" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="241,56,305,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#aeff8a3e98b9ccaac9f294c9a646e6726" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="242,107,305,133"/>
 <area shape="rect" id="node10" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="251,157,295,184"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="364,81,405,108"/>
-<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="364,132,405,159"/>
-<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="453,107,551,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="364,81,415,108"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="369,132,410,159"/>
+<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="463,107,560,133"/>
 </map>
 </div>
 
@@ -2935,7 +3030,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)==z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01641">1641</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01664">1664</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2945,7 +3040,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#ac27100444efef9b32c6bc218e4ec0788" title="rmulti型の値の比較 abs(x&#45;y)&lt;=&gt;z " alt="" coords="123,56,199,83"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#acaeaa8cd8c3619532844917d7c8fa979" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="247,31,321,57"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="256,81,312,108"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="369,5,421,32"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="369,5,421,32"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="375,56,416,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="469,31,567,57"/>
 </map>
@@ -2987,7 +3082,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&gt;=z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01619">1619</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01642">1642</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2999,9 +3094,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node5" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="241,56,305,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#aeff8a3e98b9ccaac9f294c9a646e6726" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="242,107,305,133"/>
 <area shape="rect" id="node10" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="251,157,295,184"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="364,81,405,108"/>
-<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="364,132,405,159"/>
-<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="453,107,551,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="364,81,415,108"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="369,132,410,159"/>
+<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="463,107,560,133"/>
 </map>
 </div>
 
@@ -3041,7 +3136,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&gt;=z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01643">1643</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01666">1666</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3051,7 +3146,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#ac27100444efef9b32c6bc218e4ec0788" title="rmulti型の値の比較 abs(x&#45;y)&lt;=&gt;z " alt="" coords="123,56,199,83"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#acaeaa8cd8c3619532844917d7c8fa979" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="247,31,321,57"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="256,81,312,108"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="369,5,421,32"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="369,5,421,32"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="375,56,416,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="469,31,567,57"/>
 </map>
@@ -3093,7 +3188,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&gt;z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01621">1621</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01644">1644</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3105,9 +3200,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node5" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="239,56,303,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#aeff8a3e98b9ccaac9f294c9a646e6726" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="239,107,302,133"/>
 <area shape="rect" id="node10" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="249,157,293,184"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="361,81,403,108"/>
-<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="361,132,403,159"/>
-<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="451,107,548,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="361,81,412,108"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="366,132,407,159"/>
+<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="460,107,557,133"/>
 </map>
 </div>
 
@@ -3147,7 +3242,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&gt;z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01645">1645</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01668">1668</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3157,7 +3252,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#ac27100444efef9b32c6bc218e4ec0788" title="rmulti型の値の比較 abs(x&#45;y)&lt;=&gt;z " alt="" coords="119,56,195,83"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#acaeaa8cd8c3619532844917d7c8fa979" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="243,31,317,57"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="252,81,308,108"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="365,5,417,32"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="365,5,417,32"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="371,56,412,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="465,31,563,57"/>
 </map>
@@ -3199,7 +3294,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&lt;=z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01623">1623</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01646">1646</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3211,9 +3306,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node5" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="239,56,303,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#aeff8a3e98b9ccaac9f294c9a646e6726" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="239,107,302,133"/>
 <area shape="rect" id="node10" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="249,157,293,184"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="361,81,403,108"/>
-<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="361,132,403,159"/>
-<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="451,107,548,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="361,81,412,108"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="366,132,407,159"/>
+<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="460,107,557,133"/>
 </map>
 </div>
 
@@ -3253,7 +3348,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&lt;=z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01647">1647</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01670">1670</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3263,7 +3358,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#ac27100444efef9b32c6bc218e4ec0788" title="rmulti型の値の比較 abs(x&#45;y)&lt;=&gt;z " alt="" coords="119,56,195,83"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#acaeaa8cd8c3619532844917d7c8fa979" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="243,31,317,57"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="252,81,308,108"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="365,5,417,32"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="365,5,417,32"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="371,56,412,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="465,31,563,57"/>
 </map>
@@ -3305,7 +3400,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&lt;z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01625">1625</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01648">1648</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3317,9 +3412,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node5" href="rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="236,56,300,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#aeff8a3e98b9ccaac9f294c9a646e6726" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="237,107,299,133"/>
 <area shape="rect" id="node10" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="246,157,290,184"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="359,81,400,108"/>
-<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="359,132,400,159"/>
-<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="448,107,545,133"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="359,81,409,108"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="363,132,405,159"/>
+<area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="457,107,555,133"/>
 </map>
 </div>
 
@@ -3359,7 +3454,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 abs(x-y)&lt;z </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01649">1649</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01672">1672</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3369,55 +3464,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#ac27100444efef9b32c6bc218e4ec0788" title="rmulti型の値の比較 abs(x&#45;y)&lt;=&gt;z " alt="" coords="116,56,192,83"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#acaeaa8cd8c3619532844917d7c8fa979" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="240,31,315,57"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#ae8ff9cfeaa470deea6def3bd9ed35350" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="249,81,305,108"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="363,5,415,32"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="363,5,415,32"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="368,56,409,83"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="463,31,560,57"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ad72e82c70e0eb4d5484653dc7ddcf279"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad72e82c70e0eb4d5484653dc7ddcf279">&#9670;&nbsp;</a></span>rdiv()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rdiv </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rmulti型の割り算 z=x/y </p>
-
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01252">1252</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="rmulti_8c_ad72e82c70e0eb4d5484653dc7ddcf279_cgraph.png" border="0" usemap="#rmulti_8c_ad72e82c70e0eb4d5484653dc7ddcf279_cgraph" alt=""/></div>
-<map name="rmulti_8c_ad72e82c70e0eb4d5484653dc7ddcf279_cgraph" id="rmulti_8c_ad72e82c70e0eb4d5484653dc7ddcf279_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="92,5,189,32"/>
 </map>
 </div>
 
@@ -3457,7 +3506,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の指数部の引き算 y=x/2^n </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01404">1404</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01427">1427</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3503,74 +3552,28 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の商の分母が絶対値 z=x/abs(y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01345">1345</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01368">1368</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_ab774e1874a59974bb79ffe11bd1d419f_cgraph.png" border="0" usemap="#rmulti_8c_ab774e1874a59974bb79ffe11bd1d419f_cgraph" alt=""/></div>
 <map name="rmulti_8c_ab774e1874a59974bb79ffe11bd1d419f_cgraph" id="rmulti_8c_ab774e1874a59974bb79ffe11bd1d419f_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="113,5,155,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#ad72e82c70e0eb4d5484653dc7ddcf279" title="rmulti型の割り算 z=x/y " alt="" coords="115,56,153,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="203,31,300,57"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="116,5,157,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="113,56,160,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="208,31,305,57"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a18333003c3d17b697b50e211181cfecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18333003c3d17b697b50e211181cfecf">&#9670;&nbsp;</a></span>rdiv_d1()</h2>
+<a id="a1a2a5b36261af9d945c81312ec7febe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2a5b36261af9d945c81312ec7febe9">&#9670;&nbsp;</a></span>rdiv_d()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void rdiv_d1 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rmulti型の割り算 z=x/y </p>
-
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01266">1266</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="rmulti_8c_a18333003c3d17b697b50e211181cfecf_cgraph.png" border="0" usemap="#rmulti_8c_a18333003c3d17b697b50e211181cfecf_cgraph" alt=""/></div>
-<map name="rmulti_8c_a18333003c3d17b697b50e211181cfecf_cgraph" id="rmulti_8c_a18333003c3d17b697b50e211181cfecf_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="108,5,205,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a0a712d1c92e6d08cced4f9c5365cdcf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a712d1c92e6d08cced4f9c5365cdcf6">&#9670;&nbsp;</a></span>rdiv_d2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rdiv_d2 </td>
+          <td class="memname">void rdiv_d </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
           <td class="paramname"><em>z</em>, </td>
@@ -3595,15 +3598,61 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の割り算 z=x/y </p>
+<p>z=x/y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01273">1273</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01172">1172</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="rmulti_8c_a0a712d1c92e6d08cced4f9c5365cdcf6_cgraph.png" border="0" usemap="#rmulti_8c_a0a712d1c92e6d08cced4f9c5365cdcf6_cgraph" alt=""/></div>
-<map name="rmulti_8c_a0a712d1c92e6d08cced4f9c5365cdcf6_cgraph" id="rmulti_8c_a0a712d1c92e6d08cced4f9c5365cdcf6_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="108,5,205,32"/>
+<div class="center"><img src="rmulti_8c_a1a2a5b36261af9d945c81312ec7febe9_cgraph.png" border="0" usemap="#rmulti_8c_a1a2a5b36261af9d945c81312ec7febe9_cgraph" alt=""/></div>
+<map name="rmulti_8c_a1a2a5b36261af9d945c81312ec7febe9_cgraph" id="rmulti_8c_a1a2a5b36261af9d945c81312ec7febe9_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="103,5,200,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9dcc10adb3c74cf729501723fdce2be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dcc10adb3c74cf729501723fdce2be2">&#9670;&nbsp;</a></span>rdiv_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rdiv_r </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>z=x/y </p>
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01154">1154</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rmulti_8c_a9dcc10adb3c74cf729501723fdce2be2_cgraph.png" border="0" usemap="#rmulti_8c_a9dcc10adb3c74cf729501723fdce2be2_cgraph" alt=""/></div>
+<map name="rmulti_8c_a9dcc10adb3c74cf729501723fdce2be2_cgraph" id="rmulti_8c_a9dcc10adb3c74cf729501723fdce2be2_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="100,5,197,32"/>
 </map>
 </div>
 
@@ -3641,9 +3690,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の割り算 z=x/y </p>
+<p>z=x/y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01259">1259</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01163">1163</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3687,9 +3736,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の割り算 z=x/y </p>
+<p>z=x/y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01294">1294</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01208">1208</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3733,9 +3782,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の割り算 z=x/y </p>
+<p>z=x/y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01301">1301</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01217">1217</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3779,9 +3828,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の割り算 z=x/y </p>
+<p>z=x/y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01280">1280</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01190">1190</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3825,9 +3874,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の割り算 z=x/y </p>
+<p>z=x/y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01287">1287</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01199">1199</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3867,7 +3916,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x==y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01507">1507</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01530">1530</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3908,7 +3957,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x==y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01509">1509</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01532">1532</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3949,7 +3998,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x==y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01513">1513</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01536">1536</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -3990,7 +4039,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x==y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01511">1511</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01534">1534</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4031,7 +4080,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=exp(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00796">796</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00785">785</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4071,7 +4120,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=10^x </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00810">810</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00799">799</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4117,7 +4166,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の指数部で評価 z=10^(floor(log10(abs(x))-y)) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01439">1439</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01462">1462</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4125,7 +4174,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <map name="rmulti_8c_a1bbe667ebd9bb9b24e2eb8afc9765170_cgraph" id="rmulti_8c_a1bbe667ebd9bb9b24e2eb8afc9765170_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="167,5,208,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#afe5d80a74a0711fc82649e7390482254" title="rmulti型の計算 y=log_10(x) " alt="" coords="163,56,212,83"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="161,107,213,133"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="161,107,213,133"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#a2c9487cb29f8b4beb633ad6e981dd958" title="rmulti型の整数への丸め y=floor(x) " alt="" coords="165,157,210,184"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#a42752bf238321f87d49326a7fccb94be" title="rmulti型の計算 y=10^x " alt="" coords="161,208,213,235"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="261,81,359,108"/>
@@ -4162,7 +4211,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=2^x </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00803">803</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00792">792</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4208,7 +4257,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の指数部で評価 z=2^(floor(log2(abs(x))-y)) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01455">1455</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01478">1478</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4216,7 +4265,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <map name="rmulti_8c_aa843b76038edfb2e2f9a9b998aa1a29b_cgraph" id="rmulti_8c_aa843b76038edfb2e2f9a9b998aa1a29b_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="199,5,240,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#ac4ba685e4142a85733f8b9f2d2377397" title="rmulti型の計算 y=log_2(x) " alt="" coords="197,56,241,83"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="rmulti型の引き算 z=x&#45;y " alt="" coords="193,107,245,133"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="193,107,245,133"/>
 <area shape="rect" id="node6" href="rmulti_8c.html#a2c9487cb29f8b4beb633ad6e981dd958" title="rmulti型の整数への丸め y=floor(x) " alt="" coords="197,157,242,184"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#a7887a667eaedbe69e814e4cd67ac6c4c" title="rmulti型の計算 y=2^x " alt="" coords="196,208,243,235"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="293,81,391,108"/>
@@ -4253,7 +4302,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の整数への丸め y=floor(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00746">746</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00735">735</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -4315,7 +4364,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01537">1537</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01560">1560</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4356,7 +4405,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01539">1539</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01562">1562</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4397,7 +4446,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01541">1541</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01564">1564</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4438,7 +4487,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01547">1547</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01570">1570</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4479,7 +4528,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01549">1549</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01572">1572</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4520,7 +4569,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01543">1543</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01566">1566</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4561,7 +4610,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01545">1545</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01568">1568</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4592,7 +4641,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型を倍精度型に変換. </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00690">690</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00679">679</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4779,7 +4828,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型を符号あり整数型に変換. </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00708">708</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00697">697</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4838,7 +4887,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型を符号なし整数型に変換. </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00699">699</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00688">688</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4878,7 +4927,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01523">1523</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01546">1546</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4919,7 +4968,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01525">1525</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01548">1548</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4960,7 +5009,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01527">1527</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01550">1550</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5001,7 +5050,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01533">1533</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01556">1556</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5042,7 +5091,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01535">1535</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01558">1558</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5083,7 +5132,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01529">1529</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01552">1552</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5124,7 +5173,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&gt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01531">1531</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01554">1554</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5165,14 +5214,14 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の逆数 y=1/x </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00732">732</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00721">721</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_ad476ae3065909e933fe8112705cf5b4e_cgraph.png" border="0" usemap="#rmulti_8c_ad476ae3065909e933fe8112705cf5b4e_cgraph" alt=""/></div>
 <map name="rmulti_8c_ad476ae3065909e933fe8112705cf5b4e_cgraph" id="rmulti_8c_ad476ae3065909e933fe8112705cf5b4e_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a18333003c3d17b697b50e211181cfecf" title="rmulti型の割り算 z=x/y " alt="" coords="92,5,147,32"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="195,5,292,32"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#af33a9300a9fc7516a14f71cd26509c2f" title="z=x/y " alt="" coords="92,5,141,32"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="189,5,287,32"/>
 </map>
 </div>
 
@@ -5206,16 +5255,16 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の逆数 y=1/x </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00738">738</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00727">727</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a8b469c97a38b7437fa871ad986082c72_cgraph.png" border="0" usemap="#rmulti_8c_a8b469c97a38b7437fa871ad986082c72_cgraph" alt=""/></div>
 <map name="rmulti_8c_a8b469c97a38b7437fa871ad986082c72_cgraph" id="rmulti_8c_a8b469c97a38b7437fa871ad986082c72_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="103,5,164,32"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a0a712d1c92e6d08cced4f9c5365cdcf6" title="rmulti型の割り算 z=x/y " alt="" coords="212,56,267,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="213,5,265,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="315,31,412,57"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a1a2a5b36261af9d945c81312ec7febe9" title="z=x/y " alt="" coords="213,56,263,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="212,5,264,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="312,31,409,57"/>
 </map>
 </div>
 
@@ -5481,7 +5530,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01565">1565</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01588">1588</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5522,7 +5571,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01567">1567</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01590">1590</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5563,7 +5612,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01569">1569</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01592">1592</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5604,7 +5653,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01575">1575</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01598">1598</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5645,7 +5694,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01577">1577</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01600">1600</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5686,7 +5735,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01571">1571</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01594">1594</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5727,7 +5776,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01573">1573</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01596">1596</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5768,7 +5817,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=log(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00817">817</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00806">806</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5808,7 +5857,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=log_10(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00831">831</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00820">820</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5848,7 +5897,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=log_2(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00824">824</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00813">813</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5888,7 +5937,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01551">1551</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01574">1574</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5929,7 +5978,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01553">1553</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01576">1576</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -5970,7 +6019,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01555">1555</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01578">1578</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6011,7 +6060,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01561">1561</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01584">1584</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6052,7 +6101,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01563">1563</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01586">1586</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6093,7 +6142,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01557">1557</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01580">1580</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6134,7 +6183,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x&lt;y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01559">1559</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01582">1582</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6181,7 +6230,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>2つのrmulti型の大きい方 上丸め z=max2(x,y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01421">1421</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01444">1444</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6263,7 +6312,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>2つのrmulti型の小さい方 下丸め z=min2(x,y) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01430">1430</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01453">1453</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6272,52 +6321,6 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node2" href="rmulti_8c.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="129,31,168,57"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="216,5,288,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="230,56,274,83"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a823702afaeee275caf7d0946679b3292"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a823702afaeee275caf7d0946679b3292">&#9670;&nbsp;</a></span>rmul()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rmul </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rmulti型の掛け算 z=x*y </p>
-
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01099">1099</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="rmulti_8c_a823702afaeee275caf7d0946679b3292_cgraph.png" border="0" usemap="#rmulti_8c_a823702afaeee275caf7d0946679b3292_cgraph" alt=""/></div>
-<map name="rmulti_8c_a823702afaeee275caf7d0946679b3292_cgraph" id="rmulti_8c_a823702afaeee275caf7d0946679b3292_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="95,5,192,32"/>
 </map>
 </div>
 
@@ -6357,7 +6360,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の指数部の足し算 y=x*2^n </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01394">1394</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01417">1417</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6401,9 +6404,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の掛け算 z=x*y </p>
+<p>z=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01123">1123</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01116">1116</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6447,9 +6450,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の掛け算 z=x*y </p>
+<p>z=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01108">1108</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01101">1101</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6461,6 +6464,52 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <area shape="rect" id="node3" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="257,5,329,32"/>
 <area shape="rect" id="node4" href="rmulti_8c.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="264,56,321,83"/>
 <area shape="rect" id="node5" href="rmulti_8c.html#af79bf3e5d7ce5b7af732ffba7fd2ea80" title="rmulti型の浮動小数点数の仮数部が格納されている配列のサイズの取得. " alt="" coords="261,107,324,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3451eef31d904dc3c6d4d49880a38ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3451eef31d904dc3c6d4d49880a38ad4">&#9670;&nbsp;</a></span>rmul_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rmul_r </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>z=x*y </p>
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01092">1092</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rmulti_8c_a3451eef31d904dc3c6d4d49880a38ad4_cgraph.png" border="0" usemap="#rmulti_8c_a3451eef31d904dc3c6d4d49880a38ad4_cgraph" alt=""/></div>
+<map name="rmulti_8c_a3451eef31d904dc3c6d4d49880a38ad4_cgraph" id="rmulti_8c_a3451eef31d904dc3c6d4d49880a38ad4_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="104,5,201,32"/>
 </map>
 </div>
 
@@ -6498,9 +6547,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の掛け算 z=x*y </p>
+<p>z=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01141">1141</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01143">1143</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6544,9 +6593,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の掛け算 z=x*y </p>
+<p>z=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01132">1132</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01134">1134</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6586,7 +6635,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x!=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01515">1515</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01538">1538</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6627,7 +6676,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x!=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01517">1517</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01540">1540</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6668,7 +6717,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x!=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01521">1521</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01544">1544</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6709,7 +6758,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の値の比較 x!=y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01519">1519</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01542">1542</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6750,7 +6799,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の符号反転 y=-x </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00725">725</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00714">714</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6796,7 +6845,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01356">1356</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01379">1379</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6842,7 +6891,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01365">1365</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01388">1388</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6890,7 +6939,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01385">1385</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01408">1408</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -6936,7 +6985,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型のべき乗 z=x^y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01378">1378</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01401">1401</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7163,51 +7212,13 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=sec(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00859">859</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00848">848</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a9c6712d344cf9bc34f1db6a010eef668_cgraph.png" border="0" usemap="#rmulti_8c_a9c6712d344cf9bc34f1db6a010eef668_cgraph" alt=""/></div>
 <map name="rmulti_8c_a9c6712d344cf9bc34f1db6a010eef668_cgraph" id="rmulti_8c_a9c6712d344cf9bc34f1db6a010eef668_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="95,5,192,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a6fc424b7a73942016f9dc93dbff1edd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fc424b7a73942016f9dc93dbff1edd8">&#9670;&nbsp;</a></span>rset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rset </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00576">576</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="rmulti_8c_a6fc424b7a73942016f9dc93dbff1edd8_cgraph.png" border="0" usemap="#rmulti_8c_a6fc424b7a73942016f9dc93dbff1edd8_cgraph" alt=""/></div>
-<map name="rmulti_8c_a6fc424b7a73942016f9dc93dbff1edd8_cgraph" id="rmulti_8c_a6fc424b7a73942016f9dc93dbff1edd8_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="92,5,189,32"/>
 </map>
 </div>
 
@@ -7248,7 +7259,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00589">589</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00578">578</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7295,7 +7306,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00622">622</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00611">611</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -7323,7 +7334,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00632">632</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00621">621</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -7351,7 +7362,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00652">652</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00641">641</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7388,7 +7399,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00662">662</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00651">651</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7396,6 +7407,44 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <map name="rmulti_8c_a45492ce3acbfc402dcf2bf328c86d84a_cgraph" id="rmulti_8c_a45492ce3acbfc402dcf2bf328c86d84a_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="136,5,188,32"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="236,5,333,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a484a24b0f72dddc71bbff6876ed9aae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a484a24b0f72dddc71bbff6876ed9aae5">&#9670;&nbsp;</a></span>rset_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rset_r </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00565">565</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rmulti_8c_a484a24b0f72dddc71bbff6876ed9aae5_cgraph.png" border="0" usemap="#rmulti_8c_a484a24b0f72dddc71bbff6876ed9aae5_cgraph" alt=""/></div>
+<map name="rmulti_8c_a484a24b0f72dddc71bbff6876ed9aae5_cgraph" id="rmulti_8c_a484a24b0f72dddc71bbff6876ed9aae5_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="101,5,199,32"/>
 </map>
 </div>
 
@@ -7425,7 +7474,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00672">672</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00661">661</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7433,7 +7482,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <map name="rmulti_8c_a18eee6dae76322905a0bcf05e83cbb79_cgraph" id="rmulti_8c_a18eee6dae76322905a0bcf05e83cbb79_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#a99be0de1dc5dac124464db957e37b6ad" title="rmulti型の浮動小数点数を符号なし整数から設定. " alt="" coords="134,5,186,32"/>
 <area shape="rect" id="node4" href="mt19937ar_8c.html#a2b30ec504bc40c51320d14da9dfab43b" title="genrand_int32" alt="" coords="117,56,203,83"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a032720ada7cafd1b35ebdcd7c27fce27" title="rmulti型の割り算 z=x/y " alt="" coords="131,107,189,133"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a032720ada7cafd1b35ebdcd7c27fce27" title="z=x/y " alt="" coords="131,107,189,133"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="251,56,348,83"/>
 </map>
 </div>
@@ -7558,7 +7607,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00611">611</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00600">600</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7605,7 +7654,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00600">600</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00589">589</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7641,7 +7690,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00642">642</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00631">631</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7682,7 +7731,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=sin(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00838">838</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00827">827</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7722,7 +7771,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=sinh(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00901">901</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00890">890</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7762,59 +7811,13 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=sqrt(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00789">789</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00778">778</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a26662dbe8af4b87190d09ee080a6c18f_cgraph.png" border="0" usemap="#rmulti_8c_a26662dbe8af4b87190d09ee080a6c18f_cgraph" alt=""/></div>
 <map name="rmulti_8c_a26662dbe8af4b87190d09ee080a6c18f_cgraph" id="rmulti_8c_a26662dbe8af4b87190d09ee080a6c18f_cgraph">
 <area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="96,5,193,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="abb36b81765be65f0434b357bfac4af1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb36b81765be65f0434b357bfac4af1d">&#9670;&nbsp;</a></span>rsub()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rsub </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rmulti型の引き算 z=x-y </p>
-
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01016">1016</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="rmulti_8c_abb36b81765be65f0434b357bfac4af1d_cgraph.png" border="0" usemap="#rmulti_8c_abb36b81765be65f0434b357bfac4af1d_cgraph" alt=""/></div>
-<map name="rmulti_8c_abb36b81765be65f0434b357bfac4af1d_cgraph" id="rmulti_8c_abb36b81765be65f0434b357bfac4af1d_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="95,5,192,32"/>
 </map>
 </div>
 
@@ -7852,9 +7855,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の引き算 z=x-y </p>
+<p>z=x-y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01054">1054</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01045">1045</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7898,9 +7901,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の引き算 z=x-y </p>
+<p>z=x-y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01025">1025</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01016">1016</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -7952,15 +7955,15 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の減算 z-=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01202">1202</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01281">1281</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a1d5aa554c04b670dc021fb70416d4078_cgraph.png" border="0" usemap="#rmulti_8c_a1d5aa554c04b670dc021fb70416d4078_cgraph" alt=""/></div>
 <map name="rmulti_8c_a1d5aa554c04b670dc021fb70416d4078_cgraph" id="rmulti_8c_a1d5aa554c04b670dc021fb70416d4078_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="116,5,157,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="116,56,157,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="205,31,303,57"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="116,5,167,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="116,56,167,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="215,31,312,57"/>
 </map>
 </div>
 
@@ -8000,14 +8003,14 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の減算 z-=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01241">1241</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01320">1320</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a1e9de1f8bac3b6ff24f33ccda015f2fb_cgraph.png" border="0" usemap="#rmulti_8c_a1e9de1f8bac3b6ff24f33ccda015f2fb_cgraph" alt=""/></div>
 <map name="rmulti_8c_a1e9de1f8bac3b6ff24f33ccda015f2fb_cgraph" id="rmulti_8c_a1e9de1f8bac3b6ff24f33ccda015f2fb_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="128,5,180,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="133,56,175,83"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a5ac7f29deca6702de68310402cb41557" title="z=x*y " alt="" coords="128,5,180,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="129,56,179,83"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="228,31,325,57"/>
 </map>
 </div>
@@ -8048,14 +8051,14 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の減算 z-=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01215">1215</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01294">1294</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_ac7617fc75e14080673808c09a82f5093_cgraph.png" border="0" usemap="#rmulti_8c_ac7617fc75e14080673808c09a82f5093_cgraph" alt=""/></div>
 <map name="rmulti_8c_ac7617fc75e14080673808c09a82f5093_cgraph" id="rmulti_8c_ac7617fc75e14080673808c09a82f5093_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#ae948be5116862c9910a34cc3b7e71308" title="rmulti型の掛け算 z=x*y " alt="" coords="145,107,216,133"/>
-<area shape="rect" id="node9" href="rmulti_8c.html#a0c6f672ec0fa3a65a677817e68aa5e47" title="rmulti型の引き算 z=x&#45;y " alt="" coords="145,157,216,184"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="145,107,216,133"/>
+<area shape="rect" id="node9" href="rmulti_8c.html#a0c6f672ec0fa3a65a677817e68aa5e47" title="z=x&#45;y " alt="" coords="145,157,216,184"/>
 <area shape="rect" id="node3" href="rmulti_8c.html#ab9cebc0e92c588ea846f83aadcd928bf" title="rmulti型の浮動小数点数の仮数部の0でない桁数の長さ[bits]の取得 " alt="" coords="264,56,336,83"/>
 <area shape="rect" id="node7" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="275,157,325,184"/>
 <area shape="rect" id="node8" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="384,157,481,184"/>
@@ -8114,15 +8117,61 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の掛け算の減算 z-=x*y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01230">1230</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01309">1309</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="rmulti_8c_a830f6336bbd56676d404153c7a729bad_cgraph.png" border="0" usemap="#rmulti_8c_a830f6336bbd56676d404153c7a729bad_cgraph" alt=""/></div>
 <map name="rmulti_8c_a830f6336bbd56676d404153c7a729bad_cgraph" id="rmulti_8c_a830f6336bbd56676d404153c7a729bad_cgraph">
-<area shape="rect" id="node2" href="rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="135,5,176,32"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="135,56,176,83"/>
-<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="224,31,321,57"/>
+<area shape="rect" id="node2" href="rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="135,5,185,32"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="135,56,185,83"/>
+<area shape="rect" id="node3" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="233,31,331,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2be9df23cebdc01c10ec1a5ac639a62d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be9df23cebdc01c10ec1a5ac639a62d">&#9670;&nbsp;</a></span>rsub_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rsub_r </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>z=x-y </p>
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01007">1007</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="rmulti_8c_a2be9df23cebdc01c10ec1a5ac639a62d_cgraph.png" border="0" usemap="#rmulti_8c_a2be9df23cebdc01c10ec1a5ac639a62d_cgraph" alt=""/></div>
+<map name="rmulti_8c_a2be9df23cebdc01c10ec1a5ac639a62d_cgraph" id="rmulti_8c_a2be9df23cebdc01c10ec1a5ac639a62d_cgraph">
+<area shape="rect" id="node2" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="104,5,201,32"/>
 </map>
 </div>
 
@@ -8160,9 +8209,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の引き算 z=x-y </p>
+<p>z=x-y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01081">1081</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01072">1072</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -8206,9 +8255,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の引き算 z=x-y </p>
+<p>z=x-y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01090">1090</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01081">1081</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -8252,9 +8301,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の引き算 z=x-y </p>
+<p>z=x-y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01063">1063</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01054">1054</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -8298,9 +8347,9 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>rmulti型の引き算 z=x-y </p>
+<p>z=x-y </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01072">1072</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l01063">1063</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -8379,7 +8428,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=tan(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00852">852</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00841">841</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -8419,7 +8468,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の計算 y=tanh(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00915">915</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00904">904</a> 行目に定義があります。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -8459,7 +8508,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 
 <p>rmulti型の整数への丸め y=trunc(x) </p>
 
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00760">760</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00749">749</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -8544,7 +8593,7 @@ $(document).ready(function(){initNavTree('rmulti_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="rmulti_8c.html">rmulti.c</a></li>
-    <li class="footer">2018年05月10日(木) 23時22分37秒作成 - libis / 構成: 
+    <li class="footer">2018年05月11日(金) 23時26分57秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

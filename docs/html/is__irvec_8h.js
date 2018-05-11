@@ -1,5 +1,6 @@
 var is__irvec_8h =
 [
+    [ "dvec_set_ir", "is__irvec_8h.html#ac496e6474b4144f56d15d8a13c74acce", null ],
     [ "icvec_real_d", "is__irvec_8h.html#a9e61a290e965916287c5cdeeaf3cffdf", null ],
     [ "idscalar_sub_rvec", "is__irvec_8h.html#ab7d80006f7849d05ac8cd01ad8fba625", null ],
     [ "idvec_add_rscalar", "is__irvec_8h.html#a852ec762dcb5c0fe3bd0f0e31d19a151", null ],
@@ -57,5 +58,6 @@ var is__irvec_8h =
     [ "irvec_sum_pow2", "is__irvec_8h.html#ac13764deeae995c7d3ea4cf8edbc2cac", null ],
     [ "irvec_umax", "is__irvec_8h.html#a7e7a1f52ea010af885dba9541f6b2a2e", null ],
     [ "irvec_umax_abs", "is__irvec_8h.html#ad428116aa2a96e73dea196d58761c4ce", null ],
-    [ "irvec_umin", "is__irvec_8h.html#aefadadbeeba487f382cc70efdf16ea02", null ]
+    [ "irvec_umin", "is__irvec_8h.html#aefadadbeeba487f382cc70efdf16ea02", null ],
+    [ "zvec_set_ir", "is__irvec_8h.html#a7cf909414752c5b2628d278829aa098d", null ]
 ];

@@ -1,6 +1,6 @@
 <map id="rsub_mul_exact" name="rsub_mul_exact">
-<area shape="rect" id="node2" href="$rmulti_8c.html#ae948be5116862c9910a34cc3b7e71308" title="rmulti型の掛け算 z=x*y " alt="" coords="145,107,216,133"/>
-<area shape="rect" id="node9" href="$rmulti_8c.html#a0c6f672ec0fa3a65a677817e68aa5e47" title="rmulti型の引き算 z=x&#45;y " alt="" coords="145,157,216,184"/>
+<area shape="rect" id="node2" href="$rmulti_8c.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="145,107,216,133"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a0c6f672ec0fa3a65a677817e68aa5e47" title="z=x&#45;y " alt="" coords="145,157,216,184"/>
 <area shape="rect" id="node3" href="$rmulti_8c.html#ab9cebc0e92c588ea846f83aadcd928bf" title="rmulti型の浮動小数点数の仮数部の0でない桁数の長さ[bits]の取得 " alt="" coords="264,56,336,83"/>
 <area shape="rect" id="node7" href="$rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="275,157,325,184"/>
 <area shape="rect" id="node8" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="384,157,481,184"/>

@@ -23,6 +23,8 @@ void icvec_set_dz(int n, cmulti **y0, cmulti **y1, double *x0, dcomplex *x1);
 void icvec_set_zd(int n, cmulti **y0, cmulti **y1, dcomplex *x0, double *x1);
 void icvec_set_cr(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1);
 void icvec_set_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1);
+void dvec_set_ic(int n, double *y, cmulti **x0, cmulti **x1);
+void zvec_set_ic(int n, dcomplex *y, cmulti **x0, cmulti **x1);
 
 /*
  * I/O

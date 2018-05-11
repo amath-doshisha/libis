@@ -82,7 +82,7 @@
 <area shape="rect" id="node73" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="875,2880,983,2907"/>
 <area shape="rect" id="node70" href="$cmulti_8c.html#ad5f1e890ff473b1d8c05ba90df4d1f67" title="cmulti型が実数であるかの判定. " alt="" coords="1061,1816,1117,1843"/>
 <area shape="rect" id="node71" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="1221,2272,1269,2299"/>
-<area shape="rect" id="node72" href="$cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="1068,2272,1111,2299"/>
+<area shape="rect" id="node72" href="$cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="1063,2272,1116,2299"/>
 <area shape="rect" id="node76" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="1203,4552,1287,4579"/>
 <area shape="rect" id="node79" href="$func__mul_8c.html#aaa2f65a6f850615c43a3fe204f935a6d" title="func_is_split_mul" alt="" coords="718,5211,817,5237"/>
 <area shape="rect" id="node82" href="$func__mul_8c.html#ac95a9ec8fa0646822f0ae6b950e6f3c5" title="func_get_number_part" alt="" coords="537,5109,660,5136"/>
@@ -94,8 +94,8 @@
 <area shape="rect" id="node91" href="$func__math_8c.html#acc2e6f2e19bf1fcc19fabd0a7d98c0bc" title="func_sqrt" alt="" coords="567,1512,630,1539"/>
 <area shape="rect" id="node93" href="$func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57" title="func_a_resize" alt="" coords="1352,1056,1436,1083"/>
 <area shape="rect" id="node94" href="$func__args_8c.html#aec5ebed633d711e505b979b939f7e275" title="func_a_replace" alt="" coords="1497,1411,1587,1437"/>
-<area shape="rect" id="node97" href="$cmulti_8c.html#a630be55c263a817d2751c463b0c7ec04" title="cmulti型の足し算 z=x+y " alt="" coords="1061,1107,1117,1133"/>
+<area shape="rect" id="node97" href="$cmulti_8c.html#a630be55c263a817d2751c463b0c7ec04" title="z=x+y " alt="" coords="1061,1107,1117,1133"/>
 <area shape="rect" id="node98" href="$cmulti_8c.html#ab5b002aade48f0db66584bb8bebdf47a" title="cmulti型の計算 y=sqrt(x) " alt="" coords="1062,955,1117,981"/>
-<area shape="rect" id="node99" href="$cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="1067,1005,1111,1032"/>
+<area shape="rect" id="node99" href="$cmulti_8c.html#a96dd94583d43f5d1a56d2b5e307a8240" title="z=x+y " alt="" coords="1062,1005,1117,1032"/>
 <area shape="rect" id="node100" href="$cmulti_8c.html#a8168c3ad5161e6500e5f2c628c1c56cf" title="cmulti型の計算 y=log(x) " alt="" coords="1064,1056,1115,1083"/>
 </map>

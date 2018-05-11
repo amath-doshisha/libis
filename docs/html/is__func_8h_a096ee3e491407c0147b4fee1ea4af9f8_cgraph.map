@@ -71,7 +71,7 @@
 <area shape="rect" id="node69" href="$cmat_8c.html#afed0bc209838f25f2aba7d5f734bd2e7" title="cmulti型の行列の複製の生成. " alt="" coords="1673,1975,1787,2001"/>
 <area shape="rect" id="node70" href="$cmulti_8c.html#a0a3490f59b88636e98cf940d7b20d70f" title="cmulti型の複製の生成. " alt="" coords="1835,1968,1925,1995"/>
 <area shape="rect" id="node71" href="$is__rmulti_8h.html#a3ab36d8527ef192c290046883aaad519" title="rmulti型の複製の生成. " alt="" coords="1973,1943,2063,1969"/>
-<area shape="rect" id="node72" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="2201,2044,2299,2071"/>
+<area shape="rect" id="node72" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="2209,2044,2307,2071"/>
 <area shape="rect" id="node74" href="$cmat_8c.html#a46f18b17c9b66d7db5039ac184bb056d" title="cmulti型の行列の値の比較 A&lt;==&gt;B. " alt="" coords="1219,1855,1287,1881"/>
 <area shape="rect" id="node75" href="$cmulti_8c.html#a9d30ad3cd5a86d816ac906db4d8dfbff" title="cmulti型の値の比較 x&lt;=&gt;y " alt="" coords="1402,2057,1447,2084"/>
 <area shape="rect" id="node76" href="$cmulti_8c.html#ad4e2a45b385acf35da73368b3eb29cad" title="cmulti型の値の比較 x&lt;=&gt;y の方法の取得 " alt="" coords="1535,2057,1624,2084"/>
@@ -80,11 +80,11 @@
 <area shape="rect" id="node78" href="$cmulti_8c.html#ae6aa56ed1fbc6ffe1d33b6dea08330af" title="cmulti型の絶対値 y=abs(x) " alt="" coords="1706,2108,1754,2135"/>
 <area shape="rect" id="node85" href="$is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="1993,2171,2043,2197"/>
 <area shape="rect" id="node79" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="1855,2069,1905,2096"/>
-<area shape="rect" id="node84" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="2111,2120,2153,2147"/>
-<area shape="rect" id="node80" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="1997,2069,2039,2096"/>
+<area shape="rect" id="node84" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="2115,2120,2157,2147"/>
+<area shape="rect" id="node80" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="1993,2069,2043,2096"/>
 <area shape="rect" id="node81" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="1986,2019,2050,2045"/>
-<area shape="rect" id="node82" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="2111,2019,2153,2045"/>
-<area shape="rect" id="node83" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="2111,1968,2153,1995"/>
+<area shape="rect" id="node82" href="$rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="2111,2019,2161,2045"/>
+<area shape="rect" id="node83" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="2111,1968,2161,1995"/>
 <area shape="rect" id="node88" href="$cmulti_8c.html#ad5f1e890ff473b1d8c05ba90df4d1f67" title="cmulti型が実数であるかの判定. " alt="" coords="1225,2083,1281,2109"/>
 <area shape="rect" id="node92" href="$func__cmat_8c.html#a79805d805f1971ff169d0d470c8851db" title="func_cmat_at" alt="" coords="1211,1956,1294,1983"/>
 <area shape="rect" id="node93" href="$cmulti_8c.html#a8bf6218098c6173902275d5db5e174d8" title="cmulti型が純虚数であるかの判定. " alt="" coords="1198,2133,1307,2160"/>

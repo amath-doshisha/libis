@@ -80,6 +80,26 @@ void irvec_set_c(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
   for(i=0; i<n; i++){ irset(y0[i],y1[i],C_R(x0[i]),C_R(x1[i])); }
 }
 
+// y=x
+void dvec_set_ir(int n, double *y, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=0.5*(rget_d(x0[i])+rget_d(x1[i])); }
+}
+
+// y=x
+void zvec_set_ir(int n, dcomplex *y, rmulti **x0, rmulti **x1)
+{
+  double a;
+  int i;
+  for(i=0; i<n; i++){
+    a=0.5*(rget_d(x0[i])+rget_d(x1[i]));
+    Z_SET(y[i],a,0);
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+
 /** @* */
 /** @name irmulti型ベクトルの型変換に関する関数 */
 /** @{ */
@@ -166,7 +186,7 @@ void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **
   mode=get_round_mode();
   set_round_mode(MPFR_RNDU);  // up
   rvec_sub_rvec(n,xc,x1,x0);    // xc=x1-x0
-  rvec_mul_d(n,xc,xc,0.5); // xc=(x1-x0)/2
+  rvec_mul_dscalar(n,xc,xc,0.5); // xc=(x1-x0)/2
   rvec_add_rvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
   rvec_sub_rvec(n,xr,xc,x0);    // xr=xc-x0
   set_round_mode(mode);       // back

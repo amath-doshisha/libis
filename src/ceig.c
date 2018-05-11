@@ -23,7 +23,7 @@
  */
 void ceig_residual(int n, cmulti **F, cmulti **A, int LDA, cmulti **x, cmulti *lambda)
 {
-  cvec_mul_c(n,F,x,lambda);      // F=x*lambda
+  cvec_mul_cscalar(n,F,x,lambda);      // F=x*lambda
   cvec_neg(n,F,F);               // F=-x*lambda
   cvec_add_lintr(n,n,F,A,LDA,x); // F=A*x-lambda*x
 }

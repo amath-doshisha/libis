@@ -2,10 +2,10 @@
 <area shape="rect" id="node2" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="1558,1368,1611,1395"/>
 <area shape="rect" id="node5" href="$func__rvec_8c.html#a4b7301ce38e9502a2f305a5fc656df75" title="func_rvec" alt="" coords="150,1055,215,1081"/>
 <area shape="rect" id="node56" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="738,444,798,471"/>
-<area shape="rect" id="node66" href="$is__rvec_8h.html#ab11026ca106c415189a8f5e40aa7bf13" title="rmulti型のベクトルの足し算 z=x+y " alt="" coords="276,1660,364,1687"/>
+<area shape="rect" id="node66" href="$is__rvec_8h.html#ab11026ca106c415189a8f5e40aa7bf13" title="z=x+y " alt="" coords="276,1660,364,1687"/>
 <area shape="rect" id="node69" href="$func__cvec_8c.html#ab24a2d5a81508d46300a2fd7b01eddf2" title="func_cvec" alt="" coords="149,1105,216,1132"/>
-<area shape="rect" id="node77" href="$cvec_8c.html#a560c9db2209e085ce0c37fda2fab6ff5" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="138,1761,227,1788"/>
-<area shape="rect" id="node80" href="$cvec_8c.html#a6c3baba682cb93b84be17f6fefb1475a" title="cmulti型のベクトルの足し算 z=x+y " alt="" coords="137,1711,228,1737"/>
+<area shape="rect" id="node77" href="$cvec_8c.html#a560c9db2209e085ce0c37fda2fab6ff5" title="z=x+y " alt="" coords="138,1761,227,1788"/>
+<area shape="rect" id="node80" href="$cvec_8c.html#a6c3baba682cb93b84be17f6fefb1475a" title="z=x+y " alt="" coords="137,1711,228,1737"/>
 <area shape="rect" id="node3" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="1697,1520,1755,1547"/>
 <area shape="rect" id="node4" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="1825,1520,1891,1547"/>
 <area shape="rect" id="node6" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="287,1080,353,1107"/>
@@ -67,7 +67,7 @@
 <area shape="rect" id="node60" href="$func__rvec_8c.html#a68e6b92e8833d55329310b9bf737f3e7" title="func_rvec_p_del" alt="" coords="1035,191,1131,217"/>
 <area shape="rect" id="node62" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="1409,228,1451,255"/>
 <area shape="rect" id="node65" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="1053,444,1113,471"/>
-<area shape="rect" id="node67" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="438,1711,481,1737"/>
+<area shape="rect" id="node67" href="$is__rmulti_8h.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="434,1711,485,1737"/>
 <area shape="rect" id="node68" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="561,1736,659,1763"/>
 <area shape="rect" id="node70" href="$func__cvec_8c.html#ab01f46c921cbf0607109ca9f94eb058b" title="func_cvec_p_resize" alt="" coords="555,596,665,623"/>
 <area shape="rect" id="node71" href="$func__cvec_8c.html#a6f4383edafb70a7eb935f896b2e22ea5" title="func_cvec_p_new" alt="" coords="717,647,819,673"/>
@@ -76,7 +76,7 @@
 <area shape="rect" id="node72" href="$func__cvec_8c.html#a2225b1c10e09a9126d7c191feb54fd63" title="func_cvec_p_del" alt="" coords="872,647,969,673"/>
 <area shape="rect" id="node74" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="1236,343,1280,369"/>
 <area shape="rect" id="node76" href="$cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="890,495,951,521"/>
-<area shape="rect" id="node78" href="$cmulti_8c.html#aa18f5b4fde710a1bf76e03b7f9fdd9d6" title="cmulti型の足し算 z=x+y " alt="" coords="294,1761,346,1788"/>
-<area shape="rect" id="node79" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="436,1761,483,1788"/>
-<area shape="rect" id="node81" href="$cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="298,1711,342,1737"/>
+<area shape="rect" id="node78" href="$cmulti_8c.html#aa18f5b4fde710a1bf76e03b7f9fdd9d6" title="z=x+y " alt="" coords="294,1761,346,1788"/>
+<area shape="rect" id="node79" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="435,1761,483,1788"/>
+<area shape="rect" id="node81" href="$cmulti_8c.html#a96dd94583d43f5d1a56d2b5e307a8240" title="z=x+y " alt="" coords="293,1711,347,1737"/>
 </map>

@@ -12,20 +12,20 @@
 <area shape="rect" id="node9" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="455,81,519,108"/>
 <area shape="rect" id="node10" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="679,31,731,57"/>
 <area shape="rect" id="node11" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="779,208,876,235"/>
-<area shape="rect" id="node13" href="$cmulti_8c.html#ada9707196acefff454458f252bdc888f" title="cmulti型の複素共役との掛け算 z=conj(x)*y " alt="" coords="466,183,507,209"/>
-<area shape="rect" id="node22" href="$cmulti_8c.html#a1b526ec5a54e938288fa5b34035424e2" title="cmulti型の足し算 z=x+y " alt="" coords="465,132,509,159"/>
-<area shape="rect" id="node14" href="$is__rmulti_8h.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="578,132,619,159"/>
+<area shape="rect" id="node13" href="$cmulti_8c.html#afcc0eb689837e491c0266e9c192c4842" title="z=conj(x)*y " alt="" coords="461,183,513,209"/>
+<area shape="rect" id="node22" href="$cmulti_8c.html#a96dd94583d43f5d1a56d2b5e307a8240" title="z=x+y " alt="" coords="459,132,514,159"/>
+<area shape="rect" id="node14" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="573,132,624,159"/>
 <area shape="rect" id="node15" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="567,183,631,209"/>
 <area shape="rect" id="node18" href="$is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="567,233,630,260"/>
 <area shape="rect" id="node20" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="575,284,623,311"/>
-<area shape="rect" id="node16" href="$rmulti_8c.html#a823702afaeee275caf7d0946679b3292" title="rmulti型の掛け算 z=x*y " alt="" coords="684,233,725,260"/>
-<area shape="rect" id="node17" href="$rmulti_8c.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="683,183,726,209"/>
-<area shape="rect" id="node19" href="$rmulti_8c.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="684,284,725,311"/>
+<area shape="rect" id="node16" href="$rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="679,233,730,260"/>
+<area shape="rect" id="node17" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="679,183,730,209"/>
+<area shape="rect" id="node19" href="$rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="679,284,730,311"/>
 <area shape="rect" id="node21" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="681,335,728,361"/>
-<area shape="rect" id="node23" href="$is__rmulti_8h.html#a813e20e23a783bb1cf2e65a9f16ae34d" title="rmulti型の足し算 z=x+y " alt="" coords="577,81,620,108"/>
+<area shape="rect" id="node23" href="$is__rmulti_8h.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="573,81,624,108"/>
 <area shape="rect" id="node25" href="$cmulti_8c.html#a0a3d8d9f297afe63a1ca5cdbe62774c4" title="cmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="331,233,397,260"/>
-<area shape="rect" id="node26" href="$cmulti_8c.html#ace790b08ad8efdad25078ec3b21f546b" title="cmulti型の掛け算 z=x*y " alt="" coords="465,233,508,260"/>
-<area shape="rect" id="node27" href="$cmulti_8c.html#a08f3005e6ebac999b9dddd4eff2e9a03" title="cmulti型の引き算 z=x&#45;y " alt="" coords="465,309,508,336"/>
-<area shape="rect" id="node28" href="$is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="684,385,725,412"/>
+<area shape="rect" id="node26" href="$cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="460,233,513,260"/>
+<area shape="rect" id="node27" href="$cmulti_8c.html#aadb28679059a51462e8da3b5eeb55f92" title="z=x&#45;y " alt="" coords="460,309,513,336"/>
+<area shape="rect" id="node28" href="$is__rmulti_8h.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="679,385,730,412"/>
 <area shape="rect" id="node30" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="343,284,385,311"/>
 </map>

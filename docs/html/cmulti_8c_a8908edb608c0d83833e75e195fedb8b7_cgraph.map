@@ -1,7 +1,7 @@
 <map id="csub_mul_d" name="csub_mul_d">
-<area shape="rect" id="node2" href="$cmulti_8c.html#adcac5110b6dc65a6fed2e430b15d5b75" title="cmulti型の掛け算 z=x*y " alt="" coords="129,5,184,32"/>
-<area shape="rect" id="node5" href="$cmulti_8c.html#a08f3005e6ebac999b9dddd4eff2e9a03" title="cmulti型の引き算 z=x&#45;y " alt="" coords="135,56,178,83"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="rmulti型の掛け算 z=x*y " alt="" coords="232,5,284,32"/>
+<area shape="rect" id="node2" href="$cmulti_8c.html#adcac5110b6dc65a6fed2e430b15d5b75" title="z=x*y " alt="" coords="129,5,184,32"/>
+<area shape="rect" id="node5" href="$cmulti_8c.html#aadb28679059a51462e8da3b5eeb55f92" title="z=x&#45;y " alt="" coords="130,56,183,83"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="z=x*y " alt="" coords="232,5,284,32"/>
 <area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="332,31,429,57"/>
-<area shape="rect" id="node6" href="$is__rmulti_8h.html#abb36b81765be65f0434b357bfac4af1d" title="rmulti型の引き算 z=x&#45;y " alt="" coords="237,56,279,83"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="233,56,283,83"/>
 </map>
