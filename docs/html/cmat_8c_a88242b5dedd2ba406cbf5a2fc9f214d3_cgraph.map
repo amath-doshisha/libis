@@ -9,7 +9,7 @@
 <area shape="rect" id="node23" href="$cmulti_8c.html#af9f630b2f0f7ade7f10f859486765d66" title="z=x/y " alt="" coords="541,613,591,640"/>
 <area shape="rect" id="node25" href="$cmulti_8c.html#aeb3ffb3f4b2ba8bec98f2eb47ff681e3" title="cmulti型の複素共役 y=conj(x). " alt="" coords="892,563,937,589"/>
 <area shape="rect" id="node27" href="$cvec_8c.html#a00ec44db2e137a42b218b47da8c5bd04" title="cmulti型のベクトルの2乗ノルム value=sqrt(sum(abs(x).^2)) " alt="" coords="373,157,449,184"/>
-<area shape="rect" id="node33" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="361,499,462,525"/>
+<area shape="rect" id="node33" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="z=x.*y " alt="" coords="361,499,462,525"/>
 <area shape="rect" id="node38" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="389,715,433,741"/>
 <area shape="rect" id="node4" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="533,107,599,133"/>
 <area shape="rect" id="node5" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="665,157,729,184"/>

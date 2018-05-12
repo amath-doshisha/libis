@@ -19,7 +19,7 @@
 <area shape="rect" id="node81" href="$is__rmulti_8h.html#a58d48b5427e9c285239d81d3d21a9e53" title="rmulti型の値の比較 x&lt;=y " alt="" coords="165,73,215,99"/>
 <area shape="rect" id="node82" href="$is__rmulti_8h.html#a697287886d65d79d7d1548306d1ea50a" title="rmulti型の値の比較 x&gt;=y " alt="" coords="163,123,217,150"/>
 <area shape="rect" id="node83" href="$csolve__newton_8c.html#a05b655a17336a2c466306ccc5dffc9e9" title="csolve_krawczyk" alt="" coords="141,1958,239,1985"/>
-<area shape="rect" id="node99" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="145,2935,235,2962"/>
+<area shape="rect" id="node99" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="z=x&#45;y " alt="" coords="145,2935,235,2962"/>
 <area shape="rect" id="node3" href="$func__diff_8c.html#a678073874e9ebd39c761353a44f33851" title="func_grad_eval" alt="" coords="468,2123,559,2150"/>
 <area shape="rect" id="node22" href="$func_8c.html#a5d310173294eded581e6fc926e5ee4a1" title="func_arg2_new" alt="" coords="798,2377,889,2403"/>
 <area shape="rect" id="node27" href="$func_8c.html#ad9ddf69a3ff0ebd5d0c71c795fb18ed4" title="private////////////////////////////////////////////////// " alt="" coords="798,2478,889,2505"/>
@@ -86,7 +86,7 @@
 <area shape="rect" id="node85" href="$cmat_8c.html#abf97d3721d78fc1ab19125f64a5e3d0b" title="cmulti型の行列の値を単位行列の設定. " alt="" coords="303,1933,387,1959"/>
 <area shape="rect" id="node86" href="$cvec_8c.html#ac3b637f3d7a4550caf7a81e83d3d55c9" title="cmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="313,1983,377,2010"/>
 <area shape="rect" id="node87" href="$cvec_8c.html#af38ff2ca844c408bb7bac8e757fae8f0" title="cmulti型のベクトルの要素の実部，虚部の絶対値 y=abs(real(x)+i*imag(x)) " alt="" coords="310,2034,379,2061"/>
-<area shape="rect" id="node88" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="293,2389,396,2415"/>
+<area shape="rect" id="node88" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="z=x.*y " alt="" coords="293,2389,396,2415"/>
 <area shape="rect" id="node89" href="$icvec_8c.html#ac23b076a303993718f5466dd34910478" title="表示 " alt="" coords="310,2085,379,2111"/>
 <area shape="rect" id="node90" href="$icvec_8c.html#aa3208bbe85a44b087e64a142243f69ec" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)] " alt="" coords="313,2135,377,2162"/>
 <area shape="rect" id="node91" href="$icvec_8c.html#a65e81f34c843c0bb77cad15f5f230b44" title="足し算 [z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="298,2186,391,2213"/>

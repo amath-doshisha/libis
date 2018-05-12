@@ -6,6 +6,7 @@ var is__rvec_8h =
     [ "dscalar_sub_rvec", "is__rvec_8h.html#ae59445f9a8b0cf7697afe92cce4204c7", null ],
     [ "dvec_add_rscalar", "is__rvec_8h.html#a412912f7f23c8ef250fd353cb4dca8f6", null ],
     [ "dvec_add_rvec", "is__rvec_8h.html#a9ef128f068467a02cdde94fae759d5d0", null ],
+    [ "dvec_div_rscalar", "is__rvec_8h.html#a1dcd8143c8c16c237fd4d00615eca90d", null ],
     [ "dvec_div_rvec", "is__rvec_8h.html#a0d291b4e7d3a11c0f4c503df13d116b8", null ],
     [ "dvec_mul_rscalar", "is__rvec_8h.html#a85d6431769f418d48a81fb691fa3d090", null ],
     [ "dvec_mul_rvec", "is__rvec_8h.html#acce57f06ef6b31304916b053cdca8b0c", null ],

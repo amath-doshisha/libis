@@ -54,7 +54,7 @@
 <area shape="rect" id="node47" href="$cmulti_8c.html#af9f630b2f0f7ade7f10f859486765d66" title="z=x/y " alt="" coords="772,2488,821,2515"/>
 <area shape="rect" id="node49" href="$cmulti_8c.html#aeb3ffb3f4b2ba8bec98f2eb47ff681e3" title="cmulti型の複素共役 y=conj(x). " alt="" coords="611,2387,656,2413"/>
 <area shape="rect" id="node51" href="$cvec_8c.html#a00ec44db2e137a42b218b47da8c5bd04" title="cmulti型のベクトルの2乗ノルム value=sqrt(sum(abs(x).^2)) " alt="" coords="595,2488,671,2515"/>
-<area shape="rect" id="node53" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="583,2589,684,2616"/>
+<area shape="rect" id="node53" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="z=x.*y " alt="" coords="583,2589,684,2616"/>
 <area shape="rect" id="node55" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="775,1855,819,1881"/>
 <area shape="rect" id="node41" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="923,2792,972,2819"/>
 <area shape="rect" id="node42" href="$is__rmulti_8h.html#a461cd90560c5d33caa48b429b38892f0" title="rmulti型の値の比較 x&gt;y " alt="" coords="928,2640,967,2667"/>
@@ -73,7 +73,7 @@
 <area shape="rect" id="node74" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="285,2387,342,2413"/>
 <area shape="rect" id="node75" href="$chpeig_8c.html#ae014d8d38a0b08d9012e4ce7755b7701" title="固有値問題 F=A*x&#45;lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A&#45;lambda*I&#45;x*w&#39;/Cの計算. " alt="" coords="261,1779,366,1805"/>
 <area shape="rect" id="node78" href="$csolve_8c.html#ac41a8a533d802071e679f689f38f3549" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="281,2589,345,2616"/>
-<area shape="rect" id="node79" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="268,1981,359,2008"/>
+<area shape="rect" id="node79" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="z=x&#45;y " alt="" coords="268,1981,359,2008"/>
 <area shape="rect" id="node80" href="$is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="294,2032,333,2059"/>
 <area shape="rect" id="node81" href="$is__rmulti_8h.html#afe3a3c416a4e8ada0e8cb689ba5834ec" title="rmulti型の値の比較 x&gt;y " alt="" coords="288,2083,339,2109"/>
 <area shape="rect" id="node82" href="$is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555" title="rmulti型の浮動小数点数の指数部の取得. " alt="" coords="442,2741,503,2768"/>

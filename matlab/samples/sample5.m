@@ -3,11 +3,12 @@ close all
 
 A=zeros(3,1);
 A(:)=1:length(A)
-B=zeros(3,3,3)
+B=zeros(3,3,3);
+B(:)=1:27
 A=multi(A);
 B=multi(B);
-A+B
-B+A
+A.*B
+B.*A
 
 % A = [1 2 3; 4 5 6]
 % b = [10; 100]

@@ -30,7 +30,7 @@
 <area shape="rect" id="node67" href="$cmat_8c.html#aca0a29da4d382012c87e97b704990b24" title="cmulti型の行列に関する行列写像 A=f(x). " alt="" coords="393,511,485,537"/>
 <area shape="rect" id="node68" href="$csolve_8c.html#a576868e96834c095ebc8ee49823ff790" title="線形方程式A*X=Bの解法. " alt="" coords="414,208,465,235"/>
 <area shape="rect" id="node72" href="$cvec_8c.html#ae0fadacb137ec9227a3245e95d930cd8" title="cmulti型のベクトルの値を複成 y=x. " alt="" coords="218,3211,290,3237"/>
-<area shape="rect" id="node73" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="394,107,485,133"/>
+<area shape="rect" id="node73" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="z=x&#45;y " alt="" coords="394,107,485,133"/>
 <area shape="rect" id="node74" href="$cvec_8c.html#a490ae65be9b89bdf3b583b42c21c4f52" title="cmulti型のベクトルの要素の差の絶対値の最大値 value=max(abs(x&#45;y)) " alt="" coords="384,1296,495,1323"/>
 <area shape="rect" id="node75" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="416,2072,463,2099"/>
 <area shape="rect" id="node76" href="$csolve__newton_8c.html#ad2c6e8411268916149bd7500fc6092df" title="csolve_newton_beta\l_from_mu" alt="" coords="197,1897,311,1938"/>
@@ -54,7 +54,7 @@
 <area shape="rect" id="node94" href="$is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="581,2844,619,2871"/>
 <area shape="rect" id="node95" href="$is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="219,3616,289,3643"/>
 <area shape="rect" id="node96" href="$cvec_8c.html#af38ff2ca844c408bb7bac8e757fae8f0" title="cmulti型のベクトルの要素の実部，虚部の絶対値 y=abs(real(x)+i*imag(x)) " alt="" coords="405,1043,474,1069"/>
-<area shape="rect" id="node97" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="388,1347,491,1373"/>
+<area shape="rect" id="node97" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="z=x.*y " alt="" coords="388,1347,491,1373"/>
 <area shape="rect" id="node98" href="$csolve__newton_8c.html#a05b655a17336a2c466306ccc5dffc9e9" title="csolve_krawczyk" alt="" coords="205,941,303,968"/>
 <area shape="rect" id="node99" href="$cmat_8c.html#ad1a1c83391f35424e829d63146c05489" title="cmulti型の行列の列を右にずらす " alt="" coords="193,3008,315,3035"/>
 <area shape="rect" id="node100" href="$cmat_8c.html#aada9b540a91449e58b1ee0595cc84ae1" title="cmulti型の行列の列を左にずらす " alt="" coords="195,3059,313,3085"/>

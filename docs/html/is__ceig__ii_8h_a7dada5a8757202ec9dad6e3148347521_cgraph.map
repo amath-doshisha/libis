@@ -66,7 +66,7 @@
 <area shape="rect" id="node63" href="$cmulti_8c.html#a69494f60af9d0467482cba49f982dcc8" title="cmulti型の規格化 y=x/abs(x) " alt="" coords="416,1468,487,1495"/>
 <area shape="rect" id="node64" href="$cmulti_8c.html#aeb3ffb3f4b2ba8bec98f2eb47ff681e3" title="cmulti型の複素共役 y=conj(x). " alt="" coords="726,1620,771,1647"/>
 <area shape="rect" id="node66" href="$cvec_8c.html#a00ec44db2e137a42b218b47da8c5bd04" title="cmulti型のベクトルの2乗ノルム value=sqrt(sum(abs(x).^2)) " alt="" coords="413,1671,489,1697"/>
-<area shape="rect" id="node70" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="401,1265,502,1292"/>
+<area shape="rect" id="node70" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="z=x.*y " alt="" coords="401,1265,502,1292"/>
 <area shape="rect" id="node65" href="$is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="851,1620,894,1647"/>
 <area shape="rect" id="node67" href="$cvec_8c.html#a51a1da29a58b00fe54ad7a976cf6856a" title="cmulti型のベクトルの要素の絶対値の平方の総和 value=sum(abs(x).^2) " alt="" coords="561,1620,655,1647"/>
 <area shape="rect" id="node68" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="717,1468,781,1495"/>

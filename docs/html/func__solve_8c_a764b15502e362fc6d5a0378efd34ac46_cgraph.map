@@ -95,7 +95,7 @@
 <area shape="rect" id="node93" href="$cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="845,5068,899,5095"/>
 <area shape="rect" id="node94" href="$is__rmulti_8h.html#ab249a743791b69f5118eda03d3db0c4d" title="rmulti型の値の比較 x&lt;y " alt="" coords="681,4739,720,4766"/>
 <area shape="rect" id="node95" href="$cmulti_8c.html#aadb28679059a51462e8da3b5eeb55f92" title="z=x&#45;y " alt="" coords="674,4790,727,4816"/>
-<area shape="rect" id="node96" href="$cvec_8c.html#a2720b77d27e3de3b9b2214cf141fb596" title="cmulti型のベクトルの要素ごとの割り算 z=x./y " alt="" coords="657,4942,744,4968"/>
-<area shape="rect" id="node97" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="649,4840,752,4867"/>
+<area shape="rect" id="node96" href="$cvec_8c.html#a2720b77d27e3de3b9b2214cf141fb596" title="z=x./y " alt="" coords="657,4942,744,4968"/>
+<area shape="rect" id="node97" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="z=x.*y " alt="" coords="649,4840,752,4867"/>
 <area shape="rect" id="node98" href="$cvec_8c.html#a6c3baba682cb93b84be17f6fefb1475a" title="z=x+y " alt="" coords="655,4992,746,5019"/>
 </map>

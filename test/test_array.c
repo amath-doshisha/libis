@@ -5,8 +5,8 @@ int main(int argc, const char *argv[])
 {
   int i,k,l;
   char x_type='r',y_type='r';
-  int x_ndim=5,x_dim[]={2,2,2,1,2};
-  int y_ndim=5,y_dim[]={1,2,1,2,1};
+  int x_ndim=3,x_dim[]={2,1,2,1,2};
+  int y_ndim=3,y_dim[]={1,2,1,2,1};
   array *x=NULL,*y=NULL,*z=NULL;
 
   for(i=0; i<argc; i++){
@@ -26,14 +26,21 @@ int main(int argc, const char *argv[])
   
   array_set_grid(x);
   array_set_grid(y);
-  z=array_add(x,y);
-  //  z=array_add(y,x);
-//  z=array_sub(x,y);
+  //  z=array_add(x,y);
+  //  z=array_sub(x,y);
+  z=array_mul(x,y);
+  //  z=array_div(x,y);
 
 
-  printf("---\n");  array_print(x,"x",'g',3);
-  printf("---\n");  array_print(y,"y",'g',3);
-  printf("---\n");  array_print(z,"z",'g',3);
+  printf("---\n");
+  printf("type(x)='%c'\n",ARRAY_TYPE(x));
+  array_print(x,"x",'g',3);
+  printf("---\n");
+  printf("type(y)='%c'\n",ARRAY_TYPE(y));
+  array_print(y,"y",'g',3);
+  printf("---\n");
+  printf("type(z)='%c'\n",ARRAY_TYPE(z));
+  array_print(z,"z",'g',3);
   printf("---\n");
 
 
@@ -45,7 +52,7 @@ int main(int argc, const char *argv[])
   k=array_get_subdim(x,y);
   l=array_get_subdim(y,x);
        if(k>0){ printf("dim(x)<dim(y), k=%d\n",k); }
-  else if(l>0){ printf("dim(x)<dim(y), l=%d\n",l); }
+  else if(l>0){ printf("dim(x)>dim(y), l=%d\n",l); }
   else        { printf("dim(x)<>dim(y)\n"); }
   printf("compatible(x,y)=%d\n",array_compatible_dim_check(x,y));
   

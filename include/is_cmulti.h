@@ -146,7 +146,7 @@ void catanh_r(cmulti *y, rmulti *x);                  // y=atanh(x)
 void catanh_c(cmulti *y, cmulti *x);                  // y=atanh(x)
 
 /*
- * operatior for two arguments
+ * z=f(x,y)
  */
 // z=x+y
 void cadd_c(cmulti *z, cmulti *x, cmulti *y);
@@ -211,6 +211,10 @@ void cdiv_ui1(cmulti *z, ulong x, cmulti *y);
 void cdiv_ui2(cmulti *z, cmulti *x, ulong y);
 void cdiv_si1(cmulti *z, long x, cmulti *y);
 void cdiv_si2(cmulti *z, cmulti *x, long y);
+
+/*
+ * z=z+f(x,y)
+ */
 // z+=x*y
 void cadd_mul(cmulti *z, cmulti *x, cmulti *y);
 void cadd_mul_r(cmulti *z, cmulti *x, rmulti *y);     // z+=x*y
@@ -227,6 +231,9 @@ void cadd_dot_z2(cmulti *z, cmulti *x, dcomplex y);   // z+=conj(x)*y
 void csub_dot(cmulti *z, cmulti *x, cmulti *y);       // z-=conj(x)*y
 void csub_dot_z1(cmulti *z, dcomplex x, cmulti *y);   // z-=conj(x)*y
 void csub_dot_z2(cmulti *z, cmulti *x, dcomplex y);   // z-=conj(x)*y
+
+
+
 void cabs_sub(rmulti *z, cmulti *x, cmulti *y);       // z=abs(x-y)
 void cabs_sub_r(rmulti *z, cmulti *x, rmulti *y);     // z=abs(x-y)
 void cdiv_abs(rmulti *z, rmulti *x, cmulti *y);       // z=x/abs(y)

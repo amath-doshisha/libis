@@ -12,7 +12,7 @@
 <area shape="rect" id="node66" href="$cvec_8c.html#a307a3f7a0d2961c82d4360c285bdaf27" title="cmulti型のベクトルがNaNを含むかの判定. " alt="" coords="159,2716,245,2743"/>
 <area shape="rect" id="node68" href="$cvec_8c.html#ac3b637f3d7a4550caf7a81e83d3d55c9" title="cmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="332,2511,396,2537"/>
 <area shape="rect" id="node73" href="$cvec_8c.html#af38ff2ca844c408bb7bac8e757fae8f0" title="cmulti型のベクトルの要素の実部，虚部の絶対値 y=abs(real(x)+i*imag(x)) " alt="" coords="167,2768,237,2795"/>
-<area shape="rect" id="node75" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="151,2821,253,2848"/>
+<area shape="rect" id="node75" href="$cvec_8c.html#a26c7403aa7ea7d7a4e7fb6cd7935ef96" title="z=x.*y " alt="" coords="151,2821,253,2848"/>
 <area shape="rect" id="node77" href="$icvec_8c.html#aacf9135f70f046684579f2c8c46253ec" title="ベクトル写像 [y0,y1]=f([x0,x1]) " alt="" coords="321,2460,407,2487"/>
 <area shape="rect" id="node81" href="$icvec_8c.html#ac23b076a303993718f5466dd34910478" title="表示 " alt="" coords="167,2257,237,2284"/>
 <area shape="rect" id="node83" href="$icvec_8c.html#aa3208bbe85a44b087e64a142243f69ec" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)] " alt="" coords="170,2941,234,2968"/>

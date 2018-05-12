@@ -1,5 +1,5 @@
 <map id="ceig_residual" name="ceig_residual">
-<area shape="rect" id="node2" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="cmulti型のベクトルxとスカラーyの掛け算 z=x*y " alt="" coords="135,56,236,83"/>
+<area shape="rect" id="node2" href="$cvec_8c.html#a788a1923bdbcdf00956cc3b5095a4f86" title="z=x.*y " alt="" coords="135,56,236,83"/>
 <area shape="rect" id="node13" href="$cvec_8c.html#a93be33067bb0a997d227a050c59b6a2e" title="cmulti型のベクトルの符号反転 y=&#45;x " alt="" coords="153,5,218,32"/>
 <area shape="rect" id="node16" href="$cvec_8c.html#a43a9a9e4e8096ff4b3387a6e363ec845" title="cmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x " alt="" coords="142,231,229,257"/>
 <area shape="rect" id="node3" href="$cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="461,208,514,235"/>

@@ -127,12 +127,10 @@ void rvec_div_dvec(int n, rmulti **z, rmulti **x, double *y);
 void dvec_div_rvec(int n, rmulti **z, double *x, rmulti **y);
 void rvec_div_rscalar(int n, rmulti **z, rmulti **x, rmulti *y);
 void rvec_div_dscalar(int n, rmulti **z, rmulti **x, double y);
-void dvec_div_rvec(int n, rmulti **z, double *x, rmulti **y);
+void dvec_div_rscalar(int n, rmulti **z, double *x, rmulti *y);
 void rscalar_div_rvec(int n, rmulti **z, rmulti *x, rmulti **y);
 void rscalar_div_dvec(int n, rmulti **z, rmulti *x, double *y);
 void dscalar_div_rvec(int n, rmulti **z, double x, rmulti **y);
-
-
 
 /*
  * operations

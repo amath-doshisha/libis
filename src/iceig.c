@@ -37,7 +37,7 @@
 */
 void iceig_residual(int n, cmulti **F0, cmulti **F1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **X0, cmulti **X1, cmulti *lambda0, cmulti *lambda1)
 {
-  icvec_mul_c(n,F0,F1,X0,X1,lambda0,lambda1);       // F=lambda*X
+  icvec_mul_cscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=lambda*X
   icvec_neg(n,F0,F1,F0,F1);                         // F=-lambda*X
   icvec_add_lintr(n,n,F0,F1,A0,LDA0,A1,LDA1,X0,X1); // F=A*X-lambda*X
 }

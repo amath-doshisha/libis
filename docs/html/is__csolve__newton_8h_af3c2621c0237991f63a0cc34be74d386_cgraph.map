@@ -5,7 +5,7 @@
 <area shape="rect" id="node15" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="681,2724,742,2750"/>
 <area shape="rect" id="node75" href="$cmat_8c.html#aca0a29da4d382012c87e97b704990b24" title="cmulti型の行列に関する行列写像 A=f(x). " alt="" coords="183,2521,275,2548"/>
 <area shape="rect" id="node76" href="$csolve_8c.html#a576868e96834c095ebc8ee49823ff790" title="線形方程式A*X=Bの解法. " alt="" coords="204,3104,255,3130"/>
-<area shape="rect" id="node98" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="cmulti型のベクトルの引き算 z=x&#45;y " alt="" coords="343,3881,433,3908"/>
+<area shape="rect" id="node98" href="$cvec_8c.html#a2fc56884c38129b014902bd3548ceedc" title="z=x&#45;y " alt="" coords="343,3881,433,3908"/>
 <area shape="rect" id="node99" href="$cvec_8c.html#a490ae65be9b89bdf3b583b42c21c4f52" title="cmulti型のベクトルの要素の差の絶対値の最大値 value=max(abs(x&#45;y)) " alt="" coords="499,3813,610,3840"/>
 <area shape="rect" id="node5" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="519,64,591,90"/>
 <area shape="rect" id="node8" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="677,2445,746,2472"/>

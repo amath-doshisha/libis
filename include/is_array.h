@@ -150,6 +150,8 @@ array *array_conj(array *x); // y=conj(x)
  */
 array *array_add(array *x, array *y); // z=x+y
 array *array_sub(array *x, array *y); // z=x-y
+array *array_mul(array *x, array *y); // z=x.*y
+array *array_div(array *x, array *y); // z=x./y
 
 
 /*
