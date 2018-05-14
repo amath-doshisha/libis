@@ -1,5 +1,5 @@
 <map id="dmat_normalize" name="dmat_normalize">
-<area shape="rect" id="node2" href="$dvec_8c.html#a47f7aeff5f7c7f246bf96f2a937bcaba" title="dvec_normalize" alt="" coords="147,31,239,57"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#aa37706135a435dba7d7018c51df4f6ae" title="dvec_norm2" alt="" coords="287,5,364,32"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a07940a0907492d6d6dc9aaa760a36d4d" title="dvec_scale" alt="" coords="289,56,361,83"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#a31386e56f46e95922096f80c7cc68f04" title="y=x/sqrt(x&#39;*x) " alt="" coords="147,31,239,57"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#aa37706135a435dba7d7018c51df4f6ae" title="y=sqrt(sum(x.^2)) " alt="" coords="299,5,377,32"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a75ab82c6786cf0ba48e78a570bfa8bb2" title="z=x*y " alt="" coords="287,56,389,83"/>
 </map>

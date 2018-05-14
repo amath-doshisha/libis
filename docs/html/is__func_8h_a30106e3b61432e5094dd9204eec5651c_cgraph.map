@@ -45,13 +45,13 @@
 <area shape="rect" id="node27" href="$bigint_8c.html#a56f4d6d80da854ecffef33ff2f942725" title="bigint_set_one" alt="" coords="1351,1725,1437,1752"/>
 <area shape="rect" id="node29" href="$bigint_8c.html#ab1bcc4409fab4e341d3a70bc090b188f" title="bigint_clone" alt="" coords="1208,965,1284,992"/>
 <area shape="rect" id="node30" href="$bigint_8c.html#acce26652b65d93752870626ef85445ea" title="bigint_allocate_int" alt="" coords="1195,1016,1297,1042"/>
-<area shape="rect" id="node31" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="1211,1066,1281,1093"/>
+<area shape="rect" id="node31" href="$is__rmulti_8h.html#a5b3dd36d21d90fa51eceef72d2788a6f" title="z=x*y " alt="" coords="1205,1066,1287,1093"/>
 <area shape="rect" id="node33" href="$bigint_8c.html#a653d622c421ca3ca8bc5ab33f23a5b77" title="bigint_check" alt="" coords="1207,1776,1285,1802"/>
 <area shape="rect" id="node37" href="$bigint_8c.html#a21d7343d1c2f458c7b19e5e63b783689" title="bigint_free" alt="" coords="1211,914,1281,941"/>
 <area shape="rect" id="node32" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="1345,1446,1443,1473"/>
 <area shape="rect" id="node34" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="1367,1776,1421,1802"/>
 <area shape="rect" id="node35" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="1365,1928,1423,1954"/>
-<area shape="rect" id="node36" href="$is__rmulti_8h.html#ac1feca052505601af748d9d4763b054d" title="rmulti型の値の比較 x==y " alt="" coords="1369,1826,1419,1853"/>
+<area shape="rect" id="node36" href="$is__rmulti_8h.html#a13df08f84357e8142be1fe1b684724fc" title="rmulti型の値の比較 x==y " alt="" coords="1370,1826,1418,1853"/>
 <area shape="rect" id="node39" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="1359,3245,1429,3272"/>
 <area shape="rect" id="node41" href="$bigint_8c.html#abb5c9c184ddb047d4e5c4111eabe4aa9" title="bigint_is_nan" alt="" coords="1205,1877,1287,1904"/>
 <area shape="rect" id="node43" href="$func__number_8c.html#a2e52e48c181d23886cb9872110e7a113" title="func_nan" alt="" coords="1215,1370,1277,1397"/>
@@ -65,7 +65,7 @@
 <area shape="rect" id="node52" href="$func__real_8c.html#a0ab64b68e336073a3e93a21cdf34087a" title="func_real_cast" alt="" coords="1049,3981,1136,4008"/>
 <area shape="rect" id="node53" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="1215,1522,1277,1549"/>
 <area shape="rect" id="node55" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="1209,3296,1283,3322"/>
-<area shape="rect" id="node60" href="$is__rmulti_8h.html#a92810daece02105c92ef1cafbf5ae5d6" title="rmulti型のべき乗 z=x^y " alt="" coords="1218,1573,1274,1600"/>
+<area shape="rect" id="node60" href="$is__rmulti_8h.html#affd128808fbd6f5c69c06e9200506ba4" title="rmulti型のべき乗 z=x^y " alt="" coords="1220,1573,1272,1600"/>
 <area shape="rect" id="node61" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="1049,2232,1136,2258"/>
 <area shape="rect" id="node54" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="1363,3904,1425,3930"/>
 <area shape="rect" id="node56" href="$is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="1367,4106,1421,4133"/>
@@ -76,7 +76,7 @@
 <area shape="rect" id="node65" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="1039,3701,1147,3728"/>
 <area shape="rect" id="node66" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="1204,1472,1288,1498"/>
 <area shape="rect" id="node68" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="1199,3397,1293,3424"/>
-<area shape="rect" id="node72" href="$cmulti_8c.html#a7b7f4ece738a90c9e20611a85a82ff4f" title="cmulti型のべき乗 y=x^n " alt="" coords="1063,3194,1122,3221"/>
+<area shape="rect" id="node72" href="$cmulti_8c.html#a66b5c2364140c6a51005814f06d1de50" title="cmulti型のべき乗 y=x^n " alt="" coords="1065,3194,1121,3221"/>
 <area shape="rect" id="node73" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="883,2282,991,2309"/>
 <area shape="rect" id="node67" href="$cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="1215,3904,1277,3930"/>
 <area shape="rect" id="node69" href="$cmulti_8c.html#a725c8bc11d0ad592e21c34890f757ef4" title="cmulti型の値をInfに設定. " alt="" coords="1218,3954,1274,3981"/>

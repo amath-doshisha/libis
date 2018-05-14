@@ -1,7 +1,7 @@
 <map id="zvec_bin_load" name="zvec_bin_load">
-<area shape="rect" id="node2" href="$zvec_8c.html#aebadbab9ea8d2a7b1691dae56d00caf3" title="zvec_allocate" alt="" coords="141,5,223,32"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#ac9531cdd49c49eb4db5fa2e54f9eb4ca" title="dvec_bin_load" alt="" coords="139,56,225,83"/>
-<area shape="rect" id="node5" href="$zvec_8c.html#ae596aaf120b1cb8d618dfe3dafe951c0" title="zvec_copy_d" alt="" coords="142,107,222,133"/>
-<area shape="rect" id="node6" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="dvec_free" alt="" coords="149,157,215,184"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="273,56,356,83"/>
+<area shape="rect" id="node2" href="$zvec_8c.html#aebadbab9ea8d2a7b1691dae56d00caf3" title="dcomplex型のメモリ割当 " alt="" coords="141,5,224,32"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#ac9531cdd49c49eb4db5fa2e54f9eb4ca" title="load binary formated data " alt="" coords="139,56,226,83"/>
+<area shape="rect" id="node5" href="$zvec_8c.html#a21be3504e8eb3b61724f80bbcf4f0a17" title="double &#45;&gt; dcomplex " alt="" coords="139,107,227,133"/>
+<area shape="rect" id="node6" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="150,157,215,184"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="275,56,357,83"/>
 </map>

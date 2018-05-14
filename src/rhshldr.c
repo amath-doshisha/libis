@@ -38,30 +38,30 @@ void rhouseholder_vec(int n, int k, rmulti **h, rmulti *alpha, rmulti **x)
   axk=rallocate_prec(prec);
   //----------- norm
   rvec_sum_pow2(xi,n-k-1,&x[k+1]);    // xi=sum(abs(x((k+1):end)).^2);
-  rmul_r(axk,x[k],x[k]);                // axk=|x[k]|^2
-  radd_r(eta,axk,xi);                   // eta=|x[k]|^2+...
-  rsqrt(axk,axk);                     // axk=|x[k]|
-  rsqrt(eta,eta);                     // eta=sqrt(|x[k]|^2+...)
-  if(req_d(eta,0)){rsub_r(xi,eta,axk);} // xi=eta-|x(k)|
+  rmul_rr(axk,x[k],x[k]);                // axk=|x[k]|^2
+  radd_rr(eta,axk,xi);                   // eta=|x[k]|^2+...
+  rsqrt_r(axk,axk);                     // axk=|x[k]|
+  rsqrt_r(eta,eta);                     // eta=sqrt(|x[k]|^2+...)
+  if(eq_rd(eta,0)){rsub_rr(xi,eta,axk);} // xi=eta-|x(k)|
   else{                               // xi=xi/(|x(k)|+eta)
-    radd_r(zeta,axk,eta);
-    rdiv_r(xi,xi,zeta);
+    radd_rr(zeta,axk,eta);
+    rdiv_rr(xi,xi,zeta);
   }
   //----------- h
   rvec_set_zeros(k,h);
   rvec_copy(n-k-1,&h[k+1],&x[k+1]);     // h((k+1):end)=x((k+1):end);
   if(ris_zero(x[k])){
-    rcopy(h[k],xi); rneg(h[k],h[k]);    // h[k]=-xi
+    rset_r(h[k],xi); rneg_r(h[k],h[k]);    // h[k]=-xi
   }else{
-    rdiv_r(zeta,xi,axk); rneg(zeta,zeta); // zeta=-xi/axk;
-    rmul_r(h[k],x[k],zeta);               // h[k]=zeta*x[k];
+    rdiv_rr(zeta,xi,axk); rneg_r(zeta,zeta); // zeta=-xi/axk;
+    rmul_rr(h[k],x[k],zeta);               // h[k]=zeta*x[k];
   }
   //----------- alpha
-  if(req_d(xi,0) || req_d(eta,0)){
+  if(eq_rd(xi,0) || eq_rd(eta,0)){
     rset_d(alpha,0);
   }else{
-    rmul_r(alpha,xi,eta);                 // alpha=1/(xi*eta)
-    rinv(alpha,alpha);
+    rmul_rr(alpha,xi,eta);                 // alpha=1/(xi*eta)
+    rinv_r(alpha,alpha);
   }
   // free
   eta=rfree(eta);
@@ -91,7 +91,7 @@ void rhouseholder_right(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, 
   // p=A*h
   rvec_lintr(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
   // B=A*H=A-alpha*(A*h)*h'=A-alpha*p*h'
-  rneg(a,alpha);
+  rneg_r(a,alpha);
   rmat_rank1op(m,n-k,&COL(B,k,LDB),LDB,&COL(A,k,LDA),LDA,a,p,&h[k]);
   // done
   a=rfree(a);
@@ -119,7 +119,7 @@ void rhouseholder_left(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, i
   // p=A'*h
   rvec_lintr_t(m-k,n,p,&MAT(A,k,0,LDA),LDA,&h[k]);
   // B=H*A=A-alpha*h*(A'*h)'=A-alpha*h*p'
-  rneg(a,alpha);
+  rneg_r(a,alpha);
   rmat_rank1op(m-k,n,&MAT(B,k,0,LDB),LDB,&MAT(A,k,0,LDA),LDA,a,&h[k],p);
   // done
   a=rfree(a);
@@ -154,8 +154,8 @@ void rhouseholder(int n, int k0, int nH, int k, rmulti **h, rmulti *alpha, rmult
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)
     l=k0+j;
     rvec_sum_mul(value,n-l,&MAT(H,l,j,LDH),&R[l]);
-    rmul_r(value,value,Alpha[j]);
-    rvec_sub_mul_r(n-l,&R[l],&MAT(H,l,j,LDH),value);
+    rmul_rr(value,value,Alpha[j]);
+    rvec_sub_mul_rvec_rscalar(n-l,&R[l],&MAT(H,l,j,LDH),value);
   }
   rhouseholder_vec(n,k,h,alpha,R);
   // free

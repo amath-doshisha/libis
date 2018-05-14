@@ -13,8 +13,8 @@
 // F=A*X-lambda*X
 void zeig_residual(int n, dcomplex *F, dcomplex *A, int LDA, dcomplex *X, dcomplex lambda)
 {
-  zvec_copy(n,F,X);                   // F=X
-  zvec_scale_neg(n,F,lambda);         // F=-lambda*X
+  zvec_mul_zscalar(n,F,X,lambda);     // F=lambda*X
+  zvec_neg(n,F,F);                  // F=-F
   zvec_add_lintr(n,n,F,A,LDA,X);      // F=A*X-lambda*X
 }
 

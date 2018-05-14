@@ -33,7 +33,7 @@ void rhpeig_jacobi_mat(int n, rmulti **JM, int LDJM, rmulti **A, int LDA, rmulti
   rmulti *a=NULL;
   a=rallocate_prec(rmat_get_prec_max(n,n,JM,LDJM));
   rmat_diag_sub_r(n,n,JM,LDJM,A,LDA,lambda); // JM=A-lambda*I
-  rinv(a,C); rneg(a,a);                      // a=-1/C
+  rinv_r(a,C); rneg_r(a,a);                      // a=-1/C
   rmat_rank1op(n,n,JM,LDJM,JM,LDJM,a,x,w);   // JM=A-lambda*I-(1/C)*x*w'
   a=rfree(a);
 }
@@ -78,7 +78,7 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
   rvec_normalize_sgn(n,x,x);          // x=x/sqrt(x'*x)
   rvec_sum_mul(C,n,z,x);              // C=z'*x
   rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
-  rdiv_r(lambda,lambda,C);              // lambda=(w'*x)/C
+  rdiv_rr(lambda,lambda,C);              // lambda=(w'*x)/C
   reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
   rvec_max_abs(E,n,F);                // E=max(abs(F))
   if(ris_zero(E)) { done=RHPEIG_CONVERGENT; } else { done=RHPEIG_NONE; } // convergent or not?
@@ -96,18 +96,18 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
       rvec_normalize_sgn(n,x,x);          // x=x/sqrt(x'*x)
       rvec_sum_mul(C,n,z,x);              // C=z'*x
       rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
-      rdiv_r(lambda,lambda,C);              // lambda=(w'*x)/C
+      rdiv_rr(lambda,lambda,C);              // lambda=(w'*x)/C
       reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
       rvec_max_abs(E,n,F);                // E=max(abs(F))
     }
-    rdiv_r(mu,eta,eta0); rmul_d(mu,mu,2);   // mu=2*eta/eta0
-    if     (status==RHPEIG_STATUS_PRE && rlt(eta,eps_half)){ status=RHPEIG_STATUS_CONV; } // start to convergent
-    else if(status==RHPEIG_STATUS_CONV && rgt_d2(mu,1.0))  { status=RHPEIG_STATUS_END; }  // end to convergent
+    rdiv_rr(mu,eta,eta0); rmul_rd(mu,mu,2);   // mu=2*eta/eta0
+    if     (status==RHPEIG_STATUS_PRE && lt_rr(eta,eps_half)){ status=RHPEIG_STATUS_CONV; } // start to convergent
+    else if(status==RHPEIG_STATUS_CONV && gt_rd(mu,1.0))  { status=RHPEIG_STATUS_END; }  // end to convergent
     else if(status==RHPEIG_STATUS_CONV && rget_exp(E)-rget_exp(lambda)<prec){ status=RHPEIG_STATUS_END; }  // end to convergent
     if     (status==RHPEIG_STATUS_END)                     { done=RHPEIG_CONVERGENT; }    // convergent or not?
     else if(status==RHPEIG_STATUS_PRE && step>=step_max)   { done=RHPEIG_DIVERGENT; }     // divergent or not?
     if(debug>0) { PUT_1PAIR; }
-    if(done==RHPEIG_NONE) { step++; rcopy(eta0,eta); }  // next step
+    if(done==RHPEIG_NONE) { step++; rset_r(eta0,eta); }  // next step
   }
   // free
   w=rvec_free(n,w);

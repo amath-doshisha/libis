@@ -2,15 +2,20 @@
 #include<stdlib.h>
 #include<math.h>
 #include"is_macros.h"
-#include"is_icmulti.h"
-#include"is_icvec.h"
+#include"is_rmulti.h"
+#include"is_cmulti.h"
+#include"is_rvec.h"
+#include"is_cvec.h"
+#include"is_rmat.h"
 #include"is_cmat.h"
+#include"is_irmulti.h"
+#include"is_icmulti.h"
+#include"is_ivec.h"
+#include"is_irvec.h"
+#include"is_icvec.h"
+#include"is_irmat.h"
 #include"is_icmat.h"
 #include"is_icsolve.h"
-#include"is_cmulti.h"
-#include"is_ivec.h"
-#include"is_cvec.h"
-#include"is_irmulti.h"
 /**
  @file  icsolve.c
  @brief 多倍長精度実数型cmultiの機械区間演算による線形方程式A*X=Bの解法に関する関数の定義.
@@ -82,10 +87,10 @@ void icsolve_gauss_sweeper(int n, int NRHS, cmulti **B0, cmulti **B1, int LDB, c
   // 上三角化
   for(k=0; k<n; k++){
     // ピボット選択
-    icabs_ws(value0,value1,MA0(k,k),MA1(k,k),cws_size,cws);
+    irabs_c_ws(value0,value1,MA0(k,k),MA1(k,k),cws_size,cws);
     for(l=k,j=k+1; j<n; j++){
-      icabs_ws(a0,a1,MA0(j,k),MA1(j,k),cws_size,cws);
-      if(rgt(a0,value0)) { l=j; ircopy(value0,value1,a0,a1); } // value=a
+      irabs_c_ws(a0,a1,MA0(j,k),MA1(j,k),cws_size,cws);
+      if(gt_rr(a0,value0)) { l=j; irset_r(value0,value1,a0,a1); } // value=a
     }
     if(ris_zero(value0)) { ret=l+1; break; } // error
     if(l!=k){
@@ -95,22 +100,22 @@ void icsolve_gauss_sweeper(int n, int NRHS, cmulti **B0, cmulti **B1, int LDB, c
       cmat_swap_rows(n,n,A1,LDA,k,l);        // swap A(k,:) <-> A(l,:)
     }
     // 軸要素を1にする
-    icinv(c0,c1,MA0(k,k),MA1(k,k));
+    icinv_c(c0,c1,MA0(k,k),MA1(k,k));
     for(j=k; j<n; j++) {
-      icmul_ws(MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),c0,c1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws,cws_size,cws);
+      icmul_cc_ws(MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),c0,c1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws,cws_size,cws);
     }
     for(j=0; j<NRHS; j++) {
-      icmul_ws(MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),c0,c1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws,cws_size,cws);
+      icmul_cc_ws(MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),c0,c1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws,cws_size,cws);
     }
     // 軸要素以外が 0 になるように他の列から軸要素の列を引く
     for(i=k+1; i<n; i++){
       if(i!=k){
-	iccopy(c0,c1,MA0(i,k),MA1(i,k));
+	icset_c(c0,c1,MA0(i,k),MA1(i,k));
 	for(j=k; j<n; j++){
-	  icsub_mul_ws(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),c0,c1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws,cws_size,cws);
+	  icsub_mul_cc_ws(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),c0,c1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws,cws_size,cws);
         }	
 	for(j=0; j<NRHS; j++){
-	  icsub_mul_ws(MAT(B0,i,j,LDB),MAT(B1,i,j,LDB),c0,c1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws,cws_size,cws);
+	  icsub_mul_cc_ws(MAT(B0,i,j,LDB),MAT(B1,i,j,LDB),c0,c1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws,cws_size,cws);
 	}
       }
     }
@@ -120,7 +125,7 @@ void icsolve_gauss_sweeper(int n, int NRHS, cmulti **B0, cmulti **B1, int LDB, c
     for(k=0; k<NRHS; k++){
       for(i=n-1; i>=0; i--){
 	for(j=n-1; j>=i+1; j--){
-	  icsub_mul_ws(MAT(B0,i,k,LDB),MAT(B1,i,k,LDB),MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),MAT(B0,j,k,LDB),MAT(B1,j,k,LDB),rws_size,rws,cws_size,cws);
+	  icsub_mul_cc_ws(MAT(B0,i,k,LDB),MAT(B1,i,k,LDB),MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),MAT(B0,j,k,LDB),MAT(B1,j,k,LDB),rws_size,rws,cws_size,cws);
 	}
       }
     }

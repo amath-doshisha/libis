@@ -1,6 +1,6 @@
 <map id="zvec_angle_deg" name="zvec_angle_deg">
-<area shape="rect" id="node2" href="$zvec_8c.html#ace711d58356ac5cbcc957f2ce07f96ce" title="zvec_angle" alt="" coords="148,31,220,57"/>
-<area shape="rect" id="node3" href="$zvec_8c.html#a1a1ee8f3cdcb50fb0269818b11eb4027" title="zvec_dcos_abs" alt="" coords="268,31,359,57"/>
-<area shape="rect" id="node4" href="$zvec_8c.html#a85ba4f3fb769abb3477bccd1d7000626" title="zvec_norm2" alt="" coords="407,5,483,32"/>
-<area shape="rect" id="node5" href="$zvec_8c.html#aecd5de14a2689589e69049a79e2a3dc9" title="zvec_dot" alt="" coords="413,56,476,83"/>
+<area shape="rect" id="node2" href="$zvec_8c.html#ace711d58356ac5cbcc957f2ce07f96ce" title="z=acos(abs(x&#39;*y)/(x&#39;*x)/sqrt(y&#39;*y)) " alt="" coords="148,31,220,57"/>
+<area shape="rect" id="node3" href="$zvec_8c.html#a1a1ee8f3cdcb50fb0269818b11eb4027" title="z=abs(x&#39;*y)/(x&#39;*x)/sqrt(y&#39;*y) " alt="" coords="268,31,359,57"/>
+<area shape="rect" id="node4" href="$zvec_8c.html#a85ba4f3fb769abb3477bccd1d7000626" title="y=sqrt(sum(abs(x).^2)) " alt="" coords="407,5,483,32"/>
+<area shape="rect" id="node5" href="$zvec_8c.html#aecd5de14a2689589e69049a79e2a3dc9" title="z=x&#39;*y " alt="" coords="413,56,476,83"/>
 </map>

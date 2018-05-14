@@ -214,14 +214,14 @@ func_t *func_poly_solve_varn(func_t *f)
       k=k+1;
       i=func_weierstrass(n,c3,c2,c1);
       for(j=0; j<n; j++){
-	ccopy(c2[j],c3[j]);
+	cset_c(c2[j],c3[j]);
       }
       if(k>20){ printf("hanpukukaisu > 20\n"); break;}
     }
     printf("hanpuku kaisu [%d]\n",k);        //反復回数表示
     for(j=0; j<n; j++){
       x->a[j]=func_complex();
-      ccopy(x->a[j]->p.cm,c3[j]);
+      cset_c(x->a[j]->p.cm,c3[j]);
     }
   }
   f=func_del(f);
@@ -319,8 +319,8 @@ void func_change_cmulti(cmulti *x, func_t *f)            //(cmulti)x=(func)f
   func_t *g=NULL;
   g=func_evalf(FR(f));
   if(g==NULL)                 { cset_d(x,0.0); }
-  else if(func_is_complex(g)) { ccopy(x,g->p.cm); }
-  else if(func_is_real(g))    { ccopy_r(x,g->p.rm); }
+  else if(func_is_complex(g)) { cset_c(x,g->p.cm); }
+  else if(func_is_real(g))    { cset_r(x,g->p.rm); }
   else{ FUNC_ERROR_ARG1("func_init_val_radius",f); }
   g=func_del(g);
 }
@@ -335,7 +335,7 @@ func_t *func_change_cmulti_list(int n, cmulti **x)      //(list)x=(cmulti)x
   for(i=0;i<n;i++){
     g->a[i]=func_var1(i,1);   
     h->a[i]=func_complex();
-    ccopy(h->a[i]->p.cm,x[i]);
+    cset_c(h->a[i]->p.cm,x[i]);
   }
   func_a_append(f,FR(g));
   func_a_append(f,FR(h));
@@ -361,7 +361,7 @@ void func_ccopy_coeff(int n, cmulti **z, func_t *f)                  //係数
 	g=func_number_pull(FR(f));
 	func_change_cmulti(z[i-1],g);     
       }
-      cdiv_c(z[i-1],z[i-1],a_0);
+      cdiv_cc(z[i-1],z[i-1],a_0);
       g=func_del(g); g=NULL; 
     }
   }
@@ -376,11 +376,11 @@ void func_ccopy_coeff(int n, cmulti **z, func_t *f)                  //係数
 void func_init_val_r_and_balance(rmulti *r, cmulti *g, int n, cmulti **a)  //半径r(小澤の初期値)と重心
 {
   double N;
-  cdiv_d(g,a[0],(double)(n));       //重心
-  cneg(g,g);
+  cdiv_cd(g,a[0],(double)(n));       //重心
+  cneg_c(g,g);
   N=1.0/(double)(n);
-  cabsv(r,a[n-1]);                   //半径
-  rpow_d2(r,r,N);
+  rabs_c(r,a[n-1]);                   //半径
+  rpow_rd(r,r,N);
 }
 
 //////////////////////////////////////////////////////////////////
@@ -400,7 +400,7 @@ void func_init_val(int n, cmulti **z, cmulti **a)                         //初�
     theta=(2.0*M_PI*(j-1))/n+3.0/(2.0*n);                      // (2π(j-1))/n + 3/2n;
     rset_d(b,theta);
     cset_polar(c,r,b);                                         //rexp(i*theta)
-    cadd_c(z[j-1],g,c);
+    cadd_cc(z[j-1],g,c);
   }
   r=rfree(r);
   b=rfree(b);
@@ -423,25 +423,25 @@ int func_weierstrass(int n, cmulti **z1, cmulti **z0, cmulti **a)
   cvec_set_ones(n,c);
   N=(double)(n);
   for(i=0; i<n; i++){                   // f(z)
-    cpow_d2(z1[i],z0[i],N);               //z^n
-    cadd_c(z1[i],z1[i],a[n-1]);             //z^n+a_n
+    cpow_cd(z1[i],z0[i],N);               //z^n
+    cadd_cc(z1[i],z1[i],a[n-1]);             //z^n+a_n
     for(j=1; j<n; j++){
-      cpow_d2(b,z0[i],N-(double)(j));     //a*z^n-1
-      cmul_c(b,b,a[j-1]);
-      cadd_c(z1[i],z1[i],b);
+      cpow_cd(b,z0[i],N-(double)(j));     //a*z^n-1
+      cmul_cc(b,b,a[j-1]);
+      cadd_cc(z1[i],z1[i],b);
     }
   }
   for(i=0; i<n; i++){                   //終了条件 |f(z)|<eps
-    cabsv(d,z1[i]);
-    k=rlt(d,eps);                       //d<eps
+    rabs_c(d,z1[i]);
+    k=lt_rr(d,eps);                       //d<eps
     if(k==0){ break; }
   }
   for(i=0; i<n-1; i++){                 //(z[i]-z[j])*...
     for(j=i+1; j<n; j++){
-      csub_c(b,z0[i],z0[j]);
-      cmul_c(c[i],c[i],b);
-      cneg(b,b);
-      cmul_c(c[j],c[j],b);
+      csub_cc(b,z0[i],z0[j]);
+      cmul_cc(c[i],c[i],b);
+      cneg_c(b,b);
+      cmul_cc(c[j],c[j],b);
     }
   }
   cvec_div_cvec(n,z1,z1,c);

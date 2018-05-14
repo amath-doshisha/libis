@@ -14,7 +14,7 @@ var searchData=
   ['pmat_5fprint',['pmat_print',['../is__pmat_8h.html#a909f3a675b292a520ce064797760f83d',1,'is_pmat.h']]],
   ['pmat_5fput',['pmat_put',['../is__pmat_8h.html#a31a50766a99ddb84f5d8d32a8a785c37',1,'is_pmat.h']]],
   ['pow',['pow',['../structfunc__var__struct.html#a2d0a88cb012aed42d4d1774658d45979',1,'func_var_struct']]],
-  ['pow_5fsi',['pow_si',['../dvec_8c.html#a17b3bdc7e9222660ceda64e45cdd216c',1,'pow_si(double x, int n):&#160;dvec.c'],['../is__dvec_8h.html#a17b3bdc7e9222660ceda64e45cdd216c',1,'pow_si(double x, int n):&#160;dvec.c']]],
+  ['pow_5fi',['pow_i',['../dvec_8c.html#afa997b2115e4b3ee9a3bb8b19cadf697',1,'pow_i(double x, int n):&#160;dvec.c'],['../is__dvec_8h.html#afa997b2115e4b3ee9a3bb8b19cadf697',1,'pow_i(double x, int n):&#160;dvec.c']]],
   ['print',['print',['../structfunc__builtin__struct.html#a096913da490c26142793d72aa1cef6b4',1,'func_builtin_struct']]],
   ['print_2ec',['print.c',['../print_8c.html',1,'']]],
   ['print_5fblack',['print_black',['../is__print_8h.html#af5f039bc275112682baa4e869bfe4aad',1,'print_black(void):&#160;print.c'],['../print_8c.html#a4120b15a979640dd79550bc00dbdadd0',1,'print_black():&#160;print.c']]],

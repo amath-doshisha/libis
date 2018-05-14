@@ -1,0 +1,10 @@
+<map id="irvec_mul_rscalar" name="irvec_mul_rscalar">
+<area shape="rect" id="node2" href="$irmulti_8c.html#a504793b7883583d472cda9b7cf22fbe8" title="[z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="153,107,209,133"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="257,5,321,32"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="259,56,320,83"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="268,157,311,184"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a64e66b8ab46756754e3f4c5e81aee12a" title="rmulti型の値の比較 x&gt;=y " alt="" coords="267,107,312,133"/>
+<area shape="rect" id="node9" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="265,208,314,235"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="369,107,441,133"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="379,157,432,184"/>
+</map>

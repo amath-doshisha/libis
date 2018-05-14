@@ -1,10 +1,10 @@
 <map id="deig_sort_index" name="deig_sort_index">
-<area shape="rect" id="node2" href="$dvec_8c.html#a135f6f73d9e93cf1e15c6997c8830478" title="dvec_swap_index" alt="" coords="146,107,247,133"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#a135f6f73d9e93cf1e15c6997c8830478" title="x[i] &lt;=&gt; x[I[i]] " alt="" coords="146,107,247,133"/>
 <area shape="rect" id="node7" href="$dmat_8c.html#a8f6370e40375ebd9f49848969e110ebe" title="dmat_swap_index" alt="" coords="145,259,248,285"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="314,5,397,32"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="314,5,397,32"/>
 <area shape="rect" id="node4" href="$dvec_8c.html#ad9824c1e6f0370b3a39f421270233d1b" title="dvec_copy_index" alt="" coords="306,56,405,83"/>
-<area shape="rect" id="node5" href="$dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="dvec_copy" alt="" coords="463,183,532,209"/>
-<area shape="rect" id="node6" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="dvec_free" alt="" coords="323,157,388,184"/>
+<area shape="rect" id="node5" href="$dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="y=x " alt="" coords="463,183,532,209"/>
+<area shape="rect" id="node6" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="323,157,388,184"/>
 <area shape="rect" id="node8" href="$dmat_8c.html#af11c6f806b1ea2917fc36cc7a07a0f73" title="dmat_allocate" alt="" coords="313,208,397,235"/>
 <area shape="rect" id="node9" href="$dmat_8c.html#affc35b8a241f41552e7a6c59d507f000" title="dmat_copy_col_index" alt="" coords="296,259,415,285"/>
 <area shape="rect" id="node10" href="$dmat_8c.html#a4832ecfd00cde3f7dbc0a7acc096fa09" title="dmat_copy" alt="" coords="320,309,391,336"/>

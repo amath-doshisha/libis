@@ -1,5 +1,5 @@
 <map id="dhouseholder_vec" name="dhouseholder_vec">
-<area shape="rect" id="node2" href="$dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="dvec_dot" alt="" coords="172,5,235,32"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#a25786788ae9c4c5522373e909ecc4fdd" title="dvec_set_zeros" alt="" coords="157,56,249,83"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="dvec_copy" alt="" coords="169,107,238,133"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="z=x&#39;*y " alt="" coords="172,5,235,32"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#a25786788ae9c4c5522373e909ecc4fdd" title="x=zeros(n,1) " alt="" coords="157,56,249,83"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="y=x " alt="" coords="169,107,238,133"/>
 </map>

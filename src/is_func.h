@@ -838,6 +838,29 @@ void func_print_table(func_t *f);
 void func_print_scope(func_t *f);
 void func_print_scope(func_t *f);
 
+
+/*
+ * mapping
+ */
+// y=f(x)
+void rvec_func(rmulti *y, func_t *f, int n, rmulti **x);
+void rvec_func_list(int m, rmulti **y, func_t *f, int n, rmulti **x);
+void r1_func(rmulti *y, func_t *f, rmulti *x0);
+void r2_func(rmulti *y, func_t *f, rmulti *x0, rmulti *x1);
+void r3_func(rmulti *y, func_t *f, rmulti *x0, rmulti *x1, rmulti *x2);
+void cvec_func(cmulti *y, func_t *f, int n, cmulti **x);                // y=f(x)
+void cvec_func_list(int m, cmulti **y, func_t *f, int n, cmulti **x);   // y=f(x)
+void c1_func(cmulti *y, func_t *f, cmulti *x0);                         // y=f(x0)
+void c2_func(cmulti *y, func_t *f, cmulti *x0, cmulti *x1);             // y=f(x0,x1)
+void c3_func(cmulti *y, func_t *f, cmulti *x0, cmulti *x1, cmulti *x2); // y=f(x0,x1,x2)
+void irvec_func(rmulti *y0, rmulti *y1, func_t *f, int n, rmulti **x0, rmulti **x1);               // [y0,y1]=f([x0,x1])
+void irvec_func_list(int m, rmulti **y0, rmulti **y1, func_t *f, int n, rmulti **x0, rmulti **x1); // [y0,y1]=f([x0,x1])
+void icvec_func(cmulti *y0, cmulti *y1, func_t *f, int n, cmulti **x0, cmulti **x1);                // [y0,y1]=f(x)
+void icvec_func_list(int m, cmulti **y0, cmulti **y1, func_t *f, int n, cmulti **x0, cmulti **x1);  // [y0,y1]=f(x)
+// A=F(x)
+void icmat_func_list2(int m, int n, cmulti **A0, cmulti **A1, int LDA, func_t *f, int l, cmulti **x0, cmulti **x1);
+
+
 // macros
 #define FUNC_ERROR_ARG1(F,F1)      { printf("Error in %s(%s)\n",F,func_op(F1)); printf("#0="); func_print(F1); printf("\n");  exit(0); }
 #define FUNC_ERROR_ARG2(F,F1,F2)   { printf("Error in %s(%s, %s)\n",F,func_op(F1),func_op(F2)); printf("#0="); func_print(F1); printf("\n#1=");; func_print(F2); printf("\n"); exit(0); }

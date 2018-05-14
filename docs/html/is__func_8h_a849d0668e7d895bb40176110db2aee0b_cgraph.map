@@ -11,7 +11,7 @@
 <area shape="rect" id="node32" href="$func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b" title="func_is_real" alt="" coords="1179,3874,1255,3901"/>
 <area shape="rect" id="node33" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="258,201,319,227"/>
 <area shape="rect" id="node34" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="1031,3291,1094,3318"/>
-<area shape="rect" id="node35" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="881,5470,923,5497"/>
+<area shape="rect" id="node35" href="$is__rmulti_8h.html#a14504176d48fad860c538118a0c92941" title="rmulti型の計算 y=sqrt(x) " alt="" coords="877,5470,927,5497"/>
 <area shape="rect" id="node37" href="$func_8c.html#a498d57fcdf2d020643a3dca2805edfa3" title="func_eval" alt="" coords="713,631,779,658"/>
 <area shape="rect" id="node44" href="$func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562" title="func_is_complex" alt="" coords="1169,1417,1265,1443"/>
 <area shape="rect" id="node47" href="$func__math_8c.html#a30106e3b61432e5094dd9204eec5651c" title="func_pow_n" alt="" coords="251,2785,327,2811"/>
@@ -75,14 +75,14 @@
 <area shape="rect" id="node60" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="864,3950,940,3977"/>
 <area shape="rect" id="node61" href="$func__real_8c.html#a0ab64b68e336073a3e93a21cdf34087a" title="func_real_cast" alt="" coords="859,3697,945,3723"/>
 <area shape="rect" id="node62" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="1025,3494,1100,3521"/>
-<area shape="rect" id="node64" href="$is__rmulti_8h.html#a92810daece02105c92ef1cafbf5ae5d6" title="rmulti型のべき乗 z=x^y " alt="" coords="874,4203,930,4230"/>
+<area shape="rect" id="node64" href="$is__rmulti_8h.html#affd128808fbd6f5c69c06e9200506ba4" title="rmulti型のべき乗 z=x^y " alt="" coords="876,4203,928,4230"/>
 <area shape="rect" id="node65" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="859,3443,945,3470"/>
 <area shape="rect" id="node63" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="1031,4254,1095,4281"/>
 <area shape="rect" id="node66" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="1034,4051,1091,4078"/>
 <area shape="rect" id="node68" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="697,2987,795,3014"/>
 <area shape="rect" id="node69" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="848,2835,956,2862"/>
 <area shape="rect" id="node71" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="1015,1873,1110,1899"/>
-<area shape="rect" id="node72" href="$cmulti_8c.html#a7b7f4ece738a90c9e20611a85a82ff4f" title="cmulti型のべき乗 y=x^n " alt="" coords="717,4102,775,4129"/>
+<area shape="rect" id="node72" href="$cmulti_8c.html#a66b5c2364140c6a51005814f06d1de50" title="cmulti型のべき乗 y=x^n " alt="" coords="718,4102,774,4129"/>
 <area shape="rect" id="node73" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="692,2506,800,2533"/>
 <area shape="rect" id="node76" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="1021,2531,1105,2558"/>
 <area shape="rect" id="node79" href="$func__mul_8c.html#aaa2f65a6f850615c43a3fe204f935a6d" title="func_is_split_mul" alt="" coords="697,1354,795,1381"/>
@@ -96,6 +96,6 @@
 <area shape="rect" id="node93" href="$func__args_8c.html#aec5ebed633d711e505b979b939f7e275" title="func_a_replace" alt="" coords="1315,961,1406,987"/>
 <area shape="rect" id="node96" href="$is__rmulti_8h.html#ad6225bcaaa764082bbf35d53664ca909" title="rmulti型が正であるかの判定. " alt="" coords="866,5419,938,5446"/>
 <area shape="rect" id="node97" href="$is__rmulti_8h.html#a3680ae953d68b37287b103ab03fd0741" title="rmulti型が負であるかの判定. " alt="" coords="864,5318,940,5345"/>
-<area shape="rect" id="node98" href="$is__rmulti_8h.html#ad191610544c5f2c54c16f16224821fed" title="rmulti型の符号反転 y=&#45;x " alt="" coords="881,5369,923,5395"/>
-<area shape="rect" id="node100" href="$cmulti_8c.html#a437d4eee34b5776cf56f71b1579fc3a7" title="cmulti型のべき乗 z=x^y " alt="" coords="393,150,455,177"/>
+<area shape="rect" id="node98" href="$is__rmulti_8h.html#a07b89d04a8fb3e01d979950f9558871a" title="y=&#45;x " alt="" coords="877,5369,927,5395"/>
+<area shape="rect" id="node100" href="$cmulti_8c.html#a660e4f1db9db0bed7b2e1ee1a1d12905" title="z=x^y " alt="" coords="393,150,455,177"/>
 </map>

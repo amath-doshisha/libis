@@ -1,6 +1,6 @@
 <map id="dmat_normalize_sgn" name="dmat_normalize_sgn">
-<area shape="rect" id="node2" href="$dvec_8c.html#a21cb01284e34371b44d92288fab4758b" title="dvec_normalize_sgn" alt="" coords="168,56,281,83"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#aa37706135a435dba7d7018c51df4f6ae" title="dvec_norm2" alt="" coords="350,5,427,32"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a564584af65d4a4d426a9596958260cb7" title="dvec_max_abs_index" alt="" coords="329,56,448,83"/>
-<area shape="rect" id="node5" href="$dvec_8c.html#a07940a0907492d6d6dc9aaa760a36d4d" title="dvec_scale" alt="" coords="353,107,425,133"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#afadfb4aab48906d49ef3ec8db3e67845" title="x=x/sqrt(x&#39;*x) where x[i]&gt;0, abs(x[i]) is max " alt="" coords="168,56,281,83"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#aa37706135a435dba7d7018c51df4f6ae" title="y=sqrt(sum(x.^2)) " alt="" coords="350,5,427,32"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a564584af65d4a4d426a9596958260cb7" title="y=max(abs(x[I])) " alt="" coords="329,56,448,83"/>
+<area shape="rect" id="node5" href="$dvec_8c.html#a75ab82c6786cf0ba48e78a570bfa8bb2" title="z=x*y " alt="" coords="337,107,440,133"/>
 </map>

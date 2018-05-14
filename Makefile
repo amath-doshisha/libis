@@ -1,9 +1,8 @@
 
 all:
-	( cd src ; make )
-	( cd src ; make install )
-	( cd test ; make )
-	( cd prog ; make )
+	( cd src ; ./compile.sh )
+	( cd test ; make clean ; make )
+#	( cd prog ; make )
 	( cd matlab ; make )
 
 clean:

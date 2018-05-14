@@ -1,13 +1,13 @@
 <map id="reig_hqr_calculate_formula_11_6_26_v" name="reig_hqr_calculate_formula_11_6_26_v">
 <area shape="rect" id="node2" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="191,107,255,133"/>
 <area shape="rect" id="node3" href="$is__rmulti_8h.html#ad277d632770d69dd26bfd811d2b551e0" title="rmulti型の3値の絶対値の和 z=abs(x0)+abs(x1)+abs(x2) " alt="" coords="169,157,276,184"/>
-<area shape="rect" id="node11" href="$is__rmulti_8h.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="335,208,377,235"/>
-<area shape="rect" id="node12" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="197,259,248,285"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="324,31,388,57"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#a9dcfcf66ece4f4db515453b9c432f282" title="rmulti型の絶対値の加算 y+=abs(x) " alt="" coords="324,107,388,133"/>
-<area shape="rect" id="node10" href="$rmulti_8c.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="333,157,379,184"/>
-<area shape="rect" id="node5" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="436,5,488,32"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="536,132,633,159"/>
-<area shape="rect" id="node8" href="$rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="441,56,483,83"/>
-<area shape="rect" id="node9" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="437,107,487,133"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="335,208,385,235"/>
+<area shape="rect" id="node12" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="196,259,249,285"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="328,31,392,57"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#abac9df16942c0bbed69a496facad3210" title="rmulti型の絶対値の加算 y+=abs(x) " alt="" coords="324,107,396,133"/>
+<area shape="rect" id="node10" href="$rmulti_8c.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="336,157,384,184"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="448,5,495,32"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="547,132,644,159"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="446,56,497,83"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="444,107,499,133"/>
 </map>

@@ -1,7 +1,8 @@
 <map id="zmat_normalize_sgn" name="zmat_normalize_sgn">
-<area shape="rect" id="node2" href="$is__zvec_8h.html#aabef7582a09bd696c8db49be73de9cdd" title="zvec_normalize_sgn" alt="" coords="168,81,281,108"/>
-<area shape="rect" id="node3" href="$zvec_8c.html#a85ba4f3fb769abb3477bccd1d7000626" title="zvec_norm2" alt="" coords="351,5,427,32"/>
-<area shape="rect" id="node4" href="$zvec_8c.html#ad268aabcd83fc2dd4d69442a455aad98" title="zvec_max_abs_index" alt="" coords="329,56,448,83"/>
-<area shape="rect" id="node5" href="$dcomplex_8c.html#ab3d18ba16c58d3352b79d65acf3bb740" title="znormalize" alt="" coords="353,107,424,133"/>
-<area shape="rect" id="node6" href="$zvec_8c.html#a1cdf603c18ff047e9a6222ed379f3d18" title="zvec_scale" alt="" coords="353,157,425,184"/>
+<area shape="rect" id="node2" href="$is__zvec_8h.html#ac2a30a1de4ab932b7ace71d60f90cc6b" title="y=x/sqrt(x&#39;*x) where x[i]/|x[i]|=1, abs(x[i]) is max " alt="" coords="168,81,281,108"/>
+<area shape="rect" id="node3" href="$zvec_8c.html#a85ba4f3fb769abb3477bccd1d7000626" title="y=sqrt(sum(abs(x).^2)) " alt="" coords="351,5,427,32"/>
+<area shape="rect" id="node4" href="$zvec_8c.html#ad268aabcd83fc2dd4d69442a455aad98" title="y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL " alt="" coords="329,56,448,83"/>
+<area shape="rect" id="node5" href="$dcomplex_8c.html#a46705c3513082f192da01a9583bb8e78" title="y=x/|x| " alt="" coords="348,107,429,133"/>
+<area shape="rect" id="node6" href="$zvec_8c.html#a2fdac4844b56309799248da73384d753" title="z=x*y " alt="" coords="338,157,439,184"/>
+<area shape="rect" id="node7" href="$dcomplex_8c.html#a5ec98d5cf2c465847cd389eae93557ed" title="z=x*y " alt="" coords="496,157,555,184"/>
 </map>

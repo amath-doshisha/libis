@@ -1,8 +1,8 @@
 <map id="izvec_sub_rscalar" name="izvec_sub_rscalar">
-<area shape="rect" id="node2" href="$icmulti_8c.html#a7e61ccdbdcec41b635d1d458d74499a7" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="156,81,211,108"/>
-<area shape="rect" id="node3" href="$irmulti_8c.html#a11e81cca35c247fa7f9529c592f67eef" title="引き算 [z0,z1]=[x0,x1]&#45;[y,y] " alt="" coords="259,56,313,83"/>
-<area shape="rect" id="node5" href="$irmulti_8c.html#ad2626813eb80d5c26ee93a9a5f9a390d" title="倍精度実数の設定 [y0,y1]=[x0,x1]. " alt="" coords="361,107,413,133"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="461,5,525,32"/>
-<area shape="rect" id="node6" href="$irmulti_8c.html#ad83b8a1e9ca77caeaf833f866853ac35" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="365,56,409,83"/>
-<area shape="rect" id="node7" href="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="469,56,518,83"/>
+<area shape="rect" id="node2" href="$icmulti_8c.html#a7bbdec8d042fb154ffbadf01603ee647" title="[z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="156,81,215,108"/>
+<area shape="rect" id="node3" href="$irmulti_8c.html#a7554fc79572d04d92989779ee727b649" title="[z0,z1]=[x0,x1]&#45;[y,y] " alt="" coords="263,56,321,83"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#ad2626813eb80d5c26ee93a9a5f9a390d" title="倍精度実数の設定 [y0,y1]=[x0,x1]. " alt="" coords="371,107,423,133"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="473,5,537,32"/>
+<area shape="rect" id="node6" href="$irmulti_8c.html#aa252a525339c0c6555fe050952901ca6" title="[z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="369,56,425,83"/>
+<area shape="rect" id="node7" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="481,56,530,83"/>
 </map>

@@ -1,8 +1,7 @@
 <map id="cmat_diag_sub_rvec" name="cmat_diag_sub_rvec">
-<area shape="rect" id="node2" href="$cmulti_8c.html#a9d39eb2b3e2d0ffd4bb8a7e08cbf30c0" title="z=x&#45;y " alt="" coords="168,56,220,83"/>
-<area shape="rect" id="node6" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="170,107,218,133"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="268,5,319,32"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="269,56,317,83"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="367,56,464,83"/>
-<area shape="rect" id="node7" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="270,107,317,133"/>
+<area shape="rect" id="node2" href="$cmulti_8c.html#abbc8adc6eb981e13d919089d53268c47" title="z=x&#45;y " alt="" coords="168,5,225,32"/>
+<area shape="rect" id="node6" href="$cmulti_8c.html#a9628f0312f1d6ec613f155916457edfb" title="cmulti型の値のコピー y=x. " alt="" coords="171,56,222,83"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#a4acfc1f7f71c44234ca1873f69b6eaa5" title="z=x&#45;y " alt="" coords="273,5,327,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="276,56,324,83"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="375,31,472,57"/>
 </map>

@@ -21,8 +21,8 @@ void rmat_cauchy(int m, int n, rmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      rset_si(MAT(A,i,j,LDA),i+j+1);
-      rinv(MAT(A,i,j,LDA),MAT(A,i,j,LDA));
+      rset_i(MAT(A,i,j,LDA),i+j+1);
+      rinv_r(MAT(A,i,j,LDA),MAT(A,i,j,LDA));
     }
   }
 }

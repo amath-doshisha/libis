@@ -1,5 +1,5 @@
 <map id="zhouseholder_vec" name="zhouseholder_vec">
-<area shape="rect" id="node2" href="$is__zvec_8h.html#af460a53cd3b8f4847edd4f7e8dea12c0" title="zvec_sum_pow2_abs" alt="" coords="156,5,275,32"/>
-<area shape="rect" id="node3" href="$is__zvec_8h.html#af34d3ab95ce092ce799eadcd4d1d5dde" title="zvec_set_zeros" alt="" coords="169,56,261,83"/>
-<area shape="rect" id="node4" href="$is__zvec_8h.html#a799f3a364c76093c592e8436a68e168e" title="zvec_copy" alt="" coords="181,107,250,133"/>
+<area shape="rect" id="node2" href="$is__zvec_8h.html#af460a53cd3b8f4847edd4f7e8dea12c0" title="y=sum(abs(x).^2) " alt="" coords="156,5,275,32"/>
+<area shape="rect" id="node3" href="$is__zvec_8h.html#af34d3ab95ce092ce799eadcd4d1d5dde" title="x=zeros(n,1) " alt="" coords="169,56,261,83"/>
+<area shape="rect" id="node4" href="$is__zvec_8h.html#a799f3a364c76093c592e8436a68e168e" title="y=x " alt="" coords="181,107,250,133"/>
 </map>

@@ -51,7 +51,7 @@ void func_rvec_p_clone(func_t *f, func_t *g)
   f->ptype=FUNC_P_RVEC;
   f->p.mem=malloc(sizeof(func_rvec_struct));
   f->p.rvec->n=g->p.rvec->n;
-  f->p.rvec->x=rvec_allocate_clone(func_rvec_size(g),g->p.rvec->x);
+  f->p.rvec->x=rvec_allocate_clone_rvec(func_rvec_size(g),g->p.rvec->x);
 }
 
 ///////////////////////////////////////////////////
@@ -99,8 +99,8 @@ void func_rvec_set(func_t *f, int i, func_t *g)
   func_t *a=NULL;
   if(f==NULL || func_ptype(f)!=FUNC_P_RVEC || f->p.rvec==NULL || i<0 || i>=f->p.rvec->n){ FUNC_ERROR_ARG2("func_rvec_set",f,g); }
   a=func_evalf(FR(g));
-  if     (func_is_real(a))                          { rcopy(func_rvec_at(f,i),func_real_p(a)); }
-  else if(func_is(a,"rvec") && func_rvec_size(a)==1){ rcopy(func_rvec_at(f,i),func_rvec_at(a,0)); }
+  if     (func_is_real(a))                          { rset_r(func_rvec_at(f,i),func_real_p(a)); }
+  else if(func_is(a,"rvec") && func_rvec_size(a)==1){ rset_r(func_rvec_at(f,i),func_rvec_at(a,0)); }
   else{ FUNC_ERROR_ARG2("func_rvec_set",f,g); } 
   a=func_del(a);
 }
@@ -128,7 +128,7 @@ func_t *func_rvec_get_cvec(func_t *g)
   func_t *f=NULL;
   if(g==NULL || !func_is(g,"rvec")){ FUNC_ERROR_ARG1("func_rvec_get_cvec",g); }
   f=func_cvec(func_rvec_size(g));
-  cvec_copy_r(func_cvec_size(f),func_cvec_p(f),func_rvec_p(g));
+  cvec_set_rvec(func_cvec_size(f),func_cvec_p(f),func_rvec_p(g));
   return f;
 }
 

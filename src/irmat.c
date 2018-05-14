@@ -39,7 +39,7 @@ void irmat_copy(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rmul
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      ircopy(MAT(B0,i,j,LDB0),MAT(B1,i,j,LDB1),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+      irset_r(MAT(B0,i,j,LDB0),MAT(B1,i,j,LDB1),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
     }
   }
 }
@@ -101,7 +101,7 @@ void irmat_copy_t(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rm
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      ircopy(MAT(B0,j,i,LDB0),MAT(B1,j,i,LDB1),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
+      irset_r(MAT(B0,j,i,LDB0),MAT(B1,j,i,LDB1),MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1));
     }
   }
 }
@@ -213,7 +213,7 @@ void irmat_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int LDC
     for(j=0; j<n; j++){
       irset_d(MAT(Z0,i,j,l),MAT(Z1,i,j,l),0,0);
       for(k=0; k<m; k++){
-	iradd_mul_ws(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1),rws_size,rws);
+	iradd_mul_rr_ws(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1),rws_size,rws);
       }
     }
   }
@@ -234,9 +234,9 @@ void irmat_add_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int
   Z0=rmat_allocate_prec(l,n,prec); Z1=rmat_allocate_prec(l,n,prec);
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      ircopy(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(C0,i,j,LDC0),MAT(C1,i,j,LDC1));
+      irset_r(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(C0,i,j,LDC0),MAT(C1,i,j,LDC1));
       for(k=0; k<m; k++){
-	iradd_mul(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1));
+	iradd_mul_rr(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1));
       }
     }
   }
@@ -255,9 +255,9 @@ void irmat_sub_prod(int l, int m, int n, rmulti **C0, int LDC0, rmulti **C1, int
   Z0=rmat_allocate_prec(l,n,prec); Z1=rmat_allocate_prec(l,n,prec);
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      ircopy(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(C0,i,j,LDC0),MAT(C1,i,j,LDC1));
+      irset_r(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(C0,i,j,LDC0),MAT(C1,i,j,LDC1));
       for(k=0; k<m; k++){
-	irsub_mul(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1));
+	irsub_mul_rr(MAT(Z0,i,j,l),MAT(Z1,i,j,l),MAT(A0,i,k,LDA0),MAT(A1,i,k,LDA1),MAT(B0,k,j,LDB0),MAT(B1,k,j,LDB1));
       }
     }
   }

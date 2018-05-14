@@ -1,5 +1,5 @@
 <map id="dvec_angle" name="dvec_angle">
-<area shape="rect" id="node2" href="$dvec_8c.html#a1b9fd794279aece1298d025c54278efb" title="dvec_dcos_abs" alt="" coords="127,31,219,57"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#aa37706135a435dba7d7018c51df4f6ae" title="dvec_norm2" alt="" coords="267,5,344,32"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="dvec_dot" alt="" coords="274,56,337,83"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#a1b9fd794279aece1298d025c54278efb" title="z=abs(x&#39;*y)/(x&#39;*x)/sqrt(y&#39;*y) " alt="" coords="127,31,219,57"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#aa37706135a435dba7d7018c51df4f6ae" title="y=sqrt(sum(x.^2)) " alt="" coords="267,5,344,32"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="z=x&#39;*y " alt="" coords="274,56,337,83"/>
 </map>

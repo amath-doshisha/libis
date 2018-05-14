@@ -64,11 +64,11 @@
 <area shape="rect" id="node58" href="$func__builtin_8c.html#a177b042d802e61673a964bb9e7691bd5" title="func_builtin_amax" alt="" coords="1295,651,1397,677"/>
 <area shape="rect" id="node59" href="$func__def_8c.html#acb73b929024c900650740741ba0a3ce2" title="func_def_amax" alt="" coords="1301,701,1391,728"/>
 <area shape="rect" id="node62" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="965,853,1055,880"/>
-<area shape="rect" id="node64" href="$is__rmulti_8h.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="438,777,490,804"/>
+<area shape="rect" id="node64" href="$is__rmulti_8h.html#a10a8d3fc34651ab3323730ed30b56842" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="441,777,487,804"/>
 <area shape="rect" id="node65" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="548,929,645,956"/>
 <area shape="rect" id="node68" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="305,1056,365,1083"/>
-<area shape="rect" id="node69" href="$is__rmulti_8h.html#ae948be5116862c9910a34cc3b7e71308" title="z=x*y " alt="" coords="300,955,371,981"/>
-<area shape="rect" id="node75" href="$is__rmulti_8h.html#aa7f2e03f88a388911123c82ad3f36b16" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="313,1107,357,1133"/>
+<area shape="rect" id="node69" href="$is__rmulti_8h.html#a5b3dd36d21d90fa51eceef72d2788a6f" title="z=x*y " alt="" coords="294,955,377,981"/>
+<area shape="rect" id="node75" href="$is__rmulti_8h.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="309,1107,362,1133"/>
 <area shape="rect" id="node76" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="314,1005,357,1032"/>
 <area shape="rect" id="node70" href="$rmulti_8c.html#ab9cebc0e92c588ea846f83aadcd928bf" title="rmulti型の浮動小数点数の仮数部の0でない桁数の長さ[bits]の取得 " alt="" coords="428,1031,500,1057"/>
 <area shape="rect" id="node74" href="$rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e" title="初期化済みのrmulti型の浮動小数点数の精度(ビット数)を変更し再初期化. " alt="" coords="439,980,489,1007"/>

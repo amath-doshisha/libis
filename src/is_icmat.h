@@ -71,7 +71,5 @@ void icvec_max_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti
 void icvec_umax_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA);
 // [B0,B1]=[min(A0),min(A1)]
 void icvec_min_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA);
-// A=F(x)
-void icmat_func_list2(int m, int n, cmulti **A0, cmulti **A1, int LDA, func_t *f, int l, cmulti **x0, cmulti **x1);
 
 #endif

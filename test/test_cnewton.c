@@ -50,17 +50,17 @@ void eterm_show(int m, cmulti **x, func_t *fF, int bmax, int kappa)
     cvec_round(m,y,b[k]);
     csolve_newton_map(m,y,x,fF,fJ);
     csolve_newton_e_norm(e[k],m,y,x,fF,fJ,bmax*4);
-    if(rgt(eps[k],e[k])){ printf("> "); }else{ printf("< "); }
+    if(gt_rr(eps[k],e[k])){ printf("> "); }else{ printf("< "); }
     mpfr_printf("e=%8.1Re ",e[k]);
     rset_d(em[k],1); rmul_2exp(em[k],em[k],-b[k]+tau+kappa);
-    if(rgt(e[k],em[k])){ printf("> "); }else{ printf("< "); }
+    if(gt_rr(e[k],em[k])){ printf("> "); }else{ printf("< "); }
     mpfr_printf("em=%8.1Re ",em[k]);
 
-    rlog2(p[k],e[k]); dsub_r(p[k],tau,p[k]); dsub_r(p[k],b[k],p[k]);
+    rlog2_r(p[k],e[k]); rsub_dr(p[k],tau,p[k]); rsub_dr(p[k],b[k],p[k]);
     mpfr_printf("b-tau+log2(e)=%+6.2Rf ",p[k]);
 
 
-    rlog2(r[k],e[k]); dsub_r(r[k],tau,r[k]); rdiv_d(r[k],r[k],b[k]); dsub_r(r[k],1,r[k]);
+    rlog2_r(r[k],e[k]); rsub_dr(r[k],tau,r[k]); rdiv_rd(r[k],r[k],b[k]); rsub_dr(r[k],1,r[k]);
     mpfr_printf("κ=1-(tau-log2(e))/b=%+.10Rf ",r[k]);
     printf("\n");
   }

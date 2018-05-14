@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF0A63FE20A859570070F312 /* test_rsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF0A63FD20A859570070F312 /* test_rsolve.c */; };
 		FF77A37D20A513AE00D0DAE2 /* libmpfr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF77A37C20A513AE00D0DAE2 /* libmpfr.a */; };
 		FF77A38120A513FC00D0DAE2 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF77A38020A513FC00D0DAE2 /* libgmp.a */; };
 		FFF86B8F20A511CA000CA7B0 /* test_array.c in Sources */ = {isa = PBXBuildFile; fileRef = FFF86B8E20A511CA000CA7B0 /* test_array.c */; };
@@ -14,6 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FF0A63F420A859310070F312 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		FF6C3CDC20A50D02005AF7F1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,8 +54,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FF21AC8F20A5AD9E003A99B0 /* libis-test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "libis-test"; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/build/Debug/libis-test"; sourceTree = "<absolute>"; };
-		FF21AC9020A5AD9E003A99B0 /* libis-test2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "libis-test2"; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/build/Debug/libis-test2"; sourceTree = "<absolute>"; };
+		FF0A63F020A859190070F312 /* libis-test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "libis-test"; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/build/Debug/libis-test"; sourceTree = "<absolute>"; };
+		FF0A63F120A859190070F312 /* libis-test2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "libis-test2"; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/build/Debug/libis-test2"; sourceTree = "<absolute>"; };
+		FF0A63F620A859310070F312 /* test_rsolve */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = test_rsolve; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/build/Debug/test_rsolve"; sourceTree = "<absolute>"; };
+		FF0A63FD20A859570070F312 /* test_rsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_rsolve.c; path = test/test_rsolve.c; sourceTree = SOURCE_ROOT; };
 		FF77A37C20A513AE00D0DAE2 /* libmpfr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmpfr.a; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/../../../../../../usr/local/lib/libmpfr.a"; sourceTree = "<absolute>"; };
 		FF77A38020A513FC00D0DAE2 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmp.a; path = "/Users/kon/Desktop/Dropbox/g-kondo/libis/../../../../../../usr/local/lib/libgmp.a"; sourceTree = "<absolute>"; };
 		FFF86B8E20A511CA000CA7B0 /* test_array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_array.c; path = test/test_array.c; sourceTree = SOURCE_ROOT; };
@@ -54,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF0A63F320A859310070F312 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF6C3CDB20A50D02005AF7F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,11 +100,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF0A63F720A859310070F312 /* test_rsolve */ = {
+			isa = PBXGroup;
+			children = (
+				FF0A63FD20A859570070F312 /* test_rsolve.c */,
+			);
+			path = test_rsolve;
+			sourceTree = "<group>";
+		};
 		FF6C3CD520A50D02005AF7F1 = {
 			isa = PBXGroup;
 			children = (
 				FFF86B8820A511A5000CA7B0 /* test_array */,
 				FFF86B9020A51239000CA7B0 /* test_array */,
+				FF0A63F720A859310070F312 /* test_rsolve */,
 				FFF86B9120A512FC000CA7B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +139,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FF0A63F520A859310070F312 /* test_rsolve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0A63FC20A859310070F312 /* Build configuration list for PBXNativeTarget "test_rsolve" */;
+			buildPhases = (
+				FF0A63F220A859310070F312 /* Sources */,
+				FF0A63F320A859310070F312 /* Frameworks */,
+				FF0A63F420A859310070F312 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test_rsolve;
+			productName = test_rsolve;
+			productReference = FF0A63F620A859310070F312 /* test_rsolve */;
+			productType = "com.apple.product-type.tool";
+		};
 		FF6C3CDD20A50D02005AF7F1 /* libis-test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF6C3CE520A50D02005AF7F1 /* Build configuration list for PBXNativeTarget "libis-test" */;
@@ -125,7 +170,7 @@
 			);
 			name = "libis-test";
 			productName = "libis-test";
-			productReference = FF21AC8F20A5AD9E003A99B0 /* libis-test */;
+			productReference = FF0A63F020A859190070F312 /* libis-test */;
 			productType = "com.apple.product-type.tool";
 		};
 		FF6C3CEB20A50F73005AF7F1 /* libis-test2 */ = {
@@ -142,7 +187,7 @@
 			);
 			name = "libis-test2";
 			productName = "libis-test2";
-			productReference = FF21AC9020A5AD9E003A99B0 /* libis-test2 */;
+			productReference = FF0A63F120A859190070F312 /* libis-test2 */;
 			productType = "com.apple.product-type.tool";
 		};
 		FFF86B8620A511A5000CA7B0 /* test_array */ = {
@@ -171,6 +216,9 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "近藤 弘一";
 				TargetAttributes = {
+					FF0A63F520A859310070F312 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
 					FF6C3CDD20A50D02005AF7F1 = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -197,11 +245,20 @@
 				FF6C3CDD20A50D02005AF7F1 /* libis-test */,
 				FF6C3CEB20A50F73005AF7F1 /* libis-test2 */,
 				FFF86B8620A511A5000CA7B0 /* test_array */,
+				FF0A63F520A859310070F312 /* test_rsolve */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF0A63F220A859310070F312 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0A63FE20A859570070F312 /* test_rsolve.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF6C3CDA20A50D02005AF7F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +284,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		FF0A63FA20A859310070F312 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF0A63FB20A859310070F312 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		FF6C3CE320A50D02005AF7F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -405,6 +478,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF0A63FC20A859310070F312 /* Build configuration list for PBXNativeTarget "test_rsolve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0A63FA20A859310070F312 /* Debug */,
+				FF0A63FB20A859310070F312 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FF6C3CD920A50D02005AF7F1 /* Build configuration list for PBXProject "libis-test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,6 +1,6 @@
 <map id="func_complex_i" name="func_complex_i">
 <area shape="rect" id="node2" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="145,645,229,672"/>
-<area shape="rect" id="node58" href="$cmulti_8c.html#a8eebeadc7a2889242f50066fd7a414a3" title="cmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="161,803,213,829"/>
+<area shape="rect" id="node58" href="$cmulti_8c.html#a0f319c4c2dea02bcba8a5f878a53e80c" title="cmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="159,803,216,829"/>
 <area shape="rect" id="node61" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="277,943,372,969"/>
 <area shape="rect" id="node3" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="292,537,357,564"/>
 <area shape="rect" id="node4" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="1657,208,1715,235"/>
@@ -57,6 +57,6 @@
 <area shape="rect" id="node54" href="$func__def_8c.html#acb73b929024c900650740741ba0a3ce2" title="func_def_amax" alt="" coords="1173,259,1263,285"/>
 <area shape="rect" id="node56" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="717,588,777,615"/>
 <area shape="rect" id="node57" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="837,588,927,615"/>
-<area shape="rect" id="node59" href="$is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="300,803,349,829"/>
+<area shape="rect" id="node59" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="300,803,349,829"/>
 <area shape="rect" id="node60" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="420,803,517,829"/>
 </map>

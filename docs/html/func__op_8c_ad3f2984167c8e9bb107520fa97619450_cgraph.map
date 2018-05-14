@@ -39,7 +39,7 @@
 <area shape="rect" id="node38" href="$func__number_8c.html#a6729710e11f7bb6c9fddca7e194f221f" title="func_one" alt="" coords="968,1590,1031,1617"/>
 <area shape="rect" id="node39" href="$func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b" title="func_is_real" alt="" coords="1110,4073,1186,4100"/>
 <area shape="rect" id="node40" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="968,1894,1031,1921"/>
-<area shape="rect" id="node41" href="$is__rmulti_8h.html#a802eb2853d2c2a66c1afac7076904666" title="rmulti型の計算 y=exp(x) " alt="" coords="492,5188,533,5214"/>
+<area shape="rect" id="node41" href="$is__rmulti_8h.html#a30c811543ceedeb1f9987ec8588981c4" title="rmulti型の計算 y=exp(x) " alt="" coords="487,5188,538,5214"/>
 <area shape="rect" id="node43" href="$func_8c.html#a498d57fcdf2d020643a3dca2805edfa3" title="func_eval" alt="" coords="649,1084,714,1110"/>
 <area shape="rect" id="node52" href="$func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562" title="func_is_complex" alt="" coords="1100,4529,1196,4556"/>
 <area shape="rect" id="node55" href="$func__math_8c.html#a30106e3b61432e5094dd9204eec5651c" title="func_pow_n" alt="" coords="319,2857,395,2884"/>
@@ -83,17 +83,17 @@
 <area shape="rect" id="node69" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="961,4377,1037,4404"/>
 <area shape="rect" id="node70" href="$func__real_8c.html#a0ab64b68e336073a3e93a21cdf34087a" title="func_real_cast" alt="" coords="801,3642,888,3669"/>
 <area shape="rect" id="node71" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="962,3566,1037,3593"/>
-<area shape="rect" id="node72" href="$is__rmulti_8h.html#a92810daece02105c92ef1cafbf5ae5d6" title="rmulti型のべき乗 z=x^y " alt="" coords="817,4681,873,4708"/>
+<area shape="rect" id="node72" href="$is__rmulti_8h.html#affd128808fbd6f5c69c06e9200506ba4" title="rmulti型のべき乗 z=x^y " alt="" coords="819,4681,871,4708"/>
 <area shape="rect" id="node73" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="801,2654,888,2681"/>
 <area shape="rect" id="node75" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="796,4529,893,4556"/>
 <area shape="rect" id="node76" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="791,3516,899,3542"/>
 <area shape="rect" id="node78" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="952,3262,1047,3289"/>
-<area shape="rect" id="node79" href="$cmulti_8c.html#a7b7f4ece738a90c9e20611a85a82ff4f" title="cmulti型のべき乗 y=x^n " alt="" coords="652,4681,711,4708"/>
+<area shape="rect" id="node79" href="$cmulti_8c.html#a66b5c2364140c6a51005814f06d1de50" title="cmulti型のべき乗 y=x^n " alt="" coords="653,4681,709,4708"/>
 <area shape="rect" id="node80" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="627,2654,735,2681"/>
 <area shape="rect" id="node83" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="1106,2300,1190,2326"/>
 <area shape="rect" id="node86" href="$func__mul_8c.html#aaa2f65a6f850615c43a3fe204f935a6d" title="func_is_split_mul" alt="" coords="795,1844,894,1870"/>
 <area shape="rect" id="node89" href="$func__mul_8c.html#ac95a9ec8fa0646822f0ae6b950e6f3c5" title="func_get_number_part" alt="" coords="620,1717,743,1744"/>
-<area shape="rect" id="node95" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="658,5137,705,5164"/>
+<area shape="rect" id="node95" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="657,5137,705,5164"/>
 <area shape="rect" id="node96" href="$cmulti_8c.html#aaa8a19431cf6f99ead0badf3b0b15400" title="cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta) " alt="" coords="479,5086,547,5113"/>
 <area shape="rect" id="node98" href="$func__print_8c.html#a21acb569255424ce9a885f8b097bc471" title="func_print_hat" alt="" coords="957,249,1042,276"/>
 <area shape="rect" id="node99" href="$func__print_8c.html#a19d5e15cea86c22273dee75aa200077f" title="func_print" alt="" coords="1259,369,1324,396"/>

@@ -82,8 +82,8 @@ void rsolve_func_residual(int m, rmulti *norm, rmulti **F, rmulti **x, func_t *f
   rvec_max_abs(norm0,m,F0);
   rvec_max_abs(norm1,m,F1);
   // check
-  if(rgt(norm1,norm)){ rswap(norm1,norm); rvec_swap(m,F,F1); }
-  if(rgt(norm0,norm)){ rswap(norm0,norm); rvec_swap(m,F,F0); }
+  if(gt_rr(norm1,norm)){ rswap(norm1,norm); rvec_swap(m,F,F1); }
+  if(gt_rr(norm0,norm)){ rswap(norm0,norm); rvec_swap(m,F,F0); }
   // done
   RF(norm0); RF(norm1); RVF(F0,m); RVF(F1,m);
 }
@@ -119,9 +119,9 @@ int rsolve_newton(int m, rmulti **x, func_t *fF, int step_max, int debug)
     // b=|F|
     rvec_max_abs(b,m,F);
     // exactly F=0?
-    if(req_d(b,0)){ rsolve_func_residual(m,b,F,x,fF); }
+    if(eq_rd(b,0)){ rsolve_func_residual(m,b,F,x,fF); }
     // if F=0, then...
-    if(req_d(b,0)){ status='-'; }
+    if(eq_rd(b,0)){ status='-'; }
     else{
       // J=J(x)
       rmat_func_list2(m,m,J,m,fJ,m,x);
@@ -135,11 +135,11 @@ int rsolve_newton(int m, rmulti **x, func_t *fF, int step_max, int debug)
 	// eta=|J\F|
 	rvec_max_abs(eta,m,F);
 	// mu=eta/eta_pre
-	rdiv_r(mu,eta,eta_pre);
+	rdiv_rr(mu,eta,eta_pre);
 	// set status
 	if     (n>=step_max)                   { status='/'; }
-	else if(status==' ' && rle_d2(mu,1e-2)){ status='o'; }
-	else if(status=='o' && rge_d2(mu,1))   { status='='; }
+	else if(status==' ' && le_rd(mu,1e-2)){ status='o'; }
+	else if(status=='o' && ge_rd(mu,1))   { status='='; }
       }
     }
     if(debug>0){

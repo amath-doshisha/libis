@@ -88,6 +88,11 @@ var is__func_8h =
     [ "FUNC_MONO_GRLEX", "is__func_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a4330daecfc6cb821c7d509e0a3c25d85", null ],
     [ "FUNC_MONO_GREVLEX", "is__func_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a78239e5aafa59bc7f5072539bd1f6a54", null ],
     [ "FUNC_MONO_ORDER_SIZE", "is__func_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a81b70758be527a724295763f41145b07", null ],
+    [ "c1_func", "is__func_8h.html#abff5eaaccbd9595dec22c07bd162753e", null ],
+    [ "c2_func", "is__func_8h.html#aaafa131bf9bfd463acc9fd2eb8332845", null ],
+    [ "c3_func", "is__func_8h.html#a6df8c17ec69935d363b32313fee87218", null ],
+    [ "cvec_func", "is__func_8h.html#ac1fb41d49bff092744b4cdeb038516d2", null ],
+    [ "cvec_func_list", "is__func_8h.html#a4125a7ec4934642540b2c5285cc55733", null ],
     [ "func_a_append", "is__func_8h.html#a75193d04442561caf556378e6fb00405", null ],
     [ "func_a_clone", "is__func_8h.html#a9aa3c883f65eb9305926ea7a7eb4b9ed", null ],
     [ "func_a_del", "is__func_8h.html#aab560c18c36aaab1c2d6901c6e9e37b0", null ],
@@ -681,5 +686,15 @@ var is__func_8h =
     [ "func_weierstrass", "is__func_8h.html#a49c34689256875d397860c4523bfe079", null ],
     [ "func_zero", "is__func_8h.html#a5b7171537ce3464da4f750991e4322f0", null ],
     [ "func_zero_print", "is__func_8h.html#a66edffc1829b6153f89f9a678847eb97", null ],
-    [ "func_zero_script", "is__func_8h.html#a394215df8f97096e0a49deea14e7e554", null ]
+    [ "func_zero_script", "is__func_8h.html#a394215df8f97096e0a49deea14e7e554", null ],
+    [ "icmat_func_list2", "is__func_8h.html#acb6e6262c9cc301a85a7860b09804361", null ],
+    [ "icvec_func", "is__func_8h.html#a22955cb62fcd51fc15d4b00a4feb2bc1", null ],
+    [ "icvec_func_list", "is__func_8h.html#aacf9135f70f046684579f2c8c46253ec", null ],
+    [ "irvec_func", "is__func_8h.html#acf1d2fe8ef07057b37dda235645b62a6", null ],
+    [ "irvec_func_list", "is__func_8h.html#a6ee27f7c49eba2e4f20b91a8d5cdaefa", null ],
+    [ "r1_func", "is__func_8h.html#a973a4a097429207561ac50713ea7643e", null ],
+    [ "r2_func", "is__func_8h.html#ac12008ceda7e9d6a6142e063c6c4a05d", null ],
+    [ "r3_func", "is__func_8h.html#ac916c924933e0f240bef086eb74ee60b", null ],
+    [ "rvec_func", "is__func_8h.html#aeb97e149b236453940b59451f2e8bddc", null ],
+    [ "rvec_func_list", "is__func_8h.html#a049ddd84ac36db74bb55452aea36c7f7", null ]
 ];

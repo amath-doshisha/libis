@@ -135,7 +135,7 @@ void cmat_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cclone(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cclone_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -161,20 +161,7 @@ void cmat_clone_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      cclone(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
-    }
-  }
-}
-
-/**
- @brief cmulti型の行列の共役転置をとり値を複成 B=A'.
-*/
-void cmat_clone_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
-{
-  int i,j;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      cconj_clone(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      cclone_c(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -384,7 +371,7 @@ void cmat_load(int m, int n, cmulti **A, int LDA, char* fmt, ...)
   char fname[FILE_NAME_LENGTH_MAX+1];
   va_list argp;
   FILE *fid;
-  char str1[100000],str2[100000];
+  char str[100000];
   // file name
   va_start(argp,fmt);
   vsprintf(fname,fmt,argp);
@@ -393,8 +380,8 @@ void cmat_load(int m, int n, cmulti **A, int LDA, char* fmt, ...)
   // real
   for(j=0;j<n;j++){
     for(i=0;i<m;i++){
-      if(fscanf(fid,"%s %s",str1,str2)==EOF){ ERROR_AT; exit(0); }
-      cset_ss(MAT(A,i,j,LDA),str1,str2);
+      if(fgets(str,100000,fid)==NULL){ ERROR_AT; exit(0); }
+      cset_s(MAT(A,i,j,LDA),str);
     }
   }
   // close
@@ -545,7 +532,7 @@ void cmat_set_dd(int m, int n, cmulti **B, int LDB, const double *Ar, int LDAr, 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cset_Z(MAT(B,i,j,LDB),MAT(Ar,i,j,LDAr),MAT(Ai,i,j,LDAi));
+      cset_dd(MAT(B,i,j,LDB),MAT(Ar,i,j,LDAr),MAT(Ai,i,j,LDAi));
     }
   }
 }
@@ -571,7 +558,7 @@ void cmat_set_all_dd(int m, int n, cmulti **A, int LDA, double a_r, double a_i)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cset_Z(MAT(A,i,j,LDA),a_r,a_i);
+      cset_dd(MAT(A,i,j,LDA),a_r,a_i);
     }
   }
 }
@@ -628,8 +615,8 @@ void cmat_set_rand(int m, int n, cmulti **A, int LDA, double a, double b)
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
       cset_rand(MAT(A,i,j,LDA));
-      cmul_d(MAT(A,i,j,LDA),MAT(A,i,j,LDA),a);
-      cadd_d(MAT(A,i,j,LDA),MAT(A,i,j,LDA),b);
+      cmul_cd(MAT(A,i,j,LDA),MAT(A,i,j,LDA),a);
+      cadd_cd(MAT(A,i,j,LDA),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -645,7 +632,7 @@ void cmat_set_diag_c(int m, int n, cmulti **A, int LDA, cmulti *a, int offset)
   for(i=0; i<m; i++){
     j=i+offset;
     if(i>=0 && j>=0 && i<m && j<n){
-      ccopy(MAT(A,i,j,LDA),a);
+      cset_c(MAT(A,i,j,LDA),a);
     }
   }
 }
@@ -777,7 +764,7 @@ void cmat_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -790,7 +777,7 @@ void cmat_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      ccopy_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cset_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -809,7 +796,7 @@ void cmat_copy_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      ccopy(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      cset_c(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -828,7 +815,7 @@ void cmat_copy_rmat_t(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA)
   int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      ccopy_r(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      cset_r(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -847,7 +834,7 @@ void cmat_copy_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(i=0; i<m; i++){
     for(j=0; j<n; j++){
-      cconj(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
+      cconj_c(MAT(B,j,i,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -873,7 +860,7 @@ void cmat_copy_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(I!=NULL && J!=NULL){ ccopy(MAT(B,i,j,LDB),MAT(A,I[i],J[j],LDA)); }
+      if(I!=NULL && J!=NULL){ cset_c(MAT(B,i,j,LDB),MAT(A,I[i],J[j],LDA)); }
     }
   }
 }
@@ -886,7 +873,7 @@ void cmat_index_copy(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, int
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(I!=NULL && J!=NULL){ ccopy(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
+      if(I!=NULL && J!=NULL){ cset_c(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -899,7 +886,7 @@ void cmat_index_copy_rmat(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(I!=NULL && J!=NULL){ ccopy_r(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
+      if(I!=NULL && J!=NULL){ cset_r(MAT(B,I[i],J[j],LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -912,7 +899,7 @@ void cmat_real(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      rcopy(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
+      rset_r(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
     }
   }
 }
@@ -925,7 +912,7 @@ void cmat_real_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      rclone(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
+      rclone_r(MAT(B,i,j,LDB),C_R(MAT(A,i,j,LDA)));
     }
   }
 }
@@ -938,7 +925,7 @@ void cmat_imag(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      rcopy(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
+      rset_r(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
     }
   }
 }
@@ -951,7 +938,7 @@ void cmat_imag_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      rclone(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
+      rclone_r(MAT(B,i,j,LDB),C_I(MAT(A,i,j,LDA)));
     }
   }
 }
@@ -964,20 +951,7 @@ void cmat_conj(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cconj(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
-    }
-  }
-}
-
-/**
- @brief cmulti型の行列の複素共役の複製 B=conj(A)
-*/
-void cmat_conj_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
-{
-  int i,j;
-  for(j=0; j<n; j++){
-    for(i=0; i<m; i++){
-      cconj_clone(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cconj_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -990,7 +964,7 @@ void cmat_neg(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cneg(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      cneg_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -1003,7 +977,7 @@ void cmat_abs2(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cabs2(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      rabs2_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -1016,7 +990,7 @@ void cmat_add(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cadd_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cadd_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1029,7 +1003,7 @@ void cmat_add_rmat(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmult
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cadd_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cadd_cr(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1042,7 +1016,7 @@ void cmat_add_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cadd_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cadd_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -1055,7 +1029,7 @@ void cmat_sub(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      csub_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      csub_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1068,7 +1042,7 @@ void cmat_sub_rmat1(int m, int n, cmulti **C, int LDC, rmulti **A, int LDA, cmul
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      rsub_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      csub_rc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1081,7 +1055,7 @@ void cmat_sub_rmat2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmul
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      csub_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      csub_cr(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1095,7 +1069,7 @@ void cmat_sub_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int L
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      csub_c(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+      csub_cc(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
     }
   }
 }
@@ -1108,7 +1082,7 @@ void cmat_sub_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      csub_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      csub_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -1122,7 +1096,7 @@ void cmat_mul(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cmul_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cmul_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1135,7 +1109,7 @@ void cmat_mul_c(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti *
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cmul_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -1148,7 +1122,7 @@ void cmat_mul_r(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, rmulti *
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cmul_r(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul_cr(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -1161,7 +1135,7 @@ void cmat_mul_z(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, dcomplex
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cmul_z(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul_cz(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -1174,7 +1148,7 @@ void cmat_mul_d(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, double b
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cmul_d(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cmul_cd(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -1194,7 +1168,7 @@ void cmat_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cm
     for(j=0; j<n; j++){
       cset_zero(MAT(Z,i,j,l)); // Z=0
       for(k=0; k<m; k++){
-	cadd_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
+	cadd_mul_cc(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
       }
     }
   }
@@ -1218,7 +1192,7 @@ void cmat_prod_r1(int l, int m, int n, cmulti **C, int LDC, rmulti **A, int LDA,
     for(j=0; j<n; j++){
       cset_zero(MAT(Z,i,j,l)); // Z=0
       for(k=0; k<m; k++){
-	cadd_mul_r(MAT(Z,i,j,l),MAT(B,k,j,LDB),MAT(A,i,k,LDA)); // Z=A*B
+	cadd_mul_cr(MAT(Z,i,j,l),MAT(B,k,j,LDB),MAT(A,i,k,LDA)); // Z=A*B
       }
     }
   }
@@ -1241,7 +1215,7 @@ void cmat_prod_r2(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA,
     for(j=0; j<n; j++){
       cset_zero(MAT(Z,i,j,l)); // Z=0
       for(k=0; k<m; k++){
-	cadd_mul_r(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
+	cadd_mul_cr(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z=A*B
       }
     }
   }
@@ -1262,9 +1236,9 @@ void cmat_add_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA
   Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      ccopy(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
+      cset_c(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
       for(k=0; k<m; k++){
-	cadd_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z+=A*B
+	cadd_mul_cc(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z+=A*B
       }
     }
   }
@@ -1285,9 +1259,9 @@ void cmat_sub_prod(int l, int m, int n, cmulti **C, int LDC, cmulti **A, int LDA
   Z=cmat_allocate_prec(l,n,cmat_get_prec_max(l,n,C,LDC));
   for(i=0; i<l; i++){
     for(j=0; j<n; j++){
-      ccopy(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
+      cset_c(MAT(Z,i,j,l),MAT(C,i,j,LDC)); // Z=C
       for(k=0; k<m; k++){
-	csub_mul(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z-=A*B
+	csub_mul_cc(MAT(Z,i,j,l),MAT(A,i,k,LDA),MAT(B,k,j,LDB)); // Z-=A*B
       }
     }
   }
@@ -1305,9 +1279,9 @@ void cmat_rank1op(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti
   value=callocate_prec(cmat_get_prec_max(m,n,B,LDB));
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cdot_c(value,y[j],x[i]);                     // vlaue=conj(y[j])*x[i]
-      cmul_c(value,a,value);                       // value=a*conj(y[j])*x[i]
-      cadd_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA),value); // B(i,j)=A(i,j)+a*x[i]*conj(y[j])
+      cdot_cc(value,y[j],x[i]);                     // vlaue=conj(y[j])*x[i]
+      cmul_cc(value,a,value);                       // value=a*conj(y[j])*x[i]
+      cadd_cc(MAT(B,i,j,LDB),MAT(A,i,j,LDA),value); // B(i,j)=A(i,j)+a*x[i]*conj(y[j])
     }
   }
   value=cfree(value);
@@ -1321,7 +1295,7 @@ void cmat_diag_copy_cvec(int m, int n, cmulti **A, int LDA, cmulti **a)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ ccopy(MAT(A,i,j,LDA),a[i]); }
+      if(i==j){ cset_c(MAT(A,i,j,LDA),a[i]); }
       else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
@@ -1335,7 +1309,7 @@ void cmat_diag_copy_rvec(int m, int n, cmulti **A, int LDA, rmulti **a)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ ccopy_r(MAT(A,i,j,LDA),a[i]); }
+      if(i==j){ cset_r(MAT(A,i,j,LDA),a[i]); }
       else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
@@ -1349,7 +1323,7 @@ void cmat_diag_copy_c(int m, int n, cmulti **A, int LDA, cmulti *a)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ ccopy(MAT(A,i,j,LDA),a); }
+      if(i==j){ cset_c(MAT(A,i,j,LDA),a); }
       else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
@@ -1363,7 +1337,7 @@ void cmat_diag_copy_r(int m, int n, cmulti **A, int LDA, rmulti *a)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ ccopy_r(MAT(A,i,j,LDA),a); }
+      if(i==j){ cset_r(MAT(A,i,j,LDA),a); }
       else    { cset_zero(MAT(A,i,j,LDA)); }
     }
   }
@@ -1378,8 +1352,8 @@ void cmat_diag_add_cvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ cadd_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd_cc(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1392,8 +1366,8 @@ void cmat_diag_add_c(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmu
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ cadd_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd_cc(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1406,8 +1380,8 @@ void cmat_diag_add_rvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ cadd_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd_cr(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1420,8 +1394,8 @@ void cmat_diag_add_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmu
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ cadd_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ cadd_cr(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1434,8 +1408,8 @@ void cmat_diag_sub_cvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ csub_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub_cc(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1448,8 +1422,8 @@ void cmat_diag_sub_c(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmu
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ csub_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub_cc(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1462,8 +1436,8 @@ void cmat_diag_sub_rvec(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ csub_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub_cr(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a[i]); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1476,8 +1450,8 @@ void cmat_diag_sub_r(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, rmu
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      if(i==j){ csub_r(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
-      else    { ccopy(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
+      if(i==j){ csub_cr(MAT(B,i,j,LDB),MAT(A,i,j,LDA),a); }
+      else    { cset_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA)); }
     }
   }
 }
@@ -1490,7 +1464,7 @@ void cmat_div(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cdiv_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      cdiv_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),MAT(B,i,j,LDB));
     }
   }
 }
@@ -1503,7 +1477,7 @@ void cmat_div_c1(int m, int n, cmulti **C, int LDC, cmulti *a, cmulti **B, int L
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cdiv_c(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
+      cdiv_cc(MAT(C,i,j,LDC),a,MAT(B,i,j,LDB));
     }
   }
 }
@@ -1516,7 +1490,7 @@ void cmat_div_c2(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti 
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cdiv_c(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
+      cdiv_cc(MAT(C,i,j,LDC),MAT(A,i,j,LDA),b);
     }
   }
 }
@@ -1569,7 +1543,7 @@ void cmat_abs(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cabsv(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      rabs_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -1582,7 +1556,7 @@ void cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cargument(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
+      rarg_c(MAT(B,i,j,LDB),MAT(A,i,j,LDA));
     }
   }
 }
@@ -1626,16 +1600,16 @@ void cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
   int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  cabs2(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
+  rabs2_c(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cabs2(a,MAT(A,i,j,LDA));  // a=abs(x[i])^2
-      if(rgt(a,value)){            // a>value
-	rcopy(value,a);         // value=a
+      rabs2_c(a,MAT(A,i,j,LDA));  // a=abs(x[i])^2
+      if(gt_rr(a,value)){            // a>value
+	rset_r(value,a);         // value=a
       }
     }
   }
-  rsqrt(value,value); // value=sqrt(value)
+  rsqrt_r(value,value); // value=sqrt(value)
   a=rfree(a);            // free
 }
 
@@ -1647,15 +1621,15 @@ void cmat_max_absc(rmulti *value, int m, int n, cmulti **A, int LDA)
   int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  rabs(value,C_R(MAT(A,0,0,LDA)));
-  rabs(a,C_I(MAT(A,0,0,LDA)));
-  if(rgt(a,value)){ rcopy(value,a); }
+  rabs_r(value,C_R(MAT(A,0,0,LDA)));
+  rabs_r(a,C_I(MAT(A,0,0,LDA)));
+  if(gt_rr(a,value)){ rset_r(value,a); }
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      rabs(a,C_R(MAT(A,i,j,LDA)));
-      if(rgt(a,value)){ rcopy(value,a); }
-      rabs(a,C_I(MAT(A,i,j,LDA)));
-      if(rgt(a,value)){ rcopy(value,a); }
+      rabs_r(a,C_R(MAT(A,i,j,LDA)));
+      if(gt_rr(a,value)){ rset_r(value,a); }
+      rabs_r(a,C_I(MAT(A,i,j,LDA)));
+      if(gt_rr(a,value)){ rset_r(value,a); }
     }
   }
   a=rfree(a);
@@ -1669,16 +1643,16 @@ void cmat_min_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
   int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  cabs2(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
+  rabs2_c(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cabs2(a,MAT(A,i,j,LDA));    // a=abs(x[i])^2
-      if(rlt(a,value)){ // a<value
-	rcopy(value,a); // value=a
+      rabs2_c(a,MAT(A,i,j,LDA));    // a=abs(x[i])^2
+      if(lt_rr(a,value)){ // a<value
+	rset_r(value,a); // value=a
       }
     }
   }
-  rsqrt(value,value); // value=sqrt(value)
+  rsqrt_r(value,value); // value=sqrt(value)
   a=rfree(a);         // free
 }
 
@@ -1742,7 +1716,7 @@ int cmat_cmp(int m, int n, cmulti **A, int LDA, int k, int l, cmulti **B, int LD
   int i,j,value;
   for(j=0; j<MIN2(n,l); j++){
     for(i=0; i<MIN2(m,k); i++){
-      value=ccmp(MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      value=ccmp_c(MAT(A,i,j,LDA),MAT(B,i,j,LDB));
       if(value!=0){ return value; } // X!=Y
     }
   }

@@ -7,7 +7,6 @@ var irmat3_8c =
     [ "irmat3_div", "irmat3_8c.html#aea3d3c6594aefb6f25e723e02a477c9b", null ],
     [ "irmat3_div_r1", "irmat3_8c.html#ac57bf5408088d69214324e2e19911d74", null ],
     [ "irmat3_div_r2", "irmat3_8c.html#a431d82f4eb086a21390c400681beecf2", null ],
-    [ "irmat3_log10", "irmat3_8c.html#a197a20e8e3a680cccef428c1c5e0f0b5", null ],
     [ "irmat3_max", "irmat3_8c.html#ae3f68fd2358bebf3ac6351380736c0dd", null ],
     [ "irmat3_mid", "irmat3_8c.html#a5f4d90b2c7a263807905695c07849a38", null ],
     [ "irmat3_min", "irmat3_8c.html#acf5a45339882cc5a0cfed7491c8d15f4", null ],

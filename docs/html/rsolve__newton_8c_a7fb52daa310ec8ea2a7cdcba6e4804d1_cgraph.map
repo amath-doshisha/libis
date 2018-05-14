@@ -1,101 +1,101 @@
 <map id="rsolve_krawczyk" name="rsolve_krawczyk">
-<area shape="rect" id="node2" href="$is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec" title="rmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="149,2815,259,2841"/>
-<area shape="rect" id="node4" href="$func__diff_8c.html#a1f2a30177ec970153ad875824836984e" title="func_grad" alt="" coords="171,2308,237,2335"/>
-<area shape="rect" id="node18" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="667,2651,727,2677"/>
-<area shape="rect" id="node30" href="$func_8c.html#a3181a645c6a1a45a2c83b6a467dc9516" title="func_retain" alt="" coords="168,2105,240,2132"/>
-<area shape="rect" id="node31" href="$func__list_8c.html#aec246610de0d1c619a5f9430d9b3203e" title="func_var1_list" alt="" coords="327,2384,411,2411"/>
-<area shape="rect" id="node32" href="$func__print_8c.html#a19d5e15cea86c22273dee75aa200077f" title="func_print" alt="" coords="171,200,237,227"/>
-<area shape="rect" id="node52" href="$is__rmat_8h.html#a7c6eefb906bf7161eda920dde59cb66d" title="rmulti型の行列に関する行列写像 A=f(x). " alt="" coords="324,1840,413,1867"/>
-<area shape="rect" id="node56" href="$is__rmat_8h.html#a3a7e33dc6de6eae69353f217b64f132e" title="rmulti型の行列の値を単位行列の設定. " alt="" coords="163,2257,245,2284"/>
-<area shape="rect" id="node57" href="$is__rsolve_8h.html#a71c2e6e66b1f9d214bf05dbedd150333" title="線形方程式A*X=Bの解法. " alt="" coords="179,3043,229,3069"/>
-<area shape="rect" id="node64" href="$is__rvec_8h.html#a049ddd84ac36db74bb55452aea36c7f7" title="rmulti型のベクトルに関するベクトル写像 y=f(x) " alt="" coords="327,1409,410,1436"/>
-<area shape="rect" id="node66" href="$is__rvec_8h.html#ac9d987366a9350acd1a920bf77b2b6f0" title="rmulti型のベクトルの表示. " alt="" coords="171,2637,237,2664"/>
-<area shape="rect" id="node71" href="$irvec_8c.html#a6ee27f7c49eba2e4f20b91a8d5cdaefa" title="irmulti型のベクトルのベクトル写像 [y0,y1]=f([x0,x1]) " alt="" coords="326,1587,411,1613"/>
-<area shape="rect" id="node74" href="$irvec_8c.html#a438b186a7f1c336c35cd2e7adb5d6e3f" title="irmulti型のベクトルの表示 " alt="" coords="170,2688,238,2715"/>
-<area shape="rect" id="node76" href="$is__rvec_8h.html#a47ba7f7a1239163a05f389b82c2a8656" title="rmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="173,3303,235,3329"/>
-<area shape="rect" id="node80" href="$is__rvec_8h.html#a2edd21f52ee7e6891702d2d4fae97473" title="rmulti型のベクトルの要素の絶対値 y=abs(x) " alt="" coords="173,2916,235,2943"/>
-<area shape="rect" id="node81" href="$is__rvec_8h.html#a520ad40f6c5093164c3991e11ba3b84e" title="z=x.*y " alt="" coords="154,3365,254,3392"/>
-<area shape="rect" id="node83" href="$irvec_8c.html#a39f686a623df20de241aa4bae71a48e1" title="irmulti型のベクトルの符号の正負 [y0,y1]=[&#45;abs(x),abs(x)] " alt="" coords="173,3441,235,3468"/>
-<area shape="rect" id="node85" href="$irvec_8c.html#a2b81c1aab49e6a90d73818fb9477e286" title="[z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="159,3093,249,3120"/>
-<area shape="rect" id="node86" href="$irmat_8c.html#a46799a1283feea3eb11b9a3e936e7d6d" title="行列写像 [A0,A1]=F([x0,x1]) " alt="" coords="323,1283,415,1309"/>
-<area shape="rect" id="node87" href="$irmat_8c.html#a4f930daa73fd7f519657899538fcd3f6" title="積の減算 [C0,C1]=[C0,C1]&#45;[A0,A1]*[B0,B1] " alt="" coords="323,3245,415,3272"/>
-<area shape="rect" id="node90" href="$irmat_8c.html#a5524b36e1fab1081e2fd558fed0a237f" title="表示 " alt="" coords="169,2739,239,2765"/>
-<area shape="rect" id="node93" href="$is__rvec_8h.html#a6213921a6fb5e79cdc23755c22889c06" title="rmulti型のベクトルの値を零に設定. " alt="" coords="159,2435,249,2461"/>
-<area shape="rect" id="node95" href="$irvec_8c.html#a99d0b3920157aad15fdc65887bf50df2" title="irmulti型のベクトルの線形変換の減算 [y0,y1]&#45;=[A0,A1]*[x0,x1] " alt="" coords="325,3549,412,3576"/>
-<area shape="rect" id="node97" href="$irvec_8c.html#a2a5b46ffa6bc37025f2f2eab8ca6fa73" title="irmulti型のベクトルの線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1] " alt="" coords="325,3600,412,3627"/>
-<area shape="rect" id="node99" href="$is__rvec_8h.html#a1771e9b1a0494a135c90d618c0e1c02f" title="rmulti型のベクトルの値の比較 X&lt;=Y " alt="" coords="177,3600,231,3627"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="665,3195,729,3221"/>
-<area shape="rect" id="node5" href="$func__diff_8c.html#a678073874e9ebd39c761353a44f33851" title="func_grad_eval" alt="" coords="323,2308,414,2335"/>
-<area shape="rect" id="node24" href="$func_8c.html#a5d310173294eded581e6fc926e5ee4a1" title="func_arg2_new" alt="" coords="651,2195,742,2221"/>
-<area shape="rect" id="node29" href="$func_8c.html#ad9ddf69a3ff0ebd5d0c71c795fb18ed4" title="private////////////////////////////////////////////////// " alt="" coords="651,2144,742,2171"/>
-<area shape="rect" id="node6" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="825,1023,879,1049"/>
-<area shape="rect" id="node8" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="949,1359,1018,1385"/>
-<area shape="rect" id="node9" href="$func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c" title="func_aget" alt="" coords="664,955,729,981"/>
-<area shape="rect" id="node11" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="661,1587,733,1613"/>
-<area shape="rect" id="node12" href="$func__bigint_8c.html#a7da66de58c68845e06c58fc05aa2e427" title="func_bigint_int" alt="" coords="653,2397,740,2424"/>
-<area shape="rect" id="node14" href="$func__bigint_8c.html#ac96de813f53909d36d7942a71acb2c74" title="func_bigint_is_integer" alt="" coords="637,2296,756,2323"/>
-<area shape="rect" id="node15" href="$func__bigint_8c.html#a68d4e5f61db08dc65f6a64e97c3d376a" title="func_bigint_get_si" alt="" coords="483,2296,585,2323"/>
-<area shape="rect" id="node16" href="$func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c" title="func_list" alt="" coords="505,2499,563,2525"/>
-<area shape="rect" id="node17" href="$func__args_8c.html#a59c61338c39841891ae08724e2602762" title="func_aset" alt="" coords="501,2448,567,2475"/>
-<area shape="rect" id="node23" href="$func__diff_8c.html#ad4f1547efbde78dfc298bb36d26ac87b" title="func_diff" alt="" coords="504,2195,564,2221"/>
-<area shape="rect" id="node26" href="$func__var_8c.html#a54777c2dfaa4a74a470d077089e3fa3a" title="func_var1" alt="" coords="501,2549,567,2576"/>
-<area shape="rect" id="node7" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="954,1955,1013,1981"/>
-<area shape="rect" id="node10" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="823,909,881,936"/>
-<area shape="rect" id="node13" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="819,2499,885,2525"/>
-<area shape="rect" id="node19" href="$func__args_8c.html#aab560c18c36aaab1c2d6901c6e9e37b0" title="func_a_del" alt="" coords="817,2651,887,2677"/>
-<area shape="rect" id="node20" href="$func_8c.html#ac5d12f1e54448af685ab9ce171c88304" title="func_p_del" alt="" coords="817,2701,887,2728"/>
-<area shape="rect" id="node21" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="822,2752,882,2779"/>
-<area shape="rect" id="node22" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="807,2600,897,2627"/>
-<area shape="rect" id="node25" href="$func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57" title="func_a_resize" alt="" coords="810,2144,894,2171"/>
-<area shape="rect" id="node27" href="$func__number_8c.html#a6729710e11f7bb6c9fddca7e194f221f" title="func_one" alt="" coords="665,2600,728,2627"/>
-<area shape="rect" id="node28" href="$func__var_8c.html#ac36f3ccf2212fd3a7b493ac4b794b982" title="func_var" alt="" coords="667,2549,727,2576"/>
-<area shape="rect" id="node33" href="$func__find_8c.html#a03ea8b3eb01cbcf8f78153de21cab456" title="func_find_print" alt="" coords="325,423,413,449"/>
-<area shape="rect" id="node37" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="948,195,1019,221"/>
-<area shape="rect" id="node48" href="$func__print_8c.html#a0ff17f9f9f779103f56ee0ef80ce6963" title="func_print_args" alt="" coords="489,43,579,69"/>
-<area shape="rect" id="node34" href="$func__builtin_8c.html#a93600b658725ef58d9cf55fda4f24af3" title="func_is_builtin" alt="" coords="654,549,739,576"/>
-<area shape="rect" id="node35" href="$func__builtin_8c.html#a9ee6e7a63f9df78a9f29a7692c2936a5" title="func_builtin_print" alt="" coords="485,195,583,221"/>
-<area shape="rect" id="node36" href="$func__builtin_8c.html#ae616bb6aae5d592b5d0f6641472104ab" title="func_builtin_print_call" alt="" coords="637,296,756,323"/>
-<area shape="rect" id="node38" href="$func__list_8c.html#a40af2f9433a3a68ef73dbd8221bf6b67" title="func_list_print" alt="" coords="492,752,576,779"/>
-<area shape="rect" id="node39" href="$func__table_8c.html#aa5e5d16773a7094f7ec6aaf6322d84b8" title="func_is_table" alt="" coords="656,701,737,728"/>
-<area shape="rect" id="node40" href="$func__table_8c.html#a961f1bde11dad1b7421ab63b3957c4f7" title="func_print_table" alt="" coords="487,93,581,120"/>
-<area shape="rect" id="node41" href="$func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979" title="func_is_strings" alt="" coords="652,752,741,779"/>
-<area shape="rect" id="node42" href="$func__strings_8c.html#a9fd69bee721d3501e5f8826390f02592" title="func_strings_print" alt="" coords="483,347,585,373"/>
-<area shape="rect" id="node43" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="654,499,739,525"/>
-<area shape="rect" id="node44" href="$func__scope_8c.html#a70500be14a5971beea43c7abee2978a7" title="func_print_scope" alt="" coords="485,144,583,171"/>
-<area shape="rect" id="node45" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="660,651,733,677"/>
-<area shape="rect" id="node46" href="$func__def_8c.html#aae0cd84fb0ccccf37eaf64d2d9e53eb6" title="func_def_print" alt="" coords="491,296,577,323"/>
-<area shape="rect" id="node47" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="487,448,581,475"/>
-<area shape="rect" id="node49" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="804,1207,900,1233"/>
-<area shape="rect" id="node50" href="$func__print_8c.html#a21acb569255424ce9a885f8b097bc471" title="func_print_hat" alt="" coords="654,195,739,221"/>
-<area shape="rect" id="node51" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="660,1232,733,1259"/>
-<area shape="rect" id="node53" href="$is__rvec_8h.html#aeb97e149b236453940b59451f2e8bddc" title="rmulti型のベクトルに関する写像 y=f(x) " alt="" coords="501,1891,567,1917"/>
-<area shape="rect" id="node54" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="666,1435,727,1461"/>
-<area shape="rect" id="node55" href="$is__rmulti_8h.html#a22745fdb53814c5523bd38a4a1e30e32" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="672,1916,721,1943"/>
-<area shape="rect" id="node58" href="$is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="481,3144,587,3171"/>
-<area shape="rect" id="node59" href="$is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="479,3093,589,3120"/>
-<area shape="rect" id="node60" href="$is__rmat_8h.html#a296ac18d9563fa49e31e42d516ccb44a" title="rmulti型の行列の値のコピー B=A " alt="" coords="334,2992,403,3019"/>
-<area shape="rect" id="node61" href="$rsolve_8c.html#a19970574d4acd5a148c5554e96fc2c2e" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="307,3043,431,3069"/>
-<area shape="rect" id="node63" href="$is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="501,3195,567,3221"/>
-<area shape="rect" id="node62" href="$is__rmulti_8h.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="513,2992,555,3019"/>
-<area shape="rect" id="node65" href="$rvec_8c.html#aeb97e149b236453940b59451f2e8bddc" title="rmulti型のベクトルに関する写像 y=f(x) " alt="" coords="501,1283,567,1309"/>
-<area shape="rect" id="node67" href="$is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="327,2688,410,2715"/>
-<area shape="rect" id="node68" href="$rvec_8c.html#aa44cced173448a48362cc6ccad59d230" title="rmulti型のベクトルを文字列型に変換 y=char(x) " alt="" coords="333,2536,404,2563"/>
-<area shape="rect" id="node69" href="$is__svec_8h.html#ab2d5063e3c4cb212b45137dc7de2983c" title="svec_print" alt="" coords="335,2587,403,2613"/>
-<area shape="rect" id="node70" href="$is__svec_8h.html#a2e19962ed7f4feac304f82c6368d8b72" title="svec_free" alt="" coords="336,2739,401,2765"/>
-<area shape="rect" id="node72" href="$irvec_8c.html#acf1d2fe8ef07057b37dda235645b62a6" title="irmulti型のベクトルの写像 [y0,y1]=f([x0,x1]) " alt="" coords="500,1232,568,1259"/>
-<area shape="rect" id="node73" href="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="672,3379,721,3405"/>
-<area shape="rect" id="node75" href="$irvec_8c.html#ae5c29db8d552613adf8684904cc3fe62" title="irmulti型のベクトルを文字列型に変換 y=char(x) " alt="" coords="332,2637,405,2664"/>
-<area shape="rect" id="node77" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="337,3296,401,3323"/>
-<area shape="rect" id="node78" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="337,3347,401,3373"/>
-<area shape="rect" id="node79" href="$rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="335,3397,403,3424"/>
-<area shape="rect" id="node82" href="$is__rmulti_8h.html#a5ac7f29deca6702de68310402cb41557" title="z=x*y " alt="" coords="343,3448,395,3475"/>
-<area shape="rect" id="node84" href="$irmulti_8c.html#a2fb4aea3587b6786964811c9e47e7182" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)]. " alt="" coords="348,3499,389,3525"/>
-<area shape="rect" id="node88" href="$irmulti_8c.html#a718dadb4804a0eaddcf795adfd1a880d" title="積の減算 [z0,z1]&#45;=[x0,x1]*[y0,y1] " alt="" coords="501,3296,567,3323"/>
-<area shape="rect" id="node89" href="$irmat_8c.html#ac492cbe5249a4081eb1b915c03cc5394" title="コピー [B0,B1]=[A0,A1] " alt="" coords="499,3353,569,3380"/>
-<area shape="rect" id="node91" href="$irmat_8c.html#addb77883869a4f306c40226628dd12fb" title="irmulti型の行列を文字列型に変換 y=char(x) " alt="" coords="331,2789,406,2816"/>
-<area shape="rect" id="node92" href="$is__svec_8h.html#a25ac06242faf8480c698f29032e0a103" title="smat_print" alt="" coords="334,2840,403,2867"/>
-<area shape="rect" id="node94" href="$rvec_8c.html#a784fb6ea6bb48e1f1738efbfe1df2c8c" title="rmulti型のベクトルの全ての値を倍精度実数から設定. " alt="" coords="491,2600,577,2627"/>
-<area shape="rect" id="node96" href="$irvec_8c.html#aaa02168ea740050a912e22a101da3cf2" title="irmulti型のベクトルのコピー [y0,y1]=[x0,x1] " alt="" coords="499,3549,569,3576"/>
-<area shape="rect" id="node98" href="$irmulti_8c.html#a55d04ab7f2884310fcff04b636911df1" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="501,3492,567,3519"/>
-<area shape="rect" id="node100" href="$is__rmulti_8h.html#a72d8f7f7abd4fa2ff89f488742ff7ca7" title="rmulti型の値の比較 x&lt;=y " alt="" coords="349,3651,388,3677"/>
+<area shape="rect" id="node2" href="$is__rvec_8h.html#ad3153e9e45ce7820cbe83a0b6eb0f2ec" title="rmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="149,3348,259,3375"/>
+<area shape="rect" id="node4" href="$func__diff_8c.html#a1f2a30177ec970153ad875824836984e" title="func_grad" alt="" coords="171,537,237,564"/>
+<area shape="rect" id="node18" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="667,56,727,83"/>
+<area shape="rect" id="node30" href="$func_8c.html#a3181a645c6a1a45a2c83b6a467dc9516" title="func_retain" alt="" coords="168,1449,240,1476"/>
+<area shape="rect" id="node31" href="$func__list_8c.html#aec246610de0d1c619a5f9430d9b3203e" title="func_var1_list" alt="" coords="327,208,411,235"/>
+<area shape="rect" id="node32" href="$func__print_8c.html#a19d5e15cea86c22273dee75aa200077f" title="func_print" alt="" coords="171,1500,237,1527"/>
+<area shape="rect" id="node52" href="$is__rmat_8h.html#a7c6eefb906bf7161eda920dde59cb66d" title="rmulti型の行列に関する行列写像 A=f(x). " alt="" coords="324,2284,413,2311"/>
+<area shape="rect" id="node56" href="$is__rmat_8h.html#a3a7e33dc6de6eae69353f217b64f132e" title="rmulti型の行列の値を単位行列の設定. " alt="" coords="163,2352,245,2379"/>
+<area shape="rect" id="node57" href="$is__rsolve_8h.html#a71c2e6e66b1f9d214bf05dbedd150333" title="線形方程式A*X=Bの解法. " alt="" coords="179,2917,229,2944"/>
+<area shape="rect" id="node64" href="$func__maps_8c.html#a049ddd84ac36db74bb55452aea36c7f7" title="rmulti型のベクトルに関するベクトル写像 y=f(x) " alt="" coords="327,2233,410,2260"/>
+<area shape="rect" id="node65" href="$is__rvec_8h.html#ac9d987366a9350acd1a920bf77b2b6f0" title="rmulti型のベクトルの表示. " alt="" coords="171,2537,237,2564"/>
+<area shape="rect" id="node70" href="$func__maps_8c.html#a6ee27f7c49eba2e4f20b91a8d5cdaefa" title="irmulti型のベクトルのベクトル写像 [y0,y1]=f([x0,x1]) " alt="" coords="326,1965,411,1992"/>
+<area shape="rect" id="node74" href="$irvec_8c.html#a438b186a7f1c336c35cd2e7adb5d6e3f" title="irmulti型のベクトルの表示 " alt="" coords="170,2588,238,2615"/>
+<area shape="rect" id="node76" href="$is__rvec_8h.html#a47ba7f7a1239163a05f389b82c2a8656" title="rmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="173,3107,235,3133"/>
+<area shape="rect" id="node80" href="$is__rvec_8h.html#a2edd21f52ee7e6891702d2d4fae97473" title="rmulti型のベクトルの要素の絶対値 y=abs(x) " alt="" coords="173,2461,235,2488"/>
+<area shape="rect" id="node81" href="$is__rvec_8h.html#a520ad40f6c5093164c3991e11ba3b84e" title="z=x.*y " alt="" coords="154,3171,254,3197"/>
+<area shape="rect" id="node83" href="$irvec_8c.html#a39f686a623df20de241aa4bae71a48e1" title="irmulti型のベクトルの符号の正負 [y0,y1]=[&#45;abs(x),abs(x)] " alt="" coords="173,3247,235,3273"/>
+<area shape="rect" id="node85" href="$irvec_8c.html#a2b81c1aab49e6a90d73818fb9477e286" title="[z0,z1]=[x0,z1]+[y0,y1] " alt="" coords="159,3297,249,3324"/>
+<area shape="rect" id="node86" href="$irmat_8c.html#a46799a1283feea3eb11b9a3e936e7d6d" title="行列写像 [A0,A1]=F([x0,x1]) " alt="" coords="323,2183,415,2209"/>
+<area shape="rect" id="node87" href="$irmat_8c.html#a4f930daa73fd7f519657899538fcd3f6" title="積の減算 [C0,C1]=[C0,C1]&#45;[A0,A1]*[B0,B1] " alt="" coords="323,3449,415,3476"/>
+<area shape="rect" id="node90" href="$irmat_8c.html#a5524b36e1fab1081e2fd558fed0a237f" title="表示 " alt="" coords="169,2639,239,2665"/>
+<area shape="rect" id="node93" href="$is__rvec_8h.html#a6213921a6fb5e79cdc23755c22889c06" title="rmulti型のベクトルの値を零に設定. " alt="" coords="159,2409,249,2436"/>
+<area shape="rect" id="node95" href="$irvec_8c.html#a99d0b3920157aad15fdc65887bf50df2" title="irmulti型のベクトルの線形変換の減算 [y0,y1]&#45;=[A0,A1]*[x0,x1] " alt="" coords="325,3500,412,3527"/>
+<area shape="rect" id="node97" href="$irvec_8c.html#a2a5b46ffa6bc37025f2f2eab8ca6fa73" title="irmulti型のベクトルの線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1] " alt="" coords="325,3551,412,3577"/>
+<area shape="rect" id="node99" href="$is__rvec_8h.html#a1771e9b1a0494a135c90d618c0e1c02f" title="rmulti型のベクトルの値の比較 X&lt;=Y " alt="" coords="177,3601,231,3628"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="665,3399,729,3425"/>
+<area shape="rect" id="node5" href="$func__diff_8c.html#a678073874e9ebd39c761353a44f33851" title="func_grad_eval" alt="" coords="323,411,414,437"/>
+<area shape="rect" id="node24" href="$func_8c.html#a5d310173294eded581e6fc926e5ee4a1" title="func_arg2_new" alt="" coords="651,461,742,488"/>
+<area shape="rect" id="node29" href="$func_8c.html#ad9ddf69a3ff0ebd5d0c71c795fb18ed4" title="private////////////////////////////////////////////////// " alt="" coords="651,512,742,539"/>
+<area shape="rect" id="node6" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="825,1120,879,1147"/>
+<area shape="rect" id="node8" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="949,1652,1018,1679"/>
+<area shape="rect" id="node9" href="$func__args_8c.html#a724ae0eb61eedd02dbc8f8dbf2df8d9c" title="func_aget" alt="" coords="664,1652,729,1679"/>
+<area shape="rect" id="node11" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="661,1924,733,1951"/>
+<area shape="rect" id="node12" href="$func__bigint_8c.html#a7da66de58c68845e06c58fc05aa2e427" title="func_bigint_int" alt="" coords="653,411,740,437"/>
+<area shape="rect" id="node14" href="$func__bigint_8c.html#ac96de813f53909d36d7942a71acb2c74" title="func_bigint_is_integer" alt="" coords="637,360,756,387"/>
+<area shape="rect" id="node15" href="$func__bigint_8c.html#a68d4e5f61db08dc65f6a64e97c3d376a" title="func_bigint_get_si" alt="" coords="483,284,585,311"/>
+<area shape="rect" id="node16" href="$func__list_8c.html#a6ee703adde8c88f7a8a006266719bd3c" title="func_list" alt="" coords="505,183,563,209"/>
+<area shape="rect" id="node17" href="$func__args_8c.html#a59c61338c39841891ae08724e2602762" title="func_aset" alt="" coords="501,233,567,260"/>
+<area shape="rect" id="node23" href="$func__diff_8c.html#ad4f1547efbde78dfc298bb36d26ac87b" title="func_diff" alt="" coords="504,436,564,463"/>
+<area shape="rect" id="node26" href="$func__var_8c.html#a54777c2dfaa4a74a470d077089e3fa3a" title="func_var1" alt="" coords="501,132,567,159"/>
+<area shape="rect" id="node7" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="954,664,1013,691"/>
+<area shape="rect" id="node10" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="823,993,881,1020"/>
+<area shape="rect" id="node13" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="819,208,885,235"/>
+<area shape="rect" id="node19" href="$func__args_8c.html#aab560c18c36aaab1c2d6901c6e9e37b0" title="func_a_del" alt="" coords="817,56,887,83"/>
+<area shape="rect" id="node20" href="$func_8c.html#ac5d12f1e54448af685ab9ce171c88304" title="func_p_del" alt="" coords="817,107,887,133"/>
+<area shape="rect" id="node21" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="822,2588,882,2615"/>
+<area shape="rect" id="node22" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="807,5,897,32"/>
+<area shape="rect" id="node25" href="$func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57" title="func_a_resize" alt="" coords="810,512,894,539"/>
+<area shape="rect" id="node27" href="$func__number_8c.html#a6729710e11f7bb6c9fddca7e194f221f" title="func_one" alt="" coords="665,107,728,133"/>
+<area shape="rect" id="node28" href="$func__var_8c.html#ac36f3ccf2212fd3a7b493ac4b794b982" title="func_var" alt="" coords="667,157,727,184"/>
+<area shape="rect" id="node33" href="$func__find_8c.html#a03ea8b3eb01cbcf8f78153de21cab456" title="func_find_print" alt="" coords="325,1323,413,1349"/>
+<area shape="rect" id="node37" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="948,1297,1019,1324"/>
+<area shape="rect" id="node48" href="$func__print_8c.html#a0ff17f9f9f779103f56ee0ef80ce6963" title="func_print_args" alt="" coords="489,841,579,868"/>
+<area shape="rect" id="node34" href="$func__builtin_8c.html#a93600b658725ef58d9cf55fda4f24af3" title="func_is_builtin" alt="" coords="654,1069,739,1096"/>
+<area shape="rect" id="node35" href="$func__builtin_8c.html#a9ee6e7a63f9df78a9f29a7692c2936a5" title="func_builtin_print" alt="" coords="485,1247,583,1273"/>
+<area shape="rect" id="node36" href="$func__builtin_8c.html#ae616bb6aae5d592b5d0f6641472104ab" title="func_builtin_print_call" alt="" coords="637,1297,756,1324"/>
+<area shape="rect" id="node38" href="$func__list_8c.html#a40af2f9433a3a68ef73dbd8221bf6b67" title="func_list_print" alt="" coords="492,1551,576,1577"/>
+<area shape="rect" id="node39" href="$func__table_8c.html#aa5e5d16773a7094f7ec6aaf6322d84b8" title="func_is_table" alt="" coords="656,1171,737,1197"/>
+<area shape="rect" id="node40" href="$func__table_8c.html#a961f1bde11dad1b7421ab63b3957c4f7" title="func_print_table" alt="" coords="487,1500,581,1527"/>
+<area shape="rect" id="node41" href="$func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979" title="func_is_strings" alt="" coords="652,1221,741,1248"/>
+<area shape="rect" id="node42" href="$func__strings_8c.html#a9fd69bee721d3501e5f8826390f02592" title="func_strings_print" alt="" coords="483,1399,585,1425"/>
+<area shape="rect" id="node43" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="654,1019,739,1045"/>
+<area shape="rect" id="node44" href="$func__scope_8c.html#a70500be14a5971beea43c7abee2978a7" title="func_print_scope" alt="" coords="485,1652,583,1679"/>
+<area shape="rect" id="node45" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="660,1120,733,1147"/>
+<area shape="rect" id="node46" href="$func__def_8c.html#aae0cd84fb0ccccf37eaf64d2d9e53eb6" title="func_def_print" alt="" coords="491,1601,577,1628"/>
+<area shape="rect" id="node47" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="487,892,581,919"/>
+<area shape="rect" id="node49" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="804,2081,900,2108"/>
+<area shape="rect" id="node50" href="$func__print_8c.html#a21acb569255424ce9a885f8b097bc471" title="func_print_hat" alt="" coords="654,816,739,843"/>
+<area shape="rect" id="node51" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="660,2132,733,2159"/>
+<area shape="rect" id="node53" href="$func__maps_8c.html#aeb97e149b236453940b59451f2e8bddc" title="rmulti型のベクトルに関する写像 y=f(x) " alt="" coords="501,2460,567,2487"/>
+<area shape="rect" id="node54" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="666,2335,727,2361"/>
+<area shape="rect" id="node55" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="672,2663,721,2689"/>
+<area shape="rect" id="node58" href="$is__rmat_8h.html#a474cfe62c18d90d42b8f80504449ea43" title="rmulti型の行列の精度を指定しての新規生成. " alt="" coords="481,3424,587,3451"/>
+<area shape="rect" id="node59" href="$is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="479,3081,589,3108"/>
+<area shape="rect" id="node60" href="$is__rmat_8h.html#a296ac18d9563fa49e31e42d516ccb44a" title="rmulti型の行列の値のコピー B=A " alt="" coords="334,2841,403,2868"/>
+<area shape="rect" id="node61" href="$rsolve_8c.html#a19970574d4acd5a148c5554e96fc2c2e" title="線形方程式A*X=Bのガウスの消去法による解法. " alt="" coords="307,2892,431,2919"/>
+<area shape="rect" id="node63" href="$is__rmat_8h.html#a53c98fd51179ef3da5393f0de6c5e833" title="rmulti型の行列の終了処理. " alt="" coords="501,3373,567,3400"/>
+<area shape="rect" id="node62" href="$is__rmulti_8h.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="509,2764,559,2791"/>
+<area shape="rect" id="node66" href="$is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="327,2588,410,2615"/>
+<area shape="rect" id="node67" href="$rvec_8c.html#a1f6abd39988fb149a493edb3caf217a8" title="rmulti型のベクトルを文字列型に変換 y=char(x) " alt="" coords="325,2487,412,2513"/>
+<area shape="rect" id="node68" href="$is__svec_8h.html#ab2d5063e3c4cb212b45137dc7de2983c" title="svec_print" alt="" coords="335,2537,403,2564"/>
+<area shape="rect" id="node69" href="$is__svec_8h.html#a2e19962ed7f4feac304f82c6368d8b72" title="svec_free" alt="" coords="336,2639,401,2665"/>
+<area shape="rect" id="node71" href="$func__maps_8c.html#acf1d2fe8ef07057b37dda235645b62a6" title="irmulti型のベクトルの写像 [y0,y1]=f([x0,x1]) " alt="" coords="500,2183,568,2209"/>
+<area shape="rect" id="node72" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="672,3652,721,3679"/>
+<area shape="rect" id="node73" href="$irmulti_8c.html#a057ef0531bf7a4cd8928ca588656d681" title="[z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="669,3272,725,3299"/>
+<area shape="rect" id="node75" href="$irvec_8c.html#a6b7c6f2e7990d4c2b185d3a5ebb5d75e" title="irmulti型のベクトルを文字列型に変換 y=char(x) " alt="" coords="324,2689,413,2716"/>
+<area shape="rect" id="node77" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="337,3145,401,3172"/>
+<area shape="rect" id="node78" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="331,3196,407,3223"/>
+<area shape="rect" id="node79" href="$rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="335,3095,403,3121"/>
+<area shape="rect" id="node82" href="$is__rmulti_8h.html#a8050f1a08b9eda2a32d254394f119966" title="z=x*y " alt="" coords="341,3247,397,3273"/>
+<area shape="rect" id="node84" href="$irmulti_8c.html#a2fb4aea3587b6786964811c9e47e7182" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)]. " alt="" coords="348,3297,389,3324"/>
+<area shape="rect" id="node88" href="$irmulti_8c.html#a0cece643d818babfebb30f89efd8d274" title="積の減算 [z0,z1]&#45;=[x0,x1]*[y0,y1] " alt="" coords="495,3475,573,3501"/>
+<area shape="rect" id="node89" href="$irmat_8c.html#ac492cbe5249a4081eb1b915c03cc5394" title="コピー [B0,B1]=[A0,A1] " alt="" coords="499,3627,569,3653"/>
+<area shape="rect" id="node91" href="$irmat_8c.html#addb77883869a4f306c40226628dd12fb" title="irmulti型の行列を文字列型に変換 y=char(x) " alt="" coords="331,2791,406,2817"/>
+<area shape="rect" id="node92" href="$is__svec_8h.html#a25ac06242faf8480c698f29032e0a103" title="smat_print" alt="" coords="334,2740,403,2767"/>
+<area shape="rect" id="node94" href="$rvec_8c.html#a784fb6ea6bb48e1f1738efbfe1df2c8c" title="rmulti型のベクトルの全ての値を倍精度実数から設定. " alt="" coords="491,2713,577,2740"/>
+<area shape="rect" id="node96" href="$irvec_8c.html#aaa02168ea740050a912e22a101da3cf2" title="irmulti型のベクトルのコピー [y0,y1]=[x0,x1] " alt="" coords="499,3728,569,3755"/>
+<area shape="rect" id="node98" href="$irmulti_8c.html#a3bd7abf298bc316f44b4e137efa28c92" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="495,3525,573,3552"/>
+<area shape="rect" id="node100" href="$is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="347,3601,390,3628"/>
 </map>

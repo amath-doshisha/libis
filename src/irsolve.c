@@ -99,10 +99,10 @@ void irsolve_lu_decomp(int n, rmulti **A0, rmulti **A1, int LDA, int *p0, int *p
   // LU分解
   for(k=0; k<n; k++){    
     // pivot select
-    irabs(value0,value1,MA0(k,k),MA1(k,k));
+    irabs_r(value0,value1,MA0(k,k),MA1(k,k));
     for(l=k,j=k+1; j<n; j++){
-      irabs(a0,a1,MA0(j,k),MA1(j,k));
-      if(rgt(a0,value0)) { l=j; ircopy(value0,value1,a0,a1); } // value=a
+      irabs_r(a0,a1,MA0(j,k),MA1(j,k));
+      if(gt_rr(a0,value0)) { l=j; irset_r(value0,value1,a0,a1); } // value=a
     }
     // エラー処理
     if(ris_zero(value0) || ris_zero(value1)){ ret=l+1; break; }
@@ -116,12 +116,12 @@ void irsolve_lu_decomp(int n, rmulti **A0, rmulti **A1, int LDA, int *p0, int *p
     }
     // L行列とU行列の作成
     for(i=k+1; i<n; i++){
-      irdiv(a0,a1,MA0(i,k),MA1(i,k),MA0(k,k),MA1(k,k));
+      irdiv_rr(a0,a1,MA0(i,k),MA1(i,k),MA0(k,k),MA1(k,k));
       // L行列 A(i,k)=a
-      ircopy(MA0(i,k),MA1(i,k),a0,a1);
+      irset_r(MA0(i,k),MA1(i,k),a0,a1);
       // U行列 A(i,k+1:end)+=(-a)*A(k,k+1:end)
       for(j=k+1; j<n; j++){
-	irsub_mul(MA0(i,j),MA1(i,j),a0,a1,MA0(k,j),MA1(k,j));
+	irsub_mul_rr(MA0(i,j),MA1(i,j),a0,a1,MA0(k,j),MA1(k,j));
       }
     }
   }
@@ -153,7 +153,7 @@ void irsolve_lu_backsubs(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmu
     rmat_rows_swap(n,NRHS,B1,LDB,k,p1[k]);
     for(i=k+1; i<n; i++){
       for(j=0; j<NRHS; j++){
-	irsub_mul(MB0(i,j),MB1(i,j),MA0(i,k),MA1(i,k),MB0(k,j),MB1(k,j));
+	irsub_mul_rr(MB0(i,j),MB1(i,j),MA0(i,k),MA1(i,k),MB0(k,j),MB1(k,j));
       }
     }
   }
@@ -162,11 +162,11 @@ void irsolve_lu_backsubs(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmu
     for(j=0; j<NRHS; j++){
       irset_d(a0,a1,0,0);
       for(i=k+1; i<n; i++){
-	iradd_mul(a0,a1,MA0(k,i),MA1(k,i),MB0(i,j),MB1(i,j));
+	iradd_mul_rr(a0,a1,MA0(k,i),MA1(k,i),MB0(i,j),MB1(i,j));
       }
-      irsub(MB0(k,j),MB1(k,j),MB0(k,j),MB1(k,j),a0,a1);
-      irdiv(b0,b1,MB0(k,j),MB1(k,j),MA0(k,k),MA1(k,k));
-      ircopy(MB0(k,j),MB1(k,j),b0,b1);
+      irsub_rr(MB0(k,j),MB1(k,j),MB0(k,j),MB1(k,j),a0,a1);
+      irdiv_rr(b0,b1,MB0(k,j),MB1(k,j),MA0(k,k),MA1(k,k));
+      irset_r(MB0(k,j),MB1(k,j),b0,b1);
     }
   }
   // done
@@ -204,10 +204,10 @@ void irsolve_gauss_sweeper(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, r
   // 上三角化
   for(k=0; k<n; k++){
     // ピボット選択
-    irabs(value0,value1,MA0(k,k),MA1(k,k));
+    irabs_r(value0,value1,MA0(k,k),MA1(k,k));
     for(l=k,j=k+1; j<n; j++){
-      irabs(a0,a1,MA0(j,k),MA1(j,k));
-      if(rgt(a0,value0)) { l=j; ircopy(value0,value1,a0,a1); } // value=a
+      irabs_r(a0,a1,MA0(j,k),MA1(j,k));
+      if(gt_rr(a0,value0)) { l=j; irset_r(value0,value1,a0,a1); } // value=a
     }
     if(ris_zero(value0)) { ret=l+1; break; } // error
     if(l!=k){
@@ -217,22 +217,22 @@ void irsolve_gauss_sweeper(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, r
       rmat_rows_swap(n,n,A1,LDA,k,l);           //swap A(k,:) <-> A(l,:)
     }
     //軸要素を1にする
-    irinv(a0,a1,MA0(k,k),MA1(k,k));
+    irinv_r(a0,a1,MA0(k,k),MA1(k,k));
     for(j=k; j<n; j++) {
-      irmul_ws(MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),a0,a1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws);
+      irmul_rr_ws(MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),a0,a1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws);
     }
     for(j=0; j<NRHS; j++) {
-      irmul_ws(MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),a0,a1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws);      
+      irmul_rr_ws(MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),a0,a1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws);      
     }
     //軸要素以外が 0 になるように他の列から軸要素の列を引く
     for(i=k+1; i<n; i++){
       if(i!=k){
-	ircopy(a0,a1,MA0(i,k),MA1(i,k));
+	irset_r(a0,a1,MA0(i,k),MA1(i,k));
 	for(j=k; j<n; j++){
-	  irsub_mul_ws(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),a0,a1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws);	 
+	  irsub_mul_rr_ws(MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),a0,a1,MAT(A0,k,j,LDA),MAT(A1,k,j,LDA),rws_size,rws);	 
 	}	
 	for(j=0; j<NRHS; j++){
-	  irsub_mul_ws(MAT(B0,i,j,LDB),MAT(B1,i,j,LDB),a0,a1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws);	 
+	  irsub_mul_rr_ws(MAT(B0,i,j,LDB),MAT(B1,i,j,LDB),a0,a1,MAT(B0,k,j,LDB),MAT(B1,k,j,LDB),rws_size,rws);	 
 	}
       }
     }
@@ -242,7 +242,7 @@ void irsolve_gauss_sweeper(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, r
     for(k=0; k<NRHS; k++){
       for(i=n-1; i>=0; i--){
 	for(j=n-1; j>=i+1; j--){
-	  irsub_mul_ws(MAT(B0,i,k,LDB),MAT(B1,i,k,LDB),MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),MAT(B0,j,k,LDB),MAT(B1,j,k,LDB),rws_size,rws);
+	  irsub_mul_rr_ws(MAT(B0,i,k,LDB),MAT(B1,i,k,LDB),MAT(A0,i,j,LDA),MAT(A1,i,j,LDA),MAT(B0,j,k,LDB),MAT(B1,j,k,LDB),rws_size,rws);
 	}
       }
     }

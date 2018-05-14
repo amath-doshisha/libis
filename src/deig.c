@@ -12,8 +12,7 @@
 // F=A*X-lambda*X
 void deig_residual(int n, double *F, double *A, int LDA, double *X, double lambda)
 {
-  dvec_copy(n,F,X);                    // F=X
-  dvec_scale(n,F,(-lambda));           // F=-lambda*X
+  dvec_mul_dscalar(n,F,X,-lambda); //  F=-lambda*X
   dvec_add_lintr(n,n,F,A,LDA,X);   // F=A*X-lambda*X
 }
 

@@ -31,7 +31,7 @@ int main(int argc, const char *argv[])
   rput(x);
 
   // -1
-  rset_one(x); rneg(x,x);
+  rset_one(x); rneg_r(x,x);
   b=rget_length(x);
   mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
   rput(x);
@@ -48,9 +48,9 @@ int main(int argc, const char *argv[])
   mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
   rput(x);
   for(i=0; i<get_default_prec(); i++){
-    rsub_d(x,x,1); // x=x-1
-    rdiv_d(x,x,2); // x=x/2
-    radd_d(x,x,1);  // x=x+1
+    rsub_rd(x,x,1); // x=x-1
+    rdiv_rd(x,x,2); // x=x/2
+    radd_rd(x,x,1);  // x=x+1
     b=rget_length(x);
     mpfr_printf("x=%0.40Rf\tlen=%d\t",x,b);
     rput(x);

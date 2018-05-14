@@ -10,10 +10,11 @@ void multi_log10(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   // allocate by clone
   x=mxArray_to_array(prhs[N0]);
   // operation
-       if(_T(x)=='r'){ y=multi_allocate('r',_M(x),_N(x),_L(x)); rmat3_log10(_M(y),_N(y),_L(y),_R(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x)); }
-       //else if(_T(x)=='c'){ cmat3_log10(_M(y),_N(y),_L(y),_R(y),_LD1(y),_LD2(y),_C(x),_LD1(x),_LD2(x)); }
-  else if(_T(x)=='R'){ y=multi_allocate('R',_M(x),_N(x),_L(x)); irmat3_log10(_M(y),_N(y),_L(y),_R0(y),_R1(y),_LD1(y),_LD2(y),_R0(x),_R1(x),_LD1(x),_LD2(x)); }
-  else{ MATLAB_ERROR("multi_abs: Unkown type"); }
+  //       if(_T(x)=='r'){ y=multi_allocate('r',_M(x),_N(x),_L(x)); rmat3_log10(_M(y),_N(y),_L(y),_R(y),_LD1(y),_LD2(y),_R(x),_LD1(x),_LD2(x)); }
+  //else if(_T(x)=='c'){ cmat3_log10(_M(y),_N(y),_L(y),_R(y),_LD1(y),_LD2(y),_C(x),_LD1(x),_LD2(x)); }
+  //if(_T(x)=='R'){ y=multi_allocate('R',_M(x),_N(x),_L(x)); irmat3_log10(_M(y),_N(y),_L(y),_R0(y),_R1(y),_LD1(y),_LD2(y),_R0(x),_R1(x),_LD1(x),_LD2(x)); }
+  //else{ MATLAB_ERROR("multi_abs: Unkown type"); }
+  MATLAB_ERROR("multi_abs: Unkown type");
   // done
   plhs[0]=array_to_mxArray(y);
   x=array_free(x);

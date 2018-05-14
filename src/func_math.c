@@ -215,7 +215,7 @@ func_t *func_sqrt_eval(func_t *f)
   a=func_aget(f,0);
   if     (func_is_zero(a))                        { g=func_zero(); }
   else if(func_is_one(a))                         { g=func_one(); }
-  else if(func_is_real(a) && rget_sgn(a->p.rm)>=0){ g=func_real();    rsqrt  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a) && rget_sgn(a->p.rm)>=0){ g=func_real();    rsqrt_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_real(a) && rget_sgn(a->p.rm)<0) { g=func_complex(); csqrt_r(g->p.cm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a))                     { g=func_complex(); csqrt_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); } 
   else                                            { g=FR(f); }
@@ -251,7 +251,7 @@ func_t *func_exp_eval(func_t *f)
   if(!func_is(f,"exp")){ FUNC_ERROR_ARG1("func_exp_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_one(); }
-  else if(func_is_real(a))   { g=func_real();    rexp  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rexp_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); cexp_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -273,7 +273,7 @@ func_t *func_log_eval(func_t *f)
   if     (func_is_zero(a))                        { g=func_inf(); }
   else if(func_is_one(a))                         { g=func_zero(); }
   else if(func_is_real(a) && rget_sgn(a->p.rm)==0){ g=func_inf(); }
-  else if(func_is_real(a) && rget_sgn(a->p.rm)>0) { g=func_real();    rlog  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a) && rget_sgn(a->p.rm)>0) { g=func_real();    rlog_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_real(a) && rget_sgn(a->p.rm)<0) { g=func_complex(); clog_r(g->p.cm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a))                     { g=func_complex(); clog_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                                            { g=FR(f); }
@@ -294,7 +294,7 @@ func_t *func_sin_eval(func_t *f)
   if(!func_is(f,"sin")){ FUNC_ERROR_ARG1("func_sin_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_zero(); }
-  else if(func_is_real(a))   { g=func_real();    rsin  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rsin_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); csin_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -314,7 +314,7 @@ func_t *func_cos_eval(func_t *f)
   if(!func_is(f,"cos")){ FUNC_ERROR_ARG1("func_cos_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_one();  }
-  else if(func_is_real(a))   { g=func_real();    rcos  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rcos_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); ccos_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -334,7 +334,7 @@ func_t *func_tan_eval(func_t *f)
   if(!func_is(f,"tan")){ FUNC_ERROR_ARG1("func_tan_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_zero();  }
-  else if(func_is_real(a))   { g=func_real();    rtan  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rtan_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); ctan_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -354,8 +354,8 @@ func_t *func_asin_eval(func_t *f)
   if(!func_is(f,"asin")){ FUNC_ERROR_ARG1("func_asin_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_zero(); }
-  else if(func_is_real(a) && rle_si2(a->p.rm,1) && rge_si2(a->p.rm,-1))
-                             { g=func_real();    rasin  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a) && le_rd(a->p.rm,1) && ge_rd(a->p.rm,-1))
+                             { g=func_real();    rasin_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_real(a))   { g=func_complex(); casin_r(g->p.cm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); casin_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
@@ -376,8 +376,8 @@ func_t *func_acos_eval(func_t *f)
   if(!func_is(f,"acos")){ FUNC_ERROR_ARG1("func_acos_eval",f); }
   a=f->a[0];
   if     (func_is_one(a))    { g=func_zero(); }
-  else if(func_is_real(a) && rle_si2(a->p.rm,1) && rge_si2(a->p.rm,-1))
-                             { g=func_real();    racos  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a) && le_rd(a->p.rm,1) && ge_rd(a->p.rm,-1))
+                             { g=func_real();    racos_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_real(a))   { g=func_complex(); cacos_r(g->p.cm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); cacos_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
@@ -398,7 +398,7 @@ func_t *func_atan_eval(func_t *f)
   if(!func_is(f,"atan")){ FUNC_ERROR_ARG1("func_atan_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_zero(); }
-  else if(func_is_real(a))   { g=func_real();    ratan  (g->p.rm,   a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    ratan_r  (g->p.rm,   a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); catan_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -418,7 +418,7 @@ func_t *func_sinh_eval(func_t *f)
   if(!func_is(f,"sinh")){ FUNC_ERROR_ARG1("func_sinh_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_zero();  }
-  else if(func_is_real(a))   { g=func_real();    rsinh  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rsinh_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); csinh_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -438,7 +438,7 @@ func_t *func_cosh_eval(func_t *f)
   if(!func_is(f,"cosh")){ FUNC_ERROR_ARG1("func_cosh_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_one(); }
-  else if(func_is_real(a))   { g=func_real();    rcosh  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rcosh_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); ccosh_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -458,7 +458,7 @@ func_t *func_tanh_eval(func_t *f)
   if(!func_is(f,"tanh")){ FUNC_ERROR_ARG1("func_tanh_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_zero(); }
-  else if(func_is_real(a))   { g=func_real();    rtanh  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rtanh_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); ctanh_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -478,7 +478,7 @@ func_t *func_asinh_eval(func_t *f)
   if(!func_is(f,"asinh")){ FUNC_ERROR_ARG1("func_asinh_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a)) { g=func_zero(); }
-  else if(func_is_real(a))   { g=func_real();    rasinh  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a))   { g=func_real();    rasinh_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); casinh_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
   f=func_del(f);
@@ -498,8 +498,8 @@ func_t *func_acosh_eval(func_t *f)
   if(!func_is(f,"acosh")){ FUNC_ERROR_ARG1("func_acosh_eval",f); }
   a=f->a[0];
   if     (func_is_one(a))    { g=func_zero(); }
-  else if(func_is_real(a) && rge_si2(a->p.rm,1))
-                             { g=func_real();    racosh  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a) && ge_rd(a->p.rm,1))
+                             { g=func_real();    racosh_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_real(a))   { g=func_complex(); cacosh_r(g->p.cm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); cacosh_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }
@@ -520,8 +520,8 @@ func_t *func_atanh_eval(func_t *f)
   if(!func_is(f,"atanh")){ FUNC_ERROR_ARG1("func_atanh_eval",f); }
   a=f->a[0];
   if     (func_is_zero(a))   { g=func_zero(); }
-  else if(func_is_real(a) && rle_si2(a->p.rm,1) && rge_si2(a->p.rm,-1))
-                             { g=func_real();    ratanh  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
+  else if(func_is_real(a) && le_rd(a->p.rm,1) && ge_rd(a->p.rm,-1))
+                             { g=func_real();    ratanh_r  (g->p.rm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_real(a))   { g=func_complex(); catanh_r(g->p.cm,a->p.rm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else if(func_is_complex(a)){ g=func_complex(); catanh_c(g->p.cm,a->p.cm); g=func_eval(g); g=func_pow_n(g,func_power(f)); }
   else                       { g=FR(f); }

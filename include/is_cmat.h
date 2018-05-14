@@ -21,7 +21,6 @@ void cmat_round(int m, int n, cmulti **A, int LDA, int prec);
 void cmat_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);
 void cmat_clone_r(int m, int n, cmulti **B, int LDB, rmulti **A, int LDA);
 void cmat_clone_t(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);
-void cmat_clone_ct(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);
 void cmat_swap(int m, int n, cmulti **A, int LDA, cmulti **B, int LDB);
 
 /*
@@ -98,7 +97,6 @@ void cmat_real_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);   
 void cmat_imag(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                           // B=imag(A)
 void cmat_imag_clone(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                     // B=imag(A)
 void cmat_conj(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                           // B=conj(A)
-void cmat_conj_clone(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                     // B=conj(A)
 void cmat_neg(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA);                            // B=-A
 void cmat_abs2(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA);                           // B=abs(A).^2
 void cmat_add(int m, int n, cmulti **C, int LDC, cmulti **A, int LDA, cmulti **B, int LDB);       // C=A+B

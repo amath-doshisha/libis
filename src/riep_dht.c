@@ -30,7 +30,7 @@ void riep_dhToda_QE_to_A(int m, int M, rmulti **A, int LDA, rmulti **Q, int LDQ,
   for(n=0; n<m; n++){
     for(k=0; k<m; k++){
       if     (n==k)    { rset_one(MAT(A,n,k,LDA)); }      // A[n][k]=1
-      else if((n-k)==1){ rcopy(MAT(A,n,k,LDA),E[k]); }    // A[n][k]=E[k][0]
+      else if((n-k)==1){ rset_r(MAT(A,n,k,LDA),E[k]); }    // A[n][k]=E[k][0]
       else             { rset_zero(MAT(A,n,k,LDA)); }     // A[n][k]=0
     }
   }
@@ -39,7 +39,7 @@ void riep_dhToda_QE_to_A(int m, int M, rmulti **A, int LDA, rmulti **Q, int LDQ,
     for(n=0;n<m;n++){
       for(k=0;k<m;k++){
 	if     ((k-n)==1){ rset_one(MAT(R,n,k,LDR)); }             // R[n][k]=1
-	else if(n==k)    { rcopy(MAT(R,n,k,LDR),MAT(Q,k,l,LDQ)); } // R[n][k]=Q[k][l]
+	else if(n==k)    { rset_r(MAT(R,n,k,LDR),MAT(Q,k,l,LDQ)); } // R[n][k]=Q[k][l]
 	else             { rset_zero(MAT(R,n,k,LDR)); }            // R[n][k]=0
       }
     }
@@ -99,32 +99,32 @@ void riep_dhToda_TN(int m, int M, rmulti **A, int LDA, rmulti **Q, int LDQ, rmul
 
   // generate sigma[n]
   rinv_d(a,M);
-  rvec_pow_r(m,sigma,lambda,a);
+  rvec_pow_rscalar(m,sigma,lambda,a);
   // generate f[n]
   for(n=0; n<f_size; n++){
     rset_d(f[n],0);
     for(k=0; k<m; k++){
-      rpow_si(a,sigma[k],n); // a=(sigma[i])^n
-      radd_mul(f[n],c[k],a); // f[i]=f[i]+c[i]*(sigma[i])^n
+      rpow_r(a,sigma[k],n); // a=(sigma[i])^n
+      radd_mul_rr(f[n],c[k],a); // f[i]=f[i]+c[i]*(sigma[i])^n
     }
   }
   // Q[n][0]=f[n+1]/f[n]
   for(n=0; n<Q0_size[0]; n++){
-    if(n+1<f_size){ rdiv_r(Q0[0][n],f[n+1],f[n]); }
+    if(n+1<f_size){ rdiv_rr(Q0[0][n],f[n+1],f[n]); }
     else          { rset_nan(Q0[0][n]); }
   }
   // E[0][n]=Q[0][n+M]-Q[0][n];
   k=0;
   for(n=0; n<E0_size[k]; n++){
-    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub_r(E0[k][n],Q0[k][n+M],Q0[k][n]); }
+    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub_rr(E0[k][n],Q0[k][n+M],Q0[k][n]); }
     else                              { rset_nan(E0[k][n]); } 
   }  
   // loop for QE-table
   for(k=1; k<m; k++){
     // Q[k][n]=(E[k-1][n+1]*Q[k-1][n+M])/E[k-1][n];
-    for(n=0; n<Q0_size[k]; n++){ rdiv_r(a,E0[k-1][n+1],E0[k-1][n]); rmul_r(Q0[k][n],a,Q0[k-1][n+M]); }    
+    for(n=0; n<Q0_size[k]; n++){ rdiv_rr(a,E0[k-1][n+1],E0[k-1][n]); rmul_rr(Q0[k][n],a,Q0[k-1][n+M]); }    
     // E[k][n]=Q[k][n+M]-Q[k][n]+E[k-1][n+1]
-    for(n=0; n<E0_size[k]; n++){ rsub_r(a,Q0[k][n+M],Q0[k][n]); radd_r(E0[k][n],a,E0[k-1][n+1]); }
+    for(n=0; n<E0_size[k]; n++){ rsub_rr(a,Q0[k][n+M],Q0[k][n]); radd_rr(E0[k][n],a,E0[k-1][n+1]); }
   }
 
   // debug
@@ -136,12 +136,12 @@ void riep_dhToda_TN(int m, int M, rmulti **A, int LDA, rmulti **Q, int LDQ, rmul
   }
 
   // generate vector E
-  for(k=0; k<m; k++){ rcopy(E1[k],E0[k][0]); }
+  for(k=0; k<m; k++){ rset_r(E1[k],E0[k][0]); }
 
   // generate matrix Q
   for(n=0;n<M;n++){
     for(k=0;k<m;k++){
-      rcopy(MAT(Q1,k,n,LDQ1),Q0[k][n]);
+      rset_r(MAT(Q1,k,n,LDQ1),Q0[k][n]);
     }
   }
 
@@ -183,7 +183,7 @@ void riep_EXTdhToda_QE_to_A(int m, int N, int M, rmulti **A, int LDA, rmulti **Q
     for(n=0; n<m; n++){
       for(k=0; k<m; k++){
 	if     (n==k)    { rset_one(MAT(L,n,k,LDL)); }              // L[n][k]=1
-	else if((n-k)==1){ rcopy(MAT(L,n,k,LDA),MAT(E,k,l,LDE)); }  // L[n][k]=E[k][0]
+	else if((n-k)==1){ rset_r(MAT(L,n,k,LDA),MAT(E,k,l,LDE)); }  // L[n][k]=E[k][0]
 	else             { rset_zero(MAT(L,n,k,LDL)); }             // L[n][k]=0
       }
     }
@@ -194,7 +194,7 @@ void riep_EXTdhToda_QE_to_A(int m, int N, int M, rmulti **A, int LDA, rmulti **Q
     for(n=0;n<m;n++){
       for(k=0;k<m;k++){
 	if     ((k-n)==1){ rset_one(MAT(R,n,k,LDR)); }             // R[n][k]=1
-	else if(n==k)    { rcopy(MAT(R,n,k,LDR),MAT(Q,k,l,LDQ)); } // R[n][k]=Q[k][l]
+	else if(n==k)    { rset_r(MAT(R,n,k,LDR),MAT(Q,k,l,LDQ)); } // R[n][k]=Q[k][l]
 	else             { rset_zero(MAT(R,n,k,LDR)); }            // R[n][k]=0
       }
     }
@@ -251,32 +251,32 @@ void riep_EXTdhToda_TN(int m, int N, int M, rmulti **A, int LDA, rmulti **Q, int
   f=rvec_allocate_prec(f_size,prec);
   // generate sigma[n]
   rinv_d(a,M*N);
-  rvec_pow_r(m,sigma,lambda,a);
+  rvec_pow_rscalar(m,sigma,lambda,a);
   // generate f[n]
   for(n=0; n<f_size; n++){
     rset_d(f[n],0);
     for(k=0; k<m; k++){
-      rpow_si(a,sigma[k],n); // a=(sigma[i])^n
-      radd_mul(f[n],c[k],a); // f[i]=f[i]+c[i]*(sigma[i])^n
+      rpow_r(a,sigma[k],n); // a=(sigma[i])^n
+      radd_mul_rr(f[n],c[k],a); // f[i]=f[i]+c[i]*(sigma[i])^n
     }
   }
   // Q[n][0]=f[n+1]/f[n]
   for(n=0; n<Q0_size[0]; n++){
-    if(n+N<f_size){ rdiv_r(Q0[0][n],f[n+N],f[n]); }
+    if(n+N<f_size){ rdiv_rr(Q0[0][n],f[n+N],f[n]); }
     else          { rset_nan(Q0[0][n]); }
   }
   // E[0][n]=Q[0][n+M]-Q[0][n];
   k=0;
   for(n=0; n<E0_size[k]; n++){
-    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub_r(E0[k][n],Q0[k][n+M],Q0[k][n]); }
+    if(n+M<Q0_size[k] && n<Q0_size[k]){ rsub_rr(E0[k][n],Q0[k][n+M],Q0[k][n]); }
     else                              { rset_nan(E0[k][n]); } 
   }
   // loop for QE-table
   for(k=1; k<m; k++){
     // Q[k][n]=(E[k-1][n+N]*Q[k-1][n+M])/E[k-1][n];
-    for(n=0; n<Q0_size[k]; n++){ rdiv_r(a,E0[k-1][n+N],E0[k-1][n]); rmul_r(Q0[k][n],a,Q0[k-1][n+M]); }    
+    for(n=0; n<Q0_size[k]; n++){ rdiv_rr(a,E0[k-1][n+N],E0[k-1][n]); rmul_rr(Q0[k][n],a,Q0[k-1][n+M]); }    
     // E[k][n]=Q[k][n+M]-Q[k][n]+E[k-1][n+N]
-    for(n=0; n<E0_size[k]; n++){ rsub_r(a,Q0[k][n+M],Q0[k][n]); radd_r(E0[k][n],a,E0[k-1][n+N]); }
+    for(n=0; n<E0_size[k]; n++){ rsub_rr(a,Q0[k][n+M],Q0[k][n]); radd_rr(E0[k][n],a,E0[k-1][n+N]); }
   }
   // debug
   if(debug>0){
@@ -288,13 +288,13 @@ void riep_EXTdhToda_TN(int m, int N, int M, rmulti **A, int LDA, rmulti **Q, int
   // generate vector E
   for(n=0; n<N; n++){
     for(k=0; k<m-1; k++){
-      rcopy(MAT(E1,k,n,LDE1),E0[k][M*n]);
+      rset_r(MAT(E1,k,n,LDE1),E0[k][M*n]);
     }
   }
   // generate matrix Q
   for(n=0; n<M; n++){
     for(k=0; k<m; k++){
-      rcopy(MAT(Q1,k,n,LDQ1),Q0[k][N*n]);
+      rset_r(MAT(Q1,k,n,LDQ1),Q0[k][N*n]);
     }
   }
   // genrate matrix A

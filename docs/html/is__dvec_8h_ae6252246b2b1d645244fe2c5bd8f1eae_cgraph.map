@@ -1,4 +1,4 @@
 <map id="dvec_orthogonalize" name="dvec_orthogonalize">
-<area shape="rect" id="node2" href="$dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="dvec_dot" alt="" coords="181,5,243,32"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#a668a3e01ffcf04335db2346f01e30011" title="dvec_sub_scaled" alt="" coords="163,56,261,83"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="z=x&#39;*y " alt="" coords="181,5,243,32"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#a668a3e01ffcf04335db2346f01e30011" title="y=y&#45;a*x " alt="" coords="163,56,261,83"/>
 </map>

@@ -7,7 +7,7 @@
 <area shape="rect" id="node25" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1793,2336,1853,2363"/>
 <area shape="rect" id="node28" href="$func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b" title="func_is_real" alt="" coords="1502,3603,1578,3629"/>
 <area shape="rect" id="node29" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="1199,3197,1261,3224"/>
-<area shape="rect" id="node30" href="$is__rmulti_8h.html#a21baccb119dc1329f2794896bf51675b" title="rmulti型の計算 y=cosh(x) " alt="" coords="1056,5,1103,32"/>
+<area shape="rect" id="node30" href="$is__rmulti_8h.html#aff7bc39a236ebc2ed75f149bc53e86a6" title="rmulti型の計算 y=cosh(x) " alt="" coords="1051,5,1107,32"/>
 <area shape="rect" id="node32" href="$func_8c.html#a498d57fcdf2d020643a3dca2805edfa3" title="func_eval" alt="" coords="1047,4917,1112,4944"/>
 <area shape="rect" id="node40" href="$func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562" title="func_is_complex" alt="" coords="1492,5224,1588,5251"/>
 <area shape="rect" id="node43" href="$func__math_8c.html#a30106e3b61432e5094dd9204eec5651c" title="func_pow_n" alt="" coords="261,3045,337,3072"/>
@@ -72,12 +72,12 @@
 <area shape="rect" id="node58" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="1347,2276,1423,2303"/>
 <area shape="rect" id="node59" href="$func__real_8c.html#a0ab64b68e336073a3e93a21cdf34087a" title="func_real_cast" alt="" coords="1036,2387,1123,2413"/>
 <area shape="rect" id="node60" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="1193,2792,1267,2819"/>
-<area shape="rect" id="node61" href="$is__rmulti_8h.html#a92810daece02105c92ef1cafbf5ae5d6" title="rmulti型のべき乗 z=x^y " alt="" coords="1051,1069,1107,1096"/>
+<area shape="rect" id="node61" href="$is__rmulti_8h.html#affd128808fbd6f5c69c06e9200506ba4" title="rmulti型のべき乗 z=x^y " alt="" coords="1053,1069,1105,1096"/>
 <area shape="rect" id="node62" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="1036,2640,1123,2667"/>
 <area shape="rect" id="node64" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="1181,4311,1279,4337"/>
 <area shape="rect" id="node65" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="1025,3501,1133,3528"/>
 <area shape="rect" id="node67" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="1183,3653,1277,3680"/>
-<area shape="rect" id="node68" href="$cmulti_8c.html#a7b7f4ece738a90c9e20611a85a82ff4f" title="cmulti型のべき乗 y=x^n " alt="" coords="894,1069,953,1096"/>
+<area shape="rect" id="node68" href="$cmulti_8c.html#a66b5c2364140c6a51005814f06d1de50" title="cmulti型のべき乗 y=x^n " alt="" coords="895,1069,951,1096"/>
 <area shape="rect" id="node69" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="869,3147,977,3173"/>
 <area shape="rect" id="node72" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="1037,968,1121,995"/>
 <area shape="rect" id="node75" href="$func__mul_8c.html#aaa2f65a6f850615c43a3fe204f935a6d" title="func_is_split_mul" alt="" coords="713,5123,811,5149"/>
@@ -91,11 +91,11 @@
 <area shape="rect" id="node87" href="$func__complex_8c.html#a2df963a565793a9a2e8b090881158fe8" title="func_complex_mul" alt="" coords="709,3577,815,3604"/>
 <area shape="rect" id="node88" href="$func__number_8c.html#abc45108e92164911a3a99619d59272ed" title="func_evalf" alt="" coords="889,3856,957,3883"/>
 <area shape="rect" id="node89" href="$func_8c.html#a5d310173294eded581e6fc926e5ee4a1" title="func_arg2_new" alt="" coords="1185,4108,1275,4135"/>
-<area shape="rect" id="node86" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="1054,208,1105,235"/>
+<area shape="rect" id="node86" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="1053,208,1106,235"/>
 <area shape="rect" id="node90" href="$func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57" title="func_a_resize" alt="" coords="1343,4008,1427,4035"/>
 <area shape="rect" id="node91" href="$func__args_8c.html#aec5ebed633d711e505b979b939f7e275" title="func_a_replace" alt="" coords="1495,3349,1585,3376"/>
 <area shape="rect" id="node94" href="$func__math_8c.html#acc2e6f2e19bf1fcc19fabd0a7d98c0bc" title="func_sqrt" alt="" coords="731,4464,793,4491"/>
-<area shape="rect" id="node98" href="$is__rmulti_8h.html#ab660fc155b547779fdbfde33f18df979" title="rmulti型の計算 y=sinh(x) " alt="" coords="1057,56,1101,83"/>
-<area shape="rect" id="node99" href="$is__rmulti_8h.html#ad66ca5ba97fbddd89b86346c2d3301a9" title="rmulti型の計算 y=sin(x) " alt="" coords="1060,107,1099,133"/>
-<area shape="rect" id="node100" href="$is__rmulti_8h.html#a1edeec7e41c8f6cb460192e5f17d924b" title="rmulti型の計算 y=cos(x) " alt="" coords="1059,157,1100,184"/>
+<area shape="rect" id="node98" href="$is__rmulti_8h.html#a76ac0d1377d431614fd7149da507a65d" title="rmulti型の計算 y=sinh(x) " alt="" coords="1053,56,1105,83"/>
+<area shape="rect" id="node99" href="$is__rmulti_8h.html#a0f98074d720590ac2abb96554b785668" title="rmulti型の計算 y=sin(x) " alt="" coords="1056,107,1103,133"/>
+<area shape="rect" id="node100" href="$is__rmulti_8h.html#a0ed3380287acbb6cd2ad1772b803accb" title="rmulti型の計算 y=cos(x) " alt="" coords="1055,157,1104,184"/>
 </map>

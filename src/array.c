@@ -38,7 +38,7 @@
 /** @{ */
 
 /**
- @breif array型のメモリ割当
+ @brief array型のメモリ割当
  */
 array *array_allocate(int type, int ndim, int *dim)
 {
@@ -94,7 +94,7 @@ array *array_allocate(int type, int ndim, int *dim)
 }
 
 /**
- @breif array型のメモリの解放
+ @brief array型のメモリの解放
  */
 array *array_free(array *x)
 {
@@ -116,7 +116,7 @@ array *array_free(array *x)
 }
 
 /**
- @breif array型の配列のメモリ割当
+ @brief array型の配列のメモリ割当
  */
 array **avec_allocate(int n)
 {  
@@ -128,7 +128,7 @@ array **avec_allocate(int n)
 }
 
 /**
- @breif array型の配列のメモリ解放
+ @brief array型の配列のメモリ解放
  */
 array **avec_free(int n, array **x)
 {  
@@ -143,7 +143,7 @@ array **avec_free(int n, array **x)
 }
 
 /**
- @breif array型のコピー y=x
+ @brief array型のコピー y=x
  */
 array *array_copy(array *x)
 {
@@ -162,7 +162,7 @@ array *array_copy(array *x)
 }
 
 /**
- @breif array型のコピー y=x
+ @brief array型のコピー y=x
  */
 array *array_clone(array *x)
 {
@@ -188,7 +188,7 @@ array *array_clone(array *x)
 /** @{ */
 
 /**
- @breif array型の値をすべて同じ値に設定
+ @brief array型の値をすべて同じ値に設定
  */
 void array_set_all_d(array *x, double y)
 {
@@ -197,7 +197,7 @@ void array_set_all_d(array *x, double y)
   if(ARRAY_TYPE(x)=='a'){ for(i=0; i<ARRAY_SIZE(x); i++){ array_set_all_d(ARRAY_AVEC(x,i),y); } }
   else if(ARRAY_TYPE(x)=='s'){ svec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_S(x),y,"%.7g"); }
   else if(ARRAY_TYPE(x)=='i'){ ivec_set_all  (ARRAY_SIZE(x),ARRAY_P0_I(x),(int)y); }
-  else if(ARRAY_TYPE(x)=='d'){ dvec_set_all  (ARRAY_SIZE(x),ARRAY_P0_D(x),y); }
+  else if(ARRAY_TYPE(x)=='d'){ dvec_set_all_d  (ARRAY_SIZE(x),ARRAY_P0_D(x),y); }
   else if(ARRAY_TYPE(x)=='z'){ zvec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_Z(x),y); }
   else if(ARRAY_TYPE(x)=='r'){ rvec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_R(x),y); }
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_all_d(ARRAY_SIZE(x),ARRAY_P0_C(x),y); }
@@ -206,7 +206,7 @@ void array_set_all_d(array *x, double y)
 }
 
 /**
- @breif array型の値をすべて0に設定
+ @brief array型の値をすべて0に設定
  */
 void array_set_zeros(array *x)
 {
@@ -224,7 +224,7 @@ void array_set_zeros(array *x)
 }
 
 /**
- @breif array型の値をすべて1に設定
+ @brief array型の値をすべて1に設定
  */
 void array_set_ones(array *x)
 {
@@ -242,7 +242,7 @@ void array_set_ones(array *x)
 }
 
 /**
- @breif array型の値をすべてnanに設定
+ @brief array型の値をすべてnanに設定
  */
 void array_set_nan(array *x)
 {
@@ -260,7 +260,7 @@ void array_set_nan(array *x)
 }
 
 /**
- @breif array型の値をすべてinfに設定
+ @brief array型の値をすべてinfに設定
  */
 void array_set_inf(array *x)
 {
@@ -278,7 +278,7 @@ void array_set_inf(array *x)
 }
 
 /**
- @breif array型の値を乱数値[a0,a1]に設定
+ @brief array型の値を乱数値[a0,a1]に設定
  */
 void array_set_rand(array *x, double a0, double a1)
 {
@@ -301,7 +301,7 @@ void array_set_rand(array *x, double a0, double a1)
 }
 
 /**
- @breif array型の値を0,1,2,..に設定
+ @brief array型の値を0,1,2,..に設定
  */
 void array_set_grid(array *x)
 {
@@ -331,7 +331,7 @@ void array_set_grid(array *x)
 /** @{ */
 
 /**
- @breif array型の内部型の確認
+ @brief array型の内部型の確認
  */
 int array_type_check(int type)
 {
@@ -339,7 +339,7 @@ int array_type_check(int type)
 }
 
 /**
- @breif array型は空か？
+ @brief array型は空か？
  */
 int array_is_empty(array *x)
 {
@@ -480,7 +480,7 @@ int array_is_scalar(array *x)
 /** @{ */
 
 /**
- @breif array型のメンバの内容を出力
+ @brief array型のメンバの内容を出力
  */
 void array_put(array *x)
 {
@@ -520,7 +520,7 @@ void array_put(array *x)
 
 
 /**
- @breif array型の出力
+ @brief array型の出力
  */
 void array_print(array *x, char *name, char format, int digits)
 {
@@ -621,65 +621,65 @@ int array_get_position(int *index, array *x)
 /** @{ */
 
 /**
- @breif array型の型変換 y=cast(x)
+ @brief array型の型変換 y=cast(x)
  */
 array *array_get(int type, array *x)
 {
   array *y=NULL;
   if(x==NULL){ return y; }
   if(type=='d'){
-    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_d (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
-    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_z (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_Z(x)); }
-    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_r (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x)); }
-    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_c (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_C(x)); }
-    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_ir(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_ic(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
+    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_Z(x)); }
+    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x)); }
+    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_C(x)); }
+    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_irvec(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); dvec_set_icvec(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   }
   if(type=='z'){
-    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_d (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_D(x)); }
-    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_z (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
-    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_r (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_R(x)); }
-    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_c (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x)); }
-    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_ir(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_ic(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_D(x)); }
+    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
+    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_R(x)); }
+    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x)); }
+    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_irvec(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); zvec_set_icvec(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   }
   if(type=='r'){
-    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_d (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_D(x)); }
-    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_z (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_Z(x)); }
-    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_r (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
-    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_c (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_C(x)); }
-    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_ir(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_ic(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_D(x)); }
+    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_Z(x)); }
+    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
+    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_C(x)); }
+    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_irvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_icvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   }
   if(type=='c'){
-    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_d (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_D(x)); }
-    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_z (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_Z(x)); }
-    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_r (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(x)); }
-    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_c (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
-    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_ir(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_ic(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_D(x)); }
+    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_Z(x)); }
+    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(x)); }
+    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
+    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_irvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_icvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   }
   if(type=='R'){
-    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_d(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_D(x),ARRAY_P0_D(x)); }
-    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_z(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_Z(x),ARRAY_P0_Z(x)); }
-    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_r(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P0_R(x)); }
-    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_c(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_C(x),ARRAY_P0_C(x)); }
-    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_r(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_c(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_dvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_D(x),ARRAY_P0_D(x)); }
+    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_zvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_Z(x),ARRAY_P0_Z(x)); }
+    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P0_R(x)); }
+    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_cvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_C(x),ARRAY_P0_C(x)); }
+    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_cvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   }
   if(type=='C'){
-    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_d(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_D(x),ARRAY_P0_D(x)); }
-    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_z(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x),ARRAY_P0_Z(x)); }
-    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_r(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x),ARRAY_P0_R(x)); }
-    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_c(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P0_C(x)); }
-    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_r(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_c(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+    if(ARRAY_TYPE(x)=='d'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_dvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_D(x),ARRAY_P0_D(x)); }
+    if(ARRAY_TYPE(x)=='z'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_zvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x),ARRAY_P0_Z(x)); }
+    if(ARRAY_TYPE(x)=='r'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x),ARRAY_P0_R(x)); }
+    if(ARRAY_TYPE(x)=='c'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P0_C(x)); }
+    if(ARRAY_TYPE(x)=='R'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+    if(ARRAY_TYPE(x)=='C'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   }
   return y;
 }
 
 /**
- @breif array型の型変換 y=char(x)
+ @brief array型の型変換 y=char(x)
  */
 array *array_get_char(array *x, char format, int digits)
 {
@@ -689,17 +689,17 @@ array *array_get_char(array *x, char format, int digits)
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  svec_copy (ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_S(x)); }
   if(ARRAY_TYPE(x)=='i'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  ivec_get_s(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_get_s(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_D(x),format,digits); }
-  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_get_s(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_Z(x),format,digits); }
-  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_get_s(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_R(x),format,digits); }
-  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_get_s(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_C(x),format,digits); }
-  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_get_s(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_R(x),ARRAY_P1_R(x),format,digits); }
-  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_get_s(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_C(x),ARRAY_P1_C(x),format,digits); }
+  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_get_svec(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_D(x),format,digits); }
+  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_get_svec(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_Z(x),format,digits); }
+  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_get_svec(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_R(x),format,digits); }
+  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_get_svec(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_C(x),format,digits); }
+  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_get_svec(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_R(x),ARRAY_P1_R(x),format,digits); }
+  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_get_svec(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_C(x),ARRAY_P1_C(x),format,digits); }
   return y;
 }
 
 /**
- @breif array型の型変換 y=int(x)
+ @brief array型の型変換 y=int(x)
  */
 array *array_get_int(array *x)
 {
@@ -707,17 +707,17 @@ array *array_get_int(array *x)
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  ivec_set_s (ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_S(x)); }
   if(ARRAY_TYPE(x)=='i'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  ivec_copy  (ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_get_si(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_get_si(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_get_si(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_get_si(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_get_si(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_get_si(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_get_ivec(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_get_ivec(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_get_ivec(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_get_ivec(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_get_ivec(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_get_ivec(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   return y;
 }
 
 /**
- @breif array型の型変換 y=real(x)
+ @brief array型の型変換 y=real(x)
  */
 array *array_get_real(array *x)
 {
@@ -735,7 +735,7 @@ array *array_get_real(array *x)
 }
 
 /**
- @breif array型の型変換 y=complex(x)
+ @brief array型の型変換 y=complex(x)
  */
 array *array_get_complex(array *x)
 {
@@ -743,9 +743,9 @@ array *array_get_complex(array *x)
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  svec_copy  (ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_S(x)); }
   if(ARRAY_TYPE(x)=='i'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  ivec_copy  (ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_copy_d(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_copy  (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_copy_r(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_copy(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_set_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(x)); }
   if(ARRAY_TYPE(x)=='c'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_copy  (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
   if(ARRAY_TYPE(x)=='R'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_copy_r(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
   if(ARRAY_TYPE(x)=='C'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_copy  (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
@@ -753,7 +753,7 @@ array *array_get_complex(array *x)
 }
 
 /**
- @breif array型の型変換 y=double(x)
+ @brief array型の型変換 y=double(x)
  */
 array *array_get_double(array *x)
 {
@@ -761,20 +761,20 @@ array *array_get_double(array *x)
   array *y=NULL;
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ flag=svec_has(ARRAY_SIZE(x),ARRAY_P0_S(x),"iIjJ"); }
-  if(ARRAY_TYPE(x)=='s' && !flag){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_set_s (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_S(x)); }
-  if(ARRAY_TYPE(x)=='s' &&  flag){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_set_s (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_S(x)); }
-  if(ARRAY_TYPE(x)=='i')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_set_si(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(x)=='d')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_set_d (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z')         { y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_set_z (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(x)=='r')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_get_d (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(x)=='c')         { y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_get_z (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(x)=='R')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_get_d (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(x)=='C')         { y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_get_z (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(x)=='s' && !flag){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_set_svec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_S(x)); }
+  if(ARRAY_TYPE(x)=='s' &&  flag){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_set_svec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_S(x)); }
+  if(ARRAY_TYPE(x)=='i')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_set_ivec(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_I(x)); }
+  if(ARRAY_TYPE(x)=='d')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(x)=='z')         { y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='r')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_get_dvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(x)=='c')         { y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_get_zvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(x)=='R')         { y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_get_dvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(x)=='C')         { y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_get_zvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   return y;
 }
 
 /**
- @breif array型の型変換 y=multi(x)
+ @brief array型の型変換 y=multi(x)
  */
 array *array_get_multi(array *x)
 {
@@ -782,20 +782,20 @@ array *array_get_multi(array *x)
   array *y=NULL;
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ flag=svec_has(ARRAY_SIZE(x),ARRAY_P0_S(x),"iIjJ"); }
-  if(ARRAY_TYPE(x)=='s' &&  flag){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_s (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_S(x)); }
-  if(ARRAY_TYPE(x)=='s' && !flag){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_s (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_S(x)); }
-  if(ARRAY_TYPE(x)=='i')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_si(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(x)=='d')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_d (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z')         { y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_z (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(x)=='r')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_r (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(x)=='c')         { y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_c (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(x)=='R')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_ir(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(x)=='C')         { y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_ic(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(x)=='s' &&  flag){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_svec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_S(x)); }
+  if(ARRAY_TYPE(x)=='s' && !flag){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_svec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_S(x)); }
+  if(ARRAY_TYPE(x)=='i')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_ivec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_I(x)); }
+  if(ARRAY_TYPE(x)=='d')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(x)=='z')         { y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='r')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(x)=='c')         { y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(x)=='R')         { y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x)); rvec_set_irvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(x)=='C')         { y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x)); cvec_set_icvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   return y;
 }
 
 /**
- @breif array型の型変換 y=imulti(x)
+ @brief array型の型変換 y=imulti(x)
  */
 array *array_get_imulti(array *x)
 {
@@ -803,48 +803,48 @@ array *array_get_imulti(array *x)
   array *y=NULL;
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ flag=svec_has(ARRAY_SIZE(x),ARRAY_P0_S(x),"iIjJ"); }
-  if(ARRAY_TYPE(x)=='s' &&  flag){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_s (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_S(x)); }
-  if(ARRAY_TYPE(x)=='s' && !flag){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_s (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_S(x)); }
-  if(ARRAY_TYPE(x)=='i')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_si(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(x)=='d')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_d (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_D(x),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z')         { y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_z (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(x)=='r')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_r (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(x)=='c')         { y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_c (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(x)=='R')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_r (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(x)=='C')         { y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_c (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(x)=='s' &&  flag){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_svec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_S(x)); }
+  if(ARRAY_TYPE(x)=='s' && !flag){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_svec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_S(x)); }
+  if(ARRAY_TYPE(x)=='i')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_ivec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_I(x),ARRAY_P0_I(x)); }
+  if(ARRAY_TYPE(x)=='d')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_D(x),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(x)=='z')         { y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='r')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(x)=='c')         { y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(x)=='R')         { y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(x)=='C')         { y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   return y;
 }
 
 /**
- @breif array型の型変換 y=imulti2(x0,x1)
+ @brief array型の型変換 y=imulti2(x0,x1)
  */
 array *array_get_imulti2(array *x0, array *x1)
 {
   array *y=NULL;
   if(x0==NULL || x1==NULL){ return y; }
   if(!array_same_dim_check(x0,x1)){ return y; }
-  if(ARRAY_TYPE(x0)=='d' && ARRAY_TYPE(x1)=='d'){ y=array_allocate('R',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); irvec_set_d (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_D(x0),ARRAY_P0_D(x1)); }
-  if(ARRAY_TYPE(x0)=='d' && ARRAY_TYPE(x1)=='z'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_dz(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_D(x0),ARRAY_P0_Z(x1)); }
-  if(ARRAY_TYPE(x0)=='z' && ARRAY_TYPE(x1)=='d'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_zd(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x0),ARRAY_P0_D(x1)); }
-  if(ARRAY_TYPE(x0)=='z' && ARRAY_TYPE(x1)=='z'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_z (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x0),ARRAY_P0_Z(x1)); }
-  if(ARRAY_TYPE(x0)=='r' && ARRAY_TYPE(x1)=='r'){ y=array_allocate('R',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); irvec_set_r (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x0),ARRAY_P0_R(x1)); }
-  if(ARRAY_TYPE(x0)=='r' && ARRAY_TYPE(x1)=='c'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_rc(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x0),ARRAY_P0_C(x1)); }
-  if(ARRAY_TYPE(x0)=='c' && ARRAY_TYPE(x1)=='r'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_cr(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x0),ARRAY_P0_R(x1)); }
-  if(ARRAY_TYPE(x0)=='c' && ARRAY_TYPE(x1)=='c'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_c (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x0),ARRAY_P0_C(x1)); }
+  if(ARRAY_TYPE(x0)=='d' && ARRAY_TYPE(x1)=='d'){ y=array_allocate('R',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); irvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_D(x0),ARRAY_P0_D(x1)); }
+  if(ARRAY_TYPE(x0)=='d' && ARRAY_TYPE(x1)=='z'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_dvec_zvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_D(x0),ARRAY_P0_Z(x1)); }
+  if(ARRAY_TYPE(x0)=='z' && ARRAY_TYPE(x1)=='d'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_zvec_dvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x0),ARRAY_P0_D(x1)); }
+  if(ARRAY_TYPE(x0)=='z' && ARRAY_TYPE(x1)=='z'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_zvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_Z(x0),ARRAY_P0_Z(x1)); }
+  if(ARRAY_TYPE(x0)=='r' && ARRAY_TYPE(x1)=='r'){ y=array_allocate('R',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); irvec_set_rvec (ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x0),ARRAY_P0_R(x1)); }
+  if(ARRAY_TYPE(x0)=='r' && ARRAY_TYPE(x1)=='c'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_rvec_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x0),ARRAY_P0_C(x1)); }
+  if(ARRAY_TYPE(x0)=='c' && ARRAY_TYPE(x1)=='r'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_cvec_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x0),ARRAY_P0_R(x1)); }
+  if(ARRAY_TYPE(x0)=='c' && ARRAY_TYPE(x1)=='c'){ y=array_allocate('C',ARRAY_NDIM(x0),ARRAY_DIM_P(x0)); icvec_set_cvec (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x0),ARRAY_P0_C(x1)); }
   return y;
 }
 
 /**
- @breif array型の型変換 y=complex2(xr,xi)
+ @brief array型の型変換 y=complex2(xr,xi)
  */
 array *array_get_complex2(array *xr, array *xi)
 {
   array *y=NULL;
   if(xr==NULL || xi==NULL){ return y; }
   if(!array_same_dim_check(xr,xi)){ return y; }
-  if(ARRAY_TYPE(xr)=='d' && ARRAY_TYPE(xi)=='d'){ y=array_allocate('z',ARRAY_NDIM(xr),ARRAY_DIM_P(xr));  zvec_copy_Z(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_D(xr),ARRAY_P0_D(xi)); }
-  if(ARRAY_TYPE(xr)=='r' && ARRAY_TYPE(xi)=='r'){ y=array_allocate('c',ARRAY_NDIM(xr),ARRAY_DIM_P(xr));  cvec_copy_C(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(xr),ARRAY_P0_R(xi)); }
-  if(ARRAY_TYPE(xr)=='R' && ARRAY_TYPE(xi)=='R'){ y=array_allocate('C',ARRAY_NDIM(xr),ARRAY_DIM_P(xr)); icvec_copy_C(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(xr),ARRAY_P0_R(xi),ARRAY_P1_R(xr),ARRAY_P1_R(xi)); }
+  if(ARRAY_TYPE(xr)=='d' && ARRAY_TYPE(xi)=='d'){ y=array_allocate('z',ARRAY_NDIM(xr),ARRAY_DIM_P(xr));  zvec_set_dvec_dvec(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_D(xr),ARRAY_P0_D(xi)); }
+  if(ARRAY_TYPE(xr)=='r' && ARRAY_TYPE(xi)=='r'){ y=array_allocate('c',ARRAY_NDIM(xr),ARRAY_DIM_P(xr));  cvec_set_rvec_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(xr),ARRAY_P0_R(xi)); }
+  if(ARRAY_TYPE(xr)=='R' && ARRAY_TYPE(xi)=='R'){ y=array_allocate('C',ARRAY_NDIM(xr),ARRAY_DIM_P(xr)); icvec_set_rvec_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(xr),ARRAY_P0_R(xi),ARRAY_P1_R(xr),ARRAY_P1_R(xi)); }
   return y;
 }
 
@@ -857,7 +857,7 @@ array *array_get_complex2(array *xr, array *xi)
 
 
 /**
- @breif y=conj(x)
+ @brief y=conj(x)
  */
 array *array_conj(array *x)
 {
@@ -881,7 +881,7 @@ array *array_conj(array *x)
 /** @{ */
 
 /**
- @breif z=x+y
+ @brief z=x+y
  */
 array *array_add(array *x, array *y)
 {
@@ -1112,41 +1112,41 @@ array *array_add(array *x, array *y)
       k=array_get_position(K,x);
       l=array_get_position(L,y);
       if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='d'){ ARRAY_DVEC0(z,i)=ARRAY_DVEC0(x,k)+ARRAY_DVEC0(y,l); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=dadd_z(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zadd_d(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zadd_z(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  dadd_r(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  zadd_r(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  radd_d(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  radd_z(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  radd_r(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  dadd_c(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  zadd_c(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  radd_c(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  cadd_d(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  cadd_z(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  cadd_r(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  cadd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ idadd_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ izadd_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ iradd_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icadd_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ iradd_d(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ iradd_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ iradd_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ iradd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ iradd_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ idadd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ izadd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ iradd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icadd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ iradd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icadd_d(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icadd_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icadd_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icadd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icadd_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icadd_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zadd_dz(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zadd_zd(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zadd_zz(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  radd_dr(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  cadd_zr(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  radd_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  cadd_rz(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  radd_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  cadd_dc(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  cadd_zc(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  cadd_rc(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  cadd_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  cadd_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  cadd_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  cadd_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ iradd_dr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ icadd_zr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ iradd_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icadd_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ iradd_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ icadd_rz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ iradd_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ icadd_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ iradd_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ icadd_dc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ icadd_zc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ icadd_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icadd_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ icadd_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icadd_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icadd_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icadd_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icadd_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icadd_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icadd_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
     }
     dim=ivec_free(dim);
     I=ivec_free(I);
@@ -1157,7 +1157,7 @@ array *array_add(array *x, array *y)
 }
 
 /**
- @breif z=x-y
+ @brief z=x-y
  */
 array *array_sub(array *x, array *y)
 {
@@ -1391,41 +1391,41 @@ array *array_sub(array *x, array *y)
       k=array_get_position(K,x);
       l=array_get_position(L,y);
       if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='d'){ ARRAY_DVEC0(z,i)=ARRAY_DVEC0(x,k)-ARRAY_DVEC0(y,l); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=dsub_z(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zsub_d(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zsub_z(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  dsub_r(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  zsub_r(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  rsub_d(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  rsub_z(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  rsub_r(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  dsub_c(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  zsub_c(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  rsub_c(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  csub_d(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  csub_z(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  csub_r(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  csub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ idsub_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ izsub_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ irsub_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icsub_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ irsub_d(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ irsub_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ irsub_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ irsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ irsub_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ idsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ izsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ irsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ irsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icsub_d(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icsub_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icsub_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icsub_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icsub_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zsub_dz(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zsub_zd(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zsub_zz(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  rsub_dr(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  csub_zr(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  rsub_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  csub_rz(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  rsub_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  csub_dc(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  csub_zc(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  csub_rc(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  csub_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  csub_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  csub_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  csub_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ irsub_dr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ icsub_zr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ irsub_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icsub_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ irsub_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ icsub_rz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ irsub_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ icsub_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ irsub_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ icsub_dc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ icsub_zc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ icsub_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icsub_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ icsub_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icsub_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icsub_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icsub_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icsub_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icsub_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icsub_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
     }
     dim=ivec_free(dim);
     I=ivec_free(I);
@@ -1436,7 +1436,7 @@ array *array_sub(array *x, array *y)
 }
 
 /**
- @breif z=x.*y
+ @brief z=x.*y
  */
 array *array_mul(array *x, array *y)
 {
@@ -1670,41 +1670,41 @@ array *array_mul(array *x, array *y)
       k=array_get_position(K,x);
       l=array_get_position(L,y);
       if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='d'){ ARRAY_DVEC0(z,i)=ARRAY_DVEC0(x,k)*ARRAY_DVEC0(y,l); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=dmul_z(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zmul_d(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zmul_z(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  dmul_r(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  zmul_r(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  rmul_d(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  rmul_z(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  rmul_r(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  dmul_c(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  zmul_c(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  rmul_c(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  cmul_d(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  cmul_z(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  cmul_r(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  cmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ idmul_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ izmul_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ irmul_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icmul_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ irmul_d(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ irmul_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ irmul_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ irmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ irmul_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ idmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ izmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ irmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ irmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icmul_d(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icmul_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icmul_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icmul_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icmul_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zmul_dz(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zmul_zd(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zmul_zz(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  rmul_dr(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  cmul_zr(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  rmul_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  cmul_rz(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  rmul_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  cmul_dc(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  cmul_zc(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  cmul_rc(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  cmul_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  cmul_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  cmul_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  cmul_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ irmul_dr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ icmul_zr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ irmul_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icmul_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ irmul_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ icmul_rz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ irmul_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ icmul_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ irmul_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ icmul_dc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ icmul_zc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ icmul_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icmul_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ icmul_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icmul_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icmul_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icmul_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icmul_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icmul_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icmul_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
     }
     dim=ivec_free(dim);
     I=ivec_free(I);
@@ -1715,7 +1715,7 @@ array *array_mul(array *x, array *y)
 }
 
 /**
- @breif z=x./y
+ @brief z=x./y
  */
 array *array_div(array *x, array *y)
 {
@@ -1949,41 +1949,41 @@ array *array_div(array *x, array *y)
       k=array_get_position(K,x);
       l=array_get_position(L,y);
       if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='d'){ ARRAY_DVEC0(z,i)=ARRAY_DVEC0(x,k)/ARRAY_DVEC0(y,l); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=ddiv_z(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zdiv_d(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zdiv_z(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  ddiv_r(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  zdiv_r(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  rdiv_d(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  rdiv_z(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  rdiv_r(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  ddiv_c(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  zdiv_c(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  rdiv_c(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  cdiv_d(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  cdiv_z(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  cdiv_r(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  cdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ iddiv_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ izdiv_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ irdiv_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icdiv_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ irdiv_d(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ irdiv_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ irdiv_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ irdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ irdiv_r(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ iddiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ izdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ irdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ irdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icdiv_d(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icdiv_z(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icdiv_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icdiv_r(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
-      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icdiv_c(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zdiv_dz(ARRAY_DVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='d'){ ARRAY_ZVEC0(z,i)=zdiv_zd(ARRAY_ZVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='z'){ ARRAY_ZVEC0(z,i)=zdiv_zz(ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='r'){  rdiv_dr(ARRAY_RVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='r'){  cdiv_zr(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='d'){  rdiv_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='z'){  cdiv_rz(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='r'){  rdiv_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='c'){  cdiv_dc(ARRAY_CVEC0(z,i),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='c'){  cdiv_zc(ARRAY_CVEC0(z,i),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='c'){  cdiv_rc(ARRAY_CVEC0(z,i),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='d'){  cdiv_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='z'){  cdiv_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='r'){  cdiv_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='c'){  cdiv_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='R'){ irdiv_dr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='R'){ icdiv_zr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='R'){ irdiv_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='R'){ icdiv_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='d'){ irdiv_rd(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='z'){ icdiv_rz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='r'){ irdiv_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='c'){ icdiv_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='R'){ irdiv_rr(ARRAY_RVEC0(z,i),ARRAY_RVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='d' && ARRAY_TYPE(y)=='C'){ icdiv_dc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_DVEC0(x,k),ARRAY_DVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='z' && ARRAY_TYPE(y)=='C'){ icdiv_zc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_ZVEC0(x,k),ARRAY_ZVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='r' && ARRAY_TYPE(y)=='C'){ icdiv_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='c' && ARRAY_TYPE(y)=='C'){ icdiv_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC0(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='R' && ARRAY_TYPE(y)=='C'){ icdiv_rc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_RVEC0(x,k),ARRAY_RVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='d'){ icdiv_cd(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_DVEC0(y,l),ARRAY_DVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='z'){ icdiv_cz(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_ZVEC0(y,l),ARRAY_ZVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='r'){ icdiv_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='c'){ icdiv_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC0(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='R'){ icdiv_cr(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_RVEC0(y,l),ARRAY_RVEC1(y,l)); }
+      if(ARRAY_TYPE(x)=='C' && ARRAY_TYPE(y)=='C'){ icdiv_cc(ARRAY_CVEC0(z,i),ARRAY_CVEC1(z,i),ARRAY_CVEC0(x,k),ARRAY_CVEC1(x,k),ARRAY_CVEC0(y,l),ARRAY_CVEC1(y,l)); }
     }
     dim=ivec_free(dim);
     I=ivec_free(I);

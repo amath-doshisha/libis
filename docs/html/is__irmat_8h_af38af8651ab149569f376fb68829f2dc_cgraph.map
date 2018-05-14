@@ -1,4 +1,5 @@
 <map id="irvec_sum_irmat" name="irvec_sum_irmat">
-<area shape="rect" id="node2" href="$irvec_8c.html#af6b1831a90b21f995b72c909ca0a2d38" title="irmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="149,5,217,32"/>
-<area shape="rect" id="node3" href="$irmulti_8c.html#ad2626813eb80d5c26ee93a9a5f9a390d" title="倍精度実数の設定 [y0,y1]=[x0,x1]. " alt="" coords="265,5,317,32"/>
+<area shape="rect" id="node2" href="$irvec_8c.html#af6b1831a90b21f995b72c909ca0a2d38" title="irmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="149,31,217,57"/>
+<area shape="rect" id="node3" href="$irmulti_8c.html#ad2626813eb80d5c26ee93a9a5f9a390d" title="倍精度実数の設定 [y0,y1]=[x0,x1]. " alt="" coords="267,5,319,32"/>
+<area shape="rect" id="node4" href="$irmulti_8c.html#a057ef0531bf7a4cd8928ca588656d681" title="[z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="265,56,321,83"/>
 </map>

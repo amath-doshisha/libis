@@ -1,9 +1,9 @@
 <map id="array_set_inf" name="array_set_inf">
-<area shape="rect" id="node2" href="$array_8c.html#a24db098a1bedb5ee95eca3a57c9a5759" title="array_set_inf" alt="" coords="133,193,213,220"/>
+<area shape="rect" id="node2" href="$array_8c.html#a24db098a1bedb5ee95eca3a57c9a5759" title="array型の値をすべてinfに設定 " alt="" coords="133,193,213,220"/>
 <area shape="rect" id="node3" href="$is__svec_8h.html#a61f0899d9138d750558259e070cad845" title="svec_set_all" alt="" coords="262,31,339,57"/>
 <area shape="rect" id="node8" href="$is__ivec_8h.html#a666a85b9df36d85176d0cd3899a34503" title="ivec_set_all" alt="" coords="263,93,338,120"/>
-<area shape="rect" id="node9" href="$dvec_8c.html#a4afe1c7cd9614ccd40a982b4c89f0cec" title="dvec_set_inf" alt="" coords="261,168,340,195"/>
-<area shape="rect" id="node10" href="$is__zvec_8h.html#a1063ef4965d55430ffd4130c253ea612" title="zvec_set_inf" alt="" coords="262,219,339,245"/>
+<area shape="rect" id="node9" href="$dvec_8c.html#a4afe1c7cd9614ccd40a982b4c89f0cec" title="x=inf(n,1) " alt="" coords="261,168,340,195"/>
+<area shape="rect" id="node10" href="$is__zvec_8h.html#a1063ef4965d55430ffd4130c253ea612" title="x=inf(n,1) " alt="" coords="262,219,339,245"/>
 <area shape="rect" id="node11" href="$is__rvec_8h.html#aabd9286d432df62c73d20579573cfeef" title="rmulti型のベクトルの値をInfに設定. " alt="" coords="263,320,339,347"/>
 <area shape="rect" id="node13" href="$cvec_8c.html#a3e86fa330bf3aef90e18004db97a87b2" title="cmulti型のベクトルの値をNaNに設定. " alt="" coords="262,269,339,296"/>
 <area shape="rect" id="node4" href="$is__strings_8h.html#a18b93394d8cb2bbba63fa9ac46393ca9" title="char_renew" alt="" coords="388,31,463,57"/>

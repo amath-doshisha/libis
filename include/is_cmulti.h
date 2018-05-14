@@ -7,11 +7,11 @@
 
 /**
  @file  is_cmulti.h
- @brief 多倍長精度複素数型cmultiに関する宣言
+ @brief 多倍長精度複素数型cmulti
  */
 
 /**
- @brief 多倍長精度複素数構造体
+ @brief 多倍長精度複素数構造体cmulti
  */
 typedef struct {
   rmulti *r; /**< 実部 */
@@ -38,36 +38,14 @@ typedef cmulti_struct cmulti;
  */
 cmulti *callocate(void);
 cmulti *callocate_prec(int prec);
-cmulti *callocate_prec2(int prec_r, int prec_i);
 cmulti *callocate_clone(cmulti *y);
 cmulti *callocate_clone_r(rmulti *y);
 cmulti *cfree(cmulti *x);
 void cround(cmulti *x, int prec);
-void cclone(cmulti *y, cmulti *x);
+void cclone_c(cmulti *y, cmulti *x);
 void cclone_r(cmulti *y, rmulti *x);
 void cclone_rr(cmulti *y, rmulti *x_r, rmulti *x_i);
-void ccopy(cmulti *y, cmulti *x);                     // y=x
-void ccopy_r(cmulti *y, rmulti *x_r);                 // y=x
-void ccopy_C(cmulti *y, rmulti *x_r, rmulti *x_i);   // y=x
-void cswap(cmulti *x, cmulti *y); 
-
-/*
- * member variables
- */
-int cget_prec(cmulti *x);
-int cget_exp(cmulti *x); // max exponent
-
-
-/*
- * type query
- */
-int cis_nan(cmulti *x); // nan?
-int cis_inf(cmulti *x); // inf?
-int cis_number(cmulti *x); // number?
-int cis_zero(cmulti *x); // zeror?
-int cis_real(cmulti *x);
-int cis_pure_imaginary(cmulti *x);
-int cis_imaginary(cmulti *x);
+void cswap(cmulti *x, cmulti *y);
 
 /*
  * I/O
@@ -76,249 +54,410 @@ void cbin_save(cmulti *x, FILE *fid);
 cmulti *cbin_load(FILE *fid);
 
 /*
+ * member variables
+ */
+int cget_prec(cmulti *x); // max(x_r.prec,y_i.prec)
+int cget_exp(cmulti *x);  // max(x_r.exp,y_i.exp)
+
+/*
+ * query
+ */
+int cis_nan(cmulti *x);              // x==nan
+int cis_inf(cmulti *x);              // x==inf
+int cis_zero(cmulti *x);             // x==0
+int cis_number(cmulti *x);           // number?
+int cis_real(cmulti *x);             // real number?
+int cis_pure_imaginary(cmulti *x);   // pure imaginary number?
+int cis_imaginary(cmulti *x);        // imaginary number?
+
+/*
  * setting
  */
-void cset_s(cmulti *x, char *str_real);
-void cset_ss(cmulti *x, char *str_real, char *str_imag);
-void cset_script(cmulti *x, char *str);
-void cset_ui(cmulti *x, ulong real);
-void cset_si(cmulti *x, long real);
-void cset(cmulti *y, cmulti *x);
-void cset_d(cmulti *x, double value_r);
-void cset_r(cmulti *y, rmulti *x);
-void cset_z(cmulti *x, dcomplex value);
-void cset_Z(cmulti *x, double value_r, double value_i);
-void cset_inf(cmulti *x, int sgn_r, int sgn_i);
-void cset_nan(cmulti *x);
-void cset_zero(cmulti *x);
-void cset_one(cmulti *x);
-void cset_one_neg(cmulti *x);
-void cset_rand(cmulti *x);
+void cset_nan(cmulti *x);                             // x=nan
+void cset_inf(cmulti *x, int sgn_r, int sgn_i);       // x=sgn_r*inf+i*sng_i*inf
+void cset_zero(cmulti *x);                            // x=0
+void cset_one(cmulti *x);                             // x=1
+void cset_one_neg(cmulti *x);                         // x=-1
+void cset_rand(cmulti *x);                            // x=rand()
+void cset_polar(cmulti *z, rmulti *r, rmulti *theta); // z=r*exp(i*theta)
+void cget_polar(rmulti *r, rmulti *theta, cmulti *z); // z=r*exp(i*theta)
 
 /*
  * casting
  */
-dcomplex cget_z(cmulti *x);
-double cget_d(cmulti *x);
-ulong cget_ui(cmulti *x);
-long cget_si(cmulti *x);
+void     cset_c(cmulti *y, cmulti *x);                 // cmulti <- cmulti
+void     cset_rr(cmulti *y, rmulti *x_r, rmulti *x_i); // cmulti <- (rmulti,rmulti)
+void     cset_z(cmulti *y, dcomplex x);                // cmulti <- dcomplex
+dcomplex cget_z(cmulti *x);                            // cmulti -> dcomplex
+void     cset_dd(cmulti *y, double xr, double xi);     // cmulti <- (double,double)
+void     cset_r(cmulti *y, rmulti *x);                 // cmulti <- rmulti
+void     cget_r(rmulti *y, rmulti *x);                 // cmulti -> rmulti
+void     cset_d(cmulti *y, double x);                  // cmulti <- double
+double   cget_d(cmulti *x);                            // cmulti -> double
+void     cset_i(cmulti *y, int x);                     // cmulti <- int
+int      cget_i(cmulti *x);                            // cmulti -> int
+void     cset_s(cmulti *y, char *x);                   // cmulti <- char
+void     cget_s(char *y, cmulti *x);                   // cmulti -> char
 
 /*
- * operatior for one argument
+ * y=f(x)
  */
-void cneg(cmulti *y, cmulti *x);                      // y=-x
-void cinv(cmulti *y, cmulti *x);                      // y=1/x
-void cinv_ws(cmulti *z, cmulti *x, int n_rws, rmulti **rws, int n_cws, cmulti **cws); // n_rws>=2,n_cws>=1
-void cconj(cmulti *y, cmulti *x);                     // y=conj(x)
-void cconj_clone(cmulti *y, cmulti *x);               // y=conj(x)
-void cabsv(rmulti *y, cmulti *x);                     // y=abs(x)
-void cabsv_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws); // n_rws>=1
-void cadd_abs(rmulti *y, cmulti *x);                  // y+=abs(x)
-void cabs2(rmulti *y, cmulti *x);                     // y=abs(x)^2
-void cabs2_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws); // n_rws>=1
-void cadd_abs2(rmulti *y, cmulti *x);                 // y+=abs(x)^2
-void cabsc(cmulti *y, cmulti *x);                     // y=abs(x.r)+i*abs(r.i)
-void cmax_absc(rmulti *y, cmulti *x);                 // y=max(abs(x.r),abs(r.i))
-void cnormalize(cmulti *y, cmulti *x);                // y=x/abs(x)
-void cargument(rmulti *theta, cmulti *z);             // theta=arg(z)
-void csqrt_r(cmulti *y, rmulti *x);                   // y=sqrt(x)
-void csqrt_c(cmulti *y, cmulti *x);                   // y=sqrt(x)
-void cexp_c(cmulti *y, cmulti *x);                    // y=exp(x)
-void clog_r(cmulti *y, rmulti *x);                    // y=log(x)
-void clog_c(cmulti *y, cmulti *x);                    // y=log(x)
-void csin_c(cmulti *y, cmulti *x);                    // y=sin(x)
-void ccos_c(cmulti *y, cmulti *x);                    // y=cos(x)
-void ctan_c(cmulti *y, cmulti *x);                    // y=tan(x)
-void casin_r(cmulti *y, rmulti *x);                   // y=asin(x)
-void casin_c(cmulti *y, cmulti *x);                   // y=asin(x)
-void cacos_r(cmulti *y, rmulti *x);                   // y=cos(x)
-void cacos_c(cmulti *y, cmulti *x);                   // y=cos(x)
-void catan_r(cmulti *y, rmulti *x);                   // y=tan(x)
-void catan_c(cmulti *y, cmulti *x);                   // y=tan(x)
-void csinh_c(cmulti *y, cmulti *x);                   // y=sinh(x)
-void ccosh_c(cmulti *y, cmulti *x);                   // y=cosh(x)
-void ctanh_c(cmulti *y, cmulti *x);                   // y=tanh(x)
-void casinh_r(cmulti *y, rmulti *x);                  // y=asinh(x)
-void casinh_c(cmulti *y, cmulti *x);                  // y=asinh(x)
-void cacosh_r(cmulti *y, rmulti *x);                  // y=acosh(x)
-void cacosh_c(cmulti *y, cmulti *x);                  // y=acosh(x)
-void catanh_r(cmulti *y, rmulti *x);                  // y=atanh(x)
-void catanh_c(cmulti *y, cmulti *x);                  // y=atanh(x)
+// y=conj(x)
+void cconj_c(cmulti *y, cmulti *x);
+void cconj_r(cmulti *y, rmulti *x);
+void cconj_z(cmulti *y, dcomplex x);
+void cconj_d(cmulti *y, double x);
+// y=real(x)
+void rreal_c(rmulti *y, cmulti *x);
+void rreal_z(rmulti *y, dcomplex x);
+// y=imag(x)
+void rimag_c(rmulti *y, cmulti *x);
+void rimag_z(rmulti *y, dcomplex x);
+// y=abs(x)
+void rabs_c_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws); // n_rws>=1
+void rabs_c(rmulti *y, cmulti *x);
+// y=abs(x)^2
+void rabs2_c_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws); // n_rws>=1
+void rabs2_c(rmulti *y, cmulti *x);
+// y=abs(x_r)+i*abs(x_i)
+void cabsc_c(cmulti *y, cmulti *x);
+// y=max(abs(x_r),abs(x_i))
+void rmax_absc_c(rmulti *y, cmulti *x);
+// y=-x
+void cneg_c(cmulti *y, cmulti *x);
+void cneg_r(cmulti *y, rmulti *x);
+void cneg_z(cmulti *y, dcomplex x);
+void cneg_d(cmulti *y, double x);
+// y=1/x
+void cinv_c_ws(cmulti *y, cmulti *x, int n_rws, rmulti **rws, int n_cws, cmulti **cws); // n_rws>=2,n_cws>=1
+void cinv_c(cmulti *y, cmulti *x);
+void cinv_r(cmulti *y, rmulti *x);
+void cinv_z(cmulti *y, dcomplex x);
+void cinv_d(cmulti *y, double x);
+// y=x/abs(x)
+void cnormalize_c(cmulti *y, cmulti *x);
+void cnormalize_r(cmulti *y, rmulti *x);
+void cnormalize_z(cmulti *y, dcomplex x);
+void cnormalize_d(cmulti *y, double x);
+// theta=arg(z)
+void rarg_c(rmulti *theta, cmulti *z);
+void rarg_z(rmulti *theta, dcomplex z);
+// y=floor(x)
+void cfloor_c(cmulti *y, cmulti *x);
+void cfloor_r(cmulti *y, rmulti *x);
+void cfloor_z(cmulti *y, dcomplex x);
+void cfloor_d(cmulti *y, double x);
+// y=ceil(x)
+void cceil_c(cmulti *y, cmulti *x);
+void cceil_r(cmulti *y, rmulti *x);
+void cceil_z(cmulti *y, dcomplex x);
+void cceil_d(cmulti *y, double x);
+// y=trunc(x)
+void ctrunc_c(cmulti *y, cmulti *x);
+void ctrunc_r(cmulti *y, rmulti *x);
+void ctrunc_z(cmulti *y, dcomplex x);
+void ctrunc_d(cmulti *y, double x);
+// y=sqrt(x)
+void csqrt_c(cmulti *y, cmulti *x);
+void csqrt_r(cmulti *y, rmulti *x);
+void csqrt_z(cmulti *y, dcomplex x);
+void csqrt_d(cmulti *y, double x);
+// y=exp(x)
+void cexp_c(cmulti *y, cmulti *x);
+void cexp_r(cmulti *y, rmulti *x);
+void cexp_z(cmulti *y, dcomplex x);
+void cexp_d(cmulti *y, double x);
+// y=exp2(x)
+void cexp2_c(cmulti *y, cmulti *x);
+void cexp2_r(cmulti *y, rmulti *x);
+void cexp2_z(cmulti *y, dcomplex x);
+void cexp2_d(cmulti *y, double x);
+// y=exp10(x)
+void cexp10_c(cmulti *y, cmulti *x);
+void cexp10_r(cmulti *y, rmulti *x);
+void cexp10_z(cmulti *y, dcomplex x);
+void cexp10_d(cmulti *y, double x);
+// y=log(x)
+void clog_c(cmulti *y, cmulti *x);
+void clog_r(cmulti *y, rmulti *x);
+void clog_z(cmulti *y, dcomplex x);
+void clog_d(cmulti *y, double x);
+// y=log2(x)
+void clog2_c(cmulti *y, cmulti *x);
+void clog2_r(cmulti *y, rmulti *x);
+void clog2_z(cmulti *y, dcomplex x);
+void clog2_d(cmulti *y, double x);
+// y=log10(x)
+void clog10_c(cmulti *y, cmulti *x);
+void clog10_r(cmulti *y, rmulti *x);
+void clog10_z(cmulti *y, dcomplex x);
+void clog10_d(cmulti *y, double x);
+// y=sin(x)
+void csin_c(cmulti *y, cmulti *x);
+void csin_r(cmulti *y, rmulti *x);
+void csin_z(cmulti *y, dcomplex x);
+void csin_d(cmulti *y, double x);
+// y=cos(x)
+void ccos_c(cmulti *y, cmulti *x);
+void ccos_r(cmulti *y, rmulti *x);
+void ccos_z(cmulti *y, dcomplex x);
+void ccos_d(cmulti *y, double x);
+// y=tan(x)
+void ctan_c(cmulti *y, cmulti *x);
+void ctan_r(cmulti *y, rmulti *x);
+void ctan_z(cmulti *y, dcomplex x);
+void ctan_d(cmulti *y, double x);
+// y=asin(x)
+void casin_r(cmulti *y, rmulti *x);
+void casin_r(cmulti *y, rmulti *x);
+void casin_z(cmulti *y, dcomplex x);
+void casin_d(cmulti *y, double x);
+// y=asin(x)
+void casin_c(cmulti *y, cmulti *x);
+void casin_r(cmulti *y, rmulti *x);
+void casin_z(cmulti *y, dcomplex x);
+void casin_d(cmulti *y, double x);
+// y=cos(x)
+void cacos_c(cmulti *y, cmulti *x);
+void cacos_r(cmulti *y, rmulti *x);
+void cacos_z(cmulti *y, dcomplex x);
+void cacos_d(cmulti *y, double x);
+// y=tan(x)
+void catan_c(cmulti *y, cmulti *x);
+void catan_r(cmulti *y, rmulti *x);
+void catan_z(cmulti *y, dcomplex x);
+void catan_d(cmulti *y, double x);
+// y=sinh(x)
+void csinh_c(cmulti *y, cmulti *x);
+void csinh_r(cmulti *y, rmulti *x);
+void csinh_z(cmulti *y, dcomplex x);
+void csinh_d(cmulti *y, double x);
+// y=cosh(x)
+void ccosh_c(cmulti *y, cmulti *x);
+void ccosh_r(cmulti *y, rmulti *x);
+void ccosh_z(cmulti *y, dcomplex x);
+void ccosh_d(cmulti *y, double x);
+// y=tanh(x)
+void ctanh_c(cmulti *y, cmulti *x);
+void ctanh_r(cmulti *y, rmulti *x);
+void ctanh_z(cmulti *y, dcomplex x);
+void ctanh_d(cmulti *y, double x);
+// y=asinh(x)
+void casinh_c(cmulti *y, cmulti *x);
+void casinh_r(cmulti *y, rmulti *x);
+void casinh_z(cmulti *y, dcomplex x);
+void casinh_d(cmulti *y, double x);
+// y=acosh(x)
+void cacosh_c(cmulti *y, cmulti *x);
+void cacosh_r(cmulti *y, rmulti *x);
+void cacosh_z(cmulti *y, dcomplex x);
+void cacosh_d(cmulti *y, double x);
+// y=atanh(x)
+void catanh_c(cmulti *y, cmulti *x);
+void catanh_r(cmulti *y, rmulti *x);
+void catanh_z(cmulti *y, dcomplex x);
+void catanh_d(cmulti *y, double x);
+// z=x^n
+void cpow_c(cmulti *y, cmulti *x, int n);
+void cpow_r(cmulti *y, rmulti *x, int n);
+void cpow_z(cmulti *y, dcomplex x, int n);
+void cpow_d(cmulti *y, double x, int n);
+// y=x*2^n
+void cmul_2exp(cmulti *y, cmulti *x, int nr, int ni);
+// y=x/2^n
+void cdiv_2exp(cmulti *y, cmulti *x, int nr, int ni);
 
 /*
  * z=f(x,y)
  */
 // z=x+y
-void cadd_c(cmulti *z, cmulti *x, cmulti *y);
-void cadd_z(cmulti *z, cmulti *x, dcomplex y);
-void zadd_c(cmulti *z, dcomplex x, cmulti *y);
-void cadd_r(cmulti *z, cmulti *x, rmulti *y);
-void radd_c(cmulti *z, rmulti *x, cmulti *y);
-void cadd_d(cmulti *z, cmulti *x, double y);
-void dadd_c(cmulti *z, double x, cmulti *y);
-void radd_z(cmulti *z, rmulti *x, dcomplex y);
-void zadd_r(cmulti *z, dcomplex x, rmulti *y);
-void cadd_ui(cmulti *z, cmulti *x, ulong y);
-void cadd_si(cmulti *z, cmulti *x, long y);
+void cadd_cc(cmulti *z, cmulti *x, cmulti *y);
+void cadd_cz(cmulti *z, cmulti *x, dcomplex y);
+void cadd_zc(cmulti *z, dcomplex x, cmulti *y);
+void cadd_cr(cmulti *z, cmulti *x, rmulti *y);
+void cadd_rc(cmulti *z, rmulti *x, cmulti *y);
+void cadd_cd(cmulti *z, cmulti *x, double y);
+void cadd_dc(cmulti *z, double x, cmulti *y);
+void cadd_rz(cmulti *z, rmulti *x, dcomplex y);
+void cadd_zr(cmulti *z, dcomplex x, rmulti *y);
 // z=x-y
-void csub_c(cmulti *z, cmulti *x, cmulti *y);
-void csub_z(cmulti *z, cmulti *x, dcomplex y);
-void zsub_c(cmulti *z, dcomplex x, cmulti *y);
-void csub_r(cmulti *z, cmulti *x, rmulti *y);
-void rsub_c(cmulti *z, rmulti *x, cmulti *y);
-void csub_d(cmulti *z, cmulti *x, double y);
-void dsub_c(cmulti *z, double x, cmulti *y);
-void rsub_z(cmulti *z, rmulti *x, dcomplex y);
-void zsub_r(cmulti *z, dcomplex x, rmulti *y);
-void csub_ui1(cmulti *z, ulong x, cmulti *y);
-void csub_ui2(cmulti *z, cmulti *x, ulong y);
-void csub_si1(cmulti *z, long x, cmulti *y);
-void csub_si2(cmulti *z, cmulti *x, long y);
+void csub_cc(cmulti *z, cmulti *x, cmulti *y);
+void csub_cz(cmulti *z, cmulti *x, dcomplex y);
+void csub_zc(cmulti *z, dcomplex x, cmulti *y);
+void csub_cr(cmulti *z, cmulti *x, rmulti *y);
+void csub_rc(cmulti *z, rmulti *x, cmulti *y);
+void csub_cd(cmulti *z, cmulti *x, double y);
+void csub_dc(cmulti *z, double x, cmulti *y);
+void csub_rz(cmulti *z, rmulti *x, dcomplex y);
+void csub_zr(cmulti *z, dcomplex x, rmulti *y);
 // z=x*y
-void cmul_c_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws);  // n_rws>=1,n_cws>=1
-void cmul_c(cmulti *z, cmulti *x, cmulti *y);
-void cmul_z(cmulti *z, cmulti *x, dcomplex y);
-void zmul_c(cmulti *z, dcomplex x, cmulti *y);
-void cmul_r(cmulti *z, cmulti *x, rmulti *y);
-void rmul_c(cmulti *z, rmulti *x, cmulti *y);
-void cmul_d(cmulti *z, cmulti *x, double y);
-void dmul_c(cmulti *z, double x, cmulti *y);
-void rmul_z(cmulti *z, rmulti *x, dcomplex y);
-void zmul_r(cmulti *z, dcomplex x, rmulti *y);
-void cmul_ui(cmulti *z, cmulti *x, ulong y);
-void cmul_si(cmulti *z, cmulti *x, long y);
+void cmul_cc_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws);  // n_rws>=1,n_cws>=1
+void cmul_cc(cmulti *z, cmulti *x, cmulti *y);
+void cmul_cz(cmulti *z, cmulti *x, dcomplex y);
+void cmul_zc(cmulti *z, dcomplex x, cmulti *y);
+void cmul_cr(cmulti *z, cmulti *x, rmulti *y);
+void cmul_rc(cmulti *z, rmulti *x, cmulti *y);
+void cmul_cd(cmulti *z, cmulti *x, double y);
+void cmul_dc(cmulti *z, double x, cmulti *y);
+void cmul_rz(cmulti *z, rmulti *x, dcomplex y);
+void cmul_zr(cmulti *z, dcomplex x, rmulti *y);
 // z=conj(x)*y
-void cdot_c(cmulti *z, cmulti *x, cmulti *y);
-void cdot_z(cmulti *z, cmulti *x, dcomplex y);
-void zdot_c(cmulti *z, dcomplex x, cmulti *y);
-void cdot_r(cmulti *z, cmulti *x, rmulti *y);
-void rdot_c(cmulti *z, rmulti *x, cmulti *y);
-void cdot_d(cmulti *z, cmulti *x, double y);
-void ddot_c(cmulti *z, double x, cmulti *y);
-void rdot_z(cmulti *z, rmulti *x, dcomplex y);
-void zdot_r(cmulti *z, dcomplex x, rmulti *y);
+void cdot_cc(cmulti *z, cmulti *x, cmulti *y);
+void cdot_cz(cmulti *z, cmulti *x, dcomplex y);
+void cdot_zc(cmulti *z, dcomplex x, cmulti *y);
+void cdot_cr(cmulti *z, cmulti *x, rmulti *y);
+void cdot_rc(cmulti *z, rmulti *x, cmulti *y);
+void cdot_cd(cmulti *z, cmulti *x, double y);
+void cdot_dc(cmulti *z, double x, cmulti *y);
+void cdot_rz(cmulti *z, rmulti *x, dcomplex y);
+void cdot_zr(cmulti *z, dcomplex x, rmulti *y);
 // z=x/y
-void cdiv_c(cmulti *z, cmulti *x, cmulti *y);
-void cdiv_z(cmulti *z, cmulti *x, dcomplex y);
-void zdiv_c(cmulti *z, dcomplex x, cmulti *y);
-void cdiv_r(cmulti *z, cmulti *x, rmulti *y);
-void rdiv_c(cmulti *z, rmulti *x, cmulti *y);
-void cdiv_d(cmulti *z, cmulti *x, double y);
-void ddiv_c(cmulti *z, double x, cmulti *y);
-void rdiv_z(cmulti *z, rmulti *x, dcomplex y);
-void zdiv_r(cmulti *z, dcomplex x, rmulti *y);
-void cdiv_ui1(cmulti *z, ulong x, cmulti *y);
-void cdiv_ui2(cmulti *z, cmulti *x, ulong y);
-void cdiv_si1(cmulti *z, long x, cmulti *y);
-void cdiv_si2(cmulti *z, cmulti *x, long y);
+void cdiv_cc(cmulti *z, cmulti *x, cmulti *y);
+void cdiv_cz(cmulti *z, cmulti *x, dcomplex y);
+void cdiv_zc(cmulti *z, dcomplex x, cmulti *y);
+void cdiv_cr(cmulti *z, cmulti *x, rmulti *y);
+void cdiv_rc(cmulti *z, rmulti *x, cmulti *y);
+void cdiv_cd(cmulti *z, cmulti *x, double y);
+void cdiv_dc(cmulti *z, double x, cmulti *y);
+void cdiv_rz(cmulti *z, rmulti *x, dcomplex y);
+void cdiv_zr(cmulti *z, dcomplex x, rmulti *y);
+// z=x^y
+void cpow_cc(cmulti *z, cmulti *x, cmulti *y);
+void cpow_cz(cmulti *z, cmulti *x, dcomplex y);
+void cpow_zc(cmulti *z, dcomplex x, cmulti *y);
+void cpow_cr(cmulti *z, cmulti *x, rmulti *y);
+void cpow_rc(cmulti *z, rmulti *x, cmulti *y);
+void cpow_cd(cmulti *z, cmulti *x, double y);
+void cpow_dc(cmulti *z, double x, cmulti *y);
+void cpow_rz(cmulti *z, rmulti *x, dcomplex y);
+void cpow_zr(cmulti *z, dcomplex x, rmulti *y);
+// z=abs(x-y)
+void rabs_sub_cc(rmulti *z, cmulti *x, cmulti *y);
+void rabs_sub_cz(rmulti *z, cmulti *x, dcomplex y);
+void rabs_sub_zc(rmulti *z, dcomplex x, cmulti *y);
+void rabs_sub_cr(rmulti *z, cmulti *x, rmulti *y);
+void rabs_sub_rc(rmulti *z, rmulti *x, cmulti *y);
+void rabs_sub_cd(rmulti *z, cmulti *x, double y);
+void rabs_sub_dc(rmulti *z, double x, cmulti *y);
+void rabs_sub_rz(rmulti *z, rmulti *x, dcomplex y);
+void rabs_sub_zr(rmulti *z, dcomplex x, rmulti *y);
+// z=abs(x)+abs(y)
+void radd_abs_abs_cc(rmulti *z, cmulti *x, cmulti *y);
+void radd_abs_abs_cz(rmulti *z, cmulti *x, dcomplex y);
+void radd_abs_abs_zc(rmulti *z, dcomplex x, cmulti *y);
+void radd_abs_abs_cr(rmulti *z, cmulti *x, rmulti *y);
+void radd_abs_abs_rc(rmulti *z, rmulti *x, cmulti *y);
+void radd_abs_abs_cd(rmulti *z, cmulti *x, double y);
+void radd_abs_abs_dc(rmulti *z, double x, cmulti *y);
+void radd_abs_abs_rz(rmulti *z, rmulti *x, dcomplex y);
+void radd_abs_abs_zr(rmulti *z, dcomplex x, rmulti *y);
+// z=10^(floor(log10(abs(x))-y))
+void cexp10_floor_log10_abs_sub(cmulti *z, cmulti *x, double y);
+// z=2^(floor(log2(abs(x))-y))
+void cexp2_floor_log2_abs_sub(cmulti *z, cmulti *x, double y);
+
+/*
+ * y=y+f(x)
+ */
+// y=y+abs(x)
+void radd_abs_c(rmulti *y, cmulti *x);
+void radd_abs_z(rmulti *y, dcomplex x);
+// y=y+abs(x)^2
+void radd_abs2_c(rmulti *y, cmulti *x);
+void radd_abs2_z(rmulti *y, dcomplex x);
 
 /*
  * z=z+f(x,y)
  */
-// z+=x*y
-void cadd_mul(cmulti *z, cmulti *x, cmulti *y);
-void cadd_mul_r(cmulti *z, cmulti *x, rmulti *y);     // z+=x*y
-void cadd_mul_z(cmulti *z, cmulti *x, dcomplex y);    // z+=x*y
-void cadd_mul_d(cmulti *z, cmulti *x, double y);      // z+=x*y
-void csub_mul(cmulti *z, cmulti *x, cmulti *y);       // z-=x*y
-void csub_mul_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws);  // n_rws>=1,n_cws>=2
-void csub_mul_r(cmulti *z, cmulti *x, rmulti *y);     // z-=x*y
-void csub_mul_z(cmulti *z, cmulti *x, dcomplex y);    // z-=x*y
-void csub_mul_d(cmulti *z, cmulti *x, double y);      // z-=x*y
-void cadd_dot(cmulti *z, cmulti *x, cmulti *y);       // z+=conj(x)*y
-void cadd_dot_z1(cmulti *z, dcomplex x, cmulti *y);   // z+=conj(x)*y
-void cadd_dot_z2(cmulti *z, cmulti *x, dcomplex y);   // z+=conj(x)*y
-void csub_dot(cmulti *z, cmulti *x, cmulti *y);       // z-=conj(x)*y
-void csub_dot_z1(cmulti *z, dcomplex x, cmulti *y);   // z-=conj(x)*y
-void csub_dot_z2(cmulti *z, cmulti *x, dcomplex y);   // z-=conj(x)*y
-
-
-
-void cabs_sub(rmulti *z, cmulti *x, cmulti *y);       // z=abs(x-y)
-void cabs_sub_r(rmulti *z, cmulti *x, rmulti *y);     // z=abs(x-y)
-void cdiv_abs(rmulti *z, rmulti *x, cmulti *y);       // z=x/abs(y)
-void cpow_c(cmulti *z, cmulti *x, cmulti *y);         // z=x^y
-void cpow_r1(cmulti *z, rmulti *x, cmulti *y);        // z=x^y
-void cpow_r2(cmulti *z, cmulti *x, rmulti *y);        // z=x^y
-void cpow_d2(cmulti *z, cmulti *x, double y);         // z=x^y
-void cpow_si(cmulti *y, cmulti *x, long n);           // y=x^n
-void cpow_ui(cmulti *y, cmulti *x, ulong n);          // y=x^n
-void cmul_2exp(cmulti *y, cmulti *x, int nr, int ni); // y=x*2^n
-void cdiv_2exp(cmulti *y, cmulti *x, int nr, int ni); // y=x/2^n
-void cexp10_floor_log10_abs_sub(cmulti *z, cmulti *x, double y); // z=10^(floor(log10(abs(x))-y))
-void cexp2_floor_log2_abs_sub(cmulti *z, cmulti *x, double y);   // z=2^(floor(log2(abs(x))-y))
-void cget_polar(rmulti *r, rmulti *theta, cmulti *z); // z=r*exp(i*theta)
-void cset_polar(cmulti *z, rmulti *r, rmulti *theta); // z=r*exp(i*theta)
+// z=z+x*y
+void cadd_mul_cc(cmulti *z, cmulti *x, cmulti *y);
+void cadd_mul_cr(cmulti *z, cmulti *x, rmulti *y);
+void cadd_mul_rc(cmulti *z, rmulti *x, cmulti *y);
+void cadd_mul_cz(cmulti *z, cmulti *x, dcomplex y);
+void cadd_mul_zc(cmulti *z, dcomplex x, cmulti *y);
+void cadd_mul_cd(cmulti *z, cmulti *x, double y);
+void cadd_mul_dc(cmulti *z, double x, cmulti *y);
+void cadd_mul_rz(cmulti *z, rmulti *x, dcomplex y);
+void cadd_mul_zr(cmulti *z, dcomplex x, rmulti *y);
+// z=z-x*y
+void csub_mul_cc_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws);  // n_rws>=1,n_cws>=2
+void csub_mul_cc(cmulti *z, cmulti *x, cmulti *y);
+void csub_mul_cr(cmulti *z, cmulti *x, rmulti *y);
+void csub_mul_rc(cmulti *z, rmulti *x, cmulti *y);
+void csub_mul_cz(cmulti *z, cmulti *x, dcomplex y);
+void csub_mul_zc(cmulti *z, dcomplex x, cmulti *y);
+void csub_mul_cd(cmulti *z, cmulti *x, double y);
+void csub_mul_dc(cmulti *z, double x, cmulti *y);
+void csub_mul_rz(cmulti *z, rmulti *x, dcomplex y);
+void csub_mul_zr(cmulti *z, dcomplex x, rmulti *y);
+// z=z+conj(x)*y
+void cadd_dot_cc(cmulti *z, cmulti *x, cmulti *y);
+void cadd_dot_cr(cmulti *z, cmulti *x, rmulti *y);
+void cadd_dot_rc(cmulti *z, rmulti *x, cmulti *y);
+void cadd_dot_cz(cmulti *z, cmulti *x, dcomplex y);
+void cadd_dot_zc(cmulti *z, dcomplex x, cmulti *y);
+void cadd_dot_cd(cmulti *z, cmulti *x, double y);
+void cadd_dot_dc(cmulti *z, double x, cmulti *y);
+void cadd_dot_rz(cmulti *z, rmulti *x, dcomplex y);
+void cadd_dot_zr(cmulti *z, dcomplex x, rmulti *y);
+// z=z-conj(x)*y
+void csub_dot_cc(cmulti *z, cmulti *x, cmulti *y);
+void csub_dot_cr(cmulti *z, cmulti *x, rmulti *y);
+void csub_dot_rc(cmulti *z, rmulti *x, cmulti *y);
+void csub_dot_cz(cmulti *z, cmulti *x, dcomplex y);
+void csub_dot_zc(cmulti *z, dcomplex x, cmulti *y);
+void csub_dot_cd(cmulti *z, cmulti *x, double y);
+void csub_dot_dc(cmulti *z, double x, cmulti *y);
+void csub_dot_rz(cmulti *z, rmulti *x, dcomplex y);
+void csub_dot_zr(cmulti *z, dcomplex x, rmulti *y);
 
 /*
- * comparisions
+ * x<=>y
  */
 void ccmp_set_real_imag(void);
 void ccmp_set_abs_arg(void);
 int ccmp_get_type(void);
-int ccmp(cmulti *x, cmulti *y);       // x<=>y
-int ccmp_z(cmulti *x, dcomplex y);    // x<=>y
-int ccmp_r1(rmulti *x, cmulti *y);    // x<=>y
-int ccmp_r2(cmulti *x, rmulti *y);    // x<=>y
-int ccmp_d(cmulti *x, double y);      // x<=>y
-int ccmp_ui(cmulti *x, ulong y);      // x<=>y
-int ccmp_si(cmulti *x, long y);       // x<=>y
-int ceq(cmulti *x, cmulti *y);        // x==y
-int ceq_z(cmulti *x, dcomplex y);     // x==y
-int ceq_r(cmulti *x, rmulti *y);      // x==y
-int ceq_d(cmulti *x, double y);       // x==y
-int ceq_ui(cmulti *x, ulong y);       // x==y
-int ceq_si(cmulti *x, long y);        // x==y
-int cne(cmulti *x, cmulti *y);        // x!=y
-int cne_z(cmulti *x, dcomplex y);     // x!=y
-int cne_r(cmulti *x, rmulti *y);      // x!=y
-int cne_d(cmulti *x, double y);       // x!=y
-int cne_ui(cmulti *x, ulong y);       // x!=y
-int cne_si(cmulti *x, long y);        // x!=y
-int cgt(cmulti *x, cmulti *y);        // x>y
-int cgt_r1(rmulti *x, cmulti *y);     // x>y
-int cgt_r2(cmulti *x, rmulti *y);     // x>y
-int cgt_z1(dcomplex x, cmulti *y);    // x>y
-int cgt_z2(cmulti *x, dcomplex y);    // x>y
-int cgt_d1(double x, cmulti *y);      // x>y
-int cgt_d2(cmulti *x, double y);      // x>y
-int cgt_ui1(ulong x, cmulti *y);      // x>y
-int cgt_ui2(cmulti *x, ulong y);      // x>y
-int cgt_si1(long x, cmulti *y);       // x>y
-int cgt_si2(cmulti *x, long y);       // x>y
-int cge(cmulti *x, cmulti *y);        // x>=y
-int cge_r1(rmulti *x, cmulti *y);     // x>=y
-int cge_r2(cmulti *x, rmulti *y);     // x>=y
-int cge_z1(dcomplex x, cmulti *y);    // x>=y
-int cge_z2(cmulti *x, dcomplex y);    // x>=y
-int cge_d1(double x, cmulti *y);      // x>=y
-int cge_d2(cmulti *x, double y);      // x>=y
-int cge_ui1(ulong x, cmulti *y);      // x>=y
-int cge_ui2(cmulti *x, ulong y);      // x>=y
-int cge_si1(long x, cmulti *y);       // x>=y
-int cge_si2(cmulti *x, long y);       // x>=y
-int clt(cmulti *x, cmulti *y);        // x<y
-int clt_r1(rmulti *x, cmulti *y);     // x<y
-int clt_r2(cmulti *x, rmulti *y);     // x<y
-int clt_z1(dcomplex x, cmulti *y);    // x<y
-int clt_z2(cmulti *x, dcomplex y);    // x<y
-int clt_d1(double x, cmulti *y);      // x<y
-int clt_d2(cmulti *x, double y);      // x<y
-int clt_ui1(ulong x, cmulti *y);      // x<y
-int clt_ui2(cmulti *x, ulong y);      // x<y
-int clt_si1(long x, cmulti *y);       // x<y
-int clt_si2(cmulti *x, long y);       // x<y
-int cle(cmulti *x, cmulti *y);        // x<=y
-int cle_r1(rmulti *x, cmulti *y);     // x<=y
-int cle_r2(cmulti *x, rmulti *y);     // x<=y
-int cle_z1(dcomplex x, cmulti *y);    // x<=y
-int cle_z2(cmulti *x, dcomplex y);    // x<=y
-int cle_d1(double x, cmulti *y);      // x<=y
-int cle_d2(cmulti *x, double y);      // x<=y
-int cle_ui1(ulong x, cmulti *y);      // x<=y
-int cle_ui2(cmulti *x, ulong y);      // x<=y
-int cle_si1(long x, cmulti *y);       // x<=y
-int cle_si2(cmulti *x, long y);       // x<=y
+int ccmp_c(cmulti *x, cmulti *y);    // x<=>y
+int ccmp_z(cmulti *x, dcomplex y);   // x<=>y
+int ccmp_r(cmulti *x, rmulti *y);    // x<=>y
+int rcmp_c(rmulti *x, cmulti *y);    // x<=>y
+int ccmp_d(cmulti *x, double y);     // x<=>y
+int ceq_c(cmulti *x, cmulti *y);     // x==y
+int ceq_z(cmulti *x, dcomplex y);    // x==y
+int ceq_r(cmulti *x, rmulti *y);     // x==y
+int ceq_d(cmulti *x, double y);      // x==y
+int cne_c(cmulti *x, cmulti *y);     // x!=y
+int cne_z(cmulti *x, dcomplex y);    // x!=y
+int cne_r(cmulti *x, rmulti *y);     // x!=y
+int cne_d(cmulti *x, double y);      // x!=y
+int cgt_c(cmulti *x, cmulti *y);     // x>y
+int rgt_c(rmulti *x, cmulti *y);     // x>y
+int cgt_r(cmulti *x, rmulti *y);     // x>y
+int zgt_c(dcomplex x, cmulti *y);    // x>y
+int cgt_z(cmulti *x, dcomplex y);    // x>y
+int dgt_c(double x, cmulti *y);      // x>y
+int cgt_d(cmulti *x, double y);      // x>y
+int cge_c(cmulti *x, cmulti *y);     // x>=y
+int rge_c(rmulti *x, cmulti *y);     // x>=y
+int cge_r(cmulti *x, rmulti *y);     // x>=y
+int zge_c(dcomplex x, cmulti *y);    // x>=y
+int cge_z(cmulti *x, dcomplex y);    // x>=y
+int dge_c(double x, cmulti *y);      // x>=y
+int cge_d(cmulti *x, double y);      // x>=y
+int clt_c(cmulti *x, cmulti *y);     // x<y
+int rlt_c(rmulti *x, cmulti *y);     // x<y
+int clt_r(cmulti *x, rmulti *y);     // x<y
+int zlt_c(dcomplex x, cmulti *y);    // x<y
+int clt_z(cmulti *x, dcomplex y);    // x<y
+int dlt_c(double x, cmulti *y);      // x<y
+int clt_d(cmulti *x, double y);      // x<y
+int cle_c(cmulti *x, cmulti *y);     // x<=y
+int rle_c(rmulti *x, cmulti *y);     // x<=y
+int cle_r(cmulti *x, rmulti *y);     // x<=y
+int zle_c(dcomplex x, cmulti *y);    // x<=y
+int cle_z(cmulti *x, dcomplex y);    // x<=y
+int dle_c(double x, cmulti *y);      // x<=y
+int cle_d(cmulti *x, double y);      // x<=y
 int cabs_cmp(cmulti *x, cmulti *y);   // abs(x)<=>abs(y)
 int cabs_eq(cmulti *x, cmulti *y);    // abs(x)==abs(y)
 int cabs_gt(cmulti *x, cmulti *y);    // abs(x)>abs(y)

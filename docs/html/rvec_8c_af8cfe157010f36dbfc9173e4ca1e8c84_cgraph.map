@@ -1,9 +1,9 @@
 <map id="rvec_sum_abs_sub" name="rvec_sum_abs_sub">
-<area shape="rect" id="node2" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="163,5,227,32"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="169,56,220,83"/>
-<area shape="rect" id="node6" href="$is__rmulti_8h.html#a9dcfcf66ece4f4db515453b9c432f282" title="rmulti型の絶対値の加算 y+=abs(x) " alt="" coords="163,107,227,133"/>
-<area shape="rect" id="node3" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="275,5,327,32"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="375,81,472,108"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="280,107,321,133"/>
-<area shape="rect" id="node8" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="275,157,326,184"/>
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="167,5,231,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a4acfc1f7f71c44234ca1873f69b6eaa5" title="z=x&#45;y " alt="" coords="172,56,225,83"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#abac9df16942c0bbed69a496facad3210" title="rmulti型の絶対値の加算 y+=abs(x) " alt="" coords="163,107,235,133"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="287,5,333,32"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="385,81,483,108"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="285,107,335,133"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="283,157,337,184"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="zvec_orthogonalize" name="zvec_orthogonalize">
-<area shape="rect" id="node2" href="$zvec_8c.html#aecd5de14a2689589e69049a79e2a3dc9" title="zvec_dot" alt="" coords="179,5,242,32"/>
-<area shape="rect" id="node3" href="$zvec_8c.html#a52a024239b6089e8189ef1858a329101" title="zvec_add_scaled" alt="" coords="161,56,260,83"/>
+<area shape="rect" id="node2" href="$zvec_8c.html#aecd5de14a2689589e69049a79e2a3dc9" title="z=x&#39;*y " alt="" coords="179,5,242,32"/>
+<area shape="rect" id="node3" href="$zvec_8c.html#a52a024239b6089e8189ef1858a329101" title="y=y+a*x " alt="" coords="161,56,260,83"/>
 </map>

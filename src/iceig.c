@@ -66,7 +66,7 @@ int iceig_krawczyk(int n, int k, cmulti **E_vec, int LDE, cmulti **E_val, cmulti
     if(debug>=1){  }
     r=iceig_1pair_krawczyk(n,E,A,LDA,&COL(X,i,LDX),lambda[i],debug-1);
     cvec_copy(n,&COL(E_vec,i,LDE),E);
-    ccopy(E_val[i],E[n]);
+    cset_c(E_val[i],E[n]);
     if(r){ ret=1; }
     if(debug>=1){
       if(r){ print_red();   printf("[%s] %d/%d failed ",NAME_KRAWCZYK,i,n);  print_reset(); printf("\n"); }
@@ -120,12 +120,12 @@ int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmu
   ceig_residual(n,F,A,LDA,x,lambda); // F(1:n)=A*x-lambda*x
   cvec_sum_abs2(C_R(F[n]),n,x);      // F(m)=(sum(abs(x).^2)-1)/2
   rset_d(C_I(F[n]),0);
-  csub_d(F[n],F[n],1);
+  csub_cd(F[n],F[n],1);
   // [F0,F1]=[A*x-lambda*x; (sum(x.^2)-1)/2]
   iceig_residual(n,F0,F1,A,LDA,A,LDA,x,x,lambda,lambda); // F(1:n)=A*x-lambda*x
   icset_d(F0[n],F1[n],0,0);                              // F(m)=0
   icvec_sum_abs2(C_R(F0[n]),C_R(F1[n]),n,x,x);           // F(m).r=sum(x.^2)
-  icsub_d(F0[n],F1[n],F0[n],F1[n],1,1);                  // F(m)=sum(x.^2)-1
+  icsub_cd(F0[n],F1[n],F0[n],F1[n],1,1);                  // F(m)=sum(x.^2)-1
   // e=abs(R*F)
   cvec_lintr(m,m,e,R,m,F);
   cvec_absc(m,e,e);

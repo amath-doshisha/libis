@@ -108,10 +108,10 @@ void cround(cmulti *x, int prec)
 /**
  @brief cmulti型の値を複成.
 */
-void cclone(cmulti *y, cmulti *x)
+void cclone_c(cmulti *y, cmulti *x)
 {
-  rclone(C_R(y),C_R(x));
-  rclone(C_I(y),C_I(x));
+  rclone_r(C_R(y),C_R(x));
+  rclone_r(C_I(y),C_I(x));
 }
 
 /**
@@ -119,7 +119,7 @@ void cclone(cmulti *y, cmulti *x)
 */
 void cclone_r(cmulti *y, rmulti *x)
 {
-  rclone(C_R(y),x);
+  rclone_r(C_R(y),x);
   rset_zero(C_I(y));
 }
 
@@ -128,36 +128,8 @@ void cclone_r(cmulti *y, rmulti *x)
 */
 void cclone_rr(cmulti *y, rmulti *x_r, rmulti *x_i)
 {
-  rclone(C_R(y),x_r);
-  rclone(C_I(y),x_i);
-}
-
-/**
- @brief cmulti型の値のコピー y=x.
-*/
-void ccopy(cmulti *y, cmulti *x)
-{
-  if(y==x){ return; }
-  rcopy(C_R(y),C_R(x));
-  rcopy(C_I(y),C_I(x));
-}
-
-/**
- @brief cmulti型の値のコピー y=x.
-*/
-void ccopy_C(cmulti *y, rmulti *x_r, rmulti *x_i)
-{
-  rcopy(C_R(y),x_r);
-  rcopy(C_I(y),x_i);
-}
-
-/**
- @brief cmulti型の値のコピー y=x.
-*/
-void ccopy_r(cmulti *y, rmulti *x)
-{
-  rcopy(C_R(y),x);
-  rset_zero(C_I(y));
+  rclone_r(C_R(y),x_r);
+  rclone_r(C_I(y),x_i);
 }
 
 /**
@@ -290,71 +262,9 @@ cmulti *cbin_load(FILE *fid)
 /** @{ */
 
 /**
- @brief cmulti型の浮動小数点数を文字列から設定.
-*/
-void cset_ss(cmulti *x, char *str_real, char *str_imag)
-{
-  rset_s(C_R(x),str_real);
-  rset_s(C_I(x),str_imag);
-}
-
-/**
- @brief cmulti型の浮動小数点数を文字列から設定.
-*/
-void cset_s(cmulti *x, char *s)
-{
-  int prec;
-  cmulti *a0=NULL,*a1=NULL;
-  prec=cget_prec(x);
-  a0=callocate_prec(prec);
-  a1=callocate_prec(prec);  
-  icset_s(a0,a1,s);  
-  irmid(C_R(x),C_R(a0),C_R(a1));
-  irmid(C_I(x),C_I(a0),C_I(a1));
-}
-
-/**
- @brief cmulti型の浮動小数点数を文字列から設定.
-*/
-void cset_script(cmulti *x, char *str)
-{
-  strings *list=NULL;
-  list=strings_split(str," \t\n",NULL,NULL,NULL);
-  if(list!=NULL && list->n==1){
-    cset_s(x,list->str[0]);
-  }else if(list!=NULL && list->n==2){
-    cset_ss(x,list->str[0],list->str[1]);
-  }else{
-    printf("Error in void cset_script(cmulti *x, char *str)\n");
-    printf("str=%s\n",str);
-    printf("list="); strings_print(list); printf("\n");
-    exit(0);
-  }
-  list=strings_del(list);
-}
-
-/**
- @brief cmulti型の浮動小数点数を符号なし整数から設定.
- */
-void cset_ui(cmulti *x, ulong real)
-{
-  rset_ui(C_R(x),real);
-  rset_ui(C_I(x),0);
-}
-
-/**
- @brief cmulti型の浮動小数点数を符号あり整数から設定.
- */
-void cset_si(cmulti *x, long real)
-{
-  rset_si(C_R(x),real);
-  rset_si(C_I(x),0);
-}
-
-/**
  @brief cmulti型の値のコピー y=x.
  */
-void cset(cmulti *y, cmulti *x)
+void cset_c(cmulti *y, cmulti *x)
 {
   if(y==x){ return; }
   rset_r(C_R(y),C_R(x));
@@ -364,10 +274,134 @@ void cset(cmulti *y, cmulti *x)
 /**
  @brief cmulti型の浮動小数点数を倍精度浮動小数点数から設定.
  */
+void cset_dd(cmulti *x, double real, double imag)
+{
+  rset_d(C_R(x),real);
+  rset_d(C_I(x),imag);
+}
+
+/**
+ @brief cmulti型の値をInfに設定.
+ */
+void cset_inf(cmulti *x, int sgn_r, int sgn_i)
+{
+  rset_inf(C_R(x),sgn_r);
+  rset_inf(C_I(x),sgn_i);
+}
+
+/**
+ @brief cmulti型の値をNaNに設定.
+ */
+void cset_nan(cmulti *x)
+{
+  rset_nan(C_R(x));
+  rset_nan(C_I(x));
+}
+
+/**
+ @brief cmulti型の値を零に設定.
+ */
+void cset_zero(cmulti *x)
+{
+  rset_zero(C_R(x));
+  rset_zero(C_I(x));
+}
+
+/**
+ @brief cmulti型の値を1に設定.
+ */
+void cset_one(cmulti *x)
+{
+  rset_one(C_R(x));
+  rset_zero(C_I(x));
+}
+
+/**
+ @brief cmulti型の値を-1に設定.
+ */
+void cset_one_neg(cmulti *x)
+{
+  rset_one_neg(C_R(x));
+  rset_zero(C_I(x));
+}
+
+/**
+ @brief cmulti型の値を区間(0,1)の疑似乱数値を設定.
+ */
+void cset_rand(cmulti *x)
+{
+  rset_rand(C_R(x));
+  rset_rand(C_I(x));
+}
+
+/**
+ @brief cmulti型の極座標 z=r*exp(i*theta)
+ */
+void cget_polar(rmulti *r, rmulti *theta, cmulti *z)
+{
+  rabs_c(r,z);
+  ratan2_rr(theta,C_I(z),C_R(z));
+}
+
+/**
+ @brief cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta)
+ */
+void cset_polar(cmulti *z, rmulti *r, rmulti *theta)
+{
+  rmulti *s=NULL,*c=NULL;
+  RAc(s,z); RAc(c,z);
+  rcos_r(c,theta); rmul_rr(C_R(z),r,c); // z.r=r*cos(theta)
+  rsin_r(s,theta); rmul_rr(C_I(z),r,s); // z.i=r*sin(theta)
+  RF(s); RF(c);
+}
+
+/** @} */
+
+/////////////////////////////////////////////////////////
+
+/** @name cmulti型の型変換に関する関数 */
+/** @{ */
+
+/**
+ @brief cmulti型の浮動小数点数を文字列から設定.
+ */
+void cset_s(cmulti *x, char *s)
+{
+  int prec;
+  cmulti *a0=NULL,*a1=NULL;
+  prec=cget_prec(x);
+  a0=callocate_prec(prec);
+  a1=callocate_prec(prec);
+  icset_s(a0,a1,s);
+  irmid(C_R(x),C_R(a0),C_R(a1));
+  irmid(C_I(x),C_I(a0),C_I(a1));
+}
+
+/**
+ @brief cmulti型の浮動小数点数を符号あり整数から設定.
+ */
+void cset_i(cmulti *x, int real)
+{
+  rset_i(C_R(x),real);
+  rset_i(C_I(x),0);
+}
+
+/**
+ @brief cmulti型の浮動小数点数を倍精度浮動小数点数から設定.
+ */
 void cset_d(cmulti *x, double real)
 {
   rset_d(C_R(x),real);
   rset_d(C_I(x),0);
+}
+
+/**
+ @brief y=x.
+ */
+void cset_rr(cmulti *y, rmulti *x_r, rmulti *x_i)
+{
+  rset_r(C_R(y),x_r);
+  rset_r(C_I(y),x_i);
 }
 
 /**
@@ -381,83 +415,13 @@ void cset_r(cmulti *y, rmulti *x)
 
 /**
  @brief cmulti型の浮動小数点数を倍精度浮動小数点数から設定.
-*/
+ */
 void cset_z(cmulti *x, dcomplex value)
 {
   rset_d(C_R(x),Z_R(value));
   rset_d(C_I(x),Z_I(value));
 }
 
-/**
- @brief cmulti型の浮動小数点数を倍精度浮動小数点数から設定.
-*/
-void cset_Z(cmulti *x, double real, double imag)
-{
-  rset_d(C_R(x),real);
-  rset_d(C_I(x),imag);
-}
-
-/**
- @brief cmulti型の値をInfに設定.
-*/
-void cset_inf(cmulti *x, int sgn_r, int sgn_i)
-{
-  rset_inf(C_R(x),sgn_r);
-  rset_inf(C_I(x),sgn_i);
-}
-
-/**
- @brief cmulti型の値をNaNに設定.
-*/
-void cset_nan(cmulti *x)
-{
-  rset_nan(C_R(x));
-  rset_nan(C_I(x));
-}
-
-/**
- @brief cmulti型の値を零に設定.
-*/
-void cset_zero(cmulti *x)
-{
-  rset_zero(C_R(x));
-  rset_zero(C_I(x));
-}
-
-/**
- @brief cmulti型の値を1に設定.
-*/
-void cset_one(cmulti *x)
-{
-  rset_one(C_R(x));
-  rset_zero(C_I(x));
-}
-
-/**
- @brief cmulti型の値を-1に設定.
-*/
-void cset_one_neg(cmulti *x)
-{
-  rset_one_neg(C_R(x));
-  rset_zero(C_I(x));
-}
-
-/**
- @brief cmulti型の値を区間(0,1)の疑似乱数値を設定.
-*/
-void cset_rand(cmulti *x)
-{
-  rset_rand(C_R(x));
-  rset_rand(C_I(x));
-}
-
-
-/** @} */
-
-/////////////////////////////////////////////////////////
-
-/** @name cmulti型の型変換に関する関数 */
-/** @{ */
 
 /**
  @brief cmulti型を倍精度複素数型に変換.
@@ -479,19 +443,11 @@ double cget_d(cmulti *x)
 }
 
 /**
- @brief cmulti型を符号なし整数型に変換.
- */
-ulong cget_ui(cmulti *x)
-{
-  return rget_ui(C_R(x));
-}
-
-/**
  @brief cmulti型を符号あり整数型に変換.
  */
-long cget_si(cmulti *x)
+int cget_i(cmulti *x)
 {
-  return rget_si(C_R(x));
+  return rget_i(C_R(x));
 }
 
 
@@ -499,56 +455,110 @@ long cget_si(cmulti *x)
 
 /////////////////////////////////////////////////////////
 
-/** @name cmulti型の１入力の数学演算子 */
+/** @name cmulti型の関数 y=f(x) */
 /** @{ */
 
 /**
- @brief cmulti型の符号反転 y=-x
-*/
-void cneg(cmulti *y, cmulti *x)
+ @brief y=-x
+ */
+void cneg_c(cmulti *y, cmulti *x)
 {
-  rneg(C_R(y),C_R(x));
-  rneg(C_I(y),C_I(x));
+  rneg_r(C_R(y),C_R(x));
+  rneg_r(C_I(y),C_I(x));
 }
 
+/**
+ @brief y=-x
+ */
+void cneg_r(cmulti *y, rmulti *x)
+{
+  rneg_r(C_R(y),x);
+  rset_d(C_I(y),0);
+}
 
 /**
- @brief cmulti型の逆数 z=1/x
-*/
-void cinv(cmulti *z, cmulti *x)
+ @brief y=-x
+ */
+void cneg_z(cmulti *y, dcomplex x)
+{
+  rneg_d(C_R(y),Z_R(x));
+  rneg_d(C_I(y),Z_I(x));
+}
+
+/**
+ @brief y=-x
+ */
+void cneg_d(cmulti *y, double x)
+{
+  rneg_d(C_R(y),x);
+  rneg_d(C_I(y),0);
+}
+
+/**
+ @brief y=1/x
+ */
+void cinv_c_ws(cmulti *z, cmulti *x, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
+{
+  if(n_rws<2){ ERROR_EXIT("Error `n_rws=%d<1' in cinv_ws().\n",n_rws); }
+  if(n_cws<1){ ERROR_EXIT("Error `n_cws=%d<1' in cinv_ws().\n",n_cws); }
+  rabs2_c_ws(rws[0],x,n_rws-1,rws+1); // rws[0]=|x|^2
+  cconj_c(cws[0],x);                  // z=conj(x)
+  cdiv_cr(cws[0],cws[0],rws[0]);     // z/=rws[0]
+  cset_c(z,cws[0]);                // z=cws[0]
+}
+
+/**
+ @brief y=1/x
+ */
+void cinv_c(cmulti *z, cmulti *x)
 {
   rmulti *den=NULL;
   cmulti *a=NULL;
   RAc(den,z); CAc(a,z);
-  cabs2(den,x);     // den=|x|^2
-  cconj(a,x);       // z=conj(x)
-  cdiv_r(a,a,den); // z/=den
-  ccopy(z,a);       // z=a
+  rabs2_c(den,x);     // den=|x|^2
+  cconj_c(a,x);       // z=conj(x)
+  cdiv_cr(a,a,den);  // z/=den
+  cset_c(z,a);     // z=a
   RF(den); CF(a);
 }
 
-//追加
+/**
+ @brief y=1/x
+ */
+void cinv_r(cmulti *z, rmulti *x)
+{
+  rinv_r(C_R(z),x);
+  rset_d(C_I(z),0);
+}
 
 /**
- @brief cmulti型の逆数 z=1/x
-*/
-void cinv_ws(cmulti *z, cmulti *x, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
+ @brief y=1/x
+ */
+void cinv_z(cmulti *z, dcomplex x)
 {
-  if(n_rws<2){ ERROR_EXIT("Error `n_rws=%d<1' in cinv_ws().\n",n_rws); }
-  if(n_cws<1){ ERROR_EXIT("Error `n_cws=%d<1' in cinv_ws().\n",n_cws); }
-  cabs2_ws(rws[0],x,n_rws-1,rws+1); // rws[0]=|x|^2
-  cconj(cws[0],x);                    // z=conj(x)
-  cdiv_r(cws[0],cws[0],rws[0]);      // z/=rws[0]
-  ccopy(z,cws[0]);                    // z=cws[0]
+  cmulti *a=NULL;
+  CAc(a,z);
+  cset_z(a,x);
+  cinv_c(z,a);
+  CF(a);
+}
+
+/**
+ @brief y=1/x
+ */
+void cinv_d(cmulti *z, double x)
+{
+  rset_d(C_R(z),1.0/x);
+  rset_d(C_I(z),0);
 }
 
 /**
  @brief cmulti型の複素共役 y=conj(x).
 */
-void cconj(cmulti *y, cmulti *x)
+void cconj_c(cmulti *y, cmulti *x)
 {
-  rcopy(C_R(y),C_R(x));
-  rneg(C_I(y),C_I(x));
+  rset_r(C_R(y),C_R(x));
+  rneg_r(C_I(y),C_I(x));
 }
 
 /**
@@ -556,111 +566,111 @@ void cconj(cmulti *y, cmulti *x)
 */
 void cconj_clone(cmulti *y, cmulti *x)
 {
-  rclone(C_R(y),C_R(x));
-  rclone(C_I(y),C_I(x));
-  rneg(C_I(y),C_I(y));
+  rclone_r(C_R(y),C_R(x));
+  rclone_r(C_I(y),C_I(x));
+  rneg_r(C_I(y),C_I(y));
 }
 
 /**
  @brief cmulti型の絶対値 y=abs(x)
 */
-void cabsv(rmulti *y, cmulti *x)
+void rabs_c(rmulti *y, cmulti *x)
 {
-  cabs2(y,x); // y=abs(x)^2
-  rsqrt(y,y); // y=sqrt(y)
+  rabs2_c(y,x); // y=abs(x)^2
+  rsqrt_r(y,y); // y=sqrt(y)
 }
 
 /**
  @brief cmulti型の絶対値 y=abs(x)
 */
-void cabsv_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws)
+void rabs_c_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws)
 {
-  cabs2_ws(y,x,n_rws,rws); // y=abs(x)^2
-  rsqrt(y,y);              // y=sqrt(y)
+  rabs2_c_ws(y,x,n_rws,rws); // y=abs(x)^2
+  rsqrt_r(y,y);              // y=sqrt(y)
 }
 
 /**
  @brief cmulti型の絶対値の加算 y+=abs(x)
 */
-void cadd_abs(rmulti *y, cmulti *x)
+void radd_abs_c(rmulti *y, cmulti *x)
 {
   rmulti *a=NULL;
   RAr(a,y);
-  cabsv(a,x);  // a=abs(x)
-  radd_r(y,y,a); // y=y+a
+  rabs_c(a,x);  // a=abs(x)
+  radd_rr(y,y,a); // y=y+a
   RF(a);
 }
 
 /**
  @brief cmulti型の絶対値の平方 y=abs(x)^2
 */
-void cabs2(rmulti *y, cmulti *x)
+void rabs2_c(rmulti *y, cmulti *x)
 {
-  rmul_r(y,C_R(x),C_R(x));     // y=x.r*x.r
-  radd_mul(y,C_I(x),C_I(x)); // y+=x.i*x.i
+  rmul_rr(y,C_R(x),C_R(x));     // y=x.r*x.r
+  radd_mul_rr(y,C_I(x),C_I(x)); // y+=x.i*x.i
 }
 
 /**
  @brief cmulti型の絶対値の平方 y=abs(x)^2
 */
-void cabs2_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws)
+void rabs2_c_ws(rmulti *y, cmulti *x, int n_rws, rmulti **rws)
 {
-  rmul_r(y,C_R(x),C_R(x));                  // y=x.r*x.r
-  radd_mul_ws(y,C_I(x),C_I(x),n_rws,rws); // y+=x.i*x.i
+  rmul_rr(y,C_R(x),C_R(x));                  // y=x.r*x.r
+  radd_mul_rr_ws(y,C_I(x),C_I(x),n_rws,rws); // y+=x.i*x.i
 }
 
 /**
  @brief cmulti型の絶対値の平方の加算 y+=abs(x)^2
 */
-void cadd_abs2(rmulti *y, cmulti *x)
+void radd_abs2_c(rmulti *y, cmulti *x)
 {
   rmulti *a=NULL;
   RAr(a,y);
-  cabs2(a,x);  // a=abs(x)^2
-  radd_r(y,y,a); // y=y+a
+  rabs2_c(a,x);  // a=abs(x)^2
+  radd_rr(y,y,a); // y=y+a
   RF(a);
 }
 
 /**
  @brief cmulti型の実部と虚部の絶対値 y=abs(x.r)+i*abs(x.i)
 */
-void cabsc(cmulti *y, cmulti *x)
+void cabsc_c(cmulti *y, cmulti *x)
 {
-  rabs(C_R(y),C_R(x));
-  rabs(C_I(y),C_I(x));
+  rabs_r(C_R(y),C_R(x));
+  rabs_r(C_I(y),C_I(x));
 }
 
 /**
  @brief cmulti型の実部と虚部の絶対値 y=max(abs(x.r),abs(x.i))
 */
-void cmax_absc(rmulti *y, cmulti *x)
+void rmax_absc_c(rmulti *y, cmulti *x)
 {
   rmulti *a=NULL;
   RAc(a,x);
-  rabs(y,C_R(x));
-  rabs(a,C_I(x));
-  if(rgt(a,y)){ rcopy(y,a); }
+  rabs_r(y,C_R(x));
+  rabs_r(a,C_I(x));
+  if(gt_rr(a,y)){ rset_r(y,a); }
   RF(a);
 }
 
 /**
  @brief cmulti型の規格化 y=x/abs(x)
 */
-void cnormalize(cmulti *y, cmulti *x)
+void cnormalize_c(cmulti *y, cmulti *x)
 {
   rmulti *a=NULL;
   RAc(a,y);
-  cabsv(a,x);     // a=abs(x)
-  cdiv_r(y,x,a); // y=x/a
+  rabs_c(a,x);     // a=abs(x)
+  cdiv_cr(y,x,a); // y=x/a
   RF(a);
 }
 
 /**
  @brief cmulti型の偏角 theta=arg(z)
 */
-void cargument(rmulti *theta, cmulti *z)
+void rarg_c(rmulti *theta, cmulti *z)
 {
-  ratan2(theta,C_I(z),C_R(z));
+  ratan2_rr(theta,C_I(z),C_R(z));
 }
 
 /**
@@ -669,12 +679,12 @@ void cargument(rmulti *theta, cmulti *z)
 void csqrt_r(cmulti *y, rmulti *x)
 {
   if(ris_zero(x) || ris_positive(x)){
-    rsqrt(C_R(y),x);
+    rsqrt_r(C_R(y),x);
     rset_zero(C_I(y));
   }else if(ris_negative(x)){
     rset_zero(C_R(y));
-    rneg(C_I(y),x);
-    rsqrt(C_I(y),C_I(y));
+    rneg_r(C_I(y),x);
+    rsqrt_r(C_I(y),C_I(y));
   }else{ ERROR_AT; }
 }
 
@@ -683,7 +693,7 @@ void csqrt_r(cmulti *y, rmulti *x)
 */
 void csqrt_c(cmulti *y, cmulti *x)
 {
-  cpow_d2(y,x,0.5);
+  cpow_cd(y,x,0.5);
 }
 
 /**
@@ -693,8 +703,8 @@ void cexp_c(cmulti *y, cmulti *x)
 {
   rmulti *r=NULL,*theta=NULL;
   RAc(r,y); RAc(theta,y);
-  rexp(r,C_R(x));
-  rcopy(theta,C_I(x));
+  rexp_r(r,C_R(x));
+  rset_r(theta,C_I(x));
   // y=exp(x.r)*(cos(x.i)+i*sin(x.i))  
   cset_polar(y,r,theta);
   RF(r); RF(theta);
@@ -707,7 +717,7 @@ void clog_r(cmulti *y, rmulti *x)
 {
   cmulti *a=NULL;
   CAc(a,y);
-  ccopy_r(a,x);
+  cset_r(a,x);
   clog_c(y,a);
   CF(a);
 }
@@ -720,8 +730,8 @@ void clog_c(cmulti *y, cmulti *x)
   rmulti *r=NULL,*theta=NULL;
   RAc(r,y); RAc(theta,y);
   cget_polar(r,theta,x); // x=r*exp(i*theta)
-  rlog(C_R(y),r);        // y=log(r)+i*theta
-  rcopy(C_I(y),theta);   // y=log(r)+i*theta
+  rlog_r(C_R(y),r);        // y=log(r)+i*theta
+  rset_r(C_I(y),theta);   // y=log(r)+i*theta
   RF(r); RF(theta);
 }
 
@@ -734,12 +744,12 @@ void csin_c(cmulti *y, cmulti *x)
   RAc(c,y); RAc(ch,y); RAc(s,y); RAc(sh,y);
   // z.r=sin(x.r)*cosh(x.i)
   // z.i=cos(x.r)*sinh(x.i)
-  rsin(s,C_R(x));
-  rcos(c,C_R(x));
-  rsinh(sh,C_I(x));
-  rcosh(ch,C_I(x));
-  rmul_r(C_R(y),s,ch);
-  rmul_r(C_I(y),c,sh);
+  rsin_r(s,C_R(x));
+  rcos_r(c,C_R(x));
+  rsinh_r(sh,C_I(x));
+  rcosh_r(ch,C_I(x));
+  rmul_rr(C_R(y),s,ch);
+  rmul_rr(C_I(y),c,sh);
   RF(c); RF(ch); RF(s); RF(sh);
 }
 
@@ -752,13 +762,13 @@ void ccos_c(cmulti *y, cmulti *x)
   RAc(c,y); RAc(ch,y); RAc(s,y); RAc(sh,y);
   // z.r=cos(x.r)*cosh(x.i)
   // z.i=-sin(x.r)*sinh(x.i)
-  rsin(s,C_R(x));
-  rcos(c,C_R(x));
-  rsinh(sh,C_I(x));
-  rcosh(ch,C_I(x));
-  rmul_r(C_R(y),c,ch);
-  rmul_r(C_I(y),s,sh);
-  rneg(C_I(y),C_I(y));
+  rsin_r(s,C_R(x));
+  rcos_r(c,C_R(x));
+  rsinh_r(sh,C_I(x));
+  rcosh_r(ch,C_I(x));
+  rmul_rr(C_R(y),c,ch);
+  rmul_rr(C_I(y),s,sh);
+  rneg_r(C_I(y),C_I(y));
   RF(c); RF(ch); RF(s); RF(sh);
 }
 
@@ -771,7 +781,7 @@ void ctan_c(cmulti *y, cmulti *x)
   CAc(c,y); CAc(s,y);
   csin_c(s,x);
   ccos_c(c,x);
-  cdiv_c(y,s,c); // y=sin(x)/cos(x)
+  cdiv_cc(y,s,c); // y=sin(x)/cos(x)
   CF(c); CF(s);
 }
 
@@ -782,7 +792,7 @@ void casin_r(cmulti *y, rmulti *x)
 {
   cmulti *a=NULL;
   CAc(a,y);
-  ccopy_r(a,x);
+  cset_r(a,x);
   casin_c(y,a);
   CF(a);
 }
@@ -793,21 +803,21 @@ void casin_r(cmulti *y, rmulti *x)
 void casin_c(cmulti *y, cmulti *x)
 {
   cmulti *a=NULL,*b=NULL;
-  if(cis_real(x) && rle_si2(C_R(x),1) && rge_si2(C_R(x),-1)){
-    rasin(C_R(y),C_R(x));
+  if(cis_real(x) && le_rd(C_R(x),1) && ge_rd(C_R(x),-1)){
+    rasin_r(C_R(y),C_R(x));
     rset_zero(C_I(y));
   }else{
     CAc(a,y); CAc(b,y);
-    cmul_c(a,x,x);     // a=x^2
-    csub_si1(a,1,a); // a=1-x^2
+    cmul_cc(a,x,x);   // a=x^2
+    csub_dc(a,1,a);   // a=1-x^2
     csqrt_c(a,a);    // a=sqrt(1-x^2)
-    cset_Z(b,0,1);  // b=I
-    cmul_c(b,b,x);     // b=I*x
-    cadd_c(a,a,b);     // a=I*x+sqrt(1-x^2)
+    cset_dd(b,0,1);   // b=I
+    cmul_cc(b,b,x);   // b=I*x
+    cadd_cc(a,a,b);   // a=I*x+sqrt(1-x^2)
     clog_c(a,a);     // a=log(I*x+sqrt(1-x^2))
-    cset_Z(b,0,-1); // b=-I
-    cmul_c(a,a,b);     // a=-I*log(I*x+sqrt(1-x^2))
-    ccopy(y,a);      // y=-I*log(I*x+sqrt(1-x^2))
+    cset_dd(b,0,-1);  // b=-I
+    cmul_cc(a,a,b);   // a=-I*log(I*x+sqrt(1-x^2))
+    cset_c(y,a);    // y=-I*log(I*x+sqrt(1-x^2))
     CF(a); CF(b);
   }
 }
@@ -819,7 +829,7 @@ void cacos_r(cmulti *y, rmulti *x)
 {
   cmulti *a=NULL;
   CAc(a,y);
-  ccopy_r(a,x);
+  cset_r(a,x);
   cacos_c(y,a);
   CF(a);
 }
@@ -830,19 +840,19 @@ void cacos_r(cmulti *y, rmulti *x)
 void cacos_c(cmulti *y, cmulti *x)
 {
   cmulti *a=NULL,*b=NULL;
-  if(cis_real(x) && rle_si2(C_R(x),1) && rge_si2(C_R(x),-1)){
-    racos(C_R(y),C_R(x));
+  if(cis_real(x) && le_rd(C_R(x),1) && ge_rd(C_R(x),-1)){
+    racos_r(C_R(y),C_R(x));
     rset_zero(C_I(y));
   }else{
     CAc(a,y); CAc(b,y);
-    cmul_c(a,x,x);     // a=x^2
-    csub_si2(a,a,1); // a=x^2-1
-    csqrt_c(a,a);    // a=sqrt(x^2-1)
-    cadd_c(a,a,x);     // a=x+sqrt(x^2-1)
-    clog_c(a,a);     // a=log(x+sqrt(x^2-1))
-    cset_Z(b,0,-1); // b=-I
-    cmul_c(a,a,b);     // a=-I*log(I*x+sqrt(1-x^2))
-    ccopy(y,a);      // y=-I*log(I*x+sqrt(1-x^2))
+    cmul_cc(a,x,x);     // a=x^2
+    csub_cd(a,a,1);     // a=x^2-1
+    csqrt_c(a,a);      // a=sqrt(x^2-1)
+    cadd_cc(a,a,x);     // a=x+sqrt(x^2-1)
+    clog_c(a,a);       // a=log(x+sqrt(x^2-1))
+    cset_dd(b,0,-1);    // b=-I
+    cmul_cc(a,a,b);     // a=-I*log(I*x+sqrt(1-x^2))
+    cset_c(y,a);      // y=-I*log(I*x+sqrt(1-x^2))
     CF(a); CF(b);
   }
 }
@@ -854,7 +864,7 @@ void catan_r(cmulti *y, rmulti *x)
 {
   cmulti *a=NULL;
   CAc(a,y);
-  ccopy_r(a,x);
+  cset_r(a,x);
   catan_c(y,a);
   CF(a);
 }
@@ -866,17 +876,17 @@ void catan_c(cmulti *y, cmulti *x)
 {
   cmulti *a=NULL,*b=NULL;
   if(cis_real(x)){
-    ratan(C_R(y),C_R(x));
-    rset_si(C_I(y),0);
+    ratan_r(C_R(y),C_R(x));
+    rset_i(C_I(y),0);
   }else{
     CAc(a,y); CAc(b,y);
-    cadd_si(a,x,1);    // a=1+x
-    csub_si1(b,1,x);   // b=1-x
-    cdiv_c(a,a,b);       // a=(1+x)/(1-x)
-    clog_c(a,a);       // a=log((1+x)/(1-x))
-    cset_Z(b,0,-0.5); // b=-I/2
-    cmul_c(a,a,b);       // a=(-I/2)*log((1+x)/(1-x))
-    ccopy(y,a);        // y=(-I/2)*log((1+x)/(1-x))
+    cadd_cd(a,x,1);    // a=1+x
+    csub_dc(b,1,x);    // b=1-x
+    cdiv_cc(a,a,b);    // a=(1+x)/(1-x)
+    clog_c(a,a);      // a=log((1+x)/(1-x))
+    cset_dd(b,0,-0.5); // b=-I/2
+    cmul_cc(a,a,b);    // a=(-I/2)*log((1+x)/(1-x))
+    cset_c(y,a);     // y=(-I/2)*log((1+x)/(1-x))
     CF(a); CF(b);
   }
 }
@@ -890,12 +900,12 @@ void csinh_c(cmulti *y, cmulti *x)
   RAc(c,y); RAc(ch,y); RAc(s,y); RAc(sh,y);
   // z.r=sinh(x.r)*cos(x.i)
   // z.i=cosh(x.r)*sin(x.i)
-  rsinh(sh,C_R(x));
-  rcosh(ch,C_R(x));
-  rsin(s,C_I(x));
-  rcos(c,C_I(x));
-  rmul_r(C_R(y),sh,c);
-  rmul_r(C_I(y),ch,s);
+  rsinh_r(sh,C_R(x));
+  rcosh_r(ch,C_R(x));
+  rsin_r(s,C_I(x));
+  rcos_r(c,C_I(x));
+  rmul_rr(C_R(y),sh,c);
+  rmul_rr(C_I(y),ch,s);
   RF(c); RF(ch); RF(s); RF(sh);
 }
 
@@ -908,12 +918,12 @@ void ccosh_c(cmulti *y, cmulti *x)
   RAc(c,y); RAc(ch,y); RAc(s,y); RAc(sh,y);
   // z.r=cosh(x.r)*cos(x.i)
   // z.i=sinh(x.r)*sin(x.i)
-  rsinh(sh,C_R(x));
-  rcosh(ch,C_R(x));
-  rsin(s,C_I(x));
-  rcos(c,C_I(x));
-  rmul_r(C_R(y),ch,c);
-  rmul_r(C_I(y),sh,s);
+  rsinh_r(sh,C_R(x));
+  rcosh_r(ch,C_R(x));
+  rsin_r(s,C_I(x));
+  rcos_r(c,C_I(x));
+  rmul_rr(C_R(y),ch,c);
+  rmul_rr(C_I(y),sh,s);
   RF(c); RF(ch); RF(s); RF(sh);
 }
 
@@ -926,7 +936,7 @@ void ctanh_c(cmulti *y, cmulti *x)
   CAc(ch,y); CAc(sh,y);
   csinh_c(sh,x);
   ccosh_c(ch,x);
-  cdiv_c(y,sh,ch); // y=sinh(x)/cosh(x)
+  cdiv_cc(y,sh,ch); // y=sinh(x)/cosh(x)
   CF(ch); CF(sh);
 }
 
@@ -937,7 +947,7 @@ void casinh_r(cmulti *y, rmulti *x)
 {
   cmulti *a=NULL;
   CAc(a,y);
-  ccopy_r(a,x);
+  cset_r(a,x);
   casinh_c(y,a);
   CF(a);
 }
@@ -949,16 +959,16 @@ void casinh_c(cmulti *y, cmulti *x)
 {
   cmulti *a=NULL;  
   if(cis_real(x)){
-    rasinh(C_R(y),C_R(x));
+    rasinh_r(C_R(y),C_R(x));
     rset_zero(C_I(y));
   }else{
     CAc(a,y);
-    cmul_c(a,x,x);
-    cadd_si(a,a,1);
+    cmul_cc(a,x,x);
+    cadd_cd(a,a,1);
     csqrt_c(a,a);
-    cadd_c(a,a,x);
+    cadd_cc(a,a,x);
     clog_c(a,a);
-    ccopy(y,a);
+    cset_c(y,a);
     CF(a);
   }
 }
@@ -970,7 +980,7 @@ void cacosh_r(cmulti *y, rmulti *x)
 {
   cmulti *a=NULL;
   CAc(a,y);
-  ccopy_r(a,x);
+  cset_r(a,x);
   cacosh_c(y,a);
   CF(a);
 }
@@ -981,17 +991,17 @@ void cacosh_r(cmulti *y, rmulti *x)
 void cacosh_c(cmulti *y, cmulti *x)
 {
   cmulti *a=NULL;  
-  if(cis_real(x) && rge_si2(C_R(x),1)){
-    racosh(C_R(y),C_R(x));
+  if(cis_real(x) && ge_rd(C_R(x),1)){
+    racosh_r(C_R(y),C_R(x));
     rset_zero(C_I(y));
   }else{
     CAc(a,y);
-    cmul_c(a,x,x);
-    csub_si2(a,a,1);
+    cmul_cc(a,x,x);
+    csub_cd(a,a,1);
     csqrt_c(a,a);
-    cadd_c(a,a,x);
+    cadd_cc(a,a,x);
     clog_c(a,a);
-    ccopy(y,a);
+    cset_c(y,a);
     CF(a);
   }
 }
@@ -1003,7 +1013,7 @@ void catanh_r(cmulti *y, rmulti *x)
 {
   cmulti *a=NULL;
   CAc(a,y);
-  ccopy_r(a,x);
+  cset_r(a,x);
   catanh_c(y,a);
   CF(a);
 }
@@ -1014,17 +1024,17 @@ void catanh_r(cmulti *y, rmulti *x)
 void catanh_c(cmulti *y, cmulti *x)
 {
   cmulti *a=NULL,*b=NULL;
-  if(cis_real(x) && rle_si2(C_R(x),1) && rge_si2(C_R(x),-1)){
-    ratanh(C_R(y),C_R(x));
+  if(cis_real(x) && le_rd(C_R(x),1) && ge_rd(C_R(x),-1)){
+    ratanh_r(C_R(y),C_R(x));
     rset_zero(C_I(y));
   }else{
     CAc(a,y); CAc(b,y);
-    cadd_si(a,x,1);  // a=1+x
-    csub_si1(b,1,x); // b=1-x
-    cdiv_c(a,a,b);     // a=(1+x)/(1-x)
-    clog_c(a,a);     // a=log((1+x)/(1-x))
-    cdiv_si2(a,a,2); // a=(1/2)*log((1+x)/(1-x))
-    ccopy(y,a);      // y=(1/2)*log((1+x)/(1-x))
+    cadd_cd(a,x,1);     // a=1+x
+    csub_dc(b,1,x);     // b=1-x
+    cdiv_cc(a,a,b);     // a=(1+x)/(1-x)
+    clog_c(a,a);       // a=log((1+x)/(1-x))
+    cdiv_cd(a,a,2);     // a=(1/2)*log((1+x)/(1-x))
+    cset_c(y,a);      // y=(1/2)*log((1+x)/(1-x))
     CF(a); CF(b);
   }
 }
@@ -1033,918 +1043,637 @@ void catanh_c(cmulti *y, cmulti *x)
 
 /////////////////////////////////////////////////////////////////
 
-/** @name cmulti型の２入力の数学演算子 */
+/** @name cmulti型の関数 z=f(x,y) */
 /** @{ */
 
 /**
  @brief z=x+y
  */
-void cadd_c(cmulti *z, cmulti *x, cmulti *y)
+void cadd_cc(cmulti *z, cmulti *x, cmulti *y)
 {
-  radd_r(C_R(z),C_R(x),C_R(y)); // z.r=x.r+y.r
-  radd_r(C_I(z),C_I(x),C_I(y)); // z.i=x.i+y.i
+  NULL_EXC3(x,y,z);
+  radd_rr(C_R(z),C_R(x),C_R(y)); // z.r=x.r+y.r
+  radd_rr(C_I(z),C_I(x),C_I(y)); // z.i=x.i+y.i
 }
 
 /**
  @brief z=x+y
 */
-void cadd_z(cmulti *z, cmulti *x, dcomplex y)
+void cadd_cz(cmulti *z, cmulti *x, dcomplex y)
 {
-  radd_d(C_R(z),C_R(x),Z_R(y)); // z.r=x.r+y.r
-  radd_d(C_I(z),C_I(x),Z_I(y)); // z.i=x.i+y.i
+  NULL_EXC2(x,z);
+  radd_rd(C_R(z),C_R(x),Z_R(y)); // z.r=x.r+y.r
+  radd_rd(C_I(z),C_I(x),Z_I(y)); // z.i=x.i+y.i
 }
 
 /**
  @brief z=x+y
  */
-void zadd_c(cmulti *z, dcomplex x, cmulti *y)
+void cadd_zc(cmulti *z, dcomplex x, cmulti *y)
 {
-  radd_d(C_R(z),C_R(y),Z_R(x)); // z.r=x.r+y.r
-  radd_d(C_I(z),C_I(y),Z_I(x)); // z.i=x.i+y.i
+  NULL_EXC2(y,z);
+  radd_dr(C_R(z),Z_R(x),C_R(y)); // z.r=x.r+y.r
+  radd_dr(C_I(z),Z_I(x),C_I(y)); // z.i=x.i+y.i
 }
 
 /**
  @brief z=x+y
  */
-void cadd_r(cmulti *z, cmulti *x, rmulti *y)
+void cadd_cr(cmulti *z, cmulti *x, rmulti *y)
 {
-  radd_r(C_R(z),C_R(x),y); // z.r=x.r+y
-  rset_r(C_I(z),C_I(x));   // z.i=x.i
+  NULL_EXC3(x,y,z);
+  radd_rr(C_R(z),C_R(x),y); // z.r=x.r+y
+  rset_r(C_I(z),C_I(x)  ); // z.i=x.i
 }
 
 /**
  @brief z=x+y
  */
-void radd_c(cmulti *z, rmulti *x, cmulti *y)
+void cadd_rc(cmulti *z, rmulti *x, cmulti *y)
 {
-  radd_r(C_R(z),x,C_R(y)); // z.r=x+y.r
+  NULL_EXC3(x,y,z);
+  radd_rr(C_R(z),x,C_R(y)); // z.r=x+y.r
   rset_r(C_I(z),  C_I(y)); // z.i=  y.i
 }
 
 /**
  @brief z=x+y
  */
-void radd_z(cmulti *z, rmulti *x, dcomplex y)
+void cadd_rz(cmulti *z, rmulti *x, dcomplex y)
 {
-  radd_d(C_R(z),x,Z_R(y)); // z.r=x+y.r
-  rset_d(C_I(z),Z_I(y));   // z.i=  y.i
+  NULL_EXC2(x,z);
+  radd_rd(C_R(z),x,Z_R(y)); // z.r=x+y.r
+  rset_d(C_I(z),  Z_I(y)); // z.i=  y.i
 }
 
 /**
  @brief z=x+y
  */
-void zadd_r(cmulti *z, dcomplex x, rmulti *y)
+void cadd_zr(cmulti *z, dcomplex x, rmulti *y)
 {
-  radd_d(C_R(z),y,Z_R(x)); // z.r=x.r+y
-  rset_d(C_I(z),Z_I(x));   // z.i=x.i
+  NULL_EXC2(y,z);
+  radd_dr(C_R(z),Z_R(x),y); // z.r=x.r+y
+  rset_d(C_I(z),Z_I(x)  ); // z.i=x.i
 }
 
 /**
  @brief z=x+y
  */
-void cadd_d(cmulti *z, cmulti *x, double y)
+void cadd_cd(cmulti *z, cmulti *x, double y)
 {
-  radd_d(C_R(z),C_R(x),y); // z.r=x.r+y
-  rset_r(C_I(z),C_I(x));   // z.i=x.i
+  NULL_EXC2(x,z);
+  radd_rd(C_R(z),C_R(x),y); // z.r=x.r+y
+  rset_r(C_I(z),C_I(x)  ); // z.i=x.i
 }
 
 /**
  @brief z=x+y
  */
-void dadd_c(cmulti *z, double x, cmulti *y)
+void cadd_dc(cmulti *z, double x, cmulti *y)
 {
-  radd_d(C_R(z),C_R(y),x); // z.r=x+y.r
-  rset_r(C_I(z),C_I(y));   // z.i=  y.i
-}
-
-/**
- @brief z=x+y
- */
-void cadd_ui(cmulti *z, cmulti *x, ulong y)
-{
-  radd_ui(C_R(z),C_R(x),y); // z.r=x.r+y
-  rset_r (C_I(z),C_I(x));   // z.i=x.i
-}
-
-/**
- @brief z=x+y
- */
-void cadd_si(cmulti *z, cmulti *x, long y)
-{
-  radd_si(C_R(z),C_R(x),y); // z.r=x.r+y
-  rset_r (C_I(z),C_I(x));   // z.i=x.i
-}
-
-//////////////////////////////////////////////////////////////
-
-/**
- @brief z=x-y
- */
-void csub_c(cmulti *z, cmulti *x, cmulti *y)
-{
-  rsub_r(C_R(z),C_R(x),C_R(y)); // z.r=x.r-y.r
-  rsub_r(C_I(z),C_I(x),C_I(y)); // z.i=x.i-y.i
+  NULL_EXC2(y,z);
+  radd_dr(C_R(z),x,C_R(y)); // z.r=x+y.r
+  rset_r(C_I(z),  C_I(y)); // z.i=  y.i
 }
 
 /**
  @brief z=x-y
  */
-void zsub_c(cmulti *z, dcomplex x, cmulti *y)
+void csub_cc(cmulti *z, cmulti *x, cmulti *y)
 {
-  dsub_r(C_R(z),Z_R(x),C_R(y)); // z.r=x.r-y.r
-  dsub_r(C_I(z),Z_I(x),C_I(y)); // z.i=x.i-y.i
+  NULL_EXC3(x,y,z);
+  rsub_rr(C_R(z),C_R(x),C_R(y)); // z.r=x.r-y.r
+  rsub_rr(C_I(z),C_I(x),C_I(y)); // z.i=x.i-y.i
 }
 
 /**
  @brief z=x-y
  */
-void csub_z(cmulti *z, cmulti *x, dcomplex y)
+void csub_zc(cmulti *z, dcomplex x, cmulti *y)
 {
-  rsub_d(C_R(z),C_R(x),Z_R(y)); // z.r=x.r-y.r
-  rsub_d(C_I(z),C_I(x),Z_I(y)); // z.i=x.i-y.i
+  NULL_EXC2(y,z);
+  rsub_dr(C_R(z),Z_R(x),C_R(y)); // z.r=x.r-y.r
+  rsub_dr(C_I(z),Z_I(x),C_I(y)); // z.i=x.i-y.i
 }
 
 /**
  @brief z=x-y
  */
-void rsub_c(cmulti *z, rmulti *x, cmulti *y)
+void csub_cz(cmulti *z, cmulti *x, dcomplex y)
 {
-  rsub_r(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg  (C_I(z),  C_I(y)); // z.i= -y.i
+  NULL_EXC2(x,z);
+  rsub_rd(C_R(z),C_R(x),Z_R(y)); // z.r=x.r-y.r
+  rsub_rd(C_I(z),C_I(x),Z_I(y)); // z.i=x.i-y.i
 }
 
 /**
  @brief z=x-y
  */
-void csub_r(cmulti *z, cmulti *x, rmulti *y)
+void csub_rc(cmulti *z, rmulti *x, cmulti *y)
 {
-  rsub_r(C_R(z),C_R(x),y); // z.r=x.r-y
-  rset_r(C_I(z),C_I(x));   // z.i=x.i
+  NULL_EXC3(x,y,z);
+  rsub_rr(C_R(z),x,C_R(y)); // z.r=x-y.r
+  rneg_r(C_I(z),  C_I(y)); // z.i= -y.i
 }
 
 /**
  @brief z=x-y
  */
-void dsub_c(cmulti *z, double x, cmulti *y)
+void csub_cr(cmulti *z, cmulti *x, rmulti *y)
 {
-  dsub_r(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg  (C_I(z),C_I(y));   // z.i= -y.i
+  NULL_EXC3(x,y,z);
+  rsub_rr(C_R(z),C_R(x),y); // z.r=x.r-y
+  rset_r(C_I(z),C_I(x)  ); // z.i=x.i
 }
 
 /**
  @brief z=x-y
  */
-void csub_d(cmulti *z, cmulti *x, double y)
+void csub_dc(cmulti *z, double x, cmulti *y)
 {
-  rsub_d(C_R(z),C_R(x),y); // z.r=x.r-y
-  rset_r(C_I(z),C_I(x));   // z.i=x.i
+  NULL_EXC2(y,z);
+  rsub_dr(C_R(z),x,C_R(y)); // z.r=x-y.r
+  rneg_r(C_I(z),  C_I(y)); // z.i= -y.i
 }
 
 /**
  @brief z=x-y
  */
-void zsub_r(cmulti *z, dcomplex x, rmulti *y)
+void csub_cd(cmulti *z, cmulti *x, double y)
 {
-  dsub_r(C_R(z),Z_R(x),y); // z.r=x.r-y
-  rset_d(C_I(z),Z_I(x));   // z.i=x.i
+  NULL_EXC2(x,z);
+  rsub_rd(C_R(z),C_R(x),y); // z.r=x.r-y
+  rset_r(C_I(z),C_I(x)  ); // z.i=x.i
 }
 
 /**
  @brief z=x-y
  */
-void rsub_z(cmulti *z, rmulti *x, dcomplex y)
+void csub_zr(cmulti *z, dcomplex x, rmulti *y)
 {
-  rsub_d(C_R(z),x, Z_R(y)); // z.r=x.r-y.r
-  rset_d(C_I(z),  -Z_I(y)); // z.i=   -y.i
+  NULL_EXC2(y,z);
+  rsub_dr(C_R(z),Z_R(x),y); // z.r=x.r-y
+  rset_d(C_I(z),Z_I(x)  ); // z.i=x.i
 }
 
 /**
- @brief cmulti型の引き算 z=x-y
-*/
-void csub_ui1(cmulti *z, ulong x, cmulti *y)
+ @brief z=x-y
+ */
+void csub_rz(cmulti *z, rmulti *x, dcomplex y)
 {
-  rsub_ui1(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg    (C_I(z),  C_I(y)); // z.i= -y.i
+  NULL_EXC2(x,z);
+  rsub_rd(C_R(z),x,Z_R(y)); // z.r=x.r-y.r
+  rneg_d(C_I(z),  Z_I(y)); // z.i=   -y.i
 }
-
-/**
- @brief cmulti型の引き算 z=x-y
-*/
-void csub_ui2(cmulti *z, cmulti *x, ulong y)
-{
-  rsub_ui2(C_R(z),C_R(x),y); // z.r=x.r-y
-  rset_r  (C_I(z),C_I(x));   // z.i=x.i
-}
-
-/**
- @brief cmulti型の引き算 z=x-y
-*/
-void csub_si1(cmulti *z, long x, cmulti *y)
-{
-  rsub_si1(C_R(z),x,C_R(y)); // z.r=x-y.r
-  rneg    (C_I(z),  C_I(y)); // z.i= -y.i
-}
-
-/**
- @brief cmulti型の引き算 z=x-y
-*/
-void csub_si2(cmulti *z, cmulti *x, long y)
-{
-  rsub_si2(C_R(z),C_R(x),y); // z.r=x.r-y
-  rset_r  (C_I(z),C_I(x));   // z.i=x.i
-}
-
-//////////////////////////////////////////////////////////////////////////
 
 /**
  @brief z=x*y
  */
-void cmul_c_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
+void cmul_cc_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
 {
+  NULL_EXC3(x,y,z);
   if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in cmul_ws().\n",n_rws); }
   if(n_cws<1){ ERROR_EXIT("Error `n_cws=%d<1' in cmul_ws().\n",n_cws); }
-  rmul_r(C_R(cws[0]),C_R(x),C_R(y));                  // z.r =x.r*y.r
-  rsub_mul_ws(C_R(cws[0]),C_I(x),C_I(y),n_rws,rws); // z.r-=x.i*y.i
-  rmul_r(C_I(cws[0]),C_I(x),C_R(y));                  // z.i =x.i*y.r
-  radd_mul_ws(C_I(cws[0]),C_R(x),C_I(y),n_rws,rws); // z.i+=x.r*y.i
-  ccopy(z,cws[0]);                                  // z=cws[0]
+  rmul_rr     (C_R(cws[0]),C_R(x),C_R(y));           // z.r =x.r*y.r
+  rsub_mul_rr_ws(C_R(cws[0]),C_I(x),C_I(y),n_rws,rws); // z.r-=x.i*y.i
+  rmul_rr     (C_I(cws[0]),C_I(x),C_R(y));           // z.i =x.i*y.r
+  radd_mul_rr_ws(C_I(cws[0]),C_R(x),C_I(y),n_rws,rws); // z.i+=x.r*y.i
+  cset_c(z,cws[0]);                                // z=cws[0]
 }
 
 /**
  @brief z=x*y
  */
-void cmul_c(cmulti *z, cmulti *x, cmulti *y)
+void cmul_cc(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
   CAc(a,z);
-  rmul_r  (C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
-  rsub_mul(C_R(a),C_I(x),C_I(y)); // z.r-=x.i*y.i
-  rmul_r  (C_I(a),C_I(x),C_R(y)); // z.i =x.i*y.r
-  radd_mul(C_I(a),C_R(x),C_I(y)); // z.i+=x.r*y.i
-  ccopy(z,a);                     // z=a
+  rmul_rr  (C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
+  rsub_mul_rr(C_R(a),C_I(x),C_I(y)); // z.r-=x.i*y.i
+  rmul_rr  (C_I(a),C_I(x),C_R(y)); // z.i =x.i*y.r
+  radd_mul_rr(C_I(a),C_R(x),C_I(y)); // z.i+=x.r*y.i
+  cset_c(z,a);                     // z=a
   CF(a);
 }
 
 /**
  @brief z=x*y
  */
-void cmul_z(cmulti *z, cmulti *x, dcomplex y)
+void cmul_cz(cmulti *z, cmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
+  NULL_EXC2(x,z);
   CAc(a,z);
-  cset_z(a,y); // a=y
-  cmul_c(z,x,a); // z=x*y
+  cset_z(a,y);   // a=y
+  cmul_cc(z,x,a); // z=x*y
   CF(a);
 }
 
 /**
  @brief z=x*y
  */
-void zmul_c(cmulti *z, dcomplex x, cmulti *y)
+void cmul_zc(cmulti *z, dcomplex x, cmulti *y)
 {
   cmulti *a=NULL;
+  NULL_EXC2(y,z);
   CAc(a,z);
   cset_z(a,x);   // a=x
-  cmul_c(z,a,y); // z=x*y
+  cmul_cc(z,a,y); // z=x*y
   CF(a);
 }
 
 /**
  @brief z=x*y
  */
-void cmul_r(cmulti *z, cmulti *x, rmulti *y)
+void cmul_cr(cmulti *z, cmulti *x, rmulti *y)
 {
-  rmul_r(C_R(z),C_R(x),y); // z.r=x.r*y
-  rmul_r(C_I(z),C_I(x),y); // z.i=x.i*y
+  NULL_EXC3(x,y,z);
+  rmul_rr(C_R(z),C_R(x),y); // z.r=x.r*y
+  rmul_rr(C_I(z),C_I(x),y); // z.i=x.i*y
 }
 
 /**
  @brief z=x*y
  */
-void rmul_c(cmulti *z, rmulti *x, cmulti *y)
+void cmul_rc(cmulti *z, rmulti *x, cmulti *y)
 {
-  rmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
-  rmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+  NULL_EXC3(x,y,z);
+  rmul_rr(C_R(z),x,C_R(y)); // z.r=x*y.r
+  rmul_rr(C_I(z),x,C_I(y)); // z.i=x*y.i
 }
 
 /**
  @brief z=x*y
  */
-void cmul_d(cmulti *z, cmulti *x, double y){
-  rmul_d(C_R(z),C_R(x),y); // z.r=x.r*y
-  rmul_d(C_I(z),C_I(x),y); // z.i=x.i*y
+void cmul_cd(cmulti *z, cmulti *x, double y)
+{
+  NULL_EXC2(x,z);
+  rmul_rd(C_R(z),C_R(x),y); // z.r=x.r*y
+  rmul_rd(C_I(z),C_I(x),y); // z.i=x.i*y
 }
 
 /**
  @brief z=x*y
  */
-void dmul_c(cmulti *z, double x, cmulti *y){
-  dmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
-  dmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+void cmul_dc(cmulti *z, double x, cmulti *y)
+{
+  NULL_EXC2(y,z);
+  rmul_dr(C_R(z),x,C_R(y)); // z.r=x*y.r
+  rmul_dr(C_I(z),x,C_I(y)); // z.i=x*y.i
 }
 
 /**
  @brief z=x*y
  */
-void rmul_z(cmulti *z, rmulti *x, dcomplex y){
-  rmul_d(C_R(z),x,Z_R(y)); // z.r=x*y.r
-  rmul_d(C_I(z),x,Z_I(y)); // z.i=x*y.i
+void cmul_rz(cmulti *z, rmulti *x, dcomplex y)
+{
+  NULL_EXC2(x,z);
+  rmul_rd(C_R(z),x,Z_R(y)); // z.r=x*y.r
+  rmul_rd(C_I(z),x,Z_I(y)); // z.i=x*y.i
 }
 
 /**
  @brief z=x*y
  */
-void zmul_r(cmulti *z, dcomplex x, rmulti *y){
-  dmul_r(C_R(z),Z_R(x),y); // z.r=x.r*y
-  dmul_r(C_I(z),Z_I(x),y); // z.i=x.i*y
+void cmul_zr(cmulti *z, dcomplex x, rmulti *y)
+{
+  NULL_EXC2(y,z);
+  rmul_dr(C_R(z),Z_R(x),y); // z.r=x.r*y
+  rmul_dr(C_I(z),Z_I(x),y); // z.i=x.i*y
 }
-
-/**
- @brief z=x*y
- */
-void cmul_ui(cmulti *z, cmulti *x, ulong y){
-  rmul_ui(C_R(z),C_R(x),y); // z.r=x.r*y
-  rmul_ui(C_I(z),C_I(x),y); // z.i=x.i*y
-}
-
-/**
- @brief z=x*y
- */
-void cmul_si(cmulti *z, cmulti *x, long y){
-  rmul_si(C_R(z),C_R(x),y); // z.r=x.r*y
-  rmul_si(C_I(z),C_I(x),y); // z.i=x.i*y
-}
-
-/////////////////////////////////////////////////////////////////////
 
 /**
  @brief z=conj(x)*y
  */
-void cdot_c(cmulti *z, cmulti *x, cmulti *y)
+void cdot_cc(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
   CAc(a,z);
-  rmul_r  (C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
-  radd_mul(C_R(a),C_I(x),C_I(y)); // z.r+=x.i*y.i
-  rmul_r  (C_I(a),C_R(x),C_I(y)); // z.i =x.r*y.i
-  rsub_mul(C_I(a),C_I(x),C_R(y)); // z.i-=x.i*y.r
-  ccopy(z,a);                     // z=a
+  rmul_rr  (C_R(a),C_R(x),C_R(y)); // z.r =x.r*y.r
+  radd_mul_rr(C_R(a),C_I(x),C_I(y)); // z.r+=x.i*y.i
+  rmul_rr  (C_I(a),C_R(x),C_I(y)); // z.i =x.r*y.i
+  rsub_mul_rr(C_I(a),C_I(x),C_R(y)); // z.i-=x.i*y.r
+  cset_c(z,a);                     // z=a
   CF(a);
 }
 
 /**
  @brief z=conj(x)*y
  */
-void cdot_z(cmulti *z, cmulti *x, dcomplex y)
+void cdot_cz(cmulti *z, cmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
+  NULL_EXC2(x,z);
   CAc(a,z);
   cset_z(a,y); // a=y
-  cdot_c(z,x,a); // z=conj(x)*y
+  cdot_cc(z,x,a); // z=conj(x)*y
   CF(a);
 }
 
 /**
  @brief z=conj(x)*y
  */
-void zdot_c(cmulti *z, dcomplex x, cmulti *y)
+void cdot_zc(cmulti *z, dcomplex x, cmulti *y)
 {
   cmulti *a=NULL;
+  NULL_EXC2(y,z);
   CAc(a,z);
   cset_z(a,x); // a=x
-  cdot_c(z,a,y); // z=conj(x)*y  
+  cdot_cc(z,a,y); // z=conj(x)*y  
   CF(a);
 }
 
 /**
  @brief z=conj(x)*y
  */
-void cdot_r(cmulti *z, cmulti *x, rmulti *y)
+void cdot_cr(cmulti *z, cmulti *x, rmulti *y)
 {
-  rmul_r(C_R(z),C_R(x),y);                      // z.r= x.r*y
-  rmul_r(C_I(z),C_I(x),y); rneg(C_I(z),C_I(z)); // z.i=-x.i*y
+  NULL_EXC3(x,y,z);
+  rmul_rr(C_R(z),C_R(x),y);                        // z.r= x.r*y
+  rmul_rr(C_I(z),C_I(x),y); rneg_r(C_I(z),C_I(z)); // z.i=-x.i*y
 }
 
 /**
  @brief z=conj(x)*y
  */
-void rdot_c(cmulti *z, rmulti *x, cmulti *y)
+void cdot_rc(cmulti *z, rmulti *x, cmulti *y)
 {
-  rmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
-  rmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+  NULL_EXC3(x,y,z);
+  rmul_rr(C_R(z),x,C_R(y)); // z.r=x*y.r
+  rmul_rr(C_I(z),x,C_I(y)); // z.i=x*y.i
 }
 
 /**
  @brief z=conj(x)*y
  */
-void cdot_d(cmulti *z, cmulti *x, double y){
-  rmul_d(C_R(z),C_R(x),y);                      // z.r= x.r*y
-  rmul_d(C_I(z),C_I(x),y); rneg(C_I(z),C_I(z)); // z.i=-x.i*y
+void cdot_cd(cmulti *z, cmulti *x, double y)
+{
+  NULL_EXC2(x,z);
+  rmul_rd(C_R(z),C_R(x),y);                        // z.r= x.r*y
+  rmul_rd(C_I(z),C_I(x),y); rneg_r(C_I(z),C_I(z)); // z.i=-x.i*y
 }
 
 /**
  @brief z=conj(x)*y
  */
-void ddot_c(cmulti *z, double x, cmulti *y){
-  dmul_r(C_R(z),x,C_R(y)); // z.r=x*y.r
-  dmul_r(C_I(z),x,C_I(y)); // z.i=x*y.i
+void cdot_dc(cmulti *z, double x, cmulti *y)
+{
+  NULL_EXC2(y,z);
+  rmul_dr(C_R(z),x,C_R(y)); // z.r=x*y.r
+  rmul_dr(C_I(z),x,C_I(y)); // z.i=x*y.i
 }
 
 /**
  @brief z=conj(x)*y
  */
-void rdot_z(cmulti *z, rmulti *x, dcomplex y){
-  rmul_d(C_R(z),x,Z_R(y)); // z.r=x*y.r
-  rmul_d(C_I(z),x,Z_I(y)); // z.i=x*y.i
+void cdot_rz(cmulti *z, rmulti *x, dcomplex y)
+{
+  NULL_EXC2(x,z);
+  rmul_rd(C_R(z),x,Z_R(y)); // z.r=x*y.r
+  rmul_rd(C_I(z),x,Z_I(y)); // z.i=x*y.i
 }
 
 /**
  @brief z=conj(x)*y
  */
-void zdot_r(cmulti *z, dcomplex x, rmulti *y){
-  dmul_r(C_R(z), Z_R(x),y); // z.r= x.r*y
-  dmul_r(C_I(z),-Z_I(x),y); // z.i=-x.i*y
+void cdot_zr(cmulti *z, dcomplex x, rmulti *y)
+{
+  NULL_EXC2(y,z);
+  rmul_dr(C_R(z), Z_R(x),y); // z.r= x.r*y
+  rmul_dr(C_I(z),-Z_I(x),y); // z.i=-x.i*y
 }
-
-/////////////////////////////////////////////////////////////////////
 
 /**
  @brief z=x/y
  */
-void cdiv_c(cmulti *z, cmulti *x, cmulti *y)
+void cdiv_cc(cmulti *z, cmulti *x, cmulti *y)
 {
   rmulti *den=NULL;
   cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
   RAc(den,z); CAc(a,z);
-  cabs2(den,y);    // den=|y|^2
-  cdot_c(a,y,x);   // z=conj(y)*x
-  cdiv_r(a,a,den); // z/=den
-  ccopy(z,a);      // z=a
+  rabs2_c(den,y);    // den=|y|^2
+  cdot_cc(a,y,x);   // z=conj(y)*x
+  cdiv_cr(a,a,den); // z/=den
+  cset_c(z,a);    // z=a
   RF(den); CF(a);
 }
 
 /**
  @brief z=x/y
  */
-void zdiv_c(cmulti *z, dcomplex x, cmulti *y)
+void cdiv_zc(cmulti *z, dcomplex x, cmulti *y)
 {
   cmulti *a=NULL;
+  NULL_EXC2(y,z);
   CAc(a,z);
   cset_z(a,x);   // a=x
-  cdiv_c(z,a,y); // z=x/y
+  cdiv_cc(z,a,y); // z=x/y
   CF(a);
 }
 
 /**
  @brief z=x/y
  */
-void cdiv_z(cmulti *z, cmulti *x, dcomplex y)
+void cdiv_cz(cmulti *z, cmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
+  NULL_EXC2(x,z);
   CAc(a,z);
   cset_z(a,y);   // a=y
-  cdiv_c(z,x,a); // z=x/y
+  cdiv_cc(z,x,a); // z=x/y
   CF(a);
 }
 
 /**
  @brief z=x/y
  */
-void rdiv_c(cmulti *z, rmulti *x, cmulti *y)
+void cdiv_rc(cmulti *z, rmulti *x, cmulti *y)
 {
   rmulti *den=NULL;
   cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
   RAc(den,z); CAc(a,z);
-  cabs2(den,y);      // den=|y|^2
-  cconj(a,y);        // z=conj(y)
-  cmul_r(a,a,x);     // z*=x
-  cdiv_r(a,a,den);   // z/=den
-  ccopy(z,a);        // z=a
+  rabs2_c(den,y);      // den=|y|^2
+  cconj_c(a,y);        // z=conj(y)
+  cmul_cr(a,a,x);     // z*=x
+  cdiv_cr(a,a,den);   // z/=den
+  cset_c(z,a);      // z=a
   RF(den); CF(a);
 }
 
 /**
  @brief z=x/y
  */
-void cdiv_r(cmulti *z, cmulti *x, rmulti *y)
+void cdiv_cr(cmulti *z, cmulti *x, rmulti *y)
 {
-  rdiv_r(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv_r(C_I(z),C_I(x),y); // z.i=x.i/y
+  NULL_EXC3(x,y,z);
+  rdiv_rr(C_R(z),C_R(x),y); // z.r=x.r/y
+  rdiv_rr(C_I(z),C_I(x),y); // z.i=x.i/y
 }
 
 /**
  @brief z=x/y
  */
-void ddiv_c(cmulti *z, double x, cmulti *y)
+void cdiv_dc(cmulti *z, double x, cmulti *y)
 {
   rmulti *a=NULL;
+  NULL_EXC2(y,z);
   RAc(a,z);
   rset_d(a,x);   // a=x
-  rdiv_c(z,a,y); // z=x/y
+  cdiv_rc(z,a,y); // z=x/y
   RF(a);
 }
 
 /**
  @brief z=x/y
  */
-void cdiv_d(cmulti *z, cmulti *x, double y)
+void cdiv_cd(cmulti *z, cmulti *x, double y)
 {
-  rdiv_d(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv_d(C_I(z),C_I(x),y); // z.i=x.i/y
+  NULL_EXC2(x,z);
+  rdiv_rd(C_R(z),C_R(x),y); // z.r=x.r/y
+  rdiv_rd(C_I(z),C_I(x),y); // z.i=x.i/y
 }
 
 
 /**
  @brief z=x/y
  */
-void zdiv_r(cmulti *z, dcomplex x, rmulti *y)
+void cdiv_zr(cmulti *z, dcomplex x, rmulti *y)
 {
-  cmulti *a=NULL;
-  CAc(a,z);
-  cset_z(a,x);   // a=x
-  cdiv_r(z,a,y); // z=x/y
-  CF(a);
+  NULL_EXC2(z,y);
+  rdiv_dr(C_R(z),Z_R(x),y); // z.r=x.r/y
+  rdiv_dr(C_I(z),Z_I(x),y); // z.i=x.i/y
 }
 
 /**
  @brief z=x/y
  */
-void rdiv_z(cmulti *z, rmulti *x, dcomplex y)
+void cdiv_rz(cmulti *z, rmulti *x, dcomplex y)
 {
   cmulti *a=NULL;
+  NULL_EXC2(x,z);
   CAc(a,z);
   cset_z(a,y);   // a=y
-  rdiv_c(z,x,a); // z=x/y
+  cdiv_rc(z,x,a); // z=x/y
   CF(a);
 }
 
 /**
- @brief z=x/y
+ @brief z=abs(x-y)
  */
-void cdiv_ui1(cmulti *z, ulong x, cmulti *y)
-{
-  rmulti *a=NULL;
-  RAc(a,z);
-  rset_ui(a,x);   // a=x
-  rdiv_c(z,a,y); // z=x/y
-  RF(a);
-}
-
-/**
- @brief z=x/y
- */
-void cdiv_ui2(cmulti *z, cmulti *x, ulong y)
-{
-  rdiv_ui2(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv_ui2(C_I(z),C_I(x),y); // z.i=x.i/y
-}
-
-/**
- @brief z=x/y
- */
-void cdiv_si1(cmulti *z, long x, cmulti *y)
-{
-  rmulti *a=NULL;
-  RAc(a,z);
-  rset_si(a,x);   // a=x
-  rdiv_c(z,a,y); // z=x/y
-  RF(a);
-}
-
-/**
- @brief z=x/y
- */
-void cdiv_si2(cmulti *z, cmulti *x, long y)
-{
-  rdiv_si2(C_R(z),C_R(x),y); // z.r=x.r/y
-  rdiv_si2(C_I(z),C_I(x),y); // z.i=x.i/y
-}
-
-/////////////////////////////////////////////////////////////////////
-
-/**
- @brief cmulti型の掛け算の加算 z+=x*y
-*/
-void cadd_mul(cmulti *z, cmulti *x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_c(a,x,y);   // a=x*y
-  cadd_c(z,z,a);   // z=z+a
-  CF(a);
-}
-
-/**
- @brief cmulti型の掛け算の加算 z+=x*y
-*/
-void cadd_mul_r(cmulti *z, cmulti *x, rmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_r(a,x,y); // a=x*y
-  cadd_c(z,z,a);   // z=z+a
-  CF(a);
-}
-
-/**
- @brief cmulti型の掛け算の加算 z+=x*y
-*/
-void cadd_mul_z(cmulti *z, cmulti *x, dcomplex y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_z(a,x,y); // a=x*y
-  cadd_c(z,z,a);   // z=z+a
-  CF(a);
-}
-
-/**
- @brief cmulti型の掛け算の加算 z+=x*y
-*/
-void cadd_mul_d(cmulti *z, cmulti *x, double y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_d(a,x,y); // a=x*y
-  cadd_c(z,z,a);   // z=z+a
-  CF(a);
-}
-
-/**
- @brief cmulti型の掛け算の減算 z-=x*y
-*/
-void csub_mul(cmulti *z, cmulti *x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_c(a,x,y);   // a=x*y
-  csub_c(z,z,a);   // z=z-a
-  CF(a);
-}
-
-/**
- @brief cmulti型の掛け算の減算 z-=x*y
-*/
-void csub_mul_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
-{
-  if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in csub_mul_ws().\n",n_rws); }
-  if(n_cws<2){ ERROR_EXIT("Error `n_cws=%d<2' in csub_mul_ws().\n",n_cws); }
-  cmul_c_ws(cws[0],x,y,n_rws,rws,n_cws-1,cws+1); // cws[0]=x*y
-  csub_c(z,z,cws[0]);                            // z=z-cws[0]
-}
-
-/**
- @brief cmulti型の掛け算の減算 z-=x*y
-*/
-void csub_mul_r(cmulti *z, cmulti *x, rmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_r(a,x,y); // a=x*y
-  csub_c(z,z,a);   // z=z-a
-  CF(a);
-}
-
-/**
- @brief cmulti型の掛け算の減算 z-=x*y
-*/
-void csub_mul_z(cmulti *z, cmulti *x, dcomplex y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_z(a,x,y); // a=x*y
-  csub_c(z,z,a);   // z=z-a
-  CF(a);
-}
-
-/**
- @brief cmulti型の掛け算の減算 z-=x*y
-*/
-void csub_mul_d(cmulti *z, cmulti *x, double y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cmul_d(a,x,y); // a=x*y
-  csub_c(z,z,a);   // z=z-a
-  CF(a);
-}
-
-/**
- @brief cmulti型の複素共役との掛け算の加算 z+=conj(x)*y
-*/
-void cadd_dot(cmulti *z, cmulti *x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cdot_c(a,x,y);   // a=conj(x)*y
-  cadd_c(z,z,a);   // z=z+a
-  CF(a);
-}
-
-/**
- @brief cmulti型の複素共役との掛け算の加算 z+=conj(x)*y
-*/
-void cadd_dot_z1(cmulti *z, dcomplex x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  zdot_c(a,x,y); // a=conj(x)*y
-  cadd_c(z,z,a);    // z=z+a
-  CF(a);
-}
-
-/**
- @brief cmulti型の複素共役との掛け算の加算 z+=conj(x)*y
-*/
-void cadd_dot_z2(cmulti *z, cmulti *x, dcomplex y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cdot_z(a,x,y); // a=conj(x)*y
-  cadd_c(z,z,a);    // z=z+a
-  CF(a);
-}
-
-
-/**
- @brief cmulti型の複素共役との掛け算の減算 z-=conj(x)*y
-*/
-void csub_dot(cmulti *z, cmulti *x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cdot_c(a,x,y);   // a=conj(x)*y
-  csub_c(z,z,a);   // z=z-a
-  CF(a);
-}
-
-/**
- @brief cmulti型の複素共役との掛け算の減算 z-=conj(x)*y
-*/
-void csub_dot_z1(cmulti *z, dcomplex x, cmulti *y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  zdot_c(a,x,y);   // a=conj(x)*y
-  csub_c(z,z,a);   // z=z-a
-  CF(a);
-}
-
-/**
- @brief cmulti型の複素共役との掛け算の減算 z-=conj(x)*y
-*/
-void csub_dot_z2(cmulti *z, cmulti *x, dcomplex y)
-{
-  cmulti *a=NULL;
-  CAc(a,z);
-  cdot_z(a,x,y);   // a=conj(x)*y
-  csub_c(z,z,a);   // z=z-a
-  CF(a);
-}
-
-/**
- @brief cmulti型の差の絶対値 z=abs(x-y)
-*/
-void cabs_sub(rmulti *z, cmulti *x, cmulti *y)
+void rabs_sub_cc(rmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a;
+  NULL_EXC3(x,y,z);
   CAr(a,z);
-  csub_c(a,x,y); // a=x-y
-  cabsv(z,a);  // z=abs(x-y)
+  csub_cc(a,x,y); // a=x-y
+  rabs_c(z,a);    // z=abs(x-y)
   CF(a);
 }
 
 /**
- @brief cmulti型の差の絶対値 z=abs(x-y)
-*/
-void cabs_sub_r(rmulti *z, cmulti *x, rmulti *y)
+ @brief z=abs(x-y)
+ */
+void rabs_sub_cr(rmulti *z, cmulti *x, rmulti *y)
 {
   cmulti *a;
+  NULL_EXC3(x,y,z);
   CAr(a,z);
-  csub_r(a,x,y); // a=x-y
-  cabsv(z,a);     // z=abs(x-y)
+  csub_cr(a,x,y); // a=x-y
+  rabs_c(z,a);     // z=abs(x-y)
   CF(a);
 }
 
-/**
- @brief cmulti型の絶対値の割り算 z=x/abs(y)
-*/
-void cdiv_abs(rmulti *z, rmulti *x, cmulti *y)
-{
-  rmulti *a;
-  RAr(a,z);
-  cabsv(a,y);  // z=abs(y)  
-  rdiv_r(z,x,a); // z=x/abs(y)
-  RF(a);
-}
 
 /**
- @brief cmulti型のべき乗 z=x^y
-*/
-void cpow_c(cmulti *z, cmulti *x, cmulti *y)
+ @brief z=x^y
+ */
+void cpow_cc(cmulti *z, cmulti *x, cmulti *y)
 {
   cmulti *a=NULL;
   CAc(a,z);
   clog_c(a,x); // a=log(x)
-  cmul_c(a,y,a); // a=y*log(x)
+  cmul_cc(a,y,a); // a=y*log(x)
   cexp_c(z,a); // z=exp(y*log(x))
   CF(a);
 }
 
 /**
- @brief cmulti型のべき乗 z=x^y
-*/
-void cpow_r1(cmulti *z, rmulti *x, cmulti *y)
+ @brief z=x^y
+ */
+void cpow_rc(cmulti *z, rmulti *x, cmulti *y)
 {
   rmulti *a=NULL;
   cmulti *b=NULL;
   RAc(a,z); CAc(b,z);
-  rlog(a,x);     // a=log(x)
-  cmul_r(b,y,a); // b=y*log(x)
+  rlog_r(a,x);     // a=log(x)
+  cmul_cr(b,y,a); // b=y*log(x)
   cexp_c(z,b);   // z=exp(y*log(x))
   RF(a); CF(b);
 }
 
 /**
- @brief cmulti型のべき乗 z=x^y
-*/
-void cpow_r2(cmulti *z, cmulti *x, rmulti *y)
+ @brief z=x^y
+ */
+void cpow_cr(cmulti *z, cmulti *x, rmulti *y)
 {
   rmulti *r=NULL,*theta=NULL;
   RAc(r,z); RAc(theta,z);
   cget_polar(r,theta,x); // x=r*exp(i*theta)
-  rpow(r,r,y);           // r=r^y
-  rmul_r(theta,theta,y);   // theta=theta*y
+  rpow_rr(r,r,y);           // r=r^y
+  rmul_rr(theta,theta,y);   // theta=theta*y
   cset_polar(z,r,theta); // z=r^y*cos(theta*y)+i*r^y*sin(theta*y)
   RF(r); RF(theta);
 }
 
 /**
- @brief cmulti型のべき乗 z=x^y
-*/
-void cpow_d2(cmulti *z, cmulti *x, double y)
+ @brief z=x^y
+ */
+void cpow_cd(cmulti *z, cmulti *x, double y)
 {
   rmulti *r=NULL,*theta=NULL;
   RAc(r,z); RAc(theta,z);
   cget_polar(r,theta,x); // x=r*exp(i*theta)
-  rpow_d2(r,r,y);        // r=r^y
-  rmul_d(theta,theta,y); // theta=theta*y
+  rpow_rd(r,r,y);        // r=r^y
+  rmul_rd(theta,theta,y); // theta=theta*y
   cset_polar(z,r,theta); // z=r^y*cos(theta*y)+i*r^y*sin(theta*y)
   RF(r); RF(theta);
 }
 
 /**
  @brief cmulti型のべき乗 y=x^n
-*/
-void cpow_si(cmulti *y, cmulti *x, long n)
+ */
+void cpow_c(cmulti *y, cmulti *x, int n)
 {
   cmulti *a=NULL;
   long i;
   if(n==0){
     cset_one(y);
   }else if(cis_real(x)){
-    rpow_si(C_R(y),C_R(x),n);
+    rpow_r(C_R(y),C_R(x),n);
     rset_zero(C_I(y));
   }else if(n>0){
     CAc(a,y);
-    ccopy(a,x);                        // a=x
-    for(i=1; i<n; i++){ cmul_c(a,a,x); } // a*=x
-    ccopy(y,a);                        // y=a
+    cset_c(a,x);                        // a=x
+    for(i=1; i<n; i++){ cmul_cc(a,a,x); } // a*=x
+    cset_c(y,a);                        // y=a
     CF(a);
   }else if(n<0){
     CAc(a,y);
-    ccopy(a,x);                           // a=x
-    for(i=1; i<(-n); i++){ cmul_c(a,a,x); } // a*=x
-    cinv(a,a);                            // a=1/a
-    ccopy(y,a);                           // y=a
+    cset_c(a,x);                           // a=x
+    for(i=1; i<(-n); i++){ cmul_cc(a,a,x); } // a*=x
+    cinv_c(a,a);                            // a=1/a
+    cset_c(y,a);                           // y=a
     CF(a);
   }else{ ERROR_AT; }
 }
 
 /**
- @brief rmulti型のべき乗 y=x^n
-*/
-void cpow_ui(cmulti *y, cmulti *x, ulong n)
-{
-  cmulti *a=NULL;
-  ulong i;
-  if(cis_real(x)){
-    rpow_ui(C_R(y),C_R(x),n);
-    rset_si(C_I(y),0);
-  }else if(n==0){
-    cset_one(y);
-  }else{
-    CAc(a,y);
-    ccopy(a,x);                        // a=x
-    for(i=1; i<n; i++){ cmul_c(a,a,x); } // a*=x
-    ccopy(y,a);                        // y=a
-    CF(a);
-  }
-}
-
-/**
- @brief cmulti型の指数部の足し算 y=x*2^n
-*/
+ @brief y=x*2^n
+ */
 void cmul_2exp(cmulti *y, cmulti *x, int nr, int ni)
 {
   rmul_2exp(C_R(y),C_R(x),nr);
@@ -1952,8 +1681,8 @@ void cmul_2exp(cmulti *y, cmulti *x, int nr, int ni)
 }
 
 /**
- @brief cmulti型の指数部の引き算 y=x/2^n
-*/
+ @brief y=x/2^n
+ */
 void cdiv_2exp(cmulti *y, cmulti *x, int nr, int ni)
 {
   rdiv_2exp(C_R(y),C_R(x),nr);
@@ -1961,64 +1690,246 @@ void cdiv_2exp(cmulti *y, cmulti *x, int nr, int ni)
 }
 
 /**
- @brief cmulti型の指数部で評価 z=10^(floor(log10(abs(x))-y))
-*/
+ @brief z=10^(floor(log10(abs(x))-y))
+ */
 void cexp10_floor_log10_abs_sub(cmulti *z, cmulti *x, double y)
 {
   rmulti *exp1=NULL,*exp2=NULL;
   RAc(exp1,x); RAc(exp2,x);
-  rabs(C_R(x),C_R(x));
-  rabs(C_I(x),C_I(x));
-  rlog10(C_R(x),C_R(x));
-  rlog10(C_I(x),C_I(x));
-  rsub_d(C_R(x),C_R(x),y);
-  rsub_d(C_I(x),C_I(x),y);
-  rfloor(exp1,C_R(x));
-  rfloor(exp2,C_I(x));
-  rexp10(C_R(z),exp1);
-  rexp10(C_I(z),exp2);
+  rabs_r(C_R(x),C_R(x));
+  rabs_r(C_I(x),C_I(x));
+  rlog10_r(C_R(x),C_R(x));
+  rlog10_r(C_I(x),C_I(x));
+  rsub_rd(C_R(x),C_R(x),y);
+  rsub_rd(C_I(x),C_I(x),y);
+  rfloor_r(exp1,C_R(x));
+  rfloor_r(exp2,C_I(x));
+  rexp10_r(C_R(z),exp1);
+  rexp10_r(C_I(z),exp2);
   RF(exp1);RF(exp2);
 }
 
 /**
- @brief cmulti型の指数部で評価 z=2^(floor(log2(abs(x))-y))
-*/
+ @brief z=2^(floor(log2(abs(x))-y))
+ */
 void cexp2_floor_log2_abs_sub(cmulti *z, cmulti *x, double y)
 {
   rmulti *exp1=NULL,*exp2=NULL;
   RAc(exp1,x); RAc(exp2,x);
-  rabs(C_R(x),C_R(x));
-  rabs(C_I(x),C_I(x));
-  rlog2(C_R(x),C_R(x));
-  rlog2(C_I(x),C_I(x));
-  rsub_d(C_R(x),C_R(x),y);
-  rsub_d(C_I(x),C_I(x),y);
-  rfloor(exp1,C_R(x));
-  rfloor(exp2,C_I(x));
-  rexp2(C_R(z),exp1);
-  rexp2(C_I(z),exp2);
+  rabs_r(C_R(x),C_R(x));
+  rabs_r(C_I(x),C_I(x));
+  rlog2_r(C_R(x),C_R(x));
+  rlog2_r(C_I(x),C_I(x));
+  rsub_rd(C_R(x),C_R(x),y);
+  rsub_rd(C_I(x),C_I(x),y);
+  rfloor_r(exp1,C_R(x));
+  rfloor_r(exp2,C_I(x));
+  rexp2_r(C_R(z),exp1);
+  rexp2_r(C_I(z),exp2);
   RF(exp1);RF(exp2);
 }
 
+
+/** @} */
+
+/////////////////////////////////////////////////////////////////
+
+/** @name cmulti型の関数 z=z+f(x,y) */
+/** @{ */
+
 /**
- @brief cmulti型の極座標 z=r*exp(i*theta)
-*/
-void cget_polar(rmulti *r, rmulti *theta, cmulti *z)
+ @brief z=z+x*y
+ */
+void cadd_mul_cc(cmulti *z, cmulti *x, cmulti *y)
 {
-  cabsv(r,z);
-  ratan2(theta,C_I(z),C_R(z));
+  cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
+  CAc(a,z);
+  cmul_cc(a,x,y);   // a=x*y
+  cadd_cc(z,z,a);   // z=z+a
+  CF(a);
 }
 
 /**
- @brief cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta)
-*/
-void cset_polar(cmulti *z, rmulti *r, rmulti *theta)
+ @brief z=z+x*y
+ */
+void cadd_mul_cr(cmulti *z, cmulti *x, rmulti *y)
 {
-  rmulti *s=NULL,*c=NULL;
-  RAc(s,z); RAc(c,z);
-  rcos(c,theta); rmul_r(C_R(z),r,c); // z.r=r*cos(theta)
-  rsin(s,theta); rmul_r(C_I(z),r,s); // z.i=r*sin(theta)
-  RF(s); RF(c);
+  cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
+  CAc(a,z);
+  cmul_cr(a,x,y); // a=x*y
+  cadd_cc(z,z,a); // z=z+a
+  CF(a);
+}
+
+/**
+ @brief z=z+x*y
+ */
+void cadd_mul_cz(cmulti *z, cmulti *x, dcomplex y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(x,z);
+  CAc(a,z);
+  cmul_cz(a,x,y); // a=x*y
+  cadd_cc(z,z,a); // z=z+a
+  CF(a);
+}
+
+/**
+ @brief z=z+x*y
+ */
+void cadd_mul_cd(cmulti *z, cmulti *x, double y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(x,z);
+  CAc(a,z);
+  cmul_cd(a,x,y); // a=x*y
+  cadd_cc(z,z,a); // z=z+a
+  CF(a);
+}
+
+/**
+ @brief z=z-x*y
+ */
+void csub_mul_cc(cmulti *z, cmulti *x, cmulti *y)
+{
+  cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
+  CAc(a,z);
+  cmul_cc(a,x,y);   // a=x*y
+  csub_cc(z,z,a);   // z=z-a
+  CF(a);
+}
+
+/**
+ @brief z=z-x*y
+ */
+void csub_mul_cc_ws(cmulti *z, cmulti *x, cmulti *y, int n_rws, rmulti **rws, int n_cws, cmulti **cws)
+{
+  NULL_EXC3(x,y,z);
+  if(n_rws<1){ ERROR_EXIT("Error `n_rws=%d<1' in csub_mul_ws().\n",n_rws); }
+  if(n_cws<2){ ERROR_EXIT("Error `n_cws=%d<2' in csub_mul_ws().\n",n_cws); }
+  cmul_cc_ws(cws[0],x,y,n_rws,rws,n_cws-1,cws+1); // cws[0]=x*y
+  csub_cc(z,z,cws[0]);                            // z=z-cws[0]
+}
+
+/**
+ @brief z=z-x*y
+ */
+void csub_mul_cr(cmulti *z, cmulti *x, rmulti *y)
+{
+  cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
+  CAc(a,z);
+  cmul_cr(a,x,y); // a=x*y
+  csub_cc(z,z,a); // z=z-a
+  CF(a);
+}
+
+/**
+ @brief z=z-x*y
+ */
+void csub_mul_cz(cmulti *z, cmulti *x, dcomplex y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(x,z);
+  CAc(a,z);
+  cmul_cz(a,x,y); // a=x*y
+  csub_cc(z,z,a); // z=z-a
+  CF(a);
+}
+
+/**
+ @brief z=z-x*y
+ */
+void csub_mul_cd(cmulti *z, cmulti *x, double y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(x,z);
+  CAc(a,z);
+  cmul_cd(a,x,y); // a=x*y
+  csub_cc(z,z,a); // z=z-a
+  CF(a);
+}
+
+/**
+ @brief z=z+conj(x)*y
+ */
+void cadd_dot_cc(cmulti *z, cmulti *x, cmulti *y)
+{
+  cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
+  CAc(a,z);
+  cdot_cc(a,x,y);   // a=conj(x)*y
+  cadd_cc(z,z,a);   // z=z+a
+  CF(a);
+}
+
+/**
+ @brief z=z+conj(x)*y
+ */
+void cadd_dot_zc(cmulti *z, dcomplex x, cmulti *y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(y,z);
+  CAc(a,z);
+  cdot_zc(a,x,y); // a=conj(x)*y
+  cadd_cc(z,z,a); // z=z+a
+  CF(a);
+}
+
+/**
+ @brief z=z+conj(x)*y
+ */
+void cadd_dot_cz(cmulti *z, cmulti *x, dcomplex y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(x,z);
+  CAc(a,z);
+  cdot_cz(a,x,y); // a=conj(x)*y
+  cadd_cc(z,z,a); // z=z+a
+  CF(a);
+}
+
+
+/**
+ @brief z=z-conj(x)*y
+ */
+void csub_dot_cc(cmulti *z, cmulti *x, cmulti *y)
+{
+  cmulti *a=NULL;
+  NULL_EXC3(x,y,z);
+  CAc(a,z);
+  cdot_cc(a,x,y);   // a=conj(x)*y
+  csub_cc(z,z,a);   // z=z-a
+  CF(a);
+}
+
+/**
+ @brief z=z-conj(x)*y
+ */
+void csub_dot_zc(cmulti *z, dcomplex x, cmulti *y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(y,z);
+  CAc(a,z);
+  cdot_zc(a,x,y);   // a=conj(x)*y
+  csub_cc(z,z,a);   // z=z-a
+  CF(a);
+}
+
+/**
+ @brief z=z-conj(x)*y
+ */
+void csub_dot_cz(cmulti *z, cmulti *x, dcomplex y)
+{
+  cmulti *a=NULL;
+  NULL_EXC2(x,z);
+  CAc(a,z);
+  cdot_cz(a,x,y);   // a=conj(x)*y
+  csub_cc(z,z,a);   // z=z-a
+  CF(a);
 }
 
 /** @} */
@@ -2054,12 +1965,10 @@ int ccmp_get_type()
   return __cmulti_cmp_order;
 }
 
-
-
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int ccmp(cmulti *x, cmulti *y)
+int ccmp_c(cmulti *x, cmulti *y)
 {
   rmulti *xr=NULL,*yr=NULL,*xt=NULL,*yt=NULL;
   int value;
@@ -2067,14 +1976,14 @@ int ccmp(cmulti *x, cmulti *y)
     RAc(xr,x); RAc(yr,y); RAc(xt,x); RAc(yt,y);
     cget_polar(xr,xt,x);
     cget_polar(yr,yt,y);
-    value=rcmp(xr,yr);
-    if(value==0){ value=rcmp(xt,yt); }
+    value=cmp_rr(xr,yr);
+    if(value==0){ value=cmp_rr(xt,yt); }
     RF(xr); RF(yr); RF(xt); RF(yt);
     return value;
   }else{
-    value=rcmp(C_R(x),C_R(y));
+    value=cmp_rr(C_R(x),C_R(y));
     if(value!=0) return value;
-    return rcmp(C_I(x),C_I(y));
+    return cmp_rr(C_I(x),C_I(y));
   }
 }
 
@@ -2084,28 +1993,28 @@ int ccmp(cmulti *x, cmulti *y)
 int ccmp_z(cmulti *x, dcomplex y)
 {
   int value;
-  value=rcmp_d(C_R(x),Z_R(y));
+  value=cmp_rd(C_R(x),Z_R(y));
   if(value!=0) return value;
-  return rcmp_d(C_I(x),Z_I(y));
+  return cmp_rd(C_I(x),Z_I(y));
 }
 
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int ccmp_r1(rmulti *x, cmulti *y)
+int rcmp_c(rmulti *x, cmulti *y)
 {
-  return -ccmp_r2(y,x);
+  return -ccmp_r(y,x);
 }
 
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int ccmp_r2(cmulti *x, rmulti *y)
+int ccmp_r(cmulti *x, rmulti *y)
 {
   int value;
-  value=rcmp(C_R(x),y);
+  value=cmp_rr(C_R(x),y);
   if(value!=0) return value;
-  return rcmp_d(C_I(x),0);
+  return cmp_rd(C_I(x),0);
 }
 
 /**
@@ -2114,145 +2023,83 @@ int ccmp_r2(cmulti *x, rmulti *y)
 int ccmp_d(cmulti *x, double y)
 {
   int value;
-  value=rcmp_d(C_R(x),y);
+  value=cmp_rd(C_R(x),y);
   if(value!=0) return value;
-  return rcmp_d(C_I(x),0);
-}
-
-/**
- @brief cmulti型の値の比較 x<=>y
-*/
-int ccmp_ui(cmulti *x, ulong y)
-{
-  int value;
-  value=rcmp_ui(C_R(x),y);
-  if(value!=0) return value;
-  return rcmp_ui(C_I(x),0);
-}
-
-/**
- @brief cmulti型の値の比較 x<=>y
-*/
-int ccmp_si(cmulti *x, long y)
-{
-  int value;
-  value=rcmp_si(C_R(x),y);
-  if(value!=0) return value;
-  return rcmp_si(C_I(x),0);
+  return cmp_rd(C_I(x),0);
 }
 
 /** @brief cmulti型の値の比較 x==y */
-int ceq(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp   (x,y)==0; }
+int ceq_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)==0; }
 /** @brief cmulti型の値の比較 x==y */
 int ceq_z(cmulti *x, dcomplex y) { return cis_number(x) && ccmp_z (x,y)==0; }
 /** @brief cmulti型の値の比較 x==y */
-int ceq_r(cmulti *x, rmulti *y)  { return cis_number(x) && ccmp_r2(x,y)==0; }
+int ceq_r(cmulti *x, rmulti *y)  { return cis_number(x) && ccmp_r(x,y)==0; }
 /** @brief cmulti型の値の比較 x==y */
 int ceq_d(cmulti *x, double y)   { return cis_number(x) && ccmp_d (x,y)==0; }
-/** @brief cmulti型の値の比較 x==y */
-int ceq_ui(cmulti *x, ulong y)   { return cis_number(x) && ccmp_ui(x,y)==0; }
-/** @brief cmulti型の値の比較 x==y */
-int ceq_si(cmulti *x, long y)    { return cis_number(x) && ccmp_si(x,y)==0; }
 /** @brief cmulti型の値の比較 x!=y */
-int cne(cmulti *x, cmulti *y)    { return !(cis_number(x) && cis_number(y) && ccmp   (x,y)==0); }
+int cne_c(cmulti *x, cmulti *y)    { return !(cis_number(x) && cis_number(y) && ccmp_c   (x,y)==0); }
 /** @brief cmulti型の値の比較 x!=y */
 int cne_z(cmulti *x, dcomplex y) { return !(cis_number(x) && ccmp_z (x,y)==0); }
 /** @brief cmulti型の値の比較 x!=y */
-int cne_r(cmulti *x, rmulti *y)  { return !(cis_number(x) && ccmp_r2(x,y)==0); }
+int cne_r(cmulti *x, rmulti *y)  { return !(cis_number(x) && ccmp_r(x,y)==0); }
 /** @brief cmulti型の値の比較 x!=y */
 int cne_d(cmulti *x, double y)   { return !(cis_number(x) && ccmp_d (x,y)==0); }
-/** @brief cmulti型の値の比較 x!=y */
-int cne_ui(cmulti *x, ulong y)   { return !(cis_number(x) && ccmp_ui(x,y)==0); }
-/** @brief cmulti型の値の比較 x!=y */
-int cne_si(cmulti *x, long y)    { return !(cis_number(x) && ccmp_si(x,y)==0); }
 /** @brief cmulti型の値の比較 x>y */
-int cgt(cmulti *x, cmulti *y)     { return cis_number(x) && cis_number(y) && ccmp   (x,y)>0; }
+int cgt_c(cmulti *x, cmulti *y)     { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_r1(rmulti *x, cmulti *y)  { return ris_number(x) && cis_number(y) && ccmp_r1(x,y)>0; }
+int rgt_c(rmulti *x, cmulti *y)  { return ris_number(x) && cis_number(y) && rcmp_c(x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_r2(cmulti *x, rmulti *y)  { return cis_number(x) && ris_number(y) && ccmp_r2(x,y)>0; }
+int cgt_r(cmulti *x, rmulti *y)  { return cis_number(x) && ris_number(y) && ccmp_r(x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_z1(dcomplex x, cmulti *y) { return cis_number(y) && ccmp_z (y,x)<0; }
+int zgt_c(dcomplex x, cmulti *y) { return cis_number(y) && ccmp_z (y,x)<0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_z2(cmulti *x, dcomplex y) { return cis_number(x) && ccmp_z (x,y)>0; }
+int cgt_z(cmulti *x, dcomplex y) { return cis_number(x) && ccmp_z (x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_d1(double x, cmulti *y)   { return cis_number(y) && ccmp_d (y,x)<0; }
+int dgt_c(double x, cmulti *y)   { return cis_number(y) && ccmp_d (y,x)<0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_d2(cmulti *x, double y)   { return cis_number(x) && ccmp_d (x,y)>0; }
-/** @brief cmulti型の値の比較 x>y */
-int cgt_ui1(ulong x, cmulti *y)   { return cis_number(y) && ccmp_ui(y,x)<0; }
-/** @brief cmulti型の値の比較 x>y */
-int cgt_ui2(cmulti *x, ulong y)   { return cis_number(x) && ccmp_ui(x,y)>0; }
-/** @brief cmulti型の値の比較 x>y */
-int cgt_si1(long x, cmulti *y)    { return cis_number(y) && ccmp_si(y,x)<0; }
-/** @brief cmulti型の値の比較 x>y */
-int cgt_si2(cmulti *x, long y)    { return cis_number(x) && ccmp_si(x,y)>0; }
+int cgt_d(cmulti *x, double y)   { return cis_number(x) && ccmp_d (x,y)>0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp   (x,y)>=0; }
+int cge_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_r1(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && ccmp_r1(x,y)>=0; }
+int rge_c(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && rcmp_c(x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_r2(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r2(x,y)>=0; }
+int cge_r(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r(x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_z1(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)<=0; }
+int zge_c(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)<=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_z2(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)>=0; }
+int cge_z(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_d1(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)<=0; }
+int dge_c(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)<=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_d2(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)>=0; }
-/** @brief cmulti型の値の比較 x>=y */
-int cge_ui1(ulong x, cmulti *y)  { return cis_number(y) && ccmp_ui(y,x)<=0; }
-/** @brief cmulti型の値の比較 x>=y */
-int cge_ui2(cmulti *x, ulong y)  { return cis_number(x) && ccmp_ui(x,y)>=0; }
-/** @brief cmulti型の値の比較 x>=y */
-int cge_si1(long x, cmulti *y)   { return cis_number(y) && ccmp_si(y,x)<=0; }
-/** @brief cmulti型の値の比較 x>=y */
-int cge_si2(cmulti *x, long y)   { return cis_number(x) && ccmp_si(x,y)>=0; }
+int cge_d(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)>=0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp   (x,y)<0; }
+int clt_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_r1(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && ccmp_r1(x,y)<0; }
+int rlt_c(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && rcmp_c(x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_r2(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r2(x,y)<0; }
+int clt_r(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r(x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_z1(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)>0; }
+int zlt_c(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)>0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_z2(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)<0; }
+int clt_z(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_d1(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)>0; }
+int dlt_c(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)>0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_d2(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)<0; }
-/** @brief cmulti型の値の比較 x<y */
-int clt_ui1(ulong x, cmulti *y)  { return cis_number(y) && ccmp_ui(y,x)>0; }
-/** @brief cmulti型の値の比較 x<y */
-int clt_ui2(cmulti *x, ulong y)  { return cis_number(x) && ccmp_ui(x,y)<0; }
-/** @brief cmulti型の値の比較 x<y */
-int clt_si1(long x, cmulti *y)   { return cis_number(y) && ccmp_si(y,x)>0; }
-/** @brief cmulti型の値の比較 x<y */
-int clt_si2(cmulti *x, long y)   { return cis_number(x) && ccmp_si(x,y)<0; }
+int clt_d(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)<0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp   (x,y)<=0; }
+int cle_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_r1(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && ccmp_r1(x,y)<=0; }
+int rle_c(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && rcmp_c(x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_r2(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r2(x,y)<=0; }
+int cle_r(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r(x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_z1(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)>=0; }
+int zle_c(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)>=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_z2(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)<=0; }
+int cle_z(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_d1(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)>=0; }
+int dle_c(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)>=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_d2(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)<=0; }
-/** @brief cmulti型の値の比較 x<=y */
-int cle_ui1(ulong x, cmulti *y)  { return cis_number(y) && ccmp_ui(y,x)>=0; }
-/** @brief cmulti型の値の比較 x<=y */
-int cle_ui2(cmulti *x, ulong y)  { return cis_number(x) && ccmp_ui(x,y)<=0; }
-/** @brief cmulti型の値の比較 x<=y */
-int cle_si1(long x, cmulti *y)   { return cis_number(y) && ccmp_si(y,x)>=0; }
-/** @brief cmulti型の値の比較 x<=y */
-int cle_si2(cmulti *x, long y)   { return cis_number(x) && ccmp_si(x,y)<=0; }
+int cle_d(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)<=0; }
 
 /** @brief cmulti型の値の比較 abs(x)<=>abs(y) */
 int cabs_cmp(cmulti *x, cmulti *y)
@@ -2260,9 +2107,9 @@ int cabs_cmp(cmulti *x, cmulti *y)
   int value;  
   rmulti *ax=NULL,*ay=NULL;
   RAc(ax,x); RAc(ay,y);
-  cabs2(ax,x); // ax=abs(x)
-  cabs2(ay,y); // ay=abs(y)
-  value=rcmp(ax,ay);
+  rabs2_c(ax,x); // ax=abs(x)
+  rabs2_c(ay,y); // ay=abs(y)
+  value=cmp_rr(ax,ay);
   RF(ax); RF(ay);  
   return value;
 }
@@ -2278,15 +2125,15 @@ int cabs_lt(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cab
 /** @brief cmulti型の値の比較 abs(x)<=abs(y) */
 int cabs_le(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cabs_cmp(x,y)<=0; }
 /** @brief cmulti型の値の比較 x.r==y.r && x.i==y.i */
-int ceqc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && req(C_R(x),C_R(y)) && req(C_I(x),C_I(y)); }
+int ceqc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && eq_rr(C_R(x),C_R(y)) && eq_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r>y.r && x.i>y.i */
-int cgtc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && rgt(C_R(x),C_R(y)) && rgt(C_I(x),C_I(y)); }
+int cgtc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && gt_rr(C_R(x),C_R(y)) && gt_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r>=y.r && x.i>=y.i */
-int cgec(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && rge(C_R(x),C_R(y)) && rge(C_I(x),C_I(y)); }
+int cgec(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && ge_rr(C_R(x),C_R(y)) && ge_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r<y.r && x.i<y.i */
-int cltc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && rlt(C_R(x),C_R(y)) && rlt(C_I(x),C_I(y)); }
+int cltc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && lt_rr(C_R(x),C_R(y)) && lt_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r<=y.r && x.i<=y.i */
-int clec(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && rle(C_R(x),C_R(y)) && rle(C_I(x),C_I(y)); }
+int clec(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && le_rr(C_R(x),C_R(y)) && le_rr(C_I(x),C_I(y)); }
 
 /** @} */
 

@@ -28,7 +28,7 @@ void irmat3_copy(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	ircopy(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+	irset_r(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -122,7 +122,7 @@ void irmat3_neg(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LDB
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irneg(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+	irneg_r(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -137,7 +137,7 @@ void irmat3_add(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	iradd(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	iradd_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }  
@@ -152,7 +152,7 @@ void irmat3_add_r(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	iradd(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	iradd_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -167,7 +167,7 @@ void irmat3_sub(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	irsub_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -182,7 +182,7 @@ void irmat3_sub_r1(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	irsub_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -197,7 +197,7 @@ void irmat3_sub_r2(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	irsub_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -212,7 +212,7 @@ void irmat3_mul(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irmul(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	irmul_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -227,7 +227,7 @@ void irmat3_mul_r(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irmul(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	irmul_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -242,7 +242,7 @@ void irmat3_div(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	irdiv_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -257,7 +257,7 @@ void irmat3_div_r1(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	irdiv_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -273,7 +273,7 @@ void irmat3_div_r2(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	irdiv_rr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -288,26 +288,12 @@ void irmat3_abs(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irabs(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+	irabs_r(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
 }
 
-/**
- @brief irmulti型の3次元配列のlog10を取った値 C=log10(A).
- */
-void irmat3_log10(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
-{
-  int i,j,k;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	irlog10(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-}
 
 /**
  @brief 3次元配列の平方根 C=sqrt(A).
@@ -318,7 +304,7 @@ void irmat3_sqrt(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irsqrt(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+	irsqrt_r(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }

@@ -56,7 +56,7 @@ void func_cvec_p_clone(func_t *f, func_t *g)
   f->ptype=FUNC_P_CVEC;
   f->p.mem=malloc(sizeof(func_cvec_struct));
   f->p.cvec->n=g->p.cvec->n;
-  f->p.cvec->x=cvec_allocate_clone(g->p.cvec->n,g->p.cvec->x);
+  f->p.cvec->x=cvec_allocate_clone_cvec(g->p.cvec->n,g->p.cvec->x);
 }
 
 ////////////////////////////////////////////////
@@ -120,8 +120,8 @@ void func_cvec_set(func_t *f, int i, func_t *g)
   func_t *a=NULL;
   if(f==NULL || func_ptype(f)!=FUNC_P_CVEC || f->p.rvec==NULL || i<0 || i>=f->p.rvec->n){ FUNC_ERROR_ARG2("func_cvec_set",f,g); }
   a=func_evalf(FR(g));
-  if(func_is_real(a))        { ccopy_r(func_cvec_at(f,i),func_real_p(a)); }
-  else if(func_is_complex(a)){ ccopy  (func_cvec_at(f,i),func_complex_p(a)); }
+  if(func_is_real(a))        { cset_r(func_cvec_at(f,i),func_real_p(a)); }
+  else if(func_is_complex(a)){ cset_c  (func_cvec_at(f,i),func_complex_p(a)); }
   else                       { FUNC_ERROR_ARG2("func_cvec_set",f,g); }
   a=func_del(a);
 }

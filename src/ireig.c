@@ -33,7 +33,7 @@
 */
 void ireig_residual(int n, rmulti **F0, rmulti **F1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **X0, rmulti **X1, rmulti *lambda0, rmulti *lambda1)
 {
-  irvec_mul_r(n,F0,F1,X0,X1,lambda0,lambda1);       // F=x*lambda
+  irvec_mul_rscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=x*lambda
   irvec_neg(n,F0,F1,F0,F1);                         // F=-x*lambda
   irvec_add_lintr(n,n,F0,F1,A0,LDA0,A1,LDA1,X0,X1); // F=A*X-lambda*X
 }
@@ -61,7 +61,7 @@ int ireig_krawczyk(int n, int k, rmulti **E_vec, int LDE, rmulti **E_val, rmulti
   for(i=0; i<k; i++){
     r=ireig_1pair_krawczyk(n,E,A,LDA,&COL(X,i,LDX),lambda[i],debug-1);
     rvec_copy(n,&COL(E_vec,i,LDE),E);
-    rcopy(E_val[i],E[n]);
+    rset_r(E_val[i],E[n]);
     if(r){ ret=1; }
     if(debug>=1){
       if(r){ print_red();   printf("[%s] %d/%d failed",NAME_KRAWCZYK,i,n);  print_reset(); printf("\n"); }
@@ -115,13 +115,13 @@ int ireig_1pair_krawczyk(int n, rmulti **e, rmulti **A, int LDA, rmulti **x, rmu
   // F=[A*x-lambda*x; (sum(x.^2)-1)/2]
   reig_residual(n,F,A,LDA,x,lambda); // F(1:n)=A*x-lambda*x
   rvec_sum_pow2(F[n],n,x);           // F(m)=(sum(x.^2)-1)/2
-  rsub_d(F[n],F[n],1);
-  rmul_d(F[n],F[n],0.5);
+  rsub_rd(F[n],F[n],1);
+  rmul_rd(F[n],F[n],0.5);
   // [F0,F1]=[A*x-lambda*x; (sum(x.^2)-1)/2]
   ireig_residual(n,F0,F1,A,LDA,A,LDA,x,x,lambda,lambda); // F(1:n)=A*x-lambda*x
   irvec_sum_pow2(F0[n],F1[n],n,x,x);                     // F(m)=(sum(x.^2)-1)/2
-  irsub_d(F0[n],F1[n],F0[n],F1[n],1,1);
-  irmul_d(F0[n],F1[n],F0[n],F1[n],0.5);
+  irsub_rd(F0[n],F1[n],F0[n],F1[n],1,1);
+  irmul_rd(F0[n],F1[n],F0[n],F1[n],0.5,0.5);
   // e=abs(R*F)
   rvec_lintr(m,m,e,R,m,F);
   rvec_abs(m,e,e);

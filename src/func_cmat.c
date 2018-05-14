@@ -139,15 +139,15 @@ void func_cmat_set_row(func_t *f, int i, func_t *g)
   func_t *a=NULL;
   if(f==NULL || func_ptype(f)!=FUNC_P_CMAT || f->p.cmat==NULL || i<0 || i>=func_cmat_rows(f)){ FUNC_ERROR_ARG2("func_cmat_set_row",f,g); }
   a=func_evalf(FR(g));
-  if     (func_is_real(a)    && func_cmat_cols(f)==1){ ccopy_r(func_cmat_at(f,i,0),func_real_p(a)); }
-  else if(func_is_complex(a) && func_cmat_cols(f)==1){ ccopy  (func_cmat_at(f,i,0),func_complex_p(a)); }
+  if     (func_is_real(a)    && func_cmat_cols(f)==1){ cset_r(func_cmat_at(f,i,0),func_real_p(a)); }
+  else if(func_is_complex(a) && func_cmat_cols(f)==1){ cset_c  (func_cmat_at(f,i,0),func_complex_p(a)); }
   else if(func_is_rvec(a)){
     if(func_cmat_cols(f)==func_rvec_size(a)){
-      for(j=0; j<func_cmat_cols(f); j++){ ccopy_r(MAT(func_cmat_p(f),i,j,func_cmat_ld(f)),func_rvec_at(a,j)); }
+      for(j=0; j<func_cmat_cols(f); j++){ cset_r(MAT(func_cmat_p(f),i,j,func_cmat_ld(f)),func_rvec_at(a,j)); }
     }else{ FUNC_ERROR_ARG2("func_cmat_set_row",f,g); }
   }else if(func_is_cvec(a)){
     if(func_cmat_cols(f)==func_cvec_size(a)){
-      for(j=0; j<func_cmat_cols(f); j++){ ccopy(MAT(func_cmat_p(f),i,j,func_cmat_ld(f)),func_cvec_at(a,j)); }
+      for(j=0; j<func_cmat_cols(f); j++){ cset_c(MAT(func_cmat_p(f),i,j,func_cmat_ld(f)),func_cvec_at(a,j)); }
     }else{ FUNC_ERROR_ARG2("func_cmat_set_row",f,g); }
   }else{ FUNC_ERROR_ARG2("func_cmat_set_row",f,g); }
   a=func_del(a);

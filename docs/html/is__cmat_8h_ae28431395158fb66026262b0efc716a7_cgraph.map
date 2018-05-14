@@ -1,8 +1,9 @@
 <map id="cmat_diag_copy_rvec" name="cmat_diag_copy_rvec">
-<area shape="rect" id="node2" href="$cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="176,5,233,32"/>
-<area shape="rect" id="node7" href="$cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="172,56,237,83"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="400,5,447,32"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="285,56,349,83"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="497,31,595,57"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="397,56,449,83"/>
+<area shape="rect" id="node2" href="$cmulti_8c.html#a2e5b02c852a861f99dc776505f954190" title="y=x " alt="" coords="293,56,342,83"/>
+<area shape="rect" id="node6" href="$cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="172,107,237,133"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="398,5,446,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="397,56,447,83"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="495,56,592,83"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="285,107,349,133"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="399,107,445,133"/>
 </map>

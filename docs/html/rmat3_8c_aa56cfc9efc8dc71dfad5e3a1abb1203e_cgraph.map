@@ -1,9 +1,9 @@
 <map id="rmat3_exp10_floor_log10_abs_sub" name="rmat3_exp10_floor_log10_abs_sub">
 <area shape="rect" id="node2" href="$is__rmulti_8h.html#a1bbe667ebd9bb9b24e2eb8afc9765170" title="rmulti型の指数部で評価 z=10^(floor(log10(abs(x))&#45;y)) " alt="" coords="189,99,297,141"/>
-<area shape="rect" id="node3" href="$rmulti_8c.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="351,5,392,32"/>
-<area shape="rect" id="node5" href="$rmulti_8c.html#afe5d80a74a0711fc82649e7390482254" title="rmulti型の計算 y=log_10(x) " alt="" coords="347,56,396,83"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="345,107,397,133"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#a2c9487cb29f8b4beb633ad6e981dd958" title="rmulti型の整数への丸め y=floor(x) " alt="" coords="349,157,394,184"/>
-<area shape="rect" id="node8" href="$rmulti_8c.html#a42752bf238321f87d49326a7fccb94be" title="rmulti型の計算 y=10^x " alt="" coords="345,208,397,235"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="445,81,543,108"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="351,5,401,32"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#aed05580932dc81848ad791ca84eb2f35" title="rmulti型の計算 y=log_10(x) " alt="" coords="347,56,405,83"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a85f6db67b1c6e36ebc626ec2f6043137" title="z=x&#45;y " alt="" coords="348,107,404,133"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a132fc937129c0a17035122b7840b778d" title="rmulti型の整数への丸め y=floor(x) " alt="" coords="349,157,403,184"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a9c42e441382b88c2774e07f5fa59ab22" title="rmulti型の計算 y=10^x " alt="" coords="345,208,407,235"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="455,81,552,108"/>
 </map>

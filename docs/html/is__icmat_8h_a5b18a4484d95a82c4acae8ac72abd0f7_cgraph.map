@@ -1,8 +1,7 @@
 <map id="icmat_copy_irmat" name="icmat_copy_irmat">
 <area shape="rect" id="node2" href="$cmat_8c.html#abae1b8cc9cadce40cb38f0b6e07fd841" title="cmulti型の行列の値のコピー B=A " alt="" coords="153,31,249,57"/>
-<area shape="rect" id="node3" href="$cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="297,31,355,57"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="517,5,564,32"/>
-<area shape="rect" id="node6" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="403,56,467,83"/>
-<area shape="rect" id="node5" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="615,31,712,57"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="515,56,567,83"/>
+<area shape="rect" id="node3" href="$cmulti_8c.html#a2e5b02c852a861f99dc776505f954190" title="y=x " alt="" coords="297,31,347,57"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="395,5,443,32"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="395,56,444,83"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="492,31,589,57"/>
 </map>

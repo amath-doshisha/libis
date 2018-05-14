@@ -1,9 +1,9 @@
 <map id="array_free" name="array_free">
-<area shape="rect" id="node2" href="$array_8c.html#aa308386def5b6e295e1c45673bc275ef" title="avec_free" alt="" coords="121,5,187,32"/>
+<area shape="rect" id="node2" href="$array_8c.html#aa308386def5b6e295e1c45673bc275ef" title="array型の配列のメモリ解放 " alt="" coords="121,5,187,32"/>
 <area shape="rect" id="node3" href="$is__svec_8h.html#a2e19962ed7f4feac304f82c6368d8b72" title="svec_free" alt="" coords="121,56,187,83"/>
 <area shape="rect" id="node5" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="123,107,185,133"/>
-<area shape="rect" id="node6" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="dvec_free" alt="" coords="121,157,187,184"/>
-<area shape="rect" id="node7" href="$is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868" title="zvec_free" alt="" coords="121,208,187,235"/>
+<area shape="rect" id="node6" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="121,157,187,184"/>
+<area shape="rect" id="node7" href="$is__zvec_8h.html#a0690af5781bb79f0e45ac889e36e1868" title="dcomplex型のメモリ解放 " alt="" coords="121,208,187,235"/>
 <area shape="rect" id="node8" href="$is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="235,259,299,285"/>
 <area shape="rect" id="node10" href="$cvec_8c.html#a6791c96c35ff01e0aa9f3e0cfb63893b" title="cmulti型のベクトルの終了処理. " alt="" coords="121,309,187,336"/>
 <area shape="rect" id="node4" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="237,56,297,83"/>

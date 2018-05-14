@@ -1,0 +1,9 @@
+<map id="cmp_dist_rrr" name="cmp_dist_rrr">
+<area shape="rect" id="node2" href="$rmulti_8c.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="131,5,216,32"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="141,56,205,83"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a6b5253ae51ac2ad873300ba5457853f3" title="rmulti型の差の絶対値 z=abs(x&#45;y) " alt="" coords="135,107,211,133"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="147,157,200,184"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#a4acfc1f7f71c44234ca1873f69b6eaa5" title="z=x&#45;y " alt="" coords="264,81,317,108"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="265,132,316,159"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="365,107,463,133"/>
+</map>

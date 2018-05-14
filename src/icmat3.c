@@ -31,7 +31,7 @@ void icmat3_copy(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        iccopy(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+        icset_c(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -46,7 +46,7 @@ void icmat3_copy_irmat3(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        iccopy_r(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+        icset_r(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -61,7 +61,7 @@ void icmat3_copy_irmat3_irmat3(int m, int n, int l, cmulti **C0, cmulti **C1, in
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        iccopy_C(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(B0,i,j,k,LDB1,LDB2),MAT3(A1,i,j,k,LDA1,LDA2),MAT3(B1,i,j,k,LDB1,LDB2));
+        icset_rrrr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(B0,i,j,k,LDB1,LDB2),MAT3(A1,i,j,k,LDA1,LDA2),MAT3(B1,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -77,7 +77,7 @@ void icmat3_copy_ir_irmat3(int m, int n, int l, cmulti **C0, cmulti **C1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        iccopy_C(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),a0,MAT3(B0,i,j,k,LDB1,LDB2),a1,MAT3(B1,i,j,k,LDB1,LDB2));
+        icset_rrrr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),a0,MAT3(B0,i,j,k,LDB1,LDB2),a1,MAT3(B1,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -93,7 +93,7 @@ void icmat3_copy_irmat3_ir(int m, int n, int l, cmulti **C0, cmulti **C1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        iccopy_C(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),b0,MAT3(A1,i,j,k,LDA1,LDA2),b1);
+        icset_rrrr(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),b0,MAT3(A1,i,j,k,LDA1,LDA2),b1);
       }
     }
   }
@@ -202,7 +202,7 @@ void icmat3_conj(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LD
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        icconj(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+        icconj_c(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -217,7 +217,7 @@ void icmat3_neg(int m, int n, int l, cmulti **B0, cmulti **B1, int LDB1, int LDB
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        icneg(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+        icneg_c(MAT3(B0,i,j,k,LDB1,LDB2),MAT3(B1,i,j,k,LDB1,LDB2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -232,7 +232,7 @@ void icmat3_add(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        icadd(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+        icadd_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -247,7 +247,7 @@ void icmat3_add_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, i
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        icadd_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+        icadd_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -262,7 +262,7 @@ void icmat3_add_r(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        icadd_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+        icadd_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -277,7 +277,7 @@ void icmat3_add_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        icadd(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+        icadd_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -292,7 +292,7 @@ void irmat3_add_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        iradd_c(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+        icadd_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -307,7 +307,7 @@ void icmat3_sub(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-        icsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+        icsub_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -322,7 +322,7 @@ void icmat3_sub_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icsub_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -337,7 +337,7 @@ void icmat3_sub_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icsub(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icsub_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -352,7 +352,7 @@ void icmat3_sub_r1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irsub_c(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icsub_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -367,7 +367,7 @@ void icmat3_sub_r2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icsub_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icsub_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -382,7 +382,7 @@ void irmat3_sub_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icsub_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icsub_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -397,7 +397,7 @@ void irmat3_sub_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irsub_c(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icsub_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -412,7 +412,7 @@ void icmat3_sub_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, i
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icsub_r(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icsub_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -427,7 +427,7 @@ void irmat3_sub_cmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, i
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	irsub_c(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icsub_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -442,7 +442,7 @@ void icmat3_mul(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icmul(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icmul_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -457,7 +457,7 @@ void icmat3_mul_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, i
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icmul_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icmul_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -472,7 +472,7 @@ void icmat3_mul_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icmul(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icmul_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -487,7 +487,7 @@ void icmat3_mul_r(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icmul_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icmul_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -502,7 +502,7 @@ void irmat3_mul_c(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icmul_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icmul_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -518,7 +518,7 @@ void icmat3_div(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int LDZ
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icdiv_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -533,7 +533,7 @@ void icmat3_div_rmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, i
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icdiv_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -548,7 +548,7 @@ void irmat3_div_cmat3(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, i
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icdiv_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -563,7 +563,7 @@ void icmat3_div_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icdiv_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -578,7 +578,7 @@ void icmat3_div_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icdiv_cc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -593,7 +593,7 @@ void icmat3_div_r1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icdiv_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -609,7 +609,7 @@ void icmat3_div_r2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icdiv_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -624,7 +624,7 @@ void irmat3_div_c1(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv_r2(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
+	icdiv_cr(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),X0,X1,MAT3(Y0,i,j,k,LDY1,LDY2),MAT3(Y1,i,j,k,LDY1,LDY2));
       }
     }
   }
@@ -639,7 +639,7 @@ void irmat3_div_c2(int m, int n, int l, cmulti **Z0, cmulti **Z1, int LDZ1, int 
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icdiv_r1(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
+	icdiv_rc(MAT3(Z0,i,j,k,LDZ1,LDZ2),MAT3(Z1,i,j,k,LDZ1,LDZ2),MAT3(X0,i,j,k,LDX1,LDX2),MAT3(X1,i,j,k,LDX1,LDX2),Y0,Y1);
       }
     }
   }
@@ -654,7 +654,7 @@ void icmat3_abs(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	icabs(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
+	irabs_c(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
       }
     }
   }

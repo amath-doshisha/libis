@@ -1,0 +1,7 @@
+<map id="zvec_normalize_sgn" name="zvec_normalize_sgn">
+<area shape="rect" id="node2" href="$zvec_8c.html#a85ba4f3fb769abb3477bccd1d7000626" title="y=sqrt(sum(abs(x).^2)) " alt="" coords="188,5,264,32"/>
+<area shape="rect" id="node3" href="$zvec_8c.html#ad268aabcd83fc2dd4d69442a455aad98" title="y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL " alt="" coords="167,56,285,83"/>
+<area shape="rect" id="node4" href="$dcomplex_8c.html#a46705c3513082f192da01a9583bb8e78" title="y=x/|x| " alt="" coords="185,107,267,133"/>
+<area shape="rect" id="node5" href="$zvec_8c.html#a2fdac4844b56309799248da73384d753" title="z=x*y " alt="" coords="175,157,277,184"/>
+<area shape="rect" id="node6" href="$dcomplex_8c.html#a5ec98d5cf2c465847cd389eae93557ed" title="z=x*y " alt="" coords="333,157,392,184"/>
+</map>

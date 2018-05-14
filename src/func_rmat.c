@@ -134,11 +134,11 @@ void func_rmat_set_row(func_t *f, int i, func_t *g)
   if(f==NULL || func_ptype(f)!=FUNC_P_RMAT || f->p.rmat==NULL || i<0 || i>=func_rmat_rows(f)){ FUNC_ERROR_ARG2("func_rmat_set_row",f,g); }
   a=func_evalf(FR(g));
   if(func_is_real(a)){
-    if(func_rmat_cols(f)==1){ rcopy(func_rmat_at(f,i,0),func_real_p(a)); }
+    if(func_rmat_cols(f)==1){ rset_r(func_rmat_at(f,i,0),func_real_p(a)); }
     else{ FUNC_ERROR_ARG2("func_rmat_set_row",f,g); }
   }else if(func_is(a,"rvec")){
     if(func_rmat_cols(f)==func_rvec_size(a)){
-      for(j=0; j<func_rmat_cols(f); j++){ rcopy(MAT(func_rmat_p(f),i,j,func_rmat_ld(f)),func_rvec_at(a,j)); }
+      for(j=0; j<func_rmat_cols(f); j++){ rset_r(MAT(func_rmat_p(f),i,j,func_rmat_ld(f)),func_rvec_at(a,j)); }
     }else{ FUNC_ERROR_ARG2("func_rmat_set_row",f,g); }
   }else{ FUNC_ERROR_ARG2("func_rmat_set_row",f,g); }
   a=func_del(a);

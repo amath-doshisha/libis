@@ -1,101 +1,101 @@
 <map id="func_complex_pow" name="func_complex_pow">
-<area shape="rect" id="node2" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="167,249,264,276"/>
+<area shape="rect" id="node2" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="167,256,264,283"/>
 <area shape="rect" id="node3" href="$func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562" title="func_is_complex" alt="" coords="473,5,569,32"/>
 <area shape="rect" id="node13" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="317,487,425,513"/>
-<area shape="rect" id="node14" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="479,1323,563,1349"/>
-<area shape="rect" id="node42" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1060,1449,1120,1476"/>
-<area shape="rect" id="node47" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="474,208,569,235"/>
-<area shape="rect" id="node62" href="$cmulti_8c.html#a4965f7ca0cf42b781f46afab0b824f45" title="cmulti型のべき乗 z=x^y " alt="" coords="343,917,399,944"/>
-<area shape="rect" id="node81" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="161,1652,269,1679"/>
-<area shape="rect" id="node7" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="333,249,409,276"/>
-<area shape="rect" id="node4" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="1765,1297,1819,1324"/>
-<area shape="rect" id="node5" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="1867,1576,1925,1603"/>
-<area shape="rect" id="node6" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="1973,1576,2039,1603"/>
+<area shape="rect" id="node14" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="479,1355,563,1381"/>
+<area shape="rect" id="node42" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1060,1437,1120,1464"/>
+<area shape="rect" id="node47" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="474,259,569,285"/>
+<area shape="rect" id="node63" href="$cmulti_8c.html#a0acd965a0c1192357977cc9217aa198a" title="z=x^y " alt="" coords="341,893,402,920"/>
+<area shape="rect" id="node82" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="161,1684,269,1711"/>
+<area shape="rect" id="node7" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="333,256,409,283"/>
+<area shape="rect" id="node4" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="1765,1375,1819,1401"/>
+<area shape="rect" id="node5" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="1867,1628,1925,1655"/>
+<area shape="rect" id="node6" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="1973,1628,2039,1655"/>
 <area shape="rect" id="node8" href="$func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b" title="func_is_real" alt="" coords="483,309,559,336"/>
 <area shape="rect" id="node9" href="$func__bigint_8c.html#ad39923e28c10109fb73a7218a834e6ac" title="func_in_bigint" alt="" coords="479,107,563,133"/>
-<area shape="rect" id="node10" href="$func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="626,208,705,235"/>
-<area shape="rect" id="node11" href="$func__number_8c.html#aa780c6f31a959959bcbf4d9553d247d1" title="func_is_one" alt="" coords="627,107,703,133"/>
-<area shape="rect" id="node12" href="$func__bigint_8c.html#a6cf29c440217b50c7d7085feeabf0e04" title="func_is_bigint" alt="" coords="624,157,707,184"/>
+<area shape="rect" id="node10" href="$func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="626,145,705,172"/>
+<area shape="rect" id="node11" href="$func__number_8c.html#aa780c6f31a959959bcbf4d9553d247d1" title="func_is_one" alt="" coords="627,247,703,273"/>
+<area shape="rect" id="node12" href="$func__bigint_8c.html#a6cf29c440217b50c7d7085feeabf0e04" title="func_is_bigint" alt="" coords="624,95,707,121"/>
 <area shape="rect" id="node45" href="$cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="490,411,553,437"/>
 <area shape="rect" id="node48" href="$cmulti_8c.html#a725c8bc11d0ad592e21c34890f757ef4" title="cmulti型の値をInfに設定. " alt="" coords="493,461,549,488"/>
 <area shape="rect" id="node50" href="$cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="489,613,554,640"/>
 <area shape="rect" id="node54" href="$cmulti_8c.html#af25e655a77896ff189019f1d915abb2f" title="cmulti型の値を1に設定. " alt="" coords="490,563,553,589"/>
-<area shape="rect" id="node56" href="$bigint_8c.html#a4f0992bf040ee7788cd759ed3b606bdb" title="bigint_get_rmulti" alt="" coords="617,664,713,691"/>
-<area shape="rect" id="node58" href="$func__bigint_8c.html#a5b3527e18a9a626a5c08683e401252c4" title="func_bigint_p" alt="" coords="1049,569,1131,596"/>
-<area shape="rect" id="node59" href="$cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="493,715,550,741"/>
-<area shape="rect" id="node61" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="484,1221,559,1248"/>
-<area shape="rect" id="node15" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="633,1652,698,1679"/>
-<area shape="rect" id="node16" href="$func_8c.html#acd4481611ac7a446cec5acbf860160c8" title="func_struct_new" alt="" coords="761,1576,856,1603"/>
-<area shape="rect" id="node17" href="$is__strings_8h.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="776,1525,841,1552"/>
-<area shape="rect" id="node19" href="$func_8c.html#a10acafc6a5eea7c5644da39a93913f93" title="func_p_new" alt="" coords="1052,1627,1128,1653"/>
-<area shape="rect" id="node36" href="$func__args_8c.html#a917ed9a99a463c7098ac747fb2861f2f" title="func_a_new" alt="" coords="771,1677,847,1704"/>
-<area shape="rect" id="node37" href="$func__find_8c.html#a3c1cd2adbd08b9f344659cd4793151d0" title="func_find_amin" alt="" coords="1320,1348,1409,1375"/>
-<area shape="rect" id="node18" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="905,1525,1001,1552"/>
-<area shape="rect" id="node20" href="$func_8c.html#ac5d12f1e54448af685ab9ce171c88304" title="func_p_del" alt="" coords="1188,1500,1259,1527"/>
-<area shape="rect" id="node35" href="$func__find_8c.html#a27fff46baa89a49fad2bba6c25bbcd70" title="func_find_p_new" alt="" coords="1316,1424,1413,1451"/>
-<area shape="rect" id="node21" href="$func__find_8c.html#ad399ee5a1d7d999d92d17ff0cab2178d" title="func_find_p_del" alt="" coords="1319,1297,1411,1324"/>
-<area shape="rect" id="node22" href="$func__builtin_8c.html#a93600b658725ef58d9cf55fda4f24af3" title="func_is_builtin" alt="" coords="1480,1399,1565,1425"/>
-<area shape="rect" id="node23" href="$func__builtin_8c.html#af2ffde1e2fbeb40dcad4cab81a6c4a95" title="func_builtin_p_del" alt="" coords="1471,892,1574,919"/>
-<area shape="rect" id="node25" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="1487,1449,1559,1476"/>
-<area shape="rect" id="node26" href="$func__table_8c.html#aa5e5d16773a7094f7ec6aaf6322d84b8" title="func_is_table" alt="" coords="1482,1500,1563,1527"/>
-<area shape="rect" id="node27" href="$func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979" title="func_is_strings" alt="" coords="1478,1551,1567,1577"/>
-<area shape="rect" id="node28" href="$func__strings_8c.html#ad6e5753db67b577da6c2197882be60c9" title="func_strings_p_del" alt="" coords="1470,943,1575,969"/>
-<area shape="rect" id="node29" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="1632,1348,1717,1375"/>
-<area shape="rect" id="node30" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="1486,1297,1559,1324"/>
-<area shape="rect" id="node31" href="$func__def_8c.html#a7fdbff290b2ec06acd8dadc4e946e3fd" title="func_def_p_del" alt="" coords="1477,993,1568,1020"/>
-<area shape="rect" id="node32" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="1475,1348,1570,1375"/>
-<area shape="rect" id="node33" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="1494,1247,1551,1273"/>
-<area shape="rect" id="node34" href="$func__builtin_8c.html#aae0af1e58719894bfd7c901fc603a2e4" title="func_builtin_p_del_call" alt="" coords="1461,841,1584,868"/>
-<area shape="rect" id="node24" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="1639,892,1710,919"/>
-<area shape="rect" id="node40" href="$func__find_8c.html#a2b644e09ec80f8db90eb98995258a16e" title="func_find_amax" alt="" coords="1319,1475,1411,1501"/>
-<area shape="rect" id="node41" href="$func__args_8c.html#aab560c18c36aaab1c2d6901c6e9e37b0" title="func_a_del" alt="" coords="917,1576,988,1603"/>
-<area shape="rect" id="node38" href="$func__builtin_8c.html#ab3667436e4487c50e7d1f370b8f8b287" title="func_builtin_amin" alt="" coords="1473,1095,1573,1121"/>
-<area shape="rect" id="node39" href="$func__def_8c.html#af064a9ceac46854c81dceabcbd946d84" title="func_def_amin" alt="" coords="1479,1044,1567,1071"/>
-<area shape="rect" id="node43" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1193,1449,1253,1476"/>
-<area shape="rect" id="node44" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="1179,1399,1268,1425"/>
-<area shape="rect" id="node46" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="635,411,696,437"/>
-<area shape="rect" id="node49" href="$is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="638,461,693,488"/>
-<area shape="rect" id="node51" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="633,613,697,640"/>
-<area shape="rect" id="node52" href="$rmulti_8c.html#aa6bb4ac0b1b163c6d9bf0d68c8c8ba8a" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="783,563,835,589"/>
-<area shape="rect" id="node53" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="904,841,1001,868"/>
-<area shape="rect" id="node55" href="$is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="635,563,696,589"/>
-<area shape="rect" id="node57" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="785,613,832,640"/>
-<area shape="rect" id="node60" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="785,816,832,843"/>
-<area shape="rect" id="node63" href="$cmulti_8c.html#a8168c3ad5161e6500e5f2c628c1c56cf" title="cmulti型の計算 y=log(x) " alt="" coords="496,1095,547,1121"/>
-<area shape="rect" id="node68" href="$cmulti_8c.html#aab7b82ed0dbd3e9a81e32d91b75685b6" title="z=x*y " alt="" coords="495,867,548,893"/>
-<area shape="rect" id="node76" href="$cmulti_8c.html#a5db2a16616e6d3fc2d876499220f5265" title="cmulti型の計算 y=exp(x) " alt="" coords="495,993,548,1020"/>
-<area shape="rect" id="node64" href="$cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="631,1171,700,1197"/>
-<area shape="rect" id="node67" href="$is__rmulti_8h.html#a3582139ef5d769709f033269ddc5d606" title="rmulti型の計算 y=log(x) " alt="" coords="789,1171,828,1197"/>
-<area shape="rect" id="node65" href="$cmulti_8c.html#ae6aa56ed1fbc6ffe1d33b6dea08330af" title="cmulti型の絶対値 y=abs(x) " alt="" coords="785,1120,833,1147"/>
-<area shape="rect" id="node66" href="$is__rmulti_8h.html#a1e020fe475737e887f7d5a969bc53e1a" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="783,1069,834,1096"/>
-<area shape="rect" id="node69" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="783,917,834,944"/>
-<area shape="rect" id="node70" href="$is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="634,765,697,792"/>
-<area shape="rect" id="node73" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="633,715,697,741"/>
-<area shape="rect" id="node75" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="641,867,689,893"/>
-<area shape="rect" id="node71" href="$rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="783,715,834,741"/>
-<area shape="rect" id="node72" href="$rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="783,765,834,792"/>
-<area shape="rect" id="node74" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="783,664,834,691"/>
-<area shape="rect" id="node77" href="$is__rmulti_8h.html#a802eb2853d2c2a66c1afac7076904666" title="rmulti型の計算 y=exp(x) " alt="" coords="788,867,829,893"/>
-<area shape="rect" id="node78" href="$cmulti_8c.html#aaa8a19431cf6f99ead0badf3b0b15400" title="cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta) " alt="" coords="631,1120,699,1147"/>
-<area shape="rect" id="node79" href="$is__rmulti_8h.html#a1edeec7e41c8f6cb460192e5f17d924b" title="rmulti型の計算 y=cos(x) " alt="" coords="788,968,829,995"/>
-<area shape="rect" id="node80" href="$is__rmulti_8h.html#ad66ca5ba97fbddd89b86346c2d3301a9" title="rmulti型の計算 y=sin(x) " alt="" coords="789,1019,828,1045"/>
-<area shape="rect" id="node82" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="328,1576,415,1603"/>
-<area shape="rect" id="node84" href="$func__number_8c.html#a2e52e48c181d23886cb9872110e7a113" title="func_nan" alt="" coords="490,1677,553,1704"/>
-<area shape="rect" id="node86" href="$func__number_8c.html#ab2b75f75f172075368ea0f8ab2f08c37" title="func_inf" alt="" coords="493,1829,550,1856"/>
-<area shape="rect" id="node89" href="$func__number_8c.html#a5b7171537ce3464da4f750991e4322f0" title="func_zero" alt="" coords="489,1779,554,1805"/>
-<area shape="rect" id="node92" href="$func__number_8c.html#a6729710e11f7bb6c9fddca7e194f221f" title="func_one" alt="" coords="490,1525,553,1552"/>
-<area shape="rect" id="node93" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="343,1449,399,1476"/>
-<area shape="rect" id="node94" href="$cmulti_8c.html#a56afc4644a4adb8b844673177a383716" title="cmulti型がInfであるかの判定. " alt="" coords="346,1677,397,1704"/>
-<area shape="rect" id="node95" href="$cmulti_8c.html#a0873a88220c125143451a70a83a712f6" title="cmulti型が数であるかの判定. " alt="" coords="485,1931,558,1957"/>
-<area shape="rect" id="node96" href="$cmulti_8c.html#ae0ae228fb9a1745bb48724269f3f3703" title="cmulti型が零であるかの判定. " alt="" coords="342,1829,401,1856"/>
-<area shape="rect" id="node97" href="$cmulti_8c.html#a6a35a13b3315937a6d87c05315d13249" title="cmulti型の値の比較 x==y " alt="" coords="346,1981,397,2008"/>
-<area shape="rect" id="node99" href="$cmulti_8c.html#ad5f1e890ff473b1d8c05ba90df4d1f67" title="cmulti型が実数であるかの判定. " alt="" coords="343,1880,399,1907"/>
-<area shape="rect" id="node100" href="$func__real_8c.html#a562ea62405b4679b33d38360f5e011d7" title="func_real_rmulti" alt="" coords="325,2032,418,2059"/>
-<area shape="rect" id="node83" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="494,1424,549,1451"/>
-<area shape="rect" id="node85" href="$is__rmulti_8h.html#ade1f45af05531f2241bc00ed700dc820" title="rmulti型がInfであるかの判定. " alt="" coords="497,1728,546,1755"/>
-<area shape="rect" id="node87" href="$is__rmulti_8h.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="629,1829,701,1856"/>
-<area shape="rect" id="node88" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="493,1880,550,1907"/>
-<area shape="rect" id="node90" href="$is__rmulti_8h.html#ac1feca052505601af748d9d4763b054d" title="rmulti型の値の比較 x==y " alt="" coords="497,1576,546,1603"/>
-<area shape="rect" id="node91" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="629,1576,701,1603"/>
-<area shape="rect" id="node98" href="$cmulti_8c.html#abebf61368dd3636ee2a45576129e987c" title="cmulti型の値の比較 x&lt;=&gt;y " alt="" coords="492,1981,551,2008"/>
+<area shape="rect" id="node56" href="$bigint_8c.html#a4f0992bf040ee7788cd759ed3b606bdb" title="bigint_get_rmulti" alt="" coords="617,652,713,679"/>
+<area shape="rect" id="node58" href="$func__bigint_8c.html#a5b3527e18a9a626a5c08683e401252c4" title="func_bigint_p" alt="" coords="1049,715,1131,741"/>
+<area shape="rect" id="node59" href="$cmulti_8c.html#a2e5b02c852a861f99dc776505f954190" title="y=x " alt="" coords="641,703,690,729"/>
+<area shape="rect" id="node62" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="484,1253,559,1280"/>
+<area shape="rect" id="node15" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="633,1741,698,1768"/>
+<area shape="rect" id="node16" href="$func_8c.html#acd4481611ac7a446cec5acbf860160c8" title="func_struct_new" alt="" coords="761,1817,856,1844"/>
+<area shape="rect" id="node17" href="$is__strings_8h.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="776,1555,841,1581"/>
+<area shape="rect" id="node19" href="$func_8c.html#a10acafc6a5eea7c5644da39a93913f93" title="func_p_new" alt="" coords="1052,1615,1128,1641"/>
+<area shape="rect" id="node36" href="$func__args_8c.html#a917ed9a99a463c7098ac747fb2861f2f" title="func_a_new" alt="" coords="771,1640,847,1667"/>
+<area shape="rect" id="node37" href="$func__find_8c.html#a3c1cd2adbd08b9f344659cd4793151d0" title="func_find_amin" alt="" coords="1320,1539,1409,1565"/>
+<area shape="rect" id="node18" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="905,1513,1001,1540"/>
+<area shape="rect" id="node20" href="$func_8c.html#ac5d12f1e54448af685ab9ce171c88304" title="func_p_del" alt="" coords="1188,1488,1259,1515"/>
+<area shape="rect" id="node35" href="$func__find_8c.html#a27fff46baa89a49fad2bba6c25bbcd70" title="func_find_p_new" alt="" coords="1316,1603,1413,1629"/>
+<area shape="rect" id="node21" href="$func__find_8c.html#ad399ee5a1d7d999d92d17ff0cab2178d" title="func_find_p_del" alt="" coords="1319,1425,1411,1452"/>
+<area shape="rect" id="node22" href="$func__builtin_8c.html#a93600b658725ef58d9cf55fda4f24af3" title="func_is_builtin" alt="" coords="1480,1628,1565,1655"/>
+<area shape="rect" id="node23" href="$func__builtin_8c.html#af2ffde1e2fbeb40dcad4cab81a6c4a95" title="func_builtin_p_del" alt="" coords="1471,1121,1574,1148"/>
+<area shape="rect" id="node25" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="1487,1729,1559,1756"/>
+<area shape="rect" id="node26" href="$func__table_8c.html#aa5e5d16773a7094f7ec6aaf6322d84b8" title="func_is_table" alt="" coords="1482,1375,1563,1401"/>
+<area shape="rect" id="node27" href="$func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979" title="func_is_strings" alt="" coords="1478,1425,1567,1452"/>
+<area shape="rect" id="node28" href="$func__strings_8c.html#ad6e5753db67b577da6c2197882be60c9" title="func_strings_p_del" alt="" coords="1470,1172,1575,1199"/>
+<area shape="rect" id="node29" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="1632,1545,1717,1572"/>
+<area shape="rect" id="node30" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="1486,1527,1559,1553"/>
+<area shape="rect" id="node31" href="$func__def_8c.html#a7fdbff290b2ec06acd8dadc4e946e3fd" title="func_def_p_del" alt="" coords="1477,1020,1568,1047"/>
+<area shape="rect" id="node32" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="1475,1577,1570,1604"/>
+<area shape="rect" id="node33" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="1494,1679,1551,1705"/>
+<area shape="rect" id="node34" href="$func__builtin_8c.html#aae0af1e58719894bfd7c901fc603a2e4" title="func_builtin_p_del_call" alt="" coords="1461,1071,1584,1097"/>
+<area shape="rect" id="node24" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="1639,1071,1710,1097"/>
+<area shape="rect" id="node40" href="$func__find_8c.html#a2b644e09ec80f8db90eb98995258a16e" title="func_find_amax" alt="" coords="1319,1653,1411,1680"/>
+<area shape="rect" id="node41" href="$func__args_8c.html#aab560c18c36aaab1c2d6901c6e9e37b0" title="func_a_del" alt="" coords="917,1564,988,1591"/>
+<area shape="rect" id="node38" href="$func__builtin_8c.html#ab3667436e4487c50e7d1f370b8f8b287" title="func_builtin_amin" alt="" coords="1473,1273,1573,1300"/>
+<area shape="rect" id="node39" href="$func__def_8c.html#af064a9ceac46854c81dceabcbd946d84" title="func_def_amin" alt="" coords="1479,1324,1567,1351"/>
+<area shape="rect" id="node43" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1193,1387,1253,1413"/>
+<area shape="rect" id="node44" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="1179,1437,1268,1464"/>
+<area shape="rect" id="node46" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="635,399,696,425"/>
+<area shape="rect" id="node49" href="$is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="638,449,693,476"/>
+<area shape="rect" id="node51" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="633,601,697,628"/>
+<area shape="rect" id="node52" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="785,551,832,577"/>
+<area shape="rect" id="node53" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="904,855,1001,881"/>
+<area shape="rect" id="node55" href="$is__rmulti_8h.html#abea692bdd415f4f1eb51a26ded714798" title="rmulti型の値を1に設定. " alt="" coords="635,551,696,577"/>
+<area shape="rect" id="node57" href="$is__rmulti_8h.html#a0c8b35084a21676995d9b8cbcf8b39c0" title="z=x/y " alt="" coords="783,601,834,628"/>
+<area shape="rect" id="node60" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="785,855,833,881"/>
+<area shape="rect" id="node61" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="784,652,833,679"/>
+<area shape="rect" id="node64" href="$cmulti_8c.html#a8168c3ad5161e6500e5f2c628c1c56cf" title="cmulti型の計算 y=log(x) " alt="" coords="496,919,547,945"/>
+<area shape="rect" id="node69" href="$cmulti_8c.html#a8e74a3ae7ec7d31fcbbe9ab40db22a79" title="z=x*y " alt="" coords="492,1007,551,1033"/>
+<area shape="rect" id="node77" href="$cmulti_8c.html#a5db2a16616e6d3fc2d876499220f5265" title="cmulti型の計算 y=exp(x) " alt="" coords="495,843,548,869"/>
+<area shape="rect" id="node65" href="$cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="631,1057,700,1084"/>
+<area shape="rect" id="node68" href="$is__rmulti_8h.html#a0c4c5bdd977263fe9b55f37d17b24857" title="rmulti型の計算 y=log(x) " alt="" coords="785,1057,833,1084"/>
+<area shape="rect" id="node66" href="$cmulti_8c.html#a17d52e9eeaf22acde0324ac337741df4" title="cmulti型の絶対値 y=abs(x) " alt="" coords="783,1007,835,1033"/>
+<area shape="rect" id="node67" href="$is__rmulti_8h.html#af8957751e0545941e8321a8e7edfc422" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="777,956,840,983"/>
+<area shape="rect" id="node70" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="782,905,835,932"/>
+<area shape="rect" id="node71" href="$is__rmulti_8h.html#aaf4e190f7e0dbbf6fd6ac1b48ba6bc85" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="627,1209,703,1236"/>
+<area shape="rect" id="node74" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="627,1159,703,1185"/>
+<area shape="rect" id="node76" href="$cmulti_8c.html#a9628f0312f1d6ec613f155916457edfb" title="cmulti型の値のコピー y=x. " alt="" coords="640,956,691,983"/>
+<area shape="rect" id="node72" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="782,1159,835,1185"/>
+<area shape="rect" id="node73" href="$rmulti_8c.html#a4acfc1f7f71c44234ca1873f69b6eaa5" title="z=x&#45;y " alt="" coords="782,1209,835,1236"/>
+<area shape="rect" id="node75" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="781,1108,836,1135"/>
+<area shape="rect" id="node78" href="$is__rmulti_8h.html#a30c811543ceedeb1f9987ec8588981c4" title="rmulti型の計算 y=exp(x) " alt="" coords="783,804,834,831"/>
+<area shape="rect" id="node79" href="$cmulti_8c.html#aaa8a19431cf6f99ead0badf3b0b15400" title="cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta) " alt="" coords="631,753,699,780"/>
+<area shape="rect" id="node80" href="$is__rmulti_8h.html#a0ed3380287acbb6cd2ad1772b803accb" title="rmulti型の計算 y=cos(x) " alt="" coords="784,753,833,780"/>
+<area shape="rect" id="node81" href="$is__rmulti_8h.html#a0f98074d720590ac2abb96554b785668" title="rmulti型の計算 y=sin(x) " alt="" coords="785,703,832,729"/>
+<area shape="rect" id="node83" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="328,1608,415,1635"/>
+<area shape="rect" id="node85" href="$func__number_8c.html#a2e52e48c181d23886cb9872110e7a113" title="func_nan" alt="" coords="490,1659,553,1685"/>
+<area shape="rect" id="node87" href="$func__number_8c.html#ab2b75f75f172075368ea0f8ab2f08c37" title="func_inf" alt="" coords="493,1811,550,1837"/>
+<area shape="rect" id="node90" href="$func__number_8c.html#a5b7171537ce3464da4f750991e4322f0" title="func_zero" alt="" coords="489,1861,554,1888"/>
+<area shape="rect" id="node92" href="$func__number_8c.html#a6729710e11f7bb6c9fddca7e194f221f" title="func_one" alt="" coords="490,1557,553,1584"/>
+<area shape="rect" id="node93" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="343,1709,399,1736"/>
+<area shape="rect" id="node94" href="$cmulti_8c.html#a56afc4644a4adb8b844673177a383716" title="cmulti型がInfであるかの判定. " alt="" coords="346,1456,397,1483"/>
+<area shape="rect" id="node95" href="$cmulti_8c.html#a0873a88220c125143451a70a83a712f6" title="cmulti型が数であるかの判定. " alt="" coords="485,2013,558,2040"/>
+<area shape="rect" id="node96" href="$cmulti_8c.html#ae0ae228fb9a1745bb48724269f3f3703" title="cmulti型が零であるかの判定. " alt="" coords="342,1963,401,1989"/>
+<area shape="rect" id="node97" href="$cmulti_8c.html#a35d1f953aa1a93659d0dcef7475b6970" title="cmulti型の値の比較 x==y " alt="" coords="347,2064,396,2091"/>
+<area shape="rect" id="node99" href="$cmulti_8c.html#ad5f1e890ff473b1d8c05ba90df4d1f67" title="cmulti型が実数であるかの判定. " alt="" coords="343,1912,399,1939"/>
+<area shape="rect" id="node100" href="$func__real_8c.html#a562ea62405b4679b33d38360f5e011d7" title="func_real_rmulti" alt="" coords="325,1861,418,1888"/>
+<area shape="rect" id="node84" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="494,1760,549,1787"/>
+<area shape="rect" id="node86" href="$is__rmulti_8h.html#ade1f45af05531f2241bc00ed700dc820" title="rmulti型がInfであるかの判定. " alt="" coords="497,1456,546,1483"/>
+<area shape="rect" id="node88" href="$is__rmulti_8h.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="629,1925,701,1952"/>
+<area shape="rect" id="node89" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="493,1963,550,1989"/>
+<area shape="rect" id="node91" href="$is__rmulti_8h.html#a13df08f84357e8142be1fe1b684724fc" title="rmulti型の値の比較 x==y " alt="" coords="497,1608,545,1635"/>
+<area shape="rect" id="node98" href="$cmulti_8c.html#a116833455b1d9bc6063e6836555ee661" title="cmulti型の値の比較 x&lt;=&gt;y " alt="" coords="493,2064,550,2091"/>
 </map>

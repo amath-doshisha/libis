@@ -1,6 +1,6 @@
 <map id="dsvd_residual" name="dsvd_residual">
-<area shape="rect" id="node2" href="$dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="dvec_copy" alt="" coords="151,5,220,32"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#a07940a0907492d6d6dc9aaa760a36d4d" title="dvec_scale" alt="" coords="149,56,221,83"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a9880a8dadf3a853a8c3b965e890fe083" title="dvec_add_lintr" alt="" coords="142,107,229,133"/>
-<area shape="rect" id="node5" href="$dvec_8c.html#a1c6b3004eef650b8894d7e275b036795" title="dvec_add_lintr_t" alt="" coords="137,157,233,184"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="y=x " alt="" coords="154,5,223,32"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#a75ab82c6786cf0ba48e78a570bfa8bb2" title="z=x*y " alt="" coords="137,56,240,83"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a9880a8dadf3a853a8c3b965e890fe083" title="dvec_add_lintr" alt="" coords="145,107,232,133"/>
+<area shape="rect" id="node5" href="$dvec_8c.html#a1c6b3004eef650b8894d7e275b036795" title="dvec_add_lintr_t" alt="" coords="141,157,237,184"/>
 </map>

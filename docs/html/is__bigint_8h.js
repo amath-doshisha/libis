@@ -41,5 +41,7 @@ var is__bigint_8h =
     [ "bigint_sgn", "is__bigint_8h.html#a01ffca6237d6a5ffdb6d87e2929197c2", null ],
     [ "bigint_sub", "is__bigint_8h.html#a09028d57f425a8a6f72e41ace36eb359", null ],
     [ "bigint_swap", "is__bigint_8h.html#a9ac02428a33f7b73c2526cdc21dc66c6", null ],
+    [ "icset_bigint", "is__bigint_8h.html#a0bf145749ad16c6803fd398d3157eac5", null ],
+    [ "irset_bigint", "is__bigint_8h.html#a0a55aa9bc2d8ea1df79f9ff3ab99b88a", null ],
     [ "rset_bi", "is__bigint_8h.html#a4324ae528fd6e5df3e696de08a113fa6", null ]
 ];

@@ -42,7 +42,7 @@
 
 /**
  @brief  rmulti型のベクトルの新規生成.
-*/
+ */
 rmulti **rvec_allocate(int n)
 {
   int i;
@@ -67,7 +67,7 @@ rmulti **rvec_allocate_prec(int n, int prec)
 /**
  @brief  rmulti型のベクトルの複製の生成.
 */
-rmulti **rvec_allocate_clone(int n, rmulti **y)
+rmulti **rvec_allocate_clone_rvec(int n, rmulti **y)
 {
   int i;
   rmulti **x;
@@ -104,7 +104,7 @@ void rvec_round(int n, rmulti **x, int prec)
 void rvec_clone(int n, rmulti **y, rmulti **x)
 {
   int i;
-  for(i=0; i<n; i++){ rclone(y[i],x[i]); }
+  for(i=0; i<n; i++){ rclone_r(y[i],x[i]); }
 }
 
 /**
@@ -113,7 +113,7 @@ void rvec_clone(int n, rmulti **y, rmulti **x)
 void rvec_clone_index(int n, rmulti **y, rmulti **x, int *I)
 {
   int i;
-  for(i=0; i<n; i++){ rclone(y[i],x[I[i]]); }
+  for(i=0; i<n; i++){ rclone_r(y[i],x[I[i]]); }
 }
 
 /**
@@ -122,7 +122,7 @@ void rvec_clone_index(int n, rmulti **y, rmulti **x, int *I)
 void rvec_index_clone(int n, rmulti **y, rmulti **x, int *I)
 {
   int i;
-  for(i=0; i<n; i++){ rclone(y[I[i]],x[i]); }
+  for(i=0; i<n; i++){ rclone_r(y[I[i]],x[i]); }
 }
 
 /**
@@ -227,7 +227,7 @@ void rvec_print(int n, rmulti **x, char *name, char format, int digits)
     return;
   }
   s=svec_allocate(n);
-  rvec_get_s(n,s,x,format,digits);
+  rvec_get_svec(n,s,x,format,digits);
   svec_print(n,s,name);
   s=svec_free(n,s);
 }
@@ -338,8 +338,8 @@ void rvec_save_log2_abs(int n, rmulti **x,int offset, int digits, char* fmt, ...
   // write
   sprintf(gmpfmt,"%%d\t%%.%dRe\n",digits);
   for(i=0;i<n;i++){
-    rabs(value,x[i]);
-    rlog2(value,value);
+    rabs_r(value,x[i]);
+    rlog2_r(value,value);
     if(mpfr_fprintf(fid,gmpfmt,i+offset,value)<0){ ERROR_AT; exit(0); }
   }
   // close
@@ -452,13 +452,13 @@ rmulti **rvec_bin_load(int *n, char* fmt, ...)
       fclose(fid);                    // close
       zx=zvec_bin_load(n,fname);      // load
       rx=rvec_allocate_prec((*n),53); // allocate
-      rvec_set_z((*n),rx,zx);         // copy
+      rvec_set_zvec((*n),rx,zx);         // copy
       zx=zvec_free(zx);               // free
     }else if(k==(size_t)l && strncmp(buf,"dvec",l)==0){ /* dvec */
       fclose(fid);                    // close
       dx=dvec_bin_load(n,fname);      // load
       rx=rvec_allocate_prec((*n),53); // allocate
-      rvec_set_d((*n),rx,dx);         // copy
+      rvec_set_dvec((*n),rx,dx);         // copy
       dx=dvec_free(dx);               // free
     }else{ fclose(fid); rx=NULL; (*n)=0; }
   }
@@ -495,7 +495,7 @@ void rvec_set_inf(int n, rmulti **x, int sgn)
 /**
  @brief rmulti型のベクトルの値を文字列から設定.
 */
-void rvec_set_s(int n, rmulti **x, char **str)
+void rvec_set_svec(int n, rmulti **x, char **str)
 {
   int i;
   for(i=0; i<n; i++){ rset_s(x[i],str[i]); }
@@ -504,16 +504,16 @@ void rvec_set_s(int n, rmulti **x, char **str)
 /**
  @brief rmulti型のベクトルの値を整数 から設定.
 */
-void rvec_set_si(int n, rmulti **y, int *x)
+void rvec_set_ivec(int n, rmulti **y, int *x)
 {
   int i;
-  for(i=0; i<n; i++){ rset_si(y[i],x[i]); }
+  for(i=0; i<n; i++){ rset_i(y[i],x[i]); }
 }
 
 /**
  @brief rmulti型のベクトルの値のコピー y=x.
  */
-void rvec_set_r(int n, rmulti **y, rmulti **x)
+void rvec_set_rvec(int n, rmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rset_r(y[i],x[i]); }
@@ -522,21 +522,21 @@ void rvec_set_r(int n, rmulti **y, rmulti **x)
 /**
  @brief rmulti型のベクトルの値を倍精度実数から設定.
 */
-void rvec_set_d(int n, rmulti **y, double *x)
+void rvec_set_dvec(int n, rmulti **y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ rset_d(y[i],x[i]); }
 }
 
 // y=x
-void dvec_set_r(int n, double *y, rmulti **x)
+void dvec_set_rvec(int n, double *y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=rget_d(x[i]); }
 }
 
 // y=x
-void zvec_set_r(int n, dcomplex *y, rmulti **x)
+void zvec_set_rvec(int n, dcomplex *y, rmulti **x)
 {
   double a;
   int i;
@@ -549,37 +549,10 @@ void zvec_set_r(int n, dcomplex *y, rmulti **x)
 /**
  @brief rmulti型のベクトルの値を倍精度複素数から設定.
 */
-void rvec_set_z(int n, rmulti **y, dcomplex *x)
+void rvec_set_zvec(int n, rmulti **y, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ rset_d(y[i],Z_R(x[i])); }
-}
-
-/**
- @brief rmulti型のベクトルの値を設定.
- */
-void rvec_set_c(int n, rmulti **y, cmulti **x)
-{
-  int i;
-  for(i=0; i<n; i++){ rcopy(y[i],C_R(x[i])); }
-}
-
-/**
- @brief rmulti型のベクトルの値を設定.
- */
-void rvec_set_ir(int n, rmulti **y, rmulti **x0, rmulti **x1)
-{
-  int i;
-  for(i=0; i<n; i++){ irmid(y[i],x0[i],x1[i]); }
-}
-
-/**
- @brief rmulti型のベクトルの値を設定.
- */
-void rvec_set_ic(int n, rmulti **y, cmulti **x0, cmulti **x1)
-{
-  int i;
-  for(i=0; i<n; i++){ irmid(y[i],C_R(x0[i]),C_R(x1[i])); }
 }
 
 /**
@@ -633,8 +606,8 @@ void rvec_set_rand(int n, rmulti **x, double a, double b)
   int i;
   for(i=0; i<n; i++){
     rset_rand(x[i]);
-    rmul_d(x[i],x[i],a);
-    radd_d(x[i],x[i],b);
+    rmul_rd(x[i],x[i],a);
+    radd_rd(x[i],x[i],b);
   }
 }
 
@@ -650,7 +623,7 @@ void rvec_set_rand(int n, rmulti **x, double a, double b)
 /**
  @brief rmulti型のベクトルを整数型に変換.
  */
-void rvec_get_si(int n, int *y, rmulti **x)
+void rvec_get_ivec(int n, int *y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=rget_d(x[i]); }
@@ -659,7 +632,7 @@ void rvec_get_si(int n, int *y, rmulti **x)
 /**
  @brief rmulti型のベクトルを倍精度実数型に変換.
  */
-void rvec_get_d(int n, double *y, rmulti **x)
+void rvec_get_dvec(int n, double *y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=rget_d(x[i]); }
@@ -668,7 +641,7 @@ void rvec_get_d(int n, double *y, rmulti **x)
 /**
  @brief rmulti型のベクトルを倍精度複素数型に変換.
  */
-void rvec_get_z(int n, dcomplex *y, rmulti **x)
+void rvec_get_zvec(int n, dcomplex *y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ Z_SET(y[i],rget_d(x[i]),0); }
@@ -677,7 +650,7 @@ void rvec_get_z(int n, dcomplex *y, rmulti **x)
 /**
  @brief rmulti型のベクトルを文字列型に変換 y=char(x)
  */
-void rvec_get_s(int n, char **y, rmulti **x, char format, int digits)
+void rvec_get_svec(int n, char **y, rmulti **x, char format, int digits)
 {
   char f[1024],buf[1<<13];
   int i;
@@ -752,7 +725,7 @@ void rvec_quick_sort(int n, rmulti **x, int *I, int left, int right)
   if(I!=NULL) ivec_swap_at(I,left,(left+right)/2);
   last=left;
   for(i=left+1; i<=right; i++){
-    if(rlt(x[i],x[left])){
+    if(lt_rr(x[i],x[left])){
       ++last;
       rswap(x[last],x[i]);
       if(I!=NULL) ivec_swap_at(I,last,i);      
@@ -770,7 +743,7 @@ void rvec_quick_sort(int n, rmulti **x, int *I, int left, int right)
 void rvec_sort_index(int *I, int n, rmulti **X)
 {
   rmulti **Y=NULL;
-  Y=rvec_allocate_clone(n,X);
+  Y=rvec_allocate_clone_rvec(n,X);
   rvec_sort(n,Y,I);
   Y=rvec_free(n,Y);
 }
@@ -790,27 +763,27 @@ void rvec_copy(int n, rmulti **y, rmulti **x)
 {
   int i;
   if(y==x){ return; }
-  for(i=0; i<n; i++){ rcopy(y[i],x[i]); }
+  for(i=0; i<n; i++){ rset_r(y[i],x[i]); }
 }
 
 /**
  @brief rmulti型のベクトルの値の要素番号Iに従ったコピー y=x.
  @details y[i]=x[I[i]], i=0,1,2,..,n-1.
 */
-void rvec_copy_index(int n, rmulti **y, rmulti **x, const int *I)
+void rvec_copy_index(int n, rmulti **y, rmulti **x, int *I)
 {
   int i;
   if(y==x){ rvec_swap_index(n,x,I); return; }
-  for(i=0; i<n; i++){ rcopy(y[i],x[I[i]]); }
+  for(i=0; i<n; i++){ rset_r(y[i],x[I[i]]); }
 }
 
 /**
  @brief rmulti型のベクトルの値を添字を指定してコピー y(I)=x.
 */
-void rvec_index_copy(int n, rmulti **y, rmulti **x, int *I)
+void rvec_index_copy(int n, rmulti **y, int *I, rmulti **x)
 {
   int i;
-  for(i=0; i<n; i++){ rcopy(y[I[i]],x[i]); }
+  for(i=0; i<n; i++){ rset_r(y[I[i]],x[i]); }
 }
 
 /**
@@ -837,7 +810,7 @@ void rvec_div_2exp(int n, rmulti **y, rmulti **x, int p)
 void rvec_neg(int n, rmulti **y, rmulti **x)
 {
   int i;
-  for(i=0; i<n; i++){ rneg(y[i],x[i]); }
+  for(i=0; i<n; i++){ rneg_r(y[i],x[i]); }
 }
 
 /**
@@ -846,7 +819,7 @@ void rvec_neg(int n, rmulti **y, rmulti **x)
 void rvec_abs(int n, rmulti **y, rmulti **x)
 {
   int i;
-  for(i=0; i<n; i++){ rabs(y[i],x[i]); }
+  for(i=0; i<n; i++){ rabs_r(y[i],x[i]); }
 }
 
 /////////////////////////////////////////////////////////////
@@ -857,7 +830,7 @@ void rvec_abs(int n, rmulti **y, rmulti **x)
 void rvec_add_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ radd_rr(z[i],x[i],y[i]); }
 }
 
 /**
@@ -866,7 +839,7 @@ void rvec_add_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 void rvec_add_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_d(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ radd_rd(z[i],x[i],y[i]); }
 }
 
 /**
@@ -875,7 +848,7 @@ void rvec_add_dvec(int n, rmulti **z, rmulti **x, double *y)
 void dvec_add_rvec(int n, rmulti **z, double *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_d(z[i],y[i],x[i]); }
+  for(i=0; i<n; i++){ radd_rd(z[i],y[i],x[i]); }
 }
 
 /**
@@ -884,7 +857,7 @@ void dvec_add_rvec(int n, rmulti **z, double *x, rmulti **y)
 void rvec_add_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_r(z[i],x[i],y); }
+  for(i=0; i<n; i++){ radd_rr(z[i],x[i],y); }
 }
 
 /**
@@ -893,7 +866,7 @@ void rvec_add_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 void rvec_add_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_d(z[i],x[i],y); }
+  for(i=0; i<n; i++){ radd_rd(z[i],x[i],y); }
 }
 
 /**
@@ -902,7 +875,7 @@ void rvec_add_dscalar(int n, rmulti **z, rmulti **x, double y)
 void dvec_add_rscalar(int n, rmulti **z, double *x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_d(z[i],y,x[i]); }
+  for(i=0; i<n; i++){ radd_rd(z[i],y,x[i]); }
 }
 
 /**
@@ -911,7 +884,7 @@ void dvec_add_rscalar(int n, rmulti **z, double *x, rmulti *y)
 void rscalar_add_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ radd_rr(z[i],x,y[i]); }
 }
 
 /**
@@ -920,7 +893,7 @@ void rscalar_add_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 void rscalar_add_dvec(int n, rmulti **z, rmulti *x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_d(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ radd_rd(z[i],x,y[i]); }
 }
 
 /**
@@ -929,7 +902,7 @@ void rscalar_add_dvec(int n, rmulti **z, rmulti *x, double *y)
 void dscalar_add_rvec(int n, rmulti **z, double x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ dadd_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ radd_dr(z[i],x,y[i]); }
 }
 
 //////////////////////////////////////////////////////////
@@ -940,7 +913,7 @@ void dscalar_add_rvec(int n, rmulti **z, double x, rmulti **y)
 void rvec_sub_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rsub_rr(z[i],x[i],y[i]); }
 }
 
 /**
@@ -949,7 +922,7 @@ void rvec_sub_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 void rvec_sub_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_d(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rsub_rd(z[i],x[i],y[i]); }
 }
 
 /**
@@ -958,7 +931,7 @@ void rvec_sub_dvec(int n, rmulti **z, rmulti **x, double *y)
 void dvec_sub_rvec(int n, rmulti **z, double *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ dsub_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rsub_dr(z[i],x[i],y[i]); }
 }
 
 /**
@@ -967,7 +940,7 @@ void dvec_sub_rvec(int n, rmulti **z, double *x, rmulti **y)
 void rvec_sub_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_r(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rsub_rr(z[i],x[i],y); }
 }
 
 /**
@@ -976,7 +949,7 @@ void rvec_sub_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 void rvec_sub_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_d(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rsub_rd(z[i],x[i],y); }
 }
 
 /**
@@ -985,7 +958,7 @@ void rvec_sub_dscalar(int n, rmulti **z, rmulti **x, double y)
 void dvec_sub_rscalar(int n, rmulti **z, double *x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ dsub_r(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rsub_dr(z[i],x[i],y); }
 }
 
 /**
@@ -994,7 +967,7 @@ void dvec_sub_rscalar(int n, rmulti **z, double *x, rmulti *y)
 void rscalar_sub_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rsub_rr(z[i],x,y[i]); }
 }
 
 /**
@@ -1003,7 +976,7 @@ void rscalar_sub_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 void rscalar_sub_dvec(int n, rmulti **z, rmulti *x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_d(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rsub_rd(z[i],x,y[i]); }
 }
 
 /**
@@ -1012,7 +985,7 @@ void rscalar_sub_dvec(int n, rmulti **z, rmulti *x, double *y)
 void dscalar_sub_rvec(int n, rmulti **z, double x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ dsub_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rsub_dr(z[i],x,y[i]); }
 }
 
 //////////////////////////////////////////////////////////
@@ -1023,7 +996,7 @@ void dscalar_sub_rvec(int n, rmulti **z, double x, rmulti **y)
 void rvec_mul_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rmul_rr(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1032,7 +1005,7 @@ void rvec_mul_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 void rvec_mul_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul_d(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rmul_rd(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1041,7 +1014,7 @@ void rvec_mul_dvec(int n, rmulti **z, rmulti **x, double *y)
 void dvec_mul_rvec(int n, rmulti **z, double *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ dmul_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rmul_dr(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1050,7 +1023,7 @@ void dvec_mul_rvec(int n, rmulti **z, double *x, rmulti **y)
 void rvec_mul_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul_r(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rmul_rr(z[i],x[i],y); }
 }
 
 /**
@@ -1059,7 +1032,7 @@ void rvec_mul_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 void rvec_mul_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul_d(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rmul_rd(z[i],x[i],y); }
 }
 
 /**
@@ -1068,7 +1041,7 @@ void rvec_mul_dscalar(int n, rmulti **z, rmulti **x, double y)
 void dvec_mul_rscalar(int n, rmulti **z, double *x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ dmul_r(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rmul_dr(z[i],x[i],y); }
 }
 
 /**
@@ -1077,7 +1050,7 @@ void dvec_mul_rscalar(int n, rmulti **z, double *x, rmulti *y)
 void rscalar_mul_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rmul_rr(z[i],x,y[i]); }
 }
 
 /**
@@ -1086,7 +1059,7 @@ void rscalar_mul_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 void rscalar_mul_dvec(int n, rmulti **z, rmulti *x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ rmul_d(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rmul_rd(z[i],x,y[i]); }
 }
 
 /**
@@ -1095,7 +1068,7 @@ void rscalar_mul_dvec(int n, rmulti **z, rmulti *x, double *y)
 void dscalar_mul_rvec(int n, rmulti **z, double x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ dmul_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rmul_dr(z[i],x,y[i]); }
 }
 
 
@@ -1107,7 +1080,7 @@ void dscalar_mul_rvec(int n, rmulti **z, double x, rmulti **y)
 void rvec_div_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rdiv_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rdiv_rr(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1116,7 +1089,7 @@ void rvec_div_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 void rvec_div_dvec(int n, rmulti **z, rmulti **x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ rdiv_d(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rdiv_rd(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1125,7 +1098,7 @@ void rvec_div_dvec(int n, rmulti **z, rmulti **x, double *y)
 void dvec_div_rvec(int n, rmulti **z, double *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ ddiv_r(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rdiv_dr(z[i],x[i],y[i]); }
 }
 
 /**
@@ -1134,7 +1107,7 @@ void dvec_div_rvec(int n, rmulti **z, double *x, rmulti **y)
 void rvec_div_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ rdiv_r(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rdiv_rr(z[i],x[i],y); }
 }
 
 /**
@@ -1143,7 +1116,7 @@ void rvec_div_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 void rvec_div_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ rdiv_d(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rdiv_rd(z[i],x[i],y); }
 }
 
 /**
@@ -1152,7 +1125,7 @@ void rvec_div_dscalar(int n, rmulti **z, rmulti **x, double y)
 void dvec_div_rscalar(int n, rmulti **z, double *x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ ddiv_r(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rdiv_dr(z[i],x[i],y); }
 }
 
 /**
@@ -1161,7 +1134,7 @@ void dvec_div_rscalar(int n, rmulti **z, double *x, rmulti *y)
 void rscalar_div_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rdiv_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rdiv_rr(z[i],x,y[i]); }
 }
 
 /**
@@ -1170,7 +1143,7 @@ void rscalar_div_rvec(int n, rmulti **z, rmulti *x, rmulti **y)
 void rscalar_div_dvec(int n, rmulti **z, rmulti *x, double *y)
 {
   int i;
-  for(i=0; i<n; i++){ rdiv_d(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rdiv_rd(z[i],x,y[i]); }
 }
 
 /**
@@ -1179,7 +1152,7 @@ void rscalar_div_dvec(int n, rmulti **z, rmulti *x, double *y)
 void dscalar_div_rvec(int n, rmulti **z, double x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ ddiv_r(z[i],x,y[i]); }
+  for(i=0; i<n; i++){ rdiv_dr(z[i],x,y[i]); }
 }
 
 
@@ -1188,55 +1161,55 @@ void dscalar_div_rvec(int n, rmulti **z, double x, rmulti **y)
 /**
  @brief rmulti型のベクトルの要素ごとの掛け算の加算 z+=x.*y
 */
-void rvec_add_mul(int n, rmulti **z, rmulti **x, rmulti **y)
+void rvec_add_mul_rvec_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_mul(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ radd_mul_rr(z[i],x[i],y[i]); }
 }
 
 /**
  @brief rmulti型のベクトルxとスカラーyの掛け算の加算 z+=x*y
 */
-void rvec_add_mul_r(int n, rmulti **z, rmulti **x, rmulti *y)
+void rvec_add_mul_rvec_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_mul(z[i],x[i],y); }
+  for(i=0; i<n; i++){ radd_mul_rr(z[i],x[i],y); }
 }
 
 /**
  @brief rmulti型のベクトルxとスカラーyの掛け算の加算 z+=x*y
 */
-void rvec_add_mul_d(int n, rmulti **z, rmulti **x, double y)
+void rvec_add_mul_rvec_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ radd_mul_d(z[i],x[i],y); }
+  for(i=0; i<n; i++){ radd_mul_rd(z[i],x[i],y); }
 }
 
 /**
  @brief rmulti型のベクトルの要素ごとの掛け算の減算 z-=x.*y
 */
-void rvec_sub_mul(int n, rmulti **z, rmulti **x, rmulti **y)
+void rvec_sub_mul_rvec_rvec(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_mul(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rsub_mul_rr(z[i],x[i],y[i]); }
 }
 
 /**
  @brief rmulti型のベクトルxとスカラーyの掛け算の減算 z-=x*y
 */
-void rvec_sub_mul_r(int n, rmulti **z, rmulti **x, rmulti *y)
+void rvec_sub_mul_rvec_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_mul(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rsub_mul_rr(z[i],x[i],y); }
 }
 
 /**
  @brief rmulti型のベクトルxとスカラーyの掛け算の減算 z-=x*y
 */
-void rvec_sub_mul_d(int n, rmulti **z, rmulti **x, double y)
+void rvec_sub_mul_rvec_dscalar(int n, rmulti **z, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ rsub_mul_d(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rsub_mul_rd(z[i],x[i],y); }
 }
 
 /**
@@ -1246,7 +1219,7 @@ void rvec_abs_sub(int n, rmulti **z, rmulti **x, rmulti **y)
 {
   int i;
   for(i=0; i<n; i++){
-    rabs_sub(z[i],x[i],y[i]);
+    rabs_sub_rr(z[i],x[i],y[i]);
   }
 }
 
@@ -1257,17 +1230,8 @@ void rvec_abs_sub_r(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
   for(i=0; i<n; i++){
-    rabs_sub(z[i],x[i],y);
+    rabs_sub_rr(z[i],x[i],y);
   }
-}
-
-/**
- @brief rmulti型のべき乗 z=x^y
-*/
-void rvec_pow_ui(int n, rmulti **z, rmulti **x, ulong y)
-{
-  int i;
-  for(i=0; i<n; i++){ rpow_ui(z[i],x[i],y); }
 }
 
 /**
@@ -1287,7 +1251,7 @@ void rvec_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
   for(i=0; i<m; i++){
     rset_zero(z[i]); // z=0
     for(j=0; j<n; j++){
-      radd_mul(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
+      radd_mul_rr(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
     }
   }
   rvec_copy(m,y,z); // y=z
@@ -1309,9 +1273,9 @@ void rvec_add_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
   rmulti **z=NULL;
   RVAp(z,y,m);
   for(i=0; i<m; i++){
-    rcopy(z[i],y[i]); // z=y
+    rset_r(z[i],y[i]); // z=y
     for(j=0; j<n; j++){
-      radd_mul(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
+      radd_mul_rr(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
     }
   }
   rvec_copy(m,y,z); // y=z
@@ -1333,9 +1297,9 @@ void rvec_sub_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
   rmulti **z=NULL;
   RVAp(z,y,m);
   for(i=0; i<m; i++){
-    rcopy(z[i],y[i]); // z=y
+    rset_r(z[i],y[i]); // z=y
     for(j=0; j<n; j++){
-      rsub_mul(z[i],MAT(A,i,j,LDA),x[j]); // z-=A*x
+      rsub_mul_rr(z[i],MAT(A,i,j,LDA),x[j]); // z-=A*x
     }
   }
   rvec_copy(m,y,z); // y=z
@@ -1359,7 +1323,7 @@ void rvec_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
   for(j=0; j<n; j++){
     rset_zero(z[j]); // z=0
     for(i=0; i<m; i++){
-      radd_mul(z[j],MAT(A,i,j,LDA),x[i]); // z=A'*x
+      radd_mul_rr(z[j],MAT(A,i,j,LDA),x[i]); // z=A'*x
     }
   }
   rvec_copy(n,y,z); // y=z
@@ -1381,9 +1345,9 @@ void rvec_add_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
   rmulti **z=NULL;
   RVAp(z,y,n);
   for(j=0; j<n; j++){
-    rcopy(z[j],y[j]); // z=y
+    rset_r(z[j],y[j]); // z=y
     for(i=0; i<m; i++){
-      radd_mul(z[j],MAT(A,i,j,LDA),x[i]); // z+=A'*x
+      radd_mul_rr(z[j],MAT(A,i,j,LDA),x[i]); // z+=A'*x
     }
   }
   rvec_copy(n,y,z); // y=z
@@ -1405,9 +1369,9 @@ void rvec_sub_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
   rmulti **z=NULL;
   RVAp(z,y,n);
   for(j=0; j<n; j++){
-    rcopy(z[j],y[j]); // z=y
+    rset_r(z[j],y[j]); // z=y
     for(i=0; i<m; i++){
-      rsub_mul(z[j],MAT(A,i,j,LDA),x[i]); // z-=A'*x
+      rsub_mul_rr(z[j],MAT(A,i,j,LDA),x[i]); // z-=A'*x
     }
   }
   rvec_copy(n,y,z); // y=z
@@ -1421,7 +1385,7 @@ void rvec_sum(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_zero(value);
-  for(i=0; i<n; i++){ radd_r(value,value,x[i]); }
+  for(i=0; i<n; i++){ radd_rr(value,value,x[i]); }
 }
 
 /**
@@ -1431,7 +1395,7 @@ void rvec_sum_abs(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_zero(value); // value=0
-  for(i=0; i<n; i++){ radd_abs(value,x[i]); } // value+=abs(x[i])
+  for(i=0; i<n; i++){ radd_abs_r(value,x[i]); } // value+=abs(x[i])
 }
 
 /**
@@ -1441,7 +1405,7 @@ void rvec_sum_pow2(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_zero(value);
-  for(i=0; i<n; i++){ radd_mul(value,x[i],x[i]); }
+  for(i=0; i<n; i++){ radd_mul_rr(value,x[i],x[i]); }
 }
 
 /**
@@ -1451,7 +1415,7 @@ void rvec_sum_mul(rmulti *value, int n, rmulti **x, rmulti **y)
 {
   int i;
   rset_zero(value);
-  for(i=0; i<n; i++){ radd_mul(value,x[i],y[i]); }
+  for(i=0; i<n; i++){ radd_mul_rr(value,x[i],y[i]); }
 }
 
 /**
@@ -1464,8 +1428,8 @@ void rvec_sum_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
   RAp(a,value);
   rset_zero(value); // value=0
   for(i=0; i<n; i++){
-    rsub_r(a,x[i],y[i]); // a=x[i]-y[i]
-    radd_abs(value,a); // value+=abs(x[i]-y[i])
+    rsub_rr(a,x[i],y[i]); // a=x[i]-y[i]
+    radd_abs_r(value,a); // value+=abs(x[i]-y[i])
   }
   RF(a);
 }
@@ -1477,10 +1441,10 @@ void rvec_sum_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
 void rvec_max(rmulti *value, int n, rmulti **x)
 {
   int i;
-  rcopy(value,x[0]);      // value=x[0]
+  rset_r(value,x[0]);      // value=x[0]
   for(i=1; i<n; i++){
-    if(rgt(x[i],value)){     // x[i]>value
-      rcopy(value,x[i]);  // value=x[i]
+    if(gt_rr(x[i],value)){     // x[i]>value
+      rset_r(value,x[i]);  // value=x[i]
     }
   }
 }
@@ -1493,11 +1457,11 @@ void rvec_max_abs(rmulti *value, int n, rmulti **x)
   int i;
   rmulti *a=NULL;
   RAp(a,value);
-  rabs(value,x[0]);   // value=abs(x[0])
+  rabs_r(value,x[0]);   // value=abs(x[0])
   for(i=1; i<n; i++){
-    rabs(a,x[i]);     // a=abs(x[i])
-    if(rgt(a,value)){    // a>value
-      rcopy(value,a); // value=a
+    rabs_r(a,x[i]);     // a=abs(x[i])
+    if(gt_rr(a,value)){    // a>value
+      rset_r(value,a); // value=a
     }
   }
   RF(a);
@@ -1511,12 +1475,12 @@ void rvec_max_abs_index(rmulti *value, int n, rmulti **x, int *I)
   int i;
   rmulti *a=NULL;
   RAp(a,value);
-  rabs(value,x[0]);       // value=abs(x[0])
+  rabs_r(value,x[0]);       // value=abs(x[0])
   if(I!=NULL){ (*I)=0; }     // I=i
   for(i=1; i<n; i++){
-    rabs(a,x[i]);         // value=abs(x[i])
-    if(rgt(a,value)){        // a>value
-      rcopy(value,a);        // value=a
+    rabs_r(a,x[i]);         // value=abs(x[i])
+    if(gt_rr(a,value)){        // a>value
+      rset_r(value,a);        // value=a
       if(I!=NULL){ (*I)=i; } // I=i
     }
   }
@@ -1531,13 +1495,13 @@ void rvec_max_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
   int i;
   rmulti *a=NULL;
   RAp(a,value);
-  rsub_r(a,x[0],y[0]);   // a=x[0]-y[0]
-  rabs(value,a);       // value=abs(x[0]-y[0])
+  rsub_rr(a,x[0],y[0]);   // a=x[0]-y[0]
+  rabs_r(value,a);       // value=abs(x[0]-y[0])
   for(i=1; i<n; i++){
-    rsub_r(a,x[i],y[i]); // a=x[i]-y[i]
-    rabs(a,a);         // a=abs(x[i]-y[i])
-    if(rgt(a,value)){
-      rcopy(value,a);  // value=a
+    rsub_rr(a,x[i],y[i]); // a=x[i]-y[i]
+    rabs_r(a,a);         // a=abs(x[i]-y[i])
+    if(gt_rr(a,value)){
+      rset_r(value,a);  // value=a
     }
   }
   RF(a);
@@ -1549,10 +1513,10 @@ void rvec_max_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
 void rvec_min(rmulti *value, int n, rmulti **x)
 {
   int i;
-  rcopy(value,x[0]);      // value=x[0]
+  rset_r(value,x[0]);      // value=x[0]
   for(i=1; i<n; i++){
-    if(rlt(x[i],value)){     // x[i]<value
-      rcopy(value,x[i]);  // value=x[i]
+    if(lt_rr(x[i],value)){     // x[i]<value
+      rset_r(value,x[i]);  // value=x[i]
     }
   }
 }
@@ -1565,11 +1529,11 @@ void rvec_min_abs(rmulti *value, int n, rmulti **x)
   int i;
   rmulti *a=NULL;
   RAp(a,value);
-  rabs(value,x[0]);       // value=abs(x[0])
+  rabs_r(value,x[0]);       // value=abs(x[0])
   for(i=1; i<n; i++){
-    rabs(a,x[i]);         // value=abs(x[i])
-    if(rlt(a,value)){     // a<value
-      rcopy(value,a);     // value=a
+    rabs_r(a,x[i]);         // value=abs(x[i])
+    if(lt_rr(a,value)){     // a<value
+      rset_r(value,a);     // value=a
     }
   }
   RF(a);
@@ -1583,12 +1547,12 @@ void rvec_min_abs_index(rmulti *value, int n, rmulti **x, int *I)
   int i;
   rmulti *a=NULL;
   RAp(a,value);
-  rabs(value,x[0]);       // value=abs(x[0])
+  rabs_r(value,x[0]);       // value=abs(x[0])
   if(I!=NULL){ (*I)=0; }     // I=i
   for(i=1; i<n; i++){
-    rabs(a,x[i]);         // value=abs(x[i])
-    if(rlt(a,value)){        // a<value
-      rcopy(value,a);     // value=a
+    rabs_r(a,x[i]);         // value=abs(x[i])
+    if(lt_rr(a,value)){        // a<value
+      rset_r(value,a);     // value=a
       if(I!=NULL){ (*I)=i; } // I=i
     }
   }
@@ -1599,28 +1563,28 @@ void rvec_min_abs_index(rmulti *value, int n, rmulti **x, int *I)
 /**
  @brief rmulti型のべき乗 z=x.^y
 */
-void rvec_pow(int n, rmulti **z, rmulti **x, rmulti **y) 
+void rvec_pow_rvec(int n, rmulti **z, rmulti **x, rmulti **y) 
 {
   int i;
-  for(i=0; i<n; i++){ rpow(z[i],x[i],y[i]); }
+  for(i=0; i<n; i++){ rpow_rr(z[i],x[i],y[i]); }
 }
 
 /**
  @brief rmulti型のべき乗 z=x^y
 */
-void rvec_pow_si(int n, rmulti **z, rmulti **x, long y)
+void rvec_pow_iscalar(int n, rmulti **z, rmulti **x, int y)
 {
   int i;
-  for(i=0; i<n; i++){ rpow_si(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rpow_r(z[i],x[i],y); }
 }
 
 /**
  @brief rmulti型のべき乗 z=x^y
 */
-void rvec_pow_r(int n, rmulti **z, rmulti **x, rmulti *y)
+void rvec_pow_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 {
   int i;
-  for(i=0; i<n; i++){ rpow(z[i],x[i],y); }
+  for(i=0; i<n; i++){ rpow_rr(z[i],x[i],y); }
 }
 
 /**
@@ -1632,8 +1596,8 @@ void rvec_log2_abs(int n, rmulti **y, rmulti **x)
   rmulti *a=NULL;
   RAP(a,y,n);
   for(i=0; i<n; i++){
-    rabs(a,x[i]);
-    rlog2(y[i],a);
+    rabs_r(a,x[i]);
+    rlog2_r(y[i],a);
   }
   RF(a);
 }
@@ -1646,7 +1610,7 @@ void rvec_normalize(int n, rmulti **y, rmulti **x)
   rmulti *a=NULL;
   RAP(a,y,n);
   rvec_norm2(a,n,x);   // a=sqrt(x'*x)
-  rinv(a,a);           // a=1/sqrt(x'*x)
+  rinv_r(a,a);           // a=1/sqrt(x'*x)
   rvec_mul_rscalar(n,y,x,a); // y=x/sqrt(x'*x)
   RF(a);
 }
@@ -1661,8 +1625,8 @@ void rvec_normalize_sgn(int n, rmulti **y, rmulti **x)
   RAP(a,y,n);
   rvec_max_abs_index(a,n,x,&k);        // a=abs(x[k])
   rvec_norm2(a,n,x);                   // a=sqrt(x'*x)
-  rinv(a,a);                           // a=1/a
-  if(ris_negative(x[k])){ rneg(a,a); } // a=-a
+  rinv_r(a,a);                           // a=1/a
+  if(ris_negative(x[k])){ rneg_r(a,a); } // a=-a
   rvec_mul_rscalar(n,y,x,a);                 // y=x/sqrt(x'*x)
   RF(a);
 }
@@ -1675,7 +1639,7 @@ void rvec_orthogonalize(int n, rmulti **y, rmulti **x)
   rmulti *a=NULL;
   RAP(a,y,n);
   rvec_sum_mul(a,n,x,y);    // a=x'*y
-  rvec_sub_mul_r(n,y,x,a);  // y-=x*a
+  rvec_sub_mul_rvec_rscalar(n,y,x,a);  // y-=x*a
   RF(a);
 }
 
@@ -1685,7 +1649,7 @@ void rvec_orthogonalize(int n, rmulti **y, rmulti **x)
 void rvec_norm2(rmulti *value, int n, rmulti **x)
 {
   rvec_sum_pow2(value,n,x); // value=sum(x.^2)
-  rsqrt(value,value);       // value=sqrt(value)
+  rsqrt_r(value,value);       // value=sqrt(value)
 }
 
 /**
@@ -1694,7 +1658,7 @@ void rvec_norm2(rmulti *value, int n, rmulti **x)
 void rvec_average(rmulti *value, int n, rmulti **x)
 {
   rvec_sum(value,n,x);
-  rdiv_si2(value,value,n);
+  rdiv_rd(value,value,n);
 }
 
 /**
@@ -1705,13 +1669,13 @@ void rvec_max_div_abs(rmulti *value, int n, rmulti **x, rmulti **y)
   int i=0;
   rmulti *a=NULL;
   RAp(a,value);
-  rdiv_r(a,x[i],y[i]);   // value=x[0]/y[0]
-  rabs(value,a);       // value=abs(x[0]/y[0])
+  rdiv_rr(a,x[i],y[i]);   // value=x[0]/y[0]
+  rabs_r(value,a);       // value=abs(x[0]/y[0])
   for(i=1; i<n; i++){
-    rdiv_r(a,x[i],y[i]); // a=x[i]/y[i]
-    rabs(a,a);         // a=abs(x[i]/y[i])
-    if(rgt(a,value)){
-      rcopy(value,a);     // value=a
+    rdiv_rr(a,x[i],y[i]); // a=x[i]/y[i]
+    rabs_r(a,a);         // a=abs(x[i]/y[i])
+    if(gt_rr(a,value)){
+      rset_r(value,a);     // value=a
     }
   }
   RF(a);
@@ -1726,9 +1690,9 @@ void rvec_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
   RAp(a,value); RAp(b,value);
   rvec_norm2(a,n,x); // a=sqrt(x'*x)
   rvec_norm2(b,n,y); // b=sqrt(y'*y)
-  rmul_r(a,a,b);       // a=sqrt(x'*x)*sqrt(y'*y)
+  rmul_rr(a,a,b);       // a=sqrt(x'*x)*sqrt(y'*y)
   rvec_sum_mul(b,n,x,y); // b=x'*y
-  rdiv_r(value,b,a);   // valu=(x'*y)/sqrt(x'*x)/sqrt(y'*y)
+  rdiv_rr(value,b,a);   // valu=(x'*y)/sqrt(x'*x)/sqrt(y'*y)
   RF(a); RF(b);
 }
 
@@ -1738,7 +1702,7 @@ void rvec_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
 void rvec_abs_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
 {
   rvec_dcos(value,n,x,y);
-  rabs(value,value);
+  rabs_r(value,value);
 }
 
 /**
@@ -1749,8 +1713,8 @@ void rvec_angle(rmulti *theta, int n, rmulti **x, rmulti **y)
   rmulti *a=NULL;
   RAp(a,theta);
   rvec_abs_dcos(a,n,x,y); // a=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
-  if(rgt_d2(a,1)){ rset_d(a,1); }
-  racos(theta,a);         // theta=acos(dcos)
+  if(gt_rd(a,1)){ rset_d(a,1); }
+  racos_r(theta,a);         // theta=acos(dcos)
   RF(a);
 }
 
@@ -1760,7 +1724,7 @@ void rvec_angle(rmulti *theta, int n, rmulti **x, rmulti **y)
 void rvec_angle_deg(rmulti *theta, int n, rmulti **x, rmulti **y)
 {
   rvec_angle(theta,n,x,y);
-  rmul_d(theta,theta,(180.0/M_PI));
+  rmul_rd(theta,theta,(180.0/M_PI));
 }
 
 /** @} */
@@ -1778,7 +1742,7 @@ int rvec_cmp(int n, rmulti **x, int m, rmulti **y)
 {
   int i,value;
   for(i=0; i<MIN2(n,m); i++){
-    value=rcmp(x[i],y[i]);
+    value=cmp_rr(x[i],y[i]);
     if(value!=0){ return value; } // X!=Y
   }
   if     (n<m){ return -1; } // X<Y
@@ -1792,7 +1756,7 @@ int rvec_cmp(int n, rmulti **x, int m, rmulti **y)
 int rvec_eq(int n, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!req(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!eq_rr(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -1802,7 +1766,7 @@ int rvec_eq(int n, rmulti **x, rmulti **y)
 int rvec_gt(int n, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rgt(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!gt_rr(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -1812,7 +1776,7 @@ int rvec_gt(int n, rmulti **x, rmulti **y)
 int rvec_ge(int n, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rge(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!ge_rr(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -1822,7 +1786,7 @@ int rvec_ge(int n, rmulti **x, rmulti **y)
 int rvec_lt(int n, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rlt(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!lt_rr(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -1832,7 +1796,7 @@ int rvec_lt(int n, rmulti **x, rmulti **y)
 int rvec_le(int n, rmulti **x, rmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rle(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!le_rr(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -1842,7 +1806,7 @@ int rvec_le(int n, rmulti **x, rmulti **y)
 int rvec_eq_d(int n, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!req_d(x[i],y)){ return 0; } }
+  for(i=0; i<n; i++){ if(!eq_rd(x[i],y)){ return 0; } }
   return 1;
 }
 
@@ -1852,7 +1816,7 @@ int rvec_eq_d(int n, rmulti **x, double y)
 int rvec_gt_d2(int n, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rgt_d2(x[i],y)){ return 0; } }
+  for(i=0; i<n; i++){ if(!gt_rd(x[i],y)){ return 0; } }
   return 1;
 }
 
@@ -1862,7 +1826,7 @@ int rvec_gt_d2(int n, rmulti **x, double y)
 int rvec_ge_d2(int n, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rge_d2(x[i],y)){ return 0; } }
+  for(i=0; i<n; i++){ if(!ge_rd(x[i],y)){ return 0; } }
   return 1;
 }
 
@@ -1872,7 +1836,7 @@ int rvec_ge_d2(int n, rmulti **x, double y)
 int rvec_lt_d2(int n, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rlt_d2(x[i],y)){ return 0; } }
+  for(i=0; i<n; i++){ if(!lt_rd(x[i],y)){ return 0; } }
   return 1;
 }
 
@@ -1882,129 +1846,8 @@ int rvec_lt_d2(int n, rmulti **x, double y)
 int rvec_le_d2(int n, rmulti **x, double y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!rle_d2(x[i],y)){ return 0; } }
+  for(i=0; i<n; i++){ if(!le_rd(x[i],y)){ return 0; } }
   return 1;
-}
-
-/** @} */
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/** @name rmulti型の写像に関する関数 */
-/** @{ */
-
-/**
- @brief rmulti型のベクトルに関する写像 y=f(x)
-*/
-void rvec_func(rmulti *y, func_t *f, int n, rmulti **x)
-{
-  int i;
-  rmulti *a=NULL,*b=NULL,*z=NULL;
-  RAp(a,y); RAp(b,y); RAp(z,y);
-  if(f==NULL)                { FUNC_ERROR_ARG1("rvec_func",f); }
-  else if(func_is(f,"nan"))  { rset_nan(z); }
-  else if(func_is(f,"inf"))  { rset_inf(z,1); }
-  else if(func_is_zero(f))   { rset_si(z,0); }
-  else if(func_is_one(f))    { rset_si(z,1); }
-  else if(func_is_bigint(f)) { bigint_get_rmulti(z,func_bigint_p(f)); }
-  else if(func_is_real(f))   { rcopy(z,func_real_p(f)); }
-  else if(func_is_complex(f)){ rset_si(a,0); rset_si(b,0); rdiv_r(z,a,b); }
-  else if(func_is_var(f))    {
-    rset_d(z,1);
-    for(i=0; i<func_var_size(f); i++){
-      if(func_var_pow(f,i)!=0){
-	if(0<=func_var_num(f,i) && func_var_num(f,i)<n){
-	  rpow_si(a,x[func_var_num(f,i)],func_var_pow(f,i));
-	}else{ rset_nan(a); }
-	rmul_r(z,z,a);
-      }
-    }
-  }
-  else if(func_is_add(f))    { rset_d(z,0); for(i=0; i<func_asize(f); i++){ rvec_func(a,func_aget(f,i),n,x); radd_r(z,z,a); } }
-  else if(func_is_mul(f))    { rset_d(z,1); for(i=0; i<func_asize(f); i++){ rvec_func(a,func_aget(f,i),n,x); rmul_r(z,z,a); } }
-  else if(func_is(f,"sqrt")) { rvec_func(a,func_aget(f,0),n,x); rsqrt(z,a); }
-  else if(func_is(f,"exp"))  { rvec_func(a,func_aget(f,0),n,x); rexp(z,a); }
-  else if(func_is(f,"log"))  { rvec_func(a,func_aget(f,0),n,x); rlog(z,a); }
-  else if(func_is(f,"sin"))  { rvec_func(a,func_aget(f,0),n,x); rsin(z,a); }
-  else if(func_is(f,"cos"))  { rvec_func(a,func_aget(f,0),n,x); rcos(z,a); }
-  else if(func_is(f,"tan"))  { rvec_func(a,func_aget(f,0),n,x); rtan(z,a); }
-  else if(func_is(f,"asin")) { rvec_func(a,func_aget(f,0),n,x); rasin(z,a); }
-  else if(func_is(f,"acos")) { rvec_func(a,func_aget(f,0),n,x); racos(z,a); }
-  else if(func_is(f,"atan")) { rvec_func(a,func_aget(f,0),n,x); ratan(z,a); }
-  else if(func_is(f,"sinh")) { rvec_func(a,func_aget(f,0),n,x); rsinh(z,a); }
-  else if(func_is(f,"cosh")) { rvec_func(a,func_aget(f,0),n,x); rcosh(z,a); }
-  else if(func_is(f,"tanh")) { rvec_func(a,func_aget(f,0),n,x); rtanh(z,a); }
-  else if(func_is(f,"asinh")){ rvec_func(a,func_aget(f,0),n,x); rasinh(z,a); }
-  else if(func_is(f,"acosh")){ rvec_func(a,func_aget(f,0),n,x); racosh(z,a); }
-  else if(func_is(f,"atanh")){ rvec_func(a,func_aget(f,0),n,x); ratanh(z,a); }
-  else if(func_is(f,"pow"))  { rvec_func(a,func_aget(f,0),n,x); rvec_func(b,func_aget(f,1),n,x); rpow(z,a,b); }
-  else if(func_is_list(f))   { rset_nan(a); }
-  else if(func_is_rvec(f))   { rset_nan(a); }
-  else if(func_is_cvec(f))   { rset_nan(a); }
-  else if(func_is_rmat(f))   { rset_nan(a); }
-  else if(func_is_cmat(f))   { rset_nan(a); }
-  else                       { rset_nan(a); }
-  if(func_has_power(f))      { rpow_si(z,z,func_power(f)); }
-  rcopy(y,z);
-  RF(a); RF(b); RF(z);
-}
-
-/**
- @brief rmulti型のベクトルに関するベクトル写像 y=f(x) 
-*/
-void rvec_func_list(int m, rmulti **y, func_t *f, int n, rmulti **x)
-{
-  int i;
-  for(i=0; i<m; i++){
-    if(func_is_list(f) && i<func_asize(f)){
-      rvec_func(y[i],func_aget(f,i),n,x);
-    }else{
-      rset_nan(y[i]);
-    }
-  }
-}
-
-/**
- @brief rmulti型に関する写像 y=f(x0)
-*/
-void r1_func(rmulti *y, func_t *f, rmulti *x0)
-{
-  int n=1;
-  rmulti **x=NULL;
-  x=rvec_allocate_prec(n,rget_prec(y));
-  rclone(x[0],x0);
-  rvec_func(y,f,n,x);
-  x=rvec_free(n,x);
-}
-
-/**
- @brief rmulti型に関する写像 y=f(x0,x1)
-*/
-void r2_func(rmulti *y, func_t *f, rmulti *x0, rmulti *x1)
-{
-  int n=2;
-  rmulti **x=NULL;
-  x=rvec_allocate_prec(n,rget_prec(y));
-  rclone(x[0],x0);
-  rclone(x[1],x1);
-  rvec_func(y,f,n,x);
-  x=rvec_free(n,x);
-}
-
-/**
- @brief rmulti型に関する写像 y=f(x0,x1,x2)
-*/
-void r3_func(rmulti *y, func_t *f, rmulti *x0, rmulti *x1, rmulti *x2)
-{
-  int n=3;
-  rmulti **x=NULL;
-  x=rvec_allocate_prec(n,rget_prec(y));
-  rclone(x[0],x0);
-  rclone(x[1],x1);
-  rclone(x[2],x2);
-  rvec_func(y,f,n,x);
-  x=rvec_free(n,x);
 }
 
 /** @} */

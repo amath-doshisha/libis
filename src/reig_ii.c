@@ -61,7 +61,7 @@ void reig_ii_1pair(int n, rmulti **x, rmulti **A, int LDA, rmulti *lambda, int d
     rmat_diag_sub_r(n,n,B,n,A,LDA,lambda);
     // B=B+diag(i*eps)
     eps=rmepsilon(prec);
-    rmul_si(eps,eps,i);
+    rmul_rd(eps,eps,i);
     rmat_diag_add_r(n,n,B,n,B,n,eps);
     eps=rfree(eps);
     // B=L*U

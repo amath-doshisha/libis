@@ -1,10 +1,10 @@
 <map id="cmat_abs" name="cmat_abs">
-<area shape="rect" id="node2" href="$cmulti_8c.html#ae6aa56ed1fbc6ffe1d33b6dea08330af" title="cmulti型の絶対値 y=abs(x) " alt="" coords="119,100,167,127"/>
-<area shape="rect" id="node3" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="215,63,264,89"/>
-<area shape="rect" id="node9" href="$is__rmulti_8h.html#a26662dbe8af4b87190d09ee080a6c18f" title="rmulti型の計算 y=sqrt(x) " alt="" coords="218,125,261,152"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="319,5,369,32"/>
-<area shape="rect" id="node6" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="312,63,376,89"/>
-<area shape="rect" id="node5" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="523,75,620,101"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="424,49,475,76"/>
-<area shape="rect" id="node8" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="424,100,475,127"/>
+<area shape="rect" id="node2" href="$cmulti_8c.html#a17d52e9eeaf22acde0324ac337741df4" title="cmulti型の絶対値 y=abs(x) " alt="" coords="119,100,171,127"/>
+<area shape="rect" id="node3" href="$cmulti_8c.html#ac27df2a809749da2186fe891f40c2565" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="219,63,276,89"/>
+<area shape="rect" id="node9" href="$is__rmulti_8h.html#a14504176d48fad860c538118a0c92941" title="rmulti型の計算 y=sqrt(x) " alt="" coords="222,125,273,152"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="335,5,389,32"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="324,63,400,89"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="551,75,648,101"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="449,49,502,76"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="448,100,503,127"/>
 </map>

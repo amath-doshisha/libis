@@ -14,10 +14,10 @@ void multi_mpower(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   if(!(_M(y)==1 && _N(y)==1 && _L(y)==1)){ MATLAB_ERROR("multi_mpower: z=x^y: y should be scalar."); }
   // operation
   if(_M(x)==1 && _N(x)==1 && _L(x)==1){ // if x is scalar
-         if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('r',1,1,1); rpow   (_R(z)[0],_R(x)[0],_R(y)[0]); }
-    else if(_T(x)=='r' && _T(y)=='c'){ z=multi_allocate('c',1,1,1); cpow_r1(_C(z)[0],_R(x)[0],_C(y)[0]); }
-    else if(_T(x)=='c' && _T(y)=='r'){ z=multi_allocate('c',1,1,1); cpow_r2(_C(z)[0],_C(x)[0],_R(y)[0]); }
-    else if(_T(x)=='c' && _T(y)=='c'){ z=multi_allocate('c',1,1,1); cpow_c (_C(z)[0],_C(x)[0],_C(y)[0]); }
+         if(_T(x)=='r' && _T(y)=='r'){ z=multi_allocate('r',1,1,1); rpow_rr(_R(z)[0],_R(x)[0],_R(y)[0]); }
+    else if(_T(x)=='r' && _T(y)=='c'){ z=multi_allocate('c',1,1,1); cpow_rc(_C(z)[0],_R(x)[0],_C(y)[0]); }
+    else if(_T(x)=='c' && _T(y)=='r'){ z=multi_allocate('c',1,1,1); cpow_cr(_C(z)[0],_C(x)[0],_R(y)[0]); }
+    else if(_T(x)=='c' && _T(y)=='c'){ z=multi_allocate('c',1,1,1); cpow_cc(_C(z)[0],_C(x)[0],_C(y)[0]); }
     else{ MATLAB_ERROR("multi_mpower: Unkown type"); }
   }else if(_M(y)==1 && _N(y)==1 && _L(y)==1){ // if x is square matrix
     if(!(_T(y)=='r' && ris_integer(_R(y)[0]))) { MATLAB_ERROR("multi_mpower: z=x^y: y should be integer."); }

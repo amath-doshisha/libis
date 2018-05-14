@@ -10,7 +10,7 @@
 <area shape="rect" id="node30" href="$func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b" title="func_is_real" alt="" coords="1487,4603,1563,4629"/>
 <area shape="rect" id="node31" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="253,1411,314,1437"/>
 <area shape="rect" id="node32" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="1183,3589,1245,3616"/>
-<area shape="rect" id="node33" href="$is__rmulti_8h.html#a3582139ef5d769709f033269ddc5d606" title="rmulti型の計算 y=log(x) " alt="" coords="558,195,597,221"/>
+<area shape="rect" id="node33" href="$is__rmulti_8h.html#a0c4c5bdd977263fe9b55f37d17b24857" title="rmulti型の計算 y=log(x) " alt="" coords="553,195,601,221"/>
 <area shape="rect" id="node35" href="$func_8c.html#a498d57fcdf2d020643a3dca2805edfa3" title="func_eval" alt="" coords="1031,728,1096,755"/>
 <area shape="rect" id="node43" href="$func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562" title="func_is_complex" alt="" coords="1477,1512,1573,1539"/>
 <area shape="rect" id="node46" href="$func__math_8c.html#a30106e3b61432e5094dd9204eec5651c" title="func_pow_n" alt="" coords="245,2373,321,2400"/>
@@ -74,15 +74,15 @@
 <area shape="rect" id="node59" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="1331,4957,1407,4984"/>
 <area shape="rect" id="node60" href="$func__real_8c.html#a0ab64b68e336073a3e93a21cdf34087a" title="func_real_cast" alt="" coords="1020,4349,1107,4376"/>
 <area shape="rect" id="node61" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="1177,4197,1251,4224"/>
-<area shape="rect" id="node62" href="$is__rmulti_8h.html#a92810daece02105c92ef1cafbf5ae5d6" title="rmulti型のべき乗 z=x^y " alt="" coords="1035,653,1091,680"/>
+<area shape="rect" id="node62" href="$is__rmulti_8h.html#affd128808fbd6f5c69c06e9200506ba4" title="rmulti型のべき乗 z=x^y " alt="" coords="1037,653,1089,680"/>
 <area shape="rect" id="node63" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="1020,3083,1107,3109"/>
 <area shape="rect" id="node65" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="1165,2931,1263,2957"/>
 <area shape="rect" id="node66" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="1009,3589,1117,3616"/>
 <area shape="rect" id="node68" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="1167,3032,1261,3059"/>
-<area shape="rect" id="node71" href="$cmulti_8c.html#a7b7f4ece738a90c9e20611a85a82ff4f" title="cmulti型のべき乗 y=x^n " alt="" coords="878,1512,937,1539"/>
+<area shape="rect" id="node71" href="$cmulti_8c.html#a66b5c2364140c6a51005814f06d1de50" title="cmulti型のべき乗 y=x^n " alt="" coords="879,1512,935,1539"/>
 <area shape="rect" id="node72" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="853,2171,961,2197"/>
-<area shape="rect" id="node69" href="$cmulti_8c.html#ab99b8acc742a7156a30a80a906ad6adc" title="cmulti型の値のコピー y=x. " alt="" coords="1185,347,1243,373"/>
-<area shape="rect" id="node70" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="1346,245,1393,272"/>
+<area shape="rect" id="node69" href="$cmulti_8c.html#a2e5b02c852a861f99dc776505f954190" title="y=x " alt="" coords="1189,347,1239,373"/>
+<area shape="rect" id="node70" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="1345,245,1393,272"/>
 <area shape="rect" id="node75" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="1021,2931,1105,2957"/>
 <area shape="rect" id="node78" href="$func__mul_8c.html#aaa2f65a6f850615c43a3fe204f935a6d" title="func_is_split_mul" alt="" coords="697,701,795,728"/>
 <area shape="rect" id="node83" href="$func__mul_8c.html#ac95a9ec8fa0646822f0ae6b950e6f3c5" title="func_get_number_part" alt="" coords="516,789,639,816"/>

@@ -21,8 +21,8 @@ void cmat_cauchy(int m, int n, cmulti **A, int LDA)
   int i,j;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      cset_si(MAT(A,i,j,LDA),i+j+1);
-      cinv(MAT(A,i,j,LDA),MAT(A,i,j,LDA));
+      cset_i(MAT(A,i,j,LDA),i+j+1);
+      cinv_c(MAT(A,i,j,LDA),MAT(A,i,j,LDA));
     }
   }
 }

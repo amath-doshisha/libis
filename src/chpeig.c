@@ -50,7 +50,7 @@ void chpeig_jacobi_mat(int n, cmulti **JM, int LDJM, cmulti **A, int LDA, cmulti
   cmulti *a=NULL;
   a=callocate_prec(cmat_get_prec_max(n,n,JM,LDJM));
   cmat_diag_sub_c(n,n,JM,LDJM,A,LDA,lambda); // JM=A-lambda*I
-  cinv(a,C); cneg(a,a);                      // a=-1/C
+  cinv_c(a,C); cneg_c(a,a);                      // a=-1/C
   cmat_rank1op(n,n,JM,LDJM,JM,LDJM,a,x,w);   // JM=A-lambda*I-(1/C)*x*w'
   a=cfree(a);
 }
@@ -89,7 +89,7 @@ int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti
   cvec_normalize_sgn(n,x,x);           // x=x/sqrt(x'*x)
   cvec_sum_dot(C,n,z,x);               // C=z'*x
   cvec_sum_dot(lambda,n,w,x);          // lambda=w'*x
-  cdiv_c(lambda,lambda,C);               // lambda=(w'*x)/C
+  cdiv_cc(lambda,lambda,C);               // lambda=(w'*x)/C
   ceig_residual(n,F,A,LDA,x,lambda);   // F=A*x-lambda*x
   cvec_max_abs(E,n,F);                 // E=max(abs(F))
   if(ris_zero(E)){ done=CHPEIG_CONVERGENT; } // convergent?
@@ -108,18 +108,18 @@ int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti
       cvec_normalize_sgn(n,x,x);         // x=x/sqrt(x'*x)
       cvec_sum_dot(C,n,z,x);             // C=z'*x
       cvec_sum_dot(lambda,n,w,x);        // lambda=w'*x
-      cdiv_c(lambda,lambda,C);             // lambda=(w'*x)/C
+      cdiv_cc(lambda,lambda,C);             // lambda=(w'*x)/C
       ceig_residual(n,F,A,LDA,x,lambda); // F=A*x-lambda*x
       cvec_max_abs(E,n,F);               // E=max(abs(F))
     }
-    rdiv_r(mu,eta,eta0); rmul_d(mu,mu,2);  // mu=2*eta/eta0
-    if     (status==CHPEIG_STATUS_PRE && rlt(eta,eps_half)){ status=CHPEIG_STATUS_CONV; } // start to convergent
-    else if(status==CHPEIG_STATUS_CONV && rgt_d2(mu,1.0))  { status=CHPEIG_STATUS_END; }  // end to convergent
+    rdiv_rr(mu,eta,eta0); rmul_rd(mu,mu,2);  // mu=2*eta/eta0
+    if     (status==CHPEIG_STATUS_PRE && lt_rr(eta,eps_half)){ status=CHPEIG_STATUS_CONV; } // start to convergent
+    else if(status==CHPEIG_STATUS_CONV && gt_rd(mu,1.0))  { status=CHPEIG_STATUS_END; }  // end to convergent
     else if(status==CHPEIG_STATUS_CONV && rget_exp(E)-cget_exp(lambda)<prec){ status=CHPEIG_STATUS_END; }  // end to convergent
     if     (status==CHPEIG_STATUS_END){ done=CHPEIG_CONVERGENT; }    // convergent or not?
     else if(status==CHPEIG_STATUS_PRE && step>=step_max)   { done=CHPEIG_DIVERGENT; }     // divergent or not?
     if(debug>0) { PUT_1PAIR; }
-    if(done==CHPEIG_NONE) { step++; rcopy(eta0,eta); } // next step
+    if(done==CHPEIG_NONE) { step++; rset_r(eta0,eta); } // next step
   }
   // free
   w=cvec_free(n,w);  
@@ -341,10 +341,10 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
       // convergent
       kfalse=iceig_1pair_krawczyk(n,E_K,A,LDA,&Xk,Lambda[k],debug-1);
       cvec_clone(n,&COL(XE,k,LDXE),E_K);
-      cclone(LE[k],E_K[n]);
+      cclone_c(LE[k],E_K[n]);
       cvec_max_absc(XEmax,n,&COL(XE,k,LDXE)); // absolute error
-      cmax_absc(LEmax,LE[k]); // absolute error
-      cmax_absc(L,Lambda[k]); rdiv_2exp(LEmaxRel,LEmax,rget_exp(L)); // relative error
+      rmax_absc_c(LEmax,LE[k]); // absolute error
+      rmax_absc_c(L,Lambda[k]); rdiv_2exp(LEmaxRel,LEmax,rget_exp(L)); // relative error
       if(!kfalse && rget_exp(XEmax)<-prec_verify && rget_exp(LEmaxRel)<-prec_verify){
 	conv=CHPEIG_CONVERGENT; msg='o';
       }else if(!kfalse && rget_exp(XEmax)<-prec_verify && rget_exp(LEmax)<-prec_verify && icin_pm(Lambda[k],Lambda[k],LE[k])){

@@ -43,8 +43,8 @@ int dhpsvd_1pair(int m, int n, double *A, int LDA, double *z, double *u, double 
   // compute
   done=0; h=1; e=1;
   for(step=0; !done && step<step_max; step++){
-    dvec_normalize(m,u);                                // u=u/sqrt(u'*u)
-    dvec_normalize(n,v);                                // v=v/sqrt(v'*v)
+    dvec_normalize(m,u,u);                              // u=u/sqrt(u'*u)
+    dvec_normalize(n,v,v);                              // v=v/sqrt(v'*v)
     C=dvec_dot(m,z,u);                                  // C=z'*u
     sigma=dvec_dot(n,w,v)/C;                            // sigma=(w'*v)/C
     dsvd_residual(m,n,H,A,LDA,u,v,sigma);               // H=[ A*v-sigma*u;  A'*u-sigma*v ]
@@ -62,11 +62,11 @@ int dhpsvd_1pair(int m, int n, double *A, int LDA, double *z, double *u, double 
     if(debug>0){ printf("[dhpsvd_1pair] done=%d ret=%d step=%02d log2(e)=%+6.2f log2(h)=%+6.2f sigma=%+.16e\n",done,ret,step,log(fabs(e))/log(2),log(fabs(h))/log(2),sigma); }
   }
   if(!done) { ret=DHPSVD_DIVERGENT; }
-  dvec_normalize_sgn(m,u);                              // u=u/sqrt(u'*u)
-  dvec_normalize_sgn(n,v);                              // v=v/sqrt(v'*v)
+  dvec_normalize_sgn(m,u,u);                            // u=u/sqrt(u'*u)
+  dvec_normalize_sgn(n,v,v);                            // v=v/sqrt(v'*v)
   dvec_lintr_t(m,n,w,A,LDA,u);                          // w=A'*u
   sigma=dvec_dot(n,w,v)/C;                              // sigma=(w'*v)/C
-  if(sigma<0) { dvec_scale(m,u,-1); sigma=-sigma; }     // if sigma<0
+  if(sigma<0) { dvec_mul_dscalar(m,u,u,-1); sigma=-sigma; }     // if sigma<0
   dsvd_residual(m,n,H,A,LDA,u,v,sigma);                 // H=[ A*v-sigma*u;  A'*u-sigma*v ]
   e=dvec_norm_max(m+n,H);                               // e=max(abs(H))
   if(isnan(u[0])) { ret=DHPSVD_NAN; e=1; }
@@ -153,8 +153,8 @@ int dhpsvd(int m, int n, double *A, int LDA, double *U, int LDU, double *V, int 
     Sigma[k]=dsvd_rayleigh_quotient(type[NSVD_TYPE_UV],m,n,A,LDA,&COL(U,k,LDU),&COL(V,k,LDV));
     if(Sigma[k]<0){
       Sigma[k]=-Sigma[k];
-      if(type[NSVD_TYPE_UV]=='U') dvec_scale(m,&COL(U,k,LDU),-1);
-      else                        dvec_scale(n,&COL(V,k,LDV),-1);
+      if(type[NSVD_TYPE_UV]=='U') dvec_mul_dscalar(m,&COL(U,k,LDU),&COL(U,k,LDU),-1);
+      else                        dvec_mul_dscalar(n,&COL(V,k,LDV),&COL(V,k,LDV),-1);
     }
 
     // re-compute norm max of residual

@@ -25,6 +25,8 @@ void bigint_gcd(rmulti *gcd, rmulti *m0, rmulti *n0);
 // cast
 // x=(bigint)value
 void rset_bi(rmulti *x, bigint *value);
+void irset_bigint(rmulti *z0, rmulti *z1, bigint *x);
+void icset_bigint(cmulti *z0, cmulti *z1, bigint *x);
 
 // init
 void bigint_set_nan(bigint *x);

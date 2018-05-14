@@ -6,23 +6,8 @@
 
 /**
  @file  is_icvec.h
- @brief 多倍長精度実数型cmultiの機械区間演算のベクトルに関する関数の宣言.
+ @brief 多倍長精度複素数型cmultiの機械区間演算のベクトルに関する関数の宣言.
 */
-
-/*
- * setting
- */
-// [y0,y1]=x
-void icvec_set_s(int n, cmulti **y0, cmulti **y1, char **x);
-void icvec_set_si(int n, cmulti **y0, cmulti **y1, int *x);
-void icvec_set_c(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);
-void icvec_set_d(int n, cmulti **y0, cmulti **y1, double *x0, double *x1);
-void icvec_set_z(int n, cmulti **y0, cmulti **y1, dcomplex *x0, dcomplex *x1);
-void icvec_set_r(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1);
-void icvec_set_dz(int n, cmulti **y0, cmulti **y1, double *x0, dcomplex *x1);
-void icvec_set_zd(int n, cmulti **y0, cmulti **y1, dcomplex *x0, double *x1);
-void icvec_set_cr(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1);
-void icvec_set_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1);
 
 /*
  * I/O
@@ -32,12 +17,33 @@ void icvec_print(int n, cmulti **x0, cmulti **x1, char *name, char format, int d
 /*
  * casting
  */
-void icvec_get_si(int n, int *y, cmulti **x0, cmulti **x1);
-void icvec_get_z(int n, dcomplex *y, cmulti **x0, cmulti **x1);
-void icvec_get_s(int n, char **y, cmulti **x0, cmulti **x1, char format, int digits);
-void icvec_get_c(int n, cmulti **y, cmulti **x0, cmulti **x1);
-void dvec_set_ic(int n, double *y, cmulti **x0, cmulti **x1);
-void zvec_set_ic(int n, dcomplex *y, cmulti **x0, cmulti **x1);
+void icvec_set_cvec(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);                                          // [cmulti,cmulti] <- [cmulti,cmulti]
+void icvec_set_rvec_rvec(int n, cmulti **y0, cmulti **y1, rmulti **x0_r, rmulti **x0_i, rmulti **x1_r, rmulti **x1_i);   // [cmulti,cmulti] <- [(rmulti,rmulti),(rmulti,rmulti)]
+void icvec_set_cvec_rvec(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1);                                     // [cmulti,cmulti] <- [cmulti,rmulti]
+void icvec_set_rvec_cvec(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1);                                     // [cmulti,cmulti] <- [rmulti,cmulti]
+void icvec_set_rvec(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1);                                          // [cmulti,cmulti] <- [rmulti,rmulti]
+void icvec_set_zvec(int n, cmulti **y0, cmulti **y1, dcomplex *x0, dcomplex *x1);                                        // [cmulti,cmulti] <- [dcomplex,dcomplex]
+void icvec_set_dvec(int n, cmulti **y0, cmulti **y1, double *x0, double *x1);                                            // [cmulti,cmulti] <- [double,double]
+void icvec_set_ivec(int n, cmulti **y0, cmulti **y1, int *x);                                                            // [cmulti,cmulti] <- [int,int]
+void icvec_set_dvec_zvec(int n, cmulti **y0, cmulti **y1, double *x0, dcomplex *x1);                                     // [cmulti,cmulti] <- [double,dcomplex]
+void icvec_set_zvec_dvec(int n, cmulti **y0, cmulti **y1, dcomplex *x0, double *x1);                                     // [cmulti,cmulti] <- [dcomplex,double]
+void icvec_get_cvec(int n, cmulti **y, cmulti **x0, cmulti **x1);  // [cmulti,cmulti] -> cmulti
+void icvec_get_zvec(int n, dcomplex *y, cmulti **x0, cmulti **x1); // [cmulti,cmulti] -> dcomplex
+void icvec_get_rvec(int n, rmulti **y, cmulti **x0, cmulti **x1);  // [cmulti,cmulti] -> rmulti
+void icvec_get_dvec(int n, double *y, cmulti **x0, cmulti **x1);   // [cmulti,cmulti] -> double
+void icvec_get_ivec(int n, int *y, cmulti **x0, cmulti **x1);      // [cmulti,cmulti] -> int
+void cvec_set_icvec(int n, cmulti **y, cmulti **x0, cmulti **x1);  // [cmulti,cmulti] -> cmulti
+void zvec_set_icvec(int n, dcomplex *y, cmulti **x0, cmulti **x1); // [cmulti,cmulti] -> dcomplex
+void rvec_set_icvec(int n, rmulti **y, cmulti **x0, cmulti **x1);  // [cmulti,cmulti] -> rmulti
+void dvec_set_icvec(int n, double *y, cmulti **x0, cmulti **x1);   // [cmulti,cmulti] -> double
+void ivec_set_icvec(int n, int *y, cmulti **x0, cmulti **x1);      // [cmulti,cmulti] -> int
+void icvec_set_svec(int n, cmulti **y0, cmulti **y1, char **x);                           // [cmulti,cmulti] <- char
+void icvec_get_svec(int n, char **y, cmulti **x0, cmulti **x1, char format, int digits);  // [cmulti,cmulti] -> char
+
+void irvec_set_cvec(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1);          // [rmulti,rmulti] <- [cmulti,cmulti]
+void cvec_set_irvec(int n, cmulti **y, rmulti **x0, rmulti **x1);                        // [rmulti,rmulti] -> cmulti
+void irvec_get_cvec(int n, cmulti **y, rmulti **x0, rmulti **x1);                        // [rmulti,rmulti] -> cmulti
+
 
 /*
  * z=f(x,y)
@@ -163,7 +169,6 @@ void icvec_copy(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);
 void icvec_copy_r(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1);
 void icvec_copy_cr(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1);
 void icvec_copy_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1);
-void icvec_copy_C(int n, cmulti **y0, cmulti **y1, rmulti **x0r, rmulti **x0i, rmulti **x1r, rmulti **x1i);
 // [y0,y1]=real([x0,x1])
 void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1);
 // [y0,y1]=conj([x0,x1])
@@ -172,6 +177,10 @@ void icvec_conj(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);
 void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **x1);
 void icvec_neg(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1);                           // [y0,y1]=-[x0,x1]
 void icvec_pm(int n, cmulti **y0, cmulti **y1, cmulti **x);                                          // [y0,y1]=[-x,x]
+
+
+void icvec_real_d(int n, double *y, cmulti **x0, cmulti **x1);
+
 
 
 // [z0,z1]=[x0,x1]+[-y,y]
@@ -201,7 +210,5 @@ void icvec_sub_lintr_t(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int 
 void icvec_lintr_ct(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **x0, cmulti **x1);     // [y0,y1]=[A0,A1]'*[x0,x1]
 void icvec_add_lintr_ct(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **x0, cmulti **x1); // [y0,y1]+=[A0,A1]'*[x0,x1]
 void icvec_sub_lintr_ct(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **x0, cmulti **x1); // [y0,y1]-=[A0,A1]'*[x0,x1]
-void icvec_func(cmulti *y0, cmulti *y1, func_t *f, int n, cmulti **x0, cmulti **x1);                // [y0,y1]=f(x)
-void icvec_func_list(int m, cmulti **y0, cmulti **y1, func_t *f, int n, cmulti **x0, cmulti **x1);  // [y0,y1]=f(x)
 
 #endif

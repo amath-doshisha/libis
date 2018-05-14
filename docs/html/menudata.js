@@ -98,6 +98,8 @@ var menudata={children:[
 {text:"g",url:"globals_func_g.html#index_g"},
 {text:"i",url:"globals_func_i.html#index_i"},
 {text:"j",url:"globals_func_j.html#index_j"},
+{text:"l",url:"globals_func_l.html#index_l"},
+{text:"n",url:"globals_func_n.html#index_n"},
 {text:"p",url:"globals_func_p.html#index_p"},
 {text:"r",url:"globals_func_r.html#index_r"},
 {text:"s",url:"globals_func_s.html#index_s"},

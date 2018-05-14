@@ -1,22 +1,22 @@
 <map id="ctanh_c" name="ctanh_c">
-<area shape="rect" id="node2" href="$cmulti_8c.html#af328788768c9f0799186c8037f4abae4" title="cmulti型の計算 y=sinh(x) " alt="" coords="313,107,369,133"/>
-<area shape="rect" id="node9" href="$cmulti_8c.html#a9f42654d93554750fc5638d37fe9957c" title="cmulti型の計算 y=cosh(x) " alt="" coords="312,157,371,184"/>
-<area shape="rect" id="node10" href="$cmulti_8c.html#afe1b5d28ba328cbfe3ece23c0dcb98c8" title="z=x/y " alt="" coords="111,360,161,387"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#ab660fc155b547779fdbfde33f18df979" title="rmulti型の計算 y=sinh(x) " alt="" coords="425,5,469,32"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#a21baccb119dc1329f2794896bf51675b" title="rmulti型の計算 y=cosh(x) " alt="" coords="423,56,470,83"/>
-<area shape="rect" id="node6" href="$is__rmulti_8h.html#ad66ca5ba97fbddd89b86346c2d3301a9" title="rmulti型の計算 y=sin(x) " alt="" coords="427,107,466,133"/>
-<area shape="rect" id="node7" href="$is__rmulti_8h.html#a1edeec7e41c8f6cb460192e5f17d924b" title="rmulti型の計算 y=cos(x) " alt="" coords="426,157,467,184"/>
-<area shape="rect" id="node8" href="$is__rmulti_8h.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="421,208,472,235"/>
-<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="520,233,617,260"/>
-<area shape="rect" id="node11" href="$cmulti_8c.html#a11731685d9039dad69dd6b81acb1b64a" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="211,309,260,336"/>
-<area shape="rect" id="node15" href="$cmulti_8c.html#afcc0eb689837e491c0266e9c192c4842" title="z=conj(x)*y " alt="" coords="209,360,261,387"/>
-<area shape="rect" id="node18" href="$cmulti_8c.html#a1e47638f0ad42d860851735ba469c510" title="cmulti型の値のコピー y=x. " alt="" coords="317,411,365,437"/>
-<area shape="rect" id="node20" href="$cmulti_8c.html#af9f630b2f0f7ade7f10f859486765d66" title="z=x/y " alt="" coords="211,461,260,488"/>
-<area shape="rect" id="node12" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="309,309,373,336"/>
-<area shape="rect" id="node13" href="$rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="421,309,472,336"/>
-<area shape="rect" id="node14" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="421,259,472,285"/>
-<area shape="rect" id="node16" href="$is__rmulti_8h.html#a1d5aa554c04b670dc021fb70416d4078" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="310,360,373,387"/>
-<area shape="rect" id="node17" href="$rmulti_8c.html#a2be9df23cebdc01c10ec1a5ac639a62d" title="z=x&#45;y " alt="" coords="421,360,472,387"/>
-<area shape="rect" id="node19" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="423,411,470,437"/>
-<area shape="rect" id="node21" href="$is__rmulti_8h.html#a9dcc10adb3c74cf729501723fdce2be2" title="z=x/y " alt="" coords="318,461,365,488"/>
+<area shape="rect" id="node2" href="$cmulti_8c.html#af328788768c9f0799186c8037f4abae4" title="cmulti型の計算 y=sinh(x) " alt="" coords="330,107,386,133"/>
+<area shape="rect" id="node9" href="$cmulti_8c.html#a9f42654d93554750fc5638d37fe9957c" title="cmulti型の計算 y=cosh(x) " alt="" coords="329,157,387,184"/>
+<area shape="rect" id="node10" href="$cmulti_8c.html#a3778c7bfac2e9b84d303c5831764d1a9" title="z=x/y " alt="" coords="111,360,167,387"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#a76ac0d1377d431614fd7149da507a65d" title="rmulti型の計算 y=sinh(x) " alt="" coords="446,5,498,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#aff7bc39a236ebc2ed75f149bc53e86a6" title="rmulti型の計算 y=cosh(x) " alt="" coords="444,56,500,83"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a0f98074d720590ac2abb96554b785668" title="rmulti型の計算 y=sin(x) " alt="" coords="449,107,495,133"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a0ed3380287acbb6cd2ad1772b803accb" title="rmulti型の計算 y=cos(x) " alt="" coords="447,157,497,184"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="445,208,499,235"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="548,233,645,260"/>
+<area shape="rect" id="node11" href="$cmulti_8c.html#ac27df2a809749da2186fe891f40c2565" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="215,309,272,336"/>
+<area shape="rect" id="node15" href="$cmulti_8c.html#ad65aa41081d26544f06d1ade34075613" title="z=conj(x)*y " alt="" coords="215,360,271,387"/>
+<area shape="rect" id="node18" href="$cmulti_8c.html#a9628f0312f1d6ec613f155916457edfb" title="cmulti型の値のコピー y=x. " alt="" coords="333,411,383,437"/>
+<area shape="rect" id="node20" href="$cmulti_8c.html#aa15dfe1c69f97839146fdfc3a4bb11ef" title="z=x/y " alt="" coords="217,461,270,488"/>
+<area shape="rect" id="node12" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="320,309,396,336"/>
+<area shape="rect" id="node13" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="445,309,499,336"/>
+<area shape="rect" id="node14" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="445,259,499,285"/>
+<area shape="rect" id="node16" href="$is__rmulti_8h.html#aaf4e190f7e0dbbf6fd6ac1b48ba6bc85" title="rmulti型の掛け算の減算 z&#45;=x*y " alt="" coords="320,360,396,387"/>
+<area shape="rect" id="node17" href="$rmulti_8c.html#a4acfc1f7f71c44234ca1873f69b6eaa5" title="z=x&#45;y " alt="" coords="445,360,499,387"/>
+<area shape="rect" id="node19" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="448,411,496,437"/>
+<area shape="rect" id="node21" href="$is__rmulti_8h.html#a0c8b35084a21676995d9b8cbcf8b39c0" title="z=x/y " alt="" coords="333,461,383,488"/>
 </map>

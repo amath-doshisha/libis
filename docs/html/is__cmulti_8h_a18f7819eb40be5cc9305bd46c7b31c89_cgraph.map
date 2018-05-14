@@ -1,8 +1,8 @@
 <map id="cexp2_floor_log2_abs_sub" name="cexp2_floor_log2_abs_sub">
-<area shape="rect" id="node2" href="$is__rmulti_8h.html#ab7442b9d281344b07bc211e5c6c4ab66" title="rmulti型の絶対値 y=abs(x) " alt="" coords="200,5,241,32"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#ac4ba685e4142a85733f8b9f2d2377397" title="rmulti型の計算 y=log_2(x) " alt="" coords="199,56,243,83"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#a6632a464e14b230e408ebfb963256052" title="z=x&#45;y " alt="" coords="195,107,247,133"/>
-<area shape="rect" id="node6" href="$is__rmulti_8h.html#a2c9487cb29f8b4beb633ad6e981dd958" title="rmulti型の整数への丸め y=floor(x) " alt="" coords="198,157,243,184"/>
-<area shape="rect" id="node7" href="$is__rmulti_8h.html#a7887a667eaedbe69e814e4cd67ac6c4c" title="rmulti型の計算 y=2^x " alt="" coords="197,208,244,235"/>
-<area shape="rect" id="node3" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="295,81,392,108"/>
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="197,5,248,32"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a9bd76cac6d6f39cd046811c8940f6159" title="rmulti型の計算 y=log_2(x) " alt="" coords="196,56,249,83"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a85f6db67b1c6e36ebc626ec2f6043137" title="z=x&#45;y " alt="" coords="195,107,251,133"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#a132fc937129c0a17035122b7840b778d" title="rmulti型の整数への丸め y=floor(x) " alt="" coords="196,157,249,184"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a32c510575504ba432c2175ed5b282d21" title="rmulti型の計算 y=2^x " alt="" coords="195,208,251,235"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="299,81,396,108"/>
 </map>

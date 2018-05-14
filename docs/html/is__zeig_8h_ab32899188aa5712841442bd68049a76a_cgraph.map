@@ -1,6 +1,6 @@
 <map id="zeig_residual" name="zeig_residual">
-<area shape="rect" id="node2" href="$is__zvec_8h.html#a799f3a364c76093c592e8436a68e168e" title="zvec_copy" alt="" coords="147,5,216,32"/>
-<area shape="rect" id="node3" href="$is__zvec_8h.html#ae466c9d63fb476d54433c7478c7fe896" title="zvec_scale_neg" alt="" coords="135,56,228,83"/>
-<area shape="rect" id="node5" href="$is__zvec_8h.html#a0868edb414fa62c7b688e92d8b8d8bd2" title="zvec_add_lintr" alt="" coords="138,107,225,133"/>
-<area shape="rect" id="node4" href="$zvec_8c.html#a1cdf603c18ff047e9a6222ed379f3d18" title="zvec_scale" alt="" coords="276,56,348,83"/>
+<area shape="rect" id="node2" href="$is__zvec_8h.html#a2fdac4844b56309799248da73384d753" title="z=x*y " alt="" coords="135,5,236,32"/>
+<area shape="rect" id="node4" href="$is__zvec_8h.html#adea7d1f03754ab5d98d79be2ab5ecc0e" title="y=&#45;x " alt="" coords="153,56,218,83"/>
+<area shape="rect" id="node5" href="$is__zvec_8h.html#a0868edb414fa62c7b688e92d8b8d8bd2" title="zvec_add_lintr" alt="" coords="142,107,229,133"/>
+<area shape="rect" id="node3" href="$dcomplex_8c.html#a5ec98d5cf2c465847cd389eae93557ed" title="z=x*y " alt="" coords="284,5,343,32"/>
 </map>

@@ -1,72 +1,72 @@
 <map id="array_get_double" name="array_get_double">
-<area shape="rect" id="node2" href="$is__svec_8h.html#a3154dccb85de585610c253d046826ace" title="svec_has" alt="" coords="164,921,228,948"/>
-<area shape="rect" id="node5" href="$array_8c.html#a075bf54e3da7df513db0c4f8e06c8787" title="array_allocate" alt="" coords="153,259,239,285"/>
-<area shape="rect" id="node20" href="$dvec_8c.html#a09ee9a88ab7af8fae60b44757774c8f3" title="dvec_set_s" alt="" coords="160,820,232,847"/>
-<area shape="rect" id="node60" href="$is__zvec_8h.html#a279ee30789a73875e449c84b357d0070" title="zvec_set_s" alt="" coords="160,871,232,897"/>
-<area shape="rect" id="node65" href="$dvec_8c.html#a306d52ebd0479069be5ac0a64c54dcbc" title="dvec_set_si" alt="" coords="159,972,233,999"/>
-<area shape="rect" id="node66" href="$dvec_8c.html#a54b1a16a23bf409f8108ae1eedc7c4dc" title="dvec_set_d" alt="" coords="159,1023,233,1049"/>
-<area shape="rect" id="node67" href="$is__zvec_8h.html#ac174cd89dd0713988dacbc3b6497e190" title="zvec_set_z" alt="" coords="160,1073,232,1100"/>
-<area shape="rect" id="node68" href="$is__rvec_8h.html#a9024c8bc0106843327175b4292fccde1" title="rmulti型のベクトルを倍精度実数型に変換. " alt="" coords="160,1225,232,1252"/>
-<area shape="rect" id="node69" href="$cvec_8c.html#ad9c05d7671a4bf6288f434a6db1f1bdd" title="cmulti型のベクトルを倍精度複素数型に変換. " alt="" coords="160,1175,232,1201"/>
-<area shape="rect" id="node70" href="$irvec_8c.html#af571b3c5fff406dd1c7edf9bad28bade" title="irmulti型のベクトルを倍精度実数型に変換. " alt="" coords="159,1276,233,1303"/>
-<area shape="rect" id="node71" href="$icvec_8c.html#adf358e769c1b7e17300ab4dab46f38b2" title="cmulti型のベクトルを倍精度複素数型に変換. " alt="" coords="159,1124,233,1151"/>
-<area shape="rect" id="node3" href="$is__strings_8h.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="895,1323,996,1349"/>
-<area shape="rect" id="node4" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="1193,1095,1289,1121"/>
-<area shape="rect" id="node6" href="$array_8c.html#af0794d7238e2086b6217f5011ecc848a" title="array_type_check" alt="" coords="291,107,392,133"/>
-<area shape="rect" id="node7" href="$is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="905,563,985,589"/>
-<area shape="rect" id="node8" href="$is__ivec_8h.html#a7454ba93b6f4b4d74787cf45b5242c11" title="ivec_set_zeros" alt="" coords="297,157,386,184"/>
-<area shape="rect" id="node9" href="$is__ivec_8h.html#a487daa8f72c0e79730e0d0a56c763819" title="ivec_allocate_clone" alt="" coords="287,56,396,83"/>
-<area shape="rect" id="node12" href="$array_8c.html#a779836d83556c2e5060b756eef253ee4" title="avec_allocate" alt="" coords="300,208,383,235"/>
-<area shape="rect" id="node13" href="$is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="300,259,383,285"/>
-<area shape="rect" id="node14" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="dvec_allocate" alt="" coords="300,309,383,336"/>
-<area shape="rect" id="node15" href="$is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3" title="zvec_allocate" alt="" coords="300,360,383,387"/>
-<area shape="rect" id="node16" href="$is__rvec_8h.html#a0c4c754fa6332bf34ef67b2c38aa7505" title="rmulti型のベクトルの新規生成. " alt="" coords="447,5,528,32"/>
-<area shape="rect" id="node18" href="$cvec_8c.html#afdc4a88d6334c4518f88ea029020a587" title="cmulti型のベクトルの新規生成. " alt="" coords="300,411,383,437"/>
-<area shape="rect" id="node10" href="$ivec_8c.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="447,56,527,83"/>
-<area shape="rect" id="node11" href="$ivec_8c.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="454,107,521,133"/>
-<area shape="rect" id="node17" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="601,411,661,437"/>
-<area shape="rect" id="node19" href="$cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="457,411,518,437"/>
-<area shape="rect" id="node21" href="$is__rmulti_8h.html#a247cfa927a4c365f56c6808811b915f0" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="317,820,366,847"/>
-<area shape="rect" id="node57" href="$is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="462,1200,513,1227"/>
-<area shape="rect" id="node59" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="466,719,509,745"/>
-<area shape="rect" id="node22" href="$rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="455,769,519,796"/>
-<area shape="rect" id="node23" href="$cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="444,820,531,847"/>
-<area shape="rect" id="node25" href="$icmulti_8c.html#a833ba847343572e6701368d6db236853" title="icset_s" alt="" coords="461,871,514,897"/>
-<area shape="rect" id="node55" href="$irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="465,921,509,948"/>
-<area shape="rect" id="node24" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="589,656,674,683"/>
-<area shape="rect" id="node26" href="$cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="600,757,663,784"/>
-<area shape="rect" id="node27" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="759,664,820,691"/>
-<area shape="rect" id="node28" href="$is__strings_8h.html#aa72cb3072042b74edc36b7a75afea01f" title="strings_split_str_to\l_irmulti" alt="" coords="579,859,684,901"/>
-<area shape="rect" id="node51" href="$is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="594,925,669,952"/>
-<area shape="rect" id="node52" href="$is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="599,976,664,1003"/>
-<area shape="rect" id="node53" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="603,707,659,733"/>
-<area shape="rect" id="node29" href="$strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="907,1019,983,1045"/>
-<area shape="rect" id="node30" href="$strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903" title="strings_split" alt="" coords="752,1057,827,1084"/>
-<area shape="rect" id="node34" href="$strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="898,867,993,893"/>
-<area shape="rect" id="node35" href="$strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="1047,917,1142,944"/>
-<area shape="rect" id="node39" href="$strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="1472,703,1547,729"/>
-<area shape="rect" id="node40" href="$strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="757,1108,822,1135"/>
-<area shape="rect" id="node41" href="$strings_8c.html#a6589520d40398687afb1987bce711ecc" title="strings_split_number" alt="" coords="732,867,847,893"/>
-<area shape="rect" id="node43" href="$strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="754,765,825,792"/>
-<area shape="rect" id="node50" href="$strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="1044,1120,1145,1147"/>
-<area shape="rect" id="node31" href="$strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="1062,1019,1127,1045"/>
-<area shape="rect" id="node32" href="$strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="1047,1221,1143,1248"/>
-<area shape="rect" id="node33" href="$strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1479,943,1539,969"/>
-<area shape="rect" id="node36" href="$strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="1053,816,1137,843"/>
-<area shape="rect" id="node37" href="$strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="1202,816,1281,843"/>
-<area shape="rect" id="node38" href="$strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="1337,791,1424,817"/>
-<area shape="rect" id="node42" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="914,816,977,843"/>
-<area shape="rect" id="node44" href="$is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="899,664,991,691"/>
-<area shape="rect" id="node47" href="$is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="911,715,980,741"/>
-<area shape="rect" id="node45" href="$print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="1047,664,1142,691"/>
-<area shape="rect" id="node46" href="$print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="1205,664,1278,691"/>
-<area shape="rect" id="node48" href="$print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="1059,715,1131,741"/>
-<area shape="rect" id="node49" href="$print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="1207,715,1275,741"/>
-<area shape="rect" id="node54" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="762,613,817,640"/>
-<area shape="rect" id="node56" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="599,1027,663,1053"/>
-<area shape="rect" id="node58" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="583,1200,680,1227"/>
-<area shape="rect" id="node61" href="$cmulti_8c.html#a78a0f61e301881a5ac6715f24e5285b2" title="cmulti型の浮動小数点数を文字列から設定. " alt="" coords="316,871,367,897"/>
-<area shape="rect" id="node63" href="$cmulti_8c.html#a8bb732af2004bda35f64b75638ddd0b7" title="cmulti型を倍精度複素数型に変換. " alt="" coords="315,1175,367,1201"/>
-<area shape="rect" id="node64" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="319,769,363,796"/>
-<area shape="rect" id="node62" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="455,1013,520,1040"/>
+<area shape="rect" id="node2" href="$is__svec_8h.html#a3154dccb85de585610c253d046826ace" title="svec_has" alt="" coords="167,921,231,948"/>
+<area shape="rect" id="node5" href="$array_8c.html#a075bf54e3da7df513db0c4f8e06c8787" title="array型のメモリ割当 " alt="" coords="156,259,241,285"/>
+<area shape="rect" id="node20" href="$dvec_8c.html#ae8c9bd85fe1e921e4c95785405bd8610" title="char &#45;&gt; double " alt="" coords="155,820,243,847"/>
+<area shape="rect" id="node60" href="$is__zvec_8h.html#a180c8d0ab13362999a2cce661289d973" title="char &#45;&gt; dcomplex " alt="" coords="155,871,243,897"/>
+<area shape="rect" id="node65" href="$dvec_8c.html#a07fefdbc1964178315662aa385acff03" title="int &#45;&gt; double " alt="" coords="156,972,241,999"/>
+<area shape="rect" id="node66" href="$dvec_8c.html#a309031eb0926f98ee4c63cf9f8fbef14" title="y=x " alt="" coords="154,1023,243,1049"/>
+<area shape="rect" id="node67" href="$is__zvec_8h.html#a678e1b42df1f3be9f58958588e6b1c79" title="y=x " alt="" coords="155,1073,243,1100"/>
+<area shape="rect" id="node68" href="$is__rvec_8h.html#a773e479a0b43685e680d1a1bbf1152de" title="rmulti型のベクトルを倍精度実数型に変換. " alt="" coords="155,1225,242,1252"/>
+<area shape="rect" id="node69" href="$cvec_8c.html#afc37b9f9af9a188aa3b48e09ac95b749" title="cmulti型のベクトルを倍精度複素数型に変換. " alt="" coords="155,1175,243,1201"/>
+<area shape="rect" id="node70" href="$irvec_8c.html#a1f09bf8ef05caf27e00a11c1e158fe42" title="irmulti型のベクトルを倍精度実数型に変換. " alt="" coords="154,1276,243,1303"/>
+<area shape="rect" id="node71" href="$icvec_8c.html#afc2f0b77f2a8720c0a184674ba5ff356" title="cmulti型のベクトルを倍精度複素数型に変換. " alt="" coords="153,1124,244,1151"/>
+<area shape="rect" id="node3" href="$is__strings_8h.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="900,1323,1001,1349"/>
+<area shape="rect" id="node4" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="1199,1095,1295,1121"/>
+<area shape="rect" id="node6" href="$array_8c.html#af0794d7238e2086b6217f5011ecc848a" title="array型の内部型の確認 " alt="" coords="296,107,397,133"/>
+<area shape="rect" id="node7" href="$is__ivec_8h.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="911,563,991,589"/>
+<area shape="rect" id="node8" href="$is__ivec_8h.html#a7454ba93b6f4b4d74787cf45b5242c11" title="ivec_set_zeros" alt="" coords="302,157,391,184"/>
+<area shape="rect" id="node9" href="$is__ivec_8h.html#a487daa8f72c0e79730e0d0a56c763819" title="ivec_allocate_clone" alt="" coords="292,56,401,83"/>
+<area shape="rect" id="node12" href="$array_8c.html#a779836d83556c2e5060b756eef253ee4" title="array型の配列のメモリ割当 " alt="" coords="305,208,388,235"/>
+<area shape="rect" id="node13" href="$is__svec_8h.html#ac68f634b2cd2af329bdf047b991f5048" title="svec_allocate" alt="" coords="305,259,388,285"/>
+<area shape="rect" id="node14" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="305,309,388,336"/>
+<area shape="rect" id="node15" href="$is__zvec_8h.html#aebadbab9ea8d2a7b1691dae56d00caf3" title="dcomplex型のメモリ割当 " alt="" coords="305,360,388,387"/>
+<area shape="rect" id="node16" href="$is__rvec_8h.html#a0c4c754fa6332bf34ef67b2c38aa7505" title="rmulti型のベクトルの新規生成. " alt="" coords="452,5,533,32"/>
+<area shape="rect" id="node18" href="$cvec_8c.html#afdc4a88d6334c4518f88ea029020a587" title="cmulti型のベクトルの新規生成. " alt="" coords="305,411,388,437"/>
+<area shape="rect" id="node10" href="$ivec_8c.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="453,56,533,83"/>
+<area shape="rect" id="node11" href="$ivec_8c.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="459,107,526,133"/>
+<area shape="rect" id="node17" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="607,411,667,437"/>
+<area shape="rect" id="node19" href="$cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="462,411,523,437"/>
+<area shape="rect" id="node21" href="$is__rmulti_8h.html#abbab2d3bee55b2777a87fdbee06b1a9d" title="rmulti型の浮動小数点数を文字列から設定. " alt="" coords="322,820,371,847"/>
+<area shape="rect" id="node57" href="$is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="467,1200,518,1227"/>
+<area shape="rect" id="node59" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="471,719,514,745"/>
+<area shape="rect" id="node22" href="$rmulti_8c.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="461,769,525,796"/>
+<area shape="rect" id="node23" href="$cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="449,820,536,847"/>
+<area shape="rect" id="node25" href="$icmulti_8c.html#a833ba847343572e6701368d6db236853" title="icset_s" alt="" coords="466,871,519,897"/>
+<area shape="rect" id="node55" href="$irmulti_8c.html#ac400e7144421b05bfdf7feed9b039ed6" title="区間の中心 [m&#45;r,m+r]=[x0,x1] " alt="" coords="471,921,515,948"/>
+<area shape="rect" id="node24" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="594,656,679,683"/>
+<area shape="rect" id="node26" href="$cmulti_8c.html#a9aae1f83a2411b7afb0d82a130c58b34" title="cmulti型の値をNaNに設定. " alt="" coords="605,757,668,784"/>
+<area shape="rect" id="node27" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="764,664,825,691"/>
+<area shape="rect" id="node28" href="$is__strings_8h.html#aa72cb3072042b74edc36b7a75afea01f" title="strings_split_str_to\l_irmulti" alt="" coords="584,859,689,901"/>
+<area shape="rect" id="node51" href="$is__strings_8h.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="599,925,674,952"/>
+<area shape="rect" id="node52" href="$is__strings_8h.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="604,976,669,1003"/>
+<area shape="rect" id="node53" href="$cmulti_8c.html#a181bb5ae7645abf04f0bfd3a027a9fc0" title="cmulti型がNaNであるかの判定. " alt="" coords="609,707,665,733"/>
+<area shape="rect" id="node29" href="$strings_8c.html#ac8a8287a06fce10299b4346be44c94bf" title="strings_new" alt="" coords="913,1019,989,1045"/>
+<area shape="rect" id="node30" href="$strings_8c.html#ac13e7148e338a2dcdfb2f05fdf9e3903" title="strings_split" alt="" coords="757,1057,832,1084"/>
+<area shape="rect" id="node34" href="$strings_8c.html#a44e0e761ed1abdd39d19ba4989189a87" title="strings_item_set" alt="" coords="903,867,998,893"/>
+<area shape="rect" id="node35" href="$strings_8c.html#a4a3ea7187a0f25400d71258d4dff5332" title="strings_item_del" alt="" coords="1053,917,1147,944"/>
+<area shape="rect" id="node39" href="$strings_8c.html#a754be11345fe72b1e5cc69bab7ccf55e" title="strings_size" alt="" coords="1477,703,1552,729"/>
+<area shape="rect" id="node40" href="$strings_8c.html#aa137b865116b8931f3ca7322f8b23569" title="strings_at" alt="" coords="762,1108,827,1135"/>
+<area shape="rect" id="node41" href="$strings_8c.html#a6589520d40398687afb1987bce711ecc" title="strings_split_number" alt="" coords="737,867,852,893"/>
+<area shape="rect" id="node43" href="$strings_8c.html#a81b9c1e8ab533413d2d85446aefe0f8a" title="strings_del" alt="" coords="759,765,830,792"/>
+<area shape="rect" id="node50" href="$strings_8c.html#a835961f47b2bc8e0d8d5ab9c3e874270" title="str_has_any_char" alt="" coords="1049,1120,1151,1147"/>
+<area shape="rect" id="node31" href="$strings_8c.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="1067,1019,1133,1045"/>
+<area shape="rect" id="node32" href="$strings_8c.html#a15d9b565e4f3d39e7ebf2f69fde042d8" title="str_create_mask" alt="" coords="1052,1221,1148,1248"/>
+<area shape="rect" id="node33" href="$strings_8c.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1485,943,1545,969"/>
+<area shape="rect" id="node36" href="$strings_8c.html#a06c884a81b9d4dfe02f70c0c3010d5ae" title="strings_resize" alt="" coords="1058,816,1142,843"/>
+<area shape="rect" id="node37" href="$strings_8c.html#a2d475301ff7ea70dc0d70b60f1fd1ea3" title="strings_reset" alt="" coords="1207,816,1286,843"/>
+<area shape="rect" id="node38" href="$strings_8c.html#a97e78f50bff082b5d7a6499b3f94f675" title="strings_del_str" alt="" coords="1343,791,1429,817"/>
+<area shape="rect" id="node42" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="919,816,982,843"/>
+<area shape="rect" id="node44" href="$is__print_8h.html#a3700112e40486fc7abbb1b206518b13c" title="print_dark_gray" alt="" coords="905,664,997,691"/>
+<area shape="rect" id="node47" href="$is__print_8h.html#aa4f6858ed3ecdad5501013ac4001c9ca" title="print_reset" alt="" coords="916,715,985,741"/>
+<area shape="rect" id="node45" href="$print_8c.html#a1a86eb0be7114b0a55c61f3282da1200" title="fprint_dark_gray" alt="" coords="1053,664,1147,691"/>
+<area shape="rect" id="node46" href="$print_8c.html#a5688cdeb8533803bd7da721423fcf891" title="fprint_ansi2" alt="" coords="1210,664,1283,691"/>
+<area shape="rect" id="node48" href="$print_8c.html#ab48a49bce67fdecda4b66937717e8964" title="fprint_reset" alt="" coords="1064,715,1136,741"/>
+<area shape="rect" id="node49" href="$print_8c.html#a42a4069f383bd0bfb15b656ff1635b67" title="fprint_ansi" alt="" coords="1213,715,1281,741"/>
+<area shape="rect" id="node54" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="767,613,822,640"/>
+<area shape="rect" id="node56" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="605,1027,669,1053"/>
+<area shape="rect" id="node58" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="588,1200,685,1227"/>
+<area shape="rect" id="node61" href="$cmulti_8c.html#a78a0f61e301881a5ac6715f24e5285b2" title="cmulti型の浮動小数点数を文字列から設定. " alt="" coords="321,871,372,897"/>
+<area shape="rect" id="node63" href="$cmulti_8c.html#a8bb732af2004bda35f64b75638ddd0b7" title="cmulti型を倍精度複素数型に変換. " alt="" coords="321,1175,373,1201"/>
+<area shape="rect" id="node64" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="325,769,369,796"/>
+<area shape="rect" id="node62" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="460,1013,525,1040"/>
 </map>

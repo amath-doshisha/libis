@@ -38,30 +38,30 @@ void chouseholder_vec(int n, int k, cmulti **h, rmulti *alpha, cmulti **x)
   axk=rallocate_prec(prec);
   //----------- norm
   cvec_sum_abs2(xi,n-k-1,&x[k+1]);     // xi=sum(abs(x((k+1):end)).^2);
-  cabs2(axk,x[k]);                     // axk=|x[k]|^2
-  radd_r(eta,axk,xi);                    // eta=|x[k]|^2+...
-  rsqrt(axk,axk);                      // axk=|x[k]|
-  rsqrt(eta,eta);                      // eta=sqrt(|x[k]|^2+...)
-  if(req_d(eta,0)){rsub_r(xi,eta,axk);}  // xi=eta-|x(k)|
+  rabs2_c(axk,x[k]);                     // axk=|x[k]|^2
+  radd_rr(eta,axk,xi);                    // eta=|x[k]|^2+...
+  rsqrt_r(axk,axk);                      // axk=|x[k]|
+  rsqrt_r(eta,eta);                      // eta=sqrt(|x[k]|^2+...)
+  if(eq_rd(eta,0)){rsub_rr(xi,eta,axk);}  // xi=eta-|x(k)|
   else{                                // xi=xi/(|x(k)|+eta)
-    radd_r(zeta,axk,eta);
-    rdiv_r(xi,xi,zeta);
+    radd_rr(zeta,axk,eta);
+    rdiv_rr(xi,xi,zeta);
   }
   //----------- h
   cvec_set_zeros(k,h);
   cvec_copy(n-k-1,&h[k+1],&x[k+1]);      // h((k+1):end)=x((k+1):end);
   if(cis_zero(x[k])){
-    ccopy_r(h[k],xi); cneg(h[k],h[k]);        //h[k]=-xi
+    cset_r(h[k],xi); cneg_c(h[k],h[k]);        //h[k]=-xi
   }else{
-    rdiv_r(zeta,xi,axk); rneg(zeta,zeta);    // zeta=-xi/axk;
-    cmul_r(h[k],x[k],zeta);                // h[k]=zeta*x[k];
+    rdiv_rr(zeta,xi,axk); rneg_r(zeta,zeta);    // zeta=-xi/axk;
+    cmul_cr(h[k],x[k],zeta);                // h[k]=zeta*x[k];
   }
   //----------- alpha
-  if(req_d(xi,0) || req_d(eta,0)){
+  if(eq_rd(xi,0) || eq_rd(eta,0)){
     rset_d(alpha,0);
   }else{
-    rmul_r(alpha,xi,eta);                  // alpha=1/(xi*eta)
-    rinv(alpha,alpha);
+    rmul_rr(alpha,xi,eta);                  // alpha=1/(xi*eta)
+    rinv_r(alpha,alpha);
   }
   // free
   eta=rfree(eta);
@@ -91,7 +91,7 @@ void chouseholder_right(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   // p=A*h
   cvec_lintr(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
   // B=A*H=A-alpha*(A*h)*h'=A-alpha*p*h'
-  ccopy_r(a,alpha); cneg(a,a);
+  cset_r(a,alpha); cneg_c(a,a);
   cmat_rank1op(m,n-k,&COL(B,k,LDB),LDB,&COL(A,k,LDA),LDA,a,p,&h[k]);
   // done
   a=cfree(a);
@@ -119,7 +119,7 @@ void chouseholder_left(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, i
   // p=A'*h
   cvec_lintr_ct(m-k,n,p,&MAT(A,k,0,LDA),LDA,&h[k]);
   // B=H*A=A-alpha*h*(A'*h)'=A-alpha*h*p'
-  ccopy_r(a,alpha); cneg(a,a);
+  cset_r(a,alpha); cneg_c(a,a);
   cmat_rank1op(m-k,n,&MAT(B,k,0,LDB),LDB,&MAT(A,k,0,LDA),LDA,a,&h[k],p);
   // done
   a=cfree(a);
@@ -154,8 +154,8 @@ void chouseholder(int n, int k0, int nH, int k, cmulti **h, rmulti *alpha, cmult
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)
     l=k0+j;
     cvec_sum_dot(value,n-l,&MAT(H,l,j,LDH),&R[l]);
-    cmul_r(value,value,Alpha[j]);
-    cvec_sub_mul_c(n-l,&R[l],&MAT(H,l,j,LDH),value);
+    cmul_cr(value,value,Alpha[j]);
+    cvec_sub_mul_cvec_cscalar(n-l,&R[l],&MAT(H,l,j,LDH),value);
   }
   chouseholder_vec(n,k,h,alpha,R);
   // free

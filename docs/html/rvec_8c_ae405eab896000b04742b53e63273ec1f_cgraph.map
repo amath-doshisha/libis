@@ -1,8 +1,8 @@
 <map id="rvec_add_lintr_t" name="rvec_add_lintr_t">
-<area shape="rect" id="node2" href="$is__rmulti_8h.html#af5021e0432394a8697046e37b63c9331" title="rmulti型の値のコピー y=x. " alt="" coords="265,5,311,32"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#a05f48c1dd7a3fde008998c2533c5909c" title="rmulti型の掛け算の加算 z+=x*y " alt="" coords="149,81,213,108"/>
-<area shape="rect" id="node7" href="$rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="147,31,215,57"/>
-<area shape="rect" id="node3" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="361,56,459,83"/>
-<area shape="rect" id="node5" href="$rmulti_8c.html#a3451eef31d904dc3c6d4d49880a38ad4" title="z=x*y " alt="" coords="263,56,313,83"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#a357e8a4bc45c314b575f2e83892919ea" title="z=x+y " alt="" coords="263,107,313,133"/>
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="274,5,322,32"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="147,81,223,108"/>
+<area shape="rect" id="node7" href="$rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="151,31,219,57"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="373,56,471,83"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="271,56,325,83"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="271,107,325,133"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="icscalar_sub_cvec" name="icscalar_sub_cvec">
-<area shape="rect" id="node2" href="$icmulti_8c.html#a5f8e70c609ebc9ec4217b512f0e4823b" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="157,31,203,57"/>
-<area shape="rect" id="node3" href="$irmulti_8c.html#ad83b8a1e9ca77caeaf833f866853ac35" title="引き算 [z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="251,31,295,57"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="343,5,407,32"/>
-<area shape="rect" id="node5" href="$irmulti_8c.html#aaf2192a33e04cbba12da47550fde287e" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="350,56,399,83"/>
+<area shape="rect" id="node2" href="$icmulti_8c.html#acfcdb8d0fdd3869666b3ccb118ba30fa" title="[z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="157,31,219,57"/>
+<area shape="rect" id="node3" href="$irmulti_8c.html#aa252a525339c0c6555fe050952901ca6" title="[z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="267,31,323,57"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="371,5,435,32"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="378,56,427,83"/>
 </map>
