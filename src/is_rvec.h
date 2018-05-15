@@ -41,6 +41,7 @@ void rvec_set_inf(int n, rmulti **x, int sgn);             // x=sgn*inf(n,1)
 void rvec_set_zeros(int n, rmulti **x);                    // x=zeros(n,1)
 void rvec_set_ones(int n, rmulti **x);                     // x=ones(n,1)
 void rvec_set_all_r(int n, rmulti **x, rmulti *a);         // x=ones(n,1)*a
+void rvec_set_all_z(int n, rmulti **x, dcomplex a);        // x=ones(n,1)*a
 void rvec_set_all_d(int n, rmulti **x, double a);          // x=ones(n,1)*a
 void rvec_set_unit(int n, rmulti **x, int k);              // x=zeros(n,1); x[k]=1
 void rvec_set_grid(int n, rmulti **x);                     // x=0:(n-1)
@@ -57,13 +58,13 @@ void rvec_set_dvec(int n, rmulti **y, double *x);   // rmulti <- double
 void rvec_get_dvec(int n, double *y, rmulti **x);   // rmulti -> double
 void dvec_set_rvec(int n, double *y, rmulti **x);   // rmulti -> double
 void rvec_set_ivec(int n, rmulti **y, int *x);      // rmulti <- int
-void ivec_set_rvec(int n, int *y, rmulti **x);      // rmulti -> int
 void rvec_get_ivec(int n, int *y, rmulti **x);      // rmulti -> int
+void ivec_set_rvec(int n, int *y, rmulti **x);      // rmulti -> int
 void rvec_set_svec(int n, rmulti **x, char **str);                        // rmulti <- char
 void rvec_get_svec(int n, char **y, rmulti **x, char format, int digits); // rmulti -> char
 
 /*
- * rearange elements
+ * convert itself
  */
 void rvec_swap(int n, rmulti **x, rmulti **y); // x <=> y
 void rvec_reverse(int n, rmulti **x);
@@ -77,38 +78,41 @@ void rvec_sort_index(int *I, int n, rmulti **X);
  * member variables
  */
 void rvec_get_prec(int n, int *p, rmulti **x);
-int rvec_get_prec_max(int n, rmulti **x);
+int  rvec_get_prec_max(int n, rmulti **x);
 void rvec_get_exp(int n, int *p, rmulti **x);
-int rvec_get_exp_max(int n, rmulti **x);
-int rvec_is_number(int n, rmulti **x);
-int rvec_has_nan(int n, rmulti **x);
+int  rvec_get_exp_max(int n, rmulti **x);
+int  rvec_is_number(int n, rmulti **x);
+int  rvec_has_nan(int n, rmulti **x);
 
 /*
  * y=f(x)
  */
-void rvec_round(int n, rmulti **x, int prec);                 // x=round(x)
-void rvec_clone(int n, rmulti **y, rmulti **x);               // y=x
-void rvec_clone_index(int n, rmulti **y, rmulti **x, int *I); // y=x(I)
-void rvec_index_clone(int n, rmulti **y, rmulti **x, int *I); // y(I)=x
-void rvec_copy(int n, rmulti **y, rmulti **x);               // y=x
-void rvec_copy_index(int n, rmulti **y, rmulti **x, int *I); // y=x(I)
-void rvec_index_copy(int n, rmulti **y, int *I, rmulti **x); // y(I)=x
-void rvec_neg(int n, rmulti **y, rmulti **x);                // y=-x
-void rvec_abs(int n, rmulti **y, rmulti **x);                  // y=abs(x)
-void rvec_sum(rmulti *value, int n, rmulti **x);               // y=sum(x)
-void rvec_sum_abs(rmulti *value, int n, rmulti **x);           // y=sum(abs(x))
-void rvec_sum_pow2(rmulti *value, int n, rmulti **x);          // y=sum(x.^2)
-void rvec_max(rmulti *value, int n, rmulti **x);                     // y=max(x)
-void rvec_max_abs(rmulti *value, int n, rmulti **x);                 // y=max(abs(x))
-void rvec_max_abs_index(rmulti *value, int n, rmulti **x, int *I);   // y=max(abs(x))
-void rvec_min(rmulti *value, int n, rmulti **x);                     // y=min(x)
-void rvec_min_abs(rmulti *value, int n, rmulti **x);                 // y=min(abs(x))
-void rvec_min_abs_index(rmulti *value, int n, rmulti **x, int *I);   // y=min(abs(x))
-void rvec_log2_abs(int n, rmulti **y, rmulti **x);                   // y=log2(abs(x))
-void rvec_normalize(int n, rmulti **y, rmulti **x);                  // y=x/sqrt(x'*x)
-void rvec_normalize_sgn(int n, rmulti **y, rmulti **x);              // y=x/sqrt(x'*x)
-void rvec_norm2(rmulti *value, int n, rmulti **x);                   // y=sqrt(sum(x.^2))
-void rvec_average(rmulti *value, int n, rmulti **x);                 // y=sum(x)/n
+void rvec_round_rvec(int n, rmulti **x, int prec);                 // x=round(x)
+void rvec_clone_rvec(int n, rmulti **y, rmulti **x);               // y=x
+void rvec_clone_rvec_index(int n, rmulti **y, rmulti **x, int *I); // y=x(I)
+void rvec_index_clone_rvec(int n, rmulti **y, rmulti **x, int *I); // y(I)=x
+void rvec_copy_rvec(int n, rmulti **y, rmulti **x);                // y=x
+void rvec_copy_rvec_index(int n, rmulti **y, rmulti **x, int *I);  // y=x(I)
+void rvec_index_copy_rvec(int n, rmulti **y, int *I, rmulti **x);  // y(I)=x
+void rvec_abs_rvec(int n, rmulti **y, rmulti **x);                 // y=abs(x)
+void rvec_neg_rvec(int n, rmulti **y, rmulti **x);                 // y=-x
+void rvec_pow2_rvec(int n, rmulti **y, rmulti **x);                // y=x^2
+void rvec_log2_abs_rvec(int n, rmulti **y, rmulti **x);            // y=log2(abs(x))
+void rvec_normalize_rvec(int n, rmulti **y, rmulti **x);           // y=x/sqrt(x'*x)
+void rvec_normalize_sgn_rvec(int n, rmulti **y, rmulti **x);       // y=x/sqrt(x'*x)
+void rsum_rvec(rmulti *y, int n, rmulti **x);                      // y=sum(x)
+void raverage_rvec(rmulti *y, int n, rmulti **x);                  // y=sum(x)/n
+void rsum_abs_rvec(rmulti *y, int n, rmulti **x);                  // y=sum(abs(x))
+void rsum_pow2_abs_rvec(rmulti *y, int n, rmulti **x);             // y=sum(abs(x)^2)
+void rnorm1_rvec(rmulti *y, int n, rmulti **x);                    // y=sum(abs(x))
+void rnorm2_rvec(rmulti *y, int n, rmulti **x);                    // y=sqrt(sum(abs(x)^2))
+void rnorm_max_rvec(rmulti *y, int n, rmulti **x);                 // y=max(abs(x))
+void rmax_rvec(rmulti *y, int n, rmulti **x);                      // y=max(x)
+void rmin_rvec(rmulti *y, int n, rmulti **x);                      // y=min(x)
+void rmax_abs_rvec(rmulti *y, int n, rmulti **x);                  // y=max(abs(x))
+void rmin_abs_rvec(rmulti *y, int n, rmulti **x);                  // y=min(abs(x))
+void rmax_abs_rvec_index(rmulti *y, int n, rmulti **x, int *I);    // y=max(abs(x))
+void rmin_abs_rvec_index(rmulti *y, int n, rmulti **x, int *I);    // y=min(abs(x))
 
 /*
  * z=f(x,y)

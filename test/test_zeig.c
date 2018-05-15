@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
   // output  
   zeig_residual_norm_max(k,E,A,LDA,X,LDX,lambda);
-  dvec_log2_abs(k,Ebin,E);
+  dvec_log2_abs_dvec(k,Ebin,E);
   printf("Number of computed eigenpairs = %d\n",k);
   if(k<n){
     printf("Failed to compute.\n");
@@ -55,8 +55,8 @@ int main(int argc, char *argv[])
   zvec_print(k,lambda,"lambda=",'f',2);
   dvec_print(k,E,"E=",'e',0);
   dvec_print(k,Ebin,"log2(E)=",'f',1);
-  printf("max(E)=%.0e\n",dvec_norm_max(k,E));
-  printf("max(log2(E))=%.2g\n",dvec_max(k,Ebin));
+  printf("max(E)=%.0e\n",dnorm_max_dvec(k,E));
+  printf("max(log2(E))=%.2g\n",dmax_dvec(k,Ebin));
 
   // free
   A=zmat_free(A);

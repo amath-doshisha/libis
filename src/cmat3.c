@@ -1311,7 +1311,7 @@ void cmat3_eq(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=ceq_c(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=eq_cc(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1327,7 +1327,7 @@ void cmat3_eq_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=ceq_r(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=eq_cr(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1343,7 +1343,7 @@ void cmat3_eq_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=ceq_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=eq_cc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1359,7 +1359,7 @@ void cmat3_eq_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=ceq_r(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=eq_cr(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1375,7 +1375,7 @@ void rmat3_eq_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=ceq_r(b,MAT3(A,i,j,k,LDA1,LDA2));
+	MAT3(C,i,j,k,LDC1,LDC2)=eq_cr(b,MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -1391,7 +1391,7 @@ void cmat3_ne(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cne_c(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=ne_cc(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1407,7 +1407,7 @@ void cmat3_ne_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cne_r(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=ne_cr(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1423,7 +1423,7 @@ void cmat3_ne_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cne_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=ne_cc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1439,7 +1439,7 @@ void cmat3_ne_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cne_r(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=ne_cr(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1455,7 +1455,7 @@ void rmat3_ne_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cne_r(b,MAT3(A,i,j,k,LDA1,LDA2));
+	MAT3(C,i,j,k,LDC1,LDC2)=ne_cr(b,MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }
@@ -1471,7 +1471,7 @@ void cmat3_ge(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cge_c(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=ge_cc(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1487,7 +1487,7 @@ void cmat3_ge_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cge_r(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=ge_cr(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1503,7 +1503,7 @@ void cmat3_ge_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cge_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=ge_cc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1519,7 +1519,7 @@ void cmat3_ge_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cge_r(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=ge_cr(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1535,7 +1535,7 @@ void rmat3_ge_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=rge_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=ge_rc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1551,7 +1551,7 @@ void cmat3_gt(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cgt_c(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=gt_cc(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1567,7 +1567,7 @@ void cmat3_gt_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cgt_r(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=gt_cr(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1583,7 +1583,7 @@ void cmat3_gt_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cgt_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=gt_cc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1599,7 +1599,7 @@ void cmat3_gt_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cgt_r(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=gt_cr(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1615,7 +1615,7 @@ void rmat3_gt_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=rgt_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=gt_rc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1631,7 +1631,7 @@ void cmat3_le(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cle_c(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=le_cc(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1647,7 +1647,7 @@ void cmat3_le_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cle_r(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=le_cr(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1663,7 +1663,7 @@ void cmat3_le_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cle_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=le_cc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1679,7 +1679,7 @@ void cmat3_le_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=cle_r(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=le_cr(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1695,7 +1695,7 @@ void rmat3_le_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=rle_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=le_rc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1711,7 +1711,7 @@ void cmat3_lt(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int L
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=clt_c(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=lt_cc(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1727,7 +1727,7 @@ void cmat3_lt_rmat3(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=clt_r(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
+	MAT3(C,i,j,k,LDC1,LDC2)=lt_cr(MAT3(A,i,j,k,LDA1,LDA2),MAT3(B,i,j,k,LDB1,LDB2));
       }
     }
   }
@@ -1743,7 +1743,7 @@ void cmat3_lt_c(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=clt_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=lt_cc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1759,7 +1759,7 @@ void cmat3_lt_r(int m, int n, int l, int *C, int LDC1, int LDC2, cmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=clt_r(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=lt_cr(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }
@@ -1775,7 +1775,7 @@ void rmat3_lt_c(int m, int n, int l, int *C, int LDC1, int LDC2, rmulti **A, int
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	MAT3(C,i,j,k,LDC1,LDC2)=rlt_c(MAT3(A,i,j,k,LDA1,LDA2),b);
+	MAT3(C,i,j,k,LDC1,LDC2)=lt_rc(MAT3(A,i,j,k,LDA1,LDA2),b);
       }
     }
   }

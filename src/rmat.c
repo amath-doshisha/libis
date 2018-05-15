@@ -147,7 +147,7 @@ void rmat_clone_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, co
 {
   int j;
   for(j=0; j<n; j++){
-    rvec_clone(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
+    rvec_clone_rvec(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
   }
 }
 
@@ -708,7 +708,7 @@ void rmat_copy_col_index(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA,
 {
   int j;
   for(j=0; j<n; j++){
-    rvec_copy(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
+    rvec_copy_rvec(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
   }
 }
 
@@ -1062,7 +1062,7 @@ void rmat_diag_sub_r(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmu
 void rvec_sum_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ rvec_sum(B[j],m,&COL(A,j,LDA)); }
+  for(j=0; j<n; j++){ rsum_rvec(B[j],m,&COL(A,j,LDA)); }
 }
 
 //ここまで
@@ -1073,7 +1073,7 @@ void rvec_sum_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
 void rvec_max_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ rvec_max(B[j],m,&COL(A,j,LDA)); }
+  for(j=0; j<n; j++){ rmax_rvec(B[j],m,&COL(A,j,LDA)); }
 }
 
 /**
@@ -1082,7 +1082,7 @@ void rvec_max_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
 void rvec_min_rmat(int m, int n, rmulti **B, rmulti **A, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ rvec_min(B[j],m,&COL(A,j,LDA)); }
+  for(j=0; j<n; j++){ rmin_rvec(B[j],m,&COL(A,j,LDA)); }
 }
 
 /**
@@ -1246,7 +1246,7 @@ void rmat_cols_normalize(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA)
 {
   int j;
   for(j=0; j<n; j++){
-    rvec_normalize(m,&COL(B,j,LDB),&COL(A,j,LDA));
+    rvec_normalize_rvec(m,&COL(B,j,LDB),&COL(A,j,LDA));
   }
 }
 
@@ -1257,7 +1257,7 @@ void rmat_cols_normalize_sgn(int m, int n, rmulti **B, int LDB, rmulti **A, int 
 {
   int j;
   for(j=0; j<n; j++){
-    rvec_normalize_sgn(m,&COL(B,j,LDB),&COL(A,j,LDA));
+    rvec_normalize_sgn_rvec(m,&COL(B,j,LDB),&COL(A,j,LDA));
   }
 }
 

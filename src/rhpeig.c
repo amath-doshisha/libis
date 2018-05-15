@@ -75,12 +75,12 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
   }
   // initial vector
   step=0;
-  rvec_normalize_sgn(n,x,x);          // x=x/sqrt(x'*x)
+  rvec_normalize_sgn_rvec(n,x,x);          // x=x/sqrt(x'*x)
   rvec_sum_mul(C,n,z,x);              // C=z'*x
   rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
   rdiv_rr(lambda,lambda,C);              // lambda=(w'*x)/C
   reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
-  rvec_max_abs(E,n,F);                // E=max(abs(F))
+  rmax_abs_rvec(E,n,F);                // E=max(abs(F))
   if(ris_zero(E)) { done=RHPEIG_CONVERGENT; } else { done=RHPEIG_NONE; } // convergent or not?
   if(debug>0) { PUT_1PAIR; }
   // compute
@@ -91,14 +91,14 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
     if(info<0)      { ERROR_EXIT("Error in rhpeig_1pair(), rsolve, info=%d.\n",info); }
     else if(info>0) { done=RHPEIG_SINGULAR; }
     else{
-      rvec_max_abs(eta,n,F);              // eta=max(abs(F))
+      rmax_abs_rvec(eta,n,F);              // eta=max(abs(F))
       rvec_sub_rvec(n,x,x,F);                  // x=x-F
-      rvec_normalize_sgn(n,x,x);          // x=x/sqrt(x'*x)
+      rvec_normalize_sgn_rvec(n,x,x);          // x=x/sqrt(x'*x)
       rvec_sum_mul(C,n,z,x);              // C=z'*x
       rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
       rdiv_rr(lambda,lambda,C);              // lambda=(w'*x)/C
       reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
-      rvec_max_abs(E,n,F);                // E=max(abs(F))
+      rmax_abs_rvec(E,n,F);                // E=max(abs(F))
     }
     rdiv_rr(mu,eta,eta0); rmul_rd(mu,mu,2);   // mu=2*eta/eta0
     if     (status==RHPEIG_STATUS_PRE && lt_rr(eta,eps_half)){ status=RHPEIG_STATUS_CONV; } // start to convergent
@@ -170,10 +170,10 @@ int rhpeig(int n, rmulti **X, int LDX, rmulti **Lambda, rmulti **A, int LDA, int
   // loop
   t=0; done=0;
   for(k=0; !done && k<n; k++){
-    rvec_copy(n,z,&Qk);                                                    // set normal vector z as Q(:,k).
+    rvec_copy_rvec(n,z,&Qk);                                                    // set normal vector z as Q(:,k).
     if(rvec_has_nan(n,&Xk)){
-      if(k==0){ rvec_set_rand(n,&Xk,2,-1); rvec_normalize_sgn(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
-      else    { rvec_copy(n,&Xk,z); }                                       // set initial vector X(:,k) as z if k!=0.
+      if(k==0){ rvec_set_rand(n,&Xk,2,-1); rvec_normalize_sgn_rvec(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
+      else    { rvec_copy_rvec(n,&Xk,z); }                                       // set initial vector X(:,k) as z if k!=0.
     }
     fail=0; conv=0; rset_one(E);
     for(fail=0; !conv && fail<fail_max; fail++){
@@ -189,7 +189,7 @@ int rhpeig(int n, rmulti **X, int LDX, rmulti **Lambda, rmulti **A, int LDA, int
 	mpfr_printf("step=%03d log2(E)=%+6.1f lambda=%+.16Re\n",step,log(fabs(rget_d(E)))/log(2),Lambda[k]);
 	print_reset();
       }
-      if(!conv) { rvec_set_rand(n,&Xk,2,-1); rvec_normalize_sgn(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
+      if(!conv) { rvec_set_rand(n,&Xk,2,-1); rvec_normalize_sgn_rvec(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
     }
     if(!conv){ done=1; }
     if(!done){

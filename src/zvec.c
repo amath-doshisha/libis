@@ -316,8 +316,8 @@ void zvec_swap_index(int n, dcomplex *x, int *I)
 {
   dcomplex *y=NULL;
   y=zvec_allocate(n);
-  zvec_copy_index(n,y,x,I);
-  zvec_copy(n,x,y);
+  zvec_copy_zvec_index(n,y,x,I);
+  zvec_copy_zvec(n,x,y);
   y=zvec_free(y);
 }
 
@@ -361,7 +361,7 @@ void zvec_sort_index(int *I, int n, dcomplex *X)
 {
   dcomplex *Y=NULL;
   Y=zvec_allocate(n);
-  zvec_copy(n,Y,X);
+  zvec_copy_zvec(n,Y,X);
   zvec_sort(n,Y,I);
   Y=zvec_free(Y);
 }
@@ -376,7 +376,7 @@ void zvec_sort_index(int *I, int n, dcomplex *X)
 /**
  @brief y=x
  */
-void zvec_copy(int n, dcomplex *y, dcomplex *x)
+void zvec_copy_zvec(int n, dcomplex *y, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]; }
@@ -385,7 +385,7 @@ void zvec_copy(int n, dcomplex *y, dcomplex *x)
 /**
  @brief Y[i]=X[I[i]]
  */
-void zvec_copy_index(int n, dcomplex *Y, dcomplex *X, int *I)
+void zvec_copy_zvec_index(int n, dcomplex *Y, dcomplex *X, int *I)
 {
   int i;
   for(i=0; i<n; i++) Y[i]=X[I[i]];
@@ -394,7 +394,7 @@ void zvec_copy_index(int n, dcomplex *Y, dcomplex *X, int *I)
 /**
  @brief y=-x
  */
-void zvec_neg(int n, dcomplex *y, dcomplex *x)
+void zvec_neg_zvec(int n, dcomplex *y, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){
@@ -406,7 +406,7 @@ void zvec_neg(int n, dcomplex *y, dcomplex *x)
 /**
  @brief y=real(x)
  */
-void zvec_real(int n, double *y, dcomplex *x)
+void dvec_real_zvec(int n, double *y, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=Z_R(x[i]); }
@@ -415,7 +415,7 @@ void zvec_real(int n, double *y, dcomplex *x)
 /**
  @brief y=conj(x)
  */
-void zvec_conj(int n, dcomplex *y, dcomplex *x)
+void zvec_conj_zvec(int n, dcomplex *y, dcomplex *x)
 {
   int i;
   for(i=0; i<n; i++){
@@ -427,23 +427,23 @@ void zvec_conj(int n, dcomplex *y, dcomplex *x)
 /**
  @brief y=x/sqrt(x'*x)
  */
-void zvec_normalize(int n, dcomplex *y, dcomplex *x)
+void zvec_normalize_zvec(int n, dcomplex *y, dcomplex *x)
 {
   double norm=0;
-  norm=zvec_norm2(n,x);
+  norm=dnorm2_zvec(n,x);
   zvec_mul_dscalar(n,y,x,(1.0/norm));
 }
 
 /**
  @brief y=x/sqrt(x'*x) where x[i]/|x[i]|=1, abs(x[i]) is max
  */
-void zvec_normalize_sgn(int n, dcomplex *y, dcomplex *x)
+void zvec_normalize_sgn_zvec(int n, dcomplex *y, dcomplex *x)
 {
   int k;
   double norm=0;
   dcomplex a;
-  norm=zvec_norm2(n,x);
-  zvec_max_abs_index(n,x,&k);
+  norm=dnorm2_zvec(n,x);
+  dmax_abs_zvec_index(n,x,&k);
   a=znormalize_z(x[k]);
   Z_R(a)=Z_CONJ_R(a);
   Z_I(a)=Z_CONJ_I(a);
@@ -455,7 +455,7 @@ void zvec_normalize_sgn(int n, dcomplex *y, dcomplex *x)
 /**
  @brief y=sum(abs(x))
  */
-double zvec_norm1(int n, dcomplex *x)
+double dnorm1_zvec(int n, dcomplex *x)
 {
   int i;
   double value=0;
@@ -468,7 +468,7 @@ double zvec_norm1(int n, dcomplex *x)
 /**
  @brief y=sqrt(sum(abs(x).^2))
  */
-double zvec_norm2(int n, dcomplex *x)
+double dnorm2_zvec(int n, dcomplex *x)
 {
   int i;
   double value=0;
@@ -482,7 +482,7 @@ double zvec_norm2(int n, dcomplex *x)
 /**
  @brief y=max(abs(x))
  */
-double zvec_norm_max(int n, dcomplex *x)
+double dnorm_max_zvec(int n, dcomplex *x)
 {
   int i;
   double value=0,foo;
@@ -498,7 +498,7 @@ double zvec_norm_max(int n, dcomplex *x)
 /**
  @brief y=sum(abs(x).^2)
  */
-double zvec_sum_pow2_abs(int n, dcomplex *x)
+double dsum_pow2_abs_zvec(int n, dcomplex *x)
 {
   double value=0;
   int i;
@@ -512,7 +512,7 @@ double zvec_sum_pow2_abs(int n, dcomplex *x)
 /**
  @brief y=max(abs(x))
  */
-double zvec_max_abs(int n, dcomplex *x)
+double dmax_abs_zvec(int n, dcomplex *x)
 {
   int i;
   double value=0,foo;
@@ -529,7 +529,7 @@ double zvec_max_abs(int n, dcomplex *x)
 /**
  @brief y=min(abs(x))
  */
-double zvec_min_abs(int n, dcomplex *x)
+double dmin_abs_zvec(int n, dcomplex *x)
 {
   int i;
   double value,foo;
@@ -547,7 +547,7 @@ double zvec_min_abs(int n, dcomplex *x)
 /**
  @brief y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL
  */
-double zvec_max_abs_index(int n, dcomplex *x, int *I)
+double dmax_abs_zvec_index(int n, dcomplex *x, int *I)
 {
   int i;
   double value=0,foo;
@@ -567,7 +567,7 @@ double zvec_max_abs_index(int n, dcomplex *x, int *I)
 /**
  @brief y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
  */
-double zvec_min_abs_index(int n, dcomplex *x, int *I)
+double dmin_abs_zvec_index(int n, dcomplex *x, int *I)
 {
   int i;
   double value,foo;
@@ -587,7 +587,7 @@ double zvec_min_abs_index(int n, dcomplex *x, int *I)
 /**
  @brief y=max(x)
  */
-dcomplex zvec_max(int n, dcomplex *x)
+dcomplex zmax_zvec(int n, dcomplex *x)
 {
   int i;
   dcomplex value;
@@ -601,7 +601,7 @@ dcomplex zvec_max(int n, dcomplex *x)
 /**
  @brief y=min(x)
  */
-dcomplex zvec_min(int n, dcomplex *x)
+dcomplex zmin_zvec(int n, dcomplex *x)
 {
   int i;
   dcomplex value=x[0];
@@ -614,7 +614,7 @@ dcomplex zvec_min(int n, dcomplex *x)
 /**
  @brief y=sum(x)
  */
-dcomplex zvec_sum(int n, dcomplex *x)
+dcomplex zsum_zvec(int n, dcomplex *x)
 {
   dcomplex value;
   int i;
@@ -631,7 +631,7 @@ dcomplex zvec_sum(int n, dcomplex *x)
 dcomplex zvec_avarage(int n, dcomplex *x)
 {
   dcomplex value;
-  value=zvec_sum(n,x);
+  value=zsum_zvec(n,x);
   Z_R(value)/=n;
   Z_I(value)/=n;
   return value;
@@ -1015,8 +1015,8 @@ double zvec_dcos_abs(int n, dcomplex *x, dcomplex *y)
 {
   double norm_x,norm_y,dcos;
   dcomplex dot;
-  norm_x=zvec_norm2(n,x);
-  norm_y=zvec_norm2(n,y);
+  norm_x=dnorm2_zvec(n,x);
+  norm_y=dnorm2_zvec(n,y);
   dot=zvec_dot(n,x,y);
   dcos=Z_ABS(dot);
   dcos/=norm_x*norm_y;

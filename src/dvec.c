@@ -246,8 +246,8 @@ void dvec_swap_index(int n, double *x, int *I)
 {
   double *y=NULL;
   y=dvec_allocate(n);
-  dvec_copy_index(n,y,x,I);
-  dvec_copy(n,x,y);
+  dvec_copy_dvec_index(n,y,x,I);
+  dvec_copy_dvec(n,x,y);
   y=dvec_free(y);
 }
 
@@ -291,7 +291,7 @@ void dvec_sort_index(int *I, int n, double *X)
 {
   double *Y=NULL;
   Y=dvec_allocate(n);
-  dvec_copy(n,Y,X);
+  dvec_copy_dvec(n,Y,X);
   dvec_sort(n,Y,I);
   Y=dvec_free(Y);
 }
@@ -306,14 +306,14 @@ void dvec_sort_index(int *I, int n, double *X)
 /**
  @brief y=x
  */
-void dvec_copy(int n, double *y, double *x)
+void dvec_copy_dvec(int n, double *y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]; }
 }
 
 // Y[i]=X[I[i]], 0<=i<n
-void dvec_copy_index(int n, double *Y, double *X, int *I)
+void dvec_copy_dvec_index(int n, double *Y, double *X, int *I)
 {
   int i;
   for(i=0; i<n; i++){ Y[i]=X[I[i]]; }
@@ -322,7 +322,7 @@ void dvec_copy_index(int n, double *Y, double *X, int *I)
 /**
  @brief y=-x
  */
-void dvec_neg(int n, double *y, double *x)
+void dvec_neg_dvec(int n, double *y, double *x)
 {
   int i;
   for(i=0; i<n; i++){ y[i]=-x[i]; }
@@ -331,7 +331,7 @@ void dvec_neg(int n, double *y, double *x)
 /**
  @brief y=x.^2
  */
-void dvec_pow2(int n, double *y, double *x){
+void dvec_pow2_dvec(int n, double *y, double *x){
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]*x[i]; }
 }
@@ -339,7 +339,7 @@ void dvec_pow2(int n, double *y, double *x){
 /**
  @brief y=log2(abs(x))
  */
-void dvec_log2_abs(int n, double *y, double *x)
+void dvec_log2_abs_dvec(int n, double *y, double *x)
 {
   int i;
   for(i=0; i<n; i++) y[i]=log(fabs(x[i]))/log(2);
@@ -348,23 +348,23 @@ void dvec_log2_abs(int n, double *y, double *x)
 /**
  @brief y=x/sqrt(x'*x)
  */
-void dvec_normalize(int n, double *y, double *x)
+void dvec_normalize_dvec(int n, double *y, double *x)
 {
   double norm=0;
-  norm=dvec_norm2(n,x);
+  norm=dnorm2_dvec(n,x);
   dvec_mul_dscalar(n,y,x,(1.0/norm));
 }
 
 /**
  @brief x=x/sqrt(x'*x) where x[i]>0, abs(x[i]) is max
  */
-void dvec_normalize_sgn(int n, double *y, double *x)
+void dvec_normalize_sgn_dvec(int n, double *y, double *x)
 {
   int k;
   double a=0;
-  a=dvec_norm2(n,x);
+  a=dnorm2_dvec(n,x);
   a=1.0/a;
-  dvec_max_abs_index(n,x,&k);
+  dmax_abs_dvec_index(n,x,&k);
   if(x[k]<0) a=-a;
   dvec_mul_dscalar(n,y,x,a);
 }
@@ -382,7 +382,7 @@ void dvec_orthogonalize(int n, double *y, double *x)
 /**
  @brief y=sum(abs(x))
  */
-double dvec_norm1(int n, double *x)
+double dnorm1_dvec(int n, double *x)
 {
   int i;
   double value=0;
@@ -395,7 +395,7 @@ double dvec_norm1(int n, double *x)
 /**
  @brief y=sqrt(sum(x.^2))
  */
-double dvec_norm2(int n, double *x)
+double dnorm2_dvec(int n, double *x)
 {
   int i;
   double value=0;
@@ -409,7 +409,7 @@ double dvec_norm2(int n, double *x)
 /**
  @brief y=max(abs(x))
  */
-double dvec_norm_max(int n, double *x)
+double dnorm_max_dvec(int n, double *x)
 {
   int i;
   double value=0;
@@ -422,7 +422,7 @@ double dvec_norm_max(int n, double *x)
 /**
  @brief y=sum(x)
  */
-double dvec_sum(int n, double *x)
+double dsum_dvec(int n, double *x)
 {
   double value=0;
   int i;
@@ -433,15 +433,15 @@ double dvec_sum(int n, double *x)
 /**
  @brief y=sum(x)/n
  */
-double dvec_average(int n, double *x)
+double daverage_dvec(int n, double *x)
 {
-  return dvec_sum(n,x)/n;
+  return dsum_dvec(n,x)/n;
 }
 
 /**
  @brief y=sum(x.^2)
  */
-double dvec_sum_pow2(int n, double *x)
+double dsum_pow2_abs_dvec(int n, double *x)
 {
   double value=0;
   int i;
@@ -454,7 +454,7 @@ double dvec_sum_pow2(int n, double *x)
 /**
  @brief y=max(abs(x))
  */
-double dvec_max_abs(int n, double *x)
+double dmax_abs_dvec(int n, double *x)
 {
   int i;
   double value=0;
@@ -470,7 +470,7 @@ double dvec_max_abs(int n, double *x)
 /**
  @brief y=min(abs(x))
  */
-double dvec_min_abs(int n, double *x)
+double dmin_abs_dvec(int n, double *x)
 {
   int i;
   double value;
@@ -486,7 +486,7 @@ double dvec_min_abs(int n, double *x)
 /**
  @brief y=max(abs(x[I]))
  */
-double dvec_max_abs_index(int n, double *x, int *I)
+double dmax_abs_dvec_index(int n, double *x, int *I)
 {
   int i;
   double value=0;
@@ -504,7 +504,7 @@ double dvec_max_abs_index(int n, double *x, int *I)
 /**
  @brief y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
  */
-double dvec_min_abs_index(int n, double *x, int *I)
+double dmin_abs_dvec_index(int n, double *x, int *I)
 {
   int i;
   double value;
@@ -522,7 +522,7 @@ double dvec_min_abs_index(int n, double *x, int *I)
 /**
  @brief y=max(x)
  */
-double dvec_max(int n, double *x)
+double dmax_dvec(int n, double *x)
 {
   int i;
   double value;
@@ -536,7 +536,7 @@ double dvec_max(int n, double *x)
 /**
  @brief y=min(x)
  */
-double dvec_min(int n, double *x)
+double dmin_dvec(int n, double *x)
 {
   int i;
   double value=x[0];
@@ -741,8 +741,8 @@ double dvec_dot(int n, double *x, double *y)
  */
 double dvec_dcos_abs(int n, double *x, double *y){
   double norm_x,norm_y,dcos,dot;
-  norm_x=dvec_norm2(n,x);
-  norm_y=dvec_norm2(n,y);
+  norm_x=dnorm2_dvec(n,x);
+  norm_y=dnorm2_dvec(n,y);
   dot=dvec_dot(n,x,y);
   dcos=fabs(dot)/(norm_x*norm_y);
   return dcos;
@@ -914,7 +914,7 @@ void dvec_save_log2_abs(int n, double *x, int offset, char* fmt, ...)
   if((fid=fopen(fname,"w"))==0){ ERROR_AT; printf("Cant't open file: %s\n",fname); exit(0); } // open
   // write
   for(i=0; i<n; i++){
-    dvec_log2_abs(n,value,x);
+    dvec_log2_abs_dvec(n,value,x);
     fprintf(fid,"%d\t%+.20e\n",i+offset,value[i]);
   } // write
   fclose(fid); // close

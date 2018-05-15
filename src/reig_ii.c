@@ -72,10 +72,10 @@ void reig_ii_1pair(int n, rmulti **x, rmulti **A, int LDA, rmulti *lambda, int d
   }
   // compute
   rvec_set_rand(n,x,2,-1);
-  rvec_normalize_sgn(n,x,x);
+  rvec_normalize_sgn_rvec(n,x,x);
   for(i=0; i<2; i++){
     rsolve_lu_backsubs(n,1,x,n,B,n,p);
-    rvec_normalize_sgn(n,x,x);
+    rvec_normalize_sgn_rvec(n,x,x);
     if(debug>=1){ printf("[%s] II: step=%02d\n",NAME_REIGII_1PAIR,i); }
   }
   // done

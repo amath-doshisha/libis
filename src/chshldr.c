@@ -37,7 +37,7 @@ void chouseholder_vec(int n, int k, cmulti **h, rmulti *alpha, cmulti **x)
   xi=rallocate_prec(prec);
   axk=rallocate_prec(prec);
   //----------- norm
-  cvec_sum_abs2(xi,n-k-1,&x[k+1]);     // xi=sum(abs(x((k+1):end)).^2);
+  rsum_pow2_abs_cvec(xi,n-k-1,&x[k+1]);     // xi=sum(abs(x((k+1):end)).^2);
   rabs2_c(axk,x[k]);                     // axk=|x[k]|^2
   radd_rr(eta,axk,xi);                    // eta=|x[k]|^2+...
   rsqrt_r(axk,axk);                      // axk=|x[k]|
@@ -49,7 +49,7 @@ void chouseholder_vec(int n, int k, cmulti **h, rmulti *alpha, cmulti **x)
   }
   //----------- h
   cvec_set_zeros(k,h);
-  cvec_copy(n-k-1,&h[k+1],&x[k+1]);      // h((k+1):end)=x((k+1):end);
+  cvec_copy_cvec(n-k-1,&h[k+1],&x[k+1]);      // h((k+1):end)=x((k+1):end);
   if(cis_zero(x[k])){
     cset_r(h[k],xi); cneg_c(h[k],h[k]);        //h[k]=-xi
   }else{
@@ -148,7 +148,7 @@ void chouseholder(int n, int k0, int nH, int k, cmulti **h, rmulti *alpha, cmult
   prec=MAX2(p0,p1);
   value=callocate_prec(prec);
   R=cvec_allocate_prec(n,prec);
-  cvec_copy(n,R,x);
+  cvec_copy_cvec(n,R,x);
   // R=(I-alpha*h*h')*R=R-alpha*h*(h'*R)    
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)

@@ -41,49 +41,47 @@ void dvec_set_rand(int n, double *x, double a, double b); // x=rand(n,1)*a+b
  */
 void dvec_set_dvec(int n, double *y, double *x); // double <- double
 void dvec_set_ivec(int n, double *y, int *x);    // double <- int
-void ivec_set_dvec(int n, int *y, double *x);    // double -> int
 void dvec_get_ivec(int n, int *y, double *x);    // double -> int
+void ivec_set_dvec(int n, int *y, double *x);    // double -> int
 void dvec_set_svec(int n, double *y, char **x);                          // double <- char
 void dvec_get_svec(int n, char **y, double *x, char format, int digits); // double -> char
 
 /*
- * convert its elements
+ * convert itself
  */
 void dvec_swap(int n, double *x, double *y);    // x <=> y
 void dvec_reverse(int n, double *x);            // x[0]=x[n-1]; x[1]=x[n-2]; x[2]=x[n-3]; ...
 void dvec_swap_at(double *x, int i, int j);     // x[i] <=> x[j]
 void dvec_swap_index(int n, double *x, int *I); // x[i] <=> x[I[i]]
-// sort x as x[0] <= x[1] <= x[2] <= ... <= x[n-1]
-// if I==NULL, then I is not ussed.
-// if I!=NULL, then I is stored with sorted indexes
-void dvec_sort(int n, double *x, int *I);
-// Don't call this function directly!
-void dvec_quick_sort(int n, double *x, int *I, int left, int right);
-// store the list of indexes, x is not destroyed
-void dvec_sort_index(int *I, int n, double *X);
+void dvec_sort(int n, double *x, int *I);       // sort x as x[0] <= x[1] <= x[2] <= ... <= x[n-1]. If I==NULL, then I is not ussed. If I!=NULL, then I is stored with sorted indexes.
+void dvec_quick_sort(int n, double *x, int *I, int left, int right); // Don't call this function directly!
+void dvec_sort_index(int *I, int n, double *X); // store the list of indexes, x is not destroyed
 
 /*
  * y=f(x)
  */
-void dvec_copy(int n, double *y, double *x);                // y=x
-void dvec_copy_index(int n, double *Y, double *X, int *I);  // Y[i]=X[I[i]], 0<=i<n
-void dvec_neg(int n, double *y, double *x);                 // y=-x
-void dvec_pow2(int n, double *y, double *x);                // y=x.^2
-void dvec_log2_abs(int n, double *y, double *x);            // y=log2(abs(x))
-double dvec_norm1(int n, double *x);                        // y=sum(abs(x))
-double dvec_norm2(int n, double *x);                        // y=sqrt(sum(x.^2))
-double dvec_norm_max(int n, double *x);                     // y=max(abs(x))
-double dvec_sum(int n, double *x);                          // y=sum(x)
-double dvec_average(int n, double *x);                      // y=sum(x)/n
-double dvec_sum_pow2(int n, double *x);                     // y=sum(x.^2)
-double dvec_max(int n, double *x);                          // y=max(x)
-double dvec_min(int n, double *x);                          // y=min(x)
-double dvec_max_abs(int n, double *x);                      // y=max(abs(x))
-double dvec_min_abs(int n, double *x);                      // y=min(abs(x))
-double dvec_max_abs_index(int n, double *x, int *I);        // y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL
-double dvec_min_abs_index(int n, double *x, int *I);        // y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
-void dvec_normalize(int n, double *y, double *x);           // y=x/sqrt(x'*x)
-void dvec_normalize_sgn(int n, double *y, double *x);       // y=x/sqrt(x'*x) where x[i]>0, abs(x[i]) is max
+void dvec_copy_dvec(int n, double *y, double *x);                // y=x
+void dvec_copy_dvec_index(int n, double *y, double *x, int *I);  // y=x(I)
+void dvec_index_copy_dvec(int n, double *y, int *I, double *x);  // y(I)=x
+void dvec_abs_dvec(int n, double *y, double *x);                 // y=abs(x)
+void dvec_neg_dvec(int n, double *y, double *x);                 // y=-x
+void dvec_pow2_dvec(int n, double *y, double *x);                // y=x.^2
+void dvec_log2_abs_dvec(int n, double *y, double *x);            // y=log2(abs(x))
+void dvec_normalize_dvec(int n, double *y, double *x);           // y=x/sqrt(x'*x)
+void dvec_normalize_sgn_dvec(int n, double *y, double *x);       // y=x/sqrt(x'*x) where x[i]>0, abs(x[i]) is max
+double dsum_dvec(int n, double *x);                              // y=sum(x)
+double daverage_dvec(int n, double *x);                          // y=sum(x)/n
+double dsum_abs_dvec(int n, double *x);                          // y=sum(abs(x))
+double dsum_pow2_abs_dvec(int n, double *x);                     // y=sum(abs(x)^2)
+double dnorm1_dvec(int n, double *x);                            // y=sum(abs(x))
+double dnorm2_dvec(int n, double *x);                            // y=sqrt(sum(abs(x)^2))
+double dnorm_max_dvec(int n, double *x);                         // y=max(abs(x))
+double dmax_dvec(int n, double *x);                              // y=max(x)
+double dmin_dvec(int n, double *x);                              // y=min(x)
+double dmax_abs_dvec(int n, double *x);                          // y=max(abs(x))
+double dmin_abs_dvec(int n, double *x);                          // y=min(abs(x))
+double dmax_abs_dvec_index(int n, double *x, int *I);            // y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL
+double dmin_abs_dvec_index(int n, double *x, int *I);            // y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
 
 /*
  * z=f(x,y)

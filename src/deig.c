@@ -24,7 +24,7 @@ void deig_residual_norm_max(int n, double *E, double *A, int LDA, double *X, int
   F=dvec_allocate(n);
   for(j=0; j<n; j++){
     deig_residual(n,F,A,LDA,&COL(X,j,LDX),lambda[j]);
-    E[j]=dvec_norm_max(n,F);
+    E[j]=dnorm_max_dvec(n,F);
   }
   F=dvec_free(F);
 }
@@ -66,7 +66,7 @@ void deig_sort_vector_guide(int n, int k, double *lambda, double *X, int LDX, do
   a=dvec_allocate(k);
   for(j=0; j<k; j++){
     dmat_dist_norm_max(a,n,k,X,LDX,&COL(X0,j,LDX0));
-    value=dvec_min_abs_index(k,a,&i);
+    value=dmin_abs_dvec_index(k,a,&i);
     if(i!=j){
       dvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));
       dvec_swap_at(lambda,i,j);
@@ -82,7 +82,7 @@ void deig_sort_value_guide(int n, int k, double *lambda, double *X, int LDX, dou
   a=dvec_allocate(k);
   for(j=0; j<k; j++){
     dvec_abs_sub_scalar(k,a,lambda,lambda0[j]);
-    value=dvec_min_abs_index(k,a,&i);
+    value=dmin_abs_dvec_index(k,a,&i);
     if(i!=j){
       dvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));
       dvec_swap_at(lambda,i,j);

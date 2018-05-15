@@ -31,7 +31,7 @@ void dhouseholder_vec(int n, int k, double *h, double *alpha, double *x)
   if(x[k]<0) s=-1;
   //----------- h
   dvec_set_zeros(k,h);
-  dvec_copy(n-k-1,&h[k+1],&x[k+1]); // h((k+1):end)=x((k+1):end);
+  dvec_copy_dvec(n-k-1,&h[k+1],&x[k+1]); // h((k+1):end)=x((k+1):end);
   h[k]=-s*xi;
   //----------- alpha
   if(xi==0 || eta==0) (*alpha)=0;
@@ -43,7 +43,7 @@ void dhouseholder(int n, int k0, int nH, int k, double *h, double *alpha, double
   int j,l;
   double value,*R=NULL;
   R=dvec_allocate(n);
-  dvec_copy(n,R,x);
+  dvec_copy_dvec(n,R,x);
   // R=(I-alpha*h*h')*R=R-alpha*h*(h'*R)
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)

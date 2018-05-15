@@ -417,58 +417,88 @@ void csub_dot_zr(cmulti *z, dcomplex x, rmulti *y);
 void ccmp_set_real_imag(void);
 void ccmp_set_abs_arg(void);
 int ccmp_get_type(void);
-int ccmp_c(cmulti *x, cmulti *y);    // x<=>y
-int ccmp_z(cmulti *x, dcomplex y);   // x<=>y
-int ccmp_r(cmulti *x, rmulti *y);    // x<=>y
-int rcmp_c(rmulti *x, cmulti *y);    // x<=>y
-int ccmp_d(cmulti *x, double y);     // x<=>y
-int ceq_c(cmulti *x, cmulti *y);     // x==y
-int ceq_z(cmulti *x, dcomplex y);    // x==y
-int ceq_r(cmulti *x, rmulti *y);     // x==y
-int ceq_d(cmulti *x, double y);      // x==y
-int cne_c(cmulti *x, cmulti *y);     // x!=y
-int cne_z(cmulti *x, dcomplex y);    // x!=y
-int cne_r(cmulti *x, rmulti *y);     // x!=y
-int cne_d(cmulti *x, double y);      // x!=y
-int cgt_c(cmulti *x, cmulti *y);     // x>y
-int rgt_c(rmulti *x, cmulti *y);     // x>y
-int cgt_r(cmulti *x, rmulti *y);     // x>y
-int zgt_c(dcomplex x, cmulti *y);    // x>y
-int cgt_z(cmulti *x, dcomplex y);    // x>y
-int dgt_c(double x, cmulti *y);      // x>y
-int cgt_d(cmulti *x, double y);      // x>y
-int cge_c(cmulti *x, cmulti *y);     // x>=y
-int rge_c(rmulti *x, cmulti *y);     // x>=y
-int cge_r(cmulti *x, rmulti *y);     // x>=y
-int zge_c(dcomplex x, cmulti *y);    // x>=y
-int cge_z(cmulti *x, dcomplex y);    // x>=y
-int dge_c(double x, cmulti *y);      // x>=y
-int cge_d(cmulti *x, double y);      // x>=y
-int clt_c(cmulti *x, cmulti *y);     // x<y
-int rlt_c(rmulti *x, cmulti *y);     // x<y
-int clt_r(cmulti *x, rmulti *y);     // x<y
-int zlt_c(dcomplex x, cmulti *y);    // x<y
-int clt_z(cmulti *x, dcomplex y);    // x<y
-int dlt_c(double x, cmulti *y);      // x<y
-int clt_d(cmulti *x, double y);      // x<y
-int cle_c(cmulti *x, cmulti *y);     // x<=y
-int rle_c(rmulti *x, cmulti *y);     // x<=y
-int cle_r(cmulti *x, rmulti *y);     // x<=y
-int zle_c(dcomplex x, cmulti *y);    // x<=y
-int cle_z(cmulti *x, dcomplex y);    // x<=y
-int dle_c(double x, cmulti *y);      // x<=y
-int cle_d(cmulti *x, double y);      // x<=y
-int cabs_cmp(cmulti *x, cmulti *y);   // abs(x)<=>abs(y)
-int cabs_eq(cmulti *x, cmulti *y);    // abs(x)==abs(y)
-int cabs_gt(cmulti *x, cmulti *y);    // abs(x)>abs(y)
-int cabs_ge(cmulti *x, cmulti *y);    // abs(x)>=abs(y)
-int cabs_lt(cmulti *x, cmulti *y);    // abs(x)<abs(y)
-int cabs_le(cmulti *x, cmulti *y);    // abs(x)<=abs(y)
-int ceqc(cmulti *x, cmulti *y);       // x.r==y.r && x.i==y.i
-int cgtc(cmulti *x, cmulti *y);       // x.r> y.r && x.i> y.i
-int cgec(cmulti *x, cmulti *y);       // x.r>=y.r && x.i>=y.i
-int cltc(cmulti *x, cmulti *y);       // x.r< y.r && x.i< y.i
-int clec(cmulti *x, cmulti *y);       // x.r<=y.r && x.i<=y.i
+// x<=>y
+int cmp_cc(cmulti *x, cmulti *y);
+int cmp_cz(cmulti *x, dcomplex y);
+int cmp_zc(dcomplex x, cmulti *y);
+int cmp_cr(cmulti *x, rmulti *y);
+int cmp_rc(rmulti *x, cmulti *y);
+int cmp_cd(cmulti *x, double y);
+int cmp_dc(double x, cmulti *y);
+int cmp_rz(rmulti *x, dcomplex y);
+int cmp_zr(dcomplex x, rmulti *y);
+// x==y
+int eq_cc(cmulti *x, cmulti *y);
+int eq_cz(cmulti *x, dcomplex y);
+int eq_zc(dcomplex x, cmulti *y);
+int eq_cr(cmulti *x, rmulti *y);
+int eq_rc(rmulti *x, cmulti *y);
+int eq_cd(cmulti *x, double y);
+int eq_dc(double x, cmulti *y);
+int eq_rz(rmulti *x, dcomplex y);
+int eq_zr(dcomplex x, rmulti *y);
+// x!=y
+int ne_cc(cmulti *x, cmulti *y);
+int ne_cz(cmulti *x, dcomplex y);
+int ne_zc(dcomplex x, cmulti *y);
+int ne_cr(cmulti *x, rmulti *y);
+int ne_rc(rmulti *x, cmulti *y);
+int ne_cd(cmulti *x, double y);
+int ne_dc(double x, cmulti *y);
+int ne_rz(rmulti *x, dcomplex y);
+int ne_zr(dcomplex x, rmulti *y);
+// x>y
+int gt_cc(cmulti *x, cmulti *y);
+int gt_rc(rmulti *x, cmulti *y);
+int gt_cr(cmulti *x, rmulti *y);
+int gt_zc(dcomplex x, cmulti *y);
+int gt_cz(cmulti *x, dcomplex y);
+int gt_dc(double x, cmulti *y);
+int gt_cd(cmulti *x, double y);
+int gt_rz(rmulti *x, dcomplex y);
+int gt_zr(dcomplex x, rmulti *y);
+// x>=y
+int ge_cc(cmulti *x, cmulti *y);
+int ge_rc(rmulti *x, cmulti *y);
+int ge_cr(cmulti *x, rmulti *y);
+int ge_zc(dcomplex x, cmulti *y);
+int ge_cz(cmulti *x, dcomplex y);
+int ge_dc(double x, cmulti *y);
+int ge_cd(cmulti *x, double y);
+int ge_rz(rmulti *x, dcomplex y);
+int ge_zr(dcomplex x, rmulti *y);
+// x<y
+int lt_cc(cmulti *x, cmulti *y);
+int lt_rc(rmulti *x, cmulti *y);
+int lt_cr(cmulti *x, rmulti *y);
+int lt_zc(dcomplex x, cmulti *y);
+int lt_cz(cmulti *x, dcomplex y);
+int lt_dc(double x, cmulti *y);
+int lt_cd(cmulti *x, double y);
+int lt_rz(rmulti *x, dcomplex y);
+int lt_zr(dcomplex x, rmulti *y);
+// x<=y
+int le_cc(cmulti *x, cmulti *y);
+int le_rc(rmulti *x, cmulti *y);
+int le_cr(cmulti *x, rmulti *y);
+int le_zc(dcomplex x, cmulti *y);
+int le_cz(cmulti *x, dcomplex y);
+int le_dc(double x, cmulti *y);
+int le_cd(cmulti *x, double y);
+int le_rz(rmulti *x, dcomplex y);
+int le_zr(dcomplex x, rmulti *y);
+// others
+int cmp_abs_cc(cmulti *x, cmulti *y); // abs(x)<=>abs(y)
+int eq_abs_cc(cmulti *x, cmulti *y);  // abs(x)==abs(y)
+int gt_abs_cc(cmulti *x, cmulti *y);  // abs(x)>abs(y)
+int ge_abs_cc(cmulti *x, cmulti *y);  // abs(x)>=abs(y)
+int lt_abs_cc(cmulti *x, cmulti *y);  // abs(x)<abs(y)
+int le_abs_cc(cmulti *x, cmulti *y);  // abs(x)<=abs(y)
+int ceq_cc(cmulti *x, cmulti *y);     // x.r==y.r && x.i==y.i
+int cgt_cc(cmulti *x, cmulti *y);     // x.r> y.r && x.i> y.i
+int cge_cc(cmulti *x, cmulti *y);     // x.r>=y.r && x.i>=y.i
+int clt_cc(cmulti *x, cmulti *y);     // x.r< y.r && x.i< y.i
+int cle_cc(cmulti *x, cmulti *y);     // x.r<=y.r && x.i<=y.i
 
 #endif
 

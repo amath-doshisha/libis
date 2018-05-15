@@ -47,7 +47,7 @@ void eterm_show(int m, cmulti **x, func_t *fF, int bmax, int kappa)
     set_default_prec(b[k]);
     rset_d(eps[k],1); rmul_2exp(eps[k],eps[k],-b[k]+tau);
     mpfr_printf("2^(-b+tau)=%8.1Re ",eps[k]);
-    cvec_round(m,y,b[k]);
+    cvec_round_cvec(m,y,b[k]);
     csolve_newton_map(m,y,x,fF,fJ);
     csolve_newton_e_norm(e[k],m,y,x,fF,fJ,bmax*4);
     if(gt_rr(eps[k],e[k])){ printf("> "); }else{ printf("< "); }
@@ -64,9 +64,9 @@ void eterm_show(int m, cmulti **x, func_t *fF, int bmax, int kappa)
     mpfr_printf("κ=1-(tau-log2(e))/b=%+.10Rf ",r[k]);
     printf("\n");
   }
-  rvec_max(rmax,kmax,p);
+  rmax_rvec(rmax,kmax,p);
   mpfr_printf("cancel bits=%+.2Rf\n",rmax);
-  rvec_max(rmax,kmax,r);
+  rmax_rvec(rmax,kmax,r);
   mpfr_printf("κ_max=%+.10Rf\n",rmax);
   
 
@@ -155,16 +155,16 @@ int main(int argc, char *argv[])
 
   // solve for true solution
   printf("#-------------------\n");
-  cvec_clone(m,x_true,x0);
+  cvec_clone_cvec(m,x_true,x0);
   csolve_newton(m,x_true,fF,step_max0,debug);
     //prec=csolve_newton_adjust(m,x_true,fF,NULL,eps_true,step_max0,mu,l,kappa,debug);
   cvec_print(m,x_true,"x*=",'e',20);
-  cvec_clone(m,x,x_true);
+  cvec_clone_cvec(m,x,x_true);
 
   // solve
   if(solve_true){
     printf("#-------------------\n");
-    cvec_clone(m,x,x0);
+    cvec_clone_cvec(m,x,x0);
     prec=csolve_newton_adjust(m,x,fF,x_true,eps,step_max,mu,l,kappa,debug);
     cvec_print(m,x,"x=",'e',20);
   }
@@ -173,7 +173,7 @@ int main(int argc, char *argv[])
   printf("#-------------------\n");
   printf("prec=%d\n",prec);
   set_default_prec(prec);
-  cvec_round(m,e,prec);
+  cvec_round_cvec(m,e,prec);
   cvec_set_nan(m,e);
   info=csolve_krawczyk(m,e,x,fF,debug-2);
   if(info){ print_red(); printf("failed.\n"); } else{ print_green(); printf("succeeded.\n"); } print_reset();

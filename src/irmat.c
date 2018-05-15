@@ -283,7 +283,7 @@ void irmat_inv(int n, rmulti **B0, rmulti **B1, int LDB, rmulti **A0, rmulti **A
 void irvec_sum_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ irvec_sum(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ irsum_rvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**
@@ -292,7 +292,7 @@ void irvec_sum_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti
 void irvec_max_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ irvec_max(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ irmax_rvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**
@@ -301,7 +301,7 @@ void irvec_max_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti
 void irvec_umax_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ irvec_umax(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ irmax_up_rvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**
@@ -310,7 +310,7 @@ void irvec_umax_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmult
 void irvec_min_irmat(int m, int n, rmulti **B0, rmulti **B1, rmulti **A0, rmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ irvec_min(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ irmin_rvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**

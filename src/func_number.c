@@ -231,9 +231,9 @@ int func_number_cmp(func_t *f, func_t *g)
     f1=func_evalf(FR(f));
     g1=func_evalf(FR(g));
     if     (func_is_real(f1)    && func_is_real(g1))    { value=cmp_rr   (func_real_p(f1),   func_real_p(g1)); }
-    else if(func_is_real(f1)    && func_is_complex(g1)) { value=rcmp_c(func_real_p(f1),   func_complex_p(g1)); }
-    else if(func_is_complex(f1) && func_is_real(g1))    { value=ccmp_r(func_complex_p(f1),func_real_p(g1)); }
-    else if(func_is_complex(f1) && func_is_complex(g1)) { value=ccmp_c   (func_complex_p(f1),func_complex_p(g1)); }
+    else if(func_is_real(f1)    && func_is_complex(g1)) { value=cmp_rc(func_real_p(f1),   func_complex_p(g1)); }
+    else if(func_is_complex(f1) && func_is_real(g1))    { value=cmp_cr(func_complex_p(f1),func_real_p(g1)); }
+    else if(func_is_complex(f1) && func_is_complex(g1)) { value=cmp_cc   (func_complex_p(f1),func_complex_p(g1)); }
     else{ FUNC_ERROR_ARG2("func_complex_cmp",f1,g1); }
     f1=func_del(f1);
     g1=func_del(g1);

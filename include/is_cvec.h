@@ -1,6 +1,7 @@
 #ifndef IS_CVEC_H
 #define IS_CVEC_H
 
+#include<is_dcomplex.h>
 #include<is_cmulti.h>
 
 /**
@@ -31,7 +32,6 @@ void cvec_load(int n, cmulti **x, char* fmt, ...);
 void cvec_bin_save(int n, cmulti **x, char* fmt, ...);
 cmulti **cvec_bin_load(int *n, char* fmt, ...);
 
-
 /*
  * setting
  */
@@ -41,8 +41,9 @@ void cvec_set_zeros(int n, cmulti **x);                                  // x=ze
 void cvec_set_ones(int n, cmulti **x);                                   // x=ones(n,1)
 void cvec_set_all_c(int n, cmulti **x, cmulti *a);                       // x=ones(n,1)*a
 void cvec_set_all_r(int n, cmulti **x, rmulti *a);                       // x=ones(n,1)*a
+void cvec_set_all_rr(int n, cmulti **x, rmulti *ar, rmulti *ai);         // x=ones(n,1)*a
 void cvec_set_all_z(int n, cmulti **x, dcomplex a);                      // x=ones(n,1)*a
-void cvec_set_all_dd(int n, cmulti **x, double a_r, double a_i);         // x=ones(n,1)*a
+void cvec_set_all_dd(int n, cmulti **x, double ar, double ai);           // x=ones(n,1)*a
 void cvec_set_all_d(int n, cmulti **x, double a);                        // x=ones(n,1)*a
 void cvec_set_unit(int n, cmulti **x, int k);                            // x=zeros(n,1); x[k]=1
 void cvec_set_grid(int n, cmulti **x);                                   // x=0:(n-1)
@@ -51,37 +52,26 @@ void cvec_set_rand(int n, cmulti **x, double a, double b);               // x=ra
 /*
  * casting
  */
-void cvec_set_cvec(int n, cmulti **y, cmulti **x);                      // cmulti <- cmulti
-void cvec_set_rvec_rvec(int n, cmulti **y, rmulti **x_r, rmulti **x_i); // cmulti <- (rmulti,rmulti)
-void cvec_set_rvec(int n, cmulti **y, rmulti **x);                      // cmulti <- rmulti
-void cvec_get_rvec(int n, rmulti **y, cmulti **x);                      // cmulti -> rmulti
-void rvec_set_cvec(int n, rmulti **y, cmulti **x);                      // cmulti -> rmulti
-void cvec_set_zvec(int n, cmulti **y, dcomplex *x);                     // cmulti <- dcomplex
-void cvec_get_zvec(int n, dcomplex *y, cmulti **x);                     // cmulti -> dcomplex
-void zvec_set_cvec(int n, dcomplex *y, cmulti **x);                     // cmulti -> dcomplex
-void cvec_set_dvec_dvec(int n, cmulti **y, double *x_r, double *x_i);   // cmulti <- (double,double)
-void cvec_set_dvec(int n, cmulti **y, double *x);                       // cmulti <- double
-void cvec_get_dvec(int n, double *y, cmulti **x);                       // cmulti -> double
-void dvec_set_cvec(int n, double *y, cmulti **x);                       // cmulti -> double
-void cvec_set_ivec(int n, cmulti **y, int *x);                          // cmulti <- int
-void cvec_get_ivec(int n, int *y, cmulti **x);                          // cmulti -> int
-void ivec_set_cvec(int n, int *y, cmulti **x);                          // cmulti -> int
+void cvec_set_cvec(int n, cmulti **y, cmulti **x);                        // cmulti <- cmulti
+void cvec_set_rvec_rvec(int n, cmulti **y, rmulti **xr, rmulti **xi);     // cmulti <- (rmulti,rmulti)
+void cvec_set_rvec(int n, cmulti **y, rmulti **x);                        // cmulti <- rmulti
+void cvec_get_rvec(int n, rmulti **y, cmulti **x);                        // cmulti -> rmulti
+void rvec_set_cvec(int n, rmulti **y, cmulti **x);                        // cmulti -> rmulti
+void cvec_set_zvec(int n, cmulti **y, dcomplex *x);                       // cmulti <- dcomplex
+void cvec_get_zvec(int n, dcomplex *y, cmulti **x);                       // cmulti -> dcomplex
+void zvec_set_cvec(int n, dcomplex *y, cmulti **x);                       // cmulti -> dcomplex
+void cvec_set_dvec_dvec(int n, cmulti **y, double *xr, double *xi);       // cmulti <- (double,double)
+void cvec_set_dvec(int n, cmulti **y, double *x);                         // cmulti <- double
+void cvec_get_dvec(int n, double *y, cmulti **x);                         // cmulti -> double
+void dvec_set_cvec(int n, double *y, cmulti **x);                         // cmulti -> double
+void cvec_set_ivec(int n, cmulti **y, int *x);                            // cmulti <- int
+void cvec_get_ivec(int n, int *y, cmulti **x);                            // cmulti -> int
+void ivec_set_cvec(int n, int *y, cmulti **x);                            // cmulti -> int
 void cvec_set_svec(int n, cmulti **x, char **str);                        // cmulti <- char
 void cvec_get_svec(int n, char **y, cmulti **x, char format, int digits); // cmulti -> char
 
 /*
- * member variables
- */
-int cvec_get_prec_max(int n, cmulti **x);
-void cvec_get_prec(int n, int *p, cmulti **x);
-int cvec_get_exp_max(int n, cmulti **x);
-void cvec_get_exp(int n, int *p, cmulti **x);
-int cvec_is_number(int n, cmulti **x);
-int cvec_has_nan(int n, cmulti **x);
-int cvec_is_real(int n, cmulti **x);
-
-/*
- * rearange elements
+ * convert itself
  */
 void cvec_swap(int n, cmulti **x, cmulti **y);
 void cvec_reverse(int n, cmulti **x);
@@ -92,42 +82,56 @@ void cvec_quick_sort(int n, cmulti **x, int *I, int left, int right);
 void cvec_sort_index(int *I, int n, cmulti **X);
 
 /*
+ * member variables
+ */
+int  cvec_get_prec_max(int n, cmulti **x);
+void cvec_get_prec(int n, int *p, cmulti **x);
+int  cvec_get_exp_max(int n, cmulti **x);
+void cvec_get_exp(int n, int *p, cmulti **x);
+int  cvec_is_number(int n, cmulti **x);
+int  cvec_has_nan(int n, cmulti **x);
+int  cvec_is_real(int n, cmulti **x);
+
+/*
  * y=f(x)
  */
-void cvec_round(int n, cmulti **x, int prec);
-void cvec_clone(int n, cmulti **y, cmulti **x);
-void cvec_clone_r(int n, cmulti **y, rmulti **x);
-void cvec_clone_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i);
-void cvec_clone_index(int n, cmulti **y, cmulti **x, int *I); // y=x(I)
-void cvec_index_clone(int n, cmulti **y, cmulti **x, int *I); // y(I)=x
-void cvec_copy(int n, cmulti **y, cmulti **x);                     // y=x
-void cvec_copy_index(int n, cmulti **y, cmulti **x, int *I);       // y=x(I)
-void cvec_index_copy(int n, cmulti **y, int *I, cmulti **x);       // y(I)=x
-void cvec_index_copy_rvec(int n, cmulti **y, int *I, rmulti **x);  // y(I)=x
-void cvec_neg(int n, cmulti **y, cmulti **x);                      // y=-x
-void cvec_real(int n, rmulti **y, cmulti **x);                     // y=real(x)
-void cvec_real_clone(int n, rmulti **y, cmulti **x);               // y=real(x)
-void cvec_imag(int n, rmulti **y, cmulti **x);                     // y=imag(x)
-void cvec_imag_clone(int n, rmulti **y, cmulti **x);               // y=imag(x)
-void cvec_conj(int n, cmulti **y, cmulti **x);                     // y=conj(x)
-void cvec_absc(int n, cmulti **y, cmulti **x);                     // y=abs(real(x)+i*imag(x))
-void cvec_abs(int n, rmulti **y, cmulti **x);                      // y=abs(x)
-void cvec_sum_abs(rmulti *value, int n, cmulti **x);               // value=sum(abs(x))
-void cvec_max_abs(rmulti *value, int n, cmulti **x);               // value=max(abs(x))
-void cvec_max_abs_index(rmulti *value, int n, cmulti **x, int *I); // value=max(abs(x))
-void cvec_min_abs(rmulti *value, int n, cmulti **x);               // value=min(abs(x))
-void cvec_min_abs_index(rmulti *value, int n, cmulti **x, int *I); // value=min(abs(x))
-void cvec_max_absc(rmulti *value, int n, cmulti **x);              // value=max(abs(x))
-void cvec_arg(int n, rmulti **y, cmulti **x);                      // y=arg(x)
-void cvec_sum(cmulti *value, int n, cmulti **x);                   // value=sum(x)
-void cvec_sum_abs2(rmulti *value, int n, cmulti **x);              // value=sum(abs(x).^2)
-void cvec_max(cmulti *value, int n, cmulti **x);                   // value=max(x)
-void cvec_min(cmulti *value, int n, cmulti **x);                   // value=min(x)
-void cvec_log2_abs(int n, rmulti **y, cmulti **x);                 // y=log2(abs(x))
-void cvec_normalize(int n, cmulti **y, cmulti **x);                // y=x/sqrt(x'*x)
-void cvec_normalize_sgn(int n, cmulti **y, cmulti **x);            // y=x/sqrt(x'*x)
-void cvec_norm2(rmulti *value, int n, cmulti **x);                 // value=sqrt(sum(abs(x).^2))
-void cvec_average(cmulti *value, int n, cmulti **x);               // value=sum(x)/n
+void cvec_round_cvec(int n, cmulti **x, int prec);                      // y=round(x,prec)
+void cvec_clone_cvec(int n, cmulti **y, cmulti **x);                    // y=x
+void cvec_clone_rvec(int n, cmulti **y, rmulti **x);                    // y=x
+void cvec_clone_rvec_rvec(int n, cmulti **y, rmulti **xr, rmulti **xi); // y=x
+void cvec_clone_cvec_index(int n, cmulti **y, cmulti **x, int *I);      // y=x(I)
+void cvec_index_clone_cvec(int n, cmulti **y, int *I, cmulti **x);      // y(I)=x
+void cvec_copy_cvec(int n, cmulti **y, cmulti **x);                     // y=x
+void cvec_copy_cvec_index(int n, cmulti **y, cmulti **x, int *I);       // y=x(I)
+void cvec_index_copy_cvec(int n, cmulti **y, int *I, cmulti **x);       // y(I)=x
+void cvec_index_copy_rvec(int n, cmulti **y, int *I, rmulti **x);       // y(I)=x
+void rvec_real_cvec(int n, rmulti **y, cmulti **x);                     // y=real(x)
+void rvec_real_cvec_clone(int n, rmulti **y, cmulti **x);               // y=real(x)
+void rvec_imag_cvec(int n, rmulti **y, cmulti **x);                     // y=imag(x)
+void rvec_imag_cvec_clone(int n, rmulti **y, cmulti **x);               // y=imag(x)
+void rvec_abs_cvec(int n, rmulti **y, cmulti **x);                      // y=abs(x)
+void rvec_arg_cvec(int n, rmulti **y, cmulti **x);                      // y=arg(x)
+void cvec_conj_cvec(int n, cmulti **y, cmulti **x);                     // y=conj(x)
+void cvec_absc_cvec(int n, cmulti **y, cmulti **x);                     // y=abs(real(x))+i*abs(imag(x))
+void cvec_neg_cvec(int n, cmulti **y, cmulti **x);                      // y=-x
+void cvec_pow2_cvec(int n, cmulti **y, cmulti **x);                     // y=x^2
+void rvec_log2_abs_cvec(int n, rmulti **y, cmulti **x);                 // y=log2(abs(x))
+void cvec_normalize_cvec(int n, cmulti **y, cmulti **x);                // y=x/sqrt(x'*x)
+void cvec_normalize_sgn_cvec(int n, cmulti **y, cmulti **x);            // y=x/sqrt(x'*x)
+void csum_cvec(cmulti *y, int n, cmulti **x);                           // y=sum(x)
+void caverage_cvec(cmulti *y, int n, cmulti **x);                       // y=sum(x)/n
+void rsum_abs_cvec(rmulti *y, int n, cmulti **x);                       // y=sum(abs(x))
+void rsum_pow2_abs_cvec(rmulti *y, int n, cmulti **x);                  // y=sum(abs(x)^2)
+void rnorm1_cvec(rmulti *y, int n, cmulti **x);                         // y=sum(abs(x))
+void rnorm2_cvec(rmulti *y, int n, cmulti **x);                         // y=sqrt(sum(abs(x)^2))
+void rnorm_max_cvec(rmulti *y, int n, cmulti **x);                      // y=max(abs(x))
+void cmax_cvec(cmulti *y, int n, cmulti **x);                           // y=max(x)
+void cmin_cvec(cmulti *y, int n, cmulti **x);                           // y=min(x)
+void rmax_abs_cvec(rmulti *y, int n, cmulti **x);                       // y=max(abs(x))
+void rmin_abs_cvec(rmulti *y, int n, cmulti **x);                       // y=min(abs(x))
+void rmax_abs_cvec_index(rmulti *y, int n, cmulti **x, int *I);         // y=max(abs(x))
+void rmin_abs_cvec_index(rmulti *y, int n, cmulti **x, int *I);         // y=min(abs(x))
+void rmax_max_absc_cvec(rmulti *y, int n, cmulti **x);                  // y=max(real(absc(x)),imag(absc(x)))
 
 /*
  * z=f(x,y)

@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
   // output  
   reig_max_abs_residuals(k,E,A,LDA,X,LDX,lambda);
-  rvec_log2_abs(k,Ebin,E);
+  rvec_log2_abs_rvec(k,Ebin,E);
   printf("Number of computed eigenpairs = %d\n",k);
   if(k<n){
     printf("Failed to compute.\n");
@@ -61,8 +61,8 @@ int main(int argc, char *argv[])
   rvec_print(k,lambda,"lambda=",'e',2);
   rvec_print(k,E,"E=",'e',0);
   rvec_print(k,Ebin,"log2(E)=",'f',1);
-  rvec_max_abs(a,k,E); mpfr_printf("max(E)=%.0Re\n",a);
-  rvec_max(a,k,Ebin);  mpfr_printf("max(log2(E))=%.2Rf\n",a);
+  rmax_abs_rvec(a,k,E); mpfr_printf("max(E)=%.0Re\n",a);
+  rmax_rvec(a,k,Ebin);  mpfr_printf("max(log2(E))=%.2Rf\n",a);
 
   // free
   A=rmat_free(LDA,n,A);

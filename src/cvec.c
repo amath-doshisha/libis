@@ -100,7 +100,7 @@ cmulti **cvec_free(int n, cmulti **x)
 /**
  @brief 初期化済みのcmulti型のベクトルの浮動小数点数の精度(ビット数)を変更し再初期化.
 */
-void cvec_round(int n, cmulti **x, int prec)
+void cvec_round_cvec(int n, cmulti **x, int prec)
 {
   int i;
   for(i=0; i<n; i++){ cround(x[i],prec); }
@@ -109,7 +109,7 @@ void cvec_round(int n, cmulti **x, int prec)
 /**
  @brief cmulti型のベクトルの値を複成 y=x.
 */
-void cvec_clone(int n, cmulti **y, cmulti **x)
+void cvec_clone_cvec(int n, cmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ cclone_c(y[i],x[i]); }
@@ -118,7 +118,7 @@ void cvec_clone(int n, cmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの値を添字を指定して複成 y=x(I).
 */
-void cvec_clone_index(int n, cmulti **y, cmulti **x, int *I)
+void cvec_clone_cvec_index(int n, cmulti **y, cmulti **x, int *I)
 {
   int i;
   for(i=0; i<n; i++){ cclone_c(y[i],x[I[i]]); }
@@ -127,7 +127,7 @@ void cvec_clone_index(int n, cmulti **y, cmulti **x, int *I)
 /**
  @brief cmulti型のベクトルの値を添字を指定して複成 y(I)=x.
 */
-void cvec_index_clone(int n, cmulti **y, cmulti **x, int *I)
+void cvec_index_clone_cvec(int n, cmulti **y, int *I, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ cclone_c(y[I[i]],x[i]); }
@@ -136,7 +136,7 @@ void cvec_index_clone(int n, cmulti **y, cmulti **x, int *I)
 /**
  @brief cmulti型のベクトルの値をrmulti型のベクトルから複成 y=x.
 */
-void cvec_clone_r(int n, cmulti **y, rmulti **x)
+void cvec_clone_rvec(int n, cmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ cclone_r(y[i],x[i]); }
@@ -145,7 +145,7 @@ void cvec_clone_r(int n, cmulti **y, rmulti **x)
 /**
  @brief cmulti型のベクトルの値をrmulti型の2つのベクトルから複成 y=x_r+i*x_i.
 */
-void cvec_clone_rr(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
+void cvec_clone_rvec_rvec(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
 {
   int i;
   for(i=0; i<n; i++){ cclone_rr(y[i],x_r[i],x_i[i]); }
@@ -753,7 +753,7 @@ void cvec_quick_sort(int n, cmulti **x, int *I, int left, int right)
   if(I!=NULL) ivec_swap_at(I,left,(left+right)/2);
   last=left;
   for(i=left+1; i<=right; i++){
-    if(clt_c(x[i],x[left])){
+    if(lt_cc(x[i],x[left])){
       ++last;
       cswap(x[last],x[i]);
       if(I!=NULL) ivec_swap_at(I,last,i);      
@@ -787,7 +787,7 @@ void cvec_sort_index(int *I, int n, cmulti **X)
 /**
  @brief cmulti型のベクトルの値のコピー y=x.
 */
-void cvec_copy(int n, cmulti **y, cmulti **x)
+void cvec_copy_cvec(int n, cmulti **y, cmulti **x)
 {
   int i;
   if(y==x){ return; }
@@ -806,7 +806,7 @@ void cvec_set_rvec_rvec(int n, cmulti **y, rmulti **x_r, rmulti **x_i)
 /**
  @brief cmulti型のベクトルの値の要素番号Iに従ったコピー y=x(I).
 */
-void cvec_copy_index(int n, cmulti **y, cmulti **x, int *I)
+void cvec_copy_cvec_index(int n, cmulti **y, cmulti **x, int *I)
 {
   int i;
   if(y==x){ cvec_swap_index(n,x,I); return; }
@@ -816,7 +816,7 @@ void cvec_copy_index(int n, cmulti **y, cmulti **x, int *I)
 /**
  @brief cmulti型のベクトルの値を添字を指定してコピー y(I)=x.
 */
-void cvec_index_copy(int n, cmulti **y, int *I, cmulti **x)
+void cvec_index_copy_cvec(int n, cmulti **y, int *I, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ cset_c(y[I[i]],x[i]); }
@@ -834,7 +834,7 @@ void cvec_index_copy_rvec(int n, cmulti **y, int *I, rmulti **x)
 /**
  @brief cmulti型の実部のコピー y=real(x)
  */
-void cvec_real(int n, rmulti **y, cmulti **x)
+void rvec_real_cvec(int n, rmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rset_r(y[i],C_R(x[i])); }
@@ -843,7 +843,7 @@ void cvec_real(int n, rmulti **y, cmulti **x)
 /**
  @brief cmulti型の実部の複製 y=real(x)
  */
-void cvec_real_clone(int n, rmulti **y, cmulti **x)
+void rvec_real_cvec_clone(int n, rmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rclone_r(y[i],C_R(x[i])); }
@@ -852,7 +852,7 @@ void cvec_real_clone(int n, rmulti **y, cmulti **x)
 /**
  @brief cmulti型の虚部のコピー y=imag(x)
  */
-void cvec_imag(int n, rmulti **y, cmulti **x)
+void rvec_imag_cvec(int n, rmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rset_r(y[i],C_I(x[i])); }
@@ -861,7 +861,7 @@ void cvec_imag(int n, rmulti **y, cmulti **x)
 /**
  @brief cmulti型の虚部の複製 y=imag(x)
  */
-void cvec_imag_clone(int n, rmulti **y, cmulti **x)
+void rvec_imag_cvec_clone(int n, rmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rclone_r(y[i],C_I(x[i])); }
@@ -870,7 +870,7 @@ void cvec_imag_clone(int n, rmulti **y, cmulti **x)
 /**
  @brief cmulti型の複素共役のコピー y=imag(x)
  */
-void cvec_conj(int n, cmulti **y, cmulti **x)
+void cvec_conj_cvec(int n, cmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ cconj_c(y[i],x[i]); }
@@ -897,7 +897,7 @@ void cvec_div_2exp(int n, cmulti **y, cmulti **x, int pr, int pi)
 /**
  @brief cmulti型のベクトルの符号反転 y=-x
 */
-void cvec_neg(int n, cmulti **y, cmulti **x)
+void cvec_neg_cvec(int n, cmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ cneg_c(y[i],x[i]); }
@@ -906,7 +906,7 @@ void cvec_neg(int n, cmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの要素の実部，虚部の絶対値 y=abs(real(x)+i*imag(x))
 */
-void cvec_absc(int n, cmulti **y, cmulti **x)
+void cvec_absc_cvec(int n, cmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ cabsc_c(y[i],x[i]); }
@@ -2165,7 +2165,7 @@ void cvec_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
       cadd_mul_cc(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
     }
   }
-  cvec_copy(m,y,z); // y=z
+  cvec_copy_cvec(m,y,z); // y=z
   z=cvec_free(m,z);
 }
 
@@ -2189,7 +2189,7 @@ void cvec_add_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
       cadd_mul_cc(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
     }
   }
-  cvec_copy(m,y,z); // y=z
+  cvec_copy_cvec(m,y,z); // y=z
   z=cvec_free(m,z);
 }
 
@@ -2213,7 +2213,7 @@ void cvec_sub_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
       csub_mul_cc(z[i],MAT(A,i,j,LDA),x[j]); // z-=A*x
     }
   }
-  cvec_copy(m,y,z); // y=z
+  cvec_copy_cvec(m,y,z); // y=z
   z=cvec_free(m,z);
 }
 
@@ -2237,7 +2237,7 @@ void cvec_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
       cadd_mul_cc(z[j],MAT(A,i,j,LDA),x[i]); // z=A^T*x
     }
   }
-  cvec_copy(n,y,z); // y=z
+  cvec_copy_cvec(n,y,z); // y=z
   z=cvec_free(n,z);
 }
 
@@ -2261,7 +2261,7 @@ void cvec_add_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
       cadd_mul_cc(z[j],MAT(A,i,j,LDA),x[i]); // z+=A^T*x
     }
   }
-  cvec_copy(n,y,z); // y=z
+  cvec_copy_cvec(n,y,z); // y=z
   z=cvec_free(n,z);
 }
 
@@ -2285,7 +2285,7 @@ void cvec_sub_lintr_t(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
       csub_mul_cc(z[j],MAT(A,i,j,LDA),x[i]); // z-=A^T*x
     }
   }
-  cvec_copy(n,y,z); // y=z
+  cvec_copy_cvec(n,y,z); // y=z
   z=cvec_free(n,z);
 }
 
@@ -2309,7 +2309,7 @@ void cvec_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
       cadd_dot_cc(z[j],MAT(A,i,j,LDA),x[i]); // z=A'*x
     }
   }
-  cvec_copy(n,y,z); // y=z
+  cvec_copy_cvec(n,y,z); // y=z
   z=cvec_free(n,z);
 }
 
@@ -2333,7 +2333,7 @@ void cvec_add_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x
       cadd_dot_cc(z[j],MAT(A,i,j,LDA),x[i]); // z+=A'*x
     }
   }
-  cvec_copy(n,y,z); // y=z
+  cvec_copy_cvec(n,y,z); // y=z
   z=cvec_free(n,z);
 }
 
@@ -2357,14 +2357,14 @@ void cvec_sub_lintr_ct(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x
       csub_dot_cc(z[j],MAT(A,i,j,LDA),x[i]); // z-=A'*x
     }
   }
-  cvec_copy(n,y,z); // y=z
+  cvec_copy_cvec(n,y,z); // y=z
   z=cvec_free(n,z);
 }
 
 /**
  @brief cmulti型のベクトルの要素の総和 value=sum(x)
  */
-void cvec_sum(cmulti *value, int n, cmulti **x)
+void csum_cvec(cmulti *value, int n, cmulti **x)
 {
   int i;
   cset_zero(value);
@@ -2374,7 +2374,7 @@ void cvec_sum(cmulti *value, int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの要素の絶対値の平方の総和 value=sum(abs(x).^2)
 */
-void cvec_sum_abs2(rmulti *value, int n, cmulti **x)
+void rsum_pow2_abs_cvec(rmulti *value, int n, cmulti **x)
 {
   int i;
   rset_zero(value);
@@ -2394,12 +2394,12 @@ void cvec_sum_dot(cmulti *value, int n, cmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの要素の最大値 value=max(x)
 */
-void cvec_max(cmulti *value, int n, cmulti **x)
+void cmax_cvec(cmulti *value, int n, cmulti **x)
 {
   int i;
   cset_c(value,x[0]);     // value=x[0]
   for(i=1; i<n; i++){
-    if(cgt_c(x[i],value)){ // x[i]<value
+    if(gt_cc(x[i],value)){ // x[i]<value
       cset_c(value,x[i]); // value=x[i]
     }
   }
@@ -2408,12 +2408,12 @@ void cvec_max(cmulti *value, int n, cmulti **x)
 /**
  @brief rmulti型のベクトルの要素の最小値 value=min(x)
 */
-void cvec_min(cmulti *value, int n, cmulti **x)
+void cmin_cvec(cmulti *value, int n, cmulti **x)
 {
   int i;
   cset_c(value,x[0]);     // value=x[0]
   for(i=1; i<n; i++){
-    if(clt_c(x[i],value)){ // x[i]<value
+    if(lt_cc(x[i],value)){ // x[i]<value
       cset_c(value,x[i]); // value=x[i]
     }
   }
@@ -2449,7 +2449,7 @@ void cvec_pow_r(int n, cmulti **z, cmulti **x, rmulti *y)
 /**
  @brief cmulti型のベクトルの要素ごとの絶対値の対数 y=log2(abs(x))
 */
-void cvec_log2_abs(int n, rmulti **y, cmulti **x)
+void rvec_log2_abs_cvec(int n, rmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){
@@ -2461,11 +2461,11 @@ void cvec_log2_abs(int n, rmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの規格化 y=x/sqrt(x'*x)
 */
-void cvec_normalize(int n, cmulti **y, cmulti **x)
+void cvec_normalize_cvec(int n, cmulti **y, cmulti **x)
 {
   rmulti *a=NULL;
   a=rallocate_prec(cvec_get_prec_max(n,y));
-  cvec_norm2(a,n,x);   // a=sqrt(x'*x)
+  rnorm2_cvec(a,n,x);   // a=sqrt(x'*x)
   rinv_r(a,a);           // a=1/sqrt(x'*x)
   cvec_mul_rscalar(n,y,x,a); // y=x/sqrt(x'*x)
   a=rfree(a);
@@ -2474,7 +2474,7 @@ void cvec_normalize(int n, cmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの規格化 y=x/sqrt(x'*x)
 */
-void cvec_normalize_sgn(int n, cmulti **y, cmulti **x)
+void cvec_normalize_sgn_cvec(int n, cmulti **y, cmulti **x)
 {
   int prec,k=-1;
   rmulti *a=NULL;
@@ -2484,10 +2484,10 @@ void cvec_normalize_sgn(int n, cmulti **y, cmulti **x)
   a=rallocate_prec(prec);
   b=callocate_prec(prec);
   // compute
-  cvec_max_abs_index(a,n,x,&k); // a=abs(x[k])
+  rmax_abs_cvec_index(a,n,x,&k); // a=abs(x[k])
   cnormalize_c(b,x[k]);     // b=sgn(x[k])
   cconj_c(b,b);             // b=conj(sgn(x[k]))
-  cvec_norm2(a,n,x);      // a=sqrt(x'*x)
+  rnorm2_cvec(a,n,x);      // a=sqrt(x'*x)
   cdiv_cr(b,b,a);         // b=conj(sgn(x[k]))/sqrt(x'*x)
   cvec_mul_cscalar(n,y,x,b);    // y=x*(conj(sgn(x[k]))/sqrt(x'*x))
   // done
@@ -2510,18 +2510,18 @@ void cvec_orthogonalize(int n, cmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの2乗ノルム value=sqrt(sum(abs(x).^2))
 */
-void cvec_norm2(rmulti *value, int n, cmulti **x)
+void rnorm2_cvec(rmulti *value, int n, cmulti **x)
 {
-  cvec_sum_abs2(value,n,x); // value=sum(abs(x).^2)
+  rsum_pow2_abs_cvec(value,n,x); // value=sum(abs(x).^2)
   rsqrt_r(value,value);       // value=sqrt(value)
 }
 
 /**
  @brief cmulti型のベクトルの要素の平均 value=sum(x)/n
 */
-void cvec_average(cmulti *value, int n, cmulti **x)
+void caverage_cvec(cmulti *value, int n, cmulti **x)
 {
-  cvec_sum(value,n,x);
+  csum_cvec(value,n,x);
   cdiv_cd(value,value,n);
 }
 
@@ -2551,7 +2551,7 @@ void cvec_max_abs2_sub(rmulti *value, int n, cmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの要素の絶対値 y=abs(x)
 */
-void cvec_abs(int n, rmulti **y, cmulti **x)
+void rvec_abs_cvec(int n, rmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rabs_c(y[i],x[i]); }
@@ -2593,7 +2593,7 @@ void cvec_abs_sub_r(int n, rmulti **z, cmulti **x, rmulti *y)
 /**
  @brief rmulti型のベクトルの要素の絶対値の総和 value=sum(abs(x))
  */
-void cvec_sum_abs(rmulti *value, int n, cmulti **x)
+void rsum_abs_cvec(rmulti *value, int n, cmulti **x)
 {
   int i;
   rset_zero(value); // value=0
@@ -2619,7 +2619,7 @@ void cvec_sum_abs_sub(rmulti *value, int n, cmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))
 */
-void cvec_max_abs(rmulti *value, int n, cmulti **x)
+void rmax_abs_cvec(rmulti *value, int n, cmulti **x)
 {
   int i;
   rmulti *a=NULL;
@@ -2638,7 +2638,7 @@ void cvec_max_abs(rmulti *value, int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの要素の実部，虚部の絶対値の最大値 value=max(abs(x))
 */
-void cvec_max_absc(rmulti *value, int n, cmulti **x)
+void rmax_max_absc_cvec(rmulti *value, int n, cmulti **x)
 {
   int i;
   rmulti *a=NULL;
@@ -2658,7 +2658,7 @@ void cvec_max_absc(rmulti *value, int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) とその添え字 I
 */
-void cvec_max_abs_index(rmulti *value, int n, cmulti **x, int *I)
+void rmax_abs_cvec_index(rmulti *value, int n, cmulti **x, int *I)
 {
   int i;
   rmulti *a=NULL;
@@ -2704,7 +2704,7 @@ void cvec_max_abs_sub(rmulti *value, int n, cmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))
 */
-void cvec_min_abs(rmulti *value, int n, cmulti **x)
+void rmin_abs_cvec(rmulti *value, int n, cmulti **x)
 {
   int i;
   rmulti *a=NULL;
@@ -2723,7 +2723,7 @@ void cvec_min_abs(rmulti *value, int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x)) とその添え字 I
 */
-void cvec_min_abs_index(rmulti *value, int n, cmulti **x, int *I)
+void rmin_abs_cvec_index(rmulti *value, int n, cmulti **x, int *I)
 {
   int i;
   rmulti *a=NULL;
@@ -2745,7 +2745,7 @@ void cvec_min_abs_index(rmulti *value, int n, cmulti **x, int *I)
 /**
  @brief cmulti型のベクトルの要素の偏角 y=arg(x)
 */
-void cvec_arg(int n, rmulti **y, cmulti **x)
+void rvec_arg_cvec(int n, rmulti **y, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rarg_c(y[i],x[i]); }
@@ -2761,9 +2761,9 @@ void cvec_dcos(cmulti *value, int n, cmulti **x, cmulti **y)
   rmulti *a=NULL;
   a=rallocate_prec(cget_prec(value));
   cvec_sum_dot(value,n,x,y); // value=x'*y
-  cvec_norm2(a,n,x);         // a=sqrt(x'*x)
+  rnorm2_cvec(a,n,x);         // a=sqrt(x'*x)
   cdiv_cr(value,value,a);    // value=x'*y/sqrt(x'*x)
-  cvec_norm2(a,n,y);         // a=sqrt(y'*y)
+  rnorm2_cvec(a,n,y);         // a=sqrt(y'*y)
   cdiv_cr(value,value,a);    // value=x'*y/sqrt(x'*x)/sqrt(y'*y)
   a=rfree(a);
 }
@@ -2817,7 +2817,7 @@ int cvec_cmp(int n, cmulti **x, int m, cmulti **y)
 {
   int i,value;
   for(i=0; i<MIN2(n,m); i++){
-    value=ccmp_c(x[i],y[i]);
+    value=cmp_cc(x[i],y[i]);
     if(value!=0){ return value; } // X!=Y
   }
   if     (n<m){ return -1; } // X<Y
@@ -2831,7 +2831,7 @@ int cvec_cmp(int n, cmulti **x, int m, cmulti **y)
 int cvec_eq(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!ceq_c(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!eq_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2841,7 +2841,7 @@ int cvec_eq(int n, cmulti **x, cmulti **y)
 int cvec_gt(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!cgt_c(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!gt_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2851,7 +2851,7 @@ int cvec_gt(int n, cmulti **x, cmulti **y)
 int cvec_ge(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!cge_c(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!ge_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2861,7 +2861,7 @@ int cvec_ge(int n, cmulti **x, cmulti **y)
 int cvec_lt(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!clt_c(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!lt_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2871,7 +2871,7 @@ int cvec_lt(int n, cmulti **x, cmulti **y)
 int cvec_le(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!cle_c(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!le_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2881,7 +2881,7 @@ int cvec_le(int n, cmulti **x, cmulti **y)
 int cvec_eqc(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!ceqc(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!ceq_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2891,7 +2891,7 @@ int cvec_eqc(int n, cmulti **x, cmulti **y)
 int cvec_gtc(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!cgtc(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!cgt_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2901,7 +2901,7 @@ int cvec_gtc(int n, cmulti **x, cmulti **y)
 int cvec_gec(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!cgec(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!cge_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2911,7 +2911,7 @@ int cvec_gec(int n, cmulti **x, cmulti **y)
 int cvec_ltc(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!cltc(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!clt_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 
@@ -2921,7 +2921,7 @@ int cvec_ltc(int n, cmulti **x, cmulti **y)
 int cvec_lec(int n, cmulti **x, cmulti **y)
 {
   int i;
-  for(i=0; i<n; i++){ if(!clec(x[i],y[i])){ return 0; } }
+  for(i=0; i<n; i++){ if(!cle_cc(x[i],y[i])){ return 0; } }
   return 1;
 }
 

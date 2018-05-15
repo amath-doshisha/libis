@@ -37,7 +37,7 @@ void rhouseholder_vec(int n, int k, rmulti **h, rmulti *alpha, rmulti **x)
   xi=rallocate_prec(prec);
   axk=rallocate_prec(prec);
   //----------- norm
-  rvec_sum_pow2(xi,n-k-1,&x[k+1]);    // xi=sum(abs(x((k+1):end)).^2);
+  rsum_pow2_abs_rvec(xi,n-k-1,&x[k+1]);    // xi=sum(abs(x((k+1):end)).^2);
   rmul_rr(axk,x[k],x[k]);                // axk=|x[k]|^2
   radd_rr(eta,axk,xi);                   // eta=|x[k]|^2+...
   rsqrt_r(axk,axk);                     // axk=|x[k]|
@@ -49,7 +49,7 @@ void rhouseholder_vec(int n, int k, rmulti **h, rmulti *alpha, rmulti **x)
   }
   //----------- h
   rvec_set_zeros(k,h);
-  rvec_copy(n-k-1,&h[k+1],&x[k+1]);     // h((k+1):end)=x((k+1):end);
+  rvec_copy_rvec(n-k-1,&h[k+1],&x[k+1]);     // h((k+1):end)=x((k+1):end);
   if(ris_zero(x[k])){
     rset_r(h[k],xi); rneg_r(h[k],h[k]);    // h[k]=-xi
   }else{
@@ -148,7 +148,7 @@ void rhouseholder(int n, int k0, int nH, int k, rmulti **h, rmulti *alpha, rmult
   prec=MAX2(p0,p1);
   value=rallocate_prec(prec);
   R=rvec_allocate_prec(n,prec);
-  rvec_copy(n,R,x);
+  rvec_copy_rvec(n,R,x);
   // R=(I-alpha*h*h')*R=R-alpha*h*(h'*R)    
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)

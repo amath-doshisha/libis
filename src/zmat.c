@@ -195,7 +195,7 @@ void zmat_copy_col_index(int m, int n, dcomplex *B, int LDB, dcomplex *A, int LD
 {
   int j;
   for(j=0; j<n; j++){
-    zvec_copy(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
+    zvec_copy_zvec(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
   }
 }
 
@@ -338,7 +338,7 @@ void zmat_normalize(int m, int n, dcomplex *A, int LDA)
 {
   int j;
   for(j=0; j<n; j++){
-    zvec_normalize(m,&COL(A,j,LDA),&COL(A,j,LDA));
+    zvec_normalize_zvec(m,&COL(A,j,LDA),&COL(A,j,LDA));
   }
 }
 
@@ -346,7 +346,7 @@ void zmat_normalize_sgn(int m, int n, dcomplex *A, int LDA)
 {
   int j;
   for(j=0; j<n; j++){
-    zvec_normalize_sgn(m,&COL(A,j,LDA),&COL(A,j,LDA));
+    zvec_normalize_sgn_zvec(m,&COL(A,j,LDA),&COL(A,j,LDA));
   }
 }
 

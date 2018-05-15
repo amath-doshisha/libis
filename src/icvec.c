@@ -260,7 +260,7 @@ void icvec_get_cvec(int n, cmulti **y, cmulti **x0, cmulti **x1)
 /**
  @brief コピー [y0,y1]=[x0,x1]
  */
-void icvec_copy_cr(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1)
+void icvec_copy_cvec_rvec(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icset_cr(y0[i],y1[i],x0[i],x1[i]); }
@@ -269,7 +269,7 @@ void icvec_copy_cr(int n, cmulti **y0, cmulti **y1, cmulti **x0, rmulti **x1)
 /**
  @brief コピー [y0,y1]=[x0,x1]
  */
-void icvec_copy_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1)
+void icvec_copy_rvec_cvec(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icset_rc(y0[i],y1[i],x0[i],x1[i]); }
@@ -278,7 +278,7 @@ void icvec_copy_rc(int n, cmulti **y0, cmulti **y1, rmulti **x0, cmulti **x1)
 /**
  @brief コピー [y0,y1]=[x0,x1]
  */
-void icvec_copy(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
+void icvec_copy_cvec(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icset_c(y0[i],y1[i],x0[i],x1[i]); }
@@ -287,7 +287,7 @@ void icvec_copy(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
 /**
  @brief コピー [y0,y1]=[x0,x1]
  */
-void icvec_copy_r(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1)
+void icvec_copy_rvec(int n, cmulti **y0, cmulti **y1, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icset_r(y0[i],y1[i],x0[i],x1[i]); }
@@ -321,7 +321,7 @@ void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **
 /**
  @brief icmulti型の実部のコピー y=real(x)
  */
-void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
+void irvec_real_cvec(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irset_r(y0[i],y1[i],C_R(x0[i]),C_R(x1[i])); }
@@ -330,7 +330,7 @@ void icvec_real(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
 /**
  @brief [y0,y1]=conj([x0,x1])
 */
-void icvec_conj(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
+void icvec_conj_cvec(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icconj_c(y0[i],y1[i],x0[i],x1[i]); }
@@ -339,7 +339,7 @@ void icvec_conj(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
 /**
  @brief 符号の反転 [y0,y1]=-[x0,x1]
 */
-void icvec_neg(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
+void icvec_neg_cvec(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icneg_c(y0[i],y1[i],x0[i],x1[i]); }
@@ -1376,7 +1376,7 @@ void izscalar_div_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief 絶対値の平方の総和 [y0,y1]=sum(abs([x0,x1]).^2)
 */
-void icvec_sum_abs2(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
+void irsum_pow2_abs_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   irset_d(y0,y1,0,0);
@@ -1386,7 +1386,7 @@ void icvec_sum_abs2(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief 絶対値 [y0,y1]=abs([x0,x1])
 */
-void icvec_abs(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
+void irvec_abs_cvec(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irabs_c(y0[i],y1[i],x0[i],x1[i]); }
@@ -1404,15 +1404,15 @@ void icvec_abs_sub(int n, rmulti **z0, rmulti **z1, cmulti **x0, cmulti **x1, cm
 /**
  @brief 最大値 [y0,y1]=[max(x0),max(x1)]
 */
-void icvec_max(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+void icmax_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   icset_c(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
   for(i=1; i<n; i++){
-    if(cgt_c(x0[i],y0)){            // x0[i]>y0
+    if(gt_cc(x0[i],y0)){            // x0[i]>y0
       cset_c(y0,x0[i]);            // y0=x0[i]
     }
-    if(cgt_c(x1[i],y1)){            // x1[i]>y1
+    if(gt_cc(x1[i],y1)){            // x1[i]>y1
       cset_c(y1,x1[i]);            // y1=x1[i]
     }
   }
@@ -1421,12 +1421,12 @@ void icvec_max(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief 最大値 [y0,y1]=[x0,max(x1)]
 */
-void icvec_umax(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+void icmax_up_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   icset_c(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
   for(i=1; i<n; i++){
-    if(cgt_c(x1[i],y1)){            // x1[i]>y1
+    if(gt_cc(x1[i],y1)){            // x1[i]>y1
       icset_c(y0,y1,x0[i],x1[i]);  // y0=x0[i], y1=x1[i]
     }
   }
@@ -1435,12 +1435,12 @@ void icvec_umax(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief 最大値 [y0,y1]=[max(x0),x1]
 */
-void icvec_dmax(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+void icmax_down_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   icset_c(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
   for(i=1; i<n; i++){
-    if(cgt_c(x0[i],y0)){            // x0[i]>y0
+    if(gt_cc(x0[i],y0)){            // x0[i]>y0
       icset_c(y0,y1,x0[i],x1[i]);  // y0=x0[i], y1=x1[i]
     }
   }
@@ -1449,15 +1449,15 @@ void icvec_dmax(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief 最小値 [y0,y1]=[min(x0),min(x1)]
 */
-void icvec_min(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+void icmin_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   icset_c(y0,y1,x0[0],x1[0]);   // y0=x0[0], y1=x1[0]
   for(i=1; i<n; i++){
-    if(clt_c(x0[i],y0)){         // x0[i]<y1
+    if(lt_cc(x0[i],y0)){         // x0[i]<y1
       cset_c(y0,x0[i]);         // y0=x0[i]
     }
-    if(clt_c(x1[i],y1)){         // x1[i]<y1
+    if(lt_cc(x1[i],y1)){         // x1[i]<y1
       cset_c(y1,x1[i]);         // y1=x1[i]
     }
   }
@@ -1468,12 +1468,12 @@ void icvec_min(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief 最小値 [y0,y1]=[x0,min(x1)]
 */
-void icvec_umin(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+void icmin_up_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   icset_c(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
   for(i=1; i<n; i++){
-    if(clt_c(x1[i],y1)){            // x1[i]<y1
+    if(lt_cc(x1[i],y1)){            // x1[i]<y1
       icset_c(y0,y1,x0[i],x1[i]);  // y0=x0[i], y1=x1[i]
     }
   }
@@ -1482,12 +1482,12 @@ void icvec_umin(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief 最小値 [y0,y1]=[min(x0),x1]
 */
-void icvec_dmin(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+void icmin_down_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   icset_c(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
   for(i=1; i<n; i++){
-    if(clt_c(x0[i],y0)){            // x0[i]<y0
+    if(lt_cc(x0[i],y0)){            // x0[i]<y0
       icset_c(y0,y1,x0[i],x1[i]);  // y0=x0[i], y1=x1[i]
     }
   }
@@ -1496,37 +1496,37 @@ void icvec_dmin(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))
 */
-void icvec_umax_abs(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
+void irmax_up_abc_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int prec;
   rmulti **ax0=NULL,**ax1=NULL;
   prec=MAX2(rget_prec(y0),rget_prec(y1));
   ax0=rvec_allocate_prec(n,prec);
   ax1=rvec_allocate_prec(n,prec);
-  icvec_abs(n,ax0,ax1,x0,x1);
-  irvec_umax(y0,y1,n,ax0,ax1);
+  irvec_abs_cvec(n,ax0,ax1,x0,x1);
+  irmax_up_rvec(y0,y1,n,ax0,ax1);
   RVF(ax0,n); RVF(ax1,n);
 }
 
 /**
  @brief irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))
 */
-void icvec_dmin_abs(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
+void irmin_down_abc_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int prec;
   rmulti **ax0=NULL,**ax1=NULL;
   prec=MAX2(rget_prec(y0),rget_prec(y1));
   ax0=rvec_allocate_prec(n,prec);
   ax1=rvec_allocate_prec(n,prec);
-  icvec_abs(n,ax0,ax1,x0,x1);
-  irvec_dmin(y0,y1,n,ax0,ax1);
+  irvec_abs_cvec(n,ax0,ax1,x0,x1);
+  irmin_down_rvec(y0,y1,n,ax0,ax1);
   RVF(ax0,n); RVF(ax1,n);
 }
 
 /**
  @brief icmulti型のベクトルの要素の総和 value=sum(x)
  */
-void icvec_sum(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
+void icsum_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int i;
   icset_d(y0,y1,0,0);
@@ -1548,7 +1548,7 @@ void icvec_lintr(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, 
       icadd_mul_rr(z0[i],z1[i],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[j],x1[j]);
     }
   }
-  icvec_copy(m,y0,y1,z0,z1);
+  icvec_copy_cvec(m,y0,y1,z0,z1);
   CVF(z0,m); CVF(z1,m);
 }
 
@@ -1567,7 +1567,7 @@ void icvec_add_lintr(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LD
       icadd_mul_rr(z0[i],z1[i],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[j],x1[j]);
     }
   }
-  icvec_copy(m,y0,y1,z0,z1);
+  icvec_copy_cvec(m,y0,y1,z0,z1);
   CVF(z0,m); CVF(z1,m);
 }
 
@@ -1586,7 +1586,7 @@ void icvec_sub_lintr(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LD
       icsub_mul_cc(z0[i],z1[i],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[j],x1[j]);
     }
   }
-  icvec_copy(m,y0,y1,z0,z1);
+  icvec_copy_cvec(m,y0,y1,z0,z1);
   CVF(z0,m); CVF(z1,m);
 }
 
@@ -1605,7 +1605,7 @@ void icvec_lintr_t(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0
       icadd_mul_rr(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  icvec_copy(n,y0,y1,z0,z1);
+  icvec_copy_cvec(n,y0,y1,z0,z1);
   CVF(z0,n); CVF(z1,n);
 }
 
@@ -1624,7 +1624,7 @@ void icvec_add_lintr_t(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int 
       icadd_mul_rr(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  icvec_copy(n,y0,y1,z0,z1);
+  icvec_copy_cvec(n,y0,y1,z0,z1);
   CVF(z0,n); CVF(z1,n);
 }
 
@@ -1643,7 +1643,7 @@ void icvec_sub_lintr_t(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int 
       icsub_mul_cc(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  icvec_copy(n,y0,y1,z0,z1);
+  icvec_copy_cvec(n,y0,y1,z0,z1);
   CVF(z0,n); CVF(z1,n);
 }
 
@@ -1662,7 +1662,7 @@ void icvec_lintr_ct(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA
       icadd_dot_cc(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  icvec_copy(n,y0,y1,z0,z1);
+  icvec_copy_cvec(n,y0,y1,z0,z1);
   CVF(z0,n); CVF(z1,n);
 }
 
@@ -1681,7 +1681,7 @@ void icvec_add_lintr_ct(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int
       icadd_dot_cc(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  icvec_copy(n,y0,y1,z0,z1);
+  icvec_copy_cvec(n,y0,y1,z0,z1);
   CVF(z0,n); CVF(z1,n);
 }
 
@@ -1700,7 +1700,7 @@ void icvec_sub_lintr_ct(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int
       icsub_dot_cc(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  icvec_copy(n,y0,y1,z0,z1);
+  icvec_copy_cvec(n,y0,y1,z0,z1);
   CVF(z0,n); CVF(z1,n);
 }
 

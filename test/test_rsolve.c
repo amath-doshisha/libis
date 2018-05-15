@@ -50,13 +50,13 @@ int main(int argc, char *argv[])
 
   printf("================\n");
   printf("[デフォルト精度で計算]\n");
-  rmat_copy(n,n,A,LDA,A0,LDA);  rvec_copy(n,x,b); rsolve(n,1,x,n,A,LDA,&info); rvec_copy(n,y,x);
+  rmat_copy(n,n,A,LDA,A0,LDA);  rvec_copy_rvec(n,x,b); rsolve(n,1,x,n,A,LDA,&info); rvec_copy_rvec(n,y,x);
   if(info==0){
     rvec_print_prec(n,x,"x=","e",20);
     printf("[残差を計算]\n");
     rsolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
     rvec_print_prec(n,r,"r=b-A0*x=","e",2);
-    rvec_max_abs(E,n,r);
+    rmax_abs_rvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
   }else{
     printf("rank(A)=%d\n",info);
@@ -66,34 +66,34 @@ int main(int argc, char *argv[])
   printf("================\n");
   printf("[精度%dbitsで計算]\n",prec2);
   set_default_prec(prec2);
-  rvec_round(n,x,prec2);
+  rvec_round_rvec(n,x,prec2);
   rmat_copy(n,n,A,LDA,A0,LDA);
-  rvec_copy(n,x,b);
+  rvec_copy_rvec(n,x,b);
   rsolve(n,1,x,n,A,LDA,&info);
   if(info==0){
     rvec_print_prec(n,x,"x=","e",20);
     printf("[残差を計算]\n");
-    rvec_round(n,r,prec2);
+    rvec_round_rvec(n,r,prec2);
     rsolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
     rvec_print_prec(n,r,"r=b-A0*x=","e",2);
-    rvec_max_abs(E,n,r);
+    rmax_abs_rvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
     printf("================\n");
     printf("[精度%dbitsで計算した結果を丸める]\n",prec2);
-    rvec_round(n,r,prec);
-    rvec_round(n,x,prec);
+    rvec_round_rvec(n,r,prec);
+    rvec_round_rvec(n,x,prec);
     rvec_print_prec(n,x,"x=","e",20);
     printf("[残差を計算]\n");
     rsolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
     rvec_print_prec(n,r,"r=b-A0*x=","e",2);
-    rvec_max_abs(E,n,r);
+    rmax_abs_rvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
     printf("[デフォルト精度の誤差を評価]\n");
-    rvec_round(n,r,prec);
+    rvec_round_rvec(n,r,prec);
     rvec_sub_rvec(n,r,x,y);
     rvec_div_2exp(n,r,r,rvec_get_prec_max(n,x));
     rvec_print_prec(n,r,"r=(x-y)/log2(x)=","e",2);
-    rvec_max_abs(E,n,r);
+    rmax_abs_rvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
     rvec_print_exp(n,r,"r=log2(x-y)-log2(x)=");
 

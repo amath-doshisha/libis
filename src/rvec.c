@@ -92,7 +92,7 @@ rmulti **rvec_free(int n, rmulti **x)
 /**
  @brief 初期化済みのrmulti型のベクトルの浮動小数点数の精度(ビット数)を変更し再初期化.
 */
-void rvec_round(int n, rmulti **x, int prec)
+void rvec_round_rvec(int n, rmulti **x, int prec)
 {
   int i;
   for(i=0; i<n; i++){ rround(x[i],prec); }
@@ -101,7 +101,7 @@ void rvec_round(int n, rmulti **x, int prec)
 /**
  @brief rmulti型のベクトルの値を複成 y=x.
 */
-void rvec_clone(int n, rmulti **y, rmulti **x)
+void rvec_clone_rvec(int n, rmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rclone_r(y[i],x[i]); }
@@ -110,7 +110,7 @@ void rvec_clone(int n, rmulti **y, rmulti **x)
 /**
  @brief rmulti型のベクトルの値を添字を指定して複成 y=x(I).
 */
-void rvec_clone_index(int n, rmulti **y, rmulti **x, int *I)
+void rvec_clone_rvec_index(int n, rmulti **y, rmulti **x, int *I)
 {
   int i;
   for(i=0; i<n; i++){ rclone_r(y[i],x[I[i]]); }
@@ -119,7 +119,7 @@ void rvec_clone_index(int n, rmulti **y, rmulti **x, int *I)
 /**
  @brief rmulti型のベクトルの値を添字を指定して複成 y(I)=x.
 */
-void rvec_index_clone(int n, rmulti **y, rmulti **x, int *I)
+void rvec_index_clone_rvec(int n, rmulti **y, rmulti **x, int *I)
 {
   int i;
   for(i=0; i<n; i++){ rclone_r(y[I[i]],x[i]); }
@@ -759,7 +759,7 @@ void rvec_sort_index(int *I, int n, rmulti **X)
 /**
  @brief rmulti型のベクトルの値のコピー y=x.
 */
-void rvec_copy(int n, rmulti **y, rmulti **x)
+void rvec_copy_rvec(int n, rmulti **y, rmulti **x)
 {
   int i;
   if(y==x){ return; }
@@ -770,7 +770,7 @@ void rvec_copy(int n, rmulti **y, rmulti **x)
  @brief rmulti型のベクトルの値の要素番号Iに従ったコピー y=x.
  @details y[i]=x[I[i]], i=0,1,2,..,n-1.
 */
-void rvec_copy_index(int n, rmulti **y, rmulti **x, int *I)
+void rvec_copy_rvec_index(int n, rmulti **y, rmulti **x, int *I)
 {
   int i;
   if(y==x){ rvec_swap_index(n,x,I); return; }
@@ -780,7 +780,7 @@ void rvec_copy_index(int n, rmulti **y, rmulti **x, int *I)
 /**
  @brief rmulti型のベクトルの値を添字を指定してコピー y(I)=x.
 */
-void rvec_index_copy(int n, rmulti **y, int *I, rmulti **x)
+void rvec_index_copy_rvec(int n, rmulti **y, int *I, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rset_r(y[I[i]],x[i]); }
@@ -807,7 +807,7 @@ void rvec_div_2exp(int n, rmulti **y, rmulti **x, int p)
 /**
  @brief rmulti型のベクトルの符号反転 y=-x
 */
-void rvec_neg(int n, rmulti **y, rmulti **x)
+void rvec_neg_rvec(int n, rmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rneg_r(y[i],x[i]); }
@@ -816,7 +816,7 @@ void rvec_neg(int n, rmulti **y, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の絶対値 y=abs(x)
 */
-void rvec_abs(int n, rmulti **y, rmulti **x)
+void rvec_abs_rvec(int n, rmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rabs_r(y[i],x[i]); }
@@ -1254,7 +1254,7 @@ void rvec_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
       radd_mul_rr(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
     }
   }
-  rvec_copy(m,y,z); // y=z
+  rvec_copy_rvec(m,y,z); // y=z
   RVF(z,m);
 }
 
@@ -1278,7 +1278,7 @@ void rvec_add_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
       radd_mul_rr(z[i],MAT(A,i,j,LDA),x[j]); // z+=A*x
     }
   }
-  rvec_copy(m,y,z); // y=z
+  rvec_copy_rvec(m,y,z); // y=z
   RVF(z,m);
 }
 
@@ -1302,7 +1302,7 @@ void rvec_sub_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
       rsub_mul_rr(z[i],MAT(A,i,j,LDA),x[j]); // z-=A*x
     }
   }
-  rvec_copy(m,y,z); // y=z
+  rvec_copy_rvec(m,y,z); // y=z
   RVF(z,m);
 }
 
@@ -1326,7 +1326,7 @@ void rvec_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
       radd_mul_rr(z[j],MAT(A,i,j,LDA),x[i]); // z=A'*x
     }
   }
-  rvec_copy(n,y,z); // y=z
+  rvec_copy_rvec(n,y,z); // y=z
   RVF(z,n);
 }
 
@@ -1350,7 +1350,7 @@ void rvec_add_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
       radd_mul_rr(z[j],MAT(A,i,j,LDA),x[i]); // z+=A'*x
     }
   }
-  rvec_copy(n,y,z); // y=z
+  rvec_copy_rvec(n,y,z); // y=z
   RVF(z,n);
 }
 
@@ -1374,14 +1374,14 @@ void rvec_sub_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
       rsub_mul_rr(z[j],MAT(A,i,j,LDA),x[i]); // z-=A'*x
     }
   }
-  rvec_copy(n,y,z); // y=z
+  rvec_copy_rvec(n,y,z); // y=z
   RVF(z,n);
 }
 
 /**
  @brief rmulti型のベクトルの要素の総和 value=sum(x)
  */
-void rvec_sum(rmulti *value, int n, rmulti **x)
+void rsum_rvec(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_zero(value);
@@ -1391,7 +1391,7 @@ void rvec_sum(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の絶対値の総和 value=sum(abs(x))
  */
-void rvec_sum_abs(rmulti *value, int n, rmulti **x)
+void rsum_abs_rvec(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_zero(value); // value=0
@@ -1401,7 +1401,7 @@ void rvec_sum_abs(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の平方の総和 value=sum(x.^2)
 */
-void rvec_sum_pow2(rmulti *value, int n, rmulti **x)
+void rsum_pow2_abs_rvec(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_zero(value);
@@ -1438,7 +1438,7 @@ void rvec_sum_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
 /**
  @brief rmulti型のベクトルの要素の最大値 value=max(x)
 */
-void rvec_max(rmulti *value, int n, rmulti **x)
+void rmax_rvec(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_r(value,x[0]);      // value=x[0]
@@ -1452,7 +1452,7 @@ void rvec_max(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))
 */
-void rvec_max_abs(rmulti *value, int n, rmulti **x)
+void rmax_abs_rvec(rmulti *value, int n, rmulti **x)
 {
   int i;
   rmulti *a=NULL;
@@ -1470,7 +1470,7 @@ void rvec_max_abs(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) とその添え字 I
 */
-void rvec_max_abs_index(rmulti *value, int n, rmulti **x, int *I)
+void rmax_abs_rvec_index(rmulti *value, int n, rmulti **x, int *I)
 {
   int i;
   rmulti *a=NULL;
@@ -1510,7 +1510,7 @@ void rvec_max_abs_sub(rmulti *value, int n, rmulti **x, rmulti **y)
 /**
  @brief rmulti型のベクトルの要素の最小値 value=min(x)
 */
-void rvec_min(rmulti *value, int n, rmulti **x)
+void rmin_rvec(rmulti *value, int n, rmulti **x)
 {
   int i;
   rset_r(value,x[0]);      // value=x[0]
@@ -1524,7 +1524,7 @@ void rvec_min(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))
 */
-void rvec_min_abs(rmulti *value, int n, rmulti **x)
+void rmin_abs_rvec(rmulti *value, int n, rmulti **x)
 {
   int i;
   rmulti *a=NULL;
@@ -1542,7 +1542,7 @@ void rvec_min_abs(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x)) とその添え字 I
 */
-void rvec_min_abs_index(rmulti *value, int n, rmulti **x, int *I)
+void rmin_abs_rvec_index(rmulti *value, int n, rmulti **x, int *I)
 {
   int i;
   rmulti *a=NULL;
@@ -1590,7 +1590,7 @@ void rvec_pow_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
 /**
  @brief rmulti型のベクトルの要素ごとの絶対値の対数 y=log2(abs(x))
 */
-void rvec_log2_abs(int n, rmulti **y, rmulti **x)
+void rvec_log2_abs_rvec(int n, rmulti **y, rmulti **x)
 {
   int i;
   rmulti *a=NULL;
@@ -1605,11 +1605,11 @@ void rvec_log2_abs(int n, rmulti **y, rmulti **x)
 /**
  @brief rmulti型のベクトルの規格化 y=x/sqrt(x'*x)
 */
-void rvec_normalize(int n, rmulti **y, rmulti **x)
+void rvec_normalize_rvec(int n, rmulti **y, rmulti **x)
 {
   rmulti *a=NULL;
   RAP(a,y,n);
-  rvec_norm2(a,n,x);   // a=sqrt(x'*x)
+  rnorm2_rvec(a,n,x);   // a=sqrt(x'*x)
   rinv_r(a,a);           // a=1/sqrt(x'*x)
   rvec_mul_rscalar(n,y,x,a); // y=x/sqrt(x'*x)
   RF(a);
@@ -1618,13 +1618,13 @@ void rvec_normalize(int n, rmulti **y, rmulti **x)
 /**
  @brief rmulti型のベクトルの規格化 y=x/sqrt(x'*x)
 */
-void rvec_normalize_sgn(int n, rmulti **y, rmulti **x)
+void rvec_normalize_sgn_rvec(int n, rmulti **y, rmulti **x)
 {
   int k=-1;
   rmulti *a=NULL;
   RAP(a,y,n);
-  rvec_max_abs_index(a,n,x,&k);        // a=abs(x[k])
-  rvec_norm2(a,n,x);                   // a=sqrt(x'*x)
+  rmax_abs_rvec_index(a,n,x,&k);        // a=abs(x[k])
+  rnorm2_rvec(a,n,x);                   // a=sqrt(x'*x)
   rinv_r(a,a);                           // a=1/a
   if(ris_negative(x[k])){ rneg_r(a,a); } // a=-a
   rvec_mul_rscalar(n,y,x,a);                 // y=x/sqrt(x'*x)
@@ -1646,18 +1646,18 @@ void rvec_orthogonalize(int n, rmulti **y, rmulti **x)
 /**
  @brief rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2))
 */
-void rvec_norm2(rmulti *value, int n, rmulti **x)
+void rnorm2_rvec(rmulti *value, int n, rmulti **x)
 {
-  rvec_sum_pow2(value,n,x); // value=sum(x.^2)
+  rsum_pow2_abs_rvec(value,n,x); // value=sum(x.^2)
   rsqrt_r(value,value);       // value=sqrt(value)
 }
 
 /**
  @brief rmulti型のベクトルの要素の平均 value=sum(x)/n
 */
-void rvec_average(rmulti *value, int n, rmulti **x)
+void raverage_rvec(rmulti *value, int n, rmulti **x)
 {
-  rvec_sum(value,n,x);
+  rsum_rvec(value,n,x);
   rdiv_rd(value,value,n);
 }
 
@@ -1688,8 +1688,8 @@ void rvec_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
 {
   rmulti *a=NULL,*b=NULL;
   RAp(a,value); RAp(b,value);
-  rvec_norm2(a,n,x); // a=sqrt(x'*x)
-  rvec_norm2(b,n,y); // b=sqrt(y'*y)
+  rnorm2_rvec(a,n,x); // a=sqrt(x'*x)
+  rnorm2_rvec(b,n,y); // b=sqrt(y'*y)
   rmul_rr(a,a,b);       // a=sqrt(x'*x)*sqrt(y'*y)
   rvec_sum_mul(b,n,x,y); // b=x'*y
   rdiv_rr(value,b,a);   // valu=(x'*y)/sqrt(x'*x)/sqrt(y'*y)

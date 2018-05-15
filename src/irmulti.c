@@ -554,7 +554,7 @@ void irpow_r(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1, int n)
 /**
  @brief 区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0<=y0 && y1 <=x1).
  */
-int irin(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
+int ir_in_ir(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
 {
   return (le_rr(x0,y0) && le_rr(y1,x1));
 }
@@ -562,7 +562,7 @@ int irin(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1)
 /**
  @brief 区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)<=y0 && y1 <=abs(x)).
  */
-int irin_pm(rmulti *y0, rmulti *y1, rmulti *x)
+int ir_in_irpm(rmulti *y0, rmulti *y1, rmulti *x)
 {
   int value;
   rmulti *z0=NULL,*z1=NULL;

@@ -343,7 +343,7 @@ void icmat_inv(int n, cmulti **B0, cmulti **B1, int LDB, cmulti **A0, cmulti **A
 void icvec_sum_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ icvec_sum(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ icsum_cvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**
@@ -352,7 +352,7 @@ void icvec_sum_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti
 void icvec_max_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ icvec_max(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ icmax_cvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**
@@ -361,7 +361,7 @@ void icvec_max_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti
 void icvec_umax_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ icvec_umax(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ icmax_up_cvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**
@@ -370,7 +370,7 @@ void icvec_umax_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmult
 void icvec_min_icmat(int m, int n, cmulti **B0, cmulti **B1, cmulti **A0, cmulti **A1, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ icvec_min(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
+  for(j=0; j<n; j++){ icmin_cvec(B0[j],B1[j],m,&COL(A0,j,LDA),&COL(A1,j,LDA)); }
 }
 
 /**

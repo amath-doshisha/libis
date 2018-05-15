@@ -901,17 +901,17 @@ void icpow_c(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1, int n)
 /**
  @brief 区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0<=y0 && y1 <=x1).
  */
-int icin(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
+int ic_in_ic(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1)
 {
-  return (irin(C_R(y0),C_R(y1),C_R(x0),C_R(x1)) && irin(C_I(y0),C_I(y1),C_I(x0),C_I(x1)));
+  return (ir_in_ir(C_R(y0),C_R(y1),C_R(x0),C_R(x1)) && ir_in_ir(C_I(y0),C_I(y1),C_I(x0),C_I(x1)));
 }
 
 /**
  @brief 区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)<=y0 && y1 <=abs(x)).
  */
-int icin_pm(cmulti *y0, cmulti *y1, cmulti *x)
+int ic_in_icpm(cmulti *y0, cmulti *y1, cmulti *x)
 {
-  return (irin_pm(C_R(y0),C_R(y1),C_R(x)) && irin_pm(C_I(y0),C_I(y1),C_I(x)));
+  return (ir_in_irpm(C_R(y0),C_R(y1),C_R(x)) && ir_in_irpm(C_I(y0),C_I(y1),C_I(x)));
 }
 
 /** @} */

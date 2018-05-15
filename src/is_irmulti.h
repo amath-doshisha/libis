@@ -138,7 +138,7 @@ void irsub_mul_dd(rmulti *z0, rmulti *z1, double x0, double x1, double y0, doubl
 /*
  * x<=>y
  */
-int irin(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1); // [y0,y1] in [x0,x1]
-int irin_pm(rmulti *y0, rmulti *y1, rmulti *x);           // [y0,y1] in [-abs(x),abs(x)]
+int ir_in_ir(rmulti *y0, rmulti *y1, rmulti *x0, rmulti *x1); // [y0,y1] in [x0,x1]
+int ir_in_irpm(rmulti *y0, rmulti *y1, rmulti *x);            // [y0,y1] in [-abs(x),abs(x)]
 
 #endif

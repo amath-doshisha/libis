@@ -73,10 +73,10 @@ void ceig_ii_1pair(int n, cmulti **x, cmulti **A, int LDA, cmulti *lambda, int d
   };
   // compute
   cvec_set_rand(n,x,2,-1);
-  cvec_normalize_sgn(n,x,x);
+  cvec_normalize_sgn_cvec(n,x,x);
   for(i=0; i<2; i++){
     csolve_lu_backsubs(n,1,x,n,B,n,p);
-    cvec_normalize_sgn(n,x,x);
+    cvec_normalize_sgn_cvec(n,x,x);
     if(debug>=1){ printf("[%s] II: step=%02d\n",NAME_CEIGII_1PAIR,i); }
   }
   // done

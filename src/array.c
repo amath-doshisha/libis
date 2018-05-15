@@ -152,12 +152,12 @@ array *array_copy(array *x)
   y=array_allocate(ARRAY_TYPE(x),ARRAY_NDIM(x),ARRAY_DIM_P(x));
   if(ARRAY_TYPE(y)=='s'){ svec_copy(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_S(x)); }
   if(ARRAY_TYPE(y)=='i'){ ivec_copy(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(y)=='d'){ dvec_copy(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(y)=='z'){ zvec_copy(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(y)=='r'){ rvec_copy(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(y)=='c'){ cvec_copy(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(y)=='R'){ rvec_copy(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); rvec_copy(ARRAY_SIZE(y),ARRAY_P1_R(y),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(y)=='C'){ cvec_copy(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); cvec_copy(ARRAY_SIZE(y),ARRAY_P1_C(y),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(y)=='d'){ dvec_copy_dvec(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(y)=='z'){ zvec_copy_zvec(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(y)=='r'){ rvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(y)=='c'){ cvec_copy_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(y)=='R'){ rvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); rvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P1_R(y),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(y)=='C'){ cvec_copy_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); cvec_copy_cvec(ARRAY_SIZE(y),ARRAY_P1_C(y),ARRAY_P1_C(x)); }
   return y;
 }
 
@@ -171,12 +171,12 @@ array *array_clone(array *x)
   y=array_allocate(ARRAY_TYPE(x),ARRAY_NDIM(x),ARRAY_DIM_P(x));
   if(ARRAY_TYPE(y)=='s'){ svec_copy (ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_S(x)); }
   if(ARRAY_TYPE(y)=='i'){ ivec_copy (ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(y)=='d'){ dvec_copy (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(y)=='z'){ zvec_copy (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(y)=='r'){ rvec_clone(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(y)=='c'){ cvec_clone(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(y)=='R'){ rvec_clone(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); rvec_clone(ARRAY_SIZE(y),ARRAY_P1_R(y),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(y)=='C'){ cvec_clone(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); cvec_clone(ARRAY_SIZE(y),ARRAY_P1_C(y),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(y)=='d'){ dvec_copy_dvec (ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(y)=='z'){ zvec_copy_zvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(y)=='r'){ rvec_clone_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(y)=='c'){ cvec_clone_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(y)=='R'){ rvec_clone_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); rvec_clone_rvec(ARRAY_SIZE(y),ARRAY_P1_R(y),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(y)=='C'){ cvec_clone_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); cvec_clone_cvec(ARRAY_SIZE(y),ARRAY_P1_C(y),ARRAY_P1_C(x)); }
   return y;
 }
 
@@ -296,8 +296,8 @@ void array_set_rand(array *x, double a0, double a1)
   else if(ARRAY_TYPE(x)=='z'){ zvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_Z(x),a1-a0,a0); }
   else if(ARRAY_TYPE(x)=='r'){ rvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_R(x),a1-a0,a0); }
   else if(ARRAY_TYPE(x)=='c'){ cvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_C(x),a1-a0,a0); }
-  else if(ARRAY_TYPE(x)=='R'){ rvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_R(x),a1-a0,a0); rvec_copy(ARRAY_SIZE(x),ARRAY_P1_R(x),ARRAY_P0_R(x)); }
-  else if(ARRAY_TYPE(x)=='C'){ cvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_C(x),a1-a0,a0); cvec_copy(ARRAY_SIZE(x),ARRAY_P1_C(x),ARRAY_P0_C(x)); }
+  else if(ARRAY_TYPE(x)=='R'){ rvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_R(x),a1-a0,a0); rvec_copy_rvec(ARRAY_SIZE(x),ARRAY_P1_R(x),ARRAY_P0_R(x)); }
+  else if(ARRAY_TYPE(x)=='C'){ cvec_set_rand(ARRAY_SIZE(x),ARRAY_P0_C(x),a1-a0,a0); cvec_copy_cvec(ARRAY_SIZE(x),ARRAY_P1_C(x),ARRAY_P0_C(x)); }
 }
 
 /**
@@ -725,12 +725,12 @@ array *array_get_real(array *x)
   if(x==NULL){ return y; }
   if(ARRAY_TYPE(x)=='s'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  svec_copy(ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_S(x)); }
   if(ARRAY_TYPE(x)=='i'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  ivec_copy(ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_I(x)); }
-  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_copy(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_real(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_copy(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_real(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_copy(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_real(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_copy_dvec(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_real_zvec(ARRAY_SIZE(y),ARRAY_P0_D(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_real_cvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_real_cvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   return y;
 }
 
@@ -744,11 +744,11 @@ array *array_get_complex(array *x)
   if(ARRAY_TYPE(x)=='s'){ y=array_allocate('s',ARRAY_NDIM(x),ARRAY_DIM_P(x));  svec_copy  (ARRAY_SIZE(y),ARRAY_P0_S(y),ARRAY_P0_S(x)); }
   if(ARRAY_TYPE(x)=='i'){ y=array_allocate('i',ARRAY_NDIM(x),ARRAY_DIM_P(x));  ivec_copy  (ARRAY_SIZE(y),ARRAY_P0_I(y),ARRAY_P0_I(x)); }
   if(ARRAY_TYPE(x)=='d'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_set_dvec (ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_copy(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_copy_zvec(ARRAY_SIZE(y),ARRAY_P0_Z(y),ARRAY_P0_Z(x)); }
   if(ARRAY_TYPE(x)=='r'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_set_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_copy  (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_copy_r(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_copy  (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_copy_cvec  (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_copy_cvec  (ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   return y;
 }
 
@@ -863,12 +863,12 @@ array *array_conj(array *x)
 {
   array *y=NULL;
   if(x==NULL){ return y; }
-  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_copy(ARRAY_SIZE(y),ARRAY_P0_D(y),              ARRAY_P0_D(x)); }
-  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_conj(ARRAY_SIZE(y),ARRAY_P0_Z(y),              ARRAY_P0_Z(x)); }
-  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_copy(ARRAY_SIZE(y),ARRAY_P0_R(y),              ARRAY_P0_R(x)); }
-  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_conj(ARRAY_SIZE(y),ARRAY_P0_C(y),              ARRAY_P0_C(x)); }
-  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_copy(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
-  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_conj(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
+  if(ARRAY_TYPE(x)=='d'){ y=array_allocate('d',ARRAY_NDIM(x),ARRAY_DIM_P(x));  dvec_copy_dvec(ARRAY_SIZE(y),ARRAY_P0_D(y),              ARRAY_P0_D(x)); }
+  if(ARRAY_TYPE(x)=='z'){ y=array_allocate('z',ARRAY_NDIM(x),ARRAY_DIM_P(x));  zvec_conj_zvec(ARRAY_SIZE(y),ARRAY_P0_Z(y),              ARRAY_P0_Z(x)); }
+  if(ARRAY_TYPE(x)=='r'){ y=array_allocate('r',ARRAY_NDIM(x),ARRAY_DIM_P(x));  rvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),              ARRAY_P0_R(x)); }
+  if(ARRAY_TYPE(x)=='c'){ y=array_allocate('c',ARRAY_NDIM(x),ARRAY_DIM_P(x));  cvec_conj_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),              ARRAY_P0_C(x)); }
+  if(ARRAY_TYPE(x)=='R'){ y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x)); irvec_copy_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x)); }
+  if(ARRAY_TYPE(x)=='C'){ y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x)); icvec_conj_cvec(ARRAY_SIZE(y),ARRAY_P0_C(y),ARRAY_P1_C(y),ARRAY_P0_C(x),ARRAY_P1_C(x)); }
   return y;
 }
 

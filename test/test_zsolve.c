@@ -19,7 +19,7 @@ int main()
   zmat_copy(n,n,A0,LDA,A,LDA);
   zvec_set_ones(n,x0);
   zvec_lintr(n,n,b,A,LDA,x0);
-  zvec_copy(n,x,b);
+  zvec_copy_zvec(n,x,b);
 
   printf("before\n");
   zmat_print(n,n,A,LDA,"A=",'f',2);
@@ -38,7 +38,7 @@ int main()
 
   zvec_sub_zvec(n,x,x,x0);
   zvec_print(n,x,"x-x0=",'e',2);
-  printf("||x-x0||=%.2e\n",zvec_norm_max(n,x));
+  printf("||x-x0||=%.2e\n",dnorm_max_zvec(n,x));
 
 
   // free

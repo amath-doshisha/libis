@@ -38,7 +38,7 @@
 void iceig_residual(int n, cmulti **F0, cmulti **F1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **X0, cmulti **X1, cmulti *lambda0, cmulti *lambda1)
 {
   icvec_mul_cscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=lambda*X
-  icvec_neg(n,F0,F1,F0,F1);                         // F=-lambda*X
+  icvec_neg_cvec(n,F0,F1,F0,F1);                         // F=-lambda*X
   icvec_add_lintr(n,n,F0,F1,A0,LDA0,A1,LDA1,X0,X1); // F=A*X-lambda*X
 }
 
@@ -65,7 +65,7 @@ int iceig_krawczyk(int n, int k, cmulti **E_vec, int LDE, cmulti **E_val, cmulti
   for(i=0; i<k; i++){
     if(debug>=1){  }
     r=iceig_1pair_krawczyk(n,E,A,LDA,&COL(X,i,LDX),lambda[i],debug-1);
-    cvec_copy(n,&COL(E_vec,i,LDE),E);
+    cvec_copy_cvec(n,&COL(E_vec,i,LDE),E);
     cset_c(E_val[i],E[n]);
     if(r){ ret=1; }
     if(debug>=1){
@@ -107,28 +107,28 @@ int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmu
   // J=[A -x; x' 0]
   cmat_set_zeros(m,m,J,m);              // J=zeors(m,m)
   cmat_copy(n,n,J,m,A,LDA);             // J(1:n,1:m)=A
-  cvec_neg(n,&COL(J,n,m),x);            // J(:,m)=-x
+  cvec_neg_cvec(n,&COL(J,n,m),x);            // J(:,m)=-x
   cmat_copy_ct(n,1,&MAT(J,n,0,m),m,x,n); // J(n,:)=conj(x)'
   // [J0,J1]=[A -x; x' 0]
   icmat_set_zeros(m,m,J0,m,J1,m);                              // J=zeors(m,m)
   icmat_copy(n,n,J0,m,J1,m,A,LDA,A,LDA);                       // J(1:n,1:m)=A
-  icvec_neg(n,&COL(J0,n,m),&COL(J1,n,m),x,x);                  // J(:,m)=-x
+  icvec_neg_cvec(n,&COL(J0,n,m),&COL(J1,n,m),x,x);                  // J(:,m)=-x
   icmat_copy_ct(n,1,&MAT(J0,n,0,m),m,&MAT(J1,n,0,m),m,x,n,x,n); // J(n,:)=conj(x)'
   // R=inv(J)
   cmat_set_eye(m,m,R,m); csolve(m,m,R,m,J,m,&info);
   // F=[A*x-lambda*x; (x'.*x-1)]
   ceig_residual(n,F,A,LDA,x,lambda); // F(1:n)=A*x-lambda*x
-  cvec_sum_abs2(C_R(F[n]),n,x);      // F(m)=(sum(abs(x).^2)-1)/2
+  rsum_pow2_abs_cvec(C_R(F[n]),n,x);      // F(m)=(sum(abs(x).^2)-1)/2
   rset_d(C_I(F[n]),0);
   csub_cd(F[n],F[n],1);
   // [F0,F1]=[A*x-lambda*x; (sum(x.^2)-1)/2]
   iceig_residual(n,F0,F1,A,LDA,A,LDA,x,x,lambda,lambda); // F(1:n)=A*x-lambda*x
   icset_d(F0[n],F1[n],0,0);                              // F(m)=0
-  icvec_sum_abs2(C_R(F0[n]),C_R(F1[n]),n,x,x);           // F(m).r=sum(x.^2)
+  irsum_pow2_abs_cvec(C_R(F0[n]),C_R(F1[n]),n,x,x);           // F(m).r=sum(x.^2)
   icsub_cd(F0[n],F1[n],F0[n],F1[n],1,1);                  // F(m)=sum(x.^2)-1
   // e=abs(R*F)
   cvec_lintr(m,m,e,R,m,F);
-  cvec_absc(m,e,e);
+  cvec_absc_cvec(m,e,e);
   cvec_mul_dscalar(m,e,e,alpha);
   // [X0,X1]=[-e,e]
   icvec_pm(m,X0,X1,e);

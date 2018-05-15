@@ -19,7 +19,7 @@ int main()
   dmat_copy(n,n,A0,LDA,A,LDA);
   dvec_set_ones(n,x0);
   dvec_lintr(n,n,b,A,LDA,x0);
-  dvec_copy(n,x,b);
+  dvec_copy_dvec(n,x,b);
 
 
   printf("before\n");
@@ -39,7 +39,7 @@ int main()
 
   dvec_sub_dvec(n,x,x,x0);
   dvec_print(n,x,"x-x0=",'e',2);
-  printf("||x-x0||=%.2e\n",dvec_norm_max(n,x));
+  printf("||x-x0||=%.2e\n",dnorm_max_dvec(n,x));
 
   // free
   A=dmat_free(A);

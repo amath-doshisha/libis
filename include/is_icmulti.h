@@ -228,7 +228,7 @@ void icsub_dot_zr(cmulti *z0, cmulti *z1, dcomplex x0, dcomplex x1, rmulti *y0, 
 /*
  * x<=>y
  */
-int icin(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1); // [y0,y1] in [x0,x1]
-int icin_pm(cmulti *y0, cmulti *y1, cmulti *x);           // [y0,y1] in [-abs(x),abs(x)]
+int ic_in_ic(cmulti *y0, cmulti *y1, cmulti *x0, cmulti *x1); // [y0,y1] in [x0,x1]
+int ic_in_icpm(cmulti *y0, cmulti *y1, cmulti *x);            // [y0,y1] in [-abs(x),abs(x)]
 
 #endif

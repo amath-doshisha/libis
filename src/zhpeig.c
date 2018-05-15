@@ -55,12 +55,12 @@ int zhpeig_1pair(int n, dcomplex *A, int LDA, dcomplex *z, dcomplex *x, dcomplex
   }
   // initial vector
   step=0;
-  zvec_normalize_sgn(n,x,x);                       // x=x/sqrt(x'*x)
+  zvec_normalize_sgn_zvec(n,x,x);                       // x=x/sqrt(x'*x)
   C=zvec_dot(n,z,x);                               // C=z'*x
   dot=zvec_dot(n,w,x);                             // lambda=w'*x
   Z_SET_DIV((*lambda),dot,C);                      // lambda=(w'*x)/C
   zeig_residual(n,F,A,LDA,x,(*lambda));            // F=A*x-lambda*x;
-  (*E)=zvec_norm_max(n,F);                         // E=max(abs(F));
+  (*E)=dnorm_max_zvec(n,F);                         // E=max(abs(F));
   if((*E)==0) { done=ZHPEIG_CONVERGENT; } else { done=ZHPEIG_NONE; } // convergent or not?
   if(debug>0) { PUT_1PAIR; }
   // compute
@@ -71,14 +71,14 @@ int zhpeig_1pair(int n, dcomplex *A, int LDA, dcomplex *z, dcomplex *x, dcomplex
     if(info<0)      { ERROR_EXIT("Error in zhpeig_1pair(), zsolve, info=%d.\n",info); }
     else if(info>0) { done=ZHPEIG_SINGULAR; }
     else{
-      eta=zvec_norm_max(n,F);                        // eta=norm_max(F)
+      eta=dnorm_max_zvec(n,F);                        // eta=norm_max(F)
       zvec_sub_zvec(n,x,x,F);                        // x=x-F
-      zvec_normalize_sgn(n,x,x);                     // x=x/sqrt(x'*x)
+      zvec_normalize_sgn_zvec(n,x,x);                     // x=x/sqrt(x'*x)
       C=zvec_dot(n,z,x);                             // C=z'*x
       dot=zvec_dot(n,w,x);                           // lambda=w'*x
       Z_SET_DIV((*lambda),dot,C);                    // lambda=(w'*x)/C
       zeig_residual(n,F,A,LDA,x,(*lambda));          // F=A*x-lambda*x;
-      (*E)=zvec_norm_max(n,F);                       // E=max(abs(F));
+      (*E)=dnorm_max_zvec(n,F);                       // E=max(abs(F));
     }
     mu=2*eta/eta0; // mu=2*eta/eta0
     if(status==ZHPEIG_STATUS_PRE && eta<eps_half)        { status=ZHPEIG_STATUS_CONV; } // start to convergent
@@ -129,9 +129,9 @@ int zhpeig(int n, dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *Lambda, 
   // loop
   t=0; done=0;
   for(k=0; !done && k<n; k++){
-    zvec_copy(n,z,&Qk);                                                  // set normal vector z as Q(:,k).
-    if(k==0) { zvec_set_rand(n,&Xk,2,-1); zvec_normalize_sgn(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
-    else     { zvec_copy(n,&Xk,z); }                                     // set initial vector X(:,k) as z if k!=0.
+    zvec_copy_zvec(n,z,&Qk);                                                  // set normal vector z as Q(:,k).
+    if(k==0) { zvec_set_rand(n,&Xk,2,-1); zvec_normalize_sgn_zvec(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
+    else     { zvec_copy_zvec(n,&Xk,z); }                                     // set initial vector X(:,k) as z if k!=0.
     fail=0; conv=0; E=1;
     for(fail=0; !conv && fail<fail_max; fail++){
       info=zhpeig_1pair(n,A,LDA,z,&Xk,&Lambda[k],&E,&step,debug-1);
@@ -146,7 +146,7 @@ int zhpeig(int n, dcomplex *A, int LDA, dcomplex *X, int LDX, dcomplex *Lambda, 
 	printf("step=%03d log2(E)=%+6.1f lambda=%+.16e %+.16e\n",step,log(fabs(E))/log(2),Z_R(Lambda[k]),Z_I(Lambda[k]));
 	print_reset();
       }
-      if(!conv) { zvec_set_rand(n,&Xk,2,-1); zvec_normalize_sgn(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
+      if(!conv) { zvec_set_rand(n,&Xk,2,-1); zvec_normalize_sgn_zvec(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
     }
     if(!conv){ done=1; }
     if(!done){

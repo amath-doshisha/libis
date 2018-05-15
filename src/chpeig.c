@@ -86,12 +86,12 @@ int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti
   }
   // initial vector
   step=0;
-  cvec_normalize_sgn(n,x,x);           // x=x/sqrt(x'*x)
+  cvec_normalize_sgn_cvec(n,x,x);           // x=x/sqrt(x'*x)
   cvec_sum_dot(C,n,z,x);               // C=z'*x
   cvec_sum_dot(lambda,n,w,x);          // lambda=w'*x
   cdiv_cc(lambda,lambda,C);               // lambda=(w'*x)/C
   ceig_residual(n,F,A,LDA,x,lambda);   // F=A*x-lambda*x
-  cvec_max_abs(E,n,F);                 // E=max(abs(F))
+  rmax_abs_cvec(E,n,F);                 // E=max(abs(F))
   if(ris_zero(E)){ done=CHPEIG_CONVERGENT; } // convergent?
   else { done=CHPEIG_NONE; }                 // not convergent?
   if(debug>=1) { PUT_1PAIR; }
@@ -103,14 +103,14 @@ int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti
     if(info<0)      { ERROR_EXIT("Error in chpeig_1pair(), csolve, info=%d.\n",info); }
     else if(info>0) { done=CHPEIG_SINGULAR; }
     else{
-      cvec_max_abs(eta,n,F);             // eta=max(abs(F))
+      rmax_abs_cvec(eta,n,F);             // eta=max(abs(F))
       cvec_sub_cvec(n,x,x,F);                 // x=x-F
-      cvec_normalize_sgn(n,x,x);         // x=x/sqrt(x'*x)
+      cvec_normalize_sgn_cvec(n,x,x);         // x=x/sqrt(x'*x)
       cvec_sum_dot(C,n,z,x);             // C=z'*x
       cvec_sum_dot(lambda,n,w,x);        // lambda=w'*x
       cdiv_cc(lambda,lambda,C);             // lambda=(w'*x)/C
       ceig_residual(n,F,A,LDA,x,lambda); // F=A*x-lambda*x
-      cvec_max_abs(E,n,F);               // E=max(abs(F))
+      rmax_abs_cvec(E,n,F);               // E=max(abs(F))
     }
     rdiv_rr(mu,eta,eta0); rmul_rd(mu,mu,2);  // mu=2*eta/eta0
     if     (status==CHPEIG_STATUS_PRE && lt_rr(eta,eps_half)){ status=CHPEIG_STATUS_CONV; } // start to convergent
@@ -177,10 +177,10 @@ int chpeig(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **A, int LDA, int
   // loop
   t=0; done=0;
   for(k=0; !done && k<n; k++){
-    cvec_copy(n,z,&Qk);                                                      // set normal vector z as Q(:,k).
+    cvec_copy_cvec(n,z,&Qk);                                                      // set normal vector z as Q(:,k).
     if(cvec_has_nan(n,&Xk)){
-      if(k==0) { cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
-      else     { cvec_copy(n,&Xk,z); }                                       // set initial vector X(:,k) as z if k!=0.
+      if(k==0) { cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn_cvec(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
+      else     { cvec_copy_cvec(n,&Xk,z); }                                       // set initial vector X(:,k) as z if k!=0.
     }
     fail=0; conv=0; rset_d(E,1);
     for(fail=0; !conv && fail<fail_max; fail++){
@@ -196,7 +196,7 @@ int chpeig(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **A, int LDA, int
 	mpfr_printf("step=%03d log2(E)=%+6.1f lambda=%+.16Re %+.16Re\n",step,log(fabs(rget_d(E)))/log(2),C_R(Lambda[k]),C_I(Lambda[k]));
 	print_reset();
       }
-      if(!conv) { cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
+      if(!conv) { cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn_cvec(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
     }
     if(!conv){ done=1; }
     if(!done){
@@ -286,10 +286,10 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
   // loop
   t=0; done=0;
   for(k=0; !done && k<n; k++){
-    cvec_copy(n,z,&Qk);                                                      // set normal vector z as Q(:,k).
+    cvec_copy_cvec(n,z,&Qk);                                                      // set normal vector z as Q(:,k).
     if(cvec_has_nan(n,&Xk)){
-      if(k==0) { cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
-      else     { cvec_copy(n,&Xk,z); }                                       // set initial vector X(:,k) as z if k!=0.
+      if(k==0) { cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn_cvec(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
+      else     { cvec_copy_cvec(n,&Xk,z); }                                       // set initial vector X(:,k) as z if k!=0.
     }
     fail=0; conv=CHPEIG_DIVERGENT; rset_d(E,1);
     for(fail=0; conv!=CHPEIG_CONVERGENT && fail<fail_max; fail++){
@@ -318,20 +318,20 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
 	(*kprec)=get_next_prec(*prec);
 	cmat_round(n,LDX,X,LDX,(*prec));
 	cmat_round(n,LDXE,XE,LDXE,(*kprec));
-	cvec_round(n,Lambda,(*prec));
-	cvec_round(n,LE,(*kprec));
+	cvec_round_cvec(n,Lambda,(*prec));
+	cvec_round_cvec(n,LE,(*kprec));
 	cmat_round(LDQ,n,Q,LDQ,(*prec));
 	cmat_round(LDH,n,H,LDH,(*prec));
-	rvec_round(n,alpha,(*prec));
-	cvec_round(n,z,(*prec));
+	rvec_round_rvec(n,alpha,(*prec));
+	cvec_round_cvec(n,z,(*prec));
 	rround(E,*prec);
 	rround(L,(*prec));
-	cvec_round(n+1,E_K,(*kprec));
+	cvec_round_cvec(n+1,E_K,(*kprec));
 	rround(XEmax,(*kprec));
 	rround(LEmax,(*kprec)); 
 	rround(LEmaxRel,(*kprec)); 
 	// reset initial vector X(:,k) as unit random vecot
-	cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn(n,&Xk,&Xk); 
+	cvec_set_rand(n,&Xk,2,-1); cvec_normalize_sgn_cvec(n,&Xk,&Xk); 
       }
     }
     if(conv==CHPEIG_DIVERGENT){
@@ -340,14 +340,14 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
     }else if(conv==CHPEIG_CONVERGENT){
       // convergent
       kfalse=iceig_1pair_krawczyk(n,E_K,A,LDA,&Xk,Lambda[k],debug-1);
-      cvec_clone(n,&COL(XE,k,LDXE),E_K);
+      cvec_clone_cvec(n,&COL(XE,k,LDXE),E_K);
       cclone_c(LE[k],E_K[n]);
-      cvec_max_absc(XEmax,n,&COL(XE,k,LDXE)); // absolute error
+      rmax_max_absc_cvec(XEmax,n,&COL(XE,k,LDXE)); // absolute error
       rmax_absc_c(LEmax,LE[k]); // absolute error
       rmax_absc_c(L,Lambda[k]); rdiv_2exp(LEmaxRel,LEmax,rget_exp(L)); // relative error
       if(!kfalse && rget_exp(XEmax)<-prec_verify && rget_exp(LEmaxRel)<-prec_verify){
 	conv=CHPEIG_CONVERGENT; msg='o';
-      }else if(!kfalse && rget_exp(XEmax)<-prec_verify && rget_exp(LEmax)<-prec_verify && icin_pm(Lambda[k],Lambda[k],LE[k])){
+      }else if(!kfalse && rget_exp(XEmax)<-prec_verify && rget_exp(LEmax)<-prec_verify && ic_in_icpm(Lambda[k],Lambda[k],LE[k])){
 	conv=CHPEIG_CONVERGENT; msg='0';
       }else{
 	conv=CHPEIG_RECOMPUTE; msg='x';
@@ -357,15 +357,15 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
 	(*kprec)=get_next_prec(*prec);
 	cmat_round(n,LDX,X,LDX,(*prec));
 	cmat_round(n,LDXE,XE,LDXE,(*kprec));
-	cvec_round(n,Lambda,(*prec));
-	cvec_round(n,LE,(*kprec));
+	cvec_round_cvec(n,Lambda,(*prec));
+	cvec_round_cvec(n,LE,(*kprec));
 	cmat_round(LDQ,n,Q,LDQ,(*prec));
 	cmat_round(LDH,n,H,LDH,(*prec));
-	rvec_round(n,alpha,(*prec));
-	cvec_round(n,z,(*prec));
+	rvec_round_rvec(n,alpha,(*prec));
+	cvec_round_cvec(n,z,(*prec));
 	rround(E,*prec);
 	rround(L,(*prec));
-	cvec_round(n+1,E_K,(*kprec));
+	cvec_round_cvec(n+1,E_K,(*kprec));
 	rround(XEmax,(*kprec));
 	rround(LEmax,(*kprec)); 
 	rround(LEmaxRel,(*kprec)); 

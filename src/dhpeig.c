@@ -51,11 +51,11 @@ int dhpeig_1pair(int n, double *A, int LDA, double *z, double *x, double *lambda
   }
   // initial vector
   step=0;
-  dvec_normalize_sgn(n,x,x);            // x=x/sqrt(x'*x)
+  dvec_normalize_sgn_dvec(n,x,x);            // x=x/sqrt(x'*x)
   C=dvec_dot(n,z,x);                    // C=z'*x
   (*lambda)=dvec_dot(n,w,x)/C;          // lambda=(w'*x)/C
   deig_residual(n,F,A,LDA,x,(*lambda)); // F=A*x-lambda*x;
-  (*E)=dvec_norm_max(n,F);              // E=max(abs(F));
+  (*E)=dnorm_max_dvec(n,F);              // E=max(abs(F));
   if((*E)==0) { done=DHPEIG_CONVERGENT; } else { done=DHPEIG_NONE; } // convergent or not?
   if(debug>0) { PUT_1PAIR; }
   // compute
@@ -66,13 +66,13 @@ int dhpeig_1pair(int n, double *A, int LDA, double *z, double *x, double *lambda
     if(info<0)      { ERROR_EXIT("Error in dhpeig_1pair(), dsolve, info=%d.\n",info); }
     else if(info>0) { done=DHPEIG_SINGULAR; }
     else{
-      eta=dvec_norm_max(n,F);               // h=norm_max(F);
+      eta=dnorm_max_dvec(n,F);               // h=norm_max(F);
       dvec_sub_dvec(n,x,x,F);               // x=x-F
-      dvec_normalize_sgn(n,x,x);            // x=x/sqrt(x'*x)
+      dvec_normalize_sgn_dvec(n,x,x);            // x=x/sqrt(x'*x)
       C=dvec_dot(n,z,x);                    // C=z'*x
       (*lambda)=dvec_dot(n,w,x)/C;          // lambda=(w'*x)/C
       deig_residual(n,F,A,LDA,x,(*lambda)); // F=A*x-lambda*x;
-      (*E)=dvec_norm_max(n,F);              // E=max(abs(F));
+      (*E)=dnorm_max_dvec(n,F);              // E=max(abs(F));
     }
     mu=2*eta/eta0; // mu=2*eta/eta0
     if(status==DHPEIG_STATUS_PRE && eta<eps_half)        { status=DHPEIG_STATUS_CONV; } // start to convergent
@@ -122,9 +122,9 @@ int dhpeig(int n, double *A, int LDA, double *X, int LDX, double *Lambda, int de
   // loop
   t=0; done=0;
   for(k=0; !done && k<n; k++){
-    dvec_copy(n,z,&Qk);                                              // set normal vector z as Q(:,k).
-    if(k==0) { dvec_set_rand(n,&Xk,2,-1); dvec_normalize(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
-    else     { dvec_copy(n,&Xk,z); }                                 // set initial vector X(:,k) as z if k!=0.
+    dvec_copy_dvec(n,z,&Qk);                                              // set normal vector z as Q(:,k).
+    if(k==0) { dvec_set_rand(n,&Xk,2,-1); dvec_normalize_dvec(n,&Xk,&Xk); } // set initial vector X(:,k) as unit random vecot if k=0.
+    else     { dvec_copy_dvec(n,&Xk,z); }                                 // set initial vector X(:,k) as z if k!=0.
     fail=0; conv=0; E=1;
     for(fail=0; !conv && fail<fail_max; fail++){
       info=dhpeig_1pair(n,A,LDA,z,&Xk,&Lambda[k],&E,&step,debug-1);
@@ -139,7 +139,7 @@ int dhpeig(int n, double *A, int LDA, double *X, int LDX, double *Lambda, int de
 	printf("step=%03d log2(E)=%+6.1f lambda=%+.16e\n",step,log(fabs(E))/log(2),Lambda[k]);
 	print_reset();
       }
-      if(!conv) { dvec_set_rand(n,&Xk,2,-1); dvec_normalize_sgn(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
+      if(!conv) { dvec_set_rand(n,&Xk,2,-1); dvec_normalize_sgn_dvec(n,&Xk,&Xk); } // reset initial vector X(:,k) as unit random vecot
     }
     if(!conv){ done=1; }
     if(!done){

@@ -848,7 +848,7 @@ void cmat_copy_col_index(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA,
 {
   int j;
   for(j=0; j<n; j++){
-    cvec_copy(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
+    cvec_copy_cvec(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
   }
 }
 
@@ -1569,7 +1569,7 @@ void cmat_arg(int m, int n, rmulti **B, int LDB, cmulti **A, int LDA)
 void cvec_sum_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ cvec_sum(B[j],m,&COL(A,j,LDA)); }
+  for(j=0; j<n; j++){ csum_cvec(B[j],m,&COL(A,j,LDA)); }
 }
 
 //ここまで
@@ -1580,7 +1580,7 @@ void cvec_sum_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 void cvec_max_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ cvec_max(B[j],m,&COL(A,j,LDA)); }
+  for(j=0; j<n; j++){ cmax_cvec(B[j],m,&COL(A,j,LDA)); }
 }
 
 /**
@@ -1589,7 +1589,7 @@ void cvec_max_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 void cvec_min_cmat(int m, int n, cmulti **B, cmulti **A, int LDA)
 {
   int j;
-  for(j=0; j<n; j++){ cvec_min(B[j],m,&COL(A,j,LDA)); }
+  for(j=0; j<n; j++){ cmin_cvec(B[j],m,&COL(A,j,LDA)); }
 }
 
 /**
@@ -1663,7 +1663,7 @@ void cmat_cols_normalize(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA)
 {
   int j;
   for(j=0; j<n; j++){
-    cvec_normalize(m,&COL(B,j,LDB),&COL(A,j,LDA));
+    cvec_normalize_cvec(m,&COL(B,j,LDB),&COL(A,j,LDA));
   }
 }
 
@@ -1674,7 +1674,7 @@ void cmat_cols_normalize_sgn(int m, int n, cmulti **B, int LDB, cmulti **A, int 
 {
   int j;
   for(j=0; j<n; j++){
-    cvec_normalize_sgn(m,&COL(B,j,LDB),&COL(A,j,LDA));
+    cvec_normalize_sgn_cvec(m,&COL(B,j,LDB),&COL(A,j,LDA));
   }
 }
 
@@ -1716,7 +1716,7 @@ int cmat_cmp(int m, int n, cmulti **A, int LDA, int k, int l, cmulti **B, int LD
   int i,j,value;
   for(j=0; j<MIN2(n,l); j++){
     for(i=0; i<MIN2(m,k); i++){
-      value=ccmp_c(MAT(A,i,j,LDA),MAT(B,i,j,LDB));
+      value=cmp_cc(MAT(A,i,j,LDA),MAT(B,i,j,LDB));
       if(value!=0){ return value; } // X!=Y
     }
   }

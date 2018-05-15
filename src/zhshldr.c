@@ -25,7 +25,7 @@ void zhouseholder_vec(int n, int k, dcomplex *h, double *alpha, dcomplex *x)
   // alpha=2/(h'*h)=1/(xi*eta)
   double eta,s,xi,axk;
   //----------- norm
-  xi=zvec_sum_pow2_abs(n-k-1,&x[k+1]); // xi=sum(abs(x((k+1):end)).^2);
+  xi=dsum_pow2_abs_zvec(n-k-1,&x[k+1]); // xi=sum(abs(x((k+1):end)).^2);
   axk=Z_ABS2(x[k]);
   eta=sqrt(axk+xi);
   axk=sqrt(axk);
@@ -33,7 +33,7 @@ void zhouseholder_vec(int n, int k, dcomplex *h, double *alpha, dcomplex *x)
   else       xi=xi/(eta+axk);   // eta=xi/(eta+|x(k)|)
   //----------- h
   zvec_set_zeros(k,h);
-  zvec_copy(n-k-1,&h[k+1],&x[k+1]);    // h((k+1):end)=x((k+1):end);
+  zvec_copy_zvec(n-k-1,&h[k+1],&x[k+1]);    // h((k+1):end)=x((k+1):end);
   if((Z_R(x[k])*Z_I(x[k]))==0.0){
     Z_SET(h[k],-xi,0);
   }else{
@@ -51,7 +51,7 @@ void zhouseholder(int n, int k0, int nH, int k, dcomplex *h, double *alpha, dcom
   int j,l;
   dcomplex value,*R=NULL; 
   R=zvec_allocate(n);
-  zvec_copy(n,R,x);
+  zvec_copy_zvec(n,R,x);
   // R=(I-alpha*h*h')*R=R-alpha*h*(h'*R)    
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)

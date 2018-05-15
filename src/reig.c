@@ -23,7 +23,7 @@
 void reig_residual(int n, rmulti **F, rmulti **A, int LDA, rmulti **x, rmulti *lambda)
 {
   rvec_mul_rscalar(n,F,x,lambda);      // F=x*lambda
-  rvec_neg(n,F,F);               // F=-x*lambda
+  rvec_neg_rvec(n,F,F);               // F=-x*lambda
   rvec_add_lintr(n,n,F,A,LDA,x); // F=A*x-lambda*x
 }
 
@@ -37,7 +37,7 @@ void reig_max_abs_residuals(int n, rmulti **E, rmulti **A, int LDA, rmulti **X, 
   F=rvec_allocate_prec(n,rvec_get_prec_max(n,E)); // allocate
   for(j=0; j<n; j++){
     reig_residual(n,F,A,LDA,&COL(X,j,LDX),lambda[j]);
-    rvec_max_abs(E[j],n,F);
+    rmax_abs_rvec(E[j],n,F);
   }
   F=rvec_free(n,F); // free 
 }
@@ -80,7 +80,7 @@ void reig_sort_vector_guide(int n, int k, rmulti **lambda, rmulti **X, int LDX, 
   a=rvec_allocate_prec(k,prec);
   for(j=0; j<k; j++){
     rmat_cols_max_abs_sub_rvec(a,n,k,X,LDX,&COL(X0,j,LDX0));
-    rvec_min_abs_index(value,k,a,&i);
+    rmin_abs_rvec_index(value,k,a,&i);
     if(i!=j){
       rvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));
       if(lambda!=NULL){ rswap(lambda[i],lambda[j]); }
@@ -102,7 +102,7 @@ void reig_sort_value_guide(int n, int k, rmulti **lambda, rmulti **X, int LDX, r
   a=rvec_allocate_prec(k,prec);
   for(j=0; j<k; j++){
     rvec_abs_sub_r(k,a,lambda,lambda0[j]);
-    rvec_min_abs_index(value,k,a,&i);
+    rmin_abs_rvec_index(value,k,a,&i);
     if(i!=j){
       if(X!=NULL){ rvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX)); }
       rswap(lambda[i],lambda[j]);

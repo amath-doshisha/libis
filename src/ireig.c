@@ -34,7 +34,7 @@
 void ireig_residual(int n, rmulti **F0, rmulti **F1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **X0, rmulti **X1, rmulti *lambda0, rmulti *lambda1)
 {
   irvec_mul_rscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=x*lambda
-  irvec_neg(n,F0,F1,F0,F1);                         // F=-x*lambda
+  irvec_neg_rvec(n,F0,F1,F0,F1);                         // F=-x*lambda
   irvec_add_lintr(n,n,F0,F1,A0,LDA0,A1,LDA1,X0,X1); // F=A*X-lambda*X
 }
 
@@ -60,7 +60,7 @@ int ireig_krawczyk(int n, int k, rmulti **E_vec, int LDE, rmulti **E_val, rmulti
   E=rvec_allocate_prec(n+1,prec);
   for(i=0; i<k; i++){
     r=ireig_1pair_krawczyk(n,E,A,LDA,&COL(X,i,LDX),lambda[i],debug-1);
-    rvec_copy(n,&COL(E_vec,i,LDE),E);
+    rvec_copy_rvec(n,&COL(E_vec,i,LDE),E);
     rset_r(E_val[i],E[n]);
     if(r){ ret=1; }
     if(debug>=1){
@@ -101,12 +101,12 @@ int ireig_1pair_krawczyk(int n, rmulti **e, rmulti **A, int LDA, rmulti **x, rmu
   // J=[A -x; x' 0]
   rmat_set_zeros(m,m,J,m);              // J=zeors(m,m)
   rmat_copy(n,n,J,m,A,LDA);             // J(1:n,1:m)=A
-  rvec_neg(n,&COL(J,n,m),x);            // J(:,m)=-x
+  rvec_neg_rvec(n,&COL(J,n,m),x);            // J(:,m)=-x
   rmat_copy_t(n,1,&MAT(J,n,0,m),m,x,n); // J(n,:)=x'
   // [J0,J1]=[A -x; x' 0]
   irmat_set_zeros(m,m,J0,m,J1,m);                              // J=zeors(m,m)
   irmat_copy(n,n,J0,m,J1,m,A,LDA,A,LDA);                       // J(1:n,1:m)=A
-  irvec_neg(n,&COL(J0,n,m),&COL(J1,n,m),x,x);                  // J(:,m)=-x
+  irvec_neg_rvec(n,&COL(J0,n,m),&COL(J1,n,m),x,x);                  // J(:,m)=-x
   irmat_copy_t(n,1,&MAT(J0,n,0,m),m,&MAT(J1,n,0,m),m,x,n,x,n); // J(n,:)=x'
   // R=inv(J)
   rmat_set_eye(m,m,R,m);
@@ -114,17 +114,17 @@ int ireig_1pair_krawczyk(int n, rmulti **e, rmulti **A, int LDA, rmulti **x, rmu
   if(info){ printf("Error info=%d, rsolve() in ireig_1pair_krawczyk()\n",info); exit(0); }
   // F=[A*x-lambda*x; (sum(x.^2)-1)/2]
   reig_residual(n,F,A,LDA,x,lambda); // F(1:n)=A*x-lambda*x
-  rvec_sum_pow2(F[n],n,x);           // F(m)=(sum(x.^2)-1)/2
+  rsum_pow2_abs_rvec(F[n],n,x);           // F(m)=(sum(x.^2)-1)/2
   rsub_rd(F[n],F[n],1);
   rmul_rd(F[n],F[n],0.5);
   // [F0,F1]=[A*x-lambda*x; (sum(x.^2)-1)/2]
   ireig_residual(n,F0,F1,A,LDA,A,LDA,x,x,lambda,lambda); // F(1:n)=A*x-lambda*x
-  irvec_sum_pow2(F0[n],F1[n],n,x,x);                     // F(m)=(sum(x.^2)-1)/2
+  irsum_pow2_abs_rvec(F0[n],F1[n],n,x,x);                     // F(m)=(sum(x.^2)-1)/2
   irsub_rd(F0[n],F1[n],F0[n],F1[n],1,1);
   irmul_rd(F0[n],F1[n],F0[n],F1[n],0.5,0.5);
   // e=abs(R*F)
   rvec_lintr(m,m,e,R,m,F);
-  rvec_abs(m,e,e);
+  rvec_abs_rvec(m,e,e);
   rvec_mul_dscalar(m,e,e,alpha);
   // [X0,X1]=[-e,e]
   irvec_pm(m,X0,X1,e);

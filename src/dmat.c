@@ -141,7 +141,7 @@ void dmat_copy_col_index(int m, int n, double *B, int LDB, double *A, int LDA, i
 {
   int j;
   for(j=0; j<n; j++){
-    dvec_copy(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
+    dvec_copy_dvec(m,&COL(B,j,LDB),&COL(A,I[j],LDA));
   }
 }
 
@@ -270,7 +270,7 @@ void dmat_normalize(int m, int n, double *A, int LDA)
 {
   int j;
   for(j=0; j<n; j++){
-    dvec_normalize(m,&COL(A,j,LDA),&COL(A,j,LDA));
+    dvec_normalize_dvec(m,&COL(A,j,LDA),&COL(A,j,LDA));
   }
 }
 
@@ -278,7 +278,7 @@ void dmat_normalize_sgn(int m, int n, double *A, int LDA)
 {
   int j;
   for(j=0; j<n; j++){
-    dvec_normalize_sgn(m,&COL(A,j,LDA),&COL(A,j,LDA));
+    dvec_normalize_sgn_dvec(m,&COL(A,j,LDA),&COL(A,j,LDA));
   }
 }
 

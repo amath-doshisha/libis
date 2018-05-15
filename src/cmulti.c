@@ -1968,7 +1968,7 @@ int ccmp_get_type()
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int ccmp_c(cmulti *x, cmulti *y)
+int cmp_cc(cmulti *x, cmulti *y)
 {
   rmulti *xr=NULL,*yr=NULL,*xt=NULL,*yt=NULL;
   int value;
@@ -1990,7 +1990,7 @@ int ccmp_c(cmulti *x, cmulti *y)
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int ccmp_z(cmulti *x, dcomplex y)
+int cmp_cz(cmulti *x, dcomplex y)
 {
   int value;
   value=cmp_rd(C_R(x),Z_R(y));
@@ -2001,15 +2001,15 @@ int ccmp_z(cmulti *x, dcomplex y)
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int rcmp_c(rmulti *x, cmulti *y)
+int cmp_rc(rmulti *x, cmulti *y)
 {
-  return -ccmp_r(y,x);
+  return -cmp_cr(y,x);
 }
 
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int ccmp_r(cmulti *x, rmulti *y)
+int cmp_cr(cmulti *x, rmulti *y)
 {
   int value;
   value=cmp_rr(C_R(x),y);
@@ -2020,7 +2020,7 @@ int ccmp_r(cmulti *x, rmulti *y)
 /**
  @brief cmulti型の値の比較 x<=>y
 */
-int ccmp_d(cmulti *x, double y)
+int cmp_cd(cmulti *x, double y)
 {
   int value;
   value=cmp_rd(C_R(x),y);
@@ -2029,80 +2029,80 @@ int ccmp_d(cmulti *x, double y)
 }
 
 /** @brief cmulti型の値の比較 x==y */
-int ceq_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)==0; }
+int eq_cc(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && cmp_cc   (x,y)==0; }
 /** @brief cmulti型の値の比較 x==y */
-int ceq_z(cmulti *x, dcomplex y) { return cis_number(x) && ccmp_z (x,y)==0; }
+int eq_cz(cmulti *x, dcomplex y) { return cis_number(x) && cmp_cz (x,y)==0; }
 /** @brief cmulti型の値の比較 x==y */
-int ceq_r(cmulti *x, rmulti *y)  { return cis_number(x) && ccmp_r(x,y)==0; }
+int eq_cr(cmulti *x, rmulti *y)  { return cis_number(x) && cmp_cr(x,y)==0; }
 /** @brief cmulti型の値の比較 x==y */
-int ceq_d(cmulti *x, double y)   { return cis_number(x) && ccmp_d (x,y)==0; }
+int eq_cd(cmulti *x, double y)   { return cis_number(x) && cmp_cd (x,y)==0; }
 /** @brief cmulti型の値の比較 x!=y */
-int cne_c(cmulti *x, cmulti *y)    { return !(cis_number(x) && cis_number(y) && ccmp_c   (x,y)==0); }
+int ne_cc(cmulti *x, cmulti *y)    { return !(cis_number(x) && cis_number(y) && cmp_cc   (x,y)==0); }
 /** @brief cmulti型の値の比較 x!=y */
-int cne_z(cmulti *x, dcomplex y) { return !(cis_number(x) && ccmp_z (x,y)==0); }
+int ne_cz(cmulti *x, dcomplex y) { return !(cis_number(x) && cmp_cz (x,y)==0); }
 /** @brief cmulti型の値の比較 x!=y */
-int cne_r(cmulti *x, rmulti *y)  { return !(cis_number(x) && ccmp_r(x,y)==0); }
+int ne_cr(cmulti *x, rmulti *y)  { return !(cis_number(x) && cmp_cr(x,y)==0); }
 /** @brief cmulti型の値の比較 x!=y */
-int cne_d(cmulti *x, double y)   { return !(cis_number(x) && ccmp_d (x,y)==0); }
+int ne_cd(cmulti *x, double y)   { return !(cis_number(x) && cmp_cd (x,y)==0); }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_c(cmulti *x, cmulti *y)     { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)>0; }
+int gt_cc(cmulti *x, cmulti *y)     { return cis_number(x) && cis_number(y) && cmp_cc   (x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int rgt_c(rmulti *x, cmulti *y)  { return ris_number(x) && cis_number(y) && rcmp_c(x,y)>0; }
+int gt_rc(rmulti *x, cmulti *y)  { return ris_number(x) && cis_number(y) && cmp_rc(x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_r(cmulti *x, rmulti *y)  { return cis_number(x) && ris_number(y) && ccmp_r(x,y)>0; }
+int gt_cr(cmulti *x, rmulti *y)  { return cis_number(x) && ris_number(y) && cmp_cr(x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int zgt_c(dcomplex x, cmulti *y) { return cis_number(y) && ccmp_z (y,x)<0; }
+int gt_zc(dcomplex x, cmulti *y) { return cis_number(y) && cmp_cz (y,x)<0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_z(cmulti *x, dcomplex y) { return cis_number(x) && ccmp_z (x,y)>0; }
+int gt_cz(cmulti *x, dcomplex y) { return cis_number(x) && cmp_cz (x,y)>0; }
 /** @brief cmulti型の値の比較 x>y */
-int dgt_c(double x, cmulti *y)   { return cis_number(y) && ccmp_d (y,x)<0; }
+int gt_dc(double x, cmulti *y)   { return cis_number(y) && cmp_cd (y,x)<0; }
 /** @brief cmulti型の値の比較 x>y */
-int cgt_d(cmulti *x, double y)   { return cis_number(x) && ccmp_d (x,y)>0; }
+int gt_cd(cmulti *x, double y)   { return cis_number(x) && cmp_cd (x,y)>0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)>=0; }
+int ge_cc(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && cmp_cc   (x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int rge_c(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && rcmp_c(x,y)>=0; }
+int ge_rc(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && cmp_rc(x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_r(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r(x,y)>=0; }
+int ge_cr(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && cmp_cr(x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int zge_c(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)<=0; }
+int ge_zc(dcomplex x, cmulti *y){ return cis_number(y) && cmp_cz (y,x)<=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_z(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)>=0; }
+int ge_cz(cmulti *x, dcomplex y){ return cis_number(x) && cmp_cz (x,y)>=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int dge_c(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)<=0; }
+int ge_dc(double x, cmulti *y)  { return cis_number(y) && cmp_cd (y,x)<=0; }
 /** @brief cmulti型の値の比較 x>=y */
-int cge_d(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)>=0; }
+int ge_cd(cmulti *x, double y)  { return cis_number(x) && cmp_cd (x,y)>=0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)<0; }
+int lt_cc(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && cmp_cc   (x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int rlt_c(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && rcmp_c(x,y)<0; }
+int lt_rc(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && cmp_rc(x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_r(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r(x,y)<0; }
+int lt_cr(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && cmp_cr(x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int zlt_c(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)>0; }
+int lt_zc(dcomplex x, cmulti *y){ return cis_number(y) && cmp_cz (y,x)>0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_z(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)<0; }
+int lt_cz(cmulti *x, dcomplex y){ return cis_number(x) && cmp_cz (x,y)<0; }
 /** @brief cmulti型の値の比較 x<y */
-int dlt_c(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)>0; }
+int lt_dc(double x, cmulti *y)  { return cis_number(y) && cmp_cd (y,x)>0; }
 /** @brief cmulti型の値の比較 x<y */
-int clt_d(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)<0; }
+int lt_cd(cmulti *x, double y)  { return cis_number(x) && cmp_cd (x,y)<0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_c(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && ccmp_c   (x,y)<=0; }
+int le_cc(cmulti *x, cmulti *y)    { return cis_number(x) && cis_number(y) && cmp_cc   (x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int rle_c(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && rcmp_c(x,y)<=0; }
+int le_rc(rmulti *x, cmulti *y) { return ris_number(x) && cis_number(y) && cmp_rc(x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_r(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && ccmp_r(x,y)<=0; }
+int le_cr(cmulti *x, rmulti *y) { return cis_number(x) && ris_number(y) && cmp_cr(x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int zle_c(dcomplex x, cmulti *y){ return cis_number(y) && ccmp_z (y,x)>=0; }
+int le_zc(dcomplex x, cmulti *y){ return cis_number(y) && cmp_cz (y,x)>=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_z(cmulti *x, dcomplex y){ return cis_number(x) && ccmp_z (x,y)<=0; }
+int le_cz(cmulti *x, dcomplex y){ return cis_number(x) && cmp_cz (x,y)<=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int dle_c(double x, cmulti *y)  { return cis_number(y) && ccmp_d (y,x)>=0; }
+int le_dc(double x, cmulti *y)  { return cis_number(y) && cmp_cd (y,x)>=0; }
 /** @brief cmulti型の値の比較 x<=y */
-int cle_d(cmulti *x, double y)  { return cis_number(x) && ccmp_d (x,y)<=0; }
+int le_cd(cmulti *x, double y)  { return cis_number(x) && cmp_cd (x,y)<=0; }
 
 /** @brief cmulti型の値の比較 abs(x)<=>abs(y) */
-int cabs_cmp(cmulti *x, cmulti *y)
+int cmp_abs_cc(cmulti *x, cmulti *y)
 {
   int value;  
   rmulti *ax=NULL,*ay=NULL;
@@ -2115,25 +2115,25 @@ int cabs_cmp(cmulti *x, cmulti *y)
 }
 
 /** @brief cmulti型の値の比較 abs(x)==abs(y) */
-int cabs_eq(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cabs_cmp(x,y)==0; }
+int eq_abs_cc(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cmp_abs_cc(x,y)==0; }
 /** @brief cmulti型の値の比較 abs(x)>abs(y) */
-int cabs_gt(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cabs_cmp(x,y)>0;  }
+int gt_abs_cc(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cmp_abs_cc(x,y)>0;  }
 /** @brief cmulti型の値の比較 abs(x)>=abs(y) */
-int cabs_ge(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cabs_cmp(x,y)>=0; }
+int ge_abs_cc(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cmp_abs_cc(x,y)>=0; }
 /** @brief cmulti型の値の比較 abs(x)<abs(y) */
-int cabs_lt(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cabs_cmp(x,y)<0;  }
+int lt_abs_cc(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cmp_abs_cc(x,y)<0;  }
 /** @brief cmulti型の値の比較 abs(x)<=abs(y) */
-int cabs_le(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cabs_cmp(x,y)<=0; }
+int le_abs_cc(cmulti *x, cmulti *y) { return cis_number(x) && cis_number(y) && cmp_abs_cc(x,y)<=0; }
 /** @brief cmulti型の値の比較 x.r==y.r && x.i==y.i */
-int ceqc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && eq_rr(C_R(x),C_R(y)) && eq_rr(C_I(x),C_I(y)); }
+int ceq_cc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && eq_rr(C_R(x),C_R(y)) && eq_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r>y.r && x.i>y.i */
-int cgtc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && gt_rr(C_R(x),C_R(y)) && gt_rr(C_I(x),C_I(y)); }
+int cgt_cc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && gt_rr(C_R(x),C_R(y)) && gt_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r>=y.r && x.i>=y.i */
-int cgec(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && ge_rr(C_R(x),C_R(y)) && ge_rr(C_I(x),C_I(y)); }
+int cge_cc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && ge_rr(C_R(x),C_R(y)) && ge_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r<y.r && x.i<y.i */
-int cltc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && lt_rr(C_R(x),C_R(y)) && lt_rr(C_I(x),C_I(y)); }
+int clt_cc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && lt_rr(C_R(x),C_R(y)) && lt_rr(C_I(x),C_I(y)); }
 /** @brief cmulti型の値の比較 x.r<=y.r && x.i<=y.i */
-int clec(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && le_rr(C_R(x),C_R(y)) && le_rr(C_I(x),C_I(y)); }
+int cle_cc(cmulti *x, cmulti *y){ return cis_number(x) && cis_number(y) && le_rr(C_R(x),C_R(y)) && le_rr(C_I(x),C_I(y)); }
 
 /** @} */
 

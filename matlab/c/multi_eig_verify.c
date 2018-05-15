@@ -37,8 +37,8 @@ void multi_eig_verify(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]
   if(cvec_is_real(m,_C(D)) && cvec_is_real(m,_C(ED))){
     rD=multi_allocate('r',m,1,1);
     rED=multi_allocate('r',m,1,1);
-    cvec_real(m,_R(rD),_C(D));
-    cvec_real(m,_R(rED),_C(ED));
+    rvec_real_cvec(m,_R(rD),_C(D));
+    rvec_real_cvec(m,_R(rED),_C(ED));
   }
   if(cmat_is_real(_M(V),_N(V),_C(V),_LD1(V)) && cmat_is_real(_M(EV),_N(EV),_C(EV),_LD1(EV))){
     rV=multi_allocate('r',m,m,1);

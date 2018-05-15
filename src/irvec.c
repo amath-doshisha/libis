@@ -192,7 +192,7 @@ void irvec_print(int n, rmulti **x0, rmulti **x1, char *name, char format, int d
 /**
  @brief irmulti型のベクトルのコピー [y0,y1]=[x0,x1]
  */
-void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+void irvec_copy_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irset_r(y0[i],y1[i],x0[i],x1[i]); }
@@ -217,7 +217,7 @@ void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **
 /**
  @brief irmulti型のベクトルの符号の反転 [y0,y1]=-[x0,x1]
 */
-void irvec_neg(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+void irvec_neg_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irneg_r(y0[i],y1[i],x0[i],x1[i]); }
@@ -624,7 +624,7 @@ void idscalar_div_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rm
 /**
  @brief irmulti型のベクトルの平方の総和 [y0,y1]=sum([x0,x1].^2)
 */
-void irvec_sum_pow2(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irsum_pow2_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_d(y0,y1,0,0);
@@ -634,7 +634,7 @@ void irvec_sum_pow2(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの絶対値 [y0,y1]=abs([x0,x1])
 */
-void irvec_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+void irvec_abs_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irabs_r(y0[i],y1[i],x0[i],x1[i]); }
@@ -652,7 +652,7 @@ void irvec_abs_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rm
 /**
  @brief irmulti型のベクトルの最大値 [y0,y1]=[max(x0),max(x1)]
 */
-void irvec_max(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmax_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_r(y0,y1,x0[0],x1[0]);        // y0=x0[0], y1=x1[0]
@@ -669,7 +669,7 @@ void irvec_max(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの最大値 [y0,y1]=[x0,max(x1)] 上限で比較
 */
-void irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmax_up_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_r(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
@@ -683,7 +683,7 @@ void irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの最大値 [y0,y1]=[max(x0),x1] 下限で比較
 */
-void irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmax_down_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_r(y0,y1,x0[0],x1[0]);      // y0=x0[0], y1=x1[0]
@@ -697,7 +697,7 @@ void irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの最小値 [y0,y1]=[min(x0),min(x1)]
 */
-void irvec_min(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmin_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_r(y0,y1,x0[0],x1[0]);        // y0=x0[0], y1=x1[0]
@@ -714,7 +714,7 @@ void irvec_min(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの最小値 [y0,y1]=[x0,min(x1)]
 */
-void irvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmin_up_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_r(y0,y1,x0[0],x1[0]);     // y0=x0[0], y1=x1[0]
@@ -728,7 +728,7 @@ void irvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの最小値 [y0,y1]=[min(x0),x1]
 */
-void irvec_dmin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmin_down_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_r(y0,y1,x0[0],x1[0]);     // y0=x0[0], y1=x1[0]
@@ -742,37 +742,37 @@ void irvec_dmin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))
 */
-void irvec_umax_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmax_up_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int prec;
   rmulti **ax0=NULL,**ax1=NULL;
   prec=MAX2(rget_prec(y0),rget_prec(y1));
   ax0=rvec_allocate_prec(n,prec);
   ax1=rvec_allocate_prec(n,prec);
-  irvec_abs(n,ax0,ax1,x0,x1);
-  irvec_umax(y0,y1,n,ax0,ax1);
+  irvec_abs_abs(n,ax0,ax1,x0,x1);
+  irmax_up_rvec(y0,y1,n,ax0,ax1);
   RVF(ax0,n); RVF(ax1,n);
 }
 
 /**
  @brief irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))
 */
-void irvec_dmin_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irmin_down_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int prec;
   rmulti **ax0=NULL,**ax1=NULL;
   prec=MAX2(rget_prec(y0),rget_prec(y1));
   ax0=rvec_allocate_prec(n,prec);
   ax1=rvec_allocate_prec(n,prec);
-  irvec_abs(n,ax0,ax1,x0,x1);
-  irvec_dmin(y0,y1,n,ax0,ax1);
+  irvec_abs_abs(n,ax0,ax1,x0,x1);
+  irmin_down_rvec(y0,y1,n,ax0,ax1);
   RVF(ax0,n); RVF(ax1,n);
 }
 
 /**
  @brief irmulti型のベクトルの要素の総和 value=sum(x)
  */
-void irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
+void irsum_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 {
   int i;
   irset_d(y0,y1,0,0);
@@ -793,7 +793,7 @@ void irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, 
       iradd_mul_rr(z0[i],z1[i],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[j],x1[j]);
     }
   }
-  irvec_copy(m,y0,y1,z0,z1);
+  irvec_copy_rvec(m,y0,y1,z0,z1);
   RVF(z0,m); RVF(z1,m);
 }
 
@@ -811,7 +811,7 @@ void irvec_add_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LD
       iradd_mul_rr(z0[i],z1[i],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[j],x1[j]);
     }
   }
-  irvec_copy(m,y0,y1,z0,z1);
+  irvec_copy_rvec(m,y0,y1,z0,z1);
   RVF(z0,m); RVF(z1,m);
 }
 
@@ -829,7 +829,7 @@ void irvec_sub_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LD
       irsub_mul_rr(z0[i],z1[i],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[j],x1[j]);
     }
   }
-  irvec_copy(m,y0,y1,z0,z1);
+  irvec_copy_rvec(m,y0,y1,z0,z1);
   RVF(z0,m); RVF(z1,m);
 }
 
@@ -847,7 +847,7 @@ void irvec_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0
       iradd_mul_rr(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  irvec_copy(n,y0,y1,z0,z1);
+  irvec_copy_rvec(n,y0,y1,z0,z1);
   RVF(z0,n); RVF(z1,n);
 }
 
@@ -865,7 +865,7 @@ void irvec_add_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int 
       iradd_mul_rr(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  irvec_copy(n,y0,y1,z0,z1);
+  irvec_copy_rvec(n,y0,y1,z0,z1);
   RVF(z0,n); RVF(z1,n);
 }
 
@@ -883,7 +883,7 @@ void irvec_sub_lintr_t(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int 
       irsub_mul_rr(z0[j],z1[j],MAT(A0,i,j,LDA0),MAT(A1,i,j,LDA1),x0[i],x1[i]);
     }
   }
-  irvec_copy(n,y0,y1,z0,z1);
+  irvec_copy_rvec(n,y0,y1,z0,z1);
   RVF(z0,n); RVF(z1,n);
 }
 

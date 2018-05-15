@@ -38,7 +38,7 @@ int rsolve_krawczyk(int m, rmulti **e, rmulti **x, func_t *fF, int debug)
   // [F0,F1]=F(x)
   irvec_func_list(m,F0,F1,fF,m,x,x); if(debug>0){ irvec_print(m,F0,F1,"[F]=",'e',1); }
   // e=abs(R*F)
-  rvec_lintr(m,m,e,R,m,F); rvec_abs(m,e,e); rvec_mul_dscalar(m,e,e,2);
+  rvec_lintr(m,m,e,R,m,F); rvec_abs_rvec(m,e,e); rvec_mul_dscalar(m,e,e,2);
   // [X0,X1]=[-e,e]
   irvec_pm(m,X0,X1,e); if(debug>0){ irvec_print(m,X0,X1,"[X]=",'e',1); }
   // [T0,T1]=[x-e,x+e]
@@ -78,9 +78,9 @@ void rsolve_func_residual(int m, rmulti *norm, rmulti **F, rmulti **x, func_t *f
   // [F0,F1]=F(x)
   irvec_func_list(m,F0,F1,fF,m,x,x);
   // |F|
-  rvec_max_abs(norm,m,F);
-  rvec_max_abs(norm0,m,F0);
-  rvec_max_abs(norm1,m,F1);
+  rmax_abs_rvec(norm,m,F);
+  rmax_abs_rvec(norm0,m,F0);
+  rmax_abs_rvec(norm1,m,F1);
   // check
   if(gt_rr(norm1,norm)){ rswap(norm1,norm); rvec_swap(m,F,F1); }
   if(gt_rr(norm0,norm)){ rswap(norm0,norm); rvec_swap(m,F,F0); }
@@ -113,11 +113,11 @@ int rsolve_newton(int m, rmulti **x, func_t *fF, int step_max, int debug)
   if(debug>0){ mpfr_printf("[%s] begin x[%d]\n",name,n,n); }
   do{
     // a=|x|
-    rvec_max_abs(a,m,x);
+    rmax_abs_rvec(a,m,x);
     // F=F(x)
     rvec_func_list(m,F,fF,m,x);
     // b=|F|
-    rvec_max_abs(b,m,F);
+    rmax_abs_rvec(b,m,F);
     // exactly F=0?
     if(eq_rd(b,0)){ rsolve_func_residual(m,b,F,x,fF); }
     // if F=0, then...
@@ -133,7 +133,7 @@ int rsolve_newton(int m, rmulti **x, func_t *fF, int step_max, int debug)
 	rset_nan(eta); rset_nan(mu);
       }else{
 	// eta=|J\F|
-	rvec_max_abs(eta,m,F);
+	rmax_abs_rvec(eta,m,F);
 	// mu=eta/eta_pre
 	rdiv_rr(mu,eta,eta_pre);
 	// set status
@@ -145,7 +145,7 @@ int rsolve_newton(int m, rmulti **x, func_t *fF, int step_max, int debug)
     if(debug>0){
       RVA(e,m,prec); RA(emax,prec);
       info=rsolve_krawczyk(m,e,x,fF,0);
-      rvec_max_abs(emax,m,e);
+      rmax_abs_rvec(emax,m,e);
       if(info){ mpfr_printf("[%s] n=%d [%c]         |x%d|=%.0Re |F(x%d)|=%.0Re |x%d-x%d|=%.0Re mu=%.0Re\n",name,n,status,n,a,n,b,n+1,n,eta,mu); }
       else    { mpfr_printf("[%s] n=%d [%c] e=%.0Re |x%d|=%.0Re |F(x%d)|=%.0Re |x%d-x%d|=%.0Re mu=%.0Re\n",name,n,status,emax,n,a,n,b,n+1,n,eta,mu); }
       RVF(e,m); RF(emax);

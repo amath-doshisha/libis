@@ -14,7 +14,7 @@
 void zeig_residual(int n, dcomplex *F, dcomplex *A, int LDA, dcomplex *X, dcomplex lambda)
 {
   zvec_mul_zscalar(n,F,X,lambda);     // F=lambda*X
-  zvec_neg(n,F,F);                  // F=-F
+  zvec_neg_zvec(n,F,F);                  // F=-F
   zvec_add_lintr(n,n,F,A,LDA,X);      // F=A*X-lambda*X
 }
 
@@ -26,7 +26,7 @@ void zeig_residual_norm_max(int n, double *E, dcomplex *A, int LDA, dcomplex *X,
   F=zvec_allocate(n);
   for(j=0; j<n; j++){
     zeig_residual(n,F,A,LDA,&COL(X,j,LDX),lambda[j]);
-    E[j]=zvec_norm_max(n,F);
+    E[j]=dnorm_max_zvec(n,F);
   }
   F=zvec_free(F);
 }
@@ -68,7 +68,7 @@ void zeig_sort_vector_guide(int n, int k, dcomplex *lambda, dcomplex *X, int LDX
   a=dvec_allocate(k);
   for(j=0; j<k; j++){
     zmat_dist_norm_max(a,n,k,X,LDX,&COL(X0,j,LDX0));
-    value=dvec_min_abs_index(k,a,&i);
+    value=dmin_abs_dvec_index(k,a,&i);
     if(i!=j){
       zvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));
       zvec_swap_at(lambda,i,j);
@@ -84,7 +84,7 @@ void zeig_sort_value_guide(int n, int k, dcomplex *lambda, dcomplex *X, int LDX,
   a=dvec_allocate(k);
   for(j=0; j<k; j++){
     zvec_abs_sub_scalar(k,a,lambda,lambda0[j]);
-    value=dvec_min_abs_index(k,a,&i);
+    value=dmin_abs_dvec_index(k,a,&i);
     if(i!=j){
       zvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));
       zvec_swap_at(lambda,i,j);

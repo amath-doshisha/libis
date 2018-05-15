@@ -24,7 +24,7 @@
 void ceig_residual(int n, cmulti **F, cmulti **A, int LDA, cmulti **x, cmulti *lambda)
 {
   cvec_mul_cscalar(n,F,x,lambda);      // F=x*lambda
-  cvec_neg(n,F,F);               // F=-x*lambda
+  cvec_neg_cvec(n,F,F);               // F=-x*lambda
   cvec_add_lintr(n,n,F,A,LDA,x); // F=A*x-lambda*x
 }
 
@@ -38,7 +38,7 @@ void ceig_residual_norm_max(int n, rmulti **E, cmulti **A, int LDA, cmulti **X, 
   F=cvec_allocate_prec(n,rvec_get_prec_max(n,E));
   for(j=0; j<n; j++){
     ceig_residual(n,F,A,LDA,&COL(X,j,LDX),lambda[j]);
-    cvec_max_abs(E[j],n,F);
+    rmax_abs_cvec(E[j],n,F);
   }
   F=cvec_free(n,F); // free  
 }
@@ -81,7 +81,7 @@ void ceig_sort_vector_guide(int n, int k, cmulti **lambda, cmulti **X, int LDX, 
   a=rvec_allocate_prec(k,prec);
   for(j=0; j<k; j++){
     cmat_cols_max_abs_sub_cvec(a,n,k,X,LDX,&COL(X0,j,LDX0));
-    rvec_min_abs_index(value,k,a,&i);
+    rmin_abs_rvec_index(value,k,a,&i);
     if(i!=j){
       cvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));
       if(lambda!=NULL){ cswap(lambda[i],lambda[j]); }
@@ -103,7 +103,7 @@ void ceig_sort_value_guide(int n, int k, cmulti **lambda, cmulti **X, int LDX, c
   a=rvec_allocate_prec(k,prec);
   for(j=0; j<k; j++){
     cvec_abs_sub_c(k,a,lambda,lambda0[j]);
-    rvec_min_abs_index(value,k,a,&i);
+    rmin_abs_rvec_index(value,k,a,&i);
     if(i!=j){
       if(X!=NULL){ cvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX)); }
       cswap(lambda[i],lambda[j]);

@@ -18,13 +18,13 @@ void multi_norm_Inf(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(_T(x)=='C'){ u=multi_allocate('R',_M(x),_N(x),_L(x)); icmat3_abs(_M(u),_N(u),_L(u),_R0(u),_R1(u),_LD1(u),_LD2(u),_C0(x),_C1(x),_LD1(x),_LD2(x)); }
   else{ MATLAB_ERROR("multi_abs: Unkown type"); }
   if((_M(u)==1 && _L(u)==1) || (_N(u)==1 && _L(u)==1)){
-         if(_T(u)=='r'){ y=multi_allocate('r',1,1,1); rvec_max(_R(y)[0],_M(u)*_N(u)*_L(u),_R(u)); }
-    else if(_T(u)=='R'){ y=multi_allocate('R',1,1,1); irvec_max(_R0(y)[0],_R1(y)[0],_M(u)*_N(u)*_L(u),_R0(u),_R1(u)); }
+         if(_T(u)=='r'){ y=multi_allocate('r',1,1,1); rmax_rvec(_R(y)[0],_M(u)*_N(u)*_L(u),_R(u)); }
+    else if(_T(u)=='R'){ y=multi_allocate('R',1,1,1); irmax_rvec(_R0(y)[0],_R1(y)[0],_M(u)*_N(u)*_L(u),_R0(u),_R1(u)); }
   }else if(_L(u)==1){
          if(_T(u)=='r'){ y=multi_allocate('r',1,1,1); v=multi_allocate(_T(u),_N(u),_M(u),_L(u));  rmat_copy_t(_M(u),_N(u),_R(v),_LD1(v),_R(u),_LD1(u));
-	   w=multi_allocate('r',1,_N(v),1); rvec_sum_rmat(_M(v),_N(v),_R(w),_R(v),_LD1(v)); rvec_max(_R(y)[0],_N(w),_R(w)); }
+	   w=multi_allocate('r',1,_N(v),1); rvec_sum_rmat(_M(v),_N(v),_R(w),_R(v),_LD1(v)); rmax_rvec(_R(y)[0],_N(w),_R(w)); }
     else if(_T(u)=='R'){ y=multi_allocate('R',1,1,1); v=multi_allocate(_T(u),_N(u),_M(u),_L(u)); irmat_copy_t(_M(u),_N(u),_R0(v),_LD1(v),_R1(v),_LD1(v),_R0(u),_LD1(u),_R1(u),_LD1(u));
-      w=multi_allocate('R',1,_N(v),1); irvec_sum_irmat(_M(v),_N(v),_R0(w),_R1(w),_R0(v),_R1(v),_LD1(v)); irvec_max(_R0(y)[0],_R1(y)[0],_N(w),_R0(w),_R1(w)); }
+      w=multi_allocate('R',1,_N(v),1); irvec_sum_irmat(_M(v),_N(v),_R0(w),_R1(w),_R0(v),_R1(v),_LD1(v)); irmax_rvec(_R0(y)[0],_R1(y)[0],_N(w),_R0(w),_R1(w)); }
    }else{ MATLAB_ERROR("multi_norm_Inf: error"); }
   // done
   plhs[0]=array_to_mxArray(y);

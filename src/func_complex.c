@@ -56,7 +56,7 @@ func_t *func_complex_eval(func_t *f)
   else if(cis_inf(f->p.cm))     { f=func_del(f); return func_inf(); }
   else if(!cis_number(f->p.cm)) { f=func_del(f); return func_nan(); }
   else if(cis_zero(f->p.cm))    { f=func_del(f); return func_zero(); }
-  else if(ceq_d(f->p.cm,1))     { f=func_del(f); return func_one(); }
+  else if(eq_cd(f->p.cm,1))     { f=func_del(f); return func_one(); }
   else if(cis_real(f->p.cm)){
     g=func_real_rmulti(C_R(f->p.cm));
     f=func_del(f);
@@ -211,7 +211,7 @@ int func_complex_cmp(func_t *f, func_t *g)
   if(!func_in_complex(f) || !func_in_complex(g)){ FUNC_ERROR_ARG2("func_complex_cmp",f,g); }
   a=func_complex_cast(FR(f));
   b=func_complex_cast(FR(g));
-  value=ccmp_c(func_complex_p(a),func_complex_p(b));
+  value=cmp_cc(func_complex_p(a),func_complex_p(b));
   a=func_del(a);
   b=func_del(b);
   return value;

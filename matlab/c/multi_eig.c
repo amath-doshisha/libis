@@ -24,7 +24,7 @@ void multi_eig(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     // done
     if(cvec_is_real(_M(A),_C(clambda))){
       rlambda=multi_allocate('r',_M(A),1,1);
-      cvec_real(_M(A),_R(rlambda),_C(clambda));
+      rvec_real_cvec(_M(A),_R(rlambda),_C(clambda));
       plhs[0]=array_to_mxArray(rlambda);
     }else{
       plhs[0]=array_to_mxArray(clambda);

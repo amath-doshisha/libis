@@ -43,18 +43,18 @@ int dhpsvd_1pair(int m, int n, double *A, int LDA, double *z, double *u, double 
   // compute
   done=0; h=1; e=1;
   for(step=0; !done && step<step_max; step++){
-    dvec_normalize(m,u,u);                              // u=u/sqrt(u'*u)
-    dvec_normalize(n,v,v);                              // v=v/sqrt(v'*v)
+    dvec_normalize_dvec(m,u,u);                              // u=u/sqrt(u'*u)
+    dvec_normalize_dvec(n,v,v);                              // v=v/sqrt(v'*v)
     C=dvec_dot(m,z,u);                                  // C=z'*u
     sigma=dvec_dot(n,w,v)/C;                            // sigma=(w'*v)/C
     dsvd_residual(m,n,H,A,LDA,u,v,sigma);               // H=[ A*v-sigma*u;  A'*u-sigma*v ]
-    e=dvec_norm_max(m+n,H);                             // e=max(abs(H))
+    e=dnorm_max_dvec(m+n,H);                             // e=max(abs(H))
     dhpsvd_jacobi_mat(m,n,JM,LDJM,A,LDA,u,v,w,sigma,C); // Jacobi matrix
     info=dsolve(m+n,1,H,m+n,JM,LDJM);                   // H=JM\H;
     if(info<0)      { ERROR_EXIT("Error in dhpsvd_1pair(), dsolve, info=%d.\n",info); }
     else if(info>0) { done=2; ret=DHPSVD_SINGULAR; }
     else{
-      h=dvec_norm_max(m+n,H);                           // h=norm_max(H)
+      h=dnorm_max_dvec(m+n,H);                           // h=norm_max(H)
       dvec_sub_dvec(m,u,u,&Hu);                              // u=u-H(1:m);    
       dvec_sub_dvec(n,v,v,&Hv);                              // v=v-H((m+1):end);
     }
@@ -62,13 +62,13 @@ int dhpsvd_1pair(int m, int n, double *A, int LDA, double *z, double *u, double 
     if(debug>0){ printf("[dhpsvd_1pair] done=%d ret=%d step=%02d log2(e)=%+6.2f log2(h)=%+6.2f sigma=%+.16e\n",done,ret,step,log(fabs(e))/log(2),log(fabs(h))/log(2),sigma); }
   }
   if(!done) { ret=DHPSVD_DIVERGENT; }
-  dvec_normalize_sgn(m,u,u);                            // u=u/sqrt(u'*u)
-  dvec_normalize_sgn(n,v,v);                            // v=v/sqrt(v'*v)
+  dvec_normalize_sgn_dvec(m,u,u);                            // u=u/sqrt(u'*u)
+  dvec_normalize_sgn_dvec(n,v,v);                            // v=v/sqrt(v'*v)
   dvec_lintr_t(m,n,w,A,LDA,u);                          // w=A'*u
   sigma=dvec_dot(n,w,v)/C;                              // sigma=(w'*v)/C
   if(sigma<0) { dvec_mul_dscalar(m,u,u,-1); sigma=-sigma; }     // if sigma<0
   dsvd_residual(m,n,H,A,LDA,u,v,sigma);                 // H=[ A*v-sigma*u;  A'*u-sigma*v ]
-  e=dvec_norm_max(m+n,H);                               // e=max(abs(H))
+  e=dnorm_max_dvec(m+n,H);                               // e=max(abs(H))
   if(isnan(u[0])) { ret=DHPSVD_NAN; e=1; }
   if(debug>0){ printf("[dhpsvd_1pair] done=%d ret=%d step=%02d log2(e)=%+6.2f                sigma=%+.16e\n",done,ret,step,log(fabs(e))/log(2),sigma); }
   // free

@@ -32,6 +32,29 @@ void irvec_set_svec(int n, rmulti **y0, rmulti **y1, char **x);                 
 void irvec_get_svec(int n, char **y, rmulti **x0, rmulti **x1, char format, int digits); // [rmulti,rmulti] -> char
 
 /*
+ * y=f(x)
+ */
+void irvec_copy_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);   // y=x
+void irvec_abs_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);     // y=abs(x)
+void irvec_neg_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);    // y=-x
+void irvec_pow2_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);   // y=x^2
+void irsum_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);          // y=sum(x)
+void iraverage_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // y=sum(x)/n
+void irsum_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // y=sum(abs(x))
+void irsum_pow2_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // y=sum(abs(x)^2)
+void irnorm1_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);        // y=sum(abs(x))
+void irnorm2_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);        // y=sqrt(sum(abs(x)^2))
+void irnorm_max_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // y=max(abs(x))
+void irmax_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);          // [y0,y1]=[max(x0),max(x1)]
+void irmin_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);          // [y0,y1]=[min(x0),min(x1)]
+void irmax_up_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);       // [y0,y1]=[x0,max(x1)]
+void irmin_up_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);       // [y0,y1]=[x0,min(x1)]
+void irmax_down_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[max(x0),x1]
+void irmin_down_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[min(x0),x1]
+void irmax_up_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);   // y=max(abs(x))
+void irmin_down_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // y=min(abs(x))
+
+/*
  * z=f(x,y)
  */
 // [z0,z1]=[x0,z1]+[y0,y1]
@@ -78,28 +101,13 @@ void idscalar_div_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rm
 /*
  * operations
  */
-// [y0,y1]=[x0,x1]
-void irvec_copy(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);
-// y=real(x)
 void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **x1);                     // xc=(x1+x0)/2, xr=x1-x0
-void irvec_neg(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);                               // [y0,y1]=-[x0,x1]
 void irvec_pm(int n, rmulti **y0, rmulti **y1, rmulti **x);                                              // [y0,y1]=[-x,x]
 void irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y);                // [z0,z1]=[x0,z1]+[-y,y]
 void irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1);                                           // [m-r,m+r]=[x0,x1]
 void irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1);                                           // [m-r,m+r]=[x0,x1]
 void irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1);                              // [m-r,m+r]=[x0,x1]
-void irvec_sum_pow2(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);                            // y=sum(x.^2)
-void irvec_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);                               // [y0,y1]=abs([x0,x1]
 void irvec_abs_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1);        // [z0,z1]=abs([x0,x1]-[y0,y1])
-void irvec_max(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // [y0,y1]=[max(x0),max(x1)]
-void irvec_umax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[x0,max(x1)]
-void irvec_dmax(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[max(x0),x1]
-void irvec_min(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // [y0,y1]=[min(x0),min(x1)]
-void irvec_umin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[x0,min(x1)]
-void irvec_dmin(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);     // [y0,y1]=[min(x0),x1]
-void irvec_umax_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // value=max(abs(x))
-void irvec_dmin_abs(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1); // value=min(abs(x))
-void irvec_sum(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);      // value=sum(x)
 void irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);        // [y0,y1]=[A0,A1]*[x0,x1]
 void irvec_add_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);    // [y0,y1]+=[A0,A1]*[x0,x1]
 void irvec_sub_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);    // [y0,y1]-=[A0,A1]*[x0,x1]

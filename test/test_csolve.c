@@ -46,13 +46,13 @@ int main(int argc, char *argv[])
 
   printf("================\n");
   printf("[デフォルト精度で計算]\n");
-  cmat_copy(n,n,A,LDA,A0,LDA);  cvec_copy(n,x,b); csolve(n,1,x,n,A,LDA,&info); cvec_copy(n,y,x);
+  cmat_copy(n,n,A,LDA,A0,LDA);  cvec_copy_cvec(n,x,b); csolve(n,1,x,n,A,LDA,&info); cvec_copy_cvec(n,y,x);
   if(info==0){
     cvec_print_prec(n,x,"x=","e",20);
     printf("[残差を計算]\n");
     csolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
     cvec_print_prec(n,r,"r=b-A0*x=","e",2);
-    cvec_max_abs(E,n,r);
+    rmax_abs_cvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
   }else{
     printf("rank(A)=%d\n",info);
@@ -61,36 +61,36 @@ int main(int argc, char *argv[])
   printf("================\n");
   printf("[精度%dbitsで計算]\n",prec2);
   set_default_prec(prec2);
-  cvec_round(n,x,prec2);
+  cvec_round_cvec(n,x,prec2);
   cmat_copy(n,n,A,LDA,A0,LDA);
-  cvec_copy(n,x,b);
+  cvec_copy_cvec(n,x,b);
   csolve(n,1,x,n,A,LDA,&info);
   if(info==0){
     cvec_print_prec(n,x,"x=","e",20);
     printf("[残差を計算]\n");
-    cvec_round(n,r,prec2);
+    cvec_round_cvec(n,r,prec2);
     csolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
     cvec_print_prec(n,r,"r=b-A0*x=","e",2);
-    cvec_max_abs(E,n,r);
+    rmax_abs_cvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
 
     printf("================\n");
     printf("[精度%dbitsで計算した結果を丸める]\n",prec2);
-    cvec_round(n,r,prec);
-    cvec_round(n,x,prec);
+    cvec_round_cvec(n,r,prec);
+    cvec_round_cvec(n,x,prec);
     cvec_print_prec(n,x,"x=","e",20);
     printf("[残差を計算]\n");
     csolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
     cvec_print_prec(n,r,"r=b-A0*x=","e",2);
-    cvec_max_abs(E,n,r);
+    rmax_abs_cvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
 
     printf("[デフォルト精度の誤差を評価]\n");
-    cvec_round(n,r,prec);
+    cvec_round_cvec(n,r,prec);
     cvec_sub_cvec(n,r,x,y);
     cvec_div_2exp(n,r,r,cvec_get_exp_max(n,x),cvec_get_exp_max(n,x));
     cvec_print_prec(n,r,"r=(x-y)/log2(x)=","e",2);
-    cvec_max_abs(E,n,r);
+    rmax_abs_cvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));
     cvec_print_exp(n,r,"r=(x-y)/log2(x)=");
 
