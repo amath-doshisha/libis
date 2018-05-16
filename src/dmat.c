@@ -289,7 +289,7 @@ void dmat_sub_norm_max(double *x, int m, int n, double *A, int LDA, double *B, i
 {
   int j;
   for(j=0; j<n; j++){
-    x[j]=dvec_dist_norm_max(m,&COL(A,j,LDA),&COL(B,j,LDB));
+    x[j]=dmax_abs_sub_dvec_dvec(m,&COL(A,j,LDA),&COL(B,j,LDB));
   }
 }
 
@@ -300,7 +300,7 @@ void dmat_dist_norm_max(double *y, int m, int n, double *A, int LDA, double *x)
 {
   int j;
   for(j=0; j<n; j++){
-    y[j]=dvec_dist_norm_max(m,&COL(A,j,LDA),x);
+    y[j]=dmax_abs_sub_dvec_dvec(m,&COL(A,j,LDA),x);
   }
 }
 

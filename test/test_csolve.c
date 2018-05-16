@@ -87,8 +87,8 @@ int main(int argc, char *argv[])
 
     printf("[デフォルト精度の誤差を評価]\n");
     cvec_round_cvec(n,r,prec);
-    cvec_sub_cvec(n,r,x,y);
-    cvec_div_2exp(n,r,r,cvec_get_exp_max(n,x),cvec_get_exp_max(n,x));
+    cvec_sub_cvec_cvec(n,r,x,y);
+    cvec_div_2exp_cvec(n,r,r,cvec_get_exp_max(n,x),cvec_get_exp_max(n,x));
     cvec_print_prec(n,r,"r=(x-y)/log2(x)=","e",2);
     rmax_abs_cvec(E,n,r);
     printf("||r||=%.2e\n",rget_d(E));

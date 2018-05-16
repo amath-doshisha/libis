@@ -23,7 +23,7 @@
  */
 void ceig_residual(int n, cmulti **F, cmulti **A, int LDA, cmulti **x, cmulti *lambda)
 {
-  cvec_mul_cscalar(n,F,x,lambda);      // F=x*lambda
+  cvec_mul_cvec_cscalar(n,F,x,lambda);      // F=x*lambda
   cvec_neg_cvec(n,F,F);               // F=-x*lambda
   cvec_add_lintr(n,n,F,A,LDA,x); // F=A*x-lambda*x
 }
@@ -102,7 +102,7 @@ void ceig_sort_value_guide(int n, int k, cmulti **lambda, cmulti **X, int LDX, c
   value=rallocate_prec(prec);
   a=rvec_allocate_prec(k,prec);
   for(j=0; j<k; j++){
-    cvec_abs_sub_c(k,a,lambda,lambda0[j]);
+    rvec_abs_sub_cvec_cscalar(k,a,lambda,lambda0[j]);
     rmin_abs_rvec_index(value,k,a,&i);
     if(i!=j){
       if(X!=NULL){ cvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX)); }

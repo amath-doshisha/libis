@@ -55,7 +55,7 @@ int main()
   irmat_func_list2(n,n,rJ0,rJ1,LDJ,fJ,n,rx,rx);
   cvec_func_list(n,cF,fF,n,cx);
   icvec_func_list(n,cF0,cF1,fF,n,cx,cx);
-  icvec_center_radius(n,cFc,cFr,cF0,cF1);
+  icvec_mid_rad_cvec(n,cFc,cFr,cF0,cF1);
   cmat_func_list2(n,n,cJ,LDJ,fJ,n,cx);
   icmat_func_list2(n,n,cJ0,cJ1,LDJ,fJ,n,cx,cx);
   icmat_center_radius(n,n,cJc,LDJ,cJr,LDJ,cJ0,LDJ,cJ1,LDJ);

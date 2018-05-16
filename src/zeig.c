@@ -13,7 +13,7 @@
 // F=A*X-lambda*X
 void zeig_residual(int n, dcomplex *F, dcomplex *A, int LDA, dcomplex *X, dcomplex lambda)
 {
-  zvec_mul_zscalar(n,F,X,lambda);     // F=lambda*X
+  zvec_mul_zvec_zscalar(n,F,X,lambda);     // F=lambda*X
   zvec_neg_zvec(n,F,F);                  // F=-F
   zvec_add_lintr(n,n,F,A,LDA,X);      // F=A*X-lambda*X
 }
@@ -83,7 +83,7 @@ void zeig_sort_value_guide(int n, int k, dcomplex *lambda, dcomplex *X, int LDX,
   double value,*a;
   a=dvec_allocate(k);
   for(j=0; j<k; j++){
-    zvec_abs_sub_scalar(k,a,lambda,lambda0[j]);
+    dvec_abs_sub_zvec_zscalar(k,a,lambda,lambda0[j]);
     value=dmin_abs_dvec_index(k,a,&i);
     if(i!=j){
       zvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));

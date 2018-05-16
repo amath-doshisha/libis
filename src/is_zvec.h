@@ -101,54 +101,63 @@ double dmax_max_absc_zvec(int n, dcomplex *x);                       // y=max(re
  * z=f(x,y)
  */
 // z=x+y
-void zvec_add_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
-void zvec_add_dvec(int n, dcomplex *z, dcomplex *x, double *y);
-void dvec_add_zvec(int n, dcomplex *z, double *x, dcomplex *y);
-void zvec_add_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
-void zvec_add_dscalar(int n, dcomplex *z, dcomplex *x, double y);
-void dvec_add_zscalar(int n, dcomplex *z, double *x, dcomplex y);
-void zscalar_add_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
-void zscalar_add_dvec(int n, dcomplex *z, dcomplex x, double *y);
-void dscalar_add_zvec(int n, dcomplex *z, double x, dcomplex *y);
+void zvec_add_zvec_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_add_zvec_dvec(int n, dcomplex *z, dcomplex *x, double *y);
+void zvec_add_dvec_zvec(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_add_zvec_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
+void zvec_add_zvec_dscalar(int n, dcomplex *z, dcomplex *x, double y);
+void zvec_add_dvec_zscalar(int n, dcomplex *z, double *x, dcomplex y);
+void zvec_add_zscalar_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
+void zvec_add_zscalar_dvec(int n, dcomplex *z, dcomplex x, double *y);
+void zvec_add_dscalar_zvec(int n, dcomplex *z, double x, dcomplex *y);
 // z=x-y
-void zvec_sub_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
-void zvec_sub_dvec(int n, dcomplex *z, dcomplex *x, double *y);
-void dvec_sub_zvec(int n, dcomplex *z, double *x, dcomplex *y);
-void zvec_sub_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
-void zvec_sub_dscalar(int n, dcomplex *z, dcomplex *x, double y);
-void dvec_sub_zscalar(int n, dcomplex *z, double *x, dcomplex y);
-void zscalar_sub_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
-void zscalar_sub_dvec(int n, dcomplex *z, dcomplex x, double *y);
-void dscalar_sub_zvec(int n, dcomplex *z, double x, dcomplex *y);
+void zvec_sub_zvec_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_sub_zvec_dvec(int n, dcomplex *z, dcomplex *x, double *y);
+void zvec_sub_dvec_zvec(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_sub_zvec_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
+void zvec_sub_zvec_dscalar(int n, dcomplex *z, dcomplex *x, double y);
+void zvec_sub_dvec_zscalar(int n, dcomplex *z, double *x, dcomplex y);
+void zvec_sub_zscalar_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
+void zvec_sub_zscalar_dvec(int n, dcomplex *z, dcomplex x, double *y);
+void zvec_sub_dscalar_zvec(int n, dcomplex *z, double x, dcomplex *y);
 // z=x*y
-void zvec_mul_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
-void zvec_mul_dvec(int n, dcomplex *z, dcomplex *x, double *y);
-void dvec_mul_zvec(int n, dcomplex *z, double *x, dcomplex *y);
-void zvec_mul_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
-void zvec_mul_dscalar(int n, dcomplex *z, dcomplex *x, double y);
-void dvec_mul_zscalar(int n, dcomplex *z, double *x, dcomplex y);
-void zscalar_mul_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
-void zscalar_mul_dvec(int n, dcomplex *z, dcomplex x, double *y);
-void dscalar_mul_zvec(int n, dcomplex *z, double x, dcomplex *y);
+void zvec_mul_zvec_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_mul_zvec_dvec(int n, dcomplex *z, dcomplex *x, double *y);
+void zvec_mul_dvec_zvec(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_mul_zvec_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
+void zvec_mul_zvec_dscalar(int n, dcomplex *z, dcomplex *x, double y);
+void zvec_mul_dvec_zscalar(int n, dcomplex *z, double *x, dcomplex y);
+void zvec_mul_zscalar_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
+void zvec_mul_zscalar_dvec(int n, dcomplex *z, dcomplex x, double *y);
+void zvec_mul_dscalar_zvec(int n, dcomplex *z, double x, dcomplex *y);
 // z=x/y
-void zvec_div_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
-void zvec_div_dvec(int n, dcomplex *z, dcomplex *x, double *y);
-void dvec_div_zvec(int n, dcomplex *z, double *x, dcomplex *y);
-void zvec_div_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
-void zvec_div_dscalar(int n, dcomplex *z, dcomplex *x, double y);
-void dvec_div_zscalar(int n, dcomplex *z, double *x, dcomplex y);
-void zscalar_div_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
-void zscalar_div_dvec(int n, dcomplex *z, dcomplex x, double *y);
-void dscalar_div_zvec(int n, dcomplex *z, double x, dcomplex *y);
+void zvec_div_zvec_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_div_zvec_dvec(int n, dcomplex *z, dcomplex *x, double *y);
+void zvec_div_dvec_zvec(int n, dcomplex *z, double *x, dcomplex *y);
+void zvec_div_zvec_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
+void zvec_div_zvec_dscalar(int n, dcomplex *z, dcomplex *x, double y);
+void zvec_div_dvec_zscalar(int n, dcomplex *z, double *x, dcomplex y);
+void zvec_div_zscalar_zvec(int n, dcomplex *z, dcomplex x, dcomplex *y);
+void zvec_div_zscalar_dvec(int n, dcomplex *z, dcomplex x, double *y);
+void zvec_div_dscalar_zvec(int n, dcomplex *z, double x, dcomplex *y);
+// z=x^y
+void zvec_pow_zvec_zvec(int n, dcomplex *z, dcomplex *x, dcomplex *y);
+void zvec_pow_zvec_dvec(int n, dcomplex *z, dcomplex *x, double *y);
+void zvec_pow_zvec_zscalar(int n, dcomplex *z, dcomplex *x, dcomplex y);
+void zvec_pow_zvec_dscalar(int n, dcomplex *z, dcomplex *x, double y);
+void zvec_pow_zvec_iscalar(int n, dcomplex *z, dcomplex *x, int y);
+// z=abs(x-y)
+void dvec_abs_sub_zvec_zvec(int n, double *z, dcomplex *x, dcomplex *y);
+void dvec_abs_sub_zvec_zscalar(int n, double *z, dcomplex *x, dcomplex y);
+// z=sum(abs(x-y))
+double dsum_abs_sub_zvec_zvec(int n, dcomplex *x, dcomplex *y);
+// z=max(|x-y|)
+double dmax_abs_sub_zvec_zvec(int n, dcomplex *x, dcomplex *y);
 // others
 dcomplex zvec_dot(int n, dcomplex *x, dcomplex *y);                  // z=x'*y
 double zvec_dcos_abs(int n, dcomplex *x, dcomplex *y);               // z=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
 double zvec_angle(int n, dcomplex *x, dcomplex *y);                  // z=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
 double zvec_angle_deg(int n, dcomplex *x, dcomplex *y);              // z=(180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-double zvec_dist_norm1(int n, dcomplex *x, dcomplex *y);             // z=sum(abs(x-y))
-double zvec_dist_norm_max(int n, dcomplex *x, dcomplex *y);          // z=max(|x-y|)
-void zvec_abs_sub(int n, double *z, dcomplex *x, dcomplex *y);       // z=abs(x-y)
-void zvec_abs_sub_scalar(int n, double *z, dcomplex *x, dcomplex y); // z=abs(x-y)
 
 /*
  * y=y+f(x)

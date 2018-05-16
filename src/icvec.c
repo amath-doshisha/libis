@@ -305,15 +305,15 @@ void icvec_set_rvec_rvec(int n, cmulti **y0, cmulti **y1, rmulti **x0_r, rmulti 
 /**
  @brief 区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0
 */
-void icvec_center_radius(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **x1)
+void icvec_mid_rad_cvec(int n, cmulti **xc, cmulti **xr, cmulti **x0, cmulti **x1)
 {
   mpfr_rnd_t mode;
   mode=get_round_mode();
   set_round_mode(MPFR_RNDU);  // up
-  cvec_sub_cvec(n,xc,x1,x0);    // xc=x1-x0
-  cvec_mul_dscalar(n,xc,xc,0.5); // xc=(x1-x0)/2
-  cvec_add_cvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
-  cvec_sub_cvec(n,xr,xc,x0);    // xr=xc-x0
+  cvec_sub_cvec_cvec(n,xc,x1,x0);    // xc=x1-x0
+  cvec_mul_cvec_dscalar(n,xc,xc,0.5); // xc=(x1-x0)/2
+  cvec_add_cvec_cvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
+  cvec_sub_cvec_cvec(n,xr,xc,x0);    // xr=xc-x0
   set_round_mode(mode);       // back
 }
 
@@ -346,9 +346,9 @@ void icvec_neg_cvec(int n, cmulti **y0, cmulti **y1, cmulti **x0, cmulti **x1)
 }
 
 /**
- @brief 符号の正負 [y0,y1]=[-abs(x),abs(x)]
+ @brief 符号の正負 [y0,y1]=[-absc(x),absc(x)]
 */
-void icvec_pm(int n, cmulti **y0, cmulti **y1, cmulti **x)
+void icvec_pm_cvec(int n, cmulti **y0, cmulti **y1, cmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ icpm(y0[i],y1[i],x[i]); }
@@ -357,7 +357,7 @@ void icvec_pm(int n, cmulti **y0, cmulti **y1, cmulti **x)
 /**
  @brief 区間の拡張 [z0,z1]=[x0,x1]+[-y,y]
 */
-void icvec_add_pm(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y)
+void icvec_add_pm_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ icadd_pm_cc(z0[i],z1[i],x0[i],x1[i],y[i]); }
@@ -366,7 +366,7 @@ void icvec_add_pm(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmu
 /**
  @brief 区間の中心 [m-r,m+r]=[x0,x1]
  */
-void icvec_mid(int n, cmulti **mid, cmulti **x0, cmulti **x1)
+void icvec_mid_cvec(int n, cmulti **mid, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icmid(mid[i],x0[i],x1[i]); }
@@ -375,7 +375,7 @@ void icvec_mid(int n, cmulti **mid, cmulti **x0, cmulti **x1)
 /**
  @brief 区間の半径 [m-r,m+r]=[x0,x1]
  */
-void icvec_rad(int n, cmulti **rad, cmulti **x0, cmulti **x1)
+void icvec_rad_cvec(int n, cmulti **rad, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icrad(rad[i],x0[i],x1[i]); }
@@ -384,7 +384,7 @@ void icvec_rad(int n, cmulti **rad, cmulti **x0, cmulti **x1)
 /**
  @brief 区間の中心と半径 [m-r,m+r]=[x0,x1]
  */
-void icvec_mr(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1)
+void icvec_mr_cvec(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ icmr(mid[i],rad[i],x0[i],x1[i]); }
@@ -395,7 +395,7 @@ void icvec_mr(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1)
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_add_cvec_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -404,7 +404,7 @@ void icvec_add_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
+void icvec_add_cvec_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -413,7 +413,7 @@ void icvec_add_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, r
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void irvec_add_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_add_rvec_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_rc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -422,7 +422,7 @@ void irvec_add_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_add_cvec_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -431,7 +431,7 @@ void icvec_add_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void izvec_add_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
+void icvec_add_zvec_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_zc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -440,7 +440,7 @@ void izvec_add_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
+void icvec_add_cvec_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -449,7 +449,7 @@ void icvec_add_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void idvec_add_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
+void icvec_add_dvec_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_dc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -458,7 +458,7 @@ void idvec_add_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmu
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void irvec_add_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_add_rvec_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_rz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -467,7 +467,7 @@ void irvec_add_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void izvec_add_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
+void icvec_add_zvec_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_zr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -476,7 +476,7 @@ void izvec_add_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_add_cvec_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -485,7 +485,7 @@ void icvec_add_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
+void icvec_add_cvec_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -494,7 +494,7 @@ void icvec_add_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void irvec_add_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_add_rvec_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_rc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -503,7 +503,7 @@ void irvec_add_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_add_cvec_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -512,7 +512,7 @@ void icvec_add_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void izvec_add_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
+void icvec_add_zvec_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_zc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -521,7 +521,7 @@ void izvec_add_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icvec_add_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
+void icvec_add_cvec_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -530,7 +530,7 @@ void icvec_add_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void idvec_add_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
+void icvec_add_dvec_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_dc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -539,7 +539,7 @@ void idvec_add_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void irvec_add_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_add_rvec_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_rz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -548,7 +548,7 @@ void irvec_add_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void izvec_add_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
+void icvec_add_zvec_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_zr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -557,7 +557,7 @@ void izvec_add_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icscalar_add_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_add_cscalar_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -566,7 +566,7 @@ void icscalar_add_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icscalar_add_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
+void icvec_add_cscalar_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -575,7 +575,7 @@ void icscalar_add_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irscalar_add_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_add_rscalar_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_rc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -584,7 +584,7 @@ void irscalar_add_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icscalar_add_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_add_cscalar_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -593,7 +593,7 @@ void icscalar_add_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void izscalar_add_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
+void icvec_add_zscalar_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_zc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -602,7 +602,7 @@ void izscalar_add_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void icscalar_add_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
+void icvec_add_cscalar_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_cd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -611,7 +611,7 @@ void icscalar_add_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void idscalar_add_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
+void icvec_add_dscalar_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_dc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -620,7 +620,7 @@ void idscalar_add_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cm
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void irscalar_add_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_add_rscalar_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_rz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -629,7 +629,7 @@ void irscalar_add_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]+[y0,y1]
  */
-void izscalar_add_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
+void icvec_add_zscalar_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icadd_zr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -640,7 +640,7 @@ void izscalar_add_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_sub_cvec_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -649,7 +649,7 @@ void icvec_sub_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
+void icvec_sub_cvec_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -658,7 +658,7 @@ void icvec_sub_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, r
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irvec_sub_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_sub_rvec_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_rc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -667,7 +667,7 @@ void irvec_sub_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_sub_cvec_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -676,7 +676,7 @@ void icvec_sub_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void izvec_sub_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
+void icvec_sub_zvec_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_zc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -685,7 +685,7 @@ void izvec_sub_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
+void icvec_sub_cvec_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -694,7 +694,7 @@ void icvec_sub_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void idvec_sub_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
+void icvec_sub_dvec_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_dc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -703,7 +703,7 @@ void idvec_sub_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmu
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irvec_sub_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_sub_rvec_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_rz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -712,7 +712,7 @@ void irvec_sub_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void izvec_sub_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
+void icvec_sub_zvec_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_zr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -721,7 +721,7 @@ void izvec_sub_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_sub_cvec_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -730,7 +730,7 @@ void icvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
+void icvec_sub_cvec_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -739,7 +739,7 @@ void icvec_sub_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_sub_rvec_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_rc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -748,7 +748,7 @@ void irvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_sub_cvec_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -757,7 +757,7 @@ void icvec_sub_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void izvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
+void icvec_sub_zvec_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_zc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -766,7 +766,7 @@ void izvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icvec_sub_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
+void icvec_sub_cvec_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -775,7 +775,7 @@ void icvec_sub_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void idvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
+void icvec_sub_dvec_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_dc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -784,7 +784,7 @@ void idvec_sub_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irvec_sub_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_sub_rvec_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_rz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -793,7 +793,7 @@ void irvec_sub_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void izvec_sub_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
+void icvec_sub_zvec_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_zr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -802,7 +802,7 @@ void izvec_sub_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_sub_cscalar_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -811,7 +811,7 @@ void icscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icscalar_sub_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
+void icvec_sub_cscalar_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -820,7 +820,7 @@ void icscalar_sub_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_sub_rscalar_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_rc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -829,7 +829,7 @@ void irscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icscalar_sub_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_sub_cscalar_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -838,7 +838,7 @@ void icscalar_sub_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void izscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
+void icvec_sub_zscalar_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_zc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -847,7 +847,7 @@ void izscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void icscalar_sub_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
+void icvec_sub_cscalar_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_cd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -856,7 +856,7 @@ void icscalar_sub_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void idscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
+void icvec_sub_dscalar_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_dc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -865,7 +865,7 @@ void idscalar_sub_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cm
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void irscalar_sub_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_sub_rscalar_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_rz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -874,7 +874,7 @@ void irscalar_sub_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]-[y0,y1]
  */
-void izscalar_sub_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
+void icvec_sub_zscalar_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icsub_zr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -885,7 +885,7 @@ void izscalar_sub_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_mul_cvec_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -894,7 +894,7 @@ void icvec_mul_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
+void icvec_mul_cvec_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -903,7 +903,7 @@ void icvec_mul_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, r
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_mul_rvec_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_rc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -912,7 +912,7 @@ void irvec_mul_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_mul_cvec_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -921,7 +921,7 @@ void icvec_mul_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void izvec_mul_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
+void icvec_mul_zvec_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_zc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -930,7 +930,7 @@ void izvec_mul_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
+void icvec_mul_cvec_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -939,7 +939,7 @@ void icvec_mul_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void idvec_mul_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
+void icvec_mul_dvec_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_dc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -948,7 +948,7 @@ void idvec_mul_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmu
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_mul_rvec_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_rz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -957,7 +957,7 @@ void irvec_mul_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void izvec_mul_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
+void icvec_mul_zvec_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_zr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -966,7 +966,7 @@ void izvec_mul_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_mul_cvec_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -975,7 +975,7 @@ void icvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
+void icvec_mul_cvec_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -984,7 +984,7 @@ void icvec_mul_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_mul_rvec_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_rc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -993,7 +993,7 @@ void irvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_mul_cvec_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1002,7 +1002,7 @@ void icvec_mul_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void izvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
+void icvec_mul_zvec_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_zc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1011,7 +1011,7 @@ void izvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icvec_mul_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
+void icvec_mul_cvec_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1020,7 +1020,7 @@ void icvec_mul_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void idvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
+void icvec_mul_dvec_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_dc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1029,7 +1029,7 @@ void idvec_mul_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_mul_rvec_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_rz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1038,7 +1038,7 @@ void irvec_mul_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void izvec_mul_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
+void icvec_mul_zvec_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_zr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1047,7 +1047,7 @@ void izvec_mul_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_mul_cscalar_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1056,7 +1056,7 @@ void icscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icscalar_mul_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
+void icvec_mul_cscalar_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1065,7 +1065,7 @@ void icscalar_mul_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_mul_rscalar_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_rc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1074,7 +1074,7 @@ void irscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icscalar_mul_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_mul_cscalar_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1083,7 +1083,7 @@ void icscalar_mul_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void izscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
+void icvec_mul_zscalar_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_zc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1092,7 +1092,7 @@ void izscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void icscalar_mul_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
+void icvec_mul_cscalar_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_cd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1101,7 +1101,7 @@ void icscalar_mul_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void idscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
+void icvec_mul_dscalar_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_dc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1110,7 +1110,7 @@ void idscalar_mul_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cm
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irscalar_mul_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_mul_rscalar_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_rz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1119,7 +1119,7 @@ void irscalar_mul_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void izscalar_mul_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
+void icvec_mul_zscalar_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icmul_zr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1131,7 +1131,7 @@ void izscalar_mul_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_div_cvec_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1140,7 +1140,7 @@ void icvec_div_cvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
+void icvec_div_cvec_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1149,7 +1149,7 @@ void icvec_div_rvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, r
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
+void icvec_div_rvec_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_rc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1158,7 +1158,7 @@ void irvec_div_cvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, c
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_div_cvec_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1167,7 +1167,7 @@ void icvec_div_zvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void izvec_div_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
+void icvec_div_zvec_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_zc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1176,7 +1176,7 @@ void izvec_div_cvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
+void icvec_div_cvec_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1185,7 +1185,7 @@ void icvec_div_dvec(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void idvec_div_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
+void icvec_div_dvec_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_dc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1194,7 +1194,7 @@ void idvec_div_cvec(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmu
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
+void icvec_div_rvec_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_rz(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1203,7 +1203,7 @@ void irvec_div_zvec(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void izvec_div_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
+void icvec_div_zvec_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_zr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -1212,7 +1212,7 @@ void izvec_div_rvec(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1,
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_div_cvec_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1221,7 +1221,7 @@ void icvec_div_cscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
+void icvec_div_cvec_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1230,7 +1230,7 @@ void icvec_div_rscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
+void icvec_div_rvec_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_rc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1239,7 +1239,7 @@ void irvec_div_cscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_div_cvec_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1248,7 +1248,7 @@ void icvec_div_zscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void izvec_div_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
+void icvec_div_zvec_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_zc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1257,7 +1257,7 @@ void izvec_div_cscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icvec_div_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
+void icvec_div_cvec_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1266,7 +1266,7 @@ void icvec_div_dscalar(int n, cmulti **z0, cmulti **z1, cmulti **x0, cmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void idvec_div_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
+void icvec_div_dvec_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, cmulti *y0, cmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_dc(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1275,7 +1275,7 @@ void idvec_div_cscalar(int n, cmulti **z0, cmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
+void icvec_div_rvec_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1, dcomplex y0, dcomplex y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_rz(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1284,7 +1284,7 @@ void irvec_div_zscalar(int n, cmulti **z0, cmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void izvec_div_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
+void icvec_div_zvec_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_zr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -1293,7 +1293,7 @@ void izvec_div_rscalar(int n, cmulti **z0, cmulti **z1, dcomplex *x0, dcomplex *
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icscalar_div_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_div_cscalar_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1302,7 +1302,7 @@ void icscalar_div_cvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icscalar_div_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
+void icvec_div_cscalar_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1311,7 +1311,7 @@ void icscalar_div_rvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irscalar_div_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
+void icvec_div_rscalar_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_rc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1320,7 +1320,7 @@ void irscalar_div_cvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icscalar_div_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_div_cscalar_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1329,7 +1329,7 @@ void icscalar_div_zvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void izscalar_div_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
+void icvec_div_zscalar_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_zc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1338,7 +1338,7 @@ void izscalar_div_cvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void icscalar_div_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
+void icvec_div_cscalar_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_cd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1347,7 +1347,7 @@ void icscalar_div_dvec(int n, cmulti **z0, cmulti **z1, cmulti *x0, cmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void idscalar_div_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
+void icvec_div_dscalar_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_dc(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1356,7 +1356,7 @@ void idscalar_div_cvec(int n, cmulti **z0, cmulti **z1, double x0, double x1, cm
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irscalar_div_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
+void icvec_div_rscalar_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, dcomplex *y0, dcomplex *y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_rz(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1365,7 +1365,7 @@ void irscalar_div_zvec(int n, cmulti **z0, cmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void izscalar_div_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
+void icvec_div_zscalar_rvec(int n, cmulti **z0, cmulti **z1, dcomplex x0, dcomplex x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ icdiv_zr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -1395,7 +1395,7 @@ void irvec_abs_cvec(int n, rmulti **y0, rmulti **y1, cmulti **x0, cmulti **x1)
 /**
  @brief 差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])
 */
-void icvec_abs_sub(int n, rmulti **z0, rmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
+void irvec_abs_sub_cvec_cvec(int n, rmulti **z0, rmulti **z1, cmulti **x0, cmulti **x1, cmulti **y0, cmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irabs_sub_cc(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }

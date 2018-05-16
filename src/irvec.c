@@ -202,15 +202,15 @@ void irvec_copy_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの区間の中心 xc=(x1+x0)/2 と半径 xr=x1-x0
 */
-void irvec_center_radius(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **x1)
+void irvec_mid_rad_rvec(int n, rmulti **xc, rmulti **xr, rmulti **x0, rmulti **x1)
 {
   mpfr_rnd_t mode;
   mode=get_round_mode();
   set_round_mode(MPFR_RNDU);  // up
-  rvec_sub_rvec(n,xc,x1,x0);    // xc=x1-x0
-  rvec_mul_dscalar(n,xc,xc,0.5); // xc=(x1-x0)/2
-  rvec_add_rvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
-  rvec_sub_rvec(n,xr,xc,x0);    // xr=xc-x0
+  rvec_sub_rvec_rvec(n,xc,x1,x0);    // xc=x1-x0
+  rvec_mul_rvec_dscalar(n,xc,xc,0.5); // xc=(x1-x0)/2
+  rvec_add_rvec_rvec(n,xc,xc,x0);    // xc=(x1-x0)/2+x0
+  rvec_sub_rvec_rvec(n,xr,xc,x0);    // xr=xc-x0
   set_round_mode(mode);       // back
 }
 
@@ -226,7 +226,7 @@ void irvec_neg_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの符号の正負 [y0,y1]=[-abs(x),abs(x)]
 */
-void irvec_pm(int n, rmulti **y0, rmulti **y1, rmulti **x)
+void irvec_pm_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ irpm(y0[i],y1[i],x[i]); }
@@ -235,7 +235,7 @@ void irvec_pm(int n, rmulti **y0, rmulti **y1, rmulti **x)
 /**
  @brief irmulti型のベクトルの区間の拡張 [z0,z1]=[x0,x1]+[-y,y]
 */
-void irvec_add_pm(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y)
+void irvec_add_pm_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y)
 {
   int i;
   for(i=0; i<n; i++){ iradd_pm_rr(z0[i],z1[i],x0[i],x1[i],y[i]); }
@@ -262,7 +262,7 @@ void irvec_get_cvec(int n, cmulti **y, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの区間の中心 [m-r,m+r]=[x0,x1]
  */
-void irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1)
+void irvec_mid_rvec(int n, rmulti **mid, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irmid(mid[i],x0[i],x1[i]); }
@@ -271,7 +271,7 @@ void irvec_mid(int n, rmulti **mid, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの区間の半径 [m-r,m+r]=[x0,x1]
  */
-void irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1)
+void irvec_rad_rvec(int n, rmulti **rad, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irrad(rad[i],x0[i],x1[i]); }
@@ -280,7 +280,7 @@ void irvec_rad(int n, rmulti **rad, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの区間の中心と半径 [m-r,m+r]=[x0,x1]
  */
-void irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1)
+void irvec_mr_rvec(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irmr(mid[i],rad[i],x0[i],x1[i]); }
@@ -291,7 +291,7 @@ void irvec_mr(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1)
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irvec_add_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
+void irvec_add_rvec_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_rr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -300,7 +300,7 @@ void irvec_add_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, r
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irvec_add_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
+void irvec_add_rvec_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_rd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -309,7 +309,7 @@ void irvec_add_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void idvec_add_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
+void irvec_add_dvec_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
 {
     int i;
     for(i=0; i<n; i++){ iradd_dr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -318,7 +318,7 @@ void idvec_add_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmu
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irvec_add_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
+void irvec_add_rvec_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_rr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -327,7 +327,7 @@ void irvec_add_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irvec_add_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
+void irvec_add_rvec_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_rd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -336,7 +336,7 @@ void irvec_add_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void idvec_add_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
+void irvec_add_dvec_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_dr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -345,7 +345,7 @@ void idvec_add_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irscalar_add_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
+void irvec_add_rscalar_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_rr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -354,7 +354,7 @@ void irscalar_add_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void irscalar_add_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
+void irvec_add_rscalar_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_rd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -363,7 +363,7 @@ void irscalar_add_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,z1]+[y0,y1]
  */
-void idscalar_add_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
+void irvec_add_dscalar_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ iradd_dr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -374,7 +374,7 @@ void idscalar_add_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rm
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void irvec_sub_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
+void irvec_sub_rvec_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_rr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -383,7 +383,7 @@ void irvec_sub_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, r
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void irvec_sub_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
+void irvec_sub_rvec_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_rd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -392,7 +392,7 @@ void irvec_sub_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void idvec_sub_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
+void irvec_sub_dvec_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_dr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -401,7 +401,7 @@ void idvec_sub_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmu
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void irvec_sub_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
+void irvec_sub_rvec_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_rr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -410,7 +410,7 @@ void irvec_sub_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void irvec_sub_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
+void irvec_sub_rvec_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_rd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -419,7 +419,7 @@ void irvec_sub_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void idvec_sub_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
+void irvec_sub_dvec_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_dr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -428,7 +428,7 @@ void idvec_sub_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void irscalar_sub_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
+void irvec_sub_rscalar_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_rr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -437,7 +437,7 @@ void irscalar_sub_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void irscalar_sub_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
+void irvec_sub_rscalar_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_rd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -446,7 +446,7 @@ void irscalar_sub_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,z1]-[y0,y1]
  */
-void idscalar_sub_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
+void irvec_sub_dscalar_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irsub_dr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -457,7 +457,7 @@ void idscalar_sub_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rm
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
+void irvec_mul_rvec_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_rr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -466,7 +466,7 @@ void irvec_mul_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, r
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
+void irvec_mul_rvec_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_rd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -475,7 +475,7 @@ void irvec_mul_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void idvec_mul_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
+void irvec_mul_dvec_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_dr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -484,7 +484,7 @@ void idvec_mul_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmu
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
+void irvec_mul_rvec_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_rr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -493,7 +493,7 @@ void irvec_mul_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irvec_mul_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
+void irvec_mul_rvec_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_rd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -502,7 +502,7 @@ void irvec_mul_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void idvec_mul_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
+void irvec_mul_dvec_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_dr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -511,7 +511,7 @@ void idvec_mul_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irscalar_mul_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
+void irvec_mul_rscalar_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_rr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -520,7 +520,7 @@ void irscalar_mul_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void irscalar_mul_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
+void irvec_mul_rscalar_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_rd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -529,7 +529,7 @@ void irscalar_mul_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]*[y0,y1]
  */
-void idscalar_mul_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
+void irvec_mul_dscalar_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irmul_dr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -540,7 +540,7 @@ void idscalar_mul_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rm
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
+void irvec_div_rvec_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_rr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -549,7 +549,7 @@ void irvec_div_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, r
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
+void irvec_div_rvec_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_rd(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -558,7 +558,7 @@ void irvec_div_dvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, d
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void idvec_div_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
+void irvec_div_dvec_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_dr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }
@@ -567,7 +567,7 @@ void idvec_div_rvec(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmu
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
+void irvec_div_rvec_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_rr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -576,7 +576,7 @@ void irvec_div_rscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irvec_div_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
+void irvec_div_rvec_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, double y0, double y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_rd(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -585,7 +585,7 @@ void irvec_div_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void idvec_div_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
+void irvec_div_dvec_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, rmulti *y0, rmulti *y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_dr(z0[i],z1[i],x0[i],x1[i],y0,y1); }
@@ -594,7 +594,7 @@ void idvec_div_rscalar(int n, rmulti **z0, rmulti **z1, double *x0, double *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irscalar_div_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
+void irvec_div_rscalar_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_rr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -603,7 +603,7 @@ void irscalar_div_rvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void irscalar_div_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
+void irvec_div_rscalar_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, double *y0, double *y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_rd(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -612,7 +612,7 @@ void irscalar_div_dvec(int n, rmulti **z0, rmulti **z1, rmulti *x0, rmulti *x1, 
 /**
  @brief [z0,z1]=[x0,x1]/[y0,y1]
  */
-void idscalar_div_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
+void irvec_div_dscalar_rvec(int n, rmulti **z0, rmulti **z1, double x0, double x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irdiv_dr(z0[i],z1[i],x0,x1,y0[i],y1[i]); }
@@ -643,7 +643,7 @@ void irvec_abs_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの差の絶対値 [z0,z1]=abs([x0,x1]-[y0,y1])
 */
-void irvec_abs_sub(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
+void irvec_abs_sub_rvec_rvec(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rmulti **y0, rmulti **y1)
 {
   int i;
   for(i=0; i<n; i++){ irabs_sub_rr(z0[i],z1[i],x0[i],x1[i],y0[i],y1[i]); }

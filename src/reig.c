@@ -22,7 +22,7 @@
  */
 void reig_residual(int n, rmulti **F, rmulti **A, int LDA, rmulti **x, rmulti *lambda)
 {
-  rvec_mul_rscalar(n,F,x,lambda);      // F=x*lambda
+  rvec_mul_rvec_rscalar(n,F,x,lambda);      // F=x*lambda
   rvec_neg_rvec(n,F,F);               // F=-x*lambda
   rvec_add_lintr(n,n,F,A,LDA,x); // F=A*x-lambda*x
 }
@@ -101,7 +101,7 @@ void reig_sort_value_guide(int n, int k, rmulti **lambda, rmulti **X, int LDX, r
   value=rallocate_prec(prec);
   a=rvec_allocate_prec(k,prec);
   for(j=0; j<k; j++){
-    rvec_abs_sub_r(k,a,lambda,lambda0[j]);
+    rvec_abs_sub_rvec_rscalar(k,a,lambda,lambda0[j]);
     rmin_abs_rvec_index(value,k,a,&i);
     if(i!=j){
       if(X!=NULL){ rvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX)); }

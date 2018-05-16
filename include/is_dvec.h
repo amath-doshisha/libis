@@ -87,34 +87,38 @@ double dmin_abs_dvec_index(int n, double *x, int *I);            // y=min(abs(x)
  * z=f(x,y)
  */
 // z=x+y
-void dvec_add_dvec(int n, double *z, double *x, double *y);
-void dvec_add_dscalar(int n, double *z, double *x, double y);
-void dscalar_add_dvec(int n, double *z, double x, double *y);
+void dvec_add_dvec_dvec(int n, double *z, double *x, double *y);
+void dvec_add_dvec_dscalar(int n, double *z, double *x, double y);
+void dvec_add_dscalar_dvec(int n, double *z, double x, double *y);
 // z=x-y
-void dvec_sub_dvec(int n, double *z, double *x, double *y);
-void dvec_sub_dscalar(int n, double *z, double *x, double y);
-void dscalar_sub_dvec(int n, double *z, double x, double *y);
+void dvec_sub_dvec_dvec(int n, double *z, double *x, double *y);
+void dvec_sub_dvec_dscalar(int n, double *z, double *x, double y);
+void dvec_sub_dscalar_dvec(int n, double *z, double x, double *y);
 // z=x*y
-void dvec_mul_dvec(int n, double *z, double *x, double *y);
-void dvec_mul_dscalar(int n, double *z, double *x, double y);
-void dscalar_mul_dvec(int n, double *z, double x, double *y);
+void dvec_mul_dvec_dvec(int n, double *z, double *x, double *y);
+void dvec_mul_dvec_dscalar(int n, double *z, double *x, double y);
+void dvec_mul_dscalar_dvec(int n, double *z, double x, double *y);
 // z=x/y
-void dvec_div_dvec(int n, double *z, double *x, double *y);
-void dvec_div_dscalar(int n, double *z, double *x, double y);
-void dscalar_div_dvec(int n, double *z, double x, double *y);
+void dvec_div_dvec_dvec(int n, double *z, double *x, double *y);
+void dvec_div_dvec_dscalar(int n, double *z, double *x, double y);
+void dvec_div_dscalar_dvec(int n, double *z, double x, double *y);
 // z=x^y
 double pow_i(double x, int n);
-void dvec_pow_iscalar(int n, double *z, double *x, long y);
-void dvec_pow_dscalar(int n, double *z, double *x, double y);
+void dvec_pow_dvec_dvec(int n, double *z, double *x, double *y);
+void dvec_pow_dvec_dscalar(int n, double *z, double *x, double y);
+void dvec_pow_dvec_iscalar(int n, double *z, double *x, int y);
+// z=abs(x-y)
+void dvec_abs_sub_dvec_dvec(int n, double *z, double *x, double *y);
+void dvec_abs_sub_dvec_dscalar(int n, double *z, double *x, double y);
+// z=sum(abs(x-y))
+double dsum_abs_sub_dvec_dvec(int n, double *x, double *y);
+// z=max(abs(x-y))
+double dmax_abs_sub_dvec_dvec(int n, double *x, double *y);
 // others
-void dvec_abs_sub(int n, double *z, double *x, double *y);       // z=abs(x-y)
-void dvec_abs_sub_scalar(int n, double *z, double *x, double y); // z=abs(x-y)
 double dvec_dot(int n, double *x, double *y);                    // z=x'*y
 double dvec_dcos_abs(int n, double *x, double *y);               // z=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
 double dvec_angle(int n, double *x, double *y);                  // z=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
 double dvec_angle_deg(int n, double *x, double *y);              // z=(180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-double dvec_dist_norm1(int n, double *x, double *y);             // z=sum(abs(x-y))
-double dvec_dist_norm_max(int n, double *x, double *y);          // z=max(abs(x-y))
 
 /*
  * y=y+f(x)

@@ -37,7 +37,7 @@
 */
 void iceig_residual(int n, cmulti **F0, cmulti **F1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **X0, cmulti **X1, cmulti *lambda0, cmulti *lambda1)
 {
-  icvec_mul_cscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=lambda*X
+  icvec_mul_cvec_cscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=lambda*X
   icvec_neg_cvec(n,F0,F1,F0,F1);                         // F=-lambda*X
   icvec_add_lintr(n,n,F0,F1,A0,LDA0,A1,LDA1,X0,X1); // F=A*X-lambda*X
 }
@@ -129,9 +129,9 @@ int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmu
   // e=abs(R*F)
   cvec_lintr(m,m,e,R,m,F);
   cvec_absc_cvec(m,e,e);
-  cvec_mul_dscalar(m,e,e,alpha);
+  cvec_mul_cvec_dscalar(m,e,e,alpha);
   // [X0,X1]=[-e,e]
-  icvec_pm(m,X0,X1,e);
+  icvec_pm_cvec(m,X0,X1,e);
   // [M0,M1]=I-R*[J0,J1]
   cmat_set_eye(m,m,M0,m); cmat_set_eye(m,m,M1,m);
   icmat_sub_prod(m,m,m,M0,m,M1,m,R,m,R,m,J0,m,J1,m);

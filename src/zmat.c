@@ -358,7 +358,7 @@ void zmat_sub_norm_max(double *x, int m, int n, dcomplex *A, int LDA, dcomplex *
 {
   int j;
   for(j=0; j<n; j++){
-    x[j]=zvec_dist_norm_max(m,&COL(A,j,LDA),&COL(B,j,LDB));
+    x[j]=dmax_abs_sub_zvec_zvec(m,&COL(A,j,LDA),&COL(B,j,LDB));
   }
 }
 
@@ -370,7 +370,7 @@ void zmat_dist_norm_max(double *y, int m, int n, dcomplex *A, int LDA, dcomplex 
 {
   int j;
   for(j=0; j<n; j++){
-    y[j]=zvec_dist_norm_max(m,&COL(A,j,LDA),x);
+    y[j]=dmax_abs_sub_zvec_zvec(m,&COL(A,j,LDA),x);
   }
 }
 

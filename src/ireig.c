@@ -33,7 +33,7 @@
 */
 void ireig_residual(int n, rmulti **F0, rmulti **F1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **X0, rmulti **X1, rmulti *lambda0, rmulti *lambda1)
 {
-  irvec_mul_rscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=x*lambda
+  irvec_mul_rvec_rscalar(n,F0,F1,X0,X1,lambda0,lambda1); // F=x*lambda
   irvec_neg_rvec(n,F0,F1,F0,F1);                         // F=-x*lambda
   irvec_add_lintr(n,n,F0,F1,A0,LDA0,A1,LDA1,X0,X1); // F=A*X-lambda*X
 }
@@ -125,9 +125,9 @@ int ireig_1pair_krawczyk(int n, rmulti **e, rmulti **A, int LDA, rmulti **x, rmu
   // e=abs(R*F)
   rvec_lintr(m,m,e,R,m,F);
   rvec_abs_rvec(m,e,e);
-  rvec_mul_dscalar(m,e,e,alpha);
+  rvec_mul_rvec_dscalar(m,e,e,alpha);
   // [X0,X1]=[-e,e]
-  irvec_pm(m,X0,X1,e);
+  irvec_pm_rvec(m,X0,X1,e);
   // [M0,M1]=I-R*[J0,J1]
   rmat_set_eye(m,m,M0,m); rmat_set_eye(m,m,M1,m);
   irmat_sub_prod(m,m,m,M0,m,M1,m,R,m,R,m,J0,m,J1,m);

@@ -12,7 +12,7 @@
 // F=A*X-lambda*X
 void deig_residual(int n, double *F, double *A, int LDA, double *X, double lambda)
 {
-  dvec_mul_dscalar(n,F,X,-lambda); //  F=-lambda*X
+  dvec_mul_dvec_dscalar(n,F,X,-lambda); //  F=-lambda*X
   dvec_add_lintr(n,n,F,A,LDA,X);   // F=A*X-lambda*X
 }
 
@@ -81,7 +81,7 @@ void deig_sort_value_guide(int n, int k, double *lambda, double *X, int LDX, dou
   double value,*a;
   a=dvec_allocate(k);
   for(j=0; j<k; j++){
-    dvec_abs_sub_scalar(k,a,lambda,lambda0[j]);
+    dvec_abs_sub_dvec_dscalar(k,a,lambda,lambda0[j]);
     value=dmin_abs_dvec_index(k,a,&i);
     if(i!=j){
       dvec_swap(n,&COL(X,i,LDX),&COL(X,j,LDX));

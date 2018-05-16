@@ -36,7 +36,7 @@ int main()
   zsolve_residual(n,1,r,n,A0,LDA,x,n,b,n);
   zvec_print(n,r,"r=b-A0*x=",'e',2);
 
-  zvec_sub_zvec(n,x,x,x0);
+  zvec_sub_zvec_zvec(n,x,x,x0);
   zvec_print(n,x,"x-x0=",'e',2);
   printf("||x-x0||=%.2e\n",dnorm_max_zvec(n,x));
 

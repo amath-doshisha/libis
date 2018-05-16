@@ -99,7 +99,7 @@ void riep_dhToda_TN(int m, int M, rmulti **A, int LDA, rmulti **Q, int LDQ, rmul
 
   // generate sigma[n]
   rinv_d(a,M);
-  rvec_pow_rscalar(m,sigma,lambda,a);
+  rvec_pow_rvec_rscalar(m,sigma,lambda,a);
   // generate f[n]
   for(n=0; n<f_size; n++){
     rset_d(f[n],0);
@@ -251,7 +251,7 @@ void riep_EXTdhToda_TN(int m, int N, int M, rmulti **A, int LDA, rmulti **Q, int
   f=rvec_allocate_prec(f_size,prec);
   // generate sigma[n]
   rinv_d(a,M*N);
-  rvec_pow_rscalar(m,sigma,lambda,a);
+  rvec_pow_rvec_rscalar(m,sigma,lambda,a);
   // generate f[n]
   for(n=0; n<f_size; n++){
     rset_d(f[n],0);

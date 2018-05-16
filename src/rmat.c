@@ -1133,7 +1133,7 @@ void rmat_cols_max_abs_sub(rmulti **x, int m, int n, rmulti **A, int LDA, rmulti
 {
   int j;
   for(j=0; j<n; j++){
-    rvec_max_abs_sub(x[j],m,&COL(A,j,LDA),&COL(B,j,LDB));
+    rmax_abs_sub_rvec_rvec(x[j],m,&COL(A,j,LDA),&COL(B,j,LDB));
   }
 }
 
@@ -1144,7 +1144,7 @@ void rmat_cols_max_abs_sub_rvec(rmulti **y, int m, int n, rmulti **A, int LDA, r
 {
   int j;
   for(j=0; j<n; j++){
-    rvec_max_abs_sub(y[j],m,&COL(A,j,LDA),x);
+    rmax_abs_sub_rvec_rvec(y[j],m,&COL(A,j,LDA),x);
   }
 }
 

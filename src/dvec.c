@@ -352,7 +352,7 @@ void dvec_normalize_dvec(int n, double *y, double *x)
 {
   double norm=0;
   norm=dnorm2_dvec(n,x);
-  dvec_mul_dscalar(n,y,x,(1.0/norm));
+  dvec_mul_dvec_dscalar(n,y,x,(1.0/norm));
 }
 
 /**
@@ -366,7 +366,7 @@ void dvec_normalize_sgn_dvec(int n, double *y, double *x)
   a=1.0/a;
   dmax_abs_dvec_index(n,x,&k);
   if(x[k]<0) a=-a;
-  dvec_mul_dscalar(n,y,x,a);
+  dvec_mul_dvec_dscalar(n,y,x,a);
 }
 
 /**
@@ -556,7 +556,7 @@ double dmin_dvec(int n, double *x)
 /**
  @brief z=x+y
  */
-void dvec_add_dvec(int n, double *z, double *x, double *y)
+void dvec_add_dvec_dvec(int n, double *z, double *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]+y[i]; }
@@ -565,7 +565,7 @@ void dvec_add_dvec(int n, double *z, double *x, double *y)
 /**
  @brief z=x+y
  */
-void dvec_add_dscalar(int n, double *z, double *x, double y)
+void dvec_add_dvec_dscalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]+y; }
@@ -574,7 +574,7 @@ void dvec_add_dscalar(int n, double *z, double *x, double y)
 /**
  @brief z=x+y
  */
-void dscalar_add_dvec(int n, double *z, double x, double *y)
+void dvec_add_dscalar_dvec(int n, double *z, double x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x+y[i]; }
@@ -585,7 +585,7 @@ void dscalar_add_dvec(int n, double *z, double x, double *y)
 /**
  @brief z=x-y
  */
-void dvec_sub_dvec(int n, double *z, double *x, double *y)
+void dvec_sub_dvec_dvec(int n, double *z, double *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]-y[i]; }
@@ -594,7 +594,7 @@ void dvec_sub_dvec(int n, double *z, double *x, double *y)
 /**
  @brief z=x-y
  */
-void dvec_sub_dscalar(int n, double *z, double *x, double y)
+void dvec_sub_dvec_dscalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]-y; }
@@ -603,7 +603,7 @@ void dvec_sub_dscalar(int n, double *z, double *x, double y)
 /**
  @brief z=x-y
  */
-void dscalar_sub_dvec(int n, double *z, double x, double *y)
+void dvec_sub_dscalar_dvec(int n, double *z, double x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x-y[i]; }
@@ -614,7 +614,7 @@ void dscalar_sub_dvec(int n, double *z, double x, double *y)
 /**
  @brief z=x*y
  */
-void dvec_mul_dvec(int n, double *z, double *x, double *y)
+void dvec_mul_dvec_dvec(int n, double *z, double *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]*y[i]; }
@@ -623,7 +623,7 @@ void dvec_mul_dvec(int n, double *z, double *x, double *y)
 /**
  @brief z=x*y
  */
-void dvec_mul_dscalar(int n, double *z, double *x, double y)
+void dvec_mul_dvec_dscalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]*y; }
@@ -632,7 +632,7 @@ void dvec_mul_dscalar(int n, double *z, double *x, double y)
 /**
  @brief z=x*y
  */
-void dscalar_mul_dvec(int n, double *z, double x, double *y)
+void dvec_mul_dscalar_dvec(int n, double *z, double x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x*y[i]; }
@@ -643,7 +643,7 @@ void dscalar_mul_dvec(int n, double *z, double x, double *y)
 /**
  @brief z=x/y
  */
-void dvec_div_dvec(int n, double *z, double *x, double *y)
+void dvec_div_dvec_dvec(int n, double *z, double *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]/y[i]; }
@@ -652,7 +652,7 @@ void dvec_div_dvec(int n, double *z, double *x, double *y)
 /**
  @brief z=x/y
  */
-void dvec_div_dscalar(int n, double *z, double *x, double y)
+void dvec_div_dvec_dscalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x[i]/y; }
@@ -661,7 +661,7 @@ void dvec_div_dscalar(int n, double *z, double *x, double y)
 /**
  @brief z=x/y
  */
-void dscalar_div_dvec(int n, double *z, double x, double *y)
+void dvec_div_dscalar_dvec(int n, double *z, double x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=x/y[i]; }
@@ -692,7 +692,7 @@ double pow_i(double x, int n)
 /**
  @brief z=x^y
  */
-void dvec_pow_iscalar(int n, double *z, double *x, long y)
+void dvec_pow_dvec_iscalar(int n, double *z, double *x, int y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=pow_i(x[i],(int)y); }
@@ -701,7 +701,7 @@ void dvec_pow_iscalar(int n, double *z, double *x, long y)
 /**
  @brief double型のべき乗 z=x^y
  */
-void dvec_pow_dscalar(int n, double *z, double *x, double y)
+void dvec_pow_dvec_dscalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=pow(x[i],y); }
@@ -771,7 +771,7 @@ double dvec_angle_deg(int n, double *x, double *y)
 /**
  @brief z=sum(abs(x-y))
  */
-double dvec_dist_norm1(int n, double *x, double *y)
+double dsum_abs_sub_dvec_dvec(int n, double *x, double *y)
 {
   int i;
   double value;
@@ -783,7 +783,7 @@ double dvec_dist_norm1(int n, double *x, double *y)
 /**
  @brief z=max(abs(x-y))
  */
-double dvec_dist_norm_max(int n, double *x, double *y)
+double dmax_abs_sub_dvec_dvec(int n, double *x, double *y)
 {
   int i;
   double value,a;
@@ -798,7 +798,7 @@ double dvec_dist_norm_max(int n, double *x, double *y)
 /**
  @brief z=abs(x-y)
  */
-void dvec_abs_sub(int n, double *z, double *x, double *y)
+void dvec_abs_sub_dvec_dvec(int n, double *z, double *x, double *y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=fabs(x[i]-y[i]); }
@@ -807,7 +807,7 @@ void dvec_abs_sub(int n, double *z, double *x, double *y)
 /**
  @brief z=abs(x-y)
  */
-void dvec_abs_sub_scalar(int n, double *z, double *x, double y)
+void dvec_abs_sub_dvec_dscalar(int n, double *z, double *x, double y)
 {
   int i;
   for(i=0; i<n; i++){ z[i]=fabs(x[i]-y); }

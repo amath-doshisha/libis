@@ -1685,7 +1685,7 @@ void cmat_cols_max_abs_sub(rmulti **x, int m, int n, cmulti **A, int LDA, cmulti
 {
   int j;
   for(j=0; j<n; j++){
-    cvec_max_abs_sub(x[j],m,&COL(A,j,LDA),&COL(B,j,LDB));
+    rmax_abs_sub_cvec_cvec(x[j],m,&COL(A,j,LDA),&COL(B,j,LDB));
   }
 }
 
@@ -1696,7 +1696,7 @@ void cmat_cols_max_abs_sub_cvec(rmulti **y, int m, int n, cmulti **A, int LDA, c
 {
   int j;
   for(j=0; j<n; j++){
-    cvec_max_abs_sub(y[j],m,&COL(A,j,LDA),x);
+    rmax_abs_sub_cvec_cvec(y[j],m,&COL(A,j,LDA),x);
   }
 }
 
