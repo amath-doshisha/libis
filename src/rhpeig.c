@@ -76,8 +76,8 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
   // initial vector
   step=0;
   rvec_normalize_sgn_rvec(n,x,x);          // x=x/sqrt(x'*x)
-  rvec_sum_mul(C,n,z,x);              // C=z'*x
-  rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
+  rinnprod_rvec_rvec(C,n,z,x);              // C=z'*x
+  rinnprod_rvec_rvec(lambda,n,w,x);         // lambda=w'*x
   rdiv_rr(lambda,lambda,C);              // lambda=(w'*x)/C
   reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
   rmax_abs_rvec(E,n,F);                // E=max(abs(F))
@@ -94,8 +94,8 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
       rmax_abs_rvec(eta,n,F);              // eta=max(abs(F))
       rvec_sub_rvec_rvec(n,x,x,F);                  // x=x-F
       rvec_normalize_sgn_rvec(n,x,x);          // x=x/sqrt(x'*x)
-      rvec_sum_mul(C,n,z,x);              // C=z'*x
-      rvec_sum_mul(lambda,n,w,x);         // lambda=w'*x
+      rinnprod_rvec_rvec(C,n,z,x);              // C=z'*x
+      rinnprod_rvec_rvec(lambda,n,w,x);         // lambda=w'*x
       rdiv_rr(lambda,lambda,C);              // lambda=(w'*x)/C
       reig_residual(n,F,A,LDA,x,lambda);  // F=A*x-lambda*x
       rmax_abs_rvec(E,n,F);                // E=max(abs(F))

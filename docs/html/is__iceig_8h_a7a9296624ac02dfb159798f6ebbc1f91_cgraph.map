@@ -1,26 +1,26 @@
 <map id="iceig_residual" name="iceig_residual">
-<area shape="rect" id="node2" href="$icvec_8c.html#a5f245537f082b9c584ac2995c4de64f1" title="[z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="136,157,240,184"/>
-<area shape="rect" id="node18" href="$icvec_8c.html#a95fc4d5c5f881698adf61b05c67044fa" title="符号の反転 [y0,y1]=&#45;[x0,x1] " alt="" coords="155,309,221,336"/>
-<area shape="rect" id="node21" href="$icvec_8c.html#a8dfda122f3b428cff63ef378ded3c025" title="線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1] " alt="" coords="143,208,233,235"/>
-<area shape="rect" id="node3" href="$icmulti_8c.html#af6626a1c9e17bb10886a84bf8540dd72" title="[z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="448,157,509,184"/>
-<area shape="rect" id="node4" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="564,309,629,336"/>
-<area shape="rect" id="node6" href="$irmulti_8c.html#a504793b7883583d472cda9b7cf22fbe8" title="[z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="684,107,740,133"/>
-<area shape="rect" id="node13" href="$irmulti_8c.html#a0cece643d818babfebb30f89efd8d274" title="積の減算 [z0,z1]&#45;=[x0,x1]*[y0,y1] " alt="" coords="558,157,635,184"/>
-<area shape="rect" id="node15" href="$irmulti_8c.html#a3bd7abf298bc316f44b4e137efa28c92" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="557,208,636,235"/>
-<area shape="rect" id="node17" href="$icmulti_8c.html#a244c81288cc050080b4597035bb363f9" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="570,56,623,83"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="788,233,852,260"/>
-<area shape="rect" id="node7" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="789,107,851,133"/>
-<area shape="rect" id="node8" href="$is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="799,5,841,32"/>
-<area shape="rect" id="node11" href="$is__rmulti_8h.html#a64e66b8ab46756754e3f4c5e81aee12a" title="rmulti型の値の比較 x&gt;=y " alt="" coords="797,56,843,83"/>
-<area shape="rect" id="node12" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="795,157,845,184"/>
-<area shape="rect" id="node9" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="900,5,972,32"/>
-<area shape="rect" id="node10" href="$rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="909,56,963,83"/>
-<area shape="rect" id="node14" href="$irmulti_8c.html#aa252a525339c0c6555fe050952901ca6" title="[z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="684,157,740,184"/>
-<area shape="rect" id="node16" href="$irmulti_8c.html#a057ef0531bf7a4cd8928ca588656d681" title="[z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="684,309,740,336"/>
-<area shape="rect" id="node19" href="$icmulti_8c.html#a34e226326379f8b59050c36d458b8f83" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="569,360,625,387"/>
-<area shape="rect" id="node20" href="$irmulti_8c.html#ad184a91543dcbf89e3e99de12a119f20" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="685,360,739,387"/>
-<area shape="rect" id="node22" href="$cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3" title="cmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="288,284,400,311"/>
-<area shape="rect" id="node23" href="$icmulti_8c.html#ab8188501d5e47c3eb422ebecad54a904" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="304,208,384,235"/>
-<area shape="rect" id="node25" href="$icvec_8c.html#a1417e5d49968225fc2d64c250ead9841" title="コピー [y0,y1]=[x0,x1] " alt="" coords="308,107,380,133"/>
-<area shape="rect" id="node24" href="$icmulti_8c.html#a02f87d0d84595abcd508e093d961e0ef" title="[z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="448,208,509,235"/>
+<area shape="rect" id="node2" href="$icvec_8c.html#a00443bc96db58f32fc3d031b11c38d5c" title="[z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="136,157,265,184"/>
+<area shape="rect" id="node18" href="$icvec_8c.html#a31d36945f3fe6718267348f8fe56959c" title="符号の反転 [y0,y1]=&#45;[x0,x1] " alt="" coords="154,309,247,336"/>
+<area shape="rect" id="node21" href="$icvec_8c.html#a8dfda122f3b428cff63ef378ded3c025" title="線形変換の加算 [y0,y1]+=[A0,A1]*[x0,x1] " alt="" coords="156,208,245,235"/>
+<area shape="rect" id="node3" href="$icmulti_8c.html#af6626a1c9e17bb10886a84bf8540dd72" title="[z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="473,157,535,184"/>
+<area shape="rect" id="node4" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="589,309,655,336"/>
+<area shape="rect" id="node6" href="$irmulti_8c.html#a504793b7883583d472cda9b7cf22fbe8" title="[z0,z1]=[x0,x1]*[y0,y1] " alt="" coords="709,107,765,133"/>
+<area shape="rect" id="node13" href="$irmulti_8c.html#a0cece643d818babfebb30f89efd8d274" title="積の減算 [z0,z1]&#45;=[x0,x1]*[y0,y1] " alt="" coords="583,157,661,184"/>
+<area shape="rect" id="node15" href="$irmulti_8c.html#a3bd7abf298bc316f44b4e137efa28c92" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="583,208,661,235"/>
+<area shape="rect" id="node17" href="$icmulti_8c.html#a244c81288cc050080b4597035bb363f9" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="595,56,649,83"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="813,233,877,260"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="815,107,876,133"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="824,5,867,32"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#a64e66b8ab46756754e3f4c5e81aee12a" title="rmulti型の値の比較 x&gt;=y " alt="" coords="823,56,868,83"/>
+<area shape="rect" id="node12" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="821,157,870,184"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="925,5,997,32"/>
+<area shape="rect" id="node10" href="$rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="935,56,988,83"/>
+<area shape="rect" id="node14" href="$irmulti_8c.html#aa252a525339c0c6555fe050952901ca6" title="[z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="709,157,765,184"/>
+<area shape="rect" id="node16" href="$irmulti_8c.html#a057ef0531bf7a4cd8928ca588656d681" title="[z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="709,309,765,336"/>
+<area shape="rect" id="node19" href="$icmulti_8c.html#a34e226326379f8b59050c36d458b8f83" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="594,360,650,387"/>
+<area shape="rect" id="node20" href="$irmulti_8c.html#ad184a91543dcbf89e3e99de12a119f20" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="711,360,764,387"/>
+<area shape="rect" id="node22" href="$cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3" title="cmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="313,284,425,311"/>
+<area shape="rect" id="node23" href="$icmulti_8c.html#ab8188501d5e47c3eb422ebecad54a904" title="積の加算 [z0,z1]+=[x0,x1]*[y0,y1] " alt="" coords="329,208,409,235"/>
+<area shape="rect" id="node25" href="$icvec_8c.html#a7fc80a7cf8bccb9fd7d3828078f87dff" title="コピー [y0,y1]=[x0,x1] " alt="" coords="321,107,418,133"/>
+<area shape="rect" id="node24" href="$icmulti_8c.html#a02f87d0d84595abcd508e093d961e0ef" title="[z0,z1]=[x0,x1]+[y0,y1] " alt="" coords="473,208,535,235"/>
 </map>

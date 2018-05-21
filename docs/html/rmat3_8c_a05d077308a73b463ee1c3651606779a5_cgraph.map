@@ -1,8 +1,8 @@
 <map id="rmat3_sum" name="rmat3_sum">
 <area shape="rect" id="node2" href="$is__rmat_8h.html#af04d3d5ca8e47a3da18f7e2468e4940f" title="rmulti型の列ごとの和 B=sum(A) " alt="" coords="125,31,216,57"/>
-<area shape="rect" id="node3" href="$is__rvec_8h.html#a0a998cf4b6542e656b69376055323811" title="rmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="264,31,329,57"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="377,5,441,32"/>
-<area shape="rect" id="node7" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="489,56,544,83"/>
-<area shape="rect" id="node5" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="493,5,540,32"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="592,31,689,57"/>
+<area shape="rect" id="node3" href="$is__rvec_8h.html#a4d15725643f477da0ed729aaca087913" title="rmulti型のベクトルの要素の総和 value=sum(x) " alt="" coords="264,31,333,57"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="381,5,445,32"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="493,56,548,83"/>
+<area shape="rect" id="node5" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="497,5,544,32"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="596,31,693,57"/>
 </map>

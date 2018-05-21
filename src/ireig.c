@@ -123,7 +123,7 @@ int ireig_1pair_krawczyk(int n, rmulti **e, rmulti **A, int LDA, rmulti **x, rmu
   irsub_rd(F0[n],F1[n],F0[n],F1[n],1,1);
   irmul_rd(F0[n],F1[n],F0[n],F1[n],0.5,0.5);
   // e=abs(R*F)
-  rvec_lintr(m,m,e,R,m,F);
+  rvec_mul_rmat_rvec(m,m,e,R,m,F);
   rvec_abs_rvec(m,e,e);
   rvec_mul_rvec_dscalar(m,e,e,alpha);
   // [X0,X1]=[-e,e]

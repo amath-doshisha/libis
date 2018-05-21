@@ -1,0 +1,12 @@
+<map id="rsum_pow2_abs_cvec" name="rsum_pow2_abs_cvec">
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="183,37,247,64"/>
+<area shape="rect" id="node5" href="$cmulti_8c.html#aad0cbb6902ae32402e0ab494f609dcbc" title="cmulti型の絶対値の平方の加算 y+=abs(x)^2 " alt="" coords="175,100,255,127"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="423,5,469,32"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="635,107,732,133"/>
+<area shape="rect" id="node6" href="$cmulti_8c.html#ac27df2a809749da2186fe891f40c2565" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="303,100,360,127"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="304,176,359,203"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="533,56,586,83"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="408,107,484,133"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="533,107,586,133"/>
+<area shape="rect" id="node10" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="532,157,587,184"/>
+</map>

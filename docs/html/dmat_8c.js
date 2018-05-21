@@ -31,5 +31,11 @@ var dmat_8c =
     [ "dmat_sub_prod", "dmat_8c.html#a10fc9f307597a6acf4ce29f3f051c81e", null ],
     [ "dmat_swap_columns", "dmat_8c.html#a04c48890f82fdb877a026b7be6cdd59b", null ],
     [ "dmat_swap_index", "dmat_8c.html#a8f6370e40375ebd9f49848969e110ebe", null ],
-    [ "dmat_swap_rows", "dmat_8c.html#ad637b2a3ab4439602da8db44a2ee8eba", null ]
+    [ "dmat_swap_rows", "dmat_8c.html#ad637b2a3ab4439602da8db44a2ee8eba", null ],
+    [ "dvec_add_mul_dmat_dvec", "dmat_8c.html#afbc31d2b1634f2124c687165148a8c35", null ],
+    [ "dvec_add_mul_dmat_t_dvec", "dmat_8c.html#affc9f1a87d1a3f93244a8c4d334fe19a", null ],
+    [ "dvec_mul_dmat_dvec", "dmat_8c.html#a3bd8ecc0b548563cf71412d3f517ff6c", null ],
+    [ "dvec_mul_dmat_t_dvec", "dmat_8c.html#a300cf4b46c2e35f94752bcdfa9bced99", null ],
+    [ "dvec_sub_mul_dmat_dvec", "dmat_8c.html#a02402314e361f9287e54a7ebe67169fb", null ],
+    [ "dvec_sub_mul_dmat_t_dvec", "dmat_8c.html#a2b3355baf42a4b57d5187732d6bd8908", null ]
 ];

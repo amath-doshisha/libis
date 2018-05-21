@@ -1,0 +1,24 @@
+<map id="rdeg_angle_rvec_rvec" name="rdeg_angle_rvec_rvec">
+<area shape="rect" id="node2" href="$rvec_8c.html#aff4f26b61dd434d3ed529b1e37f190db" title="rmulti型のベクトルの角度 theta=acos(abs(x&#39;*y)/sqrt(x&#39;*x)/sqrt(y&#39;*y)) " alt="" coords="175,132,273,159"/>
+<area shape="rect" id="node23" href="$is__rmulti_8h.html#a8050f1a08b9eda2a32d254394f119966" title="z=x*y " alt="" coords="196,309,252,336"/>
+<area shape="rect" id="node3" href="$rvec_8c.html#a41d8db24d501fa8a2200a96dea5d2082" title="rmulti型のベクトルの方向余弦の絶対値 abs(x&#39;*y)/sqrt(x&#39;*x)/sqrt(y&#39;*y) " alt="" coords="321,208,439,235"/>
+<area shape="rect" id="node18" href="$is__rmulti_8h.html#a9a357865fa432178af352427319d833b" title="rmulti型の値の比較 x&gt;y " alt="" coords="357,132,403,159"/>
+<area shape="rect" id="node21" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="510,5,559,32"/>
+<area shape="rect" id="node22" href="$is__rmulti_8h.html#a20aba8e090bd896c980b76beb3daab58" title="rmulti型の計算 y=arccos(x) " alt="" coords="352,69,408,96"/>
+<area shape="rect" id="node4" href="$rvec_8c.html#a1109d75246bc03aec4ca63fd943efa86" title="rmulti型のベクトルの方向余弦 (x&#39;*y)/sqrt(x&#39;*x)/sqrt(y&#39;*y) " alt="" coords="487,284,583,311"/>
+<area shape="rect" id="node17" href="$is__rmulti_8h.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="645,132,695,159"/>
+<area shape="rect" id="node5" href="$rvec_8c.html#a070bb075414d33aa100b6994f222c1e5" title="rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) " alt="" coords="631,284,709,311"/>
+<area shape="rect" id="node14" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="791,360,844,387"/>
+<area shape="rect" id="node15" href="$rvec_8c.html#a43291270cf170d510b7682358ea9315b" title="rmulti型のベクトルの内積 value=sum(x.*y) " alt="" coords="763,208,871,235"/>
+<area shape="rect" id="node16" href="$is__rmulti_8h.html#a0c8b35084a21676995d9b8cbcf8b39c0" title="z=x/y " alt="" coords="645,385,695,412"/>
+<area shape="rect" id="node6" href="$rvec_8c.html#ae00a029ecdea56c726f9ed3cf71b124a" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="757,259,877,285"/>
+<area shape="rect" id="node13" href="$is__rmulti_8h.html#a14504176d48fad860c538118a0c92941" title="rmulti型の計算 y=sqrt(x) " alt="" coords="938,309,989,336"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="931,208,995,235"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="925,259,1001,285"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="1053,157,1100,184"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="1152,233,1249,260"/>
+<area shape="rect" id="node11" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="1050,259,1103,285"/>
+<area shape="rect" id="node12" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="1049,208,1104,235"/>
+<area shape="rect" id="node19" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="499,157,571,184"/>
+<area shape="rect" id="node20" href="$rmulti_8c.html#a5f68f628a180377570bfc2007c9b1980" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="507,107,563,133"/>
+</map>

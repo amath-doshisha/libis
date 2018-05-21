@@ -89,7 +89,7 @@ void rhouseholder_right(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, 
   a=rallocate_prec(prec);
   p=rvec_allocate_prec(m,prec);
   // p=A*h
-  rvec_lintr(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
+  rvec_mul_rmat_rvec(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
   // B=A*H=A-alpha*(A*h)*h'=A-alpha*p*h'
   rneg_r(a,alpha);
   rmat_rank1op(m,n-k,&COL(B,k,LDB),LDB,&COL(A,k,LDA),LDA,a,p,&h[k]);
@@ -153,7 +153,7 @@ void rhouseholder(int n, int k0, int nH, int k, rmulti **h, rmulti *alpha, rmult
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)
     l=k0+j;
-    rvec_sum_mul(value,n-l,&MAT(H,l,j,LDH),&R[l]);
+    rinnprod_rvec_rvec(value,n-l,&MAT(H,l,j,LDH),&R[l]);
     rmul_rr(value,value,Alpha[j]);
     rvec_sub_mul_rvec_rscalar(n-l,&R[l],&MAT(H,l,j,LDH),value);
   }

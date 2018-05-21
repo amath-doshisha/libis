@@ -782,7 +782,7 @@ void irsum_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
 /**
  @brief irmulti型のベクトルの線形変換 [y0,y1]=[A0,A1]*[x0,x1]
 */
-void irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
+void irvec_mul_rmat_rvec(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1)
 {
   int i,j;
   rmulti **z0=NULL,**z1=NULL;

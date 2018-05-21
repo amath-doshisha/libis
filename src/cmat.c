@@ -1761,7 +1761,7 @@ void cmat_angle_deg_list(rmulti **angle, int m, int n, cmulti **A, int LDA)
   int i,j,k=0;
   for(i=0; i<n; i++){
     for(j=i+1; j<n; j++){
-      cvec_angle_deg(angle[k++],m,&COL(A,i,LDA),&COL(A,j,LDA));
+      rdeg_angle_cvec_cvec(angle[k++],m,&COL(A,i,LDA),&COL(A,j,LDA));
     }
   }
 }

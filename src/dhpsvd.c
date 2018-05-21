@@ -39,14 +39,14 @@ int dhpsvd_1pair(int m, int n, double *A, int LDA, double *z, double *u, double 
     printf("[dhpsvd_1pair] step_max=%d\n",step_max);
   }
   // constants
-  dvec_lintr_t(m,n,w,A,LDA,z);                          // w=A'*z
+  dvec_mul_dmat_t_dvec(m,n,w,A,LDA,z);                          // w=A'*z
   // compute
   done=0; h=1; e=1;
   for(step=0; !done && step<step_max; step++){
     dvec_normalize_dvec(m,u,u);                              // u=u/sqrt(u'*u)
     dvec_normalize_dvec(n,v,v);                              // v=v/sqrt(v'*v)
-    C=dvec_dot(m,z,u);                                  // C=z'*u
-    sigma=dvec_dot(n,w,v)/C;                            // sigma=(w'*v)/C
+    C=dinnprod_dvec_dvec(m,z,u);                                  // C=z'*u
+    sigma=dinnprod_dvec_dvec(n,w,v)/C;                            // sigma=(w'*v)/C
     dsvd_residual(m,n,H,A,LDA,u,v,sigma);               // H=[ A*v-sigma*u;  A'*u-sigma*v ]
     e=dnorm_max_dvec(m+n,H);                             // e=max(abs(H))
     dhpsvd_jacobi_mat(m,n,JM,LDJM,A,LDA,u,v,w,sigma,C); // Jacobi matrix
@@ -64,8 +64,8 @@ int dhpsvd_1pair(int m, int n, double *A, int LDA, double *z, double *u, double 
   if(!done) { ret=DHPSVD_DIVERGENT; }
   dvec_normalize_sgn_dvec(m,u,u);                            // u=u/sqrt(u'*u)
   dvec_normalize_sgn_dvec(n,v,v);                            // v=v/sqrt(v'*v)
-  dvec_lintr_t(m,n,w,A,LDA,u);                          // w=A'*u
-  sigma=dvec_dot(n,w,v)/C;                              // sigma=(w'*v)/C
+  dvec_mul_dmat_t_dvec(m,n,w,A,LDA,u);                          // w=A'*u
+  sigma=dinnprod_dvec_dvec(n,w,v)/C;                              // sigma=(w'*v)/C
   if(sigma<0) { dvec_mul_dvec_dscalar(m,u,u,-1); sigma=-sigma; }     // if sigma<0
   dsvd_residual(m,n,H,A,LDA,u,v,sigma);                 // H=[ A*v-sigma*u;  A'*u-sigma*v ]
   e=dnorm_max_dvec(m+n,H);                               // e=max(abs(H))

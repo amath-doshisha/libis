@@ -56,7 +56,7 @@ void zhouseholder(int n, int k0, int nH, int k, dcomplex *h, double *alpha, dcom
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)
     l=k0+j;
-    value=zvec_dot(n-l,&MAT(H,l,j,LDH),&R[l]);
+    value=zinnprod_zvec_zvec(n-l,&MAT(H,l,j,LDH),&R[l]);
     Z_R(value)*=-Alpha[j];
     Z_I(value)*=-Alpha[j];      
     zvec_add_scaled(n-l,&R[l],value,&MAT(H,l,j,LDH));
@@ -71,7 +71,7 @@ void zhouseholder_right(int m, int n, dcomplex *A, int LDA, int k, dcomplex *h, 
   dcomplex zalpha,*p=NULL;
   p=zvec_allocate(m);
   // p=A*h
-  zvec_lintr(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
+  zvec_mul_zmat_zvec(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
   // B=A*H=A-alpha*(A*h)*h'=A-alpha*p*h'
   Z_SET(zalpha,-alpha,0);
   zmat_rank1op(m,n-k,&COL(A,k,LDA),LDA,zalpha,p,&h[k]);
@@ -85,7 +85,7 @@ void zhouseholder_left(int m, int n, dcomplex *A, int LDA, int k, dcomplex *h, d
   dcomplex zalpha,*p=NULL;
   p=zvec_allocate(m);
   // p=A'*h
-  zvec_lintr_ct(n,m-k,p,&MAT(A,k,0,LDA),LDA,&h[k]);
+  zvec_mul_zmat_ct_zvec(n,m-k,p,&MAT(A,k,0,LDA),LDA,&h[k]);
   // B=H*A=A-alpha*h*(A'*h)'=A-alpha*h*p'
   Z_SET(zalpha,-alpha,0);
   zmat_rank1op(m-k,n,&MAT(A,k,0,LDA),LDA,zalpha,&h[k],p);

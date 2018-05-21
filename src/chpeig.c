@@ -87,8 +87,8 @@ int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti
   // initial vector
   step=0;
   cvec_normalize_sgn_cvec(n,x,x);           // x=x/sqrt(x'*x)
-  cvec_sum_dot(C,n,z,x);               // C=z'*x
-  cvec_sum_dot(lambda,n,w,x);          // lambda=w'*x
+  cinnprod_cvec_cvec(C,n,z,x);               // C=z'*x
+  cinnprod_cvec_cvec(lambda,n,w,x);          // lambda=w'*x
   cdiv_cc(lambda,lambda,C);               // lambda=(w'*x)/C
   ceig_residual(n,F,A,LDA,x,lambda);   // F=A*x-lambda*x
   rmax_abs_cvec(E,n,F);                 // E=max(abs(F))
@@ -106,8 +106,8 @@ int chpeig_1pair(int n, cmulti **x, cmulti *lambda, rmulti *E, int *Step, cmulti
       rmax_abs_cvec(eta,n,F);             // eta=max(abs(F))
       cvec_sub_cvec_cvec(n,x,x,F);                 // x=x-F
       cvec_normalize_sgn_cvec(n,x,x);         // x=x/sqrt(x'*x)
-      cvec_sum_dot(C,n,z,x);             // C=z'*x
-      cvec_sum_dot(lambda,n,w,x);        // lambda=w'*x
+      cinnprod_cvec_cvec(C,n,z,x);             // C=z'*x
+      cinnprod_cvec_cvec(lambda,n,w,x);        // lambda=w'*x
       cdiv_cc(lambda,lambda,C);             // lambda=(w'*x)/C
       ceig_residual(n,F,A,LDA,x,lambda); // F=A*x-lambda*x
       rmax_abs_cvec(E,n,F);               // E=max(abs(F))

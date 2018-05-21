@@ -1,8 +1,8 @@
 <map id="deig_residual_norm_max" name="deig_residual_norm_max">
-<area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="195,5,277,32"/>
-<area shape="rect" id="node3" href="$deig_8c.html#a1db83d34449783c5d5af4957da9d5a30" title="deig_residual" alt="" coords="195,56,277,83"/>
-<area shape="rect" id="node6" href="$dvec_8c.html#ae39bc59f70d2e21e57bfe39c9c27cc37" title="y=max(abs(x)) " alt="" coords="188,107,284,133"/>
-<area shape="rect" id="node7" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="203,157,269,184"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a75ab82c6786cf0ba48e78a570bfa8bb2" title="z=x*y " alt="" coords="332,31,435,57"/>
-<area shape="rect" id="node5" href="$dvec_8c.html#a9880a8dadf3a853a8c3b965e890fe083" title="dvec_add_lintr" alt="" coords="340,81,427,108"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="197,5,280,32"/>
+<area shape="rect" id="node3" href="$deig_8c.html#a1db83d34449783c5d5af4957da9d5a30" title="deig_residual" alt="" coords="198,56,279,83"/>
+<area shape="rect" id="node6" href="$dvec_8c.html#af80d0b6471561392be45ad0388283155" title="y=max(abs(x)) " alt="" coords="188,107,289,133"/>
+<area shape="rect" id="node7" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="206,157,271,184"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#ae77f0c4e1679d29e6913eecef4db298c" title="z=x*y " alt="" coords="343,31,473,57"/>
+<area shape="rect" id="node5" href="$dmat_8c.html#afbc31d2b1634f2124c687165148a8c35" title="dvec_add_mul_dmat_dvec" alt="" coords="337,81,479,108"/>
 </map>

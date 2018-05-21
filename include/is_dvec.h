@@ -25,7 +25,7 @@ void dvec_bin_save(int n, double *x, char* fmt, ...);
 double *dvec_bin_load(int *n, char* fmt, ...);
 
 /*
- * initialization
+ * setting
  */
 void dvec_set_nan(int n, double *x);                      // x=nan(n,1)
 void dvec_set_inf(int n, double *x, int sgn);             // x=sgn*inf(n,1)
@@ -114,11 +114,21 @@ void dvec_abs_sub_dvec_dscalar(int n, double *z, double *x, double y);
 double dsum_abs_sub_dvec_dvec(int n, double *x, double *y);
 // z=max(abs(x-y))
 double dmax_abs_sub_dvec_dvec(int n, double *x, double *y);
+// z=max(abs(x-y)^2)
+double dmax_pow2_abs_sub_dvec_dvec(int n, double *x, double *y);
+// z=x'*y
+double dinnprod_dvec_dvec(int n, double *x, double *y);
+// z=(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
+double ddcos_dvec_dvec(int n, double *x, double *y);
+// z=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
+double ddcos_abs_dvec_dvec(int n, double *x, double *y);
 // others
-double dvec_dot(int n, double *x, double *y);                    // z=x'*y
-double dvec_dcos_abs(int n, double *x, double *y);               // z=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
-double dvec_angle(int n, double *x, double *y);                  // z=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-double dvec_angle_deg(int n, double *x, double *y);              // z=(180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
+// z=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
+double dangle_dvec_dvec(int n, double *x, double *y);
+// z=(180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
+double ddeg_angle_dvec_dvec(int n, double *x, double *y);
+// z=max(abs(x)/abs(y))
+double dmax_div_abs_dvec_dvec(int n, double *x, double *y);
 
 /*
  * y=y+f(x)
@@ -127,14 +137,5 @@ void dvec_add_scaled(int n, double *y, double a, double *x);                   /
 void dvec_sub_scaled(int n, double *y, double a, double *x);                   // y=y-a*x
 void dvec_orthogonalize(int n, double *y, double *x);                          // y=y-(x'*y)*x where x'*x=1
 
-/*
- * dmat.cへ移動する
- */
-void dvec_lintr(int m, int n, double *y, double *A, int LDA, double *x);       // y=A*x
-void dvec_add_lintr(int m, int n, double *y, double *A, int LDA, double *x);   // y=y+A*x
-void dvec_sub_lintr(int m, int n, double *y, double *A, int LDA, double *x);   // y=y-A*x
-void dvec_lintr_t(int m, int n, double *y, double *A, int LDA, double *x);     // y=A'*x
-void dvec_add_lintr_t(int m, int n, double *y, double *A, int LDA, double *x); // y=y+A'*x
-void dvec_sub_lintr_t(int m, int n, double *y, double *A, int LDA, double *x); // y=y-A'*x
 
 #endif

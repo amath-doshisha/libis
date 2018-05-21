@@ -1,0 +1,15 @@
+<map id="irvec_abs_sub_rvec_rvec" name="irvec_abs_sub_rvec_rvec">
+<area shape="rect" id="node2" href="$irmulti_8c.html#abc7fdf30cac4edf861dad52c6deda4d1" title="差の絶対値 [z0,z1]=abs([x0,x1]&#45;[y0,y1]) " alt="" coords="189,284,267,311"/>
+<area shape="rect" id="node3" href="$irmulti_8c.html#aa252a525339c0c6555fe050952901ca6" title="[z0,z1]=[x0,x1]&#45;[y0,y1] " alt="" coords="420,385,476,412"/>
+<area shape="rect" id="node6" href="$irmulti_8c.html#ad96d0d7413e12df00ef27abd4ee62f92" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="315,208,367,235"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="529,183,593,209"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="537,335,586,361"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="421,233,475,260"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="417,284,479,311"/>
+<area shape="rect" id="node9" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="417,132,479,159"/>
+<area shape="rect" id="node10" href="$irmulti_8c.html#ad184a91543dcbf89e3e99de12a119f20" title="符号の反転 [y0,y1]=&#45;[x0,x1]. " alt="" coords="421,183,475,209"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#a125c6b1140d9123b37acd8d72ea14aaa" title="2つのrmulti型の大きい方 上丸め z=max2(x,y) " alt="" coords="415,31,481,57"/>
+<area shape="rect" id="node12" href="$rmulti_8c.html#a1ff06a0b54739078f153471d3d030fbe" title="rmulti型の値の比較 x&gt;y " alt="" coords="540,31,583,57"/>
+<area shape="rect" id="node13" href="$rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="641,5,713,32"/>
+<area shape="rect" id="node14" href="$rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="651,56,704,83"/>
+</map>

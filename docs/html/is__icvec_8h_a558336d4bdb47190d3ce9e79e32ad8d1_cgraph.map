@@ -1,0 +1,12 @@
+<map id="icvec_div_zvec_rscalar" name="icvec_div_zvec_rscalar">
+<area shape="rect" id="node2" href="$icmulti_8c.html#a7828431056c2f1232e3a3a54421eaf4c" title="[z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="179,56,235,83"/>
+<area shape="rect" id="node3" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="387,5,452,32"/>
+<area shape="rect" id="node5" href="$icmulti_8c.html#aaf16c63deeff2ff608c1a9d63ef316bf" title="倍精度複素数の設定 [y0,y1]=[x0,x1]. " alt="" coords="284,56,337,83"/>
+<area shape="rect" id="node7" href="$icmulti_8c.html#aad164363ba0dc3f13cc02c2692b922c2" title="[z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="283,107,339,133"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="500,5,564,32"/>
+<area shape="rect" id="node6" href="$irmulti_8c.html#ad2626813eb80d5c26ee93a9a5f9a390d" title="倍精度実数の設定 [y0,y1]=[x0,x1]. " alt="" coords="393,56,445,83"/>
+<area shape="rect" id="node8" href="$irmulti_8c.html#a07414e692b3f6b9a84e6b9747896ed18" title="[z0,z1]=[x0,x1]/[y0,y1] " alt="" coords="393,107,445,133"/>
+<area shape="rect" id="node9" href="$is__rmulti_8h.html#a1eabb75964384f5b7057a0275385d4bb" title="rmulti型の浮動小数点数の符号部の取得. " alt="" coords="501,56,563,83"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="501,107,563,133"/>
+<area shape="rect" id="node11" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="507,157,557,184"/>
+</map>

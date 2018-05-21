@@ -127,7 +127,7 @@ int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmu
   irsum_pow2_abs_cvec(C_R(F0[n]),C_R(F1[n]),n,x,x);           // F(m).r=sum(x.^2)
   icsub_cd(F0[n],F1[n],F0[n],F1[n],1,1);                  // F(m)=sum(x.^2)-1
   // e=abs(R*F)
-  cvec_lintr(m,m,e,R,m,F);
+  cvec_mul_cmat_cvec(m,m,e,R,m,F);
   cvec_absc_cvec(m,e,e);
   cvec_mul_cvec_dscalar(m,e,e,alpha);
   // [X0,X1]=[-e,e]

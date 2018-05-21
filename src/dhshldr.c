@@ -24,7 +24,7 @@ void dhouseholder_vec(int n, int k, double *h, double *alpha, double *x)
   // alpha=2/(h'*h)=1/(xi*eta)
   double xi,eta,s=1;
   //----------- norm
-  xi=dvec_dot(n-k-1,&x[k+1],&x[k+1]); //  xi=sum(abs(x((k+1):end)).^2);
+  xi=dinnprod_dvec_dvec(n-k-1,&x[k+1],&x[k+1]); //  xi=sum(abs(x((k+1):end)).^2);
   eta=sqrt(x[k]*x[k]+xi);
   if(eta==0) xi=eta-fabs(x[k]);
   else       xi=xi/(fabs(x[k])+eta);
@@ -48,7 +48,7 @@ void dhouseholder(int n, int k0, int nH, int k, double *h, double *alpha, double
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)
     l=k0+j;
-    value=dvec_dot(n-l,&MAT(H,l,j,LDH),&R[l]);
+    value=dinnprod_dvec_dvec(n-l,&MAT(H,l,j,LDH),&R[l]);
     dvec_add_scaled(n-l,&R[l],-Alpha[j]*value,&MAT(H,l,j,LDH));
   }
   dhouseholder_vec(n,k,h,alpha,R);
@@ -61,7 +61,7 @@ void dhouseholder_right(int m, int n, double *A, int LDA, int k, double *h, doub
   double *p=NULL;
   p=dvec_allocate(m);
   // p=A*h
-  dvec_lintr(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
+  dvec_mul_dmat_dvec(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
   // B=A*H=A-alpha*(A*h)*h'=A-alpha*p*h'
   dmat_rank1op(m,n-k,&COL(A,k,LDA),LDA,-alpha,p,&h[k]);
   // done
@@ -74,7 +74,7 @@ void dhouseholder_left(int m, int n, double *A, int LDA, int k, double *h, doubl
   double *p=NULL;
   p=dvec_allocate(m);
   // p=A'*h
-  dvec_lintr_t(n,m-k,p,&MAT(A,k,0,LDA),LDA,&h[k]);
+  dvec_mul_dmat_t_dvec(n,m-k,p,&MAT(A,k,0,LDA),LDA,&h[k]);
   // B=H*A=A-alpha*h*(A'*h)'=A-alpha*h*p'
   dmat_rank1op(m-k,n,&MAT(A,k,0,LDA),LDA,-alpha,&h[k],p);
   // done

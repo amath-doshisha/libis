@@ -1,46 +1,46 @@
 <map id="func_expand_add_pow1" name="func_expand_add_pow1">
 <area shape="rect" id="node2" href="$func__add_8c.html#adb993ffed426ac5101bd9a2b4a4cf7db" title="func_is_add" alt="" coords="962,397,1038,424"/>
 <area shape="rect" id="node6" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="1125,2144,1199,2171"/>
-<area shape="rect" id="node9" href="$func__number_8c.html#a5b7171537ce3464da4f750991e4322f0" title="func_zero" alt="" coords="1279,1563,1345,1589"/>
-<area shape="rect" id="node30" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1839,1943,1899,1969"/>
-<area shape="rect" id="node33" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="1277,499,1347,525"/>
+<area shape="rect" id="node9" href="$func__number_8c.html#a5b7171537ce3464da4f750991e4322f0" title="func_zero" alt="" coords="1290,1563,1355,1589"/>
+<area shape="rect" id="node30" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1884,1943,1944,1969"/>
+<area shape="rect" id="node33" href="$func__args_8c.html#a81a1a84576165bbc7f9e46b98f1e4e0c" title="func_asize" alt="" coords="1288,499,1357,525"/>
 <area shape="rect" id="node34" href="$func__add_8c.html#af182fcd7bac3f5fac890b9f41ce3d978" title="func_add" alt="" coords="645,2955,708,2981"/>
 <area shape="rect" id="node90" href="$func__expand_8c.html#a908ad4e17b61e69b7997e9061782a986" title="func_expand" alt="" coords="184,955,263,981"/>
-<area shape="rect" id="node3" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="2513,3336,2567,3363"/>
-<area shape="rect" id="node4" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="2615,3513,2673,3540"/>
-<area shape="rect" id="node5" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="2721,3513,2787,3540"/>
-<area shape="rect" id="node7" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="1264,2221,1360,2248"/>
-<area shape="rect" id="node8" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="1417,2753,1487,2780"/>
-<area shape="rect" id="node10" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="1419,1309,1485,1336"/>
-<area shape="rect" id="node11" href="$func_8c.html#acd4481611ac7a446cec5acbf860160c8" title="func_struct_new" alt="" coords="1544,1411,1639,1437"/>
-<area shape="rect" id="node12" href="$is__strings_8h.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="1559,904,1624,931"/>
-<area shape="rect" id="node14" href="$func_8c.html#a10acafc6a5eea7c5644da39a93913f93" title="func_p_new" alt="" coords="1831,1005,1907,1032"/>
-<area shape="rect" id="node26" href="$func__args_8c.html#a917ed9a99a463c7098ac747fb2861f2f" title="func_a_new" alt="" coords="1553,1107,1629,1133"/>
-<area shape="rect" id="node27" href="$func__find_8c.html#a3c1cd2adbd08b9f344659cd4793151d0" title="func_find_amin" alt="" coords="2096,1056,2185,1083"/>
-<area shape="rect" id="node13" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="1687,904,1783,931"/>
-<area shape="rect" id="node15" href="$func_8c.html#ac5d12f1e54448af685ab9ce171c88304" title="func_p_del" alt="" coords="1964,1157,2035,1184"/>
-<area shape="rect" id="node25" href="$func__find_8c.html#a27fff46baa89a49fad2bba6c25bbcd70" title="func_find_p_new" alt="" coords="2092,955,2189,981"/>
-<area shape="rect" id="node16" href="$func__find_8c.html#ad399ee5a1d7d999d92d17ff0cab2178d" title="func_find_p_del" alt="" coords="2095,1107,2187,1133"/>
-<area shape="rect" id="node17" href="$func__builtin_8c.html#a93600b658725ef58d9cf55fda4f24af3" title="func_is_builtin" alt="" coords="2242,1107,2327,1133"/>
-<area shape="rect" id="node18" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="2249,752,2321,779"/>
-<area shape="rect" id="node19" href="$func__table_8c.html#aa5e5d16773a7094f7ec6aaf6322d84b8" title="func_is_table" alt="" coords="2244,1157,2325,1184"/>
-<area shape="rect" id="node20" href="$func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979" title="func_is_strings" alt="" coords="2240,1208,2329,1235"/>
-<area shape="rect" id="node21" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="2380,968,2465,995"/>
-<area shape="rect" id="node22" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="2248,1005,2321,1032"/>
-<area shape="rect" id="node23" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="2237,955,2332,981"/>
-<area shape="rect" id="node24" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="2256,853,2313,880"/>
-<area shape="rect" id="node28" href="$func__find_8c.html#a2b644e09ec80f8db90eb98995258a16e" title="func_find_amax" alt="" coords="2095,904,2187,931"/>
-<area shape="rect" id="node29" href="$func__args_8c.html#aab560c18c36aaab1c2d6901c6e9e37b0" title="func_a_del" alt="" coords="1699,1208,1770,1235"/>
-<area shape="rect" id="node31" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="1969,1968,2029,1995"/>
-<area shape="rect" id="node32" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="1955,1917,2044,1944"/>
-<area shape="rect" id="node35" href="$func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="1413,3893,1491,3920"/>
-<area shape="rect" id="node36" href="$func__bigint_8c.html#ad39923e28c10109fb73a7218a834e6ac" title="func_in_bigint" alt="" coords="1270,4096,1354,4123"/>
+<area shape="rect" id="node3" href="$func_8c.html#ac50aa470a7123dd018f6de3bad93f856" title="func_is" alt="" coords="2559,3336,2612,3363"/>
+<area shape="rect" id="node4" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="2660,3513,2719,3540"/>
+<area shape="rect" id="node5" href="$strings_8c.html#ad8977cc057b41ba8c42b775e19ad5f8f" title="char_cmp" alt="" coords="2767,3513,2832,3540"/>
+<area shape="rect" id="node7" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="1275,2221,1371,2248"/>
+<area shape="rect" id="node8" href="$func_8c.html#a4efce6266589d54f1741d2cbaead8cd9" title="func_ptype" alt="" coords="1450,2753,1521,2780"/>
+<area shape="rect" id="node10" href="$func_8c.html#abdd09c60d3291cc48be66d07bf251963" title="func_new" alt="" coords="1453,1309,1518,1336"/>
+<area shape="rect" id="node11" href="$func_8c.html#acd4481611ac7a446cec5acbf860160c8" title="func_struct_new" alt="" coords="1589,1411,1684,1437"/>
+<area shape="rect" id="node12" href="$is__strings_8h.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="1604,904,1669,931"/>
+<area shape="rect" id="node14" href="$func_8c.html#a10acafc6a5eea7c5644da39a93913f93" title="func_p_new" alt="" coords="1876,1005,1952,1032"/>
+<area shape="rect" id="node26" href="$func__args_8c.html#a917ed9a99a463c7098ac747fb2861f2f" title="func_a_new" alt="" coords="1599,1107,1675,1133"/>
+<area shape="rect" id="node27" href="$func__find_8c.html#a3c1cd2adbd08b9f344659cd4793151d0" title="func_find_amin" alt="" coords="2141,1056,2231,1083"/>
+<area shape="rect" id="node13" href="$strings_8c.html#a433b1975ec561892d77a331e21684a03" title="char_match_any" alt="" coords="1732,904,1828,931"/>
+<area shape="rect" id="node15" href="$func_8c.html#ac5d12f1e54448af685ab9ce171c88304" title="func_p_del" alt="" coords="2009,1157,2080,1184"/>
+<area shape="rect" id="node25" href="$func__find_8c.html#a27fff46baa89a49fad2bba6c25bbcd70" title="func_find_p_new" alt="" coords="2137,955,2235,981"/>
+<area shape="rect" id="node16" href="$func__find_8c.html#ad399ee5a1d7d999d92d17ff0cab2178d" title="func_find_p_del" alt="" coords="2140,1107,2232,1133"/>
+<area shape="rect" id="node17" href="$func__builtin_8c.html#a93600b658725ef58d9cf55fda4f24af3" title="func_is_builtin" alt="" coords="2287,1107,2373,1133"/>
+<area shape="rect" id="node18" href="$func__list_8c.html#a127602c12d4cd9791189769910e49b8f" title="func_is_list" alt="" coords="2294,752,2366,779"/>
+<area shape="rect" id="node19" href="$func__table_8c.html#aa5e5d16773a7094f7ec6aaf6322d84b8" title="func_is_table" alt="" coords="2289,1157,2371,1184"/>
+<area shape="rect" id="node20" href="$func__strings_8c.html#a14ad73fa6257d4387093e6953eca4979" title="func_is_strings" alt="" coords="2285,1208,2375,1235"/>
+<area shape="rect" id="node21" href="$func__scope_8c.html#a2ca0db9fb3969657f7219a51f70a26ee" title="func_is_scope" alt="" coords="2425,968,2511,995"/>
+<area shape="rect" id="node22" href="$func__def_8c.html#a6d482a2149fd557cf1257e24eb1212ff" title="func_is_def" alt="" coords="2293,1005,2367,1032"/>
+<area shape="rect" id="node23" href="$func__scope_8c.html#ae9bd5b5dc2b667e80b2b7633839f4a3b" title="func_scope_find" alt="" coords="2283,955,2377,981"/>
+<area shape="rect" id="node24" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="2301,853,2359,880"/>
+<area shape="rect" id="node28" href="$func__find_8c.html#a2b644e09ec80f8db90eb98995258a16e" title="func_find_amax" alt="" coords="2140,904,2232,931"/>
+<area shape="rect" id="node29" href="$func__args_8c.html#aab560c18c36aaab1c2d6901c6e9e37b0" title="func_a_del" alt="" coords="1745,1208,1815,1235"/>
+<area shape="rect" id="node31" href="$is__strings_8h.html#a1635e97bfc1c5214f659fe601139fcc5" title="char_del" alt="" coords="2015,1968,2075,1995"/>
+<area shape="rect" id="node32" href="$func_8c.html#a0d3b8726a8a16106275657a40cd54cea" title="func_struct_del" alt="" coords="2000,1917,2089,1944"/>
+<area shape="rect" id="node35" href="$func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="1446,3893,1525,3920"/>
+<area shape="rect" id="node36" href="$func__bigint_8c.html#ad39923e28c10109fb73a7218a834e6ac" title="func_in_bigint" alt="" coords="1281,4096,1365,4123"/>
 <area shape="rect" id="node39" href="$func__bigint_8c.html#a8978eee1bdb5edda9a02943f2aa7f136" title="func_bigint_add" alt="" coords="954,3083,1046,3109"/>
 <area shape="rect" id="node45" href="$func__real_8c.html#a9c54e81e28638b158c7c2be5315054d4" title="func_in_real" alt="" coords="1124,4096,1200,4123"/>
-<area shape="rect" id="node46" href="$func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b" title="func_is_real" alt="" coords="1274,3387,1350,3413"/>
+<area shape="rect" id="node46" href="$func__real_8c.html#a75a7bab447dfe2dfabef16de5733752b" title="func_is_real" alt="" coords="1285,3387,1361,3413"/>
 <area shape="rect" id="node47" href="$func__real_8c.html#aa2b442b5751e864b0ecbfa143ed4fda3" title="func_real_add" alt="" coords="957,2677,1043,2704"/>
 <area shape="rect" id="node53" href="$func__complex_8c.html#a50d35bfdef7953d6e3d65c882b42f91f" title="func_in_complex" alt="" coords="951,3944,1049,3971"/>
-<area shape="rect" id="node54" href="$func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562" title="func_is_complex" alt="" coords="1264,3995,1360,4021"/>
+<area shape="rect" id="node54" href="$func__complex_8c.html#a11ffb832c2622da959ddaca64dc6c562" title="func_is_complex" alt="" coords="1275,3995,1371,4021"/>
 <area shape="rect" id="node55" href="$func__complex_8c.html#ac3ea69c66b0decae5680f0f91cf6564e" title="func_complex_add" alt="" coords="771,2779,877,2805"/>
 <area shape="rect" id="node61" href="$func__number_8c.html#ac1e519ec12441fe5c09231b31ae2bc42" title="func_is_number" alt="" coords="777,1739,871,1765"/>
 <area shape="rect" id="node63" href="$func__number_8c.html#abc45108e92164911a3a99619d59272ed" title="func_evalf" alt="" coords="966,3893,1034,3920"/>
@@ -50,42 +50,42 @@
 <area shape="rect" id="node80" href="$func__vec_8c.html#a998be0caef897a1dd3a926aeb8467b01" title="func_mat_add" alt="" coords="1119,1309,1205,1336"/>
 <area shape="rect" id="node86" href="$func__add_8c.html#a940daced28dc84f2530f17e73d5abd64" title="private////////////////////////////////////////////////// " alt="" coords="781,904,867,931"/>
 <area shape="rect" id="node89" href="$func_8c.html#a5d310173294eded581e6fc926e5ee4a1" title="func_arg2_new" alt="" coords="955,1157,1045,1184"/>
-<area shape="rect" id="node37" href="$func__number_8c.html#aa780c6f31a959959bcbf4d9553d247d1" title="func_is_one" alt="" coords="1414,3615,1490,3641"/>
-<area shape="rect" id="node38" href="$func__bigint_8c.html#a6cf29c440217b50c7d7085feeabf0e04" title="func_is_bigint" alt="" coords="1411,3691,1493,3717"/>
+<area shape="rect" id="node37" href="$func__number_8c.html#aa780c6f31a959959bcbf4d9553d247d1" title="func_is_one" alt="" coords="1447,3615,1523,3641"/>
+<area shape="rect" id="node38" href="$func__bigint_8c.html#a6cf29c440217b50c7d7085feeabf0e04" title="func_is_bigint" alt="" coords="1444,3691,1527,3717"/>
 <area shape="rect" id="node40" href="$func__bigint_8c.html#a14e630f8b498cbd9592fd7275d1a431a" title="func_bigint_cast" alt="" coords="1115,3691,1209,3717"/>
-<area shape="rect" id="node41" href="$func__bigint_8c.html#a7464989f4d66ee0fca48ee582caec920" title="func_bigint" alt="" coords="1277,2829,1347,2856"/>
+<area shape="rect" id="node41" href="$func__bigint_8c.html#a7464989f4d66ee0fca48ee582caec920" title="func_bigint" alt="" coords="1287,2829,1358,2856"/>
 <area shape="rect" id="node42" href="$bigint_8c.html#a0f717eb6da19d166edae4534368c959c" title="bigint_add" alt="" coords="1128,3285,1196,3312"/>
-<area shape="rect" id="node43" href="$func__bigint_8c.html#a5b3527e18a9a626a5c08683e401252c4" title="func_bigint_p" alt="" coords="1271,3083,1353,3109"/>
+<area shape="rect" id="node43" href="$func__bigint_8c.html#a5b3527e18a9a626a5c08683e401252c4" title="func_bigint_p" alt="" coords="1282,3083,1363,3109"/>
 <area shape="rect" id="node44" href="$func__bigint_8c.html#aac8c1144c28fbc18a86e060634f2b495" title="func_bigint_eval" alt="" coords="1115,2931,1209,2957"/>
 <area shape="rect" id="node48" href="$func__real_8c.html#a0ab64b68e336073a3e93a21cdf34087a" title="func_real_cast" alt="" coords="1119,3133,1205,3160"/>
-<area shape="rect" id="node49" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="1281,2475,1343,2501"/>
-<area shape="rect" id="node50" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="1275,2728,1349,2755"/>
-<area shape="rect" id="node51" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="1564,2145,1619,2172"/>
+<area shape="rect" id="node49" href="$func__real_8c.html#a9784c9e02c32679505bbab99c71c4954" title="func_real" alt="" coords="1291,2475,1354,2501"/>
+<area shape="rect" id="node50" href="$func__real_8c.html#aa803a72475bd240e089a079694deb787" title="func_real_p" alt="" coords="1285,2728,1360,2755"/>
+<area shape="rect" id="node51" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="1609,2145,1664,2172"/>
 <area shape="rect" id="node52" href="$func__real_8c.html#ad70a4c67f89402017ac8e948622af691" title="func_real_eval" alt="" coords="1119,2677,1205,2704"/>
 <area shape="rect" id="node56" href="$func__complex_8c.html#a985266d5f7609bf66363f243119d1699" title="func_complex_cast" alt="" coords="1108,3437,1216,3464"/>
-<area shape="rect" id="node57" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="1270,2272,1354,2299"/>
-<area shape="rect" id="node58" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="1265,2779,1359,2805"/>
-<area shape="rect" id="node59" href="$cmulti_8c.html#a625b0832de178c27d2227913eb8cc1bd" title="z=x+y " alt="" coords="1423,2120,1481,2147"/>
+<area shape="rect" id="node57" href="$func__complex_8c.html#aa4118320490f74f93fd46a9210141da4" title="func_complex" alt="" coords="1281,2272,1365,2299"/>
+<area shape="rect" id="node58" href="$func__complex_8c.html#ad1b27b734ee5470c593c2a05f1152d7e" title="func_complex_p" alt="" coords="1275,2779,1370,2805"/>
+<area shape="rect" id="node59" href="$cmulti_8c.html#a625b0832de178c27d2227913eb8cc1bd" title="z=x+y " alt="" coords="1456,2120,1515,2147"/>
 <area shape="rect" id="node60" href="$func__complex_8c.html#abc554e77c03f86b1b656f864c3d165cb" title="func_complex_eval" alt="" coords="946,2728,1054,2755"/>
-<area shape="rect" id="node62" href="$func__find_8c.html#acf61fcc85937e09612eca09074ba32c4" title="func_find_type" alt="" coords="2097,853,2184,880"/>
-<area shape="rect" id="node64" href="$func__var_8c.html#a5db4a460008c3feef55608229884fb78" title="func_is_var" alt="" coords="2386,4101,2459,4128"/>
+<area shape="rect" id="node62" href="$func__find_8c.html#acf61fcc85937e09612eca09074ba32c4" title="func_find_type" alt="" coords="2143,853,2229,880"/>
+<area shape="rect" id="node64" href="$func__var_8c.html#a5db4a460008c3feef55608229884fb78" title="func_is_var" alt="" coords="2431,4101,2505,4128"/>
 <area shape="rect" id="node65" href="$func__vec_8c.html#ab76621759344cc2e442e6e0a34ffdf66" title="func_is_rvec" alt="" coords="1123,4451,1201,4477"/>
 <area shape="rect" id="node66" href="$func__vec_8c.html#a2de7f547b8e89d48d7c22e128020f1c5" title="func_is_cvec" alt="" coords="1122,4501,1202,4528"/>
 <area shape="rect" id="node67" href="$func__vec_8c.html#afda75d938e421f40a0454d269781b9b9" title="func_is_rmat" alt="" coords="1123,4603,1201,4629"/>
 <area shape="rect" id="node68" href="$func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="1121,4552,1203,4579"/>
 <area shape="rect" id="node69" href="$func_8c.html#adc50d54a334fe665254a93b411429433" title="func_clone" alt="" coords="1127,1613,1197,1640"/>
 <area shape="rect" id="node70" href="$func__args_8c.html#a59c61338c39841891ae08724e2602762" title="func_aset" alt="" coords="1129,1005,1195,1032"/>
-<area shape="rect" id="node71" href="$func__find_8c.html#ab9782db57753fa95baee6398d00bddd5" title="func_find_eval" alt="" coords="2097,1157,2184,1184"/>
-<area shape="rect" id="node74" href="$func__rvec_8c.html#a4b7301ce38e9502a2f305a5fc656df75" title="func_rvec" alt="" coords="1279,1968,1345,1995"/>
-<area shape="rect" id="node75" href="$is__rvec_8h.html#ab11026ca106c415189a8f5e40aa7bf13" title="z=x+y " alt="" coords="1408,2171,1496,2197"/>
-<area shape="rect" id="node76" href="$func__cvec_8c.html#ab24a2d5a81508d46300a2fd7b01eddf2" title="func_cvec" alt="" coords="1279,1917,1345,1944"/>
-<area shape="rect" id="node77" href="$cvec_8c.html#a560c9db2209e085ce0c37fda2fab6ff5" title="z=x+y " alt="" coords="1267,2019,1357,2045"/>
-<area shape="rect" id="node78" href="$cvec_8c.html#a6c3baba682cb93b84be17f6fefb1475a" title="z=x+y " alt="" coords="1267,2120,1357,2147"/>
-<area shape="rect" id="node81" href="$func__rmat_8c.html#a4e47e3df4631a2a2062617c50dbbac93" title="func_rmat" alt="" coords="1279,1157,1345,1184"/>
-<area shape="rect" id="node82" href="$is__rmat_8h.html#a24a5506b425f653a8de8870ea485acd7" title="rmulti型の行列の足し算 C=A+B. " alt="" coords="1420,1613,1484,1640"/>
-<area shape="rect" id="node83" href="$func__cmat_8c.html#abd8387f05a4919904a773cd03c33dad3" title="func_cmat" alt="" coords="1278,1208,1346,1235"/>
-<area shape="rect" id="node84" href="$cmat_8c.html#af541e15a5d9867ba12debb43dd826227" title="cmulti型の行列の足し算 C=A+B. " alt="" coords="1266,1259,1358,1285"/>
-<area shape="rect" id="node85" href="$cmat_8c.html#ae43121173a9e143ffeb21b0254a9de4b" title="cmulti型の行列の足し算 C=A+B. " alt="" coords="1279,1512,1345,1539"/>
+<area shape="rect" id="node71" href="$func__find_8c.html#ab9782db57753fa95baee6398d00bddd5" title="func_find_eval" alt="" coords="2143,1157,2229,1184"/>
+<area shape="rect" id="node74" href="$func__rvec_8c.html#a4b7301ce38e9502a2f305a5fc656df75" title="func_rvec" alt="" coords="1290,1968,1355,1995"/>
+<area shape="rect" id="node75" href="$is__rvec_8h.html#a8158603cccdfe36ad762728d90753f8d" title="z=x+y " alt="" coords="1429,2171,1541,2197"/>
+<area shape="rect" id="node76" href="$func__cvec_8c.html#ab24a2d5a81508d46300a2fd7b01eddf2" title="func_cvec" alt="" coords="1289,1917,1356,1944"/>
+<area shape="rect" id="node77" href="$cvec_8c.html#a16e51b46dcf9f6e7408cbb9d58a3e852" title="z=x+y " alt="" coords="1265,2019,1381,2045"/>
+<area shape="rect" id="node78" href="$cvec_8c.html#a8d4e51b72dd9c0b768bdb9de46614fcf" title="z=x+y " alt="" coords="1264,2120,1381,2147"/>
+<area shape="rect" id="node81" href="$func__rmat_8c.html#a4e47e3df4631a2a2062617c50dbbac93" title="func_rmat" alt="" coords="1289,1157,1356,1184"/>
+<area shape="rect" id="node82" href="$is__rmat_8h.html#a24a5506b425f653a8de8870ea485acd7" title="rmulti型の行列の足し算 C=A+B. " alt="" coords="1453,1613,1517,1640"/>
+<area shape="rect" id="node83" href="$func__cmat_8c.html#abd8387f05a4919904a773cd03c33dad3" title="func_cmat" alt="" coords="1289,1208,1357,1235"/>
+<area shape="rect" id="node84" href="$cmat_8c.html#af541e15a5d9867ba12debb43dd826227" title="cmulti型の行列の足し算 C=A+B. " alt="" coords="1277,1259,1369,1285"/>
+<area shape="rect" id="node85" href="$cmat_8c.html#ae43121173a9e143ffeb21b0254a9de4b" title="cmulti型の行列の足し算 C=A+B. " alt="" coords="1290,1512,1355,1539"/>
 <area shape="rect" id="node87" href="$func_8c.html#ae4564eb3d31eba3254c43467cd252f6e" title="func_flatten" alt="" coords="963,904,1037,931"/>
 <area shape="rect" id="node88" href="$func__args_8c.html#ad9bf8046839a60e7bc6aaf0be64f4d57" title="func_a_resize" alt="" coords="1120,853,1204,880"/>
 <area shape="rect" id="node91" href="$func__expand_8c.html#ac2a718289f7102c63eb49c0513299269" title="func_expand_eval" alt="" coords="311,853,413,880"/>

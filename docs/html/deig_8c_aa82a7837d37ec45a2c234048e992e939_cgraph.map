@@ -1,8 +1,8 @@
 <map id="deig_sort_value_guide" name="deig_sort_value_guide">
-<area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="194,5,277,32"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#aa972cdb91e28c284ca05440cf26e1e42" title="z=abs(x&#45;y) " alt="" coords="176,56,295,83"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a1695951c0c08c68c3cca4723d11e9ccc" title="y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL " alt="" coords="177,107,293,133"/>
-<area shape="rect" id="node5" href="$dvec_8c.html#a5065b149965402a99ab191dd45a2413c" title="x &lt;=&gt; y " alt="" coords="199,157,271,184"/>
-<area shape="rect" id="node6" href="$dvec_8c.html#a5d9aba2a2ac21482eb20557fab694e8d" title="x[i] &lt;=&gt; x[j] " alt="" coords="193,208,278,235"/>
-<area shape="rect" id="node7" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="203,259,268,285"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="210,5,293,32"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#a5c187a5f11d84b33d85edb06ac5fe71b" title="z=abs(x&#45;y) " alt="" coords="176,56,327,83"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#afc3d6a694713322a46564b2f1201a2db" title="y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL " alt="" coords="191,107,312,133"/>
+<area shape="rect" id="node5" href="$dvec_8c.html#a5065b149965402a99ab191dd45a2413c" title="x &lt;=&gt; y " alt="" coords="215,157,287,184"/>
+<area shape="rect" id="node6" href="$dvec_8c.html#a5d9aba2a2ac21482eb20557fab694e8d" title="x[i] &lt;=&gt; x[j] " alt="" coords="209,208,294,235"/>
+<area shape="rect" id="node7" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="219,259,284,285"/>
 </map>

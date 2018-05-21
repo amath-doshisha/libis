@@ -38,7 +38,7 @@ int rsolve_krawczyk(int m, rmulti **e, rmulti **x, func_t *fF, int debug)
   // [F0,F1]=F(x)
   irvec_func_list(m,F0,F1,fF,m,x,x); if(debug>0){ irvec_print(m,F0,F1,"[F]=",'e',1); }
   // e=abs(R*F)
-  rvec_lintr(m,m,e,R,m,F); rvec_abs_rvec(m,e,e); rvec_mul_rvec_dscalar(m,e,e,2);
+  rvec_mul_rmat_rvec(m,m,e,R,m,F); rvec_abs_rvec(m,e,e); rvec_mul_rvec_dscalar(m,e,e,2);
   // [X0,X1]=[-e,e]
   irvec_pm_rvec(m,X0,X1,e); if(debug>0){ irvec_print(m,X0,X1,"[X]=",'e',1); }
   // [T0,T1]=[x-e,x+e]

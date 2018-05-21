@@ -268,25 +268,25 @@ void rvec_abs_sub_cvec_rscalar(int n, rmulti **z, cmulti **x, rmulti *y);
 void rsum_abs_sub_cvec_cvec(rmulti *z, int n, cmulti **x, cmulti **y);
 // z=max(abs(x-y))
 void rmax_abs_sub_cvec_cvec(rmulti *z, int n, cmulti **x, cmulti **y);
-// others
-void cvec_sum_dot(cmulti *z, int n, cmulti **x, cmulti **y);       // z=sum(conj(x).*y)
-void cvec_max_abs2_sub(rmulti *z, int n, cmulti **x, cmulti **y);  // z=max(abs(x-y).^2)
-void cvec_dot(int n, cmulti **z, cmulti **x, cmulti **y);          // z=conj(x).*y
-void cvec_dot_c1(int n, cmulti **z, cmulti *x, cmulti **y);        // z=conj(x)*y
-void cvec_dot_c2(int n, cmulti **z, cmulti **x, cmulti *y);        // z=conj(x)*y
-void cvec_dot_z1(int n, cmulti **z, dcomplex x, cmulti **y);       // z=conj(x)*y
-void cvec_dot_z2(int n, cmulti **z, cmulti **x, dcomplex y);       // z=conj(x)*y
-void cvec_dcos(cmulti *z, int n, cmulti **x, cmulti **y);          // z=x'*y/\sqrt(x'*x)/sqrt(y'*y)
-void cvec_abs_dcos(rmulti *z, int n, cmulti **x, cmulti **y);      // z=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
-void cvec_angle(rmulti *theta, int n, cmulti **x, cmulti **y);     // theta=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-void cvec_angle_deg(rmulti *theta, int n, cmulti **x, cmulti **y); // theta=(180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
-
+// z=max(abs(x-y)^2)
+void rmax_pow2_abs_sub_cvec_cvec(rmulti *z, int n, cmulti **x, cmulti **y);
+// z=x'*y
+void cinnprod_cvec_cvec(cmulti *z, int n, cmulti **x, cmulti **y);
+// z=x'*y/\sqrt(x'*x)/sqrt(y'*y)
+void cdcos_cvec_cvec(cmulti *z, int n, cmulti **x, cmulti **y);
+// z=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
+void rdcos_abs_cvec_cvec(rmulti *z, int n, cmulti **x, cmulti **y);
+// theta=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
+void rangle_cvec_cvec(rmulti *theta, int n, cmulti **x, cmulti **y);
+// theta=(180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
+void rdeg_angle_cvec_cvec(rmulti *theta, int n, cmulti **x, cmulti **y);
+// z=max(abs(x)/abs(y))
+void rmax_div_abs_cvec_cvec(rmulti *z, int n, cmulti **x, cmulti **y);
 
 /*
  * y=y+f(x)
  */
 void cvec_orthogonalize(int n, cmulti **y, cmulti **x); // y=y-(x'*y)*x where x'*x=1
-
 
 /*
  * z=z+f(x,y)
@@ -334,7 +334,7 @@ int cvec_lec(int n, cmulti **x, cmulti **y);        // X<=Y
  * 作業中：cmat.cに移動する
  */
 // y=A*x
-void cvec_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x);
+void cvec_mul_cmat_cvec(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x);
 // y=y+A*x
 void cvec_add_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x);
 // y=y-A*x

@@ -2010,59 +2010,10 @@ void cvec_sub_mul_cvec_dscalar(int n, cmulti **z, cmulti **x, double y)
   for(i=0; i<n; i++){ csub_mul_cd(z[i],x[i],y); }
 }
 
-/**
- @brief cmulti型のベクトルの要素ごとの掛け算 z=conj(x).*y
-*/
-void cvec_dot(int n, cmulti **z, cmulti **x, cmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ cdot_cc(z[i],x[i],y[i]); }
-}
 
-/**
- @brief cmulti型のベクトルyとスカラーxの掛け算 z=conj(x)*y
-*/
-void cvec_dot_c1(int n, cmulti **z, cmulti *x, cmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ cdot_cc(z[i],x,y[i]); }
-}
 
-/**
- @brief cmulti型のベクトルxとスカラーyの掛け算 z=conj(x)*y
-*/
-void cvec_dot_c2(int n, cmulti **z, cmulti **x, cmulti *y)
-{
-  int i;
-  for(i=0; i<n; i++){ cdot_cc(z[i],x[i],y); }
-}
 
-/**
- @brief cmulti型のベクトルyとスカラーxの掛け算 z=conj(x)*y
-*/
-void cvec_dot_z1(int n, cmulti **z, dcomplex x, cmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ cdot_zc(z[i],x,y[i]); }
-}
 
-/**
- @brief cmulti型のベクトルxとスカラーyの掛け算 z=conj(x)*y
-*/
-void cvec_dot_z2(int n, cmulti **z, cmulti **x, dcomplex y)
-{
-  int i;
-  for(i=0; i<n; i++){ cdot_cz(z[i],x[i],y); }
-}
-
-/**
- @brief cmulti型のベクトルの要素ごとの掛け算の加算 z+=conj(x).*y
-*/
-void cvec_add_dot_cvec_cvec(int n, cmulti **z, cmulti **x, cmulti **y)
-{
-  int i;
-  for(i=0; i<n; i++){ cadd_dot_cc(z[i],x[i],y[i]); }
-}
 
 /**
  @brief cmulti型のベクトルyとスカラーxの掛け算の加算 z+=conj(x)*y
@@ -2154,7 +2105,7 @@ void cvec_sub_dot_cvec_zscalar(int n, cmulti **z, cmulti **x, dcomplex y)
  @param[in]     LDA 行列Aの第1次元.
  @param[in]     x   サイズnのベクトル.
 */
-void cvec_lintr(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
+void cvec_mul_cmat_cvec(int m, int n, cmulti **y, cmulti **A, int LDA, cmulti **x)
 {
   int i,j;
   cmulti **z=NULL;
@@ -2384,7 +2335,7 @@ void rsum_pow2_abs_cvec(rmulti *value, int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの内積 value=sum(conj(x).*y)
  */
-void cvec_sum_dot(cmulti *value, int n, cmulti **x, cmulti **y)
+void cinnprod_cvec_cvec(cmulti *value, int n, cmulti **x, cmulti **y)
 {
   int i;
   cset_zero(value);
@@ -2502,7 +2453,7 @@ void cvec_orthogonalize(int n, cmulti **y, cmulti **x)
 {
   cmulti *a=NULL;
   a=callocate_prec(cvec_get_prec_max(n,y));
-  cvec_sum_dot(a,n,x,y);   // a=x'*y
+  cinnprod_cvec_cvec(a,n,x,y);   // a=x'*y
   cvec_sub_mul_cvec_cscalar(n,y,x,a); // y-=x*a
   a=cfree(a);
 }
@@ -2528,7 +2479,7 @@ void caverage_cvec(cmulti *value, int n, cmulti **x)
 /**
  @brief cmulti型のベクトルの要素の差の絶対値の平方の最大値 value=max(abs(x-y).^2)
 */
-void cvec_max_abs2_sub(rmulti *value, int n, cmulti **x, cmulti **y)
+void rmax_pow2_abs_sub_cvec_cvec(rmulti *value, int n, cmulti **x, cmulti **y)
 {
   int i;
   cmulti *a=NULL;
@@ -2756,11 +2707,11 @@ void rvec_arg_cvec(int n, rmulti **y, cmulti **x)
 /**
  @brief cmulti型のベクトルの方向余弦 value=x'*y/sqrt(x'*x)/sqrt(y'*y)
 */
-void cvec_dcos(cmulti *value, int n, cmulti **x, cmulti **y)
+void cdcos_cvec_cvec(cmulti *value, int n, cmulti **x, cmulti **y)
 {
   rmulti *a=NULL;
   a=rallocate_prec(cget_prec(value));
-  cvec_sum_dot(value,n,x,y); // value=x'*y
+  cinnprod_cvec_cvec(value,n,x,y); // value=x'*y
   rnorm2_cvec(a,n,x);         // a=sqrt(x'*x)
   cdiv_cr(value,value,a);    // value=x'*y/sqrt(x'*x)
   rnorm2_cvec(a,n,y);         // a=sqrt(y'*y)
@@ -2771,11 +2722,11 @@ void cvec_dcos(cmulti *value, int n, cmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの方向余弦の絶対値 value=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
 */
-void cvec_abs_dcos(rmulti *value, int n, cmulti **x, cmulti **y)
+void rdcos_abs_cvec_cvec(rmulti *value, int n, cmulti **x, cmulti **y)
 {
   cmulti *a=NULL;
   a=callocate_prec(rget_prec(value));
-  cvec_dcos(a,n,x,y);
+  cdcos_cvec_cvec(a,n,x,y);
   rabs_c(value,a);
   a=cfree(a);
 }
@@ -2783,11 +2734,11 @@ void cvec_abs_dcos(rmulti *value, int n, cmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの鋭角の角度 theta=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
 */
-void cvec_angle(rmulti *theta, int n, cmulti **x, cmulti **y)
+void rangle_cvec_cvec(rmulti *theta, int n, cmulti **x, cmulti **y)
 {
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(theta));
-  cvec_abs_dcos(a,n,x,y); // a=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
+  rdcos_abs_cvec_cvec(a,n,x,y); // a=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
   if(gt_rd(a,1)){ rset_d(a,1); }
   racos_r(theta,a); // theta=acos(dcos)
   a=rfree(a);
@@ -2796,9 +2747,9 @@ void cvec_angle(rmulti *theta, int n, cmulti **x, cmulti **y)
 /**
  @brief cmulti型のベクトルの角度[deg] theta=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
 */
-void cvec_angle_deg(rmulti *theta, int n, cmulti **x, cmulti **y)
+void rdeg_angle_cvec_cvec(rmulti *theta, int n, cmulti **x, cmulti **y)
 {
-  cvec_angle(theta,n,x,y);
+  rangle_cvec_cvec(theta,n,x,y);
   rmul_rd(theta,theta,(180.0/M_PI));
 }
 

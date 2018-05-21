@@ -1,5 +1,7 @@
 var is__icmulti_8h =
 [
+    [ "ic_in_ic", "is__icmulti_8h.html#a9878ea472597c886c08bb1b3033a79ab", null ],
+    [ "ic_in_icpm", "is__icmulti_8h.html#ab8c22ea4689cef91d571c2c8a17b9887", null ],
     [ "icabsc_c", "is__icmulti_8h.html#a7176ee551b9451fea7f75f3993770912", null ],
     [ "icadd_cc", "is__icmulti_8h.html#a02f87d0d84595abcd508e093d961e0ef", null ],
     [ "icadd_cd", "is__icmulti_8h.html#a1e8d08bc7913e26f8daed1d90148641c", null ],
@@ -60,8 +62,6 @@ var is__icmulti_8h =
     [ "icfloor_d", "is__icmulti_8h.html#ab24ff74e5df76fe028a90af756bc30a8", null ],
     [ "icfloor_r", "is__icmulti_8h.html#af273451c04f544c056187e55c0338311", null ],
     [ "icfloor_z", "is__icmulti_8h.html#a296b808ce7ad9164442558179e96bf50", null ],
-    [ "icin", "is__icmulti_8h.html#abfc8b699d37c84b6fb9199c91532b9f6", null ],
-    [ "icin_pm", "is__icmulti_8h.html#acb70bc38bf3501165783fb21cfa9b187", null ],
     [ "icinv_c", "is__icmulti_8h.html#a30c1b179d4b244e1de75289c3395cda8", null ],
     [ "icinv_d", "is__icmulti_8h.html#ad20b6096131ee0d48d2118efe50abc01", null ],
     [ "icinv_r", "is__icmulti_8h.html#a62944f20f139c7af02d349655f8a81de", null ],

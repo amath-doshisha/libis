@@ -15,6 +15,86 @@
 
 /////////////////////////////////////////
 
+/** @name z=f(x,y) */
+/** @{ */
+
+// y=A*x
+void dvec_mul_dmat_dvec(int m, int n, double *y, double *A, int LDA, double *x){
+  int i,j;
+  for(i=0; i<m; i++){
+    y[i]=0;
+    for(j=0; j<n; j++){
+      y[i]+=MAT(A,i,j,LDA)*x[j];
+    }
+  }
+}
+
+// y=A'*x
+void dvec_mul_dmat_t_dvec(int m, int n, double *y, double *A, int LDA, double *x){
+  int i,j;
+  for(j=0; j<n; j++){
+    y[j]=0;
+    for(i=0; i<m; i++){
+      y[j]+=MAT(A,i,j,LDA)*x[i];
+    }
+  }
+}
+
+/** @} */
+
+//////////////////////////////////////////
+
+/** @name z=z+f(x,y) */
+/** @{ */
+
+
+// y=y+A*x
+void dvec_add_mul_dmat_dvec(int m, int n, double *y, double *A, int LDA, double *x){
+  int i,j;
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      y[i]+=MAT(A,i,j,LDA)*x[j];
+    }
+  }
+}
+
+// y=y-A*x
+void dvec_sub_mul_dmat_dvec(int m, int n, double *y, double *A, int LDA, double *x){
+  int i,j;
+  for(i=0; i<m; i++){
+    for(j=0; j<n; j++){
+      y[i]-=MAT(A,i,j,LDA)*x[j];
+    }
+  }
+}
+
+
+// y=y+A'*x
+void dvec_add_mul_dmat_t_dvec(int m, int n, double *y, double *A, int LDA, double *x){
+  int i,j;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      y[j]+=MAT(A,i,j,LDA)*x[i];
+    }
+  }
+}
+
+// y=y-A'*x
+void dvec_sub_mul_dmat_t_dvec(int m, int n, double *y, double *A, int LDA, double *x){
+  int i,j;
+  for(j=0; j<n; j++){
+    for(i=0; i<m; i++){
+      y[j]-=MAT(A,i,j,LDA)*x[i];
+    }
+  }
+}
+
+//////////////////////////////////////////
+
+
+/** @} */
+
+
 double* dmat_allocate(int m, int n)
 {
   return (double*)malloc(sizeof(double)*m*n);

@@ -1,9 +1,9 @@
 <map id="dhouseholder" name="dhouseholder">
 <area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="147,5,229,32"/>
-<area shape="rect" id="node3" href="$dvec_8c.html#a84900c5bac904a45cf8a423ed4b63d87" title="y=x " alt="" coords="299,56,369,83"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a944576a8d0c03f0159e33291ac72b679" title="z=x&#39;*y " alt="" coords="303,157,365,184"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#ad528f0b2cd2e5a5ead1569e212b68c5a" title="y=x " alt="" coords="297,56,393,83"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a9f89262de589e036ab78327d2c6633e7" title="z=x&#39;*y " alt="" coords="288,157,403,184"/>
 <area shape="rect" id="node5" href="$dvec_8c.html#ab539c5333222f78a905ff4d252d97ac4" title="y=y+a*x " alt="" coords="138,208,238,235"/>
 <area shape="rect" id="node6" href="$dhshldr_8c.html#a2fbd95ce47e7f02f6e15848a436fb4dd" title="dhouseholder_vec" alt="" coords="136,107,240,133"/>
 <area shape="rect" id="node8" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="155,259,221,285"/>
-<area shape="rect" id="node7" href="$dvec_8c.html#a25786788ae9c4c5522373e909ecc4fdd" title="x=zeros(n,1) " alt="" coords="288,107,380,133"/>
+<area shape="rect" id="node7" href="$dvec_8c.html#a25786788ae9c4c5522373e909ecc4fdd" title="x=zeros(n,1) " alt="" coords="299,107,391,133"/>
 </map>

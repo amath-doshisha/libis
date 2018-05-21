@@ -113,7 +113,7 @@ void irvec_abs_sub_rvec_dscalar(int n, rmulti **z0, rmulti **z1, rmulti **x0, rm
  * operations
  */
 // y=A*x
-void irvec_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);
+void irvec_mul_rmat_rvec(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);
 // y=y+A*x
 void irvec_add_lintr(int m, int n, rmulti **y0, rmulti **y1, rmulti **A0, int LDA0, rmulti **A1, int LDA1, rmulti **x0, rmulti **x1);
 // y=y-A*x

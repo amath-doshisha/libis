@@ -1,22 +1,22 @@
 <map id="rhouseholder_right" name="rhouseholder_right">
-<area shape="rect" id="node2" href="$is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="159,157,269,184"/>
-<area shape="rect" id="node4" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="330,5,415,32"/>
-<area shape="rect" id="node5" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="161,56,267,83"/>
-<area shape="rect" id="node6" href="$is__rvec_8h.html#a47ba7f7a1239163a05f389b82c2a8656" title="rmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="183,316,245,343"/>
-<area shape="rect" id="node15" href="$is__rmulti_8h.html#a07b89d04a8fb3e01d979950f9558871a" title="y=&#45;x " alt="" coords="189,107,239,133"/>
-<area shape="rect" id="node16" href="$is__rmat_8h.html#ab8ace882b8999e6eca1d6a380e67640c" title="rmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="172,208,256,235"/>
-<area shape="rect" id="node20" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="351,461,394,488"/>
-<area shape="rect" id="node21" href="$is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="182,455,246,481"/>
-<area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="476,132,540,159"/>
-<area shape="rect" id="node7" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="341,309,405,336"/>
-<area shape="rect" id="node10" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="335,360,411,387"/>
-<area shape="rect" id="node13" href="$rvec_8c.html#a1c4c81fcee993f71d9758c4b8a566c4b" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="339,411,407,437"/>
-<area shape="rect" id="node8" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="485,309,531,336"/>
-<area shape="rect" id="node9" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="588,309,685,336"/>
-<area shape="rect" id="node11" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="481,360,535,387"/>
-<area shape="rect" id="node12" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="481,411,535,437"/>
-<area shape="rect" id="node14" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="484,461,532,488"/>
-<area shape="rect" id="node17" href="$rmat_8c.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="317,157,428,184"/>
-<area shape="rect" id="node18" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="481,259,535,285"/>
-<area shape="rect" id="node19" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="481,208,535,235"/>
+<area shape="rect" id="node2" href="$is__rmat_8h.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="159,157,270,184"/>
+<area shape="rect" id="node4" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="331,5,417,32"/>
+<area shape="rect" id="node5" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="162,56,267,83"/>
+<area shape="rect" id="node6" href="$is__rvec_8h.html#aba66054bd2e1a02c0a5dc630e2aaf008" title="rmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="159,316,271,343"/>
+<area shape="rect" id="node15" href="$is__rmulti_8h.html#a07b89d04a8fb3e01d979950f9558871a" title="y=&#45;x " alt="" coords="189,107,240,133"/>
+<area shape="rect" id="node16" href="$is__rmat_8h.html#ab8ace882b8999e6eca1d6a380e67640c" title="rmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="173,208,257,235"/>
+<area shape="rect" id="node20" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="353,461,395,488"/>
+<area shape="rect" id="node21" href="$is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="183,455,247,481"/>
+<area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="477,132,541,159"/>
+<area shape="rect" id="node7" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="342,309,406,336"/>
+<area shape="rect" id="node10" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="336,360,412,387"/>
+<area shape="rect" id="node13" href="$rvec_8c.html#af22eb2439c20c3d280dedddbef66d2cc" title="rmulti型のベクトルの値のコピー y=x. " alt="" coords="328,411,420,437"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="486,309,533,336"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="589,309,687,336"/>
+<area shape="rect" id="node11" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="483,360,536,387"/>
+<area shape="rect" id="node12" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="482,411,537,437"/>
+<area shape="rect" id="node14" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="485,461,533,488"/>
+<area shape="rect" id="node17" href="$rmat_8c.html#aa8d8bebcc4d6f4f9594215e41dff4bfa" title="rmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="319,157,429,184"/>
+<area shape="rect" id="node18" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="483,259,536,285"/>
+<area shape="rect" id="node19" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="482,208,537,235"/>
 </map>

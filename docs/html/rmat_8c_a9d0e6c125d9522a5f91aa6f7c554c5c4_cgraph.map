@@ -1,16 +1,16 @@
 <map id="rmat_cols_normalize" name="rmat_cols_normalize">
-<area shape="rect" id="node2" href="$is__rvec_8h.html#a8c44b900c3ca14b622de27a52812b4f3" title="rmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) " alt="" coords="168,208,257,235"/>
-<area shape="rect" id="node3" href="$rvec_8c.html#a397a6d456362872213039db0835f5525" title="rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) " alt="" coords="317,157,392,184"/>
-<area shape="rect" id="node12" href="$is__rmulti_8h.html#a2d1096f6041d5f5d65aae0750da8fc88" title="y=1/x " alt="" coords="331,208,378,235"/>
-<area shape="rect" id="node14" href="$rvec_8c.html#ab6186424a3782651b7fefb87cf4b3ec0" title="z=x.*y " alt="" coords="305,259,404,285"/>
-<area shape="rect" id="node4" href="$rvec_8c.html#a48a98f536e91a362d32435706adbcc46" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="452,81,547,108"/>
-<area shape="rect" id="node11" href="$is__rmulti_8h.html#a14504176d48fad860c538118a0c92941" title="rmulti型の計算 y=sqrt(x) " alt="" coords="607,157,658,184"/>
-<area shape="rect" id="node5" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="601,19,665,45"/>
-<area shape="rect" id="node8" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="595,81,671,108"/>
-<area shape="rect" id="node6" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="723,5,769,32"/>
-<area shape="rect" id="node7" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="821,132,919,159"/>
-<area shape="rect" id="node9" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="719,56,773,83"/>
-<area shape="rect" id="node10" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="719,107,773,133"/>
-<area shape="rect" id="node13" href="$rmulti_8c.html#a9898a75673476311655dad6ab8d0a088" title="z=x/y " alt="" coords="473,208,525,235"/>
-<area shape="rect" id="node15" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="473,259,526,285"/>
+<area shape="rect" id="node2" href="$is__rvec_8h.html#af060e349254bb7f9716d7b72941eb8b5" title="rmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) " alt="" coords="168,208,283,235"/>
+<area shape="rect" id="node3" href="$rvec_8c.html#a070bb075414d33aa100b6994f222c1e5" title="rmulti型のベクトルの2乗ノルム value=sqrt(sum(x.^2)) " alt="" coords="353,157,431,184"/>
+<area shape="rect" id="node12" href="$is__rmulti_8h.html#a2d1096f6041d5f5d65aae0750da8fc88" title="y=1/x " alt="" coords="369,208,415,235"/>
+<area shape="rect" id="node14" href="$rvec_8c.html#a577244d361960490206b87e46b4f2a6a" title="z=x.*y " alt="" coords="331,259,453,285"/>
+<area shape="rect" id="node4" href="$rvec_8c.html#ae00a029ecdea56c726f9ed3cf71b124a" title="rmulti型のベクトルの要素の平方の総和 value=sum(x.^2) " alt="" coords="501,81,621,108"/>
+<area shape="rect" id="node11" href="$is__rmulti_8h.html#a14504176d48fad860c538118a0c92941" title="rmulti型の計算 y=sqrt(x) " alt="" coords="682,157,733,184"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="675,19,739,45"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="669,81,745,108"/>
+<area shape="rect" id="node6" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="797,5,844,32"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="896,132,993,159"/>
+<area shape="rect" id="node9" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="794,56,847,83"/>
+<area shape="rect" id="node10" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="793,107,848,133"/>
+<area shape="rect" id="node13" href="$rmulti_8c.html#a9898a75673476311655dad6ab8d0a088" title="z=x/y " alt="" coords="535,208,587,235"/>
+<area shape="rect" id="node15" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="535,259,588,285"/>
 </map>

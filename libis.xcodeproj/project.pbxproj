@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF00157520AC80B2000EAD52 /* test_rmulti.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157320AC80B1000EAD52 /* test_rmulti.c */; };
+		FF00157620AC80B2000EAD52 /* test_rsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157420AC80B1000EAD52 /* test_rsolve.c */; };
+		FF00158520AC8104000EAD52 /* test_gb.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157720AC8102000EAD52 /* test_gb.c */; };
+		FF00158620AC8104000EAD52 /* test_reig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157820AC8102000EAD52 /* test_reig.c */; };
+		FF00158720AC8104000EAD52 /* test_csolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157920AC8102000EAD52 /* test_csolve.c */; };
+		FF00158820AC8104000EAD52 /* test_mat3.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157A20AC8102000EAD52 /* test_mat3.c */; };
+		FF00158920AC8104000EAD52 /* test_cnewton.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157B20AC8103000EAD52 /* test_cnewton.c */; };
+		FF00158A20AC8104000EAD52 /* test_bigint.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157C20AC8103000EAD52 /* test_bigint.c */; };
+		FF00158B20AC8104000EAD52 /* test_fvec.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157D20AC8103000EAD52 /* test_fvec.c */; };
+		FF00158C20AC8104000EAD52 /* test_func.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157E20AC8103000EAD52 /* test_func.c */; };
+		FF00158D20AC8104000EAD52 /* test_dsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00157F20AC8103000EAD52 /* test_dsolve.c */; };
+		FF00158E20AC8104000EAD52 /* test_array.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158020AC8103000EAD52 /* test_array.c */; };
+		FF00158F20AC8104000EAD52 /* test_zsolve.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158120AC8104000EAD52 /* test_zsolve.c */; };
+		FF00159020AC8104000EAD52 /* test_deig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158220AC8104000EAD52 /* test_deig.c */; };
+		FF00159120AC8104000EAD52 /* test_strings.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158320AC8104000EAD52 /* test_strings.c */; };
+		FF00159220AC8104000EAD52 /* test_zeig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158420AC8104000EAD52 /* test_zeig.c */; };
 		FF717FE720A1C5E70048B19D /* is_rsolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3820A1C5CA0048B19D /* is_rsolve.h */; };
 		FF717FE820A1C5E70048B19D /* is_zhpeig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3920A1C5CB0048B19D /* is_zhpeig.h */; };
 		FF717FE920A1C5E70048B19D /* is_dcomplex.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3A20A1C5CB0048B19D /* is_dcomplex.h */; };
@@ -183,6 +199,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF00157320AC80B1000EAD52 /* test_rmulti.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_rmulti.c; path = test/test_rmulti.c; sourceTree = "<group>"; };
+		FF00157420AC80B1000EAD52 /* test_rsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_rsolve.c; path = test/test_rsolve.c; sourceTree = "<group>"; };
+		FF00157720AC8102000EAD52 /* test_gb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_gb.c; path = test/test_gb.c; sourceTree = "<group>"; };
+		FF00157820AC8102000EAD52 /* test_reig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_reig.c; path = test/test_reig.c; sourceTree = "<group>"; };
+		FF00157920AC8102000EAD52 /* test_csolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_csolve.c; path = test/test_csolve.c; sourceTree = "<group>"; };
+		FF00157A20AC8102000EAD52 /* test_mat3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_mat3.c; path = test/test_mat3.c; sourceTree = "<group>"; };
+		FF00157B20AC8103000EAD52 /* test_cnewton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_cnewton.c; path = test/test_cnewton.c; sourceTree = "<group>"; };
+		FF00157C20AC8103000EAD52 /* test_bigint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_bigint.c; path = test/test_bigint.c; sourceTree = "<group>"; };
+		FF00157D20AC8103000EAD52 /* test_fvec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_fvec.c; path = test/test_fvec.c; sourceTree = "<group>"; };
+		FF00157E20AC8103000EAD52 /* test_func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_func.c; path = test/test_func.c; sourceTree = "<group>"; };
+		FF00157F20AC8103000EAD52 /* test_dsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_dsolve.c; path = test/test_dsolve.c; sourceTree = "<group>"; };
+		FF00158020AC8103000EAD52 /* test_array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_array.c; path = test/test_array.c; sourceTree = "<group>"; };
+		FF00158120AC8104000EAD52 /* test_zsolve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_zsolve.c; path = test/test_zsolve.c; sourceTree = "<group>"; };
+		FF00158220AC8104000EAD52 /* test_deig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_deig.c; path = test/test_deig.c; sourceTree = "<group>"; };
+		FF00158320AC8104000EAD52 /* test_strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_strings.c; path = test/test_strings.c; sourceTree = "<group>"; };
+		FF00158420AC8104000EAD52 /* test_zeig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_zeig.c; path = test/test_zeig.c; sourceTree = "<group>"; };
 		FF717F3820A1C5CA0048B19D /* is_rsolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rsolve.h; path = src/is_rsolve.h; sourceTree = SOURCE_ROOT; };
 		FF717F3920A1C5CB0048B19D /* is_zhpeig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zhpeig.h; path = src/is_zhpeig.h; sourceTree = SOURCE_ROOT; };
 		FF717F3A20A1C5CB0048B19D /* is_dcomplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dcomplex.h; path = src/is_dcomplex.h; sourceTree = SOURCE_ROOT; };
@@ -374,6 +406,22 @@
 			isa = PBXGroup;
 			children = (
 				FF717F9120A1C5D60048B19D /* array.c */,
+				FF00157320AC80B1000EAD52 /* test_rmulti.c */,
+				FF00157420AC80B1000EAD52 /* test_rsolve.c */,
+				FF00158020AC8103000EAD52 /* test_array.c */,
+				FF00157C20AC8103000EAD52 /* test_bigint.c */,
+				FF00157B20AC8103000EAD52 /* test_cnewton.c */,
+				FF00157920AC8102000EAD52 /* test_csolve.c */,
+				FF00158220AC8104000EAD52 /* test_deig.c */,
+				FF00157F20AC8103000EAD52 /* test_dsolve.c */,
+				FF00157E20AC8103000EAD52 /* test_func.c */,
+				FF00157D20AC8103000EAD52 /* test_fvec.c */,
+				FF00157720AC8102000EAD52 /* test_gb.c */,
+				FF00157A20AC8102000EAD52 /* test_mat3.c */,
+				FF00157820AC8102000EAD52 /* test_reig.c */,
+				FF00158320AC8104000EAD52 /* test_strings.c */,
+				FF00158420AC8104000EAD52 /* test_zeig.c */,
+				FF00158120AC8104000EAD52 /* test_zsolve.c */,
 				FF717F4B20A1C5CC0048B19D /* bigint.c */,
 				FF717F3B20A1C5CB0048B19D /* ceig_hqr.c */,
 				FF717FB020A1C5DB0048B19D /* ceig_ii.c */,
@@ -731,6 +779,7 @@
 				FF71807E20A1C5E70048B19D /* GeneralHashFunctions.c in Sources */,
 				FF71807920A1C5E70048B19D /* rmulti.c in Sources */,
 				FF717FF120A1C5E70048B19D /* reig.c in Sources */,
+				FF00158920AC8104000EAD52 /* test_cnewton.c in Sources */,
 				FF71805E20A1C5E70048B19D /* func_gb.c in Sources */,
 				FF71806720A1C5E70048B19D /* ireig.c in Sources */,
 				FF71801220A1C5E70048B19D /* zmat.c in Sources */,
@@ -750,7 +799,10 @@
 				FF71805220A1C5E70048B19D /* icvec.c in Sources */,
 				FF71805720A1C5E70048B19D /* zeig.c in Sources */,
 				FF71802120A1C5E70048B19D /* zvec.c in Sources */,
+				FF00159120AC8104000EAD52 /* test_strings.c in Sources */,
+				FF00158620AC8104000EAD52 /* test_reig.c in Sources */,
 				FF71807220A1C5E70048B19D /* func_complex.c in Sources */,
+				FF00159020AC8104000EAD52 /* test_deig.c in Sources */,
 				FF71800F20A1C5E70048B19D /* func_solve.c in Sources */,
 				FF71805120A1C5E70048B19D /* func_find.c in Sources */,
 				FF717FF620A1C5E70048B19D /* cmulti.c in Sources */,
@@ -761,14 +813,18 @@
 				FF71808320A1C5E70048B19D /* irvec.c in Sources */,
 				FF71803F20A1C5E70048B19D /* array.c in Sources */,
 				FF71803020A1C5E70048B19D /* func_import.c in Sources */,
+				FF00158820AC8104000EAD52 /* test_mat3.c in Sources */,
 				FF71809320A1C5E70048B19D /* icsolve.c in Sources */,
 				FF71800020A1C5E70048B19D /* chsnbrg.c in Sources */,
+				FF00157620AC80B2000EAD52 /* test_rsolve.c in Sources */,
 				FF71802320A1C5E70048B19D /* func_expand.c in Sources */,
 				FF717FF520A1C5E70048B19D /* chpeig.c in Sources */,
 				FF717FF320A1C5E70048B19D /* func_print.c in Sources */,
+				FF00158A20AC8104000EAD52 /* test_bigint.c in Sources */,
 				FF71803220A1C5E70048B19D /* func_math.c in Sources */,
 				FF71806E20A1C5E70048B19D /* irsolve.c in Sources */,
 				FF71801D20A1C5E70048B19D /* dtestmat.c in Sources */,
+				FF00157520AC80B2000EAD52 /* test_rmulti.c in Sources */,
 				FF71801520A1C5E70048B19D /* dvec.c in Sources */,
 				FF71806120A1C5E70048B19D /* func_number.c in Sources */,
 				FF71805620A1C5E70048B19D /* func.c in Sources */,
@@ -779,10 +835,13 @@
 				FF717FF420A1C5E70048B19D /* func_table.c in Sources */,
 				FF71804D20A1C5E70048B19D /* func_poly.c in Sources */,
 				FF71807720A1C5E70048B19D /* icmat.c in Sources */,
+				FF00158F20AC8104000EAD52 /* test_zsolve.c in Sources */,
 				FF71801620A1C5E70048B19D /* func_list.c in Sources */,
+				FF00158C20AC8104000EAD52 /* test_func.c in Sources */,
 				FF71803620A1C5E70048B19D /* dhshldr.c in Sources */,
 				FF71801C20A1C5E70048B19D /* dhpsvd.c in Sources */,
 				FF71806C20A1C5E70048B19D /* rsolve_newton.c in Sources */,
+				FF00158520AC8104000EAD52 /* test_gb.c in Sources */,
 				FF71807B20A1C5E70048B19D /* func_script.c in Sources */,
 				FF71804120A1C5E70048B19D /* func_args.c in Sources */,
 				FF71803120A1C5E70048B19D /* func_vec.c in Sources */,
@@ -793,6 +852,8 @@
 				FF71803820A1C5E70048B19D /* func_strings.c in Sources */,
 				FF71805820A1C5E70048B19D /* func_cmp.c in Sources */,
 				FF71806320A1C5E70048B19D /* func_mono.c in Sources */,
+				FF00158D20AC8104000EAD52 /* test_dsolve.c in Sources */,
+				FF00158B20AC8104000EAD52 /* test_fvec.c in Sources */,
 				FF71804520A1C5E70048B19D /* reig_hqr.c in Sources */,
 				FF717FF720A1C5E70048B19D /* ceig.c in Sources */,
 				FF71806D20A1C5E70048B19D /* iceig.c in Sources */,
@@ -809,8 +870,10 @@
 				FF717FFD20A1C5E70048B19D /* deig.c in Sources */,
 				FF71808A20A1C5E70048B19D /* rsolve.c in Sources */,
 				FF71807320A1C5E70048B19D /* dsolve.c in Sources */,
+				FF00159220AC8104000EAD52 /* test_zeig.c in Sources */,
 				FF71802620A1C5E70048B19D /* csolve.c in Sources */,
 				FF717FEA20A1C5E70048B19D /* ceig_hqr.c in Sources */,
+				FF00158E20AC8104000EAD52 /* test_array.c in Sources */,
 				FF71800320A1C5E70048B19D /* csolve_newton.c in Sources */,
 				FF717FEE20A1C5E70048B19D /* rtestmat.c in Sources */,
 				FF71808920A1C5E70048B19D /* rhshldr.c in Sources */,
@@ -826,6 +889,7 @@
 				FF71804220A1C5E70048B19D /* func_maps.c in Sources */,
 				FF71801120A1C5E70048B19D /* svec.c in Sources */,
 				FF71800720A1C5E70048B19D /* func_cmat.c in Sources */,
+				FF00158720AC8104000EAD52 /* test_csolve.c in Sources */,
 				FF71805C20A1C5E70048B19D /* reig_ii.c in Sources */,
 				FF717FFF20A1C5E70048B19D /* func_rmat.c in Sources */,
 			);

@@ -15,7 +15,7 @@ void zeig_residual(int n, dcomplex *F, dcomplex *A, int LDA, dcomplex *X, dcompl
 {
   zvec_mul_zvec_zscalar(n,F,X,lambda);     // F=lambda*X
   zvec_neg_zvec(n,F,F);                  // F=-F
-  zvec_add_lintr(n,n,F,A,LDA,X);      // F=A*X-lambda*X
+  zvec_add_mul_zmat_zvec(n,n,F,A,LDA,X);      // F=A*X-lambda*X
 }
 
 // E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))), k=1,2,..,n

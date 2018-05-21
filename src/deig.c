@@ -13,7 +13,7 @@
 void deig_residual(int n, double *F, double *A, int LDA, double *X, double lambda)
 {
   dvec_mul_dvec_dscalar(n,F,X,-lambda); //  F=-lambda*X
-  dvec_add_lintr(n,n,F,A,LDA,X);   // F=A*X-lambda*X
+  dvec_add_mul_dmat_dvec(n,n,F,A,LDA,X);   // F=A*X-lambda*X
 }
 
 // E(k)=max(abs(A*X(:,k)-lambda(k)*X(:,k))), k=1,2,..,n

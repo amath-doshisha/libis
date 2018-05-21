@@ -47,7 +47,7 @@ int zhpeig_1pair(int n, dcomplex *A, int LDA, dcomplex *z, dcomplex *x, dcomplex
   eps_half=pow(2,-26);
   eta=1.0/eps; eta0=0; mu=eta/eta0;
   step_max=ZHPEIG_STEP_MAX;  
-  zvec_lintr_ct(n,n,w,A,LDA,z); // w=A'*z
+  zvec_mul_zmat_ct_zvec(n,n,w,A,LDA,z); // w=A'*z
   if(debug>1){
     printf("[%s] eps=%.1e=2^%d\n",fname,eps,(int)(log(eps)/log(2)));
     printf("[%s] eps_half=%.1e=2^%d\n",fname,eps_half,(int)(log(eps_half)/log(2)));
@@ -56,8 +56,8 @@ int zhpeig_1pair(int n, dcomplex *A, int LDA, dcomplex *z, dcomplex *x, dcomplex
   // initial vector
   step=0;
   zvec_normalize_sgn_zvec(n,x,x);                       // x=x/sqrt(x'*x)
-  C=zvec_dot(n,z,x);                               // C=z'*x
-  dot=zvec_dot(n,w,x);                             // lambda=w'*x
+  C=zinnprod_zvec_zvec(n,z,x);                               // C=z'*x
+  dot=zinnprod_zvec_zvec(n,w,x);                             // lambda=w'*x
   Z_SET_DIV((*lambda),dot,C);                      // lambda=(w'*x)/C
   zeig_residual(n,F,A,LDA,x,(*lambda));            // F=A*x-lambda*x;
   (*E)=dnorm_max_zvec(n,F);                         // E=max(abs(F));
@@ -74,8 +74,8 @@ int zhpeig_1pair(int n, dcomplex *A, int LDA, dcomplex *z, dcomplex *x, dcomplex
       eta=dnorm_max_zvec(n,F);                        // eta=norm_max(F)
       zvec_sub_zvec_zvec(n,x,x,F);                        // x=x-F
       zvec_normalize_sgn_zvec(n,x,x);                     // x=x/sqrt(x'*x)
-      C=zvec_dot(n,z,x);                             // C=z'*x
-      dot=zvec_dot(n,w,x);                           // lambda=w'*x
+      C=zinnprod_zvec_zvec(n,z,x);                             // C=z'*x
+      dot=zinnprod_zvec_zvec(n,w,x);                           // lambda=w'*x
       Z_SET_DIV((*lambda),dot,C);                    // lambda=(w'*x)/C
       zeig_residual(n,F,A,LDA,x,(*lambda));          // F=A*x-lambda*x;
       (*E)=dnorm_max_zvec(n,F);                       // E=max(abs(F));

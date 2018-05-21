@@ -18,7 +18,7 @@ int main()
   zmat_set_rand(n,n,A,LDA,2,-1);
   zmat_copy(n,n,A0,LDA,A,LDA);
   zvec_set_ones(n,x0);
-  zvec_lintr(n,n,b,A,LDA,x0);
+  zvec_mul_zmat_zvec(n,n,b,A,LDA,x0);
   zvec_copy_zvec(n,x,b);
 
   printf("before\n");

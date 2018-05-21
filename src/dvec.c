@@ -20,7 +20,7 @@
 
 /////////////////////////////////////////////////////////////
 
-/** @name double型のベクトルの初期化 */
+/** @name allocation */
 /** @{ */
 
 /**
@@ -29,6 +29,17 @@
 double *dvec_allocate(int n)
 {
   return (double*)malloc(sizeof(double)*n);
+}
+
+/**
+ @brief double型ベクトルのメモリ割当とコピー
+ */
+double *dvec_allocate_clone(int n, double *x)
+{
+  double *y=NULL;
+  y=dvec_allocate(n);
+  dvec_set_dvec(n,y,x);
+  return y;
 }
 
 /**
@@ -45,7 +56,7 @@ double *dvec_free(double *x)
 
 /////////////////////////////////////////////////////////////
 
-/** @name double型のベクトルの値の設定 */
+/** @name setting */
 /** @{ */
 
 /**
@@ -124,6 +135,13 @@ void dvec_set_rand(int n, double *x, double a, double b){
   }
 }
 
+/** @} */
+
+/////////////////////////////////////////////////////////////
+
+/** @name double型のベクトルの値の設定 */
+/** @{ */
+
 /**
  @brief y=x
  */
@@ -132,13 +150,6 @@ void dvec_set_dvec(int n, double *y, double *x)
   int i;
   for(i=0; i<n; i++){ y[i]=x[i]; }
 }
-
-/** @} */
-
-/////////////////////////////////////////////////////////////
-
-/** @name double型のベクトルの値の設定 */
-/** @{ */
 
 /**
  @brief int ->  double
@@ -375,7 +386,7 @@ void dvec_normalize_sgn_dvec(int n, double *y, double *x)
 void dvec_orthogonalize(int n, double *y, double *x)
 {
   double dot;
-  dot=dvec_dot(n,x,y);
+  dot=dinnprod_dvec_dvec(n,x,y);
   dvec_sub_scaled(n,y,dot,x);
 }
 
@@ -712,7 +723,7 @@ void dvec_pow_dvec_dscalar(int n, double *z, double *x, double y)
 /**
  @brief z=x'*y
  */
-double dvec_dot(int n, double *x, double *y)
+double dinnprod_dvec_dvec(int n, double *x, double *y)
 {
   int i;
   double value=0;
@@ -739,11 +750,11 @@ double dvec_dot(int n, double *x, double *y)
 /**
  @brief z=abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y)
  */
-double dvec_dcos_abs(int n, double *x, double *y){
+double ddcos_abs_dvec_dvec(int n, double *x, double *y){
   double norm_x,norm_y,dcos,dot;
   norm_x=dnorm2_dvec(n,x);
   norm_y=dnorm2_dvec(n,y);
-  dot=dvec_dot(n,x,y);
+  dot=dinnprod_dvec_dvec(n,x,y);
   dcos=fabs(dot)/(norm_x*norm_y);
   return dcos;
 }
@@ -751,10 +762,10 @@ double dvec_dcos_abs(int n, double *x, double *y){
 /**
  @brief z=acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
  */
-double dvec_angle(int n, double *x, double *y)
+double dangle_dvec_dvec(int n, double *x, double *y)
 {
   double theta;
-  theta=dvec_dcos_abs(n,x,y);
+  theta=ddcos_abs_dvec_dvec(n,x,y);
   if(theta>1) theta=1;
   theta=acos(theta);
   return theta;
@@ -763,9 +774,9 @@ double dvec_angle(int n, double *x, double *y)
 /**
  @brief z=(180/PI)*acos(abs(x'*y)/\sqrt(x'*x)/sqrt(y'*y))
  */
-double dvec_angle_deg(int n, double *x, double *y)
+double ddeg_angle_dvec_dvec(int n, double *x, double *y)
 {
-  return dvec_angle(n,x,y)*(180.0/M_PI);
+  return dangle_dvec_dvec(n,x,y)*(180.0/M_PI);
 }
 
 /**
@@ -978,74 +989,6 @@ double *dvec_bin_load(int *n, char* fmt, ...)
 /** @} */
 
 /////////////////////////////////////////////////////////////
-
-/** @name 移行作業中：dmat.cに移動する */
-/** @{ */
-
-// y=A*x
-void dvec_lintr(int m, int n, double *y, double *A, int LDA, double *x){
-  int i,j;
-  for(i=0; i<m; i++){
-    y[i]=0;
-    for(j=0; j<n; j++){
-      y[i]+=MAT(A,i,j,LDA)*x[j];
-    }
-  }
-}
-
-// y=y+A*x
-void dvec_add_lintr(int m, int n, double *y, double *A, int LDA, double *x){
-  int i,j;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      y[i]+=MAT(A,i,j,LDA)*x[j];
-    }
-  }
-}
-
-// y=y-A*x
-void dvec_sub_lintr(int m, int n, double *y, double *A, int LDA, double *x){
-  int i,j;
-  for(i=0; i<m; i++){
-    for(j=0; j<n; j++){
-      y[i]-=MAT(A,i,j,LDA)*x[j];
-    }
-  }
-}
-
-// y=A'*x
-void dvec_lintr_t(int m, int n, double *y, double *A, int LDA, double *x){
-  int i,j;
-  for(j=0; j<n; j++){
-    y[j]=0;
-    for(i=0; i<m; i++){
-      y[j]+=MAT(A,i,j,LDA)*x[i];
-    }
-  }
-}
-
-// y=y+A'*x
-void dvec_add_lintr_t(int m, int n, double *y, double *A, int LDA, double *x){
-  int i,j;
-  for(j=0; j<n; j++){
-    for(i=0; i<m; i++){
-      y[j]+=MAT(A,i,j,LDA)*x[i];
-    }
-  }
-}
-
-// y=y-A'*x
-void dvec_sub_lintr_t(int m, int n, double *y, double *A, int LDA, double *x){
-  int i,j;
-  for(j=0; j<n; j++){
-    for(i=0; i<m; i++){
-      y[j]-=MAT(A,i,j,LDA)*x[i];
-    }
-  }
-}
-
-
-/** @} */
 
 
 

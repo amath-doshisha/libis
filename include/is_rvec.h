@@ -172,13 +172,20 @@ void rvec_abs_sub_rvec_rscalar(int n, rmulti **z, rmulti **x, rmulti *y);
 void rsum_abs_sub_rvec_rvec(rmulti *value, int n, rmulti **x, rmulti **y);
 // z=max(abs(x-y))
 void rmax_abs_sub_rvec_rvec(rmulti *value, int n, rmulti **x, rmulti **y);
-// others
-void rvec_sum_mul(rmulti *value, int n, rmulti **x, rmulti **y);     // z=sum(x.*y)
-void rvec_dcos(rmulti *z, int n, rmulti **x, rmulti **y);            // z=(x'*y)/sqrt(x'*x)/sqrt(y'*y)
-void rvec_abs_dcos(rmulti *z, int n, rmulti **x, rmulti **y);        // z=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
-void rvec_angle(rmulti *theta, int n, rmulti **x, rmulti **y);       // z=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
-void rvec_angle_deg(rmulti *theta, int n, rmulti **x, rmulti **y);   // z=(180/PI)*acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
-void rvec_max_div_abs(rmulti *z, int n, rmulti **x, rmulti **y);     // z=max(abs(x)./abs(y))
+// z=max(abs(x-y)^2)
+void rmax_pow2_abs_sub_rvec_rvec(rmulti *z, int n, rmulti **x, rmulti **y);
+// z=x'*y
+void rinnprod_rvec_rvec(rmulti *value, int n, rmulti **x, rmulti **y);
+// z=(x'*y)/sqrt(x'*x)/sqrt(y'*y)
+void rdcos_rvec_rvec(rmulti *z, int n, rmulti **x, rmulti **y);
+// z=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
+void rdcos_abs_rvec_rvec(rmulti *z, int n, rmulti **x, rmulti **y);
+// z=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
+void rangle_rvec_rvec(rmulti *theta, int n, rmulti **x, rmulti **y);
+// z=(180/PI)*acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
+void rdeg_angle_rvec_rvec(rmulti *theta, int n, rmulti **x, rmulti **y);
+// z=max(abs(x)/abs(y))
+void rmax_div_abs_rvec_rvec(rmulti *z, int n, rmulti **x, rmulti **y);
 
 /*
  * y=y+f(x)
@@ -217,7 +224,8 @@ int rvec_le_d2(int n, rmulti **x, double a);        // x[i]<=a
 /*
  * 作業中： rmat.cに移動する．
  */
-void rvec_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x);       // y=A*x
+// y=A*x
+void rvec_mul_rmat_rvec(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x);
 void rvec_add_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x);   // y+=A*x
 void rvec_sub_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x);   // y-=A*x
 void rvec_lintr_t(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x);     // y=A'*x

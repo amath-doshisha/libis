@@ -89,7 +89,7 @@ void chouseholder_right(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   a=callocate_prec(prec);
   p=cvec_allocate_prec(m,prec);
   // p=A*h
-  cvec_lintr(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
+  cvec_mul_cmat_cvec(m,n-k,p,&COL(A,k,LDA),LDA,&h[k]);
   // B=A*H=A-alpha*(A*h)*h'=A-alpha*p*h'
   cset_r(a,alpha); cneg_c(a,a);
   cmat_rank1op(m,n-k,&COL(B,k,LDB),LDB,&COL(A,k,LDA),LDA,a,p,&h[k]);
@@ -153,7 +153,7 @@ void chouseholder(int n, int k0, int nH, int k, cmulti **h, rmulti *alpha, cmult
   for(j=0; j<nH; j++){
     // R=R-alpha[j]*(H(:,j)'*R)*H(:,j)
     l=k0+j;
-    cvec_sum_dot(value,n-l,&MAT(H,l,j,LDH),&R[l]);
+    cinnprod_cvec_cvec(value,n-l,&MAT(H,l,j,LDH),&R[l]);
     cmul_cr(value,value,Alpha[j]);
     cvec_sub_mul_cvec_cscalar(n-l,&R[l],&MAT(H,l,j,LDH),value);
   }

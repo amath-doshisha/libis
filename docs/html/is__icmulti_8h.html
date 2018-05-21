@@ -501,18 +501,126 @@ $(document).ready(function(){initNavTree('is__icmulti_8h.html','');});
 <tr class="separator:a8ea3b190a5d34dd09cc494d1f5da7669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4939dda58bed88de69eaa4bcb1007a56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a4939dda58bed88de69eaa4bcb1007a56">icsub_dot_zr</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *z1, <a class="el" href="structdcomplex.html">dcomplex</a> x0, <a class="el" href="structdcomplex.html">dcomplex</a> x1, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1)</td></tr>
 <tr class="separator:a4939dda58bed88de69eaa4bcb1007a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfc8b699d37c84b6fb9199c91532b9f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#abfc8b699d37c84b6fb9199c91532b9f6">icin</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
-<tr class="memdesc:abfc8b699d37c84b6fb9199c91532b9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1).  <a href="#abfc8b699d37c84b6fb9199c91532b9f6">[詳解]</a><br /></td></tr>
-<tr class="separator:abfc8b699d37c84b6fb9199c91532b9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb70bc38bf3501165783fb21cfa9b187"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#acb70bc38bf3501165783fb21cfa9b187">icin_pm</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x)</td></tr>
-<tr class="memdesc:acb70bc38bf3501165783fb21cfa9b187"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)).  <a href="#acb70bc38bf3501165783fb21cfa9b187">[詳解]</a><br /></td></tr>
-<tr class="separator:acb70bc38bf3501165783fb21cfa9b187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9878ea472597c886c08bb1b3033a79ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#a9878ea472597c886c08bb1b3033a79ab">ic_in_ic</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x1)</td></tr>
+<tr class="memdesc:a9878ea472597c886c08bb1b3033a79ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1).  <a href="#a9878ea472597c886c08bb1b3033a79ab">[詳解]</a><br /></td></tr>
+<tr class="separator:a9878ea472597c886c08bb1b3033a79ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c22ea4689cef91d571c2c8a17b9887"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__icmulti_8h.html#ab8c22ea4689cef91d571c2c8a17b9887">ic_in_icpm</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *x)</td></tr>
+<tr class="memdesc:ab8c22ea4689cef91d571c2c8a17b9887"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)).  <a href="#ab8c22ea4689cef91d571c2c8a17b9887">[詳解]</a><br /></td></tr>
+<tr class="separator:ab8c22ea4689cef91d571c2c8a17b9887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>多倍長精度実数型cmultiの機械区間演算 </p>
 
 <p class="definition"> <a class="el" href="is__icmulti_8h_source.html">is_icmulti.h</a> に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
+<a id="a9878ea472597c886c08bb1b3033a79ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9878ea472597c886c08bb1b3033a79ab">&#9670;&nbsp;</a></span>ic_in_ic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ic_in_ic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1). </p>
+
+<p class="definition"> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00904">904</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__icmulti_8h_a9878ea472597c886c08bb1b3033a79ab_cgraph.png" border="0" usemap="#is__icmulti_8h_a9878ea472597c886c08bb1b3033a79ab_cgraph" alt=""/></div>
+<map name="is__icmulti_8h_a9878ea472597c886c08bb1b3033a79ab_cgraph" id="is__icmulti_8h_a9878ea472597c886c08bb1b3033a79ab_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#a94684830321a7ea43715a74f823e0aa1" title="区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1). " alt="" coords="109,31,161,57"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="209,31,252,57"/>
+<area shape="rect" id="node4" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="300,5,372,32"/>
+<area shape="rect" id="node5" href="rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="309,56,363,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab8c22ea4689cef91d571c2c8a17b9887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c22ea4689cef91d571c2c8a17b9887">&#9670;&nbsp;</a></span>ic_in_icpm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ic_in_icpm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)). </p>
+
+<p class="definition"> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00912">912</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__icmulti_8h_ab8c22ea4689cef91d571c2c8a17b9887_cgraph.png" border="0" usemap="#is__icmulti_8h_ab8c22ea4689cef91d571c2c8a17b9887_cgraph" alt=""/></div>
+<map name="is__icmulti_8h_ab8c22ea4689cef91d571c2c8a17b9887_cgraph" id="is__icmulti_8h_ab8c22ea4689cef91d571c2c8a17b9887_cgraph">
+<area shape="rect" id="node2" href="irmulti_8c.html#aad559df41bca33a28b0bc527217504f0" title="区間の内包の判定 [y0,y1] in [&#45;abs(x),abs(x)], すなわち (&#45;abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)). " alt="" coords="123,107,188,133"/>
+<area shape="rect" id="node3" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="236,5,321,32"/>
+<area shape="rect" id="node4" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="247,56,311,83"/>
+<area shape="rect" id="node5" href="irmulti_8c.html#a2fb4aea3587b6786964811c9e47e7182" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)]. " alt="" coords="258,107,299,133"/>
+<area shape="rect" id="node6" href="is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="257,157,300,184"/>
+<area shape="rect" id="node9" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="257,208,300,235"/>
+<area shape="rect" id="node7" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="369,132,441,159"/>
+<area shape="rect" id="node8" href="rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="379,183,432,209"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7176ee551b9451fea7f75f3993770912"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7176ee551b9451fea7f75f3993770912">&#9670;&nbsp;</a></span>icabsc_c()</h2>
 
@@ -4002,114 +4110,6 @@ $(document).ready(function(){initNavTree('is__icmulti_8h.html','');});
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="abfc8b699d37c84b6fb9199c91532b9f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfc8b699d37c84b6fb9199c91532b9f6">&#9670;&nbsp;</a></span>icin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int icin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
-          <td class="paramname"><em>y0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
-          <td class="paramname"><em>y1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
-          <td class="paramname"><em>x0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
-          <td class="paramname"><em>x1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1). </p>
-
-<p class="definition"> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00904">904</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="is__icmulti_8h_abfc8b699d37c84b6fb9199c91532b9f6_cgraph.png" border="0" usemap="#is__icmulti_8h_abfc8b699d37c84b6fb9199c91532b9f6_cgraph" alt=""/></div>
-<map name="is__icmulti_8h_abfc8b699d37c84b6fb9199c91532b9f6_cgraph" id="is__icmulti_8h_abfc8b699d37c84b6fb9199c91532b9f6_cgraph">
-<area shape="rect" id="node2" href="irmulti_8c.html#a73b18f31edb0aa0ed50c5a9adae49a99" title="区間の内包の判定 [y0,y1] in [x0,x1], すなわち (x0&lt;=y0 &amp;&amp; y1 &lt;=x1). " alt="" coords="92,31,131,57"/>
-<area shape="rect" id="node3" href="is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="179,31,221,57"/>
-<area shape="rect" id="node4" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="269,5,341,32"/>
-<area shape="rect" id="node5" href="rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="279,56,332,83"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="acb70bc38bf3501165783fb21cfa9b187"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb70bc38bf3501165783fb21cfa9b187">&#9670;&nbsp;</a></span>icin_pm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int icin_pm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
-          <td class="paramname"><em>y0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
-          <td class="paramname"><em>y1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>区間の内包の判定 [y0,y1] in [-abs(x),abs(x)], すなわち (-abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)). </p>
-
-<p class="definition"> <a class="el" href="icmulti_8c_source.html">icmulti.c</a> の <a class="el" href="icmulti_8c_source.html#l00912">912</a> 行目に定義があります。</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="is__icmulti_8h_acb70bc38bf3501165783fb21cfa9b187_cgraph.png" border="0" usemap="#is__icmulti_8h_acb70bc38bf3501165783fb21cfa9b187_cgraph" alt=""/></div>
-<map name="is__icmulti_8h_acb70bc38bf3501165783fb21cfa9b187_cgraph" id="is__icmulti_8h_acb70bc38bf3501165783fb21cfa9b187_cgraph">
-<area shape="rect" id="node2" href="irmulti_8c.html#ae8ec5e6b6892a8cee6777bd2ca9364e8" title="区間の内包の判定 [y0,y1] in [&#45;abs(x),abs(x)], すなわち (&#45;abs(x)&lt;=y0 &amp;&amp; y1 &lt;=abs(x)). " alt="" coords="109,107,164,133"/>
-<area shape="rect" id="node3" href="is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="212,5,297,32"/>
-<area shape="rect" id="node4" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="223,56,287,83"/>
-<area shape="rect" id="node5" href="irmulti_8c.html#a2fb4aea3587b6786964811c9e47e7182" title="符号の正負 [y0,y1]=[&#45;abs(x),abs(x)]. " alt="" coords="234,107,275,133"/>
-<area shape="rect" id="node6" href="is__rmulti_8h.html#afe8b9c337d32e4a1e34a161748cb2da0" title="rmulti型の値の比較 x&lt;=y " alt="" coords="233,157,276,184"/>
-<area shape="rect" id="node9" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="233,208,276,235"/>
-<area shape="rect" id="node7" href="rmulti_8c.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="345,132,417,159"/>
-<area shape="rect" id="node8" href="rmulti_8c.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="355,183,408,209"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -10040,7 +10040,7 @@ $(document).ready(function(){initNavTree('is__icmulti_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__icmulti_8h.html">is_icmulti.h</a></li>
-    <li class="footer">2018年05月14日(月) 22時18分47秒作成 - libis / 構成: 
+    <li class="footer">2018年05月22日(火) 08時27分20秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

@@ -1,0 +1,9 @@
+<map id="rsum_abs_sub_rvec_rvec" name="rsum_abs_sub_rvec_rvec">
+<area shape="rect" id="node2" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="193,5,257,32"/>
+<area shape="rect" id="node5" href="$is__rmulti_8h.html#a4acfc1f7f71c44234ca1873f69b6eaa5" title="z=x&#45;y " alt="" coords="199,56,252,83"/>
+<area shape="rect" id="node6" href="$is__rmulti_8h.html#abac9df16942c0bbed69a496facad3210" title="rmulti型の絶対値の加算 y+=abs(x) " alt="" coords="189,107,261,133"/>
+<area shape="rect" id="node3" href="$rmulti_8c.html#a23b0384919058d38dcbc102784dc3301" title="rmulti型の浮動小数点数を符号あり整数から設定. " alt="" coords="313,5,360,32"/>
+<area shape="rect" id="node4" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="412,81,509,108"/>
+<area shape="rect" id="node7" href="$rmulti_8c.html#a557d89824eaafd50f97f91f4a2d15ea6" title="rmulti型の絶対値 y=abs(x) " alt="" coords="311,107,362,133"/>
+<area shape="rect" id="node8" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="309,157,364,184"/>
+</map>

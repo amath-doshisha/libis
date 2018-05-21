@@ -1536,7 +1536,7 @@ void icsum_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief 線形変換 [y0,y1]=[A0,A1]*[x0,x1]
 */
-void icvec_lintr(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **x0, cmulti **x1)
+void icvec_mul_cmat_cvec(int m, int n, cmulti **y0, cmulti **y1, cmulti **A0, int LDA0, cmulti **A1, int LDA1, cmulti **x0, cmulti **x1)
 {
   int prec,i,j;
   cmulti **z0=NULL,**z1=NULL;

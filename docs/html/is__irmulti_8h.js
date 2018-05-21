@@ -1,5 +1,7 @@
 var is__irmulti_8h =
 [
+    [ "ir_in_ir", "is__irmulti_8h.html#a94684830321a7ea43715a74f823e0aa1", null ],
+    [ "ir_in_irpm", "is__irmulti_8h.html#aad559df41bca33a28b0bc527217504f0", null ],
     [ "irabs2_r", "is__irmulti_8h.html#a5d8697daf8d8d4d21000b35024b51429", null ],
     [ "irabs_r", "is__irmulti_8h.html#ad96d0d7413e12df00ef27abd4ee62f92", null ],
     [ "irabs_sub_dd", "is__irmulti_8h.html#a5e8d4ff1d09f26beb4e9fbc4997f0ce5", null ],
@@ -39,8 +41,6 @@ var is__irmulti_8h =
     [ "irfloor_r", "is__irmulti_8h.html#ad7bc39af0c10ea7aa84ac11e462177b5", null ],
     [ "irimag_d", "is__irmulti_8h.html#a91d81471205a34d4fbcc571da49ae721", null ],
     [ "irimag_r", "is__irmulti_8h.html#a1394b0fef3f60ca837eb418c1772e256", null ],
-    [ "irin", "is__irmulti_8h.html#a73b18f31edb0aa0ed50c5a9adae49a99", null ],
-    [ "irin_pm", "is__irmulti_8h.html#ae8ec5e6b6892a8cee6777bd2ca9364e8", null ],
     [ "irinv_d", "is__irmulti_8h.html#a4f0b6f3613060333310f82c57b594428", null ],
     [ "irinv_r", "is__irmulti_8h.html#aafe1270e864d07715bf33c3256e59d97", null ],
     [ "irmax_absc_r", "is__irmulti_8h.html#a0b77e166ad5839504ba558011bf86cac", null ],

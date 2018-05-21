@@ -1,9 +1,9 @@
 <map id="deig_sort_vector_guide" name="deig_sort_vector_guide">
-<area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="197,5,279,32"/>
-<area shape="rect" id="node3" href="$dmat_8c.html#af874e1af88c1316590c2a7333e47209d" title="dmat_dist_norm_max" alt="" coords="179,56,297,83"/>
-<area shape="rect" id="node5" href="$dvec_8c.html#a1695951c0c08c68c3cca4723d11e9ccc" title="y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL " alt="" coords="180,107,296,133"/>
-<area shape="rect" id="node6" href="$dvec_8c.html#a5065b149965402a99ab191dd45a2413c" title="x &lt;=&gt; y " alt="" coords="202,157,274,184"/>
-<area shape="rect" id="node7" href="$dvec_8c.html#a5d9aba2a2ac21482eb20557fab694e8d" title="x[i] &lt;=&gt; x[j] " alt="" coords="195,208,281,235"/>
-<area shape="rect" id="node8" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="205,259,271,285"/>
-<area shape="rect" id="node4" href="$dvec_8c.html#a646d585a17ba19564f5c4c0b8d036b53" title="z=max(abs(x&#45;y)) " alt="" coords="345,56,463,83"/>
+<area shape="rect" id="node2" href="$dvec_8c.html#acecf3679fbcc94c71770e2962013e129" title="double型ベクトルのメモリ割当 " alt="" coords="198,5,281,32"/>
+<area shape="rect" id="node3" href="$dmat_8c.html#af874e1af88c1316590c2a7333e47209d" title="dmat_dist_norm_max" alt="" coords="180,56,299,83"/>
+<area shape="rect" id="node5" href="$dvec_8c.html#afc3d6a694713322a46564b2f1201a2db" title="y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL " alt="" coords="179,107,300,133"/>
+<area shape="rect" id="node6" href="$dvec_8c.html#a5065b149965402a99ab191dd45a2413c" title="x &lt;=&gt; y " alt="" coords="203,157,275,184"/>
+<area shape="rect" id="node7" href="$dvec_8c.html#a5d9aba2a2ac21482eb20557fab694e8d" title="x[i] &lt;=&gt; x[j] " alt="" coords="197,208,282,235"/>
+<area shape="rect" id="node8" href="$dvec_8c.html#a5476af70b64eed60838e3adf3ce3a877" title="double型ベクトルのメモリの解放 " alt="" coords="207,259,272,285"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#a1aee0d6a7f45329157c2c413ae823b3d" title="z=max(abs(x&#45;y)) " alt="" coords="348,56,491,83"/>
 </map>

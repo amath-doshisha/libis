@@ -18,7 +18,7 @@ int main()
   dmat_set_rand(n,n,A,LDA,2,-1);
   dmat_copy(n,n,A0,LDA,A,LDA);
   dvec_set_ones(n,x0);
-  dvec_lintr(n,n,b,A,LDA,x0);
+  dvec_mul_dmat_dvec(n,n,b,A,LDA,x0);
   dvec_copy_dvec(n,x,b);
 
 

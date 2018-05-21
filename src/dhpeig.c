@@ -43,7 +43,7 @@ int dhpeig_1pair(int n, double *A, int LDA, double *z, double *x, double *lambda
   eps=pow(2,-53);
   eps_half=pow(2,-26);
   step_max=DHPEIG_STEP_MAX;  
-  dvec_lintr_t(n,n,w,A,LDA,z); // w=A'*z
+  dvec_mul_dmat_t_dvec(n,n,w,A,LDA,z); // w=A'*z
   if(debug>1){
     printf("[%s] eps=%.1e=2^%d\n",fname,eps,(int)(log(eps)/log(2)));
     printf("[%s] eps_half=%.1e=2^%d\n",fname,eps_half,(int)(log(eps_half)/log(2)));
@@ -52,8 +52,8 @@ int dhpeig_1pair(int n, double *A, int LDA, double *z, double *x, double *lambda
   // initial vector
   step=0;
   dvec_normalize_sgn_dvec(n,x,x);            // x=x/sqrt(x'*x)
-  C=dvec_dot(n,z,x);                    // C=z'*x
-  (*lambda)=dvec_dot(n,w,x)/C;          // lambda=(w'*x)/C
+  C=dinnprod_dvec_dvec(n,z,x);                    // C=z'*x
+  (*lambda)=dinnprod_dvec_dvec(n,w,x)/C;          // lambda=(w'*x)/C
   deig_residual(n,F,A,LDA,x,(*lambda)); // F=A*x-lambda*x;
   (*E)=dnorm_max_dvec(n,F);              // E=max(abs(F));
   if((*E)==0) { done=DHPEIG_CONVERGENT; } else { done=DHPEIG_NONE; } // convergent or not?
@@ -69,8 +69,8 @@ int dhpeig_1pair(int n, double *A, int LDA, double *z, double *x, double *lambda
       eta=dnorm_max_dvec(n,F);               // h=norm_max(F);
       dvec_sub_dvec_dvec(n,x,x,F);               // x=x-F
       dvec_normalize_sgn_dvec(n,x,x);            // x=x/sqrt(x'*x)
-      C=dvec_dot(n,z,x);                    // C=z'*x
-      (*lambda)=dvec_dot(n,w,x)/C;          // lambda=(w'*x)/C
+      C=dinnprod_dvec_dvec(n,z,x);                    // C=z'*x
+      (*lambda)=dinnprod_dvec_dvec(n,w,x)/C;          // lambda=(w'*x)/C
       deig_residual(n,F,A,LDA,x,(*lambda)); // F=A*x-lambda*x;
       (*E)=dnorm_max_dvec(n,F);              // E=max(abs(F));
     }

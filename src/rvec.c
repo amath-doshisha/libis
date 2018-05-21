@@ -1243,7 +1243,7 @@ void rvec_abs_sub_rvec_rscalar(int n, rmulti **z, rmulti **x, rmulti *y)
  @param[in]      LDA 行列Aの第1次元.
  @param[in]      x   サイズnのベクトル.
  */
-void rvec_lintr(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
+void rvec_mul_rmat_rvec(int m, int n, rmulti **y, rmulti **A, int LDA, rmulti **x)
 {
   int i,j;
   rmulti **z=NULL;
@@ -1411,7 +1411,7 @@ void rsum_pow2_abs_rvec(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの内積 value=sum(x.*y)
  */
-void rvec_sum_mul(rmulti *value, int n, rmulti **x, rmulti **y)
+void rinnprod_rvec_rvec(rmulti *value, int n, rmulti **x, rmulti **y)
 {
   int i;
   rset_zero(value);
@@ -1638,7 +1638,7 @@ void rvec_orthogonalize(int n, rmulti **y, rmulti **x)
 {
   rmulti *a=NULL;
   RAP(a,y,n);
-  rvec_sum_mul(a,n,x,y);    // a=x'*y
+  rinnprod_rvec_rvec(a,n,x,y);    // a=x'*y
   rvec_sub_mul_rvec_rscalar(n,y,x,a);  // y-=x*a
   RF(a);
 }
@@ -1664,7 +1664,7 @@ void raverage_rvec(rmulti *value, int n, rmulti **x)
 /**
  @brief rmulti型のベクトルの要素の絶対値の比の最大値 value=max(abs(x)./abs(y))
 */
-void rvec_max_div_abs(rmulti *value, int n, rmulti **x, rmulti **y)
+void rmax_div_abs_rvec_rvec(rmulti *value, int n, rmulti **x, rmulti **y)
 {
   int i=0;
   rmulti *a=NULL;
@@ -1684,14 +1684,14 @@ void rvec_max_div_abs(rmulti *value, int n, rmulti **x, rmulti **y)
 /**
  @brief rmulti型のベクトルの方向余弦 (x'*y)/sqrt(x'*x)/sqrt(y'*y)
 */
-void rvec_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
+void rdcos_rvec_rvec(rmulti *value, int n, rmulti **x, rmulti **y)
 {
   rmulti *a=NULL,*b=NULL;
   RAp(a,value); RAp(b,value);
   rnorm2_rvec(a,n,x); // a=sqrt(x'*x)
   rnorm2_rvec(b,n,y); // b=sqrt(y'*y)
   rmul_rr(a,a,b);       // a=sqrt(x'*x)*sqrt(y'*y)
-  rvec_sum_mul(b,n,x,y); // b=x'*y
+  rinnprod_rvec_rvec(b,n,x,y); // b=x'*y
   rdiv_rr(value,b,a);   // valu=(x'*y)/sqrt(x'*x)/sqrt(y'*y)
   RF(a); RF(b);
 }
@@ -1699,20 +1699,20 @@ void rvec_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
 /**
  @brief rmulti型のベクトルの方向余弦の絶対値 abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
 */
-void rvec_abs_dcos(rmulti *value, int n, rmulti **x, rmulti **y)
+void rdcos_abs_rvec_rvec(rmulti *value, int n, rmulti **x, rmulti **y)
 {
-  rvec_dcos(value,n,x,y);
+  rdcos_rvec_rvec(value,n,x,y);
   rabs_r(value,value);
 }
 
 /**
  @brief rmulti型のベクトルの角度 theta=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
 */
-void rvec_angle(rmulti *theta, int n, rmulti **x, rmulti **y)
+void rangle_rvec_rvec(rmulti *theta, int n, rmulti **x, rmulti **y)
 {
   rmulti *a=NULL;
   RAp(a,theta);
-  rvec_abs_dcos(a,n,x,y); // a=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
+  rdcos_abs_rvec_rvec(a,n,x,y); // a=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
   if(gt_rd(a,1)){ rset_d(a,1); }
   racos_r(theta,a);         // theta=acos(dcos)
   RF(a);
@@ -1721,9 +1721,9 @@ void rvec_angle(rmulti *theta, int n, rmulti **x, rmulti **y)
 /**
  @brief rmulti型のベクトルの角度[deg] theta=acos(abs(x'*y)/sqrt(x'*x)/sqrt(y'*y))
 */
-void rvec_angle_deg(rmulti *theta, int n, rmulti **x, rmulti **y)
+void rdeg_angle_rvec_rvec(rmulti *theta, int n, rmulti **x, rmulti **y)
 {
-  rvec_angle(theta,n,x,y);
+  rangle_rvec_rvec(theta,n,x,y);
   rmul_rd(theta,theta,(180.0/M_PI));
 }
 

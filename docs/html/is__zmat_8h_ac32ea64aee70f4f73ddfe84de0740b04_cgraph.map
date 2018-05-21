@@ -1,6 +1,6 @@
 <map id="zmat_normalize" name="zmat_normalize">
-<area shape="rect" id="node2" href="$is__zvec_8h.html#ae8b30a5d861344ea243a90cfc1a984c1" title="y=x/sqrt(x&#39;*x) " alt="" coords="145,31,237,57"/>
-<area shape="rect" id="node3" href="$zvec_8c.html#a85ba4f3fb769abb3477bccd1d7000626" title="y=sqrt(sum(abs(x).^2)) " alt="" coords="299,5,375,32"/>
-<area shape="rect" id="node4" href="$zvec_8c.html#abf27f9d8a1a65f37dc43718703c6cfc9" title="z=x*y " alt="" coords="285,56,388,83"/>
-<area shape="rect" id="node5" href="$dcomplex_8c.html#ae79ee24ce337cb8f086138d63c7cbf4b" title="z=x*y " alt="" coords="436,56,495,83"/>
+<area shape="rect" id="node2" href="$is__zvec_8h.html#a63b9a20bb32b6ff9a2f45caccebedc7e" title="y=x/sqrt(x&#39;*x) " alt="" coords="145,31,263,57"/>
+<area shape="rect" id="node3" href="$zvec_8c.html#a059daf82a31611e97a577229478d1c1b" title="y=sqrt(sum(abs(x).^2)) " alt="" coords="333,5,416,32"/>
+<area shape="rect" id="node4" href="$zvec_8c.html#a45828414c83338499af605fe5b6f5005" title="z=x*y " alt="" coords="311,56,439,83"/>
+<area shape="rect" id="node5" href="$dcomplex_8c.html#ae79ee24ce337cb8f086138d63c7cbf4b" title="z=x*y " alt="" coords="487,56,545,83"/>
 </map>

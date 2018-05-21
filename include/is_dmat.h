@@ -29,6 +29,33 @@ void dmat_set_rand(int m, int n, double *A, int LDA, double a, double b);
 // y=char(x)
 void dmat_get_s(int m, int n, char **B, int LDB, double *A, int LDA, char format, int digits);
 
+/*
+ * y=f(x)
+ */
+
+/*
+ * z=f(x,y)
+ */
+// y=A*x
+void dvec_mul_dmat_dvec(int m, int n, double *y, double *A, int LDA, double *x);
+// y=A'*x
+void dvec_mul_dmat_t_dvec(int m, int n, double *y, double *A, int LDA, double *x);
+
+/*
+ * y=y+f(x)
+ */
+
+/*
+ * z=z+f(x,y)
+ */
+// y=y+A*x
+void dvec_add_mul_dmat_dvec(int m, int n, double *y, double *A, int LDA, double *x);
+// y=y+A'*x
+void dvec_add_mul_dmat_t_dvec(int m, int n, double *y, double *A, int LDA, double *x);
+// y=y-A*x
+void dvec_sub_mul_dmat_dvec(int m, int n, double *y, double *A, int LDA, double *x);
+// y=y-A'*x
+void dvec_sub_mul_dmat_t_dvec(int m, int n, double *y, double *A, int LDA, double *x);
 
 /*
  * convert its elements

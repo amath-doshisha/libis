@@ -1,0 +1,5 @@
+<map id="dvec_normalize_sgn_dvec" name="dvec_normalize_sgn_dvec">
+<area shape="rect" id="node2" href="$dvec_8c.html#a1965f24e4226b57f9efcb806fa69cd75" title="y=sqrt(sum(x.^2)) " alt="" coords="217,5,299,32"/>
+<area shape="rect" id="node3" href="$dvec_8c.html#a50dfa17c01529fed43a858dde449d368" title="y=max(abs(x[I])) " alt="" coords="196,56,320,83"/>
+<area shape="rect" id="node4" href="$dvec_8c.html#ae77f0c4e1679d29e6913eecef4db298c" title="z=x*y " alt="" coords="193,107,323,133"/>
+</map>

@@ -1,22 +1,22 @@
 <map id="icmat3_umax" name="icmat3_umax">
 <area shape="rect" id="node2" href="$icmat_8c.html#a07192d0a18b0a8128b403cb0b17ef091" title="icmulti型の列ごとの最大値 B=max_u(A) " alt="" coords="135,56,239,83"/>
-<area shape="rect" id="node3" href="$icvec_8c.html#a316f87b9cfce630c078daa81bc0916c4" title="最大値 [y0,y1]=[x0,max(x1)] " alt="" coords="287,56,361,83"/>
-<area shape="rect" id="node4" href="$icmulti_8c.html#a244c81288cc050080b4597035bb363f9" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="409,31,463,57"/>
-<area shape="rect" id="node6" href="$cmulti_8c.html#a30d898ae607b2265c67f48fa8c3f04fa" title="cmulti型の値の比較 x&gt;y " alt="" coords="413,81,459,108"/>
-<area shape="rect" id="node5" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="523,31,572,57"/>
-<area shape="rect" id="node7" href="$cmulti_8c.html#a0873a88220c125143451a70a83a712f6" title="cmulti型が数であるかの判定. " alt="" coords="511,81,584,108"/>
-<area shape="rect" id="node9" href="$cmulti_8c.html#a72aae09f6375706c5bf958028061da86" title="cmulti型の値の比較 x&lt;=&gt;y " alt="" coords="519,144,575,171"/>
-<area shape="rect" id="node8" href="$is__rmulti_8h.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="641,68,713,95"/>
-<area shape="rect" id="node10" href="$cmulti_8c.html#ad4e2a45b385acf35da73368b3eb29cad" title="cmulti型の値の比較 x&lt;=&gt;y の方法の取得 " alt="" coords="632,119,721,145"/>
-<area shape="rect" id="node11" href="$cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="642,169,711,196"/>
-<area shape="rect" id="node21" href="$is__rmulti_8h.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="650,220,703,247"/>
-<area shape="rect" id="node12" href="$cmulti_8c.html#a17d52e9eeaf22acde0324ac337741df4" title="cmulti型の絶対値 y=abs(x) " alt="" coords="775,144,827,171"/>
-<area shape="rect" id="node20" href="$is__rmulti_8h.html#af8957751e0545941e8321a8e7edfc422" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="769,195,832,221"/>
-<area shape="rect" id="node13" href="$cmulti_8c.html#ac27df2a809749da2186fe891f40c2565" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="880,68,937,95"/>
-<area shape="rect" id="node19" href="$is__rmulti_8h.html#a14504176d48fad860c538118a0c92941" title="rmulti型の計算 y=sqrt(x) " alt="" coords="883,144,934,171"/>
-<area shape="rect" id="node14" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="997,5,1050,32"/>
-<area shape="rect" id="node16" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="985,68,1061,95"/>
-<area shape="rect" id="node15" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="1212,93,1309,120"/>
-<area shape="rect" id="node17" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="1110,43,1163,69"/>
-<area shape="rect" id="node18" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="1109,93,1164,120"/>
+<area shape="rect" id="node3" href="$icvec_8c.html#a605218a6d53ba3dfb7893604d64af78c" title="最大値 [y0,y1]=[x0,max(x1)] " alt="" coords="287,56,377,83"/>
+<area shape="rect" id="node4" href="$icmulti_8c.html#a244c81288cc050080b4597035bb363f9" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="425,31,479,57"/>
+<area shape="rect" id="node6" href="$cmulti_8c.html#aa94997bc3f565e5eef63f0ec2463228f" title="cmulti型の値の比較 x&gt;y " alt="" coords="429,81,475,108"/>
+<area shape="rect" id="node5" href="$irmulti_8c.html#a635b5f85ca4281985fa760ef0dacf737" title="コピー [y0,y1]=[x0,x1]. " alt="" coords="539,31,588,57"/>
+<area shape="rect" id="node7" href="$cmulti_8c.html#a0873a88220c125143451a70a83a712f6" title="cmulti型が数であるかの判定. " alt="" coords="527,81,600,108"/>
+<area shape="rect" id="node9" href="$cmulti_8c.html#a5f1c788870b2a82eae496d36acc3333e" title="cmulti型の値の比較 x&lt;=&gt;y " alt="" coords="535,144,591,171"/>
+<area shape="rect" id="node8" href="$is__rmulti_8h.html#a02c3c838634809fb6260ab78926b5f8b" title="rmulti型が数であるかの判定. " alt="" coords="657,68,729,95"/>
+<area shape="rect" id="node10" href="$cmulti_8c.html#ad4e2a45b385acf35da73368b3eb29cad" title="cmulti型の値の比較 x&lt;=&gt;y の方法の取得 " alt="" coords="648,119,737,145"/>
+<area shape="rect" id="node11" href="$cmulti_8c.html#a1244b9bf1f9c3419f0d161e8ab7c94a1" title="cmulti型の極座標 z=r*exp(i*theta) " alt="" coords="658,169,727,196"/>
+<area shape="rect" id="node21" href="$is__rmulti_8h.html#a57f2f98453e9de9688b74191b72f69f1" title="rmulti型の値の比較 x&lt;=&gt;y " alt="" coords="666,220,719,247"/>
+<area shape="rect" id="node12" href="$cmulti_8c.html#a17d52e9eeaf22acde0324ac337741df4" title="cmulti型の絶対値 y=abs(x) " alt="" coords="791,144,843,171"/>
+<area shape="rect" id="node20" href="$is__rmulti_8h.html#af8957751e0545941e8321a8e7edfc422" title="rmulti型の計算 y=arctan(x/y) " alt="" coords="785,195,848,221"/>
+<area shape="rect" id="node13" href="$cmulti_8c.html#ac27df2a809749da2186fe891f40c2565" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="896,68,953,95"/>
+<area shape="rect" id="node19" href="$is__rmulti_8h.html#a14504176d48fad860c538118a0c92941" title="rmulti型の計算 y=sqrt(x) " alt="" coords="899,144,950,171"/>
+<area shape="rect" id="node14" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="1013,5,1066,32"/>
+<area shape="rect" id="node16" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="1001,68,1077,95"/>
+<area shape="rect" id="node15" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="1228,93,1325,120"/>
+<area shape="rect" id="node17" href="$rmulti_8c.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="1126,43,1179,69"/>
+<area shape="rect" id="node18" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="1125,93,1180,120"/>
 </map>
