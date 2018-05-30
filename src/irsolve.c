@@ -126,8 +126,8 @@ void irsolve_lu_decomp(int n, rmulti **A0, rmulti **A1, int LDA, int *p0, int *p
     }
   }
   // done
-  a0=rfree(a0);a1=rfree(a1);
-  value0=rfree(value0);value1=rfree(value1);
+  a0=rmfree(a0);a1=rmfree(a1);
+  value0=rmfree(value0);value1=rmfree(value1);
   (*info)=ret;
 }
   
@@ -170,8 +170,8 @@ void irsolve_lu_backsubs(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, rmu
     }
   }
   // done
-  a0=rfree(a0);a1=rfree(a1);
-  b0=rfree(b0);b1=rfree(b1);
+  a0=rmfree(a0);a1=rmfree(a1);
+  b0=rmfree(b0);b1=rmfree(b1);
 }
 
 /** @} */
@@ -248,8 +248,8 @@ void irsolve_gauss_sweeper(int n, int NRHS, rmulti **B0, rmulti **B1, int LDB, r
     }
   }
   // free
-  a0=rfree(a0); a1=rfree(a1);
-  value0=rfree(value0); value1=rfree(value1);
+  a0=rmfree(a0); a1=rmfree(a1);
+  value0=rmfree(value0); value1=rmfree(value1);
   rws=rvec_free(rws_size,rws);
   // done
   (*info)=ret;

@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
   lambda=rvec_free(n,lambda);
   E=rvec_free(n,E);
   Ebin=rvec_free(n,Ebin);
-  a=rfree(a);
+  a=rmfree(a);
 
   // done
   return 0;

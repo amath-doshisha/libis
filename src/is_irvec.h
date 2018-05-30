@@ -35,7 +35,7 @@ void irvec_get_svec(int n, char **y, rmulti **x0, rmulti **x1, char format, int 
  * y=f(x)
  */
 void irvec_copy_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);      // y=x
-void irvec_abs_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);        // y=abs(x)
+void irvec_abs_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);        // y=abs(x)
 void irvec_neg_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);       // y=-x
 void irvec_pow2_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);      // y=x^2
 void irsum_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1);             // y=sum(x)

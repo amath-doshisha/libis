@@ -41,7 +41,7 @@ void rhsnbrg_simtr(int n, rmulti **B, int LDB, rmulti **A, int LDA)
     rvec_set_zeros(n-2-i,&MAT(B,i+2,i,LDB));
   }
   // done
-  alpha=rfree(alpha);
+  alpha=rmfree(alpha);
   h=rvec_free(n,h);
 }
 

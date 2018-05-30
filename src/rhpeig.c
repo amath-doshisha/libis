@@ -35,7 +35,7 @@ void rhpeig_jacobi_mat(int n, rmulti **JM, int LDJM, rmulti **A, int LDA, rmulti
   rmat_diag_sub_r(n,n,JM,LDJM,A,LDA,lambda); // JM=A-lambda*I
   rinv_r(a,C); rneg_r(a,a);                      // a=-1/C
   rmat_rank1op(n,n,JM,LDJM,JM,LDJM,a,x,w);   // JM=A-lambda*I-(1/C)*x*w'
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 enum { RHPEIG_STATUS_PRE=0, RHPEIG_STATUS_CONV, RHPEIG_STATUS_END };
@@ -113,12 +113,12 @@ int rhpeig_1pair(int n, rmulti **x, rmulti *lambda, rmulti *E, int *Step, rmulti
   w=rvec_free(n,w);
   F=rvec_free(n,F);
   JM=rmat_free(LDJM,n,JM);
-  C=rfree(C);
-  eta=rfree(eta);
-  eta0=rfree(eta0);
-  mu=rfree(mu);
-  eps=rfree(eps);
-  eps_half=rfree(eps_half);
+  C=rmfree(C);
+  eta=rmfree(eta);
+  eta0=rmfree(eta0);
+  mu=rmfree(mu);
+  eps=rmfree(eps);
+  eps_half=rmfree(eps_half);
   // done
   (*Step)=step;
   return done;
@@ -215,7 +215,7 @@ int rhpeig(int n, rmulti **X, int LDX, rmulti **Lambda, rmulti **A, int LDA, int
   H=rmat_free(LDH,n,H);
   z=rvec_free(n,z);   
   alpha=rvec_free(n,alpha);  
-  E=rfree(E);
+  E=rmfree(E);
   // done 
   return ret;
 }

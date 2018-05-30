@@ -7,7 +7,7 @@
 #define RVA(X,N,P)   { X=rvec_allocate_prec(N,P); }
 #define RVF(X,N)     { X=rvec_free(N,X); }
 #define RA(X,P)      { X=rallocate_prec(P); }
-#define RF(X)        { X=rfree(X); }
+#define RF(X)        { X=rmfree(X); }
 
 // Input: x,dF
 // Output: e

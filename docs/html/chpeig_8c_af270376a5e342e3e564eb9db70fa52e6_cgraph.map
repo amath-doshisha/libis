@@ -18,7 +18,7 @@
 <area shape="rect" id="node30" href="$cvec_8c.html#a307a3f7a0d2961c82d4360c285bdaf27" title="cmulti型のベクトルがNaNを含むかの判定. " alt="" coords="326,2846,413,2873"/>
 <area shape="rect" id="node31" href="$cvec_8c.html#ae33134d34ba91a889d4fd6247aeecb84" title="cmulti型のベクトルの値を区間(b,a+b)の疑似乱数値を設定. " alt="" coords="150,3542,237,3569"/>
 <area shape="rect" id="node36" href="$cvec_8c.html#a2b81350914173249b558d89451f7d890" title="cmulti型のベクトルの規格化 y=x/sqrt(x&#39;*x) " alt="" coords="300,2086,439,2113"/>
-<area shape="rect" id="node38" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="853,1630,896,1657"/>
+<area shape="rect" id="node38" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="849,1630,900,1657"/>
 <area shape="rect" id="node47" href="$chpeig_8c.html#a706b6973125ed0782639f4df01055b4a" title="chpeig_1pair" alt="" coords="154,1554,233,1581"/>
 <area shape="rect" id="node50" href="$cvec_8c.html#a6791c96c35ff01e0aa9f3e0cfb63893b" title="cmulti型のベクトルの終了処理. " alt="" coords="518,870,583,897"/>
 <area shape="rect" id="node63" href="$is__rmulti_8h.html#a01bf67bf43a602b005a075f9a480b555" title="rmulti型の浮動小数点数の指数部の取得. " alt="" coords="520,1529,581,1556"/>
@@ -63,7 +63,7 @@
 <area shape="rect" id="node42" href="$cmulti_8c.html#acad6eaf2a5d7bebe6f6e16c8e04dc423" title="cmulti型の複素共役 y=conj(x). " alt="" coords="523,2441,579,2468"/>
 <area shape="rect" id="node43" href="$cvec_8c.html#a6f497336b3bbbe9d5b58ea5dde89e3f7" title="cmulti型のベクトルの2乗ノルム value=sqrt(sum(abs(x).^2)) " alt="" coords="511,2390,591,2417"/>
 <area shape="rect" id="node45" href="$cvec_8c.html#a1ebb2c9a6407f84e40ebe7de43ea3b8a" title="z=x.*y " alt="" coords="487,2492,615,2518"/>
-<area shape="rect" id="node46" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="701,1352,745,1378"/>
+<area shape="rect" id="node46" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="697,1352,749,1378"/>
 <area shape="rect" id="node41" href="$is__rmulti_8h.html#a0c8b35084a21676995d9b8cbcf8b39c0" title="z=x/y " alt="" coords="849,2112,900,2138"/>
 <area shape="rect" id="node44" href="$cvec_8c.html#a9de368fd0d6ef8e8de9bb4fc0d509c2c" title="cmulti型のベクトルの要素の絶対値の平方の総和 value=sum(abs(x).^2) " alt="" coords="663,2460,784,2486"/>
 <area shape="rect" id="node48" href="$is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848" title="rmulti型のマシンイプシロンの生成. " alt="" coords="337,1326,402,1353"/>

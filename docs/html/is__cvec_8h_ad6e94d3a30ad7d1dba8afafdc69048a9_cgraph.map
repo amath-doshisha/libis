@@ -3,7 +3,7 @@
 <area shape="rect" id="node4" href="$cvec_8c.html#a4220cbe500e7a1383fbd278e5d4035b3" title="cmulti型のベクトルの浮動小数点数の精度(ビット数)の最大値を取得. " alt="" coords="180,69,292,96"/>
 <area shape="rect" id="node7" href="$cvec_8c.html#a521383abdd417562f7b0a55aeaad15d2" title="cmulti型のベクトルの内積 value=sum(conj(x).*y) " alt="" coords="180,132,292,159"/>
 <area shape="rect" id="node24" href="$cvec_8c.html#ad4d9111ddff4afbd0a2c8e122ce34436" title="cmulti型のベクトルxとスカラーyの掛け算の減算 z&#45;=x*y " alt="" coords="161,183,311,209"/>
-<area shape="rect" id="node29" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="214,233,258,260"/>
+<area shape="rect" id="node29" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="210,233,262,260"/>
 <area shape="rect" id="node3" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="359,5,444,32"/>
 <area shape="rect" id="node5" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="369,56,434,83"/>
 <area shape="rect" id="node6" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="492,31,556,57"/>
@@ -27,5 +27,5 @@
 <area shape="rect" id="node26" href="$cmulti_8c.html#a8e74a3ae7ec7d31fcbbe9ab40db22a79" title="z=x*y " alt="" coords="495,233,553,260"/>
 <area shape="rect" id="node27" href="$cmulti_8c.html#af28683bf9e3b6b7c3a8766603a377b33" title="z=x&#45;y " alt="" coords="495,309,553,336"/>
 <area shape="rect" id="node28" href="$is__rmulti_8h.html#a4acfc1f7f71c44234ca1873f69b6eaa5" title="z=x&#45;y " alt="" coords="729,385,782,412"/>
-<area shape="rect" id="node30" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="380,284,423,311"/>
+<area shape="rect" id="node30" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="376,284,427,311"/>
 </map>

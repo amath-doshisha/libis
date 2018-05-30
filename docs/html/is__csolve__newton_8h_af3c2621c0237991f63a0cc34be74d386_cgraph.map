@@ -61,7 +61,7 @@
 <area shape="rect" id="node70" href="$func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="528,1728,609,1755"/>
 <area shape="rect" id="node71" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="691,373,787,400"/>
 <area shape="rect" id="node72" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="532,411,605,437"/>
-<area shape="rect" id="node73" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="717,3552,761,3579"/>
+<area shape="rect" id="node73" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="713,3552,765,3579"/>
 <area shape="rect" id="node11" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="840,3324,925,3351"/>
 <area shape="rect" id="node13" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="851,2969,915,2996"/>
 <area shape="rect" id="node17" href="$is__rmulti_8h.html#a07b95bf1013538483e1cadf6b8016273" title="rmulti型の値をInfに設定. " alt="" coords="712,512,767,539"/>
@@ -75,7 +75,7 @@
 <area shape="rect" id="node44" href="$is__rmulti_8h.html#a8dc93b17f22200137309e2f5f5da0480" title="z=x*y " alt="" coords="856,2412,909,2439"/>
 <area shape="rect" id="node45" href="$is__rmulti_8h.html#a87db1d882a0c830fec80ff5e75ade411" title="z+=x*y " alt="" coords="845,1595,921,1621"/>
 <area shape="rect" id="node48" href="$func_8c.html#adf2e656b6d06a7841900bb1b6a90617d" title="func_op" alt="" coords="711,208,768,235"/>
-<area shape="rect" id="node74" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="861,3527,904,3553"/>
+<area shape="rect" id="node74" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="857,3527,908,3553"/>
 <area shape="rect" id="node77" href="$cmat_8c.html#a9ee764a5b39ff5f4938c03e72ebefc30" title="cmulti型の行列の精度を指定しての新規生成. " alt="" coords="333,2969,443,2996"/>
 <area shape="rect" id="node78" href="$cmat_8c.html#af158ba3988992435e2d0bf74519f03cf" title="cmulti型行列の精度(ビット数)の最大値の取得. " alt="" coords="513,2893,625,2920"/>
 <area shape="rect" id="node79" href="$cmat_8c.html#ab3a150132f4568d6cfb7090da9bd870c" title="cmulti型の行列の値のコピー B=A " alt="" coords="353,2855,423,2881"/>

@@ -26,7 +26,7 @@ void func_complex_p_del(func_t *f)
 {
   if(func_ptype(f)!=FUNC_P_COMPLEX){ FUNC_ERROR_ARG1("func_complex_p_del",f); }
   if(f->p.cm!=NULL){
-    f->p.cm=cfree(f->p.cm);
+    f->p.cm=cmfree(f->p.cm);
     f->ptype=FUNC_P_NULL;
   }
 }

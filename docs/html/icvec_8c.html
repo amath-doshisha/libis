@@ -101,11 +101,11 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 マクロ定義</h2></td></tr>
 <tr class="memitem:ac67e3b6b58f837fb25526084bda6e8a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#ac67e3b6b58f837fb25526084bda6e8a0">RA</a>(X,  P)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>(P))</td></tr>
 <tr class="separator:ac67e3b6b58f837fb25526084bda6e8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae506ec36706d66ea9abbcca974ce8d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#aae506ec36706d66ea9abbcca974ce8d4">RF</a>(X)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X))</td></tr>
+<tr class="memitem:aae506ec36706d66ea9abbcca974ce8d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#aae506ec36706d66ea9abbcca974ce8d4">RF</a>(X)&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#a67f0c0c6844ec4521f39a04b702c3609">rmfree</a>(X))</td></tr>
 <tr class="separator:aae506ec36706d66ea9abbcca974ce8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d029592ee41ae15ff8aeab6f8eb1789"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a6d029592ee41ae15ff8aeab6f8eb1789">CA</a>(X,  P)&#160;&#160;&#160;((X)=<a class="el" href="is__cmulti_8h.html#ae2883fef83d21d61f7057487566aa6f9">callocate_prec</a>(P))</td></tr>
 <tr class="separator:a6d029592ee41ae15ff8aeab6f8eb1789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e41d8e9196e22ce37a5d4f1ae64694b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a9e41d8e9196e22ce37a5d4f1ae64694b">CF</a>(X)&#160;&#160;&#160;((X)=<a class="el" href="is__cmulti_8h.html#a192d1bb4175699986d09eca851be78f9">cfree</a>(X))</td></tr>
+<tr class="memitem:a9e41d8e9196e22ce37a5d4f1ae64694b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a9e41d8e9196e22ce37a5d4f1ae64694b">CF</a>(X)&#160;&#160;&#160;((X)=<a class="el" href="is__cmulti_8h.html#a9f7ae56106edf0c6ebeed23b068277cf">cmfree</a>(X))</td></tr>
 <tr class="separator:a9e41d8e9196e22ce37a5d4f1ae64694b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a6e35d9e20da2c37b3037c772ab8d13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a3a6e35d9e20da2c37b3037c772ab8d13">CVA</a>(X,  <a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,  P)&#160;&#160;&#160;{ X=<a class="el" href="is__cvec_8h.html#ad1af5c539ed1b7dcee816e2378508e84">cvec_allocate_prec</a>(<a class="el" href="mt19937ar_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>,P); }</td></tr>
 <tr class="separator:a3a6e35d9e20da2c37b3037c772ab8d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -570,12 +570,12 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <tr class="memitem:ad77243be67f7ebc2664986775ba8cb61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#ad77243be67f7ebc2664986775ba8cb61">icmin_down_cvec</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
 <tr class="memdesc:ad77243be67f7ebc2664986775ba8cb61"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値 [y0,y1]=[min(x0),x1]  <a href="#ad77243be67f7ebc2664986775ba8cb61">[詳解]</a><br /></td></tr>
 <tr class="separator:ad77243be67f7ebc2664986775ba8cb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a696c20a80c62ced1987466cf41bfaf84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a696c20a80c62ced1987466cf41bfaf84">irmax_up_abc_cvec</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
-<tr class="memdesc:a696c20a80c62ced1987466cf41bfaf84"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))  <a href="#a696c20a80c62ced1987466cf41bfaf84">[詳解]</a><br /></td></tr>
-<tr class="separator:a696c20a80c62ced1987466cf41bfaf84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaba54b924c9378f3d5d50ec65e73d22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#adaba54b924c9378f3d5d50ec65e73d22">irmin_down_abc_cvec</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
-<tr class="memdesc:adaba54b924c9378f3d5d50ec65e73d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))  <a href="#adaba54b924c9378f3d5d50ec65e73d22">[詳解]</a><br /></td></tr>
-<tr class="separator:adaba54b924c9378f3d5d50ec65e73d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d3b4c75ad0227a50bb415d82f31c14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a95d3b4c75ad0227a50bb415d82f31c14">irmax_up_abs_cvec</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
+<tr class="memdesc:a95d3b4c75ad0227a50bb415d82f31c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))  <a href="#a95d3b4c75ad0227a50bb415d82f31c14">[詳解]</a><br /></td></tr>
+<tr class="separator:a95d3b4c75ad0227a50bb415d82f31c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6777e055cfecd4ada495bf2a4532dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#a5e6777e055cfecd4ada495bf2a4532dc">irmin_down_abs_cvec</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y0, <a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y1, int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
+<tr class="memdesc:a5e6777e055cfecd4ada495bf2a4532dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))  <a href="#a5e6777e055cfecd4ada495bf2a4532dc">[詳解]</a><br /></td></tr>
+<tr class="separator:a5e6777e055cfecd4ada495bf2a4532dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace306f76e7329ec2e6d5e2c6b676376e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="icvec_8c.html#ace306f76e7329ec2e6d5e2c6b676376e">icsum_cvec</a> (<a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> *y1, int n, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x0, <a class="el" href="is__cmulti_8h.html#a801e220c9e1a871260af3711765c4d54">cmulti</a> **x1)</td></tr>
 <tr class="memdesc:ace306f76e7329ec2e6d5e2c6b676376e"><td class="mdescLeft">&#160;</td><td class="mdescRight">icmulti型のベクトルの要素の総和 value=sum(x)  <a href="#ace306f76e7329ec2e6d5e2c6b676376e">[詳解]</a><br /></td></tr>
 <tr class="separator:ace306f76e7329ec2e6d5e2c6b676376e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -654,7 +654,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">X</td><td>)</td>
-          <td>&#160;&#160;&#160;((X)=<a class="el" href="is__cmulti_8h.html#a192d1bb4175699986d09eca851be78f9">cfree</a>(X))</td>
+          <td>&#160;&#160;&#160;((X)=<a class="el" href="is__cmulti_8h.html#a9f7ae56106edf0c6ebeed23b068277cf">cmfree</a>(X))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -770,7 +770,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">X</td><td>)</td>
-          <td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>(X))</td>
+          <td>&#160;&#160;&#160;((X)=<a class="el" href="rmulti_8c.html#a67f0c0c6844ec4521f39a04b702c3609">rmfree</a>(X))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -12642,14 +12642,14 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 </div>
 </div>
-<a id="a696c20a80c62ced1987466cf41bfaf84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a696c20a80c62ced1987466cf41bfaf84">&#9670;&nbsp;</a></span>irmax_up_abc_cvec()</h2>
+<a id="a95d3b4c75ad0227a50bb415d82f31c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d3b4c75ad0227a50bb415d82f31c14">&#9670;&nbsp;</a></span>irmax_up_abs_cvec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void irmax_up_abc_cvec </td>
+          <td class="memname">void irmax_up_abs_cvec </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
           <td class="paramname"><em>y0</em>, </td>
@@ -12692,8 +12692,8 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="icvec_8c_a696c20a80c62ced1987466cf41bfaf84_cgraph.png" border="0" usemap="#icvec_8c_a696c20a80c62ced1987466cf41bfaf84_cgraph" alt=""/></div>
-<map name="icvec_8c_a696c20a80c62ced1987466cf41bfaf84_cgraph" id="icvec_8c_a696c20a80c62ced1987466cf41bfaf84_cgraph">
+<div class="center"><img src="icvec_8c_a95d3b4c75ad0227a50bb415d82f31c14_cgraph.png" border="0" usemap="#icvec_8c_a95d3b4c75ad0227a50bb415d82f31c14_cgraph" alt=""/></div>
+<map name="icvec_8c_a95d3b4c75ad0227a50bb415d82f31c14_cgraph" id="icvec_8c_a95d3b4c75ad0227a50bb415d82f31c14_cgraph">
 <area shape="rect" id="node2" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="821,157,885,184"/>
 <area shape="rect" id="node3" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="164,259,269,285"/>
 <area shape="rect" id="node5" href="icvec_8c.html#a605ea31289fe8162aecc81ea9a9e081d" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="171,309,262,336"/>
@@ -12724,14 +12724,14 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 
 </div>
 </div>
-<a id="adaba54b924c9378f3d5d50ec65e73d22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaba54b924c9378f3d5d50ec65e73d22">&#9670;&nbsp;</a></span>irmin_down_abc_cvec()</h2>
+<a id="a5e6777e055cfecd4ada495bf2a4532dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6777e055cfecd4ada495bf2a4532dc">&#9670;&nbsp;</a></span>irmin_down_abs_cvec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void irmin_down_abc_cvec </td>
+          <td class="memname">void irmin_down_abs_cvec </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
           <td class="paramname"><em>y0</em>, </td>
@@ -12774,8 +12774,8 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="icvec_8c_adaba54b924c9378f3d5d50ec65e73d22_cgraph.png" border="0" usemap="#icvec_8c_adaba54b924c9378f3d5d50ec65e73d22_cgraph" alt=""/></div>
-<map name="icvec_8c_adaba54b924c9378f3d5d50ec65e73d22_cgraph" id="icvec_8c_adaba54b924c9378f3d5d50ec65e73d22_cgraph">
+<div class="center"><img src="icvec_8c_a5e6777e055cfecd4ada495bf2a4532dc_cgraph.png" border="0" usemap="#icvec_8c_a5e6777e055cfecd4ada495bf2a4532dc_cgraph" alt=""/></div>
+<map name="icvec_8c_a5e6777e055cfecd4ada495bf2a4532dc_cgraph" id="icvec_8c_a5e6777e055cfecd4ada495bf2a4532dc_cgraph">
 <area shape="rect" id="node2" href="is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="841,157,905,184"/>
 <area shape="rect" id="node3" href="is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="175,259,280,285"/>
 <area shape="rect" id="node5" href="icvec_8c.html#a605ea31289fe8162aecc81ea9a9e081d" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="182,309,273,336"/>
@@ -13214,7 +13214,7 @@ $(document).ready(function(){initNavTree('icvec_8c.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="icvec_8c.html">icvec.c</a></li>
-    <li class="footer">2018年05月22日(火) 08時27分15秒作成 - libis / 構成: 
+    <li class="footer">2018年05月30日(水) 22時53分24秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

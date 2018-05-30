@@ -8,7 +8,7 @@
 #define RVA(X,N)   { X=rvec_allocate(N); }
 #define RVF(X,N)   { X=rvec_free(N,X); }
 #define RA(X)      { X=rallocate(); }
-#define RF(X)      { X=rfree(X); }
+#define RF(X)      { X=rmfree(X); }
 #define CMA(A,M,N) { A=cmat_allocate(M,N); }
 #define CMF(A,M,N) { A=cmat_free(M,N,A); }
 #define CVA(X,N)   { X=cvec_allocate(N); }

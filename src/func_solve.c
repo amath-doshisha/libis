@@ -367,7 +367,7 @@ void func_ccopy_coeff(int n, cmulti **z, func_t *f)                  //係数
   }
   fa_0=func_del(fa_0);
   g=func_del(g);
-  a_0=cfree(a_0);
+  a_0=cmfree(a_0);
 }
 
 //////////////////////////////////////////////////////////////////
@@ -402,10 +402,10 @@ void func_init_val(int n, cmulti **z, cmulti **a)                         //初�
     cset_polar(c,r,b);                                         //rexp(i*theta)
     cadd_cc(z[j-1],g,c);
   }
-  r=rfree(r);
-  b=rfree(b);
-  g=cfree(g);
-  c=cfree(c);
+  r=rmfree(r);
+  b=rmfree(b);
+  g=cmfree(g);
+  c=cmfree(c);
 }
 
 //////////////////////////////////////////////////////////////////
@@ -447,9 +447,9 @@ int func_weierstrass(int n, cmulti **z1, cmulti **z0, cmulti **a)
   cvec_div_cvec_cvec(n,z1,z1,c);
   cvec_mul_cvec_dscalar(n,z1,z1,-1.0);             //-f()/a_0()
   cvec_add_cvec_cvec(n,z1,z1,z0);                 //z-f()/a_0()
-  d=rfree(d);
-  eps=rfree(eps);
-  b=cfree(b);
+  d=rmfree(d);
+  eps=rmfree(eps);
+  b=cmfree(b);
   c=cvec_free(n,c);
   return k;
 }

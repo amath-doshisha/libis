@@ -24,10 +24,10 @@
 
 #define RAr(X,P) ((X)=rallocate_prec(rget_prec(P)))
 #define RAc(X,P) ((X)=rallocate_prec(cget_prec(P)))
-#define RF(X) ((X)=rfree(X))
+#define RF(X) ((X)=rmfree(X))
 #define CAr(X,P) ((X)=callocate_prec(rget_prec(P)))
 #define CAc(X,P) ((X)=callocate_prec(cget_prec(P)))
-#define CF(X) ((X)=cfree(X))
+#define CF(X) ((X)=cmfree(X))
 
 /////////////////////////////////////////////////////////
 
@@ -86,11 +86,11 @@ cmulti *callocate_clone_r(rmulti *y)
 /**
  @brief cmulti型の終了処理.
 */
-cmulti *cfree(cmulti *x)
+cmulti *cmfree(cmulti *x)
 {
   if(x==NULL) return NULL; 
-  C_R(x)=rfree(C_R(x));
-  C_I(x)=rfree(C_I(x));
+  C_R(x)=rmfree(C_R(x));
+  C_I(x)=rmfree(C_I(x));
   free(x);
   x=NULL;
   return x;

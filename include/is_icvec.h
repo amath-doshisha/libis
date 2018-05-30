@@ -72,8 +72,8 @@ void icmax_up_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1);    
 void icmin_up_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1);          // [y0,y1]=[x0,min(x1)]
 void icmax_down_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1);        // [y0,y1]=[max(x0),x1]
 void icmin_down_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1);        // [y0,y1]=[min(x0),x1]
-void irmax_up_abc_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1);      // y=max(abs(x))
-void irmin_down_abc_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1);    // y=min(abs(x))
+void irmax_up_abs_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1);      // y=max(abs(x))
+void irmin_down_abs_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1);    // y=min(abs(x))
 void icvec_pm_cvec(int n, cmulti **y0, cmulti **y1, cmulti **x);                      // [y0,y1]=[-absc(x),absc(x)]
 void icvec_mid_rad_cvec(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1); // mid=(x1+x0)/2, rad=x1-x0
 void icvec_mr_cvec(int n, cmulti **mid, cmulti **rad, cmulti **x0, cmulti **x1);      // [m-r,m+r]=[x0,x1]

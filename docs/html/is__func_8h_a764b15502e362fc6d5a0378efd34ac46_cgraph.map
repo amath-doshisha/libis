@@ -39,7 +39,7 @@
 <area shape="rect" id="node37" href="$func__poly_8c.html#afbd86b16edc7166583deaa9042646256" title="func_poly_degree_max" alt="" coords="816,268,941,295"/>
 <area shape="rect" id="node38" href="$func__poly_8c.html#a1bf168e77b2b22de70137f55b4d70f36" title="func_is_poly_list" alt="" coords="831,179,927,205"/>
 <area shape="rect" id="node39" href="$func__list_8c.html#a68debb78577aa8bfb9aa140e0c8960be" title="func_list_degree_max" alt="" coords="644,116,764,143"/>
-<area shape="rect" id="node35" href="$is__ivec_8h.html#ac9668c40a8b02f093907099917187e0a" title="ivec_sum" alt="" coords="1345,432,1409,459"/>
+<area shape="rect" id="node35" href="$is__ivec_8h.html#a17d2bba9c6a61dddbf7c43c0d2b00f3b" title="ivec_sum" alt="" coords="1345,432,1409,459"/>
 <area shape="rect" id="node41" href="$func__number_8c.html#a5b7171537ce3464da4f750991e4322f0" title="func_zero" alt="" coords="1011,2053,1076,2080"/>
 <area shape="rect" id="node43" href="$func__poly_8c.html#a851bbaef1306a31b429d22c907ae7794" title="func_poly_clone_coeff\l_ntarm" alt="" coords="643,1738,765,1779"/>
 <area shape="rect" id="node48" href="$func__number_8c.html#aa688bc6a1ce03ab54dee422d5dc0530d" title="func_number_pull" alt="" coords="653,2007,755,2033"/>
@@ -79,9 +79,9 @@
 <area shape="rect" id="node73" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="1013,4291,1073,4317"/>
 <area shape="rect" id="node75" href="$func__solve_8c.html#a0e4bd5c5181bbcde2b6e367942cc54d7" title="func_change_cmulti" alt="" coords="823,3624,934,3651"/>
 <area shape="rect" id="node78" href="$cmulti_8c.html#a3778c7bfac2e9b84d303c5831764d1a9" title="z=x/y " alt="" coords="851,4941,907,4968"/>
-<area shape="rect" id="node79" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="857,4443,901,4469"/>
+<area shape="rect" id="node79" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="853,4443,905,4469"/>
 <area shape="rect" id="node77" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="1181,4992,1229,5019"/>
-<area shape="rect" id="node80" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="1022,4443,1065,4469"/>
+<area shape="rect" id="node80" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="1018,4443,1069,4469"/>
 <area shape="rect" id="node82" href="$func__solve_8c.html#a699d204de676a2e33cfc185b7917a5c4" title="func_init_val_r_and\l_balance" alt="" coords="824,4225,933,4266"/>
 <area shape="rect" id="node85" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="854,4173,903,4200"/>
 <area shape="rect" id="node86" href="$cmulti_8c.html#aaa8a19431cf6f99ead0badf3b0b15400" title="cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta) " alt="" coords="845,4392,913,4419"/>

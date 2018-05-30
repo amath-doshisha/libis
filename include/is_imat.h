@@ -31,9 +31,9 @@ void imat_get_s(int m, int n, char **B, int LDB, int *A, int LDA);
  * operators
  */
 // B+=A
-void imat_add(int m, int n, int *B, int LDB, const int *A, int LDA);
+void imat_add(int m, int n, int *B, int LDB, int *A, int LDA);
 // B-=A
-void imat_sub(int m, int n, int *B, int LDB, const int *A, int LDA);
+void imat_sub(int m, int n, int *B, int LDB, int *A, int LDA);
 // B+=a
 void imat_add_scalar(int m, int n, int *B, int LDB, int a);
 // B*=a
@@ -53,11 +53,11 @@ void imat_swap_rows(int m, int n, int *A, int LDA, int k, int l);
  * convert itself to itself
  */
 // B=A
-void imat_copy(int m, int n, int *B, int LDB, const int *A, int LDA);
+void imat_copy(int m, int n, int *B, int LDB, int *A, int LDA);
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void imat_copy_col_index(int m, int n, int *B, int LDB, const int *A, int LDA, const int *I);
+void imat_copy_col_index(int m, int n, int *B, int LDB, int *A, int LDA, int *I);
 // A(:,j) <-> A(:,I[j]) for 0<=j<n
-void imat_swap_index(int m, int n, int *A, int LDA, const int *I);
+void imat_swap_index(int m, int n, int *A, int LDA, int *I);
 
 /*
  * get informations

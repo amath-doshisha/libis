@@ -134,8 +134,8 @@ int main()
   print_dark_gray(); func_print(func_scope(0)); print_reset(); printf("\n"); 
 
   // free
-  ry=rfree(ry);
-  cy=cfree(cy);
+  ry=rmfree(ry);
+  cy=cmfree(cy);
 
   print_red(); printf("> clear\n"); print_reset(); func_clear();
   printf("check sum: %d\n",func_new_del_check_sum());  

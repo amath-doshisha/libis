@@ -1,10 +1,8 @@
-###### MacOS X
-OS=MACOSX
 ######
 GCC=gcc
 INST_DIR_INC=../include
-INST_DIR_LIB=../$(OS)
-CFLAGS=-I/usr/local/include -I. -Wall -Wextra -Wcast-align -O3 -funroll-loops -D__$(OS)__
+INST_DIR_LIB=../lib
+CFLAGS=-I/usr/local/include -I. -Wall -Wextra -Wcast-align -O3 -funroll-loops
 
 ##################################################################
 

@@ -16,8 +16,8 @@
 
 #define RA(X,P) ((X)=rallocate_prec(P))
 #define CA(X,P) ((X)=callocate_prec(P))
-#define RF(X) ((X)=rfree(X))
-#define CF(X) ((X)=cfree(X))
+#define RF(X) ((X)=rmfree(X))
+#define CF(X) ((X)=cmfree(X))
 #define RAr(X,P) ((X)=rallocate_prec(rget_prec(P)))
 #define CAr(X,P) ((X)=callocate_prec(rget_prec(P)))
 
@@ -569,7 +569,7 @@ int ir_in_irpm(rmulti *y0, rmulti *y1, rmulti *x)
   z0=rallocate_prec(rget_prec(x)); z1=rallocate_prec(rget_prec(x));
   irpm(z0,z1,x);
   value=(le_rr(z0,y0) && le_rr(y1,z1));
-  z0=rfree(z0); z1=rfree(z1);
+  z0=rmfree(z0); z1=rmfree(z1);
   return value;
 }
 

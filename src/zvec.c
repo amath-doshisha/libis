@@ -195,7 +195,7 @@ void zvec_set_svec(int n, dcomplex *y, char **x)
     cset_s(a,x[i]);
     y[i]=cget_z(a);
   }
-  a=cfree(a);
+  a=cmfree(a);
 }
 
 /**

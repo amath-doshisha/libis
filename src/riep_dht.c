@@ -152,7 +152,7 @@ void riep_dhToda_TN(int m, int M, rmulti **A, int LDA, rmulti **Q, int LDQ, rmul
   // done
   if(Q==NULL){ Q1=rmat_free(LDQ1,M,Q1); }else{ Q1=NULL; }
   if(E==NULL){ E1=rvec_free(m,E1); }else{ E1=NULL; }
-  a=rfree(a);
+  a=rmfree(a);
   f=rvec_free(f_size,f);
   sigma=rvec_free(m,sigma);
   for(k=0; k<m; k++){ Q0[k]=rvec_free(Q0_size[k],Q0[k]); } free(Q0); Q0=NULL;
@@ -302,7 +302,7 @@ void riep_EXTdhToda_TN(int m, int N, int M, rmulti **A, int LDA, rmulti **Q, int
   // done
   if(Q==NULL){ Q1=rmat_free(LDQ1,M,Q1); }else{ Q1=NULL; }
   if(E==NULL){ E1=rmat_free(LDE1,N,E1); }else{ E1=NULL; }
-  a=rfree(a);
+  a=rmfree(a);
   f=rvec_free(f_size,f);
   sigma=rvec_free(m,sigma);
   for(k=0; k<m; k++){ Q0[k]=rvec_free(Q0_size[k],Q0[k]); } free(Q0); Q0=NULL;

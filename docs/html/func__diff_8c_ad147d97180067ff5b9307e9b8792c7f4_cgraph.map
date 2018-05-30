@@ -1,6 +1,6 @@
 <map id="func_diff_var" name="func_diff_var">
 <area shape="rect" id="node2" href="$func__var_8c.html#a5db4a460008c3feef55608229884fb78" title="func_is_var" alt="" coords="787,3973,861,4000"/>
-<area shape="rect" id="node6" href="$is__ivec_8h.html#a72fc137efd8627fea29ea3a96287077d" title="ivec_first_index_if" alt="" coords="132,664,233,691"/>
+<area shape="rect" id="node6" href="$is__ivec_8h.html#a2135b0bf6f73535276d394d3ee8efaf9" title="ivec_first_index_if" alt="" coords="132,664,233,691"/>
 <area shape="rect" id="node7" href="$func__var_8c.html#a9939aa9c621f143f162e30ae8273d19b" title="func_var_size" alt="" coords="782,3400,866,3427"/>
 <area shape="rect" id="node9" href="$func__number_8c.html#a5b7171537ce3464da4f750991e4322f0" title="func_zero" alt="" coords="791,1424,857,1451"/>
 <area shape="rect" id="node32" href="$func_8c.html#a30ae95dc5594ad32c8c1f0fc8cd0f221" title="func_del" alt="" coords="1340,1221,1400,1248"/>
@@ -51,9 +51,9 @@
 <area shape="rect" id="node46" href="$is__ivec_8h.html#a9ba49aed864981f54a01143cbdab293d" title="ivec_sort" alt="" coords="793,3603,855,3629"/>
 <area shape="rect" id="node47" href="$is__ivec_8h.html#a3f735f38b0e50a5008b41981ee35eb04" title="ivec_relocate" alt="" coords="783,3552,865,3579"/>
 <area shape="rect" id="node48" href="$is__ivec_8h.html#a32657ddb5a0bb69fbada6fb9b6260886" title="ivec_free" alt="" coords="937,3639,1000,3665"/>
-<area shape="rect" id="node51" href="$is__ivec_8h.html#ac9ab9342c622fb125bc0d893bbf97b1f" title="ivec_allocate_index\l_if_not" alt="" coords="769,3806,879,3847"/>
+<area shape="rect" id="node51" href="$is__ivec_8h.html#a013a226226e3ea5128b0311128248400" title="ivec_allocate_index\l_if_not" alt="" coords="769,3806,879,3847"/>
 <area shape="rect" id="node52" href="$func__var_8c.html#ad1d800894c1472eb9c959cacf9d7a670" title="func_var_replace" alt="" coords="775,3755,873,3781"/>
-<area shape="rect" id="node53" href="$is__ivec_8h.html#a039125f718e82de7f9440d04d586e4b2" title="ivec_copy_index" alt="" coords="776,3872,872,3899"/>
+<area shape="rect" id="node53" href="$is__ivec_8h.html#a2e8aa5b5c5500b7ad400b65577e4405b" title="ivec_copy_index" alt="" coords="776,3872,872,3899"/>
 <area shape="rect" id="node56" href="$func__number_8c.html#ad76dcd961b9900ca94e6ad2008d75f7f" title="func_is_zero" alt="" coords="1067,2387,1145,2413"/>
 <area shape="rect" id="node57" href="$func__number_8c.html#aa780c6f31a959959bcbf4d9553d247d1" title="func_is_one" alt="" coords="1068,2843,1144,2869"/>
 <area shape="rect" id="node58" href="$func__var_8c.html#af0f5993719d5240453590048669617ae" title="func_var_mul" alt="" coords="293,3096,375,3123"/>
@@ -70,7 +70,7 @@
 <area shape="rect" id="node94" href="$func__mul_8c.html#ab656910e5133ed7949b65a0067831f9e" title="func_is_split" alt="" coords="295,183,373,209"/>
 <area shape="rect" id="node98" href="$func_8c.html#a5d310173294eded581e6fc926e5ee4a1" title="func_arg2_new" alt="" coords="779,1677,869,1704"/>
 <area shape="rect" id="node59" href="$func__var_8c.html#ac36f3ccf2212fd3a7b493ac4b794b982" title="func_var" alt="" coords="461,1272,521,1299"/>
-<area shape="rect" id="node60" href="$is__ivec_8h.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="458,3096,525,3123"/>
+<area shape="rect" id="node60" href="$is__ivec_8h.html#ad945fa7c2905e342a12760aa56265b51" title="ivec_copy" alt="" coords="458,3096,525,3123"/>
 <area shape="rect" id="node62" href="$func__bigint_8c.html#a6cf29c440217b50c7d7085feeabf0e04" title="func_is_bigint" alt="" coords="1065,2437,1147,2464"/>
 <area shape="rect" id="node64" href="$func__bigint_8c.html#a14e630f8b498cbd9592fd7275d1a431a" title="func_bigint_cast" alt="" coords="611,2032,706,2059"/>
 <area shape="rect" id="node65" href="$func__bigint_8c.html#a7464989f4d66ee0fca48ee582caec920" title="func_bigint" alt="" coords="789,1627,859,1653"/>

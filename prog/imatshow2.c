@@ -15,9 +15,9 @@
 
 #define RA(X,P)    ((X)=rallocate_prec(P))
 #define RAP(X,Y)   ((X)=rallocate_prec(rget_prec(Y)))
-#define RF(X)      ((X)=rfree(X))
+#define RF(X)      ((X)=rmfree(X))
 #define CA(X,P)    ((X)=callocate_prec(P))
-#define CF(X)      ((X)=cfree(X))
+#define CF(X)      ((X)=cmfree(X))
 #define RVA(X,N,P)  { X=rvec_allocate_prec(N,P); }
 #define RVAr(X,Y,N) { X=rvec_allocate_prec(N,rget_prec(Y)); }
 #define RVArv(X,Y,N){ X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
@@ -34,9 +34,9 @@ int irvec_relerror(int n, rmulti **z0, rmulti **z1, rmulti **x0, rmulti **x1, rm
   int e=0;
   rmulti **ry0=NULL,**ry1=NULL;
   RVArv(ry0,z0,n); RVArv(ry1,z1,n);
-  irvec_abs_sub(n,z0,z1,x0,x1,y0,y1);
-  irvec_abs(n,ry0,ry1,y0,y1);
-  irvec_div(n,z0,z1,z0,z1,ry0,ry1);
+  irvec_abs_sub_rvec_rvec(n,z0,z1,x0,x1,y0,y1);
+  irvec_abs_rvec(n,ry0,ry1,y0,y1);
+  irvec_div_rvec_rvec(n,z0,z1,z0,z1,ry0,ry1);
   RVF(ry0,n); RVF(ry1,n);
   return e;
 }
@@ -48,10 +48,10 @@ int irvec_abserror(rmulti *z0, rmulti *z1, int n, rmulti **x0, rmulti **x1, rmul
   rmulti **e0=NULL,**e1=NULL;
   RAP(ry0,z0); RAP(ry1,z1);
   RVAr(e0,z0,n); RVAr(e1,z1,n);
-  irvec_abs_sub(n,e0,e1,x0,x1,y0,y1);
-  irvec_umax(z0,z1,n,e0,e1);
-  irvec_umax_abs(ry0,ry1,n,y0,y1);
-  irdiv(z0,z1,z0,z1,ry0,ry1);
+  irvec_abs_sub_rvec_rvec(n,e0,e1,x0,x1,y0,y1);
+  irmax_up_rvec(z0,z1,n,e0,e1);
+  irmax_up_abs_rvec(ry0,ry1,n,y0,y1);
+  irdiv_rr(z0,z1,z0,z1,ry0,ry1);
   RF(ry0); RF(ry1);
   RVF(e0,n); RVF(e1,n);
   return e;
@@ -62,9 +62,9 @@ int icvec_relerror(int n, rmulti **z0, rmulti **z1, cmulti **x0, cmulti **x1, cm
   int e=0;
   rmulti **ry0=NULL,**ry1=NULL;
   RVArv(ry0,z0,n); RVArv(ry1,z1,n);
-  icvec_abs_sub(n,z0,z1,x0,x1,y0,y1);
-  icvec_abs(n,ry0,ry1,y0,y1);
-  irvec_div(n,z0,z1,z0,z1,ry0,ry1);
+  irvec_abs_sub_cvec_cvec(n,z0,z1,x0,x1,y0,y1);
+  irvec_abs_cvec(n,ry0,ry1,y0,y1);
+  irvec_div_rvec_rvec(n,z0,z1,z0,z1,ry0,ry1);
   RVF(ry0,n); RVF(ry1,n);
   return e;
 }
@@ -76,10 +76,10 @@ int icvec_abserror(rmulti *z0, rmulti *z1, int n, cmulti **x0, cmulti **x1, cmul
   rmulti **e0=NULL,**e1=NULL;
   RAP(ry0,z0); RAP(ry1,z1);
   RVAr(e0,z0,n); RVAr(e1,z1,n);
-  icvec_abs_sub(n,e0,e1,x0,x1,y0,y1);
-  irvec_umax(z0,z1,n,e0,e1);
-  icvec_umax_abs(ry0,ry1,n,y0,y1);
-  irdiv(z0,z1,z0,z1,ry0,ry1);
+  irvec_abs_sub_cvec_cvec(n,e0,e1,x0,x1,y0,y1);
+  irmax_up_rvec(z0,z1,n,e0,e1);
+  irmax_up_abs_cvec(ry0,ry1,n,y0,y1);
+  irdiv_rr(z0,z1,z0,z1,ry0,ry1);
   RF(ry0); RF(ry1);
   RVF(e0,n); RVF(e1,n);
   return e;
@@ -210,14 +210,14 @@ int main(int argc, char *argv[])
   if(debug>=3){
     if(DVEC<=type_in1 && type_in1<=CVEC){ printf("Input1_Vector:\n"); }
     if(DMAT<=type_in1 && type_in1<=CMAT){ printf("Input1_Matrix:\n"); }
-    if(dx1!=NULL){ dvec_print(n1,dx1,NULL,format,digits); }
-    if(zx1!=NULL){ zvec_print(n1,zx1,NULL,format,digits); }
-    if(rx1!=NULL){ rvec_print(n1,rx1,NULL,format,digits); }
-    if(cx1!=NULL){ cvec_print(n1,cx1,NULL,format,digits); }
-    if(dA1!=NULL){ dmat_print(m1,n1,dA1,m2,NULL,format,digits); }
-    if(zA1!=NULL){ zmat_print(m1,n1,zA1,m2,NULL,format,digits); }
-    if(rA1!=NULL){ rmat_print(m1,n1,rA1,m2,NULL,format,digits); }
-    if(cA1!=NULL){ cmat_print(m1,n1,cA1,m2,NULL,format,digits); }
+    if(dx1!=NULL){ dvec_print(n1,dx1,NULL,format[0],digits); }
+    if(zx1!=NULL){ zvec_print(n1,zx1,NULL,format[0],digits); }
+    if(rx1!=NULL){ rvec_print(n1,rx1,NULL,format[0],digits); }
+    if(cx1!=NULL){ cvec_print(n1,cx1,NULL,format[0],digits); }
+    if(dA1!=NULL){ dmat_print(m1,n1,dA1,m2,NULL,format[0],digits); }
+    if(zA1!=NULL){ zmat_print(m1,n1,zA1,m2,NULL,format[0],digits); }
+    if(rA1!=NULL){ rmat_print(m1,n1,rA1,m2,NULL,format[0],digits); }
+    if(cA1!=NULL){ cmat_print(m1,n1,cA1,m2,NULL,format[0],digits); }
   }
 
   // load input file2(interval file)
@@ -246,14 +246,14 @@ int main(int argc, char *argv[])
   if(debug>=3){
     if(DVEC<=type_in2 && type_in2<=CVEC){ printf("Input1_interval_Vector:\n"); }
     if(DMAT<=type_in2 && type_in2<=CMAT){ printf("Input1_interval_Matrix:\n"); }
-    if(dx2!=NULL){ dvec_print(n2,dx2,NULL,format,digits); }
-    if(zx2!=NULL){ zvec_print(n2,zx2,NULL,format,digits); }
-    if(rx2!=NULL){ rvec_print(n2,rx2,NULL,format,digits); }
-    if(cx2!=NULL){ cvec_print(n2,cx2,NULL,format,digits); }
-    if(dA2!=NULL){ dmat_print(m2,n2,dA2,m2,NULL,format,digits); }
-    if(zA2!=NULL){ zmat_print(m2,n2,zA2,m2,NULL,format,digits); }
-    if(rA2!=NULL){ rmat_print(m2,n2,rA2,m2,NULL,format,digits); }
-    if(cA2!=NULL){ cmat_print(m2,n2,cA2,m2,NULL,format,digits); }
+    if(dx2!=NULL){ dvec_print(n2,dx2,NULL,format[0],digits); }
+    if(zx2!=NULL){ zvec_print(n2,zx2,NULL,format[0],digits); }
+    if(rx2!=NULL){ rvec_print(n2,rx2,NULL,format[0],digits); }
+    if(cx2!=NULL){ cvec_print(n2,cx2,NULL,format[0],digits); }
+    if(dA2!=NULL){ dmat_print(m2,n2,dA2,m2,NULL,format[0],digits); }
+    if(zA2!=NULL){ zmat_print(m2,n2,zA2,m2,NULL,format[0],digits); }
+    if(rA2!=NULL){ rmat_print(m2,n2,rA2,m2,NULL,format[0],digits); }
+    if(cA2!=NULL){ cmat_print(m2,n2,cA2,m2,NULL,format[0],digits); }
   }
 
   // load input file3
@@ -282,14 +282,14 @@ int main(int argc, char *argv[])
   if(debug>=3){
     if(DVEC<=type_in3 && type_in3<=CVEC){ printf("Input2_Vector:\n"); }
     if(DMAT<=type_in3 && type_in3<=CMAT){ printf("Input2_Matrix:\n"); }
-    if(dx3!=NULL){ dvec_print(n3,dx3,NULL,format,digits); }
-    if(zx3!=NULL){ zvec_print(n3,zx3,NULL,format,digits); }
-    if(rx3!=NULL){ rvec_print(n3,rx3,NULL,format,digits); }
-    if(cx3!=NULL){ cvec_print(n3,cx3,NULL,format,digits); }
-    if(dA3!=NULL){ dmat_print(m3,n3,dA3,m3,NULL,format,digits); }
-    if(zA3!=NULL){ zmat_print(m3,n3,zA3,m3,NULL,format,digits); }
-    if(rA3!=NULL){ rmat_print(m3,n3,rA3,m3,NULL,format,digits); }
-    if(cA3!=NULL){ cmat_print(m3,n3,cA3,m3,NULL,format,digits); }
+    if(dx3!=NULL){ dvec_print(n3,dx3,NULL,format[0],digits); }
+    if(zx3!=NULL){ zvec_print(n3,zx3,NULL,format[0],digits); }
+    if(rx3!=NULL){ rvec_print(n3,rx3,NULL,format[0],digits); }
+    if(cx3!=NULL){ cvec_print(n3,cx3,NULL,format[0],digits); }
+    if(dA3!=NULL){ dmat_print(m3,n3,dA3,m3,NULL,format[0],digits); }
+    if(zA3!=NULL){ zmat_print(m3,n3,zA3,m3,NULL,format[0],digits); }
+    if(rA3!=NULL){ rmat_print(m3,n3,rA3,m3,NULL,format[0],digits); }
+    if(cA3!=NULL){ cmat_print(m3,n3,cA3,m3,NULL,format[0],digits); }
   }
 
   // load input file4(interval file)
@@ -316,14 +316,14 @@ int main(int argc, char *argv[])
   if(debug>=3){
     if(DVEC<=type_in4 && type_in4<=CVEC){ printf("Input2_interval_Vector:\n"); }
     if(DMAT<=type_in4 && type_in4<=CMAT){ printf("Input2_interval_Matrix:\n"); }
-    if(dx4!=NULL){ dvec_print(n4,dx4,NULL,format,digits); }
-    if(zx4!=NULL){ zvec_print(n4,zx4,NULL,format,digits); }
-    if(rx4!=NULL){ rvec_print(n4,rx4,NULL,format,digits); }
-    if(cx4!=NULL){ cvec_print(n4,cx4,NULL,format,digits); }
-    if(dA4!=NULL){ dmat_print(m4,n4,dA4,m4,NULL,format,digits); }
-    if(zA4!=NULL){ zmat_print(m4,n4,zA4,m4,NULL,format,digits); }
-    if(rA4!=NULL){ rmat_print(m4,n4,rA4,m4,NULL,format,digits); }
-    if(cA4!=NULL){ cmat_print(m4,n4,cA4,m4,NULL,format,digits); }
+    if(dx4!=NULL){ dvec_print(n4,dx4,NULL,format[0],digits); }
+    if(zx4!=NULL){ zvec_print(n4,zx4,NULL,format[0],digits); }
+    if(rx4!=NULL){ rvec_print(n4,rx4,NULL,format[0],digits); }
+    if(cx4!=NULL){ cvec_print(n4,cx4,NULL,format[0],digits); }
+    if(dA4!=NULL){ dmat_print(m4,n4,dA4,m4,NULL,format[0],digits); }
+    if(zA4!=NULL){ zmat_print(m4,n4,zA4,m4,NULL,format[0],digits); }
+    if(rA4!=NULL){ rmat_print(m4,n4,rA4,m4,NULL,format[0],digits); }
+    if(cA4!=NULL){ cmat_print(m4,n4,cA4,m4,NULL,format[0],digits); }
   }
 
   // check
@@ -390,21 +390,21 @@ int main(int argc, char *argv[])
   if(type_in1==RVEC && type_in3==RVEC){
     index=ivec_allocate(n1);
     x1_z=zvec_allocate(n1);
-    rvec_get_z(n1,x1_z,rx1);
+    rvec_get_zvec(n1,x1_z,rx1);
     zvec_sort(n1,x1_z,index); zvec_reverse(n1,x1_z); ivec_reverse(n1,index);
     rvec_swap_index(n1,rx1,index);
     rvec_swap_index(n2,rx2,index);
-    ivec_grid(n1,index);
+    ivec_set_grid(n1,index);
     reig_sort_value_guide(n1,n1,rx3,NULL,0,rx1);
   }
   if(type_in1==CVEC && type_in3==CVEC){
     index=ivec_allocate(n1);
     x1_z=zvec_allocate(n1);
-    cvec_get_z(n1,x1_z,cx1);
+    cvec_get_zvec(n1,x1_z,cx1);
     zvec_sort(n1,x1_z,index); zvec_reverse(n1,x1_z); ivec_reverse(n1,index);
     cvec_swap_index(n1,cx1,index);
     cvec_swap_index(n2,cx2,index);
-    ivec_grid(n1,index);
+    ivec_set_grid(n1,index);
     ceig_sort_value_guide(n1,n1,cx3,NULL,0,cx1);
   }
 
@@ -412,23 +412,23 @@ int main(int argc, char *argv[])
   if(type_in1==RVEC && type_in3==RVEC){
     RVA(rx1_1,n1,prec); RVA(rx1_2,n1,prec);
     RVA(rx3_1,n1,prec); RVA(rx3_2,n1,prec);
-    if(type_in2==RVEC){ irvec_add_pm(n1,rx1_1,rx1_2,rx1,rx1,rx2); }
-    else              { irvec_copy(n1,rx1_1,rx1_2,rx1,rx1); }
-    if(type_in4==RVEC){ irvec_add_pm(n1,rx3_1,rx3_2,rx3,rx3,rx4); }
-    else              { irvec_copy(n1,rx3_1,rx3_2,rx3,rx3); }
+    if(type_in2==RVEC){ irvec_add_pm_rvec(n1,rx1_1,rx1_2,rx1,rx1,rx2); }
+    else              { irvec_set_rvec(n1,rx1_1,rx1_2,rx1,rx1); }
+    if(type_in4==RVEC){ irvec_add_pm_rvec(n1,rx3_1,rx3_2,rx3,rx3,rx4); }
+    else              { irvec_set_rvec(n1,rx3_1,rx3_2,rx3,rx3); }
   }
   if(type_in1==CVEC && type_in3==CVEC){
     CVA(cx1_1,n1,prec); CVA(cx1_2,n1,prec);
     CVA(cx3_1,n1,prec); CVA(cx3_2,n1,prec);
-    if(type_in2==CVEC){ icvec_add_pm(n1,cx1_1,cx1_2,cx1,cx1,cx2); }
-    else              { icvec_copy(n1,cx1_1,cx1_2,cx1,cx1); }
-    if(type_in4==CVEC){ icvec_add_pm(n1,cx3_1,cx3_2,cx3,cx3,cx4); }
-    else              { icvec_copy(n1,cx3_1,cx3_2,cx3,cx3); }
+    if(type_in2==CVEC){ icvec_add_pm_cvec(n1,cx1_1,cx1_2,cx1,cx1,cx2); }
+    else              { icvec_copy_cvec(n1,cx1_1,cx1_2,cx1,cx1); }
+    if(type_in4==CVEC){ icvec_add_pm_cvec(n1,cx3_1,cx3_2,cx3,cx3,cx4); }
+    else              { icvec_copy_cvec(n1,cx3_1,cx3_2,cx3,cx3); }
   }
 
   //compute mode [sub] 
-  if(flag==1 && type_in1==RVEC && type_in3==RVEC){ irvec_sub(n1,rx1_1,rx1_2,rx3_1,rx3_2,rx1_1,rx1_2); }
-  if(flag==1 && type_in1==CVEC && type_in3==CVEC){ icvec_sub(n1,cx1_1,cx1_2,cx3_1,cx3_2,cx1_1,cx1_2); }
+  if(flag==1 && type_in1==RVEC && type_in3==RVEC){ irvec_sub_rvec_rvec(n1,rx1_1,rx1_2,rx3_1,rx3_2,rx1_1,rx1_2); }
+  if(flag==1 && type_in1==CVEC && type_in3==CVEC){ icvec_sub_cvec_cvec(n1,cx1_1,cx1_2,cx3_1,cx3_2,cx1_1,cx1_2); }
 
   //compute mode [rel]
   if(flag==2){
@@ -436,14 +436,14 @@ int main(int argc, char *argv[])
     RA(mid,prec); RA(rad,prec);
     if(type_in1==RVEC && type_in3==RVEC){
       irvec_relerror(n1,mid_vec,rad_vec,rx3_1,rx3_2,rx1_1,rx1_2);
-      irvec_umax(mid,rad,n1,mid_vec,rad_vec);
-      irvec_mr(n1,mid_vec,rad_vec,mid_vec,rad_vec);
+      irmax_up_rvec(mid,rad,n1,mid_vec,rad_vec);
+      irvec_mr_rvec(n1,mid_vec,rad_vec,mid_vec,rad_vec);
       irmr(mid,rad,mid,rad);
     }
     if(type_in1==CVEC && type_in3==CVEC){
       icvec_relerror(n1,mid_vec,rad_vec,cx3_1,cx3_2,cx1_1,cx1_2);
-      irvec_umax(mid,rad,n1,mid_vec,rad_vec);
-      irvec_mr(n1,mid_vec,rad_vec,mid_vec,rad_vec);
+      irmax_up_rvec(mid,rad,n1,mid_vec,rad_vec);
+      irvec_mr_rvec(n1,mid_vec,rad_vec,mid_vec,rad_vec);
       irmr(mid,rad,mid,rad);
     }
   }
@@ -463,9 +463,9 @@ int main(int argc, char *argv[])
   
   //output results
   if(debug>=2){
-    if(flag==1 && rx1_1!=NULL && rx1_2!=NULL){ printf("Output_Error=\n"); irvec_print(n1,rx1_1,rx1_2,NULL,"e",10); }
-    if(flag==1 && cx1_1!=NULL && cx1_2!=NULL){ printf("Output_Error=\n"); icvec_print(n1,cx1_1,cx1_2,NULL,"e",10); }
-    if(flag==2){ printf("Output_Error_mid_rad=\n"); irvec_print(n1,mid_vec,rad_vec,NULL,"e",10); }
+    if(flag==1 && rx1_1!=NULL && rx1_2!=NULL){ printf("Output_Error=\n"); irvec_print(n1,rx1_1,rx1_2,NULL,'e',10); }
+    if(flag==1 && cx1_1!=NULL && cx1_2!=NULL){ printf("Output_Error=\n"); icvec_print(n1,cx1_1,cx1_2,NULL,'e',10); }
+    if(flag==2){ printf("Output_Error_mid_rad=\n"); irvec_print(n1,mid_vec,rad_vec,NULL,'e',10); }
   }
   if(debug>=1){
     if(flag==1){}

@@ -123,8 +123,8 @@ void rsolve_lu_decomp(int n, rmulti **A, int LDA, int *p, int *info)
     }
   }
   // done
-  a=rfree(a);
-  value=rfree(value);
+  a=rmfree(a);
+  value=rmfree(value);
   (*info)=ret;
 }
 
@@ -165,8 +165,8 @@ void rsolve_lu_backsubs(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int LD
     }
   }
   // done
-  a=rfree(a);
-  b=rfree(b);
+  a=rmfree(a);
+  b=rmfree(b);
 }
 
 /** @} */
@@ -235,8 +235,8 @@ void rsolve_gauss_sweeper(int n, int NRHS, rmulti **B, int LDB, rmulti **A, int 
     }
   }
   // free
-  a=rfree(a);
-  value=rfree(value);
+  a=rmfree(a);
+  value=rmfree(value);
   rws=rvec_free(rws_size,rws);
   // done
   (*info)=ret;

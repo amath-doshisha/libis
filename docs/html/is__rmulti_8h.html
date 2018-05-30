@@ -127,9 +127,9 @@ $(document).ready(function(){initNavTree('is__rmulti_8h.html','');});
 <tr class="memitem:a3ab36d8527ef192c290046883aaad519"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmulti_8h.html#a3ab36d8527ef192c290046883aaad519">rallocate_clone</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *y)</td></tr>
 <tr class="memdesc:a3ab36d8527ef192c290046883aaad519"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の複製の生成.  <a href="#a3ab36d8527ef192c290046883aaad519">[詳解]</a><br /></td></tr>
 <tr class="separator:a3ab36d8527ef192c290046883aaad519"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd2ceb7eaa6481640a45357d44034950"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950">rfree</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x)</td></tr>
-<tr class="memdesc:abd2ceb7eaa6481640a45357d44034950"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の終了処理.  <a href="#abd2ceb7eaa6481640a45357d44034950">[詳解]</a><br /></td></tr>
-<tr class="separator:abd2ceb7eaa6481640a45357d44034950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f0c0c6844ec4521f39a04b702c3609"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609">rmfree</a> (<a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *x)</td></tr>
+<tr class="memdesc:a67f0c0c6844ec4521f39a04b702c3609"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型の終了処理.  <a href="#a67f0c0c6844ec4521f39a04b702c3609">[詳解]</a><br /></td></tr>
+<tr class="separator:a67f0c0c6844ec4521f39a04b702c3609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace82f1f9aac5a1aa512661271910f848"><td class="memItemLeft" align="right" valign="top"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__rmulti_8h.html#ace82f1f9aac5a1aa512661271910f848">rmepsilon</a> (int prec)</td></tr>
 <tr class="memdesc:ace82f1f9aac5a1aa512661271910f848"><td class="mdescLeft">&#160;</td><td class="mdescRight">rmulti型のマシンイプシロンの生成.  <a href="#ace82f1f9aac5a1aa512661271910f848">[詳解]</a><br /></td></tr>
 <tr class="separator:ace82f1f9aac5a1aa512661271910f848"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3519,7 +3519,7 @@ $(document).ready(function(){initNavTree('is__rmulti_8h.html','');});
 </div><div class="memdoc">
 
 <p>rmulti型の新規生成. </p>
-<p>rmulti型の構造体のメモリを割り当てとそのメンバのメモリ割当などの初期化作業が行われる. 初期化後にはrmulti型へのポインタが返される. 浮動小数点数の値はNaNに設定される. 浮動小数点数の仮数の精度(ビット数)は関数<a class="el" href="rmulti_8c.html#a0f2a8a1774c4c3fb63d5cd06e69f7e36">set_default_prec</a>により設定された値が使用される. 初期化後の仮数の精度(ビット数)の再初期化は関数<a class="el" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e">rround</a>により行う. 初期化されたrmulti型の終了処理は関数<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>により行う. </p><dl class="section return"><dt>戻り値</dt><dd>初期化されたrmulti型へのポインタを返す． </dd></dl>
+<p>rmulti型の構造体のメモリを割り当てとそのメンバのメモリ割当などの初期化作業が行われる. 初期化後にはrmulti型へのポインタが返される. 浮動小数点数の値はNaNに設定される. 浮動小数点数の仮数の精度(ビット数)は関数<a class="el" href="rmulti_8c.html#a0f2a8a1774c4c3fb63d5cd06e69f7e36">set_default_prec</a>により設定された値が使用される. 初期化後の仮数の精度(ビット数)の再初期化は関数<a class="el" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e">rround</a>により行う. 初期化されたrmulti型の終了処理は関数<a class="el" href="">rfree</a>により行う. </p><dl class="section return"><dt>戻り値</dt><dd>初期化されたrmulti型へのポインタを返す． </dd></dl>
 
 <p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00117">117</a> 行目に定義があります。</p>
 
@@ -3542,7 +3542,7 @@ $(document).ready(function(){initNavTree('is__rmulti_8h.html','');});
 </div><div class="memdoc">
 
 <p>rmulti型の複製の生成. </p>
-<p>rmulti型の構造体のメモリを割り当てとそのメンバのメモリ割当などの初期化作業が行われる. 初期化後にはrmulti型へのポインタが返される. 浮動小数点数の値および浮動小数点数の仮数の精度(ビット数)は，変数yと同一のものが設定される. 初期化後の仮数の精度(ビット数)の再初期化は関数<a class="el" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e">rround</a>により行う. 初期化されたrmulti型の終了処理は関数<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>により行う. </p><dl class="params"><dt>引数</dt><dd>
+<p>rmulti型の構造体のメモリを割り当てとそのメンバのメモリ割当などの初期化作業が行われる. 初期化後にはrmulti型へのポインタが返される. 浮動小数点数の値および浮動小数点数の仮数の精度(ビット数)は，変数yと同一のものが設定される. 初期化後の仮数の精度(ビット数)の再初期化は関数<a class="el" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e">rround</a>により行う. 初期化されたrmulti型の終了処理は関数<a class="el" href="">rfree</a>により行う. </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>複製されるrmulti型の指定. </td></tr>
   </table>
@@ -3579,7 +3579,7 @@ $(document).ready(function(){initNavTree('is__rmulti_8h.html','');});
 </div><div class="memdoc">
 
 <p>rmulti型の精度を指定しての新規生成. </p>
-<p>rmulti型の構造体のメモリを割り当てとそのメンバのメモリ割当などの初期化作業が行われる. 初期化後にはrmulti型へのポインタが返される. 浮動小数点数の値はNaNに設定される. 浮動小数点数の仮数の精度(ビット数)は指定した prec の値が使用される. 初期化後の仮数の精度(ビット数)の再初期化は関数<a class="el" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e">rround</a>により行う. 初期化されたrmulti型の終了処理は関数<a class="el" href="rmulti_8c.html#abd2ceb7eaa6481640a45357d44034950">rfree</a>により行う. </p><dl class="params"><dt>引数</dt><dd>
+<p>rmulti型の構造体のメモリを割り当てとそのメンバのメモリ割当などの初期化作業が行われる. 初期化後にはrmulti型へのポインタが返される. 浮動小数点数の値はNaNに設定される. 浮動小数点数の仮数の精度(ビット数)は指定した prec の値が使用される. 初期化後の仮数の精度(ビット数)の再初期化は関数<a class="el" href="rmulti_8c.html#a37ca3a51b7ba9aa96284d59e9863c31e">rround</a>により行う. 初期化されたrmulti型の終了処理は関数<a class="el" href="">rfree</a>により行う. </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>浮動小数点数の仮数の桁数(ビット数)を指定する. </td></tr>
   </table>
@@ -5083,36 +5083,6 @@ $(document).ready(function(){initNavTree('is__rmulti_8h.html','');});
 
 </div>
 </div>
-<a id="abd2ceb7eaa6481640a45357d44034950"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd2ceb7eaa6481640a45357d44034950">&#9670;&nbsp;</a></span>rfree()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a>* rfree </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rmulti型の終了処理. </p>
-<p>初期化されたrmulti型の構造体およびそのメンバなどのメモリの開放を行う. rmulti型の構造体のメモリ割り当ておよび初期化は関数<a class="el" href="rmulti_8c.html#ae31c89576b14fb9861b408a6e3b6b299">rallocate</a>, <a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>, <a class="el" href="rmulti_8c.html#a3ab36d8527ef192c290046883aaad519">rallocate_clone</a>, <a class="el" href="rmulti_8c.html#aea25d77007b1780f3ce1d2a0b2e1d0b1">rbin_load</a>により行われる. </p><dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>初期化されたrmulti型ポインタ. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>メモリが開放される。これ以降はアクセス不可. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>NULLポインタを常に返す. </dd></dl>
-
-<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00172">172</a> 行目に定義があります。</p>
-
-</div>
-</div>
 <a id="ab4b501a84176a2e2e8b335df42c05fe4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4b501a84176a2e2e8b335df42c05fe4">&#9670;&nbsp;</a></span>rget_d()</h2>
 
@@ -6070,6 +6040,36 @@ $(document).ready(function(){initNavTree('is__rmulti_8h.html','');});
 <area shape="rect" id="node5" href="rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="365,81,463,108"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a67f0c0c6844ec4521f39a04b702c3609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f0c0c6844ec4521f39a04b702c3609">&#9670;&nbsp;</a></span>rmfree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a>* rmfree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="is__rmulti_8h.html#aba54dd3cab4536c79ad313a91eb71b66">rmulti</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rmulti型の終了処理. </p>
+<p>初期化されたrmulti型の構造体およびそのメンバなどのメモリの開放を行う. rmulti型の構造体のメモリ割り当ておよび初期化は関数<a class="el" href="rmulti_8c.html#ae31c89576b14fb9861b408a6e3b6b299">rallocate</a>, <a class="el" href="rmulti_8c.html#aeee0c826203695436900dc02890f433c">rallocate_prec</a>, <a class="el" href="rmulti_8c.html#a3ab36d8527ef192c290046883aaad519">rallocate_clone</a>, <a class="el" href="rmulti_8c.html#aea25d77007b1780f3ce1d2a0b2e1d0b1">rbin_load</a>により行われる. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>初期化されたrmulti型ポインタ. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>メモリが開放される。これ以降はアクセス不可. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>NULLポインタを常に返す. </dd></dl>
+
+<p class="definition"> <a class="el" href="rmulti_8c_source.html">rmulti.c</a> の <a class="el" href="rmulti_8c_source.html#l00172">172</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -8377,7 +8377,7 @@ $(document).ready(function(){initNavTree('is__rmulti_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="is__rmulti_8h.html">is_rmulti.h</a></li>
-    <li class="footer">2018年05月22日(火) 08時27分21秒作成 - libis / 構成: 
+    <li class="footer">2018年05月30日(水) 22時53分29秒作成 - libis / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

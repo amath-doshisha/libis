@@ -1,7 +1,7 @@
 <map id="irmin_down_abs_rvec" name="irmin_down_abs_rvec">
 <area shape="rect" id="node2" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="604,197,668,224"/>
 <area shape="rect" id="node3" href="$is__rvec_8h.html#a3c8378f86082105c9187889275301862" title="rmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="172,285,277,312"/>
-<area shape="rect" id="node5" href="$irvec_8c.html#abd26a4685887b594da0ac36e49e67913" title="irmulti型のベクトルの絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="181,184,268,211"/>
+<area shape="rect" id="node5" href="$irvec_8c.html#af004cc4501d6f44df03a1cfccc30f495" title="irmulti型のベクトルの絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="180,184,269,211"/>
 <area shape="rect" id="node16" href="$irvec_8c.html#aae20dba3e7578395c9a00d6a4608a3fd" title="irmulti型のベクトルの最小値 [y0,y1]=[min(x0),x1] " alt="" coords="459,387,556,413"/>
 <area shape="rect" id="node4" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="325,285,411,312"/>
 <area shape="rect" id="node6" href="$irmulti_8c.html#ad96d0d7413e12df00ef27abd4ee62f92" title="絶対値 [y0,y1]=abs([x0,x1]) " alt="" coords="342,184,394,211"/>

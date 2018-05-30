@@ -87,7 +87,7 @@ void ceig_sort_vector_guide(int n, int k, cmulti **lambda, cmulti **X, int LDX, 
       if(lambda!=NULL){ cswap(lambda[i],lambda[j]); }
     }
   }
-  value=rfree(value);
+  value=rmfree(value);
   a=rvec_free(n,a);
 }
 
@@ -109,7 +109,7 @@ void ceig_sort_value_guide(int n, int k, cmulti **lambda, cmulti **X, int LDX, c
       cswap(lambda[i],lambda[j]);
     }
   }
-  value=rfree(value);
+  value=rmfree(value);
   a=rvec_free(n,a);
 }
 

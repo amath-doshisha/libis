@@ -64,7 +64,7 @@ void ceig_ii_1pair(int n, cmulti **x, cmulti **A, int LDA, cmulti *lambda, int d
     eps=rmepsilon(prec);
     rmul_rd(eps,eps,i);
     cmat_diag_add_r(n,n,B,n,B,n,eps);
-    eps=rfree(eps);
+    eps=rmfree(eps);
     // B=L*U
     csolve_lu_decomp(n,B,n,p,&info);
     // next

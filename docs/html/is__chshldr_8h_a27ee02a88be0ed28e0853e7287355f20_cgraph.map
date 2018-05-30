@@ -4,7 +4,7 @@
 <area shape="rect" id="node7" href="$cvec_8c.html#ad1af5c539ed1b7dcee816e2378508e84" title="cmulti型のベクトルの精度を指定しての新規生成. " alt="" coords="327,43,435,70"/>
 <area shape="rect" id="node8" href="$cvec_8c.html#af36ad2b231249010d58c39d62096fbb6" title="cmulti型のベクトルxに関する行列Aによる1次変換 y=A*x " alt="" coords="160,259,277,286"/>
 <area shape="rect" id="node27" href="$cvec_8c.html#a6791c96c35ff01e0aa9f3e0cfb63893b" title="cmulti型のベクトルの終了処理. " alt="" coords="349,449,414,475"/>
-<area shape="rect" id="node28" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="519,499,563,526"/>
+<area shape="rect" id="node28" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="515,499,567,526"/>
 <area shape="rect" id="node30" href="$cmulti_8c.html#a2e5b02c852a861f99dc776505f954190" title="y=x " alt="" coords="663,550,713,577"/>
 <area shape="rect" id="node32" href="$cmulti_8c.html#a3d5da7c771b3ce2de793eb7c67a7d495" title="y=&#45;x " alt="" coords="191,94,246,121"/>
 <area shape="rect" id="node34" href="$cmat_8c.html#ae51c514af5a6d6b7c164390c94129655" title="cmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="339,347,424,374"/>
@@ -29,7 +29,7 @@
 <area shape="rect" id="node21" href="$rmulti_8c.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="783,449,838,475"/>
 <area shape="rect" id="node23" href="$is__rmulti_8h.html#a484a24b0f72dddc71bbff6876ed9aae5" title="rset_r" alt="" coords="787,499,835,526"/>
 <area shape="rect" id="node25" href="$is__rmulti_8h.html#ab73750f94865ed818120bc5f09d0745d" title="z=x+y " alt="" coords="783,246,838,273"/>
-<area shape="rect" id="node29" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="667,499,709,526"/>
+<area shape="rect" id="node29" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="663,499,713,526"/>
 <area shape="rect" id="node31" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="786,550,835,577"/>
 <area shape="rect" id="node33" href="$is__rmulti_8h.html#a07b89d04a8fb3e01d979950f9558871a" title="y=&#45;x " alt="" coords="356,94,407,121"/>
 <area shape="rect" id="node35" href="$cmulti_8c.html#ad65aa41081d26544f06d1ade34075613" title="z=conj(x)*y " alt="" coords="513,398,569,425"/>

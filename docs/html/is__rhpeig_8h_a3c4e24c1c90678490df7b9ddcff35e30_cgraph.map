@@ -16,7 +16,7 @@
 <area shape="rect" id="node44" href="$is__rvec_8h.html#a6fbb80253d0a069d0b775eedf6a9bb1a" title="rmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) " alt="" coords="331,1952,421,1979"/>
 <area shape="rect" id="node45" href="$is__rmulti_8h.html#aefb743b49249bd66d2b077490881666c" title="rmulti型が零であるかの判定. " alt="" coords="517,1192,574,1219"/>
 <area shape="rect" id="node46" href="$rhpeig_8c.html#ab38be48c91eafdd28f866b398c77c335" title="固有値問題 F=A*x&#45;lambda*x, lambda=w&#39;*x/Cのヤコビ行列M=A&#45;lambda*I&#45;x*w&#39;/Cの計算. " alt="" coords="147,1040,251,1067"/>
-<area shape="rect" id="node53" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="524,1142,567,1168"/>
+<area shape="rect" id="node53" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="520,1142,571,1168"/>
 <area shape="rect" id="node54" href="$is__rsolve_8h.html#a610cfb239ddf4e9f7a006943d4d1fe21" title="線形方程式A*X=BのLU分解による解法. " alt="" coords="167,1547,230,1574"/>
 <area shape="rect" id="node64" href="$is__rvec_8h.html#af8079677acf4f1567e27f379d231ae1e" title="z=x&#45;y " alt="" coords="143,2104,255,2131"/>
 <area shape="rect" id="node65" href="$is__rmulti_8h.html#a8050f1a08b9eda2a32d254394f119966" title="z=x*y " alt="" coords="791,2130,847,2156"/>

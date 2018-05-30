@@ -5,8 +5,8 @@
 <area shape="rect" id="node20" href="$is__rmulti_8h.html#a741834e3f622368a9a0d0c7b62845b8c" title="rmulti型の浮動小数点数を倍精度浮動小数点数から設定. " alt="" coords="400,487,449,513"/>
 <area shape="rect" id="node21" href="$cmulti_8c.html#aaa8a19431cf6f99ead0badf3b0b15400" title="cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta) " alt="" coords="505,411,573,437"/>
 <area shape="rect" id="node24" href="$cmulti_8c.html#a625b0832de178c27d2227913eb8cc1bd" title="z=x+y " alt="" coords="156,512,215,539"/>
-<area shape="rect" id="node26" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="297,613,339,640"/>
-<area shape="rect" id="node27" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="163,613,207,640"/>
+<area shape="rect" id="node26" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="293,613,343,640"/>
+<area shape="rect" id="node27" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="159,613,211,640"/>
 <area shape="rect" id="node5" href="$cmulti_8c.html#a64ba51fd841a0f97adfee956e69ef8b4" title="z=x/y " alt="" coords="290,113,346,140"/>
 <area shape="rect" id="node8" href="$cmulti_8c.html#a3d5da7c771b3ce2de793eb7c67a7d495" title="y=&#45;x " alt="" coords="291,164,345,191"/>
 <area shape="rect" id="node10" href="$cmulti_8c.html#a17d52e9eeaf22acde0324ac337741df4" title="cmulti型の絶対値 y=abs(x) " alt="" coords="292,215,344,241"/>

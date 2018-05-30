@@ -112,7 +112,7 @@ rmulti **rmat3_free(int LDA1, int LDA2, int l, rmulti **A)
   for(k=0; k<l; k++){
     for(j=0; j<LDA2; j++){
       for(i=0; i<LDA1; i++){
-	MAT3(A,i,j,k,LDA1,LDA2)=rfree(MAT3(A,i,j,k,LDA1,LDA2));
+	MAT3(A,i,j,k,LDA1,LDA2)=rmfree(MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }

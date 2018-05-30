@@ -9,7 +9,7 @@
 #include"mt19937ar.h"
 
 // B+=A
-void imat_add(int m, int n, int *B, int LDB, const int *A, int LDA)
+void imat_add(int m, int n, int *B, int LDB, int *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -31,7 +31,7 @@ void imat_add_scalar(int m, int n, int *B, int LDB, int a)
 }
 
 // B-=A
-void imat_sub(int m, int n, int *B, int LDB, const int *A, int LDA)
+void imat_sub(int m, int n, int *B, int LDB, int *A, int LDA)
 {
   int i,j;
   for(j=0; j<n; j++){
@@ -127,7 +127,7 @@ void imat_rand(int m, int n, int *A, int LDA, int a, int b)
 ///////////////////////////////////////////////////////////////////////
 
 // B=A
-void imat_copy(int m, int n, int *B, int LDB, const int *A, int LDA)
+void imat_copy(int m, int n, int *B, int LDB, int *A, int LDA)
 {
   int j;
   for(j=0; j<n; j++){
@@ -138,7 +138,7 @@ void imat_copy(int m, int n, int *B, int LDB, const int *A, int LDA)
 ///////////////////////////////////////////////////////////////////////
 
 // B(:,j)=A(:,I(j)) for 0<=j<n
-void imat_copy_col_index(int m, int n, int *B, int LDB, const int *A, int LDA, const int *I)
+void imat_copy_col_index(int m, int n, int *B, int LDB, int *A, int LDA, int *I)
 {
   int j;
   for(j=0; j<n; j++){
@@ -149,7 +149,7 @@ void imat_copy_col_index(int m, int n, int *B, int LDB, const int *A, int LDA, c
 ///////////////////////////////////////////////////////////////////////
 
 // A(:,j) <-> A(:,I[j]) for 0<=j<n
-void imat_swap_index(int m, int n, int *A, int LDA, const int *I)
+void imat_swap_index(int m, int n, int *A, int LDA, int *I)
 {
   int LDB;
   int *B=NULL;

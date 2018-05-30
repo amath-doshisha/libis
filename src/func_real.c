@@ -48,7 +48,7 @@ void func_real_p_del(func_t *f)
   if(func_ptype(f)!=FUNC_P_REAL){ FUNC_ERROR_ARG1("func_real_p_del",f); }
   if(f->p.rm!=NULL){
     f->ptype=FUNC_P_NULL;
-    f->p.rm=rfree(f->p.rm);
+    f->p.rm=rmfree(f->p.rm);
   }
 }
 

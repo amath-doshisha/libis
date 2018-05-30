@@ -14,7 +14,7 @@ void ivec_scale(int n, int *x, int a)
 }
 
 // X!=Y
-int ivec_ne(int n, const int *X, const int *Y)
+int ivec_ne(int n, int *X, int *Y)
 {
   int i;
   if(n<=0) return 0;
@@ -25,7 +25,7 @@ int ivec_ne(int n, const int *X, const int *Y)
 }
 
 // X==Y
-int ivec_eq(int n, const int *X, const int *Y)
+int ivec_eq(int n, int *X, int *Y)
 {
   int i;
   if(n<=0){ return 0; }
@@ -36,7 +36,7 @@ int ivec_eq(int n, const int *X, const int *Y)
 }
 
 // X<=>Y
-int ivec_cmp(int n, const int *X, int m, const int *Y)
+int ivec_cmp(int n, int *X, int m, int *Y)
 {
   int i;
   for(i=0; i<MIN2(n,m); i++){
@@ -49,7 +49,7 @@ int ivec_cmp(int n, const int *X, int m, const int *Y)
 }
 
 // x[i]>y for all i
-int ivec_all_gt(int n, const int *x, int y)
+int ivec_all_gt(int n, int *x, int y)
 {
   int value=1,i;
   for(i=0; value==1 && i<n; i++){ if(x[i]<=y){ value=0; } }
@@ -57,7 +57,7 @@ int ivec_all_gt(int n, const int *x, int y)
 }
 
 // x[i]>=y for all i
-int ivec_all_ge(int n, const int *x, int y)
+int ivec_all_ge(int n, int *x, int y)
 {
   int value=1,i;
   for(i=0; value==1 && i<n; i++){ if(x[i]<y){ value=0; } }
@@ -65,7 +65,7 @@ int ivec_all_ge(int n, const int *x, int y)
 }
 
 // x[i]<y for all i
-int ivec_all_lt(int n, const int *x, int y)
+int ivec_all_lt(int n, int *x, int y)
 {
   int value=1,i;
   for(i=0; value==1 && i<n; i++){ if(x[i]>=y){ value=0; } }
@@ -73,14 +73,14 @@ int ivec_all_lt(int n, const int *x, int y)
 }
 
 // x[i]<=y for all i
-int ivec_all_le(int n, const int *x, int y)
+int ivec_all_le(int n, int *x, int y)
 {
   int value=1,i;
   for(i=0; value==1 && i<n; i++){ if(x[i]>y){ value=0; } }
   return value;
 }
 
-int ivec_first_index_if(int n, const int *X, int value)
+int ivec_first_index_if(int n, int *X, int value)
 {
   int i;
   for(i=0; i<n; i++){
@@ -89,7 +89,7 @@ int ivec_first_index_if(int n, const int *X, int value)
   return -1;
 }
 
-int ivec_first_index_if_not(int n, const int *X, int value)
+int ivec_first_index_if_not(int n, int *X, int value)
 {
   int i;
   for(i=0; i<n; i++){
@@ -98,7 +98,7 @@ int ivec_first_index_if_not(int n, const int *X, int value)
   return -1;
 }
 
-int* ivec_allocate_index_if(int n, const int *X, int value, int *pm)
+int* ivec_allocate_index_if(int n, int *X, int value, int *pm)
 {
   int i,j,m,*I=NULL;
   m=ivec_count_if(n,X,value); (*pm)=m;
@@ -112,7 +112,7 @@ int* ivec_allocate_index_if(int n, const int *X, int value, int *pm)
   return I;
 }
 
-int* ivec_allocate_index_if_not(int n, const int *X, int value, int *pm)
+int* ivec_allocate_index_if_not(int n, int *X, int value, int *pm)
 {
   int i,j,m,*I=NULL;
   m=ivec_count_if_not(n,X,value); (*pm)=m;
@@ -126,7 +126,7 @@ int* ivec_allocate_index_if_not(int n, const int *X, int value, int *pm)
   return I;
 }
 
-int ivec_count_if(int n, const int *X, int value)
+int ivec_count_if(int n, int *X, int value)
 {
   int i,count=0;
   for(i=0; i<n; i++){
@@ -135,7 +135,7 @@ int ivec_count_if(int n, const int *X, int value)
   return count;
 }
 
-int ivec_count_if_not(int n, const int *X, int value)
+int ivec_count_if_not(int n, int *X, int value)
 {
   int i,count=0;
   for(i=0; i<n; i++){
@@ -147,7 +147,7 @@ int ivec_count_if_not(int n, const int *X, int value)
 //////////////////////////////////////////////////////////////////////////////////////////
 
 // max(X)
-int ivec_max(int n, const int *X)
+int ivec_max(int n, int *X)
 {
   int value,i;
   value=X[0];
@@ -158,7 +158,7 @@ int ivec_max(int n, const int *X)
 }
 
 // min(X)
-int ivec_min(int n, const int *X)
+int ivec_min(int n, int *X)
 {
   int value,i;
   value=X[0];
@@ -171,7 +171,7 @@ int ivec_min(int n, const int *X)
 //////////////////////////////////////////////////////////////////////////////////////////
 
 // sum(x)
-int ivec_sum(int n, const int *x)
+int ivec_sum(int n, int *x)
 {
   int value=0,i;
   for(i=0; i<n; i++) value+=x[i];
@@ -179,7 +179,7 @@ int ivec_sum(int n, const int *x)
 }
 
 // sum(x)/n
-double ivec_average(int n, const int *x)
+double ivec_average(int n, int *x)
 {
   double value;
   value=ivec_sum(n,x);
@@ -243,7 +243,7 @@ void ivec_swap_at(int *X, int i, int j)
 }
 
 // x[i] <=> x[I[i]]
-void ivec_swap_index(int n, int *x, const int *I)
+void ivec_swap_index(int n, int *x, int *I)
 {
   int *y=NULL;
   y=ivec_allocate(n);
@@ -276,14 +276,14 @@ void ivec_relocate(int n, int *X, int *I)
 }
 
 // Y=X
-void ivec_copy(int n, int *Y, const int *X)
+void ivec_copy(int n, int *Y, int *X)
 {
   int i;
   for(i=0; i<n; i++) Y[i]=X[i];
 }
 
 // Y[i]=X[I[i]], 0<=i<n
-void ivec_copy_index(int n, int *Y, const int *X, const int *I)
+void ivec_copy_index(int n, int *Y, int *X, int *I)
 {
   int i;
   for(i=0; i<n; i++) Y[i]=X[I[i]];

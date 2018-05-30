@@ -84,7 +84,7 @@ void bigint_check(bigint *x)
   // set sgn
   if(s<0){ rneg_r(BIGINT_NUM(x),BIGINT_NUM(x)); }
   // done
-  gcd=rfree(gcd);
+  gcd=rmfree(gcd);
 }
 
 void bigint_gcd(rmulti *gcd, rmulti *m0, rmulti *n0)
@@ -107,17 +107,17 @@ void bigint_gcd(rmulti *gcd, rmulti *m0, rmulti *n0)
     rclone_r(n,r);                  // n:=r
   }while(!ris_zero(n));           // until n!=0
   rclone_r(gcd,m);                  // gcd:=m
-  q=rfree(q);
-  r=rfree(r);
-  m=rfree(m);
-  n=rfree(n);
+  q=rmfree(q);
+  r=rmfree(r);
+  m=rmfree(m);
+  n=rmfree(n);
 }
 
 bigint *bigint_free(bigint *x)
 {
   if(x==NULL){ return NULL; }
-  BIGINT_NUM(x)=rfree(BIGINT_NUM(x));
-  BIGINT_DEN(x)=rfree(BIGINT_DEN(x));
+  BIGINT_NUM(x)=rmfree(BIGINT_NUM(x));
+  BIGINT_DEN(x)=rmfree(BIGINT_DEN(x));
   free(x);
   x=NULL;
   return x;
@@ -331,8 +331,8 @@ int bigint_cmp(bigint *x, bigint *y)
   if((e=rmul_rr_exact(a,BIGINT_NUM(x),BIGINT_DEN(y)))!=0){ ERROR_AT; exit(-1); }
   if((e=rmul_rr_exact(b,BIGINT_DEN(x),BIGINT_NUM(y)))!=0){ ERROR_AT; exit(-1); }
   value=cmp_rr(a,b);
-  a=rfree(a);
-  b=rfree(b);
+  a=rmfree(a);
+  b=rmfree(b);
   return value;
 }
 

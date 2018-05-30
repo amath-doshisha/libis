@@ -41,7 +41,7 @@ void chsnbrg_simtr(int n, cmulti **B, int LDB, cmulti **A, int LDA)
     cvec_set_zeros(n-2-i,&MAT(B,i+2,i,LDB));
   }
   // done
-  alpha=rfree(alpha);
+  alpha=rmfree(alpha);
   h=cvec_free(n,h);
 }
 
@@ -71,7 +71,7 @@ void chsnbrg_simtr_step(int n, cmulti **A, int LDA, int step)
     chouseholder_left(n,n,A,LDA,A,LDA,i+1,h,alpha);
   }
   // done
-  alpha=rfree(alpha);
+  alpha=rmfree(alpha);
   h=cvec_free(n,h);
 }
 

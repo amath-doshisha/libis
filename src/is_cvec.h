@@ -24,8 +24,8 @@ cmulti **cvec_free(int n, cmulti **x);
  * I/O
  */
 void cvec_print(int n, cmulti **x, char *name, char format, int digits);
-void cvec_print_prec(int n, cmulti **x, const char *name, const  char *format, int digits);
-void cvec_print_exp(int n, cmulti **x, const char *name);
+void cvec_print_prec(int n, cmulti **x, char *name, char *format, int digits);
+void cvec_print_exp(int n, cmulti **x, char *name);
 void cvec_save(int n, cmulti **x, int offset, int digits, char* fmt, ...);
 void cvec_save_cplane(int n, cmulti **x, int digits, char* fmt, ...);
 void cvec_load(int n, cmulti **x, char* fmt, ...);

@@ -66,8 +66,8 @@
 <area shape="rect" id="node44" href="$cmulti_8c.html#a43a8c59e48cad0b9b02c0508c750c002" title="y=1/x " alt="" coords="689,1677,757,1704"/>
 <area shape="rect" id="node45" href="$cmulti_8c.html#a5594e9115046c6d874582490b5afbd42" title="z=x*y " alt="" coords="848,1576,924,1603"/>
 <area shape="rect" id="node46" href="$cmulti_8c.html#acf091cdd0d2327125270bec345dba112" title="z=z&#45;x*y " alt="" coords="674,1525,773,1552"/>
-<area shape="rect" id="node47" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="864,1171,908,1197"/>
-<area shape="rect" id="node48" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="1008,1247,1051,1273"/>
+<area shape="rect" id="node47" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="860,1171,912,1197"/>
+<area shape="rect" id="node48" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="1004,1247,1055,1273"/>
 <area shape="rect" id="node49" href="$is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="854,1272,918,1299"/>
 <area shape="rect" id="node53" href="$cvec_8c.html#a1ebb2c9a6407f84e40ebe7de43ea3b8a" title="z=x.*y " alt="" coords="485,1981,613,2008"/>
 <area shape="rect" id="node55" href="$cvec_8c.html#a43a9a9e4e8096ff4b3387a6e363ec845" title="cmulti型のベクトルxに関する行列Aによる1次変換の加算 y+=A*x " alt="" coords="505,1931,592,1957"/>

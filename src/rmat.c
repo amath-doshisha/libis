@@ -86,7 +86,7 @@ rmulti **rmat_free(int LDA, int n, rmulti **A)
   if(A==NULL) return NULL;
   for(j=0; j<n; j++){
     for(i=0; i<LDA; i++){
-      MAT(A,i,j,LDA)=rfree(MAT(A,i,j,LDA));
+      MAT(A,i,j,LDA)=rmfree(MAT(A,i,j,LDA));
     }
   }
   free(A);
@@ -953,7 +953,7 @@ void rmat_rank1op(int m, int n, rmulti **B, int LDB, rmulti **A, int LDA, rmulti
       radd_rr(MAT(B,i,j,LDB),MAT(A,i,j,LDA),value); // B(i,j)=A(i,j)+a*x[i]*y[j]
     }
   }
-  value=rfree(value);
+  value=rmfree(value);
 }
 
 /**
@@ -1102,7 +1102,7 @@ void rmat_max_abs(rmulti *value, int m, int n, rmulti **A, int LDA)
       }
     }
   }
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**
@@ -1122,7 +1122,7 @@ void rmat_min_abs(rmulti *value, int m, int n, rmulti **A, int LDA)
       }
     }
   }
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 

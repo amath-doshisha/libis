@@ -40,7 +40,7 @@ cmulti *callocate(void);
 cmulti *callocate_prec(int prec);
 cmulti *callocate_clone(cmulti *y);
 cmulti *callocate_clone_r(rmulti *y);
-cmulti *cfree(cmulti *x);
+cmulti *cmfree(cmulti *x);
 void cround(cmulti *x, int prec);
 void cclone_c(cmulti *y, cmulti *x);
 void cclone_r(cmulti *y, rmulti *x);

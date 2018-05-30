@@ -64,10 +64,10 @@ void chouseholder_vec(int n, int k, cmulti **h, rmulti *alpha, cmulti **x)
     rinv_r(alpha,alpha);
   }
   // free
-  eta=rfree(eta);
-  zeta=rfree(zeta);
-  xi=rfree(xi);
-  axk=rfree(axk);
+  eta=rmfree(eta);
+  zeta=rmfree(zeta);
+  xi=rmfree(xi);
+  axk=rmfree(axk);
 }
 
 /**
@@ -94,7 +94,7 @@ void chouseholder_right(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, 
   cset_r(a,alpha); cneg_c(a,a);
   cmat_rank1op(m,n-k,&COL(B,k,LDB),LDB,&COL(A,k,LDA),LDA,a,p,&h[k]);
   // done
-  a=cfree(a);
+  a=cmfree(a);
   p=cvec_free(m,p);
 }
 
@@ -122,7 +122,7 @@ void chouseholder_left(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, i
   cset_r(a,alpha); cneg_c(a,a);
   cmat_rank1op(m-k,n,&MAT(B,k,0,LDB),LDB,&MAT(A,k,0,LDA),LDA,a,&h[k],p);
   // done
-  a=cfree(a);
+  a=cmfree(a);
   p=cvec_free(m,p);
 }
 
@@ -159,7 +159,7 @@ void chouseholder(int n, int k0, int nH, int k, cmulti **h, rmulti *alpha, cmult
   }
   chouseholder_vec(n,k,h,alpha,R);
   // free
-  value=cfree(value);
+  value=cmfree(value);
   R=cvec_free(n,R);
 }
 

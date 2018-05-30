@@ -59,7 +59,7 @@
 <area shape="rect" id="node80" href="$func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="429,2412,511,2439"/>
 <area shape="rect" id="node81" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="567,3223,663,3249"/>
 <area shape="rect" id="node82" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="433,3223,507,3249"/>
-<area shape="rect" id="node83" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="448,171,492,197"/>
+<area shape="rect" id="node83" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="444,171,496,197"/>
 <area shape="rect" id="node9" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="572,385,657,412"/>
 <area shape="rect" id="node11" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="841,1703,905,1729"/>
 <area shape="rect" id="node13" href="$is__rmulti_8h.html#a622a4d8500fd5744cdbb60a6efe2cf4c" title="rmulti型の値をNaNに設定. " alt="" coords="584,2159,645,2185"/>
@@ -86,7 +86,7 @@
 <area shape="rect" id="node59" href="$cmulti_8c.html#aaa8a19431cf6f99ead0badf3b0b15400" title="cmulti型の極座標から実部，虚部へ変換 z=r*exp(i*theta) " alt="" coords="839,1652,907,1679"/>
 <area shape="rect" id="node61" href="$is__rmulti_8h.html#a30c811543ceedeb1f9987ec8588981c4" title="rmulti型の計算 y=exp(x) " alt="" coords="961,1597,1011,1624"/>
 <area shape="rect" id="node63" href="$is__rmulti_8h.html#a0c4c5bdd977263fe9b55f37d17b24857" title="rmulti型の計算 y=log(x) " alt="" coords="962,1021,1010,1048"/>
-<area shape="rect" id="node84" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="593,132,636,159"/>
+<area shape="rect" id="node84" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="589,132,640,159"/>
 <area shape="rect" id="node86" href="$func__maps_8c.html#a22955cb62fcd51fc15d4b00a4feb2bc1" title="写像 [y0,y1]=f([x0,x1]) " alt="" coords="304,3096,373,3123"/>
 <area shape="rect" id="node87" href="$icmulti_8c.html#a3d1a3e36091e5d4f44d305d079f8ecac" title="倍精度実数の設定 [y0,y1]=[x,x]. " alt="" coords="588,3780,641,3807"/>
 <area shape="rect" id="node88" href="$bigint_8c.html#a0bf145749ad16c6803fd398d3157eac5" title="bigint型から[z0,z1]へ型変換. " alt="" coords="434,3831,506,3857"/>

@@ -33,7 +33,7 @@ void set_round_mode(mpfr_rnd_t default_round);
 rmulti *rallocate(void);
 rmulti *rallocate_prec(int prec);
 rmulti *rallocate_clone(rmulti *y);
-rmulti *rfree(rmulti *x);
+rmulti *rmfree(rmulti *x);
 rmulti *rmepsilon(int prec);         // epsilon=1/2^prec
 void rround(rmulti *x, int prec);    // y=round(x)
 void rclone_r(rmulti *y, rmulti *x); // y=x

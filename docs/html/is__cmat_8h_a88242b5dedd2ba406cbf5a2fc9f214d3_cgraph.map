@@ -4,13 +4,13 @@
 <area shape="rect" id="node6" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="571,5,657,32"/>
 <area shape="rect" id="node7" href="$cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="398,81,485,108"/>
 <area shape="rect" id="node8" href="$cvec_8c.html#afdb6858ee4958a499b385d3990311853" title="cmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x)) とその添え字 I " alt="" coords="381,335,502,361"/>
-<area shape="rect" id="node20" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="593,664,635,691"/>
+<area shape="rect" id="node20" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="589,664,639,691"/>
 <area shape="rect" id="node21" href="$cmulti_8c.html#ad12fa913bfaeccc91b1337d3b6562669" title="cmulti型の規格化 y=x/abs(x) " alt="" coords="401,423,482,449"/>
 <area shape="rect" id="node23" href="$cmulti_8c.html#aa15dfe1c69f97839146fdfc3a4bb11ef" title="z=x/y " alt="" coords="587,613,641,640"/>
 <area shape="rect" id="node25" href="$cmulti_8c.html#acad6eaf2a5d7bebe6f6e16c8e04dc423" title="cmulti型の複素共役 y=conj(x). " alt="" coords="967,563,1023,589"/>
 <area shape="rect" id="node27" href="$cvec_8c.html#a6f497336b3bbbe9d5b58ea5dde89e3f7" title="cmulti型のベクトルの2乗ノルム value=sqrt(sum(abs(x).^2)) " alt="" coords="401,157,481,184"/>
 <area shape="rect" id="node33" href="$cvec_8c.html#a1ebb2c9a6407f84e40ebe7de43ea3b8a" title="z=x.*y " alt="" coords="377,499,505,525"/>
-<area shape="rect" id="node38" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="419,715,463,741"/>
+<area shape="rect" id="node38" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="415,715,467,741"/>
 <area shape="rect" id="node4" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="581,107,647,133"/>
 <area shape="rect" id="node5" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="731,157,795,184"/>
 <area shape="rect" id="node9" href="$cmulti_8c.html#ac27df2a809749da2186fe891f40c2565" title="cmulti型の絶対値の平方 y=abs(x)^2 " alt="" coords="851,360,909,387"/>

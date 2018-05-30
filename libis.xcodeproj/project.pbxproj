@@ -23,6 +23,15 @@
 		FF00159020AC8104000EAD52 /* test_deig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158220AC8104000EAD52 /* test_deig.c */; };
 		FF00159120AC8104000EAD52 /* test_strings.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158320AC8104000EAD52 /* test_strings.c */; };
 		FF00159220AC8104000EAD52 /* test_zeig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF00158420AC8104000EAD52 /* test_zeig.c */; };
+		FF418C9820BEE384006E4247 /* matgen_dhToda.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C8F20BEE381006E4247 /* matgen_dhToda.c */; };
+		FF418C9920BEE384006E4247 /* solve_newton.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9020BEE382006E4247 /* solve_newton.c */; };
+		FF418C9A20BEE384006E4247 /* mateig.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9120BEE382006E4247 /* mateig.c */; };
+		FF418C9B20BEE384006E4247 /* mateig_krawczyk.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9220BEE382006E4247 /* mateig_krawczyk.c */; };
+		FF418C9C20BEE384006E4247 /* mattrans.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9320BEE383006E4247 /* mattrans.c */; };
+		FF418C9D20BEE384006E4247 /* matshow.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9420BEE383006E4247 /* matshow.c */; };
+		FF418C9E20BEE384006E4247 /* imatshow2.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9520BEE383006E4247 /* imatshow2.c */; };
+		FF418C9F20BEE384006E4247 /* matgen.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9620BEE383006E4247 /* matgen.c */; };
+		FF418CA020BEE384006E4247 /* matshow2.c in Sources */ = {isa = PBXBuildFile; fileRef = FF418C9720BEE384006E4247 /* matshow2.c */; };
 		FF717FE720A1C5E70048B19D /* is_rsolve.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3820A1C5CA0048B19D /* is_rsolve.h */; };
 		FF717FE820A1C5E70048B19D /* is_zhpeig.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3920A1C5CB0048B19D /* is_zhpeig.h */; };
 		FF717FE920A1C5E70048B19D /* is_dcomplex.h in Headers */ = {isa = PBXBuildFile; fileRef = FF717F3A20A1C5CB0048B19D /* is_dcomplex.h */; };
@@ -215,6 +224,15 @@
 		FF00158220AC8104000EAD52 /* test_deig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_deig.c; path = test/test_deig.c; sourceTree = "<group>"; };
 		FF00158320AC8104000EAD52 /* test_strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_strings.c; path = test/test_strings.c; sourceTree = "<group>"; };
 		FF00158420AC8104000EAD52 /* test_zeig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test_zeig.c; path = test/test_zeig.c; sourceTree = "<group>"; };
+		FF418C8F20BEE381006E4247 /* matgen_dhToda.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = matgen_dhToda.c; path = prog/matgen_dhToda.c; sourceTree = "<group>"; };
+		FF418C9020BEE382006E4247 /* solve_newton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = solve_newton.c; path = prog/solve_newton.c; sourceTree = "<group>"; };
+		FF418C9120BEE382006E4247 /* mateig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mateig.c; path = prog/mateig.c; sourceTree = "<group>"; };
+		FF418C9220BEE382006E4247 /* mateig_krawczyk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mateig_krawczyk.c; path = prog/mateig_krawczyk.c; sourceTree = "<group>"; };
+		FF418C9320BEE383006E4247 /* mattrans.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mattrans.c; path = prog/mattrans.c; sourceTree = "<group>"; };
+		FF418C9420BEE383006E4247 /* matshow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = matshow.c; path = prog/matshow.c; sourceTree = "<group>"; };
+		FF418C9520BEE383006E4247 /* imatshow2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = imatshow2.c; path = prog/imatshow2.c; sourceTree = "<group>"; };
+		FF418C9620BEE383006E4247 /* matgen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = matgen.c; path = prog/matgen.c; sourceTree = "<group>"; };
+		FF418C9720BEE384006E4247 /* matshow2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = matshow2.c; path = prog/matshow2.c; sourceTree = "<group>"; };
 		FF717F3820A1C5CA0048B19D /* is_rsolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_rsolve.h; path = src/is_rsolve.h; sourceTree = SOURCE_ROOT; };
 		FF717F3920A1C5CB0048B19D /* is_zhpeig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_zhpeig.h; path = src/is_zhpeig.h; sourceTree = SOURCE_ROOT; };
 		FF717F3A20A1C5CB0048B19D /* is_dcomplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = is_dcomplex.h; path = src/is_dcomplex.h; sourceTree = SOURCE_ROOT; };
@@ -508,6 +526,15 @@
 				FF717F7B20A1C5D30048B19D /* is_cmat.h */,
 				FF717F7220A1C5D20048B19D /* is_cmat3.h */,
 				FF717FE320A1C5E60048B19D /* is_cmulti.h */,
+				FF418C9520BEE383006E4247 /* imatshow2.c */,
+				FF418C9220BEE382006E4247 /* mateig_krawczyk.c */,
+				FF418C9120BEE382006E4247 /* mateig.c */,
+				FF418C8F20BEE381006E4247 /* matgen_dhToda.c */,
+				FF418C9620BEE383006E4247 /* matgen.c */,
+				FF418C9420BEE383006E4247 /* matshow.c */,
+				FF418C9720BEE384006E4247 /* matshow2.c */,
+				FF418C9320BEE383006E4247 /* mattrans.c */,
+				FF418C9020BEE382006E4247 /* solve_newton.c */,
 				FF717F5A20A1C5CE0048B19D /* is_csolve_newton.h */,
 				FF717FDF20A1C5E60048B19D /* is_csolve.h */,
 				FF717FC720A1C5E00048B19D /* is_ctestmat.h */,
@@ -766,7 +793,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "#env > xcode-build-log.txt\nmkdir -p ${SRCROOT}/MACOSX\nmkdir -p ${SRCROOT}/include\ncp -f ${BUILT_PRODUCTS_DIR}/libis.a ${SRCROOT}/MACOSX/libis.a\ncp -f ${SRCROOT}/src/*.h ${SRCROOT}/include/";
+			shellScript = "#env > xcode-build-log.txt\nmkdir -p ${SRCROOT}/lib\nmkdir -p ${SRCROOT}/include\ncp -f ${BUILT_PRODUCTS_DIR}/libis.a ${SRCROOT}/lib/libis.a\ncp -f ${SRCROOT}/src/*.h ${SRCROOT}/include/";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -782,6 +809,7 @@
 				FF00158920AC8104000EAD52 /* test_cnewton.c in Sources */,
 				FF71805E20A1C5E70048B19D /* func_gb.c in Sources */,
 				FF71806720A1C5E70048B19D /* ireig.c in Sources */,
+				FF418C9C20BEE384006E4247 /* mattrans.c in Sources */,
 				FF71801220A1C5E70048B19D /* zmat.c in Sources */,
 				FF71805A20A1C5E70048B19D /* chshldr.c in Sources */,
 				FF71806820A1C5E70048B19D /* func_scope.c in Sources */,
@@ -795,6 +823,7 @@
 				FF71806620A1C5E70048B19D /* func_diff.c in Sources */,
 				FF71802820A1C5E70048B19D /* zhpeig.c in Sources */,
 				FF71801320A1C5E70048B19D /* func_var.c in Sources */,
+				FF418C9F20BEE384006E4247 /* matgen.c in Sources */,
 				FF71802E20A1C5E70048B19D /* ztestmat.c in Sources */,
 				FF71805220A1C5E70048B19D /* icvec.c in Sources */,
 				FF71805720A1C5E70048B19D /* zeig.c in Sources */,
@@ -806,7 +835,9 @@
 				FF71800F20A1C5E70048B19D /* func_solve.c in Sources */,
 				FF71805120A1C5E70048B19D /* func_find.c in Sources */,
 				FF717FF620A1C5E70048B19D /* cmulti.c in Sources */,
+				FF418C9820BEE384006E4247 /* matgen_dhToda.c in Sources */,
 				FF717FF920A1C5E70048B19D /* bigint.c in Sources */,
+				FF418C9E20BEE384006E4247 /* imatshow2.c in Sources */,
 				FF71807F20A1C5E70048B19D /* zhshldr.c in Sources */,
 				FF71807A20A1C5E70048B19D /* func_cvec.c in Sources */,
 				FF71806020A1C5E70048B19D /* func_rvec.c in Sources */,
@@ -832,11 +863,13 @@
 				FF71800E20A1C5E70048B19D /* func_add.c in Sources */,
 				FF71802F20A1C5E70048B19D /* rhpeig.c in Sources */,
 				FF71805F20A1C5E70048B19D /* func_builtin.c in Sources */,
+				FF418C9920BEE384006E4247 /* solve_newton.c in Sources */,
 				FF717FF420A1C5E70048B19D /* func_table.c in Sources */,
 				FF71804D20A1C5E70048B19D /* func_poly.c in Sources */,
 				FF71807720A1C5E70048B19D /* icmat.c in Sources */,
 				FF00158F20AC8104000EAD52 /* test_zsolve.c in Sources */,
 				FF71801620A1C5E70048B19D /* func_list.c in Sources */,
+				FF418C9A20BEE384006E4247 /* mateig.c in Sources */,
 				FF00158C20AC8104000EAD52 /* test_func.c in Sources */,
 				FF71803620A1C5E70048B19D /* dhshldr.c in Sources */,
 				FF71801C20A1C5E70048B19D /* dhpsvd.c in Sources */,
@@ -851,10 +884,12 @@
 				FF71803B20A1C5E70048B19D /* func_power.c in Sources */,
 				FF71803820A1C5E70048B19D /* func_strings.c in Sources */,
 				FF71805820A1C5E70048B19D /* func_cmp.c in Sources */,
+				FF418CA020BEE384006E4247 /* matshow2.c in Sources */,
 				FF71806320A1C5E70048B19D /* func_mono.c in Sources */,
 				FF00158D20AC8104000EAD52 /* test_dsolve.c in Sources */,
 				FF00158B20AC8104000EAD52 /* test_fvec.c in Sources */,
 				FF71804520A1C5E70048B19D /* reig_hqr.c in Sources */,
+				FF418C9D20BEE384006E4247 /* matshow.c in Sources */,
 				FF717FF720A1C5E70048B19D /* ceig.c in Sources */,
 				FF71806D20A1C5E70048B19D /* iceig.c in Sources */,
 				FF71804920A1C5E70048B19D /* cvec.c in Sources */,
@@ -881,6 +916,7 @@
 				FF71808520A1C5E70048B19D /* irmat.c in Sources */,
 				FF71802B20A1C5E70048B19D /* irmulti.c in Sources */,
 				FF71804B20A1C5E70048B19D /* rvec.c in Sources */,
+				FF418C9B20BEE384006E4247 /* mateig_krawczyk.c in Sources */,
 				FF71803C20A1C5E70048B19D /* riep_dht.c in Sources */,
 				FF71801B20A1C5E70048B19D /* dhpeig.c in Sources */,
 				FF717FEF20A1C5E70048B19D /* dcomplex.c in Sources */,

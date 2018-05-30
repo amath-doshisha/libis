@@ -107,24 +107,24 @@ int main(int argc, char *argv[])
   if(debug>=2){
     if(DVEC<=type_in && type_in<=CVEC){ printf("Input_Vector:\n"); }
     if(DMAT<=type_in && type_in<=CMAT){ printf("Input_Matrix:\n"); }
-    if(dx!=NULL){ dvec_print(n,dx,NULL,format,digits); }
-    if(zx!=NULL){ zvec_print(n,zx,NULL,format,digits); }
-    if(rx!=NULL){ rvec_print(n,rx,NULL,format,digits); }
-    if(cx!=NULL){ cvec_print(n,cx,NULL,format,digits); }
-    if(dA!=NULL){ dmat_print(m,n,dA,m,NULL,format,digits); }
-    if(zA!=NULL){ zmat_print(m,n,zA,m,NULL,format,digits); }
-    if(rA!=NULL){ rmat_print(m,n,rA,m,NULL,format,digits); }
-    if(cA!=NULL){ cmat_print(m,n,cA,m,NULL,format,digits); }
+    if(dx!=NULL){ dvec_print(n,dx,NULL,format[0],digits); }
+    if(zx!=NULL){ zvec_print(n,zx,NULL,format[0],digits); }
+    if(rx!=NULL){ rvec_print(n,rx,NULL,format[0],digits); }
+    if(cx!=NULL){ cvec_print(n,cx,NULL,format[0],digits); }
+    if(dA!=NULL){ dmat_print(m,n,dA,m,NULL,format[0],digits); }
+    if(zA!=NULL){ zmat_print(m,n,zA,m,NULL,format[0],digits); }
+    if(rA!=NULL){ rmat_print(m,n,rA,m,NULL,format[0],digits); }
+    if(cA!=NULL){ cmat_print(m,n,cA,m,NULL,format[0],digits); }
   }
   if(debug==-1){
-    if(dx!=NULL){ dvec_print(n,dx,NULL,format,digits); }
-    if(zx!=NULL){ zvec_print(n,zx,NULL,format,digits); }
-    if(rx!=NULL){ rvec_print(n,rx,NULL,format,digits); }
-    if(cx!=NULL){ cvec_print(n,cx,NULL,format,digits); }
-    if(dA!=NULL){ dmat_print(m,n,dA,m,NULL,format,digits); }
-    if(zA!=NULL){ zmat_print(m,n,zA,m,NULL,format,digits); }
-    if(rA!=NULL){ rmat_print(m,n,rA,m,NULL,format,digits); }
-    if(cA!=NULL){ cmat_print(m,n,cA,m,NULL,format,digits); }
+    if(dx!=NULL){ dvec_print(n,dx,NULL,format[0],digits); }
+    if(zx!=NULL){ zvec_print(n,zx,NULL,format[0],digits); }
+    if(rx!=NULL){ rvec_print(n,rx,NULL,format[0],digits); }
+    if(cx!=NULL){ cvec_print(n,cx,NULL,format[0],digits); }
+    if(dA!=NULL){ dmat_print(m,n,dA,m,NULL,format[0],digits); }
+    if(zA!=NULL){ zmat_print(m,n,zA,m,NULL,format[0],digits); }
+    if(rA!=NULL){ rmat_print(m,n,rA,m,NULL,format[0],digits); }
+    if(cA!=NULL){ cmat_print(m,n,cA,m,NULL,format[0],digits); }
   }
 
   // output type
@@ -189,24 +189,24 @@ int main(int argc, char *argv[])
     else if(type_out==RMAT && type_in==CMAT){ rA=rmat_allocate_prec(m,n,prec); cmat_real(m,n,rA,m,cA,m);   rmat_bin_save(m,n,rA,m,"%s%s",dir_out,fname_out); rA=rmat_free(m,n,rA); }
     else if(type_out==CMAT && type_in==DMAT){ cA=cmat_allocate_prec(m,n,prec); cmat_set_d(m,n,cA,m,dA,m);  cmat_bin_save(m,n,cA,m,"%s%s",dir_out,fname_out); cA=cmat_free(m,n,cA); }
     else if(type_out==CMAT && type_in==ZMAT){ cA=cmat_allocate_prec(m,n,prec); cmat_set_z(m,n,cA,m,zA,m);  cmat_bin_save(m,n,cA,m,"%s%s",dir_out,fname_out); cA=cmat_free(m,n,cA); }
-    else if(type_out==CMAT && type_in==RMAT){ cA=cmat_allocate_prec(m,n,prec); cmat_copy_r(m,n,cA,m,rA,m); cmat_bin_save(m,n,cA,m,"%s%s",dir_out,fname_out); cA=cmat_free(m,n,cA); }
+    else if(type_out==CMAT && type_in==RMAT){ cA=cmat_allocate_prec(m,n,prec); cmat_copy_rmat(m,n,cA,m,rA,m); cmat_bin_save(m,n,cA,m,"%s%s",dir_out,fname_out); cA=cmat_free(m,n,cA); }
     else if(type_out==CMAT && type_in==CMAT){                                  cmat_round(m,n,cA,m,prec);  cmat_bin_save(m,n,cA,m,"%s%s",dir_out,fname_out); }
     else if(type_out==DVEC && type_in==DVEC){                                                              dvec_bin_save(n,dx,"%s%s",dir_out,fname_out); }
-    else if(type_out==DVEC && type_in==ZVEC){ dx=dvec_allocate(n);             zvec_real(n,dx,zx);         dvec_bin_save(n,dx,"%s%s",dir_out,fname_out); dx=dvec_free(dx); }
-    else if(type_out==DVEC && type_in==RVEC){ dx=dvec_allocate(n);             rvec_get_d(n,dx,rx);        dvec_bin_save(n,dx,"%s%s",dir_out,fname_out); dx=dvec_free(dx); }
-    else if(type_out==DVEC && type_in==CVEC){ dx=dvec_allocate(n);             cvec_get_d(n,dx,cx);        dvec_bin_save(n,dx,"%s%s",dir_out,fname_out); dx=dvec_free(dx); }
-    else if(type_out==ZVEC && type_in==DVEC){ zx=zvec_allocate(n);             zvec_copy_d(n,zx,dx);       zvec_bin_save(n,zx,"%s%s",dir_out,fname_out); zx=zvec_free(zx); }
+    else if(type_out==DVEC && type_in==ZVEC){ dx=dvec_allocate(n);             dvec_real_zvec(n,dx,zx);         dvec_bin_save(n,dx,"%s%s",dir_out,fname_out); dx=dvec_free(dx); }
+    else if(type_out==DVEC && type_in==RVEC){ dx=dvec_allocate(n);             rvec_get_dvec(n,dx,rx);        dvec_bin_save(n,dx,"%s%s",dir_out,fname_out); dx=dvec_free(dx); }
+    else if(type_out==DVEC && type_in==CVEC){ dx=dvec_allocate(n);             cvec_get_dvec(n,dx,cx);        dvec_bin_save(n,dx,"%s%s",dir_out,fname_out); dx=dvec_free(dx); }
+    else if(type_out==ZVEC && type_in==DVEC){ zx=zvec_allocate(n);             zvec_set_dvec(n,zx,dx);       zvec_bin_save(n,zx,"%s%s",dir_out,fname_out); zx=zvec_free(zx); }
     else if(type_out==ZVEC && type_in==ZVEC){                                                              zvec_bin_save(n,zx,"%s%s",dir_out,fname_out); }
-    else if(type_out==ZVEC && type_in==RVEC){ zx=zvec_allocate(n);             rvec_get_z(n,zx,rx);        zvec_bin_save(n,zx,"%s%s",dir_out,fname_out); zx=zvec_free(zx); }
-    else if(type_out==ZVEC && type_in==CVEC){ zx=zvec_allocate(n);             cvec_get_z(n,zx,cx);        zvec_bin_save(n,zx,"%s%s",dir_out,fname_out); zx=zvec_free(zx); }
-    else if(type_out==RVEC && type_in==DVEC){ rx=rvec_allocate_prec(n,prec);   rvec_set_d(n,rx,dx);        rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); rx=rvec_free(n,rx); }
-    else if(type_out==RVEC && type_in==ZVEC){ rx=rvec_allocate_prec(n,prec);   rvec_set_z(n,rx,zx);        rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); rx=rvec_free(n,rx); }
-    else if(type_out==RVEC && type_in==RVEC){                                  rvec_round(n,rx,prec);      rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); }
-    else if(type_out==RVEC && type_in==CVEC){ rx=rvec_allocate_prec(n,prec);   cvec_real(n,rx,cx);         rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); rx=rvec_free(n,rx); }
-    else if(type_out==CVEC && type_in==DVEC){ cx=cvec_allocate_prec(n,prec);   cvec_set_d(n,cx,dx);        cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); cx=cvec_free(n,cx); }
-    else if(type_out==CVEC && type_in==ZVEC){ cx=cvec_allocate_prec(n,prec);   cvec_set_z(n,cx,zx);        cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); cx=cvec_free(n,cx); }
-    else if(type_out==CVEC && type_in==RVEC){ cx=cvec_allocate_prec(n,prec);   cvec_copy_r(n,cx,rx);       cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); cx=cvec_free(n,cx); }
-    else if(type_out==CVEC && type_in==CVEC){                                  cvec_round(n,cx,prec);      cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); }
+    else if(type_out==ZVEC && type_in==RVEC){ zx=zvec_allocate(n);             rvec_get_zvec(n,zx,rx);        zvec_bin_save(n,zx,"%s%s",dir_out,fname_out); zx=zvec_free(zx); }
+    else if(type_out==ZVEC && type_in==CVEC){ zx=zvec_allocate(n);             cvec_get_zvec(n,zx,cx);        zvec_bin_save(n,zx,"%s%s",dir_out,fname_out); zx=zvec_free(zx); }
+    else if(type_out==RVEC && type_in==DVEC){ rx=rvec_allocate_prec(n,prec);   rvec_set_dvec(n,rx,dx);        rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); rx=rvec_free(n,rx); }
+    else if(type_out==RVEC && type_in==ZVEC){ rx=rvec_allocate_prec(n,prec);   rvec_set_zvec(n,rx,zx);        rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); rx=rvec_free(n,rx); }
+    else if(type_out==RVEC && type_in==RVEC){                                  rvec_round_rvec(n,rx,prec);      rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); }
+    else if(type_out==RVEC && type_in==CVEC){ rx=rvec_allocate_prec(n,prec);   rvec_real_cvec(n,rx,cx);         rvec_bin_save(n,rx,"%s%s",dir_out,fname_out); rx=rvec_free(n,rx); }
+    else if(type_out==CVEC && type_in==DVEC){ cx=cvec_allocate_prec(n,prec);   cvec_set_dvec(n,cx,dx);        cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); cx=cvec_free(n,cx); }
+    else if(type_out==CVEC && type_in==ZVEC){ cx=cvec_allocate_prec(n,prec);   cvec_set_zvec(n,cx,zx);        cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); cx=cvec_free(n,cx); }
+    else if(type_out==CVEC && type_in==RVEC){ cx=cvec_allocate_prec(n,prec);   cvec_set_rvec(n,cx,rx);       cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); cx=cvec_free(n,cx); }
+    else if(type_out==CVEC && type_in==CVEC){                                  cvec_round_cvec(n,cx,prec);      cvec_bin_save(n,cx,"%s%s",dir_out,fname_out); }
     else{ ERROR_AT; exit(0); } 
   }
 

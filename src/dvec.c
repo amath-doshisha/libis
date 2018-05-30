@@ -190,7 +190,7 @@ void dvec_set_svec(int n, double *y, char **x)
     rset_s(a,x[i]);
     y[i]=rget_d(a);    
   }
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**

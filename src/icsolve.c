@@ -131,9 +131,9 @@ void icsolve_gauss_sweeper(int n, int NRHS, cmulti **B0, cmulti **B1, int LDB, c
     }
   }
   // free
-  c0=cfree(c0); c1=cfree(c1);
-  a0=rfree(a0); a1=rfree(a1);
-  value0=rfree(value0); value1=rfree(value1);
+  c0=cmfree(c0); c1=cmfree(c1);
+  a0=rmfree(a0); a1=rmfree(a1);
+  value0=rmfree(value0); value1=rmfree(value1);
   rws=rvec_free(rws_size,rws);
   cws=cvec_free(cws_size,cws);
   // done

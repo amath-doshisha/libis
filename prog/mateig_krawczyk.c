@@ -182,14 +182,14 @@ int main(int argc, char *argv[])
       if(debug!=-1){
       printf("Input_Matrix_Type: rmat\n");
       printf("Input_Matrix:\n");
-      rmat_print(LDA,n_A,rA,LDA,NULL,format,digits);
+      rmat_print(LDA,n_A,rA,LDA,NULL,format[0],digits);
       }
     }
     if(cA!=NULL){
       if(debug!=-1){
       printf("Input_Matrix_Type: cmat\n");
       printf("Input_Matrix:\n");
-      cmat_print(LDA,n_A,cA,LDA,NULL,format,digits);
+      cmat_print(LDA,n_A,cA,LDA,NULL,format[0],digits);
       }
     }
   }
@@ -209,7 +209,7 @@ int main(int argc, char *argv[])
       if(debug!=-1){
       printf("Input_Eigenvalues_Type: rvec\n");
       printf("Input_Eigenvalues:\n");
-      rvec_print(n_L,rLambda,NULL,format,digits);
+      rvec_print(n_L,rLambda,NULL,format[0],digits);
       }
     }
     if(cLambda!=NULL){
@@ -238,14 +238,14 @@ int main(int argc, char *argv[])
       if(debug!=-1){
 	printf("Input_Eigenvectors_Type: rmat\n");
 	printf("Input_Eigenvectors:\n");
-	rmat_print(LDX,n_X,rX,LDX,NULL,format,digits);
+	rmat_print(LDX,n_X,rX,LDX,NULL,format[0],digits);
       }
     }
     if(cX!=NULL){
       if(debug!=-1){
 	printf("Input_Eigenvectors_Type: cmat\n");
       printf("Input_Eigenvectors:\n");
-      cmat_print(LDX,n_X,cX,LDX,NULL,format,digits);
+      cmat_print(LDX,n_X,cX,LDX,NULL,format[0],digits);
       }
     }
   }
@@ -290,15 +290,15 @@ int main(int argc, char *argv[])
     }
     if(cLambda!=NULL && rLambda==NULL){
       rLambda=rvec_allocate(n_L);
-      cvec_real_clone(n_L,rLambda,cLambda);
+      rvec_real_cvec_clone(n_L,rLambda,cLambda);
       cLambda=cvec_free(n_L,cLambda);
     }
     // compute
     if(rA!=NULL && rX!=NULL && rLambda!=NULL){
       ret=ireig_krawczyk(n,k,rE_eigvec,LDE,rE_eigval,rA,LDA,rX,LDX,rLambda,debug-2);
-      rvec_max_abs(Lambda_max,k,rLambda);
+      rmax_abs_rvec(Lambda_max,k,rLambda);
       iLambda_max=rget_exp(Lambda_max);
-      ivec_set(k,iLambda,iLambda_max);
+      ivec_set_all(k,iLambda,iLambda_max);
       rvec_get_exp(k,iE_eigval,rE_eigval);
       ivec_sub(k,iE_eigval,iLambda);
       ivec_add_scalar(k,iE_eigval,1);
@@ -308,7 +308,7 @@ int main(int argc, char *argv[])
       rmat_get_exp(LDE,k,iE_eigvec,LDE,rE_eigvec,LDE);
       imat_sub(n,k,iE_eigvec,LDE,iX,LDX);
       imat_add_scalar(n,k,iE_eigvec,LDE,1);
-      rvec_max(E_max,n,rE_eigval);       
+      rmax_rvec(E_max,n,rE_eigval);       
       /*     rvec_get_exp(k,iLambda,rLambda);
       rmat_get_exp(LDX,n_X,iX,LDX,rX,LDX);
       */
@@ -337,15 +337,15 @@ int main(int argc, char *argv[])
     }
     if(cLambda==NULL && rLambda!=NULL){
       cLambda=cvec_allocate(n_L);
-      cvec_clone_r(n_L,cLambda,rLambda);
+      cvec_clone_rvec(n_L,cLambda,rLambda);
       rLambda=rvec_free(n_L,rLambda);      
     }
     // compute
     if(cA!=NULL && cX!=NULL && cLambda!=NULL){
       ret=iceig_krawczyk(n,k,cE_eigvec,LDE,cE_eigval,cA,LDA,cX,LDX,cLambda,debug-2);
-      cvec_max_abs(Lambda_max,k,cLambda);
+      rmax_abs_cvec(Lambda_max,k,cLambda);
       iLambda_max=rget_exp(Lambda_max);
-      ivec_set(k,iLambda,iLambda_max);
+      ivec_set_all(k,iLambda,iLambda_max);
       cvec_get_exp(k,iE_eigval,cE_eigval);
       ivec_sub(k,iE_eigval,iLambda);
       ivec_add_scalar(k,iE_eigval,1);
@@ -373,15 +373,15 @@ int main(int argc, char *argv[])
     if(debug!=-1){
       if(strlen(out_fname_result)>0 && debug>1){ 
       printf("Absolute_Error_Bounds_Eigenvalues:\n");
-      rvec_print(k,rE_eigval,NULL,"e",3);
+      rvec_print(k,rE_eigval,NULL,'e',3);
       printf("Relative_Error_Bounds_Log2_Eigenvalues:\n");
-      imat_print(k,1,iE_eigval,k,NULL,6);
+      imat_print(k,1,iE_eigval,k,NULL);
       printf("Relative_Error_Bounds_Log2_Eigenvalues_max:\t");
       printf("%d\n",iE_eigval_max);
       printf("Absolute_Error_Bounds_Eigenvectors:\n");
-      rmat_print(LDE,k,rE_eigvec,LDE,NULL,"e",3);
+      rmat_print(LDE,k,rE_eigvec,LDE,NULL,'e',3);
       printf("Relative_Error_Bounds_Log2_Eigenvectors:\n");
-      imat_print(LDE,k,iE_eigvec,LDE,NULL,6);
+      imat_print(LDE,k,iE_eigvec,LDE,NULL);
     }
       if(strlen(out_fname_result)<=0 || debug>0){
 	printf("MPFR_Precision: %d\n",prec);
@@ -400,13 +400,13 @@ int main(int argc, char *argv[])
     //complex mode
     if(strlen(out_fname_result)>0 && debug>1){ 
       printf("Absolute_Error_Bounds_Eigenvalues:\n");
-      cvec_print(k,cE_eigval,NULL,"e",3);
+      cvec_print(k,cE_eigval,NULL,'e',3);
       printf("Relative_Error_Bounds_Log2_Eigenvalues:\n");
-      imat_print(k,1,iE_eigval,k,NULL,6);
+      imat_print(k,1,iE_eigval,k,NULL);
       printf("Absolute_Error_Bounds_Eigenvectors:\n");
-      cmat_print(LDE,k,cE_eigvec,LDE,NULL,"e",3);
+      cmat_print(LDE,k,cE_eigvec,LDE,NULL,'e',3);
       printf("Relative_Error_Bounds_Log2_Eigenvectors:\n");
-      imat_print(LDE,k,iE_eigvec,LDE,NULL,6);
+      imat_print(LDE,k,iE_eigvec,LDE,NULL);
     }
     if(strlen(out_fname_result)<=0 || debug>0){
       printf("MPFR_Precision: %d\n",prec);
@@ -462,9 +462,9 @@ int main(int argc, char *argv[])
   iE_eigval=ivec_free(iE_eigval);
   iLambda=ivec_free(iLambda);
   iX=imat_free(iX);
-  Lambda_max=rfree(Lambda_max);
-  X_max=rfree(X_max);
-  E_max=rfree(E_max);
+  Lambda_max=rmfree(Lambda_max);
+  X_max=rmfree(X_max);
+  E_max=rmfree(E_max);
   in_fname_eigval=char_del(in_fname_eigval);
   in_fname_eigvec=char_del(in_fname_eigvec);
   in_fname_matrix=char_del(in_fname_matrix);

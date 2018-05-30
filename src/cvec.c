@@ -91,7 +91,7 @@ cmulti **cvec_free(int n, cmulti **x)
 {
   int i;
   if(x==NULL) return NULL;
-  for(i=0; i<n; i++){ x[i]=cfree(x[i]); }
+  for(i=0; i<n; i++){ x[i]=cmfree(x[i]); }
   free(x);
   x=NULL;
   return x;
@@ -270,7 +270,7 @@ void cvec_print(int n, cmulti **x, char *name, char format, int digits)
 /**
  @brief cmulti型のベクトルの表示.
 */
-void cvec_print_prec(int n, cmulti **x, const char *name, const char *f, int digits)
+void cvec_print_prec(int n, cmulti **x, char *name, char *f, int digits)
 {
   int i,k;
   char format[128];
@@ -293,7 +293,7 @@ void cvec_print_prec(int n, cmulti **x, const char *name, const char *f, int dig
 /**
  @brief cmulti型のベクトルの表示.
 */
-void cvec_print_exp(int n, cmulti **x, const char *name)
+void cvec_print_exp(int n, cmulti **x, char *name)
 {
   int i;
   if(x==NULL){
@@ -2419,7 +2419,7 @@ void cvec_normalize_cvec(int n, cmulti **y, cmulti **x)
   rnorm2_cvec(a,n,x);   // a=sqrt(x'*x)
   rinv_r(a,a);           // a=1/sqrt(x'*x)
   cvec_mul_cvec_rscalar(n,y,x,a); // y=x/sqrt(x'*x)
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**
@@ -2442,8 +2442,8 @@ void cvec_normalize_sgn_cvec(int n, cmulti **y, cmulti **x)
   cdiv_cr(b,b,a);         // b=conj(sgn(x[k]))/sqrt(x'*x)
   cvec_mul_cvec_cscalar(n,y,x,b);    // y=x*(conj(sgn(x[k]))/sqrt(x'*x))
   // done
-  a=rfree(a);
-  b=cfree(b);
+  a=rmfree(a);
+  b=cmfree(b);
 }
 
 /**
@@ -2455,7 +2455,7 @@ void cvec_orthogonalize(int n, cmulti **y, cmulti **x)
   a=callocate_prec(cvec_get_prec_max(n,y));
   cinnprod_cvec_cvec(a,n,x,y);   // a=x'*y
   cvec_sub_mul_cvec_cscalar(n,y,x,a); // y-=x*a
-  a=cfree(a);
+  a=cmfree(a);
 }
 
 /**
@@ -2495,8 +2495,8 @@ void rmax_pow2_abs_sub_cvec_cvec(rmulti *value, int n, cmulti **x, cmulti **y)
       rset_r(value,b);     // value=b
     }
   }
-  a=cfree(a);
-  b=rfree(b);
+  a=cmfree(a);
+  b=rmfree(b);
 }
 
 /**
@@ -2564,7 +2564,7 @@ void rsum_abs_sub_cvec_cvec(rmulti *value, int n, cmulti **x, cmulti **y)
     csub_cc(a,x[i],y[i]); // a=x[i]-y[i]
     radd_abs_c(value,a); // value+=abs(x[i]-y[i])
   }
-  a=cfree(a);
+  a=cmfree(a);
 }
 
 /**
@@ -2583,7 +2583,7 @@ void rmax_abs_cvec(rmulti *value, int n, cmulti **x)
     }
   }
   rsqrt_r(value,value); // value=sqrt(value)
-  a=rfree(a);            // free
+  a=rmfree(a);            // free
 }
 
 /**
@@ -2603,7 +2603,7 @@ void rmax_max_absc_cvec(rmulti *value, int n, cmulti **x)
     rabs_r(a,C_I(x[i]));
     if(gt_rr(a,value)){ rset_r(value,a); }
   }
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**
@@ -2624,7 +2624,7 @@ void rmax_abs_cvec_index(rmulti *value, int n, cmulti **x, int *I)
     }
   }
   rsqrt_r(value,value); // value=sqrt(value)
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 
@@ -2648,8 +2648,8 @@ void rmax_abs_sub_cvec_cvec(rmulti *value, int n, cmulti **x, cmulti **y)
     }
   }
   rsqrt_r(value,value); // value=sqrt(value)
-  a=cfree(a);
-  b=rfree(b);
+  a=cmfree(a);
+  b=rmfree(b);
 }
 
 /**
@@ -2668,7 +2668,7 @@ void rmin_abs_cvec(rmulti *value, int n, cmulti **x)
     }
   }
   rsqrt_r(value,value); // value=sqrt(value)
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**
@@ -2689,7 +2689,7 @@ void rmin_abs_cvec_index(rmulti *value, int n, cmulti **x, int *I)
     }
   }
   rsqrt_r(value,value); // value=sqrt(value)
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 
@@ -2716,7 +2716,7 @@ void cdcos_cvec_cvec(cmulti *value, int n, cmulti **x, cmulti **y)
   cdiv_cr(value,value,a);    // value=x'*y/sqrt(x'*x)
   rnorm2_cvec(a,n,y);         // a=sqrt(y'*y)
   cdiv_cr(value,value,a);    // value=x'*y/sqrt(x'*x)/sqrt(y'*y)
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**
@@ -2728,7 +2728,7 @@ void rdcos_abs_cvec_cvec(rmulti *value, int n, cmulti **x, cmulti **y)
   a=callocate_prec(rget_prec(value));
   cdcos_cvec_cvec(a,n,x,y);
   rabs_c(value,a);
-  a=cfree(a);
+  a=cmfree(a);
 }
 
 /**
@@ -2741,7 +2741,7 @@ void rangle_cvec_cvec(rmulti *theta, int n, cmulti **x, cmulti **y)
   rdcos_abs_cvec_cvec(a,n,x,y); // a=abs(x'*y)/sqrt(x'*x)/sqrt(y'*y)
   if(gt_rd(a,1)){ rset_d(a,1); }
   racos_r(theta,a); // theta=acos(dcos)
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**

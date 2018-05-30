@@ -21,7 +21,7 @@
  */
 
 #define RAp(X,Y) ((X)=rallocate_prec(rget_prec(Y)))
-#define RF(X) ((X)=rfree(X))
+#define RF(X) ((X)=rmfree(X))
 
 ////////////////////////////////////////////////////////////
 
@@ -169,7 +169,7 @@ rmulti *rallocate_clone(rmulti *y)
  @param[out] x メモリが開放される。これ以降はアクセス不可.
  @return       NULLポインタを常に返す.
  */
-rmulti *rfree(rmulti *x)
+rmulti *rmfree(rmulti *x)
 {
   if(x==NULL){ return NULL; }
   mpfr_clear(x);

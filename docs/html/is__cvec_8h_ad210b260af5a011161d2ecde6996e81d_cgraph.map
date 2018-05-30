@@ -3,13 +3,13 @@
 <area shape="rect" id="node4" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="510,5,574,32"/>
 <area shape="rect" id="node5" href="$cvec_8c.html#a118758ed9f362c0374ffc3128a38bbaa" title="cmulti型のベクトルの方向余弦 value=x&#39;*y/sqrt(x&#39;*x)/sqrt(y&#39;*y) " alt="" coords="173,164,273,191"/>
 <area shape="rect" id="node32" href="$cmulti_8c.html#a17d52e9eeaf22acde0324ac337741df4" title="cmulti型の絶対値 y=abs(x) " alt="" coords="351,341,403,368"/>
-<area shape="rect" id="node33" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="201,240,245,267"/>
+<area shape="rect" id="node33" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="197,240,249,267"/>
 <area shape="rect" id="node3" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="335,37,420,64"/>
 <area shape="rect" id="node6" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="345,88,410,115"/>
 <area shape="rect" id="node7" href="$cvec_8c.html#a521383abdd417562f7b0a55aeaad15d2" title="cmulti型のベクトルの内積 value=sum(conj(x).*y) " alt="" coords="321,189,433,216"/>
 <area shape="rect" id="node24" href="$cvec_8c.html#a6f497336b3bbbe9d5b58ea5dde89e3f7" title="cmulti型のベクトルの2乗ノルム value=sqrt(sum(abs(x).^2)) " alt="" coords="337,240,417,267"/>
 <area shape="rect" id="node29" href="$cmulti_8c.html#aa15dfe1c69f97839146fdfc3a4bb11ef" title="z=x/y " alt="" coords="515,75,569,101"/>
-<area shape="rect" id="node31" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="356,291,399,317"/>
+<area shape="rect" id="node31" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="352,291,403,317"/>
 <area shape="rect" id="node8" href="$cmulti_8c.html#abbf779efa66cb5fdf676e360f72282bf" title="cmulti型の値を零に設定. " alt="" coords="509,189,575,216"/>
 <area shape="rect" id="node12" href="$cmulti_8c.html#a94f33003bc8f8d6c1e6da26d6ea02c73" title="z=z+conj(x)*y " alt="" coords="651,139,730,165"/>
 <area shape="rect" id="node9" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="659,189,723,216"/>

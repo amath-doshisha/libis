@@ -5,7 +5,7 @@
 <area shape="rect" id="node6" href="$is__rvec_8h.html#a8d6d750a058dc41b4022b365a6ddfb77" title="rmulti型のベクトルxに関する転置行列Aによる1次変換 y=A&#39;*x " alt="" coords="172,316,243,343"/>
 <area shape="rect" id="node15" href="$is__rmulti_8h.html#a07b89d04a8fb3e01d979950f9558871a" title="y=&#45;x " alt="" coords="182,107,233,133"/>
 <area shape="rect" id="node16" href="$is__rmat_8h.html#ab8ace882b8999e6eca1d6a380e67640c" title="rmulti型の1ランク更新 B=A+a*x*y&#39; " alt="" coords="165,208,249,235"/>
-<area shape="rect" id="node20" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="345,461,387,488"/>
+<area shape="rect" id="node20" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="341,461,391,488"/>
 <area shape="rect" id="node21" href="$is__rvec_8h.html#a595468148dda7b3dc347d2f5040a3dd1" title="rmulti型のベクトルの終了処理. " alt="" coords="175,455,239,481"/>
 <area shape="rect" id="node3" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="469,132,533,159"/>
 <area shape="rect" id="node7" href="$is__rmulti_8h.html#a0a2cdd1964614389fa73fb4747cc889a" title="rmulti型の値を零に設定. " alt="" coords="334,309,398,336"/>

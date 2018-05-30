@@ -56,7 +56,7 @@ int main(int argc, const char *argv[])
     rput(x);
   }
 
-  x=rfree(x);
+  x=rmfree(x);
   
   /*
   cmulti *x=NULL;

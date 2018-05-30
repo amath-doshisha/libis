@@ -80,7 +80,7 @@ cmulti **cmat3_free(int LDA1, int LDA2, int l, cmulti **A)
   for(k=0; k<l; k++){
     for(j=0; j<LDA2; j++){
       for(i=0; i<LDA1; i++){
-	MAT3(A,i,j,k,LDA1,LDA2)=cfree(MAT3(A,i,j,k,LDA1,LDA2));
+	MAT3(A,i,j,k,LDA1,LDA2)=cmfree(MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }

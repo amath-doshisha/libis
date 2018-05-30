@@ -20,9 +20,9 @@
  */
 
 #define RA(X,P)    ((X)=rallocate_prec(P))
-#define RF(X)      ((X)=rfree(X))
+#define RF(X)      ((X)=rmfree(X))
 #define CA(X,P)    ((X)=callocate_prec(P))
-#define CF(X)      ((X)=cfree(X))
+#define CF(X)      ((X)=cmfree(X))
 #define CVA(X,N,P) { X=cvec_allocate_prec(N,P); }
 #define CVF(X,N)   { X=cvec_free(N,X); }
 #define RVA(X,Y,N) { X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
@@ -1496,7 +1496,7 @@ void icmin_down_cvec(cmulti *y0, cmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief irmulti型のベクトルの要素の絶対値の最大値 value=max(abs(x))
 */
-void irmax_up_abc_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
+void irmax_up_abs_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int prec;
   rmulti **ax0=NULL,**ax1=NULL;
@@ -1511,7 +1511,7 @@ void irmax_up_abc_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
 /**
  @brief irmulti型のベクトルの要素の絶対値の最小値 value=min(abs(x))
 */
-void irmin_down_abc_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
+void irmin_down_abs_cvec(rmulti *y0, rmulti *y1, int n, cmulti **x0, cmulti **x1)
 {
   int prec;
   rmulti **ax0=NULL,**ax1=NULL;

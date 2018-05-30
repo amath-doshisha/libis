@@ -11,9 +11,9 @@
 
 #define RA(X,P)    ((X)=rallocate_prec(P))
 #define RAP(X,Y)   ((X)=rallocate_prec(rget_prec(Y)))
-#define RF(X)      ((X)=rfree(X))
+#define RF(X)      ((X)=rmfree(X))
 #define CA(X,P)    ((X)=callocate_prec(P))
-#define CF(X)      ((X)=cfree(X))
+#define CF(X)      ((X)=cmfree(X))
 #define RVA(X,N,P)  { X=rvec_allocate_prec(N,P); }
 #define RVAr(X,Y,N) { X=rvec_allocate_prec(N,rget_prec(Y)); }
 #define RVArv(X,Y,N){ X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
@@ -26,43 +26,43 @@ char *type_name[]={ "text", "dvec", "zvec", "rvec", "cvec", "dmat", "zmat", "rma
 
 int rmat_max_abs_coeff(int *v_m, int *v_n, rmulti *value, int m, int n, rmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  e+=rabs(value,MAT(A,0,0,LDA));  // value=abs(x[0])
+  rabs_r(value,MAT(A,0,0,LDA));  // value=abs(x[0])
   *v_m=0; *v_n=0;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=rabs(a,MAT(A,i,j,LDA));  // a=abs(x[i])
-      if(rgt(a,value)){            // a>value
-	e+=rcopy(value,a);         // value=a
+      rabs_r(a,MAT(A,i,j,LDA));  // a=abs(x[i])
+      if(gt_rr(a,value)){            // a>value
+	rset_r(value,a);         // value=a
 	*v_m=i; *v_n=j;
       }
     }
   }
-  a=rfree(a);
-  return e;
+  a=rmfree(a);
+  return 0;
 }
 
 int cmat_max_abs_coeff(int *v_m, int *v_n, rmulti *value, int m, int n, cmulti **A, int LDA)
 {
-  int i,j,e=0;
+  int i,j;
   rmulti *a=NULL;
   a=rallocate_prec(rget_prec(value));
-  e+=cabs2(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
+  rabs2_c(value,MAT(A,0,0,LDA));  // value=abs(x[0])^2
   *v_m=0; *v_n=0;
   for(j=0; j<n; j++){
     for(i=0; i<m; i++){
-      e+=cabs2(a,MAT(A,i,j,LDA));  // a=abs(x[i])^2
-      if(rgt(a,value)){            // a>value
-	e+=rcopy(value,a);         // value=a
+      rabs2_c(a,MAT(A,i,j,LDA));  // a=abs(x[i])^2
+      if(gt_rr(a,value)){            // a>value
+	rset_r(value,a);         // value=a
 	*v_m=i; *v_n=j;
       }
     }
   }
-  e+=rsqrt(value,value); // value=sqrt(value)
-  a=rfree(a);            // free
-  return e;
+  rsqrt_r(value,value); // value=sqrt(value)
+  a=rmfree(a);            // free
+  return 0;
 }
 
 void usage()
@@ -171,14 +171,14 @@ int main(int argc, char *argv[])
   if(debug>=3){
     if(DVEC<=type_in1 && type_in1<=CVEC){ printf("Input1_Vector:\n"); }
     if(DMAT<=type_in1 && type_in1<=CMAT){ printf("Input1_Matrix:\n"); }
-    if(dx1!=NULL){ dvec_print(n1,dx1,NULL,format,digits); }
-    if(zx1!=NULL){ zvec_print(n1,zx1,NULL,format,digits); }
-    if(rx1!=NULL){ rvec_print(n1,rx1,NULL,format,digits); }
-    if(cx1!=NULL){ cvec_print(n1,cx1,NULL,format,digits); }
-    if(dA1!=NULL){ dmat_print(m1,n1,dA1,m1,NULL,format,digits); }
-    if(zA1!=NULL){ zmat_print(m1,n1,zA1,m1,NULL,format,digits); }
-    if(rA1!=NULL){ rmat_print(m1,n1,rA1,m1,NULL,format,digits); }
-    if(cA1!=NULL){ cmat_print(m1,n1,cA1,m1,NULL,format,digits); }
+    if(dx1!=NULL){ dvec_print(n1,dx1,NULL,format[0],digits); }
+    if(zx1!=NULL){ zvec_print(n1,zx1,NULL,format[0],digits); }
+    if(rx1!=NULL){ rvec_print(n1,rx1,NULL,format[0],digits); }
+    if(cx1!=NULL){ cvec_print(n1,cx1,NULL,format[0],digits); }
+    if(dA1!=NULL){ dmat_print(m1,n1,dA1,m1,NULL,format[0],digits); }
+    if(zA1!=NULL){ zmat_print(m1,n1,zA1,m1,NULL,format[0],digits); }
+    if(rA1!=NULL){ rmat_print(m1,n1,rA1,m1,NULL,format[0],digits); }
+    if(cA1!=NULL){ cmat_print(m1,n1,cA1,m1,NULL,format[0],digits); }
   }
 
   // load input file2
@@ -207,14 +207,14 @@ int main(int argc, char *argv[])
   if(debug>=3){
     if(DVEC<=type_in2 && type_in2<=CVEC){ printf("Input2_Vector:\n"); }
     if(DMAT<=type_in2 && type_in2<=CMAT){ printf("Input2_Matrix:\n"); }
-    if(dx2!=NULL){ dvec_print(n2,dx2,NULL,format,digits); }
-    if(zx2!=NULL){ zvec_print(n2,zx2,NULL,format,digits); }
-    if(rx2!=NULL){ rvec_print(n2,rx2,NULL,format,digits); }
-    if(cx2!=NULL){ cvec_print(n2,cx2,NULL,format,digits); }
-    if(dA2!=NULL){ dmat_print(m2,n2,dA2,m2,NULL,format,digits); }
-    if(zA2!=NULL){ zmat_print(m2,n2,zA2,m2,NULL,format,digits); }
-    if(rA2!=NULL){ rmat_print(m2,n2,rA2,m2,NULL,format,digits); }
-    if(cA2!=NULL){ cmat_print(m2,n2,cA2,m2,NULL,format,digits); }
+    if(dx2!=NULL){ dvec_print(n2,dx2,NULL,format[0],digits); }
+    if(zx2!=NULL){ zvec_print(n2,zx2,NULL,format[0],digits); }
+    if(rx2!=NULL){ rvec_print(n2,rx2,NULL,format[0],digits); }
+    if(cx2!=NULL){ cvec_print(n2,cx2,NULL,format[0],digits); }
+    if(dA2!=NULL){ dmat_print(m2,n2,dA2,m2,NULL,format[0],digits); }
+    if(zA2!=NULL){ zmat_print(m2,n2,zA2,m2,NULL,format[0],digits); }
+    if(rA2!=NULL){ rmat_print(m2,n2,rA2,m2,NULL,format[0],digits); }
+    if(cA2!=NULL){ cmat_print(m2,n2,cA2,m2,NULL,format[0],digits); }
   }
 
   // check
@@ -267,21 +267,21 @@ int main(int argc, char *argv[])
   if(type_in1==RVEC && type_in2==RVEC){
     index=ivec_allocate(n1);
     x1_z=zvec_allocate(n1);
-    rvec_get_z(n1,x1_z,rx1);
+    rvec_get_zvec(n1,x1_z,rx1);
     zvec_sort(n1,x1_z,index); zvec_reverse(n1,x1_z); ivec_reverse(n1,index);
     rvec_swap_index(n1,rx1,index);
     rvec_swap_index(n2,rx2,index);
-    ivec_grid(n1,index);
+    ivec_set_grid(n1,index);
     reig_sort_value_guide(n1,n1,rx2,NULL,0,rx1);
   }
   if(type_in1==CVEC && type_in2==CVEC){
     index=ivec_allocate(n1);
     x1_z=zvec_allocate(n1);
-    cvec_get_z(n1,x1_z,cx1);
+    cvec_get_zvec(n1,x1_z,cx1);
     zvec_sort(n1,x1_z,index); zvec_reverse(n1,x1_z); ivec_reverse(n1,index);
     cvec_swap_index(n1,cx1,index);
     cvec_swap_index(n2,cx2,index);
-    ivec_grid(n1,index);
+    ivec_set_grid(n1,index);
     ceig_sort_value_guide(n1,n1,cx2,NULL,0,cx1);
   }
 
@@ -298,7 +298,7 @@ int main(int argc, char *argv[])
       }else{
 	rmat_max_abs_coeff(&max_m,&max_n,rmax,m2,n2,rA2,m2);
       }
-      rdiv(rEmax,rEmax,rmax);
+      rdiv_rr(rEmax,rEmax,rmax);
     }
     if(type_in1==CMAT && type_in2==CMAT){
       cE=cmat_allocate_prec(m1,n1,prec);
@@ -309,14 +309,14 @@ int main(int argc, char *argv[])
       }else{
 	cmat_max_abs_coeff(&max_m,&max_n,rmax,m2,n2,cA2,m2);
       }
-      rdiv(rEmax,rEmax,rmax);
+      rdiv_rr(rEmax,rEmax,rmax);
     }
   }
 
   //output results
   if(debug>=2){
-    if(rE!=NULL){ printf("Output_coeff_Error=\n"); rmat_print(m1,n1,rE,m2,NULL,format,digits); }
-    if(cE!=NULL){ printf("Output_coeff_Error=\n"); cmat_print(m1,n1,cE,m2,NULL,format,digits); }
+    if(rE!=NULL){ printf("Output_coeff_Error=\n"); rmat_print(m1,n1,rE,m2,NULL,format[0],digits); }
+    if(cE!=NULL){ printf("Output_coeff_Error=\n"); cmat_print(m1,n1,cE,m2,NULL,format[0],digits); }
   }
   if(debug>=1){
     if(rEmax!=NULL){ mpfr_printf("Output_coeff_Error_max: [%d,%d] = %.7Re\n",Emax_m,Emax_n,rEmax); }

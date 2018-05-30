@@ -18,8 +18,8 @@
 
 #define RA(X,P) ((X)=rallocate_prec(P))
 #define CA(X,P) ((X)=callocate_prec(P))
-#define RF(X) ((X)=rfree(X))
-#define CF(X) ((X)=cfree(X))
+#define RF(X) ((X)=rmfree(X))
+#define CF(X) ((X)=cmfree(X))
 #define RAr(X,P) ((X)=rallocate_prec(rget_prec(P)))
 #define CAr(X,P) ((X)=callocate_prec(rget_prec(P)))
 

@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
   rvec_save_log2_abs(n,x,-3,5,"foo.txt");
 
   // free
-  E=rfree(E);
+  E=rmfree(E);
   A=rmat_free(LDA,n,A);
   A0=rmat_free(LDA,n,A0);
   b=rvec_free(n,b);

@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="141,56,203,83"/>
 <area shape="rect" id="node4" href="$cmulti_8c.html#a78a0f61e301881a5ac6715f24e5285b2" title="cmulti型の浮動小数点数を文字列から設定. " alt="" coords="147,157,197,184"/>
 <area shape="rect" id="node42" href="$cmulti_8c.html#a8bb732af2004bda35f64b75638ddd0b7" title="cmulti型を倍精度複素数型に変換. " alt="" coords="146,220,198,247"/>
-<area shape="rect" id="node45" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="150,296,194,323"/>
+<area shape="rect" id="node45" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="146,296,198,323"/>
 <area shape="rect" id="node3" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="264,5,324,32"/>
 <area shape="rect" id="node5" href="$cmulti_8c.html#a69302d488c9954d3cbe85feb873216fa" title="cmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="261,107,327,133"/>
 <area shape="rect" id="node7" href="$cmulti_8c.html#ae2883fef83d21d61f7057487566aa6f9" title="cmulti型の精度を指定しての新規生成. " alt="" coords="251,56,337,83"/>
@@ -43,5 +43,5 @@
 <area shape="rect" id="node40" href="$is__rmulti_8h.html#afa80b656cf032934f1374763bccc8fa2" title="rmulti型がNaNであるかの判定. " alt="" coords="569,245,623,272"/>
 <area shape="rect" id="node43" href="$is__rmulti_8h.html#ab4b501a84176a2e2e8b335df42c05fe4" title="rmulti型を倍精度型に変換. " alt="" coords="269,284,319,311"/>
 <area shape="rect" id="node44" href="$rmulti_8c.html#a87ddf80272b2d930dcc2d3466a9b1d74" title="rmulti型の丸めモードの状態の取得. " alt="" coords="389,557,487,584"/>
-<area shape="rect" id="node46" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="273,335,315,361"/>
+<area shape="rect" id="node46" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="269,335,319,361"/>
 </map>

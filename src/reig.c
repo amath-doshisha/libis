@@ -86,7 +86,7 @@ void reig_sort_vector_guide(int n, int k, rmulti **lambda, rmulti **X, int LDX, 
       if(lambda!=NULL){ rswap(lambda[i],lambda[j]); }
     }
   }
-  value=rfree(value);
+  value=rmfree(value);
   a=rvec_free(n,a);
 }
 
@@ -108,7 +108,7 @@ void reig_sort_value_guide(int n, int k, rmulti **lambda, rmulti **X, int LDX, r
       rswap(lambda[i],lambda[j]);
     }
   }
-  value=rfree(value);
+  value=rmfree(value);
   a=rvec_free(n,a);
 }
 

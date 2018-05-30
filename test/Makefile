@@ -1,11 +1,9 @@
 
-OS = MACOSX
-
 CC = gcc
 
 CFLAGS = -I/usr/local/include -I../include -Wall -Wextra -Werror
 
-LIBS = -L/usr/local/lib -L../$(OS) -lis -lmpfr -lgmp -lm
+LIBS = -L/usr/local/lib -L../lib -lis -lmpfr -lgmp -lm
 
 SRCS = HashTest.c \
 	test_dsolve.c test_zsolve.c test_rsolve.c test_csolve.c \

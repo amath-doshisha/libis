@@ -184,18 +184,18 @@ int main(int argc, char *argv[])
   // init lambda
   if     (char_eq(l_mode,"a")){ set_set_lambda_arith(m,dLambda,lambda_min); }
   else if(char_eq(l_mode,"g")){ set_set_lambda_geome(m,dLambda,lambda_min); }
-  else if(char_eq(l_mode,"i")){ dvec_set_grid(m,dLambda); dvec_add_d(m,dLambda,dLambda,1); }
-  else if(char_eq(l_mode,"I")){ dvec_set_grid(m,dLambda); dvec_add_d(m,dLambda,dLambda,1); dvec_pow_si(m,dLambda,dLambda,M); }
+  else if(char_eq(l_mode,"i")){ dvec_set_grid(m,dLambda); dvec_add_dvec_dscalar(m,dLambda,dLambda,1); }
+  else if(char_eq(l_mode,"I")){ dvec_set_grid(m,dLambda); dvec_add_dvec_dscalar(m,dLambda,dLambda,1); dvec_pow_dvec_iscalar(m,dLambda,dLambda,M); }
   else if(strlen(in_fname)>0) { dvec_load(m,dLambda,in_fname); }
   else                        { ERROR_AT; exit(0); }
-  rvec_set_d(m,rLambda,dLambda);
+  rvec_set_dvec(m,rLambda,dLambda);
 
   // init c
-  if(char_eq(c_mode,"grid")){ rvec_set_grid(m,c); rvec_add_d(m,c,c,1);  }
+  if(char_eq(c_mode,"grid")){ rvec_set_grid(m,c); rvec_add_rvec_dscalar(m,c,c,1);  }
   else                      { rvec_set_ones(m,c); }
 
   // show
-  if(debug>=1){ dvec_print(m,dLambda,"Specified_Eigenvalues:",format,digits); }
+  if(debug>=1){ dvec_print(m,dLambda,"Specified_Eigenvalues:",format[0],digits); }
 
   // generate matrix
   t1=clock();
@@ -208,7 +208,7 @@ int main(int argc, char *argv[])
   time=(double)(t2-t1)/CLOCKS_PER_SEC;
 
   // show
-  if(debug>=1 || strlen(fname)<=0){ rmat_print(m,m,A,m,"Gerated_Matrix:",format,digits); }
+  if(debug>=1 || strlen(fname)<=0){ rmat_print(m,m,A,m,"Gerated_Matrix:",format[0],digits); }
   if(debug>=1){ printf("Computing_Time: %f [sec]\n",time); }
 
   // save

@@ -22,7 +22,7 @@
 #define RA(X,Y)      ((X)=rallocate_prec(rget_prec(Y)))
 #define RA2(X,Y0,Y1) ((X)=rallocate_prec(MAX2(rget_prec(Y0),rget_prec(Y1))))
 #define RAP(X,Z,N)   ((X)=rallocate_prec(rvec_get_prec_max(N,Z)))
-#define RF(X)        ((X)=rfree(X))
+#define RF(X)        ((X)=rmfree(X))
 #define RVA(X,Y,N)   { X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
 #define RVF(X,N)     { X=rvec_free(N,X); }
 
@@ -634,7 +634,7 @@ void irsum_pow2_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1
 /**
  @brief irmulti型のベクトルの絶対値 [y0,y1]=abs([x0,x1])
 */
-void irvec_abs_abs(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+void irvec_abs_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
 {
   int i;
   for(i=0; i<n; i++){ irabs_r(y0[i],y1[i],x0[i],x1[i]); }
@@ -749,7 +749,7 @@ void irmax_up_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1)
   prec=MAX2(rget_prec(y0),rget_prec(y1));
   ax0=rvec_allocate_prec(n,prec);
   ax1=rvec_allocate_prec(n,prec);
-  irvec_abs_abs(n,ax0,ax1,x0,x1);
+  irvec_abs_rvec(n,ax0,ax1,x0,x1);
   irmax_up_rvec(y0,y1,n,ax0,ax1);
   RVF(ax0,n); RVF(ax1,n);
 }
@@ -764,7 +764,7 @@ void irmin_down_abs_rvec(rmulti *y0, rmulti *y1, int n, rmulti **x0, rmulti **x1
   prec=MAX2(rget_prec(y0),rget_prec(y1));
   ax0=rvec_allocate_prec(n,prec);
   ax1=rvec_allocate_prec(n,prec);
-  irvec_abs_abs(n,ax0,ax1,x0,x1);
+  irvec_abs_rvec(n,ax0,ax1,x0,x1);
   irmin_down_rvec(y0,y1,n,ax0,ax1);
   RVF(ax0,n); RVF(ax1,n);
 }

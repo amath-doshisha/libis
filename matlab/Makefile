@@ -8,7 +8,7 @@ MEX=$(MATLAB_BIN)/mex
 
 CFLAGS=-I../include -I/usr/local/include
 
-LIBS=-L../MACOSX -I/usr/local/lib -lis -lmpfr -lgmp
+LIBS=-L../lib -I/usr/local/lib -lis -lmpfr -lgmp
 
 SRCS=multi_mex.c
 

@@ -171,8 +171,8 @@ int main(int argc, char *argv[])
   }
   if(debug>=3){
     printf("Input_Matrix_Entries:\n");
-    if     (cA!=NULL){ cmat_print(mA,nA,cA,mA,NULL,format,digits); }
-    else if(rA!=NULL){ rmat_print(mA,nA,rA,mA,NULL,format,digits); }
+    if     (cA!=NULL){ cmat_print(mA,nA,cA,mA,NULL,format[0],digits); }
+    else if(rA!=NULL){ rmat_print(mA,nA,rA,mA,NULL,format[0],digits); }
     else{ ERROR_AT; exit(0); }
   }
   if(debug>=1){
@@ -228,7 +228,7 @@ int main(int argc, char *argv[])
       time_total+=time_qr;
       // convert complex to real
       rL=rvec_allocate_prec(n,prec);
-      cvec_real_clone(n,rL,cL);
+      rvec_real_cvec_clone(n,rL,cL);
       cL=cvec_free(n,cL);
       // computing eigenvectors by inverse iteration method
       mX=n; nX=n; rX=rmat_allocate_prec(mX,nX,prec);
@@ -266,13 +266,13 @@ int main(int argc, char *argv[])
   }
   if(cL!=NULL && mode=='r'){
     rL=rvec_allocate_prec(n,prec);
-    cvec_real_clone(n,rL,cL);
+    rvec_real_cvec_clone(n,rL,cL);
     cL=cvec_free(n,cL);
   }
   if(debug>=3){
     printf("Initail_Vectors_Entries:");
-    if     (mode=='c' && cX!=NULL){ if(cmat_has_nan(mX,nX,cX,mX)){ printf(" NaN\n"); }else{ printf("\n"); cmat_print(mX,nX,cX,mX,NULL,format,digits); }}
-    else if(mode=='r' && rX!=NULL){ if(rmat_has_nan(mX,nX,rX,mX)){ printf(" NaN\n"); }else{ printf("\n"); rmat_print(mX,nX,rX,mX,NULL,format,digits); }}
+    if     (mode=='c' && cX!=NULL){ if(cmat_has_nan(mX,nX,cX,mX)){ printf(" NaN\n"); }else{ printf("\n"); cmat_print(mX,nX,cX,mX,NULL,format[0],digits); }}
+    else if(mode=='r' && rX!=NULL){ if(rmat_has_nan(mX,nX,rX,mX)){ printf(" NaN\n"); }else{ printf("\n"); rmat_print(mX,nX,rX,mX,NULL,format[0],digits); }}
     else                          { printf("NULL\n"); }
   }
 
@@ -331,31 +331,31 @@ int main(int argc, char *argv[])
   }
   if(debug>=3){
     printf("Eigenvectors:\n");
-    if     (rX!=NULL){ rmat_print(n,k,rX,n,NULL,format,digits); }
-    else if(cX!=NULL){ cmat_print(n,k,cX,n,NULL,format,digits); }
+    if     (rX!=NULL){ rmat_print(n,k,rX,n,NULL,format[0],digits); }
+    else if(cX!=NULL){ cmat_print(n,k,cX,n,NULL,format[0],digits); }
     else { ERROR_AT; exit(0); }
   }
   Lmax=rallocate_prec(prec);
-  if(rL!=NULL){ rvec_max_abs(Lmax,k,rL); }
-  if(cL!=NULL){ cvec_max_absc(Lmax,k,cL); }
+  if(rL!=NULL){ rmax_abs_rvec(Lmax,k,rL); }
+  if(cL!=NULL){ rmax_abs_cvec(Lmax,k,cL); }
   if(debug>=1){
     mpfr_printf("Eigenvalues_Max: %.7Re\n",Lmax);
     if(fid!=NULL){ mpfr_fprintf(fid,"Eigenvalues_Max: %.7Re\n",Lmax); }
   }
   if(debug>=2){
     printf("Eigenvalues:\n");
-    if     (rL!=NULL){ rvec_print(k,rL,NULL,format,digits); }
-    else if(cL!=NULL){ cvec_print(k,cL,NULL,format,digits); }
+    if     (rL!=NULL){ rvec_print(k,rL,NULL,format[0],digits); }
+    else if(cL!=NULL){ cvec_print(k,cL,NULL,format[0],digits); }
     else { ERROR_AT; exit(0); }
   }
   if(debug>=3 && char_eq(method,METHOD_RHQR_MT)){
     printf("Matrix after QR:\n");
-    if     (rB!=NULL){ rmat_print(n,k,rB,n,NULL,format,digits); }
+    if     (rB!=NULL){ rmat_print(n,k,rB,n,NULL,format[0],digits); }
     else { ERROR_AT; exit(0); }
   }
   if(debug>=3 && char_eq(method,METHOD_CHQR_MT)){
     printf("Matrix after QR:\n");
-    if(cB!=NULL){ cmat_print(n,k,cB,n,NULL,format,digits); }
+    if(cB!=NULL){ cmat_print(n,k,cB,n,NULL,format[0],digits); }
     else { ERROR_AT; exit(0); }
   }
   if(strlen(out_fname_val)>0){
@@ -444,9 +444,9 @@ int main(int argc, char *argv[])
       // seccess
       if(rXe!=NULL){ rmat_max_abs(rXe_max,n,k,rXe,n); }
       if(cXe!=NULL){ cmat_max_absc(rXe_max,n,k,cXe,n); }
-      if(rLe!=NULL){ rvec_max_abs(rLe_max,k,rLe); }
-      if(cLe!=NULL){ cvec_max_absc(rLe_max,k,cLe); }
-      rdiv(rLe_max,rLe_max,Lmax); rlog2(rLe_max_log2,rLe_max); rlog2(rXe_max_log2,rXe_max);
+      if(rLe!=NULL){ rmax_abs_rvec(rLe_max,k,rLe); }
+      if(cLe!=NULL){ rmax_abs_cvec(rLe_max,k,cLe); }
+      rdiv_rr(rLe_max,rLe_max,Lmax); rlog2_r(rLe_max_log2,rLe_max); rlog2_r(rXe_max_log2,rXe_max);
       if(debug>=1){
 	mpfr_printf("Error_Bounds_Eigenvectors_Max: %.1Re 2^%d\n",rXe_max,(int)ceil(rget_d(rXe_max_log2)));
 	if(fid!=NULL){ mpfr_fprintf(fid,"Error_Bounds_Eigenvectors_Max: %.1Re 2^%d\n",rXe_max,(int)ceil(rget_d(rXe_max_log2))); }
@@ -455,12 +455,12 @@ int main(int argc, char *argv[])
       }
       if(debug>=3){
 	printf("Error_Bounds_Eigenvectors:\n");
-	if     (rXe!=NULL){ rmat_print(n,k,rXe,n,NULL,"e",0); }
-	else if(cXe!=NULL){ cmat_print(n,k,cXe,n,NULL,"e",0); }
+	if     (rXe!=NULL){ rmat_print(n,k,rXe,n,NULL,'e',0); }
+	else if(cXe!=NULL){ cmat_print(n,k,cXe,n,NULL,'e',0); }
 	else{ ERROR_AT; exit(0); }
 	printf("Error_Bounds_Eigenvalues:\n");
-	if     (rLe!=NULL){ rvec_print(k,rLe,NULL,"e",0); }
-	else if(cLe!=NULL){ cvec_print(k,cLe,NULL,"e",0); }
+	if     (rLe!=NULL){ rvec_print(k,rLe,NULL,'e',0); }
+	else if(cLe!=NULL){ cvec_print(k,cLe,NULL,'e',0); }
 	else{ ERROR_AT; exit(0); }
       }
       if(strlen(out_fname_val_e)>0){
@@ -492,11 +492,11 @@ int main(int argc, char *argv[])
   rL=rvec_free(n,rL);
   cLe=cvec_free(n,cLe);
   rLe=rvec_free(n,rLe);
-  rXe_max=rfree(rXe_max);
-  rLe_max=rfree(rLe_max);
-  rXe_max_log2=rfree(rXe_max_log2);
-  rLe_max_log2=rfree(rLe_max_log2);
-  Lmax=rfree(Lmax);
+  rXe_max=rmfree(rXe_max);
+  rLe_max=rmfree(rLe_max);
+  rXe_max_log2=rmfree(rXe_max_log2);
+  rLe_max_log2=rmfree(rLe_max_log2);
+  Lmax=rmfree(Lmax);
   in_fname=char_del(in_fname);
   out_fname_val=char_del(out_fname_val);
   out_fname_vec=char_del(out_fname_vec);

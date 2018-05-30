@@ -18,7 +18,7 @@ var irvec_8c =
     [ "irmin_up_rvec", "irvec_8c.html#af43b3fde6b8b4f2df607871f9a408424", null ],
     [ "irsum_pow2_abs_rvec", "irvec_8c.html#accfd49347cbc8d142040e6f772897ba0", null ],
     [ "irsum_rvec", "irvec_8c.html#a6d8653aad7547084d8cefa33bcea9471", null ],
-    [ "irvec_abs_abs", "irvec_8c.html#abd26a4685887b594da0ac36e49e67913", null ],
+    [ "irvec_abs_rvec", "irvec_8c.html#af004cc4501d6f44df03a1cfccc30f495", null ],
     [ "irvec_abs_sub_rvec_rvec", "irvec_8c.html#acfbc9e27a5965650218d2e29905ea75f", null ],
     [ "irvec_add_dscalar_rvec", "irvec_8c.html#ae835059fd4ee40c54fc972f3d248a6cb", null ],
     [ "irvec_add_dvec_rscalar", "irvec_8c.html#a703e494744cd8219f83cda83eeee6348", null ],

@@ -125,9 +125,9 @@ void csolve_lu_decomp(int n, cmulti **A, int LDA, int *p, int *info)
     }
   }
   // done
-  a=cfree(a);
-  c=rfree(c);
-  value=rfree(value);
+  a=cmfree(a);
+  c=rmfree(c);
+  value=rmfree(value);
   (*info)=ret;
 }
 
@@ -168,8 +168,8 @@ void csolve_lu_backsubs(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int LD
     }
   }
   // done
-  a=cfree(a);
-  b=cfree(b);
+  a=cmfree(a);
+  b=cmfree(b);
 }
 
 /** @} */
@@ -242,10 +242,10 @@ void csolve_gauss_sweeper(int n, int NRHS, cmulti **B, int LDB, cmulti **A, int 
     }
   }
   // free
-  a=cfree(a);
-  b=cfree(b);
-  c=rfree(c);
-  value=rfree(value);
+  a=cmfree(a);
+  b=cmfree(b);
+  c=rmfree(c);
+  value=rmfree(value);
   rws=rvec_free(rws_size,rws);
   cws=cvec_free(cws_size,cws);
   // done

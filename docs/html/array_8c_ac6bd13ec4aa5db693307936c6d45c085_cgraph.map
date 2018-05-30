@@ -1,7 +1,7 @@
 <map id="array_clone" name="array_clone">
 <area shape="rect" id="node2" href="$array_8c.html#a075bf54e3da7df513db0c4f8e06c8787" title="array型のメモリ割当 " alt="" coords="135,259,220,285"/>
 <area shape="rect" id="node17" href="$is__svec_8h.html#a9aa59d41aa8b9310d64a66400f614d43" title="svec_copy" alt="" coords="143,436,212,463"/>
-<area shape="rect" id="node20" href="$is__ivec_8h.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="144,487,211,513"/>
+<area shape="rect" id="node20" href="$is__ivec_8h.html#ad945fa7c2905e342a12760aa56265b51" title="ivec_copy" alt="" coords="144,487,211,513"/>
 <area shape="rect" id="node21" href="$dvec_8c.html#ad528f0b2cd2e5a5ead1569e212b68c5a" title="y=x " alt="" coords="129,537,225,564"/>
 <area shape="rect" id="node22" href="$is__zvec_8h.html#af57e229a5d9d94245c66d86648104db9" title="y=x " alt="" coords="129,588,225,615"/>
 <area shape="rect" id="node23" href="$is__rvec_8h.html#aeeae7dfe2476387842f30053e56cb67b" title="rmulti型のベクトルの値を複成 y=x. " alt="" coords="130,639,225,665"/>
@@ -17,7 +17,7 @@
 <area shape="rect" id="node13" href="$is__rvec_8h.html#a0c4c754fa6332bf34ef67b2c38aa7505" title="rmulti型のベクトルの新規生成. " alt="" coords="439,411,521,437"/>
 <area shape="rect" id="node15" href="$cvec_8c.html#afdc4a88d6334c4518f88ea029020a587" title="cmulti型のベクトルの新規生成. " alt="" coords="288,461,371,488"/>
 <area shape="rect" id="node7" href="$ivec_8c.html#a420702f6c193dfe186102ae2f47e625f" title="ivec_allocate" alt="" coords="440,132,520,159"/>
-<area shape="rect" id="node8" href="$ivec_8c.html#af9390a835d6e2fcd5feee886cdd72a87" title="ivec_copy" alt="" coords="447,183,513,209"/>
+<area shape="rect" id="node8" href="$ivec_8c.html#ad945fa7c2905e342a12760aa56265b51" title="ivec_copy" alt="" coords="447,183,513,209"/>
 <area shape="rect" id="node14" href="$is__rmulti_8h.html#ae31c89576b14fb9861b408a6e3b6b299" title="rmulti型の新規生成. " alt="" coords="578,436,638,463"/>
 <area shape="rect" id="node16" href="$cmulti_8c.html#a7838f09827110f502fe1b27f3e6adc5d" title="cmulti型の新規生成. " alt="" coords="449,461,511,488"/>
 <area shape="rect" id="node18" href="$is__strings_8h.html#a65934258057b6113c133b243b0674c09" title="char_new" alt="" coords="297,512,362,539"/>

@@ -34,9 +34,9 @@ void ivec_get_s(int n, char **y, int *x);
  * convert itself to another vector
  */
 // Y=X
-void ivec_copy(int n, int *Y, const int *X);
+void ivec_copy(int n, int *Y, int *X);
 // Y[i]=X[I[i]], 0<=i<n
-void ivec_copy_index(int n, int *Y, const int *X, const int *I);
+void ivec_copy_index(int n, int *Y, int *X, int *I);
 
 /*
  * convert two vectors to themselves
@@ -66,7 +66,7 @@ void ivec_relocate(int n, int *X, int *I);
 // X[i] <=> X[j]
 void ivec_swap_at(int *X, int i, int j);
 // x[i] <=> x[I[i]]
-void ivec_swap_index(int n, int *x, const int *I);
+void ivec_swap_index(int n, int *x, int *I);
 // sort X as X[0] <= X[1] <= X[2] <= ... <= X[n-1]
 // if I==NULL, then I is not ussed.
 // if I!=NULL, then I is stored with sorted indexes
@@ -81,43 +81,43 @@ void ivec_sort_index(int *I, int n, int *X);
  * convert to itself to scalar
  */
 // max(X)
-int ivec_max(int n, const int *X);
+int ivec_max(int n, int *X);
 // max(X)
-int ivec_min(int n, const int *X);
+int ivec_min(int n, int *X);
 // sum(x)
-int ivec_sum(int n, const int *x);
+int ivec_sum(int n, int *x);
 // sum(x)
-double ivec_average(int n, const int *x);
+double ivec_average(int n, int *x);
 
 /*
  * convert to boolean
  */
 // X==Y
-int ivec_eq(int n, const int *X, const int *Y);
+int ivec_eq(int n, int *X, int *Y);
 // X!=Y
-int ivec_ne(int n, const int *X, const int *Y);
+int ivec_ne(int n, int *X, int *Y);
 // X<=>Y
-int ivec_cmp(int n, const int *X, int m, const int *Y);
+int ivec_cmp(int n, int *X, int m, int *Y);
 // x[i]>y for all i
-int ivec_all_gt(int n, const int *x, int y);
+int ivec_all_gt(int n, int *x, int y);
 // x[i]>=y for all i
-int ivec_all_ge(int n, const int *x, int y);
+int ivec_all_ge(int n, int *x, int y);
 // x[i]<y for all i
-int ivec_all_lt(int n, const int *x, int y);
+int ivec_all_lt(int n, int *x, int y);
 // x[i]<=y for all i
-int ivec_all_le(int n, const int *x, int y);
+int ivec_all_le(int n, int *x, int y);
 
 
 /*
  * index operations
  */
-void ivec_copy_index(int n, int *Y, const int *X, const int *I);
-int ivec_count_if(int n, const int *X, int value);
-int ivec_count_if_not(int n, const int *X, int value);
-int* ivec_allocate_index_if(int n, const int *X, int value, int *pm);
-int* ivec_allocate_index_if_not(int n, const int *X, int value, int *pm);
-int ivec_first_index_if(int n, const int *X, int value);
-int ivec_first_index_if_not(int n, const int *X, int value);
+void ivec_copy_index(int n, int *Y, int *X, int *I);
+int ivec_count_if(int n, int *X, int value);
+int ivec_count_if_not(int n, int *X, int value);
+int* ivec_allocate_index_if(int n, int *X, int value, int *pm);
+int* ivec_allocate_index_if_not(int n, int *X, int value, int *pm);
+int ivec_first_index_if(int n, int *X, int value);
+int ivec_first_index_if_not(int n, int *X, int value);
 
 
 /*

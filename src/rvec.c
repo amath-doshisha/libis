@@ -29,7 +29,7 @@
 #define FR(F) func_retain(F)
 #define RAp(X,Y)   ((X)=rallocate_prec(rget_prec(Y)))
 #define RAP(X,Y,N) ((X)=rallocate_prec(rvec_get_prec_max(N,Y)))
-#define RF(X)      ((X)=rfree(X))
+#define RF(X)      ((X)=rmfree(X))
 #define RVAp(X,Y,N){ X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
 #define RVF(X,N)   { X=rvec_free(N,X); }
 
@@ -83,7 +83,7 @@ rmulti **rvec_free(int n, rmulti **x)
 {
   int i;
   if(x==NULL){ return NULL; }
-  for(i=0; i<n; i++){ x[i]=rfree(x[i]); }
+  for(i=0; i<n; i++){ x[i]=rmfree(x[i]); }
   free(x);
   x=NULL;
   return x;
@@ -251,7 +251,7 @@ void rvec_print_bin(int n, rmulti **x, const char *name, int digits)
     rdiv_2exp(a,x[i],rget_exp(x[i])-1);
     mpfr_printf(format,a,rget_exp(x[i])-1);
   }
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**
@@ -344,7 +344,7 @@ void rvec_save_log2_abs(int n, rmulti **x,int offset, int digits, char* fmt, ...
   }
   // close
   fclose(fid);
-  value=rfree(value);
+  value=rmfree(value);
 }
 
 /**

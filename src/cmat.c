@@ -107,7 +107,7 @@ cmulti **cmat_free(int LDA, int n, cmulti **A)
   if(A==NULL) return NULL;
   for(j=0; j<n; j++){
     for(i=0; i<LDA; i++){
-      MAT(A,i,j,LDA)=cfree(MAT(A,i,j,LDA));
+      MAT(A,i,j,LDA)=cmfree(MAT(A,i,j,LDA));
     }
   }
   free(A);
@@ -1284,7 +1284,7 @@ void cmat_rank1op(int m, int n, cmulti **B, int LDB, cmulti **A, int LDA, cmulti
       cadd_cc(MAT(B,i,j,LDB),MAT(A,i,j,LDA),value); // B(i,j)=A(i,j)+a*x[i]*conj(y[j])
     }
   }
-  value=cfree(value);
+  value=cmfree(value);
 }
 
 /**
@@ -1610,7 +1610,7 @@ void cmat_max_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
     }
   }
   rsqrt_r(value,value); // value=sqrt(value)
-  a=rfree(a);            // free
+  a=rmfree(a);            // free
 }
 
 /**
@@ -1632,7 +1632,7 @@ void cmat_max_absc(rmulti *value, int m, int n, cmulti **A, int LDA)
       if(gt_rr(a,value)){ rset_r(value,a); }
     }
   }
-  a=rfree(a);
+  a=rmfree(a);
 }
 
 /**
@@ -1653,7 +1653,7 @@ void cmat_min_abs(rmulti *value, int m, int n, cmulti **A, int LDA)
     }
   }
   rsqrt_r(value,value); // value=sqrt(value)
-  a=rfree(a);         // free
+  a=rmfree(a);         // free
 }
 
 /**

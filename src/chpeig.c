@@ -20,9 +20,9 @@
 /////////////////////////////////////////////////////////
 
 #define RA(X,P) ((X)=rallocate_prec(prec))
-#define RF(X)   ((X)=rfree(X))
+#define RF(X)   ((X)=rmfree(X))
 #define CA(X,P) ((X)=callocate_prec(prec))
-#define CF(X)   ((X)=cfree(X))
+#define CF(X)   ((X)=cmfree(X))
 #define RVA(X,N,P){ X=rvec_allocate_prec(N,P); }
 #define RVF(X,N)  { X=rvec_free(N,X); }
 #define CVA(X,N,P){ X=cvec_allocate_prec(N,P); }
@@ -52,7 +52,7 @@ void chpeig_jacobi_mat(int n, cmulti **JM, int LDJM, cmulti **A, int LDA, cmulti
   cmat_diag_sub_c(n,n,JM,LDJM,A,LDA,lambda); // JM=A-lambda*I
   cinv_c(a,C); cneg_c(a,a);                      // a=-1/C
   cmat_rank1op(n,n,JM,LDJM,JM,LDJM,a,x,w);   // JM=A-lambda*I-(1/C)*x*w'
-  a=cfree(a);
+  a=cmfree(a);
 }
 
 enum { CHPEIG_STATUS_PRE=0, CHPEIG_STATUS_CONV, CHPEIG_STATUS_END };
@@ -222,7 +222,7 @@ int chpeig(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **A, int LDA, int
   H=cmat_free(LDH,n,H);
   z=cvec_free(n,z); 
   alpha=rvec_free(n,alpha);
-  E=rfree(E);
+  E=rmfree(E);
   // done 
   return ret;
 }
@@ -405,11 +405,11 @@ int chpeig_verify(int n, cmulti **X, int LDX, cmulti **Lambda, cmulti **XE, int 
   E_K=cvec_free(n+1,E_K);
   z=cvec_free(n,z); 
   alpha=rvec_free(n,alpha);
-  E=rfree(E);
-  L=rfree(L);
-  XEmax=rfree(XEmax);
-  LEmax=rfree(LEmax);
-  LEmaxRel=rfree(LEmaxRel);
+  E=rmfree(E);
+  L=rmfree(L);
+  XEmax=rmfree(XEmax);
+  LEmax=rmfree(LEmax);
+  LEmaxRel=rmfree(LEmaxRel);
   // done 
   return ret;
 }

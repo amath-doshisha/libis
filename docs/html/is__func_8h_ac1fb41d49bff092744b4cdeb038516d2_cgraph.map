@@ -52,7 +52,7 @@
 <area shape="rect" id="node96" href="$func__vec_8c.html#a71d43841493f4e1a9add6261c7b1546d" title="func_is_cmat" alt="" coords="243,1171,324,1197"/>
 <area shape="rect" id="node97" href="$func__power_8c.html#a24040e2141be0e19cfcbe6ead56bdfdb" title="func_has_power" alt="" coords="380,563,476,589"/>
 <area shape="rect" id="node98" href="$func__power_8c.html#aee3896ff0f55aea40cd85109e1f9ab91" title="func_power" alt="" coords="247,613,320,640"/>
-<area shape="rect" id="node99" href="$cmulti_8c.html#a192d1bb4175699986d09eca851be78f9" title="cmulti型の終了処理. " alt="" coords="261,3400,305,3427"/>
+<area shape="rect" id="node99" href="$cmulti_8c.html#a9f7ae56106edf0c6ebeed23b068277cf" title="cmulti型の終了処理. " alt="" coords="257,3400,309,3427"/>
 <area shape="rect" id="node3" href="$is__rmulti_8h.html#aeee0c826203695436900dc02890f433c" title="rmulti型の精度を指定しての新規生成. " alt="" coords="385,5,471,32"/>
 <area shape="rect" id="node5" href="$is__rmulti_8h.html#ad9bc8d534620527dc3c46ef4c9d04442" title="rmulti型の浮動小数点数の精度(ビット数)を取得. " alt="" coords="396,56,460,83"/>
 <area shape="rect" id="node7" href="$is__strings_8h.html#a6f914569f2c603e37bfa9bf623e36838" title="char_eq" alt="" coords="533,765,591,792"/>
@@ -97,5 +97,5 @@
 <area shape="rect" id="node87" href="$is__rmulti_8h.html#aca6166679dd83f93205513025688bd73" title="rmulti型の計算 y=arccosh(x) " alt="" coords="397,2640,459,2667"/>
 <area shape="rect" id="node89" href="$is__rmulti_8h.html#a0e0d43490d6b369d81f1ebd683c57f13" title="rmulti型の計算 y=arctanh(x) " alt="" coords="399,1728,457,1755"/>
 <area shape="rect" id="node90" href="$cmulti_8c.html#a64ba51fd841a0f97adfee956e69ef8b4" title="z=x/y " alt="" coords="400,1677,456,1704"/>
-<area shape="rect" id="node100" href="$is__rmulti_8h.html#abd2ceb7eaa6481640a45357d44034950" title="rmulti型の終了処理. " alt="" coords="407,3400,449,3427"/>
+<area shape="rect" id="node100" href="$is__rmulti_8h.html#a67f0c0c6844ec4521f39a04b702c3609" title="rmulti型の終了処理. " alt="" coords="403,3400,453,3427"/>
 </map>

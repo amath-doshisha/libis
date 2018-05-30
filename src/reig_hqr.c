@@ -13,7 +13,7 @@
  */
 
 #define RA(X,P) ((X)=rallocate_prec(P));
-#define RF(X) ((X)=rfree(X))
+#define RF(X) ((X)=rmfree(X))
 #define NAME_HQR "reig_hqr"
 
 /** @name 固有値計算に関する関数 */

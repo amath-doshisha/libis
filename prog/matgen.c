@@ -8,7 +8,8 @@
 #define PROG "matgen"
 #define MAX_LENGTH 100000
 
-#define ENTRY_DEFAULT "1,2,0,1.5"
+double ENTRY_DEFAULT[]={1.0, 2.0, 0.0, 1.5};
+double ENTRY_DEFAULT_SIZE=4;
 #define ENTRY_DEFAULT_OFFSET 1
 
 void usage()
@@ -86,7 +87,8 @@ int main(int argc, char *argv[])
   fname=char_new("",NULL);
   matname=char_new(MATNAME_DEFAULT,NULL);
   strcpy(dir,"");
-  entry=dvec_allocate_s(ENTRY_DEFAULT,&k);
+  entry=dvec_allocate(ENTRY_DEFAULT_SIZE);
+  dvec_set_dvec(ENTRY_DEFAULT_SIZE,entry,ENTRY_DEFAULT);
 
   // options
   i=1;
@@ -103,7 +105,7 @@ int main(int argc, char *argv[])
     else if(STR_EQ(argv[i],"-toeplitz"))          { matname=char_renew(matname,"toeplitz",NULL); }
     else if(STR_EQ(argv[i],"-frank"))             { matname=char_renew(matname,"frank",NULL); }
     else if(STR_EQ(argv[i],"-ipjfact"))           { matname=char_renew(matname,"ipjfact",NULL); }
-    else if(STR_EQ(argv[i],"-entry") && i+1<argc) { ++i; entry=dvec_free(entry); entry=dvec_allocate_s(argv[i],&k); }
+    //    else if(STR_EQ(argv[i],"-entry") && i+1<argc) { ++i; entry=dvec_free(entry); entry=dvec_allocate_s(argv[i],&k); }
     else if(STR_EQ(argv[i],"-offset") && i+1<argc){ ++i; offset=atoi(argv[i]); }
     else if(STR_EQ(argv[i],"-param") && i+1<argc) { ++i; param=atoi(argv[i]); }
     else                                          { usage(); }
@@ -125,7 +127,7 @@ int main(int argc, char *argv[])
   else{ printf("Error!\n"); exit(0); }
 
   // show
-  if(debug>1 || strlen(fname)<=0){ dmat_print(m,n,A,m,"A=","f",2); }
+  if(debug>1 || strlen(fname)<=0){ dmat_print(m,n,A,m,"A=",'f',2); }
 
   // save
   if(strlen(fname)>0){

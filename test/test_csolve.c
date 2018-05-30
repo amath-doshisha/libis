@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 
 
   // free
-  E=rfree(E);
+  E=rmfree(E);
   A=cmat_free(LDA,n,A);
   A0=cmat_free(LDA,n,A0);
   b=cvec_free(n,b);

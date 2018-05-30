@@ -16,17 +16,17 @@
 #define FR(F) func_retain(F)
 #define RAp(X,Y)   ((X)=rallocate_prec(rget_prec(Y)))
 #define RAP(X,Y,N) ((X)=rallocate_prec(rvec_get_prec_max(N,Y)))
-#define RF(X)      ((X)=rfree(X))
+#define RF(X)      ((X)=rmfree(X))
 #define RVAp(X,Y,N){ X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
 #define RVF(X,N)   { X=rvec_free(N,X); }
 #define RA(X,Y)      ((X)=rallocate_prec(rget_prec(Y)))
 #define RA2(X,Y0,Y1) ((X)=rallocate_prec(MAX2(rget_prec(Y0),rget_prec(Y1))))
-#define RF(X)        ((X)=rfree(X))
+#define RF(X)        ((X)=rmfree(X))
 #define RVA(X,Y,N)   { X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
 #define RVF(X,N)     { X=rvec_free(N,X); }
-#define RF(X)      ((X)=rfree(X))
+#define RF(X)      ((X)=rmfree(X))
 #define CA(X,P)    ((X)=callocate_prec(P))
-#define CF(X)      ((X)=cfree(X))
+#define CF(X)      ((X)=cmfree(X))
 #define CVA(X,N,P) { X=cvec_allocate_prec(N,P); }
 #define CVF(X,N)   { X=cvec_free(N,X); }
 #define RVA(X,Y,N) { X=rvec_allocate_prec(N,rvec_get_prec_max(N,Y)); }
@@ -294,9 +294,9 @@ void cvec_func(cmulti *y, func_t *f, int n, cmulti **x)
   else                       { cset_nan(a); }
   if(func_has_power(f))      { cpow_c(z,z,func_power(f)); }
   cset_c(y,z);
-  a=cfree(a);
-  b=cfree(b);
-  z=cfree(z);
+  a=cmfree(a);
+  b=cmfree(b);
+  z=cmfree(z);
 }
 
 /**

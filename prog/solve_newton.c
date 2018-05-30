@@ -32,7 +32,7 @@ void usage()
   exit(0);
 }
 
-int main(int argc, const char *argv[])
+int main(int argc, char *argv[])
 {
   int debug=1,i,m,step_max=-1,prec=53,kprec=-1,digits=15,info;
   double x0[]={1,0.5};
@@ -73,8 +73,8 @@ int main(int argc, const char *argv[])
   RVA(x,m,prec);
   RVA(e,m,kprec);
   rvec_set_nan(m,x);
-  rvec_set_d(m,x,x1);
-  rvec_set_d(m,x,x0);
+  rvec_set_dvec(m,x,x1);
+  rvec_set_dvec(m,x,x0);
 
   // message
   if(debug>=1){
@@ -86,7 +86,7 @@ int main(int argc, const char *argv[])
     }else{
       printf("Newton_Steps_Max: %d\n",step_max);
     }
-    rvec_print(m,x,"Initial_Vector:",format,digits);
+    rvec_print(m,x,"Initial_Vector:",format[0],digits);
     printf("Error_Estimate_Precision: %d\n",kprec);
   }
 
@@ -95,7 +95,7 @@ int main(int argc, const char *argv[])
 
   // message
   if(debug>=1 || strlen(out_x)<=0){
-    rvec_print(m,x,"Solution:",format,digits);
+    rvec_print(m,x,"Solution:",format[0],digits);
   }
   
   // error
@@ -107,7 +107,7 @@ int main(int argc, const char *argv[])
     if(info){ print_red(); printf("failed"); }  else{ print_green(); printf("succeeded"); }
     print_reset();
     printf("\n");
-    rvec_print(m,e,"Error_Bound:","e",3);
+    rvec_print(m,e,"Error_Bound:",'e',3);
   }
 
   // save

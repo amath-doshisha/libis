@@ -102,10 +102,10 @@ int main(int argc, char *argv[])
   }
   if(strlen(out_fname)<=0 || debug>1){
     printf("Input_Matrix:\n");
-    if(dA!=NULL){ dmat_print(m,n,dA,m,NULL,format,digits); }
-    if(zA!=NULL){ zmat_print(m,n,zA,m,NULL,format,digits); }
-    if(rA!=NULL){ rmat_print(m,n,rA,m,NULL,format,digits); }
-    if(cA!=NULL){ cmat_print(m,n,cA,m,NULL,format,digits); }
+    if(dA!=NULL){ dmat_print(m,n,dA,m,NULL,format[0],digits); }
+    if(zA!=NULL){ zmat_print(m,n,zA,m,NULL,format[0],digits); }
+    if(rA!=NULL){ rmat_print(m,n,rA,m,NULL,format[0],digits); }
+    if(cA!=NULL){ cmat_print(m,n,cA,m,NULL,format[0],digits); }
   }
   if(strlen(out_fname)<=0 || debug>0){
     printf("Output_Type: %s\n",type_name[type]);
@@ -113,10 +113,10 @@ int main(int argc, char *argv[])
   }
   if(strlen(out_fname)<=0 || debug>1){
     printf("Output_Matrix:\n");
-    if(dB!=NULL){ dmat_print(n,m,dB,n,NULL,format,digits); }
-    if(zB!=NULL){ zmat_print(n,m,zB,n,NULL,format,digits); }
-    if(rB!=NULL){ rmat_print(n,m,rB,n,NULL,format,digits); }
-    if(cB!=NULL){ cmat_print(n,m,cB,n,NULL,format,digits); }
+    if(dB!=NULL){ dmat_print(n,m,dB,n,NULL,format[0],digits); }
+    if(zB!=NULL){ zmat_print(n,m,zB,n,NULL,format[0],digits); }
+    if(rB!=NULL){ rmat_print(n,m,rB,n,NULL,format[0],digits); }
+    if(cB!=NULL){ cmat_print(n,m,cB,n,NULL,format[0],digits); }
   }
 
   // save
