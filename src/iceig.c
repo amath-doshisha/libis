@@ -100,6 +100,9 @@ int iceig_1pair_krawczyk(int n, cmulti **e, cmulti **A, int LDA, cmulti **x, cmu
   // begin
   m=n+1;
   prec=cvec_get_prec_max(m,e);
+  if(debug>0){
+    printf("prec=%d\n",prec);
+  }
   CMA(J,m,m,prec); CMA(J0,m,m,prec); CMA(J1,m,m,prec); CMA(R,m,m,prec); CMA(M0,m,m,prec); CMA(M1,m,m,prec);
   CVA(F,m,prec); CVA(F0,m,prec); CVA(F1,m,prec); CVA(X0,m,prec); CVA(X1,m,prec); CVA(H0,m,prec); CVA(H1,m,prec);
   debug=0;

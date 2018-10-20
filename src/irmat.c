@@ -53,16 +53,14 @@ void irmat_copy(int m, int n, rmulti **B0, int LDB0, rmulti **B1, int LDB1, rmul
  */
 void irmat_print(int m, int n, rmulti **A0, int LDA0, rmulti **A1, int LDA1, char *name, char format, int digits)
 {
-  int LDA;
   char **s=NULL;
   if(A0==NULL || A1==NULL){
     if(name!=NULL){ printf("%s=NULL\n",name); }
     else          { printf("NULL\n"); }
     return;
   }
-  LDA=LDA0; LDA=LDA1;
   s=svec_allocate(m*n);
-  irmat_get_s(m,n,s,m,A0,LDA0,A0,LDA0,format,digits);
+  irmat_get_s(m,n,s,m,A0,LDA0,A1,LDA1,format,digits);
   smat_print(m,n,s,m,name);
   s=svec_free(m*n,s);
 }

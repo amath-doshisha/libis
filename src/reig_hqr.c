@@ -29,7 +29,7 @@
  */
 void reig_hqr(int n, cmulti **lambda, rmulti **A, int LDA, int debug)
 {
-  int prec=53;
+  int prec;
   rmulti **B=NULL;
   // allocate
   prec=cvec_get_prec_max(n,lambda);
