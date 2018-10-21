@@ -58,6 +58,12 @@ void dvec_quick_sort(int n, double *x, int *I, int left, int right); // Don't ca
 void dvec_sort_index(int *I, int n, double *X); // store the list of indexes, x is not destroyed
 
 /*
+ * member variables
+ */
+int dvec_has_nan(int n, double *x);
+int dvec_has_negative(int n, double *x);
+
+/*
  * y=f(x)
  */
 void dvec_copy_dvec(int n, double *y, double *x);                // y=x
@@ -82,6 +88,7 @@ double dmax_abs_dvec(int n, double *x);                          // y=max(abs(x)
 double dmin_abs_dvec(int n, double *x);                          // y=min(abs(x))
 double dmax_abs_dvec_index(int n, double *x, int *I);            // y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL
 double dmin_abs_dvec_index(int n, double *x, int *I);            // y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
+void dvec_sqrt_dvec(int n, double *y, double *x);                // y=sqrt(x)
 
 /*
  * z=f(x,y)

@@ -912,6 +912,24 @@ void cvec_absc_cvec(int n, cmulti **y, cmulti **x)
   for(i=0; i<n; i++){ cabsc_c(y[i],x[i]); }
 }
 
+/**
+ @brief rmulti型ｍのベクトルの要素の平方根 y=sqrt(x)
+ */
+void cvec_sqrt_cvec(int n, cmulti **y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ csqrt_c(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型ｍのベクトルの要素の平方根 y=sqrt(x)
+ */
+void cvec_sqrt_rvec(int n, cmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ csqrt_r(y[i],x[i]); }
+}
+
 /////////////////////////////////////////////////////
 
 /**

@@ -309,6 +309,33 @@ void dvec_sort_index(int *I, int n, double *X)
 
 /** @} */
 
+/////////////////////////////////////////////////////
+
+/** @name double型のベクトルのメンバ変数に関する関数 */
+/** @{ */
+
+/**
+ @brief double型のベクトルがNaNを含むかの判定.
+ */
+int dvec_has_nan(int n, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ if(isnan(x[i])){ return 1; } }
+  return 0;
+}
+
+/**
+ @brief double型のベクトルが負の値の要素を含むかの判定.
+ */
+int dvec_has_negative(int n, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ if(x[i]<0){ return 1; } }
+  return 0;
+}
+
+/** @} */
+
 /////////////////////////////////////////////////////////////
 
 /** @name double型ベクトルの関数 y=f(x) */
@@ -555,6 +582,15 @@ double dmin_dvec(int n, double *x)
     if(x[i]<value) value=x[i];
   }
   return value;
+}
+
+/**
+ @brief double型ｍのベクトルの要素の平方根 y=sqrt(x)
+ */
+void dvec_sqrt_dvec(int n, double *y, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=sqrt(x[i]); }
 }
 
 /** @} */

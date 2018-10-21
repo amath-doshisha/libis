@@ -134,6 +134,9 @@ void rmin_abs_cvec_index(rmulti *y, int n, cmulti **x, int *I);         // y=min
 void rmax_max_absc_cvec(rmulti *y, int n, cmulti **x);                  // y=max(real(absc(x)),imag(absc(x)))
 void cvec_mul_2exp_cvec(int n, cmulti **y, cmulti **x, int pr, int pi); // y=x*2^p
 void cvec_div_2exp_cvec(int n, cmulti **y, cmulti **x, int pr, int pi); // y=x/2^p
+void cvec_sqrt_cvec(int n, cmulti **y, cmulti **x);                     // y=sqrt(x)
+void cvec_sqrt_rvec(int n, cmulti **y, rmulti **x);                     // y=sqrt(x)
+
 
 /*
  * z=f(x,y)

@@ -207,6 +207,16 @@ int rvec_has_nan(int n, rmulti **x)
   return 0;
 }
 
+/**
+ @brief rmulti型のベクトルが負の値の要素を含むかの判定.
+ */
+int rvec_has_negative(int n, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ if(ris_negative(x[i])){ return 1; } }
+  return 0;
+}
+
 /** @} */
 
 ////////////////////////////////////////////////////////////////////////
@@ -820,6 +830,15 @@ void rvec_abs_rvec(int n, rmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ rabs_r(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型ｍのベクトルの要素の平方根 y=sqrt(x)
+ */
+void rvec_sqrt_rvec(int n, rmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ rsqrt_r(y[i],x[i]); }
 }
 
 /////////////////////////////////////////////////////////////

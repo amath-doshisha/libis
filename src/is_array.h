@@ -143,7 +143,9 @@ array *array_get_complex2(array *xr, array *xi); // y=complex2(xr,xi)
 /*
  * operatior for one argumentr
  */
+array *array_neg(array *x);  // y=-x
 array *array_conj(array *x); // y=conj(x)
+array *array_sqrt(array *x); // y=sqrt(x)
 
 /*
  * operatior for two arguments

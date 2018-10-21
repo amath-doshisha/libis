@@ -637,6 +637,24 @@ dcomplex zvec_avarage(int n, dcomplex *x)
   return value;
 }
 
+/**
+ @brief dcomplex型ｍのベクトルの要素の平方根 y=sqrt(x)
+ */
+void zvec_sqrt_zvec(int n, dcomplex *y, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=zsqrt_z(x[i]); }
+}
+
+/**
+ @brief dcomplex型ｍのベクトルの要素の平方根 y=sqrt(x)
+ */
+void zvec_sqrt_dvec(int n, dcomplex *y, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=zsqrt_d(x[i]); }
+}
+
 /** @} */
 
 /////////////////////////////////////////////////////

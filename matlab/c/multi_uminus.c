@@ -1,6 +1,22 @@
 /**
- * @brief uminus
+ * @brief y=uminus(x), y=-x
  */
+void multi_uminus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+{
+  array *x=NULL,*y=NULL;
+  // intput
+  if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
+  x=mxArray_to_array(prhs[N0]);
+  // y=neg(x)
+  y=array_neg(x);
+  // output
+  plhs[0]=array_to_mxArray(y);
+  x=array_free(x);
+  y=array_free(y);
+  return;
+}
+
+/*
 void multi_uminus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   array *x=NULL,*y=NULL;
@@ -23,5 +39,6 @@ void multi_uminus(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   y=array_free(y);
   return;
 }
+*/
 
 //EOF

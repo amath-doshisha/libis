@@ -83,6 +83,7 @@ void rvec_get_exp(int n, int *p, rmulti **x);
 int  rvec_get_exp_max(int n, rmulti **x);
 int  rvec_is_number(int n, rmulti **x);
 int  rvec_has_nan(int n, rmulti **x);
+int  rvec_has_negative(int n, rmulti **x);
 
 /*
  * y=f(x)
@@ -115,6 +116,7 @@ void rmax_abs_rvec_index(rmulti *y, int n, rmulti **x, int *I);    // y=max(abs(
 void rmin_abs_rvec_index(rmulti *y, int n, rmulti **x, int *I);    // y=min(abs(x))
 void rvec_mul_2exp_rvec(int n, rmulti **y, rmulti **x, int p);     // y=x*2^p
 void rvec_div_2exp_rvec(int n, rmulti **y, rmulti **x, int p);     // y=x/2^p
+void rvec_sqrt_rvec(int n, rmulti **y, rmulti **x);                // y=sqrt(x)
 
 /*
  * z=f(x,y)

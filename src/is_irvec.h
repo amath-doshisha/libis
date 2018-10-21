@@ -58,6 +58,7 @@ void irvec_mid_rad_rvec(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti *
 void irvec_mr_rvec(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1);      // [m-r,m+r]=[x0,x1]
 void irvec_mid_rvec(int n, rmulti **mid, rmulti **x0, rmulti **x1);                   // [m-r,m+r]=[x0,x1]
 void irvec_rad_rvec(int n, rmulti **rad, rmulti **x0, rmulti **x1);                   // [m-r,m+r]=[x0,x1]
+void irvec_sqrt_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1);      // [y0,y1]=sqrt([x0,x1])
 
 /*
  * z=f(x,y)

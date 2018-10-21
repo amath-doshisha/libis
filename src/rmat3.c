@@ -683,7 +683,7 @@ void rmat3_sqrt(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A,
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	rsqrt_r(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
+        rsqrt_r(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }

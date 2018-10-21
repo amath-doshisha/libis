@@ -20,7 +20,7 @@ void multi_set_zeros(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     dim[1]=dim[0];
   }else if(nrhs-N0==2 && IS_DUBL(nrhs,prhs,N0+1) && IS_ROW(nrhs,prhs,N0+1)){
     // only a row vector
-    ndim=mxGetNumberOfDimensions(prhs[N0+1]);
+    ndim=mxGetN(prhs[N0+1]);
     dim=ivec_allocate(ndim);
     for(i=0; i<ndim; i++){ dim[i]=GET_DOUBLE(prhs[N0+1])[i]; }
   }else if(nrhs-N0>=3 && IS_NUMR(nrhs,prhs,N0+1)){

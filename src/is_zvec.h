@@ -96,6 +96,8 @@ double dmin_abs_zvec(int n, dcomplex *x);                            // y=min(ab
 double dmax_abs_zvec_index(int n, dcomplex *x, int *I);              // y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL
 double dmin_abs_zvec_index(int n, dcomplex *x, int *I);              // y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
 double dmax_max_absc_zvec(int n, dcomplex *x);                       // y=max(real(absc(x)),imag(absc(x)))
+void zvec_sqrt_zvec(int n, dcomplex *y, dcomplex *x);                // y=sqrt(x)
+void zvec_sqrt_dvec(int n, dcomplex *y, double *x);                  // y=sqrt(x)
 
 /*
  * z=f(x,y)

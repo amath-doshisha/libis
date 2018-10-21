@@ -286,6 +286,15 @@ void irvec_mr_rvec(int n, rmulti **mid, rmulti **rad, rmulti **x0, rmulti **x1)
   for(i=0; i<n; i++){ irmr(mid[i],rad[i],x0[i],x1[i]); }
 }
 
+/**
+ @brief irmulti型のベクトルの平方根 [y0,y1]=sqrt([x0,x1])
+ */
+void irvec_sqrt_rvec(int n, rmulti **y0, rmulti **y1, rmulti **x0, rmulti **x1)
+{
+  int i;
+  for(i=0; i<n; i++){ irsqrt_r(y0[i],y1[i],x0[i],x1[i]); }
+}
+
 ///////////////////////////////////////////////////////
 
 /**

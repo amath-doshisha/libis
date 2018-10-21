@@ -13,6 +13,33 @@
 
 /////////////////////////////////////////////
 
+/** @name dcomplex型の設定に関する関数 */
+/** @{ */
+
+/**
+ @brief z=r*exp(i*theta)
+ */
+void zget_polar(double *r, double *theta, dcomplex z)
+{
+  (*r)=dabs_z(z);
+  (*theta)=atan2(Z_I(z),Z_R(z));
+}
+
+/**
+ @brief z=r*exp(i*theta)
+ */
+dcomplex zset_polar(double r, double theta)
+{
+  dcomplex z;
+  Z_R(z)=r*cos(theta);
+  Z_I(z)=r*sin(theta);
+  return z;
+}
+
+/** @} */
+
+/////////////////////////////////////////////
+
 /** @name dcomplex型に関する関数 y=f(x) */
 /** @{ */
 
@@ -64,6 +91,38 @@ dcomplex zinv_d(double x)
 }
 
 /**
+ @brief y=abs(x)
+ */
+double dabs_z(dcomplex x)
+{
+  return sqrt(Z_R(x)*Z_R(x)+Z_I(x)*Z_I(x));
+}
+
+/**
+ @brief y=abs(x)
+ */
+double dabs_d(double x)
+{
+  return fabs(x);
+}
+
+/**
+ @brief y=abs(x)^2
+ */
+double dabs2_z(dcomplex x)
+{
+  return Z_R(x)*Z_R(x)+Z_I(x)*Z_I(x);
+}
+
+/**
+ @brief y=abs(x)^2
+ */
+double dabs2_d(double x)
+{
+  return x*x;
+}
+
+/**
  @brief y=x/|x|
  */
 dcomplex znormalize_z(dcomplex x)
@@ -100,6 +159,34 @@ dcomplex dnormalize_d(double x)
   return z;
 }
 
+
+/**
+ @brief y=sqrt(x)
+ */
+double dsqrt_d(double x)
+{
+  return sqrt(x);
+}
+
+
+/**
+ @brief y=sqrt(x)
+ */
+dcomplex zsqrt_d(double x)
+{
+  dcomplex y;
+  if(x>=0){ Z_R(y)=sqrt(x); Z_I(y)=0; }
+  else    { Z_R(y)=0;       Z_I(y)=sqrt(-x); }
+  return y;
+}
+
+/**
+ @brief y=sqrt(x)
+ */
+dcomplex zsqrt_z(dcomplex x)
+{
+  return zpow_zd(x,0.5);
+}
 
 /** @} */
 
@@ -274,6 +361,20 @@ dcomplex zdiv_dz(double x, dcomplex y)
   den=Z_R(y)*Z_R(y)+Z_I(y)*Z_I(y);
   Z_R(z)= x*Z_R(y)/den;
   Z_I(z)=-x*Z_I(y)/den;
+  return z;
+}
+
+/**
+ @brief z=x^y
+ */
+dcomplex zpow_zd(dcomplex x, double y)
+{
+  dcomplex z;
+  double r,theta;
+  zget_polar(&r,&theta,x); // x=r*exp(i*theta)
+  r=pow(r,y);              // r=r^y
+  theta=theta*y;           // theta=theta*y
+  z=zset_polar(r,theta);   // z=r^y*cos(theta*y)+i*r^y*sin(theta*y)
   return z;
 }
 
