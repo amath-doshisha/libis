@@ -924,6 +924,11 @@ array *array_sqrt(array *x)
     y=array_allocate('R',ARRAY_NDIM(x),ARRAY_DIM_P(x));
     irvec_sqrt_rvec(ARRAY_SIZE(y),ARRAY_P0_R(y),ARRAY_P1_R(y),ARRAY_P0_R(x),ARRAY_P1_R(x));
   }
+  if(ARRAY_TYPE(x)=='C'){
+    y=array_allocate('C',ARRAY_NDIM(x),ARRAY_DIM_P(x));
+    cvec_set_nan(ARRAY_SIZE(y),ARRAY_P0_C(y));
+    cvec_set_nan(ARRAY_SIZE(y),ARRAY_P1_C(y));
+  }
   return y;
 }
 
