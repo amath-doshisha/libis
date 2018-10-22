@@ -4,6 +4,22 @@
 void multi_log10(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
   array *x=NULL,*y=NULL;
+  // intput
+  if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
+  x=mxArray_to_array(prhs[N0]);
+  // y=log10(x)
+  y=array_log10(x);
+  // output
+  plhs[0]=array_to_mxArray(y);
+  x=array_free(x);
+  y=array_free(y);
+  return;
+}
+
+/*
+void multi_log10(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+{
+  array *x=NULL,*y=NULL;
   int info=-1;
   if(nlhs>1){ mexErrMsgIdAndTxt("MATLAB:multi_mex:maxlhs","Too many output arguments."); }
   if(!(IS_STRT(nrhs,prhs,N0))){ MATLAB_ERROR("multi_log10: The 1st-arg should be Struct."); }
@@ -21,5 +37,6 @@ void multi_log10(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   y=array_free(y);
   return;
 }
+*/
 
 //EOF

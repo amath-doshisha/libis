@@ -89,6 +89,8 @@ double dmin_abs_dvec(int n, double *x);                          // y=min(abs(x)
 double dmax_abs_dvec_index(int n, double *x, int *I);            // y=max(abs(x)), (*I)=k where k=max{ k | abs(x[k]) } unless I==NULL
 double dmin_abs_dvec_index(int n, double *x, int *I);            // y=min(abs(x)), (*I)=k where k=min{ k | abs(x[k]) } unless I==NULL
 void dvec_sqrt_dvec(int n, double *y, double *x);                // y=sqrt(x)
+void dvec_log_dvec(int n, double *y, double *x);                 // y=log(x)
+void dvec_log10_dvec(int n, double *y, double *x);               // y=log10(x)
 
 /*
  * z=f(x,y)

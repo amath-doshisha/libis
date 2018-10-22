@@ -736,6 +736,32 @@ void clog_c(cmulti *y, cmulti *x)
 }
 
 /**
+ @brief cmulti型の計算 y=log10(x)
+ */
+void clog10_r(cmulti *y, rmulti *x)
+{
+  cmulti *a=NULL;
+  CAc(a,y);
+  cset_r(a,x);
+  clog10_c(y,a);
+  CF(a);
+}
+
+/**
+ @brief cmulti型の計算 y=log10(x)
+ */
+void clog10_c(cmulti *y, cmulti *x)
+{
+  rmulti *r=NULL,*theta=NULL,*a=NULL;
+  RAc(r,y); RAc(theta,y); RAc(a,y);
+  cget_polar(r,theta,x);   // x=r*exp(i*theta)
+  rlog10_r(C_R(y),r);      // y=(log(r)+i*theta)/log(10)
+  rlog_d(a,10);            // a=log(10)
+  rdiv_rr(C_I(y),theta,a); // y=(log(r)+i*theta)/log(10)
+  RF(r); RF(theta); RF(a);
+}
+
+/**
  @brief cmulti型の計算 y=sin(x)
 */
 void csin_c(cmulti *y, cmulti *x)

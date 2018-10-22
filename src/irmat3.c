@@ -294,22 +294,6 @@ void irmat3_abs(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC
   }
 }
 
-
-/**
- @brief 3次元配列の平方根 C=sqrt(A).
- */
-void irmat3_sqrt(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2)
-{
-  int i,j,k;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-	irsqrt_r(MAT3(C0,i,j,k,LDC1,LDC2),MAT3(C1,i,j,k,LDC1,LDC2),MAT3(A0,i,j,k,LDA1,LDA2),MAT3(A1,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-}
-
 /**
  @brief irmulti型の3次元配列の和 B=sum(A).
  */

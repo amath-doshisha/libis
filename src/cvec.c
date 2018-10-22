@@ -913,7 +913,7 @@ void cvec_absc_cvec(int n, cmulti **y, cmulti **x)
 }
 
 /**
- @brief rmulti型ｍのベクトルの要素の平方根 y=sqrt(x)
+ @brief rmulti型のベクトルの要素の平方根 y=sqrt(x)
  */
 void cvec_sqrt_cvec(int n, cmulti **y, cmulti **x)
 {
@@ -922,12 +922,48 @@ void cvec_sqrt_cvec(int n, cmulti **y, cmulti **x)
 }
 
 /**
- @brief rmulti型ｍのベクトルの要素の平方根 y=sqrt(x)
+ @brief rmulti型のベクトルの要素の平方根 y=sqrt(x)
  */
 void cvec_sqrt_rvec(int n, cmulti **y, rmulti **x)
 {
   int i;
   for(i=0; i<n; i++){ csqrt_r(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの要素の対数 y=log(x)
+ */
+void cvec_log_cvec(int n, cmulti **y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ clog_c(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの要素の対数 y=log(x)
+ */
+void cvec_log_rvec(int n, cmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ clog_r(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの要素の対数 y=log10(x)
+ */
+void cvec_log10_cvec(int n, cmulti **y, cmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ clog10_c(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型のベクトルの要素の対数 y=log10(x)
+ */
+void cvec_log10_rvec(int n, cmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ clog10_r(y[i],x[i]); }
 }
 
 /////////////////////////////////////////////////////

@@ -117,6 +117,8 @@ void rmin_abs_rvec_index(rmulti *y, int n, rmulti **x, int *I);    // y=min(abs(
 void rvec_mul_2exp_rvec(int n, rmulti **y, rmulti **x, int p);     // y=x*2^p
 void rvec_div_2exp_rvec(int n, rmulti **y, rmulti **x, int p);     // y=x/2^p
 void rvec_sqrt_rvec(int n, rmulti **y, rmulti **x);                // y=sqrt(x)
+void rvec_log_rvec(int n, rmulti **y, rmulti **x);                 // y=log(x)
+void rvec_log10_rvec(int n, rmulti **y, rmulti **x);               // y=log10(x)
 
 /*
  * z=f(x,y)

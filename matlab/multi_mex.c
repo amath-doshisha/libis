@@ -73,6 +73,10 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_complex.c"
 #include"./c/multi_real.c"
 #include"./c/multi_conj.c"
+#include"./c/multi_uminus.c"
+#include"./c/multi_sqrt.c"
+#include"./c/multi_log.c"
+#include"./c/multi_log10.c"
 // ここから未チェック
 #include"./c/multi_set_eye.c"
 #include"./c/multi_get_prec.c"
@@ -82,7 +86,6 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_rad.c"
 #include"./c/multi_up.c"
 #include"./c/multi_down.c"
-#include"./c/multi_uminus.c"
 #include"./c/multi_ctranspose.c"
 #include"./c/multi_transpose.c"
 #include"./c/multi_plus.c"
@@ -113,9 +116,7 @@ const char *C1i_field_names[]={"C1i_prec","C1i_sign","C1i_exp","C1i_digits"};
 #include"./c/multi_eig.c"
 #include"./c/multi_eig_verify.c"
 #include"./c/multi_matgen_dhToda.c"
-#include"./c/multi_log10.c"
 #include"./c/multi_sum.c"
-#include"./c/multi_sqrt.c"
 #include"./c/multi_max_u.c"
 #include"./c/multi_norm_Inf.c"
 #include"./c/multi_mag.c"
@@ -153,6 +154,10 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"complex"))   { multi_complex   (nlhs,plhs,nrhs,prhs); }  // y=complex(x)
   else if(STR_EQ(cmd,"real"))      { multi_real      (nlhs,plhs,nrhs,prhs); }  // y=real(x)
   else if(STR_EQ(cmd,"conj"))      { multi_conj      (nlhs,plhs,nrhs,prhs); }  // y=conj(x)
+  else if(STR_EQ(cmd,"uminus"))    { multi_uminus    (nlhs,plhs,nrhs,prhs); }  // y=-x
+  else if(STR_EQ(cmd,"sqrt"))      { multi_sqrt      (nlhs,plhs,nrhs,prhs); }  // y=sqrt(x)
+  else if(STR_EQ(cmd,"log"))       { multi_log       (nlhs,plhs,nrhs,prhs); }  // y=log(x)
+  else if(STR_EQ(cmd,"log10"))     { multi_log10     (nlhs,plhs,nrhs,prhs); }  // y=log10(x)
 // ここから未チェック
   else if(STR_EQ(cmd,"get_prec"))  { multi_get_prec  (nlhs,plhs,nrhs,prhs); }  // y=get_prec(x)
   else if(STR_EQ(cmd,"get_sign"))  { multi_get_sign  (nlhs,plhs,nrhs,prhs); }  // y=get_sign(x)
@@ -162,7 +167,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"rad"))       { multi_rad       (nlhs,plhs,nrhs,prhs); }  // [m+r,m-r]=[x0,x1]
   else if(STR_EQ(cmd,"up"))        { multi_up        (nlhs,plhs,nrhs,prhs); }  // y=x1
   else if(STR_EQ(cmd,"down"))      { multi_down      (nlhs,plhs,nrhs,prhs); }  // y=x0
-  else if(STR_EQ(cmd,"uminus"))    { multi_uminus    (nlhs,plhs,nrhs,prhs); }  // y=-x
   else if(STR_EQ(cmd,"ctranspose")){ multi_ctranspose(nlhs,plhs,nrhs,prhs); }  // y=x'
   else if(STR_EQ(cmd,"transpose")) { multi_transpose (nlhs,plhs,nrhs,prhs); }  // y=x.'
   else if(STR_EQ(cmd,"uminus"))    { multi_uminus    (nlhs,plhs,nrhs,prhs); }  // y=-x
@@ -194,9 +198,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   else if(STR_EQ(cmd,"eig"))       { multi_eig       (nlhs,plhs,nrhs,prhs); }  // lambda=eig(A), [V,D]=eig(A)
   else if(STR_EQ(cmd,"eig_verify")){ multi_eig_verify(nlhs,plhs,nrhs,prhs); }  // [V,D,EV,ED]=eig_verify(A)
   else if(STR_EQ(cmd,"matgen_dhToda")){ multi_matgen_dhToda(nlhs,plhs,nrhs,prhs); } // A=matgen_dhToda(...)       
-  else if(STR_EQ(cmd,"log10"))     { multi_log10     (nlhs,plhs,nrhs,prhs); }  // y=log10(x)
   else if(STR_EQ(cmd,"sum"))       { multi_sum       (nlhs,plhs,nrhs,prhs); }  // y=sum(x)
-  else if(STR_EQ(cmd,"sqrt"))      { multi_sqrt      (nlhs,plhs,nrhs,prhs); }  // y=sqrt(x)
   else if(STR_EQ(cmd,"max_u"))     { multi_max_u     (nlhs,plhs,nrhs,prhs); }  // y=max_u(x)
   else if(STR_EQ(cmd,"norm_Inf"))  { multi_norm_Inf  (nlhs,plhs,nrhs,prhs); }  // y=norm_Inf(x)
   else if(STR_EQ(cmd,"mag"))       { multi_mag       (nlhs,plhs,nrhs,prhs); }  // y=mag(x)

@@ -781,6 +781,16 @@ void rlog_r(rmulti *y, rmulti *x)
   mpfr_log(y,x,get_round_mode());
 }
 
+/** @brief rmulti型の計算 y=log(x) */
+void rlog_d(rmulti *y, double x)
+{
+  rmulti *a=NULL;
+  NULL_EXC1(y);
+  RAp(a,y);
+  rset_d(a,x);
+  mpfr_log(y,a,get_round_mode());
+  RF(a);
+}
 /** @brief rmulti型の計算 y=log_2(x) */
 void rlog2_r(rmulti *y, rmulti *x)
 {

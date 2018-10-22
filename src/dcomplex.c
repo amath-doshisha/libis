@@ -159,7 +159,6 @@ dcomplex dnormalize_d(double x)
   return z;
 }
 
-
 /**
  @brief y=sqrt(x)
  */
@@ -186,6 +185,72 @@ dcomplex zsqrt_d(double x)
 dcomplex zsqrt_z(dcomplex x)
 {
   return zpow_zd(x,0.5);
+}
+
+/**
+ @brief y=log(x)
+ */
+double dlog_d(double x)
+{
+  return log(x);
+}
+
+/**
+ @brief y=log(x)
+ */
+dcomplex zlog_d(double x)
+{
+  dcomplex y;
+  if(x==0)    { Z_R(y)=log(0);  Z_I(y)=log(0); }
+  else if(x>0){ Z_R(y)=log(x);  Z_I(y)=0; }
+  else        { Z_R(y)=log(-x); Z_I(y)=M_PI; }
+  return y;
+}
+
+/**
+ @brief y=log(x)
+ */
+dcomplex zlog_z(dcomplex x)
+{
+  dcomplex y;
+  double r,theta;
+  zget_polar(&r,&theta,x); // x=r*exp(i*theta)
+  Z_R(y)=log(r);           // y=log(r)+i*theta
+  Z_I(y)=theta;            // y=log(r)+i*theta
+  return y;
+}
+
+/**
+ @brief y=log10(x)
+ */
+double dlog10_d(double x)
+{
+  return log10(x);
+}
+
+/**
+ @brief y=log10(x)
+ */
+dcomplex zlog10_d(double x)
+{
+  dcomplex y;
+  if(x==0)    { Z_R(y)=log10(0);  Z_I(y)=log10(0); }
+  else if(x>0){ Z_R(y)=log10(x);  Z_I(y)=0; }
+  else        { Z_R(y)=log10(-x); Z_I(y)=M_PI/log(10); }
+  return y;
+}
+
+/**
+ @brief y=log10(x)
+ */
+dcomplex zlog10_z(dcomplex x)
+{
+  dcomplex y;
+  double r,theta;
+  zget_polar(&r,&theta,x); // x=r*exp(i*theta)
+  Z_R(y)=log10(r);         // y=(log(r)+i*theta)/log(10)
+  Z_I(y)=theta/log(10);    // y=(log(r)+i*theta)/log(10)
+  return y;
 }
 
 /** @} */

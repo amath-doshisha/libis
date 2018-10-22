@@ -655,6 +655,42 @@ void zvec_sqrt_dvec(int n, dcomplex *y, double *x)
   for(i=0; i<n; i++){ y[i]=zsqrt_d(x[i]); }
 }
 
+/**
+ @brief dcomplex型ｍのベクトルの要素の対数 y=log(x)
+ */
+void zvec_log_zvec(int n, dcomplex *y, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=zlog_z(x[i]); }
+}
+
+/**
+ @brief dcomplex型ｍのベクトルの要素の対数 y=log(x)
+ */
+void zvec_log_dvec(int n, dcomplex *y, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=zlog_d(x[i]); }
+}
+
+/**
+ @brief dcomplex型ｍのベクトルの要素の対数 y=log10(x)
+ */
+void zvec_log10_zvec(int n, dcomplex *y, dcomplex *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=zlog10_z(x[i]); }
+}
+
+/**
+ @brief dcomplex型ｍのベクトルの要素の対数 y=log10(x)
+ */
+void zvec_log10_dvec(int n, dcomplex *y, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=zlog10_d(x[i]); }
+}
+
 /** @} */
 
 /////////////////////////////////////////////////////

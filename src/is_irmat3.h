@@ -37,7 +37,6 @@ void irmat3_div(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int LDZ
 void irmat3_div_r1(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int LDZ2, rmulti *X0, rmulti *X1, rmulti **Y0, rmulti **Y1, int LDY1, int LDY2);
 void irmat3_div_r2(int m, int n, int l, rmulti **Z0, rmulti **Z1, int LDZ1, int LDZ2, rmulti **X0, rmulti **X1, int LDX1, int LDX2, rmulti *Y0, rmulti *Y1);
 void irmat3_abs(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2);
-void irmat3_sqrt(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2);
 void irmat3_log10(int m, int n, int l, rmulti **C0, rmulti **C1, int LDC1, int LDC2, rmulti **A0, rmulti **A1, int LDA1, int LDA2);
 void irmat3_sum(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LDB2, rmulti **A0, rmulti**A1, int LDA1, int LDA2);
 void irmat3_max(int m, int n, int l, rmulti **B0, rmulti **B1, int LDB1, int LDB2, rmulti **A0, rmulti **A1, int LDA1, int LDA2);

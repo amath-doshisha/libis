@@ -136,8 +136,10 @@ void cvec_mul_2exp_cvec(int n, cmulti **y, cmulti **x, int pr, int pi); // y=x*2
 void cvec_div_2exp_cvec(int n, cmulti **y, cmulti **x, int pr, int pi); // y=x/2^p
 void cvec_sqrt_cvec(int n, cmulti **y, cmulti **x);                     // y=sqrt(x)
 void cvec_sqrt_rvec(int n, cmulti **y, rmulti **x);                     // y=sqrt(x)
-
-
+void cvec_log_cvec(int n, cmulti **y, cmulti **x);                      // y=log(x)
+void cvec_log_rvec(int n, cmulti **y, rmulti **x);                      // y=log(x)
+void cvec_log10_cvec(int n, cmulti **y, cmulti **x);                    // y=log10(x)
+void cvec_log10_rvec(int n, cmulti **y, rmulti **x);                    // y=log10(x)
 /*
  * z=f(x,y)
  */

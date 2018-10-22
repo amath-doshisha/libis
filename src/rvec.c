@@ -841,6 +841,24 @@ void rvec_sqrt_rvec(int n, rmulti **y, rmulti **x)
   for(i=0; i<n; i++){ rsqrt_r(y[i],x[i]); }
 }
 
+/**
+ @brief rmulti型ｍのベクトルの要素の対数 y=log(x)
+ */
+void rvec_log_rvec(int n, rmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ rlog_r(y[i],x[i]); }
+}
+
+/**
+ @brief rmulti型ｍのベクトルの要素の対数 y=log10(x)
+ */
+void rvec_log10_rvec(int n, rmulti **y, rmulti **x)
+{
+  int i;
+  for(i=0; i<n; i++){ rlog10_r(y[i],x[i]); }
+}
+
 /////////////////////////////////////////////////////////////
 
 /**

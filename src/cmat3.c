@@ -650,7 +650,7 @@ void rmat3_add_c(int m, int n, int l, cmulti **C, int LDC1, int LDC2, rmulti **A
   for(k=0; k<l; k++){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
-	cadd_cr(MAT3(C,i,j,k,LDC1,LDC2),b,MAT3(A,i,j,k,LDA1,LDA2));
+        cadd_cr(MAT3(C,i,j,k,LDC1,LDC2),b,MAT3(A,i,j,k,LDA1,LDA2));
       }
     }
   }

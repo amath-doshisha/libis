@@ -98,6 +98,10 @@ double dmin_abs_zvec_index(int n, dcomplex *x, int *I);              // y=min(ab
 double dmax_max_absc_zvec(int n, dcomplex *x);                       // y=max(real(absc(x)),imag(absc(x)))
 void zvec_sqrt_zvec(int n, dcomplex *y, dcomplex *x);                // y=sqrt(x)
 void zvec_sqrt_dvec(int n, dcomplex *y, double *x);                  // y=sqrt(x)
+void zvec_log_zvec(int n, dcomplex *y, dcomplex *x);                 // y=log(x)
+void zvec_log_dvec(int n, dcomplex *y, double *x);                   // y=log(x)
+void zvec_log10_zvec(int n, dcomplex *y, dcomplex *x);               // y=log10(x)
+void zvec_log10_dvec(int n, dcomplex *y, double *x);                 // y=log10(x)
 
 /*
  * z=f(x,y)

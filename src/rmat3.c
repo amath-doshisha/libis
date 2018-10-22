@@ -675,21 +675,6 @@ void rmat3_log10(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A
 }
 
 /**
- @brief 3次元配列の平方根 C=sqrt(A).
-*/
-void rmat3_sqrt(int m, int n, int l, rmulti **C, int LDC1, int LDC2, rmulti **A, int LDA1, int LDA2)
-{
-  int i,j,k;
-  for(k=0; k<l; k++){
-    for(j=0; j<n; j++){
-      for(i=0; i<m; i++){
-        rsqrt_r(MAT3(C,i,j,k,LDC1,LDC2),MAT3(A,i,j,k,LDA1,LDA2));
-      }
-    }
-  }
-}
-
-/**
  @brief rmulti型の3次元配列の和 B=sum(A).
 */
 void rmat3_sum(int m, int n, int l, rmulti **B, int LDB1, int LDB2, rmulti **A, int LDA1, int LDA2)

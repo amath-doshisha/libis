@@ -593,6 +593,24 @@ void dvec_sqrt_dvec(int n, double *y, double *x)
   for(i=0; i<n; i++){ y[i]=sqrt(x[i]); }
 }
 
+/**
+ @brief double型ｍのベクトルの要素の対数 y=log(x)
+ */
+void dvec_log_dvec(int n, double *y, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=log(x[i]); }
+}
+
+/**
+ @brief double型ｍのベクトルの要素の対数 y=log10(x)
+ */
+void dvec_log10_dvec(int n, double *y, double *x)
+{
+  int i;
+  for(i=0; i<n; i++){ y[i]=log10(x[i]); }
+}
+
 /** @} */
 
 /////////////////////////////////////////////////////////////
