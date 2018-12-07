@@ -343,14 +343,14 @@ void cmat_save(int m, int n, cmulti **A, int LDA, int digits, char* fmt, ...)
   char fname[FILE_NAME_LENGTH_MAX+1];
   va_list argp;
   FILE *fid;
-  char gmpfmt[16];
+  char gmpfmt[128];
   // file name
   va_start(argp,fmt);
-  vsprintf(fname,fmt,argp);
+  vsprintf(fname,fmt,argp);//printf("fname=%s\n",fname);
   // open file
   if((fid=fopen(fname,"w"))==0){ ERROR_AT; printf("Cant't open file: %s\n",fname); exit(0); }
   // write
-  sprintf(gmpfmt,"%%d\t%%d\t%%.%dRe\t%%.%dRe\n",digits,digits);
+  sprintf(gmpfmt,"%%d\t%%d\t%%.%dRe\t%%.%dRe\n",digits,digits);//printf("gmpfmt=%s\n",gmpfmt);
   if(A!=NULL){
     for(j=0; j<n; j++){
       for(i=0; i<m; i++){
